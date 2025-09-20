@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import Submit from './pages/Submit'
 import Admin from './pages/Admin'
+import Journals from './pages/Journals'
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/submit" element={<Submit />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/journals" element={<Journals />} />
         </Routes>
       </Layout>
     </Router>

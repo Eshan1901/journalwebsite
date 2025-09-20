@@ -1,0 +1,114 @@
+Journal of Computational Intelligence and Data Science (JCIDS)
+Vision
+To provide a globally recognized platform for advancing high-quality research and innovation in computational intelligence and data science, fostering knowledge that drives technology for the betterment of society.
+Mission
+• To promote ethical, high-quality, and original research in computational intelligence and data science.
+• To enable interdisciplinary collaboration across academia, industry, and society.
+• To support open access knowledge dissemination for global inclusivity.
+Aim
+The journal aims to publish and disseminate original research, critical reviews, and innovative case studies in computational intelligence and data science, thereby bridging the gap between theory and practical applications.
+Domain Tracks
+1. Artificial Intelligence & Machine Learning
+2. Data Mining, Big Data & Cloud Analytics
+3. Natural Language Processing & Speech Systems
+4. Computer Vision & Image Processing
+5. IoT, Edge & Intelligent Systems
+6. Cybersecurity, Ethics, and Governance in AI
+7. Health Informatics & Bioinformatics
+8. Robotics, Automation, and Smart Systems
+Editorial Policy
+The Journal of Computational Intelligence and Data Science (JCIDS) upholds a robust and transparent editorial policy designed to maintain academic integrity, fairness, and excellence in publishing. The editorial board is committed to ensuring that manuscripts undergo a rigorous review process and are judged solely on their scholarly merit, originality, methodological soundness, and contribution to the advancement of knowledge.
+
+All submissions undergo an initial screening by the Editor-in-Chief and Associate Editors to assess relevance, quality, and compliance with submission guidelines. Manuscripts that meet the basic criteria are then subjected to a double-blind peer review process. This ensures that neither the authors' identities nor the reviewers' identities are disclosed, eliminating potential biases based on institutional affiliation, nationality, or reputation.
+
+JCIDS follows COPE (Committee on Publication Ethics) standards to ensure ethical practices are upheld at every stage of the editorial workflow. Editors must declare any potential conflicts of interest and recuse themselves from handling manuscripts where impartiality may be compromised. The editorial team ensures timely decision-making, striving to provide authors with constructive feedback within a reasonable timeframe.
+
+The editorial board promotes diversity and inclusivity, welcoming submissions from authors worldwide, including early-career researchers. Efforts are made to balance representation of reviewers and board members across regions, genders, and domains.
+
+Another key tenet of the editorial policy is transparency. Clear communication of acceptance criteria, review timelines, and editorial decisions is maintained. Revisions are tracked, and authors are encouraged to respond to reviewers' comments point-by-point, ensuring a constructive dialogue that enhances the quality of the final publication.
+
+Finally, JCIDS emphasizes the responsible dissemination of knowledge. The editorial team ensures that articles published not only contribute to academic discourse but also align with ethical principles of data sharing, privacy, and societal benefit. Editorial independence is strictly maintained, ensuring decisions are based on academic value and not influenced by external pressures or funding bodies.
+
+Through these practices, JCIDS strives to establish itself as a trusted, ethical, and inclusive platform for computational intelligence and data science research.
+Reviewer Policy
+Reviewers form the backbone of the publishing process at JCIDS, ensuring the credibility, integrity, and academic rigor of published research. The journal adopts a structured reviewer policy that governs the selection, responsibilities, and ethical obligations of its reviewers.
+
+Selection of Reviewers: Reviewers are chosen based on subject expertise, prior publication record, and academic reputation. Diversity of perspective is prioritized to avoid one-sided evaluations. Potential reviewers must disclose conflicts of interest, such as collaborations or personal relationships with authors.
+
+Review Process: Each manuscript is typically assigned to at least two reviewers. They are expected to assess manuscripts objectively, focusing on originality, clarity, methodological rigor, ethical compliance, and contribution to the field. Constructive criticism is encouraged, while personal remarks or biased judgments are strictly discouraged.
+
+Reviewer Responsibilities:
+• Provide timely, clear, and comprehensive feedback.
+• Maintain confidentiality of manuscripts and avoid using the unpublished content for personal advantage.
+• Suggest improvements in clarity, data presentation, and methodological soundness.
+• Report suspected plagiarism, data fabrication, or ethical violations.
+
+Quality Control: The editorial board regularly evaluates reviewer performance based on timeliness, depth of comments, and adherence to ethical standards. High-performing reviewers may be invited to join the editorial board, while those failing to meet standards may be excluded from future reviews.
+
+JCIDS recognizes and values the critical role reviewers play and ensures their contributions are acknowledged in annual reviewer reports and, where appropriate, through certificates of recognition.
+
+By adhering to this policy, the journal ensures that reviews remain impartial, constructive, and aligned with international standards.
+Journal Policy
+The overarching policy of JCIDS is grounded in academic integrity, inclusivity, and transparency. The journal upholds a zero-tolerance approach to unethical practices such as plagiarism, duplicate submission, and data manipulation. All submissions are checked for originality using plagiarism detection tools.
+
+Inclusivity and Equality: JCIDS does not discriminate on the basis of gender, ethnicity, nationality, or institutional affiliation. Authors, reviewers, and editors are evaluated solely on academic merit.
+
+Ethical Standards: The journal follows COPE, ICMJE, and international best practices. All research involving human or animal subjects must include appropriate ethical approvals. Data integrity and reproducibility are emphasized, encouraging authors to share data and code where possible.
+
+Transparency: Policies related to submission, peer review, open access, copyright, and fees are communicated clearly. Editorial decisions are made independently of commercial interests.
+
+Global Collaboration: JCIDS actively promotes collaboration between academia and industry, encouraging applied research with societal benefits. Interdisciplinary submissions are especially welcome.
+
+This policy framework ensures that the journal operates as a responsible, ethical, and inclusive academic platform.
+Open Access Policy and Licensing
+JCIDS operates under a fully open-access model, ensuring that all published content is freely available without subscription barriers. Articles are licensed under Creative Commons Attribution (CC BY), enabling wide dissemination while ensuring authors retain ownership of their work.
+
+Open access facilitates knowledge equity, empowering researchers, policymakers, and practitioners in developing regions to access high-quality research without financial burden. This policy aligns with global initiatives such as Plan S and Budapest Open Access Initiative.
+
+Authors retain copyright but grant JCIDS rights to publish, archive, and distribute their work. Users may copy, distribute, and adapt the work, provided proper attribution is given.
+
+The journal advocates ethical openness: while promoting accessibility, it safeguards against misuse by requiring citations and prohibiting misrepresentation. By adopting this model, JCIDS contributes to faster knowledge circulation, global collaboration, and broader societal impact.
+Copyright
+Authors retain copyright of their published work in JCIDS. Upon acceptance, authors grant the journal a non-exclusive license to publish and disseminate their articles. This allows authors to reuse their work in future publications, academic presentations, or teaching materials, provided the original publication is cited.
+
+JCIDS protects author rights by:
+• Ensuring transparent copyright agreements.
+• Allowing self-archiving in institutional repositories.
+• Promoting wide dissemination through indexing and digital archives.
+
+The journal strictly prohibits unauthorized reproduction or republication without permission. Copyright remains a mutual safeguard for authors, readers, and the journal.
+Plagiarism and Artificial Intelligence Policy
+JCIDS enforces a strict plagiarism policy. All submissions are screened using advanced plagiarism detection tools. Manuscripts with more than 15% similarity (excluding references) are returned to authors or rejected outright.
+
+Plagiarism forms covered:
+• Direct copying of text or figures.
+• Self-plagiarism (reuse of significant portions of author's prior work without citation).
+• Data fabrication or falsification.
+
+AI-generated Content Policy:
+• Use of AI tools (e.g., ChatGPT, Grammarly) for language polishing is permitted.
+• However, AI must not replace originality in analysis, results, or conclusions.
+• Authors must declare any AI assistance in the acknowledgments.
+• Misrepresentation through AI-generated content is treated as academic misconduct.
+
+This dual policy ensures originality, credibility, and ethical responsibility in all published work.
+Retraction Policy
+JCIDS may retract or correct published articles under specific circumstances, including:
+• Proven plagiarism, data manipulation, or unethical research.
+• Duplicate submissions or redundant publications.
+• Author-initiated withdrawal for ethical reasons.
+
+Process:
+1. Complaints are investigated by the editorial board.
+2. Authors are given an opportunity to respond.
+3. If misconduct is confirmed, a retraction notice is issued, linked to the original article.
+
+Retractions are transparent, ensuring readers understand the reasons. Corrections may also be issued for minor errors that do not invalidate the findings. This policy maintains the integrity of the scientific record.
+Fee Policy
+JCIDS currently follows a no submission fee policy to encourage participation. Article Processing Charges (APC) are initially waived for the first few issues. Future APCs, if applied, will be transparent and announced in advance.
+
+• Fee waivers will be available for authors from low- and middle-income countries.
+• Discounts may be considered for students and early-career researchers.
+• No hidden charges will be imposed.
+
+This approach balances financial sustainability with inclusivity, ensuring authors are not excluded based on financial constraints.
