@@ -2,14 +2,17 @@ import { useState } from 'react'
 
 const Sidebar = ({ isOpen, onClose }) => {
   const sidebarSections = [
-    { id: 'about', title: 'About JCIDS', icon: 'fas fa-info-circle' },
-    { id: 'aim-scope', title: 'Aim & Scope', icon: 'fas fa-bullseye' },
-    { id: 'editorial-board', title: 'Editorial Board', icon: 'fas fa-users' },
-    { id: 'submission', title: 'Paper Submission', icon: 'fas fa-upload' },
-    { id: 'guidelines', title: 'Author Guidelines', icon: 'fas fa-book' },
-    { id: 'ethics', title: 'Publication Ethics', icon: 'fas fa-balance-scale' },
-    { id: 'indexing', title: 'Indexing & Abstracting', icon: 'fas fa-database' },
-    { id: 'charges', title: 'Publication Charges', icon: 'fas fa-dollar-sign' }
+    { id: 'vision', title: 'Vision & Mission', icon: 'fas fa-eye' },
+    { id: 'aim', title: 'Journal Aim', icon: 'fas fa-bullseye' },
+    { id: 'domain-tracks', title: 'Domain Tracks', icon: 'fas fa-sitemap' },
+    { id: 'editorial-policy', title: 'Editorial Policy', icon: 'fas fa-gavel' },
+    { id: 'reviewer-policy', title: 'Reviewer Policy', icon: 'fas fa-user-check' },
+    { id: 'journal-policy', title: 'Journal Policy', icon: 'fas fa-file-contract' },
+    { id: 'open-access', title: 'Open Access Policy', icon: 'fas fa-unlock-alt' },
+    { id: 'copyright', title: 'Copyright Policy', icon: 'fas fa-copyright' },
+    { id: 'plagiarism-ai', title: 'Plagiarism & AI Policy', icon: 'fas fa-robot' },
+    { id: 'retraction', title: 'Retraction Policy', icon: 'fas fa-undo' },
+    { id: 'fee-policy', title: 'Fee Policy', icon: 'fas fa-money-bill-wave' }
   ]
 
   const handleSectionClick = (sectionId) => {
@@ -63,23 +66,28 @@ const Sidebar = ({ isOpen, onClose }) => {
             </div>
             
             <div className="sidebar-item" onClick={() => window.location.href = '/submit'}>
-              <i className="fas fa-edit"></i>
-              <span>Submit Paper</span>
+              <i className="fas fa-paper-plane"></i>
+              <span>Submit Research</span>
             </div>
             
             <div className="sidebar-item" onClick={() => window.location.href = 'mailto:submissions@jcids.org'}>
               <i className="fas fa-envelope"></i>
-              <span>Email Submission</span>
+              <span>Contact Editorial</span>
             </div>
             
             <div className="sidebar-item">
-              <i className="fas fa-download"></i>
-              <span>Download Template</span>
+              <i className="fas fa-file-download"></i>
+              <span>Author Template</span>
+            </div>
+            
+            <div className="sidebar-item">
+              <i className="fas fa-search"></i>
+              <span>Reviewer Portal</span>
             </div>
             
             <div className="sidebar-item" onClick={() => window.location.href = '/admin'}>
               <i className="fas fa-user-shield"></i>
-              <span>Admin Panel</span>
+              <span>Admin Access</span>
             </div>
           </div>
         </div>
