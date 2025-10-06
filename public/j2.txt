@@ -1,0 +1,152 @@
+Vision
+
+To serve as a premier global platform for advancing innovation, theory, and application in computer modeling and simulation, enabling technological breakthroughs that address real-world engineering and scientific challenges for the betterment of humanity.
+
+Mission
+
+• To promote ethical, high-quality, and innovative research in computational modeling, engineering, and applied sciences.
+• To foster interdisciplinary collaboration across domains such as mechanics, materials, mathematics, and computer science.
+• To facilitate open access knowledge dissemination, supporting equitable and inclusive participation in computational research.
+• To contribute to the advancement of simulation-based design and intelligent systems that empower sustainable development.
+
+Aim
+
+The journal aims to publish and disseminate original research articles, critical reviews, and high-impact studies in the field of computational modeling and engineering sciences.
+CMES bridges the gap between theoretical foundations, numerical methods, and real-world applications, providing a forum for academic, industrial, and governmental collaboration.
+
+Domain Tracks
+
+Computational Mechanics and Materials Modeling
+
+Finite Element Analysis (FEA) and Numerical Simulation
+
+Multiphysics and Multiscale Modeling
+
+Computational Fluid Dynamics (CFD)
+
+Artificial Intelligence and Data-Driven Modeling
+
+Structural Analysis and Design Optimization
+
+Computational Biology, Bioinformatics, and Biomechanics
+
+Computational Mathematics and Algorithms
+
+Computational Physics and Chemistry
+
+Machine Learning Applications in Engineering
+
+Editorial Policy
+
+CMES upholds a transparent and rigorous editorial policy aligned with international publishing standards. The editorial team ensures that every manuscript undergoes a double-blind peer review process, maintaining fairness, impartiality, and confidentiality.
+
+All submissions are initially screened by the Editor-in-Chief and Associate Editors to evaluate scope relevance, novelty, and technical accuracy. Manuscripts that meet the standards are assigned to qualified reviewers for detailed assessment.
+
+The journal adheres to the principles of COPE (Committee on Publication Ethics) and ensures that editors declare conflicts of interest, recuse themselves when necessary, and make decisions solely based on academic merit.
+
+Editorial independence is strictly maintained, ensuring that publication decisions are unaffected by institutional, financial, or personal biases. CMES is committed to diversity and inclusivity within its editorial board, reviewers, and contributors worldwide.
+
+Through constructive feedback and transparent decision-making, CMES aims to enhance the quality, impact, and ethical integrity of published research.
+
+Reviewer Policy
+
+Reviewers form the foundation of CMES’s commitment to scientific excellence. The selection and engagement of reviewers are guided by their subject expertise, publication record, and adherence to ethical principles.
+
+Reviewer Responsibilities:
+• Evaluate manuscripts objectively, focusing on originality, clarity, and methodological rigor.
+• Provide timely, comprehensive, and constructive feedback.
+• Maintain strict confidentiality and avoid personal or institutional bias.
+• Report any signs of plagiarism, ethical misconduct, or data irregularities.
+
+The editorial team regularly evaluates reviewer performance, recognizing excellence through acknowledgments or editorial board invitations. CMES values reviewers’ contributions as essential to maintaining its reputation for academic rigor and credibility.
+
+Journal Policy
+
+CMES’s operational framework is rooted in academic integrity, transparency, and inclusivity.
+
+Ethical Standards:
+• The journal follows the COPE and ICMJE guidelines for ethical publication.
+• All submissions are screened for plagiarism, data manipulation, and duplicate publication.
+• Research involving human or animal data must include ethical approval statements.
+
+Inclusivity and Equality:
+CMES does not discriminate on the basis of gender, nationality, or institutional affiliation. All manuscripts are assessed purely on scholarly merit and relevance.
+
+Transparency:
+Policies regarding peer review, open access, copyright, and publication fees are communicated clearly. Editorial independence is maintained from all commercial interests.
+
+By adhering to these principles, CMES ensures that its publishing ecosystem remains credible, responsible, and globally inclusive.
+
+Open Access Policy and Licensing
+
+CMES is a fully open access journal under TechScience Press, allowing unrestricted access to all published content.
+Articles are distributed under the Creative Commons Attribution (CC BY) license, which permits free sharing, distribution, and adaptation, provided proper attribution to the original authors is maintained.
+
+This model promotes knowledge equality, ensuring that researchers, educators, and practitioners worldwide—especially in developing regions—can access and utilize high-quality computational research.
+CMES aligns with global open access standards such as the Budapest Open Access Initiative and Plan S, advancing scientific collaboration and innovation.
+
+Copyright
+
+Authors retain the copyright of their published work in CMES.
+Upon acceptance, authors grant TechScience Press a non-exclusive license to publish, archive, and distribute the article while maintaining ownership rights.
+
+Authors are free to:
+• Reuse their work in academic or professional contexts with citation to the original publication.
+• Deposit their articles in institutional or subject repositories.
+• Share their research publicly to support open knowledge exchange.
+
+Unauthorized reproduction or redistribution of published materials without citation or permission is strictly prohibited.
+
+Plagiarism and Artificial Intelligence Policy
+
+CMES enforces a strict anti-plagiarism policy.
+All submitted manuscripts are checked using plagiarism detection software, and those exceeding acceptable similarity thresholds (typically 15%) are returned or rejected.
+
+Plagiarism includes:
+• Direct copying of text, figures, or ideas without citation.
+• Self-plagiarism or redundant publication.
+• Data fabrication or falsification.
+
+AI Usage Policy:
+• Authors may use AI tools (e.g., ChatGPT, Grammarly) for language editing and formatting.
+• AI must not generate core content, analysis, or results.
+• Authors must disclose any AI assistance in the acknowledgments section.
+• Misrepresentation or AI-generated falsification is treated as academic misconduct.
+
+These measures ensure originality, transparency, and credibility in every publication.
+
+Retraction Policy
+
+CMES may retract or correct published articles if:
+• Evidence of plagiarism, fabrication, or unethical conduct is found.
+• Duplicate or redundant publications are identified.
+• Errors that compromise the validity of results are discovered.
+
+Procedure:
+
+Complaints are investigated by the editorial board.
+
+Authors are provided an opportunity to respond.
+
+If misconduct is verified, a retraction or correction notice is published, permanently linked to the original article.
+
+Transparency and accountability guide all retraction actions to maintain the scientific integrity of the journal.
+
+Fee Policy
+
+CMES currently follows a transparent open access fee policy.
+While publication involves Article Processing Charges (APCs) to support open access infrastructure, TechScience Press offers waivers or discounts for authors from developing regions and for early-career researchers.
+
+Key Principles:
+• No submission fees are required.
+• APC details are clearly stated on the journal’s website.
+• Waivers and discounts promote equitable participation.
+• No hidden or retrospective charges are applied.
+
+This model ensures that high-quality research is published based on merit, not financial capability.
+
+Conclusion
+
+Through its commitment to openness, integrity, and excellence, CMES continues to shape the future of computational modeling, bridging disciplines and empowering innovation for global progress.
+
+Would you like me to create this as a professional PDF document (like the JCIDS one) or as a ready-to-upload web/HTML version for your website?

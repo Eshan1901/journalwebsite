@@ -23,20 +23,29 @@ const Layout = ({ children }) => {
       <header className={`journal-header ${sidebarOpen ? 'sidebar-open' : ''}`}>
         <div className="header-content">
           <div className="journal-info">
-            <h1>Journal of Computational Intelligence and Decision Science</h1>
+            <div className="brand-container">
+              <div className="brand-icon">GP</div>
+              <div className="brand-text">
+                <h1>GENOSIS PRESS</h1>
+                <span className="brand-tagline">Academic Publishing Excellence</span>
+              </div>
+            </div>
             <div className="journal-meta">
-              <p>JCIDS | Double-Blind Peer-Reviewed Journal</p>
-              <p>ISSN: 2348-8549 (Online) | Impact Factor: 8.2</p>
+              <div className="meta-badge">
+                <span className="badge-premium">PREMIUM</span>
+                <span className="badge-journals">2 Journals</span>
+              </div>
+              <p>Double-Blind Peer Review • Open Access • Global Reach</p>
             </div>
           </div>
           <div className="header-buttons">
-            <Link to="/submit" className="header-btn">
+            <Link to="/submit" className="header-btn primary">
               <i className="fas fa-paper-plane"></i>
-              Submit Paper
+              Submit Research
             </Link>
-            <Link to="/admin" className="header-btn">
-              <i className="fas fa-cog"></i>
-              Admin
+            <Link to="/admin" className="header-btn secondary">
+              <i className="fas fa-user-shield"></i>
+              Portal
             </Link>
           </div>
         </div>
@@ -44,36 +53,47 @@ const Layout = ({ children }) => {
 
       <nav className={`navbar ${sidebarOpen ? 'sidebar-open' : ''}`}>
         <div className="container">
-          <button className="menu-toggle" onClick={toggleSidebar}>
-            <i className="fas fa-ellipsis-v"></i>
+          <button className="menu-toggle modern" onClick={toggleSidebar}>
+            <i className="fas fa-bars"></i>
+            <span>Menu</span>
           </button>
           <ul className="navbar-nav">
             <li>
-              <Link to="/" className={isActive('/') ? 'active' : ''}>
-                Home
+              <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
+                <span>Home</span>
               </Link>
             </li>
             <li>
-              <Link to="/journals" className={isActive('/journals') ? 'active' : ''}>
-                Journals
+              <Link to="/journals" className={`nav-link ${isActive('/journals') ? 'active' : ''}`}>
+                <span>Our Journals</span>
               </Link>
             </li>
             <li>
-              <Link to="/submit" className={isActive('/submit') ? 'active' : ''}>
-                For Authors
+              <Link to="/submit" className={`nav-link ${isActive('/submit') ? 'active' : ''}`}>
+                <span>Publish With Us</span>
               </Link>
             </li>
             <li>
-              <Link to="/editors" className={isActive('/editors') ? 'active' : ''}>
-                For Editors
+              <Link to="/editors" className={`nav-link ${isActive('/editors') ? 'active' : ''}`}>
+                <span>Editorial</span>
               </Link>
             </li>
             <li>
-              <Link to="/reviewers" className={isActive('/reviewers') ? 'active' : ''}>
-                For Reviewers
+              <Link to="/reviewers" className={`nav-link ${isActive('/reviewers') ? 'active' : ''}`}>
+                <span>Reviewers</span>
               </Link>
             </li>
           </ul>
+          
+          <div className="navbar-actions">
+            <button className="search-btn">
+              <i className="fas fa-search"></i>
+            </button>
+            <div className="language-selector">
+              <i className="fas fa-globe"></i>
+              <span>EN</span>
+            </div>
+          </div>
         </div>
       </nav>
 
@@ -89,8 +109,61 @@ const Layout = ({ children }) => {
 
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2025 Journal of Computational Intelligence and Decision Science. All rights reserved.</p>
-          <p>Contact: <a href="mailto:submissions@jcids.org" style={{color: '#66b3ff'}}>submissions@jcids.org</a></p>
+          <div className="footer-content">
+            <div className="footer-section">
+              <div className="footer-brand">
+                <h4>GENOSIS PRESS</h4>
+                <p>Leading academic publisher committed to advancing research and innovation through excellence in scholarly publishing.</p>
+                <div className="social-links">
+                  <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+                  <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+                  <a href="#" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
+                  <a href="#" aria-label="ResearchGate"><i className="fab fa-researchgate"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h5>Our Journals</h5>
+              <ul>
+                <li><a href="/">JCIDS - Computational Intelligence</a></li>
+                <li><a href="/">CMES - Engineering Sciences</a></li>
+                <li><a href="/">Submit Your Research</a></li>
+                <li><a href="/">Editorial Guidelines</a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-section">
+              <h5>Resources</h5>
+              <ul>
+                <li><a href="/">Author Guidelines</a></li>
+                <li><a href="/">Reviewer Portal</a></li>
+                <li><a href="/">Publication Ethics</a></li>
+                <li><a href="/">Open Access Policy</a></li>
+              </ul>
+            </div>
+            
+            <div className="footer-section">
+              <h5>Contact Us</h5>
+              <div className="contact-info">
+                <p><i className="fas fa-envelope"></i> <a href="mailto:info@genosispress.com">info@genosispress.com</a></p>
+                <p><i className="fas fa-paper-plane"></i> <a href="mailto:submissions@genosispress.com">submissions@genosispress.com</a></p>
+                <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i className="fas fa-map-marker-alt"></i> Global Publishing Network</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="footer-bottom">
+            <div className="footer-bottom-content">
+              <p>&copy; 2025 Genosis Press. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+              <div className="certifications">
+                <span className="cert-badge">COPE Member</span>
+                <span className="cert-badge">DOAJ Listed</span>
+                <span className="cert-badge">Open Access</span>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>

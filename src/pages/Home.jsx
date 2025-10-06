@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState('welcome')
+  const [selectedJournal, setSelectedJournal] = useState('jcids')
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
 
@@ -18,7 +19,725 @@ const Home = () => {
     }
   }, [])
 
-  const journalSections = [
+  const getJournalSections = (journal) => {
+    if (journal === 'cmes') {
+      return [
+        {
+          id: 'welcome',
+          title: 'Welcome to CMES',
+          content: (
+            <div>
+              {/* Hero Section */}
+              <div style={{ 
+                background: 'linear-gradient(135deg, #e8f8f0 0%, #f0fff0 100%)', 
+                padding: '40px 30px', 
+                borderRadius: '12px', 
+                marginBottom: '30px',
+                border: '1px solid #90ee90',
+                textAlign: 'center'
+              }}>
+                <h3 style={{ 
+                  color: '#1a5f2f', 
+                  fontSize: '2.2rem', 
+                  marginBottom: '20px', 
+                  fontWeight: 'bold' 
+                }}>
+                  Advancing Computational Modeling & Engineering Sciences
+                </h3>
+                <div style={{ 
+                  background: 'rgba(26, 95, 47, 0.1)', 
+                  padding: '10px 20px', 
+                  borderRadius: '20px', 
+                  display: 'inline-block',
+                  marginBottom: '20px'
+                }}>
+                  <span style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a5f2f' }}>
+                    📚 Published by Genosis Press
+                  </span>
+                </div>
+                <p style={{ 
+                  fontSize: '1.3rem', 
+                  lineHeight: '1.6', 
+                  color: '#2d5016', 
+                  marginBottom: '25px',
+                  fontWeight: '500'
+                }}>
+                  A premier global platform for innovation, theory, and application in computer modeling 
+                  and simulation, enabling technological breakthroughs for real-world challenges.
+                </p>
+                
+                <div style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                  gap: '20px', 
+                  marginTop: '30px' 
+                }}>
+                  <div style={{ 
+                    background: 'rgba(26, 95, 47, 0.1)', 
+                    padding: '20px', 
+                    borderRadius: '10px',
+                    border: '1px solid rgba(26, 95, 47, 0.2)'
+                  }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '10px' }}>🔬</div>
+                    <h4 style={{ color: '#1a5f2f', margin: '0 0 8px 0' }}>Computational Modeling</h4>
+                    <p style={{ fontSize: '0.9rem', color: '#2d5016', margin: 0 }}>
+                      Advanced simulation and modeling techniques
+                    </p>
+                  </div>
+                  
+                  <div style={{ 
+                    background: 'rgba(26, 95, 47, 0.1)', 
+                    padding: '20px', 
+                    borderRadius: '10px',
+                    border: '1px solid rgba(26, 95, 47, 0.2)'
+                  }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '10px' }}>⚙️</div>
+                    <h4 style={{ color: '#1a5f2f', margin: '0 0 8px 0' }}>Engineering Sciences</h4>
+                    <p style={{ fontSize: '0.9rem', color: '#2d5016', margin: 0 }}>
+                      Multiphysics and multiscale modeling
+                    </p>
+                  </div>
+                  
+                  <div style={{ 
+                    background: 'rgba(26, 95, 47, 0.1)', 
+                    padding: '20px', 
+                    borderRadius: '10px',
+                    border: '1px solid rgba(26, 95, 47, 0.2)'
+                  }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '10px' }}>🤖</div>
+                    <h4 style={{ color: '#1a5f2f', margin: '0 0 8px 0' }}>AI Integration</h4>
+                    <p style={{ fontSize: '0.9rem', color: '#2d5016', margin: 0 }}>
+                      Machine learning in engineering
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Quick Stats */}
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', 
+                gap: '20px', 
+                marginBottom: '30px' 
+              }}>
+                <div style={{ 
+                  background: 'white', 
+                  padding: '25px', 
+                  borderRadius: '8px', 
+                  textAlign: 'center',
+                  border: '1px solid #e0e0e0',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#1a5f2f', marginBottom: '8px' }}>10+</div>
+                  <div style={{ color: '#666', fontSize: '0.9rem' }}>Domain Tracks</div>
+                </div>
+                
+                <div style={{ 
+                  background: 'white', 
+                  padding: '25px', 
+                  borderRadius: '8px', 
+                  textAlign: 'center',
+                  border: '1px solid #e0e0e0',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#1a5f2f', marginBottom: '8px' }}>100%</div>
+                  <div style={{ color: '#666', fontSize: '0.9rem' }}>Open Access</div>
+                </div>
+                
+                <div style={{ 
+                  background: 'white', 
+                  padding: '25px', 
+                  borderRadius: '8px', 
+                  textAlign: 'center',
+                  border: '1px solid #e0e0e0',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#1a5f2f', marginBottom: '8px' }}>Global</div>
+                  <div style={{ color: '#666', fontSize: '0.9rem' }}>Reach</div>
+                </div>
+                
+                <div style={{ 
+                  background: 'white', 
+                  padding: '25px', 
+                  borderRadius: '8px', 
+                  textAlign: 'center',
+                  border: '1px solid #e0e0e0',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                }}>
+                  <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#1a5f2f', marginBottom: '8px' }}>CC BY</div>
+                  <div style={{ color: '#666', fontSize: '0.9rem' }}>License</div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'vision',
+          title: 'Vision & Mission',
+          content: (
+            <div>
+              <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', marginBottom: '25px', border: '1px solid #90ee90' }}>
+                <h4 style={{ color: '#1a5f2f', marginBottom: '20px', fontSize: '1.3rem' }}>Vision</h4>
+                <p style={{ fontSize: '1.1rem', lineHeight: '1.6', color: '#2d5016' }}>
+                  To serve as a premier global platform for advancing innovation, theory, and application in computer modeling and simulation, enabling technological breakthroughs that address real-world engineering and scientific challenges for the betterment of humanity.
+                </p>
+              </div>
+              
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>Mission</h4>
+                </div>
+                <div style={{ padding: '25px' }}>
+                  <div style={{ display: 'grid', gap: '20px' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                      <div style={{ background: '#1a5f2f', color: 'white', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', flexShrink: 0 }}>1</div>
+                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.5' }}>
+                        To promote ethical, high-quality, and innovative research in computational modeling, engineering, and applied sciences.
+                      </p>
+                    </div>
+                    
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                      <div style={{ background: '#1a5f2f', color: 'white', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', flexShrink: 0 }}>2</div>
+                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.5' }}>
+                        To foster interdisciplinary collaboration across domains such as mechanics, materials, mathematics, and computer science.
+                      </p>
+                    </div>
+                    
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                      <div style={{ background: '#1a5f2f', color: 'white', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', flexShrink: 0 }}>3</div>
+                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.5' }}>
+                        To facilitate open access knowledge dissemination, supporting equitable and inclusive participation in computational research.
+                      </p>
+                    </div>
+                    
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                      <div style={{ background: '#1a5f2f', color: 'white', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', flexShrink: 0 }}>4</div>
+                      <p style={{ margin: 0, fontSize: '1rem', lineHeight: '1.5' }}>
+                        To contribute to the advancement of simulation-based design and intelligent systems that empower sustainable development.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'aim',
+          title: 'Journal Aim',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>CMES Journal Aim</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', marginBottom: '25px', border: '1px solid #90ee90' }}>
+                    <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: '#2d5016', margin: '0' }}>
+                      The journal aims to publish and disseminate original research articles, critical reviews, and high-impact studies in the field of computational modeling and engineering sciences.
+                    </p>
+                  </div>
+                  
+                  <div style={{ background: '#ffffff', padding: '25px', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '15px', fontSize: '1.1rem' }}>Bridging Domains</h5>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.6', color: '#333', margin: '0' }}>
+                      CMES bridges the gap between theoretical foundations, numerical methods, and real-world applications, providing a forum for academic, industrial, and governmental collaboration.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'domain-tracks',
+          title: '🔬 Domain Tracks',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>🔬 CMES Domain Tracks</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+                    
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        ⚙️ Computational Mechanics and Materials Modeling
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Advanced techniques for modeling mechanical systems and material behavior at multiple scales.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        📊 Finite Element Analysis (FEA) and Numerical Simulation
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Sophisticated FEA methods and numerical techniques for complex engineering problems.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        🔀 Multiphysics and Multiscale Modeling
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Integrated modeling approaches for coupled physical phenomena across different scales.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        🌊 Computational Fluid Dynamics (CFD)
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Advanced fluid flow simulation and computational methods for complex fluid systems.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        🤖 Artificial Intelligence and Data-Driven Modeling
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        AI-powered modeling techniques and data-driven approaches for engineering applications.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        🏗️ Structural Analysis and Design Optimization
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Optimization methods and structural analysis for efficient engineering design.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        🧬 Computational Biology, Bioinformatics, and Biomechanics
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Computational approaches to biological systems and biomechanical modeling.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        📐 Computational Mathematics and Algorithms
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Mathematical foundations and algorithmic innovations for computational modeling.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        ⚛️ Computational Physics and Chemistry
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Computational methods for physical and chemical systems modeling and simulation.
+                      </p>
+                    </div>
+
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        🔧 Machine Learning Applications in Engineering
+                      </h5>
+                      <p style={{ fontSize: '0.9rem', lineHeight: '1.5', color: '#2d5016', margin: 0 }}>
+                        Integration of machine learning techniques in engineering design and analysis.
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        // Add the remaining CMES policy sections
+        {
+          id: 'editorial-policy',
+          title: '📝 Editorial Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>📝 Editorial Policy</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '25px' }}>
+                    CMES upholds a transparent and rigorous editorial policy aligned with international publishing standards. The editorial team ensures that every manuscript undergoes a double-blind peer review process, maintaining fairness, impartiality, and confidentiality.
+                  </p>
+                  
+                  <div style={{ display: 'grid', gap: '20px' }}>
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>🔍 Initial Screening</h5>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                        All submissions are initially screened by the Editor-in-Chief and Associate Editors to evaluate scope relevance, novelty, and technical accuracy.
+                      </p>
+                    </div>
+                    
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>⚖️ COPE Compliance</h5>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                        The journal adheres to the principles of COPE (Committee on Publication Ethics) and ensures that editors declare conflicts of interest, recuse themselves when necessary, and make decisions solely based on academic merit.
+                      </p>
+                    </div>
+                    
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>🌍 Diversity & Inclusion</h5>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                        CMES is committed to diversity and inclusivity within its editorial board, reviewers, and contributors worldwide.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'reviewer-policy',
+          title: '👥 Reviewer Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>👥 Reviewer Policy</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '25px' }}>
+                    Reviewers form the foundation of CMES's commitment to scientific excellence. The selection and engagement of reviewers are guided by their subject expertise, publication record, and adherence to ethical principles.
+                  </p>
+                  
+                  <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90', marginBottom: '20px' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '15px' }}>📋 Reviewer Responsibilities</h5>
+                    <div style={{ display: 'grid', gap: '12px' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Evaluate manuscripts objectively, focusing on originality, clarity, and methodological rigor.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Provide timely, comprehensive, and constructive feedback.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Maintain strict confidentiality and avoid personal or institutional bias.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Report any signs of plagiarism, ethical misconduct, or data irregularities.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style={{ background: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
+                    <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                      The editorial team regularly evaluates reviewer performance, recognizing excellence through acknowledgments or editorial board invitations. CMES values reviewers' contributions as essential to maintaining its reputation for academic rigor and credibility.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'journal-policy',
+          title: '📋 Journal Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>📋 Journal Policy</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '25px' }}>
+                    CMES's operational framework is rooted in academic integrity, transparency, and inclusivity.
+                  </p>
+                  
+                  <div style={{ display: 'grid', gap: '20px' }}>
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>🛡️ Ethical Standards</h5>
+                      <div style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
+                        <p style={{ margin: '0 0 10px 0' }}>• The journal follows the COPE and ICMJE guidelines for ethical publication.</p>
+                        <p style={{ margin: '0 0 10px 0' }}>• All submissions are screened for plagiarism, data manipulation, and duplicate publication.</p>
+                        <p style={{ margin: 0 }}>• Research involving human or animal data must include ethical approval statements.</p>
+                      </div>
+                    </div>
+                    
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>🌍 Inclusivity and Equality</h5>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                        CMES does not discriminate on the basis of gender, nationality, or institutional affiliation. All manuscripts are assessed purely on scholarly merit and relevance.
+                      </p>
+                    </div>
+                    
+                    <div style={{ background: '#f8fff8', padding: '20px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                      <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>🔍 Transparency</h5>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                        Policies regarding peer review, open access, copyright, and publication fees are communicated clearly. Editorial independence is maintained from all commercial interests.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'open-access',
+          title: '🔓 Open Access Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>🔓 Open Access Policy and Licensing</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90', marginBottom: '20px' }}>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: '0 0 15px 0' }}>
+                      CMES is a fully open access journal under Genosis Press, allowing unrestricted access to all published content.
+                    </p>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: 0 }}>
+                      Articles are distributed under the Creative Commons Attribution (CC BY) license, which permits free sharing, distribution, and adaptation, provided proper attribution to the original authors is maintained.
+                    </p>
+                  </div>
+                  
+                  <div style={{ background: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '20px' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>🌍 Global Impact</h5>
+                    <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                      This model promotes knowledge equality, ensuring that researchers, educators, and practitioners worldwide—especially in developing regions—can access and utilize high-quality computational research.
+                    </p>
+                  </div>
+                  
+                  <div style={{ background: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '12px' }}>📜 Standards Compliance</h5>
+                    <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5' }}>
+                      CMES aligns with global open access standards such as the Budapest Open Access Initiative and Plan S, advancing scientific collaboration and innovation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'copyright',
+          title: '©️ Copyright Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>©️ Copyright Policy</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90', marginBottom: '20px' }}>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: 0 }}>
+                      Authors retain the copyright of their published work in CMES. Upon acceptance, authors grant Genosis Press a non-exclusive license to publish, archive, and distribute the article while maintaining ownership rights.
+                    </p>
+                  </div>
+                  
+                  <div style={{ background: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '20px' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '15px' }}>✅ Authors are free to:</h5>
+                    <div style={{ display: 'grid', gap: '10px' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Reuse their work in academic or professional contexts with citation to the original publication.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Deposit their articles in institutional or subject repositories.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Share their research publicly to support open knowledge exchange.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style={{ background: '#fff5f5', padding: '20px', borderRadius: '8px', border: '1px solid #ffcdd2' }}>
+                    <h5 style={{ color: '#d32f2f', marginBottom: '12px' }}>⚠️ Important Notice</h5>
+                    <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5', color: '#d32f2f' }}>
+                      Unauthorized reproduction or redistribution of published materials without citation or permission is strictly prohibited.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'plagiarism-ai',
+          title: '🛡️ Plagiarism & AI Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>🛡️ Plagiarism & AI Policy</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <div style={{ background: '#fff5f5', padding: '25px', borderRadius: '8px', border: '1px solid #ffcdd2', marginBottom: '20px' }}>
+                    <h5 style={{ color: '#d32f2f', marginBottom: '15px' }}>🚫 Anti-Plagiarism Policy</h5>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: '0 0 15px 0' }}>
+                      CMES enforces a strict anti-plagiarism policy. All submitted manuscripts are checked using plagiarism detection software, and those exceeding acceptable similarity thresholds (typically 15%) are returned or rejected.
+                    </p>
+                    
+                    <h6 style={{ color: '#d32f2f', marginBottom: '10px' }}>Plagiarism includes:</h6>
+                    <div style={{ display: 'grid', gap: '8px' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Direct copying of text, figures, or ideas without citation.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Self-plagiarism or redundant publication.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Data fabrication or falsification.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '15px' }}>🤖 AI Usage Policy</h5>
+                    <div style={{ display: 'grid', gap: '12px', marginBottom: '15px' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>✅</span>
+                        <span>Authors may use AI tools (e.g., ChatGPT, Grammarly) for language editing and formatting.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>❌</span>
+                        <span>AI must not generate core content, analysis, or results.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>📝</span>
+                        <span>Authors must disclose any AI assistance in the acknowledgments section.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>⚠️</span>
+                        <span>Misrepresentation or AI-generated falsification is treated as academic misconduct.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'retraction',
+          title: '🔄 Retraction Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>🔄 Retraction Policy</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <div style={{ background: '#fff5f5', padding: '25px', borderRadius: '8px', border: '1px solid #ffcdd2', marginBottom: '20px' }}>
+                    <h5 style={{ color: '#d32f2f', marginBottom: '15px' }}>⚠️ CMES may retract or correct published articles if:</h5>
+                    <div style={{ display: 'grid', gap: '10px' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Evidence of plagiarism, fabrication, or unethical conduct is found.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Duplicate or redundant publications are identified.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#d32f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Errors that compromise the validity of results are discovered.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '15px' }}>📋 Procedure</h5>
+                    <div style={{ display: 'grid', gap: '15px' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                        <div style={{ background: '#1a5f2f', color: 'white', borderRadius: '50%', width: '25px', height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', flexShrink: 0 }}>1</div>
+                        <span>Complaints are investigated by the editorial board.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                        <div style={{ background: '#1a5f2f', color: 'white', borderRadius: '50%', width: '25px', height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', flexShrink: 0 }}>2</div>
+                        <span>Authors are provided an opportunity to respond.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                        <div style={{ background: '#1a5f2f', color: 'white', borderRadius: '50%', width: '25px', height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold', flexShrink: 0 }}>3</div>
+                        <span>If misconduct is verified, a retraction or correction notice is published, permanently linked to the original article.</span>
+                      </div>
+                    </div>
+                    
+                    <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(26, 95, 47, 0.1)', borderRadius: '6px' }}>
+                      <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5', fontStyle: 'italic' }}>
+                        Transparency and accountability guide all retraction actions to maintain the scientific integrity of the journal.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        },
+        {
+          id: 'fee-policy',
+          title: '💰 Fee Policy',
+          content: (
+            <div>
+              <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ background: '#1a5f2f', color: 'white', padding: '20px', textAlign: 'center' }}>
+                  <h4 style={{ margin: '0', fontSize: '1.3rem' }}>💰 Fee Policy</h4>
+                </div>
+                <div style={{ padding: '30px' }}>
+                  <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90', marginBottom: '20px' }}>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: 0 }}>
+                      CMES currently follows a transparent open access fee policy. While publication involves Article Processing Charges (APCs) to support open access infrastructure, Genosis Press offers waivers or discounts for authors from developing regions and for early-career researchers.
+                    </p>
+                  </div>
+                  
+                  <div style={{ background: '#ffffff', padding: '20px', borderRadius: '8px', border: '1px solid #e0e0e0', marginBottom: '20px' }}>
+                    <h5 style={{ color: '#1a5f2f', marginBottom: '15px' }}>🔑 Key Principles</h5>
+                    <div style={{ display: 'grid', gap: '10px' }}>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>No submission fees are required.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>APC details are clearly stated on the journal's website.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>Waivers and discounts promote equitable participation.</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <span style={{ color: '#1a5f2f', fontWeight: 'bold' }}>•</span>
+                        <span>No hidden or retrospective charges are applied.</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div style={{ background: 'rgba(26, 95, 47, 0.1)', padding: '20px', borderRadius: '8px', border: '1px solid rgba(26, 95, 47, 0.2)' }}>
+                    <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.5', fontWeight: '500', textAlign: 'center' }}>
+                      This model ensures that high-quality research is published based on merit, not financial capability.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        }
+      ]
+    }
+    
+    // Return JCIDS content (original journal)
+    return [
     {
       id: 'welcome',
       title: '🏠 Welcome to JCIDS',
@@ -41,6 +760,17 @@ const Home = () => {
             }}>
               🎓 Advancing Computational Intelligence & Decision Science
             </h3>
+            <div style={{ 
+              background: 'rgba(26, 61, 107, 0.1)', 
+              padding: '10px 20px', 
+              borderRadius: '20px', 
+              display: 'inline-block',
+              marginBottom: '20px'
+            }}>
+              <span style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a3d6b' }}>
+                📚 Published by Genosis Press
+              </span>
+            </div>
             <p style={{ 
               fontSize: '1.3rem', 
               lineHeight: '1.6', 
@@ -68,7 +798,7 @@ const Home = () => {
               }}>
                 📝 Submit Your Research
               </a>
-              <a href="mailto:submissions@jcids.org" style={{ 
+              <a href="mailto:submissions@genosispress.org?subject=JCIDS Submission" style={{ 
                 background: 'white',
                 color: '#2c4a80',
                 padding: '15px 30px',
@@ -1916,25 +2646,146 @@ const Home = () => {
       )
     }
   ]
+  }
+
+  const journalSections = getJournalSections(selectedJournal)
 
   return (
     <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
       {/* Header Section */}
       <div className="card" style={{ marginBottom: '30px', textAlign: 'center' }}>
-        <h1 style={{ color: '#1a3d6b', marginBottom: '15px', fontSize: '2.5rem' }}>
-          Welcome to JCIDS
-        </h1>
-        <p style={{ fontSize: '1.3rem', lineHeight: '1.6', color: '#666', marginBottom: '20px' }}>
-          Journal of Computational Intelligence and Decision Science
-        </p>
+        {/* Hero Section */}
+        <div className="hero-section">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="badge-text">Leading Academic Publisher</span>
+            </div>
+            
+            <h1 className="hero-title">
+              GENOSIS PRESS
+            </h1>
+            
+            <p className="hero-subtitle">
+              Empowering Global Research Through Excellence in Academic Publishing
+            </p>
+            
+            <div className="hero-stats">
+              <div className="stat-item">
+                <div className="stat-number">2</div>
+                <div className="stat-label">Premium Journals</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">25+</div>
+                <div className="stat-label">Countries</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number">100%</div>
+                <div className="stat-label">Open Access</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Journal Selection */}
+        <div style={{ marginBottom: '25px' }}>
+          <h3 style={{ color: '#333', marginBottom: '20px', fontSize: '1.3rem' }}>
+            � Our Premium Journals
+          </h3>
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            gap: '20px', 
+            flexWrap: 'wrap',
+            marginBottom: '20px'
+          }}>
+            <button
+              onClick={() => {
+                setSelectedJournal('jcids')
+                setActiveSection('welcome')
+              }}
+              style={{
+                padding: '20px 30px',
+                border: selectedJournal === 'jcids' ? '3px solid #1a3d6b' : '2px solid #e0e0e0',
+                borderRadius: '12px',
+                background: selectedJournal === 'jcids' ? '#e8f4fd' : 'white',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                transition: 'all 0.3s ease',
+                minWidth: '280px',
+                textAlign: 'left'
+              }}
+            >
+              <div style={{ fontWeight: 'bold', marginBottom: '8px', color: '#1a3d6b', fontSize: '1.2rem' }}>
+                📊 JCIDS
+              </div>
+              <div style={{ fontSize: '0.9rem', color: '#666', lineHeight: '1.4' }}>
+                Journal of Computational Intelligence and Decision Science
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#999', marginTop: '5px' }}>
+                AI • Machine Learning • Decision Science
+              </div>
+            </button>
+            
+            <button
+              onClick={() => {
+                setSelectedJournal('cmes')
+                setActiveSection('welcome')
+              }}
+              style={{
+                padding: '20px 30px',
+                border: selectedJournal === 'cmes' ? '3px solid #1a5f2f' : '2px solid #e0e0e0',
+                borderRadius: '12px',
+                background: selectedJournal === 'cmes' ? '#e8f8f0' : 'white',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                transition: 'all 0.3s ease',
+                minWidth: '280px',
+                textAlign: 'left'
+              }}
+            >
+              <div style={{ fontWeight: 'bold', marginBottom: '8px', color: '#1a5f2f', fontSize: '1.2rem' }}>
+                🔬 CMES
+              </div>
+              <div style={{ fontSize: '0.9rem', color: '#666', lineHeight: '1.4' }}>
+                Computational Modeling and Engineering Sciences
+              </div>
+              <div style={{ fontSize: '0.8rem', color: '#999', marginTop: '5px' }}>
+                Modeling • Simulation • Engineering
+              </div>
+            </button>
+          </div>
+        </div>
+        
+        {/* Current Journal Display */}
         <div style={{ 
-          background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+          background: selectedJournal === 'cmes' ? '#e8f8f0' : '#e8f4fd', 
+          padding: '15px 25px', 
+          borderRadius: '20px', 
+          display: 'inline-block',
+          border: selectedJournal === 'cmes' ? '1px solid #90ee90' : '1px solid #bee5eb'
+        }}>
+          <span style={{ 
+            color: selectedJournal === 'cmes' ? '#1a5f2f' : '#1a3d6b', 
+            fontSize: '1.1rem', 
+            fontWeight: '600' 
+          }}>
+            Currently Viewing: {selectedJournal === 'cmes' ? 'CMES' : 'JCIDS'} Journal
+          </span>
+        </div>
+        
+        <div style={{ 
+          background: `linear-gradient(135deg, ${selectedJournal === 'cmes' ? '#1a5f2f' : '#2c4a80'} 0%, ${selectedJournal === 'cmes' ? '#2d5016' : '#1a3d6b'} 100%)`,
           color: 'white',
           padding: '15px',
           borderRadius: '8px',
           display: 'inline-block'
         }}>
-          <strong>ISSN: 2348-8549 (Online) | Open Access | Double-Blind Peer Review</strong>
+          <strong>
+            {selectedJournal === 'cmes' 
+              ? 'ISSN: Coming Soon | Open Access | Double-Blind Peer Review' 
+              : 'ISSN: 2348-8549 (Online) | Open Access | Double-Blind Peer Review'
+            }
+          </strong>
         </div>
       </div>
 
@@ -2002,7 +2853,7 @@ const Home = () => {
             }}>
               📝 Submit Paper
             </a>
-            <a href="mailto:submissions@jcids.org" style={{ 
+            <a href="mailto:submissions@genosispress.org?subject=Editorial Inquiry" style={{ 
               display: 'block',
               padding: '15px 20px',
               color: '#2c4a80',
@@ -2034,10 +2885,10 @@ const Home = () => {
               borderBottom: '3px solid #2c4a80',
               paddingBottom: '10px'
             }}>
-              {journalSections.find(section => section.id === activeSection)?.title}
+              {getJournalSections(selectedJournal).find(section => section.id === activeSection)?.title}
             </h2>
             <div style={{ lineHeight: '1.6', color: '#333' }}>
-              {journalSections.find(section => section.id === activeSection)?.content}
+              {getJournalSections(selectedJournal).find(section => section.id === activeSection)?.content}
             </div>
           </div>
         </div>

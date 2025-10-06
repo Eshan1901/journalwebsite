@@ -34,10 +34,25 @@ const Sidebar = ({ isOpen, onClose }) => {
           <button className="sidebar-close" onClick={onClose}>
             <i className="fas fa-times"></i>
           </button>
-          <h3>JCIDS</h3>
-          <p style={{ fontSize: '0.9rem', margin: '5px 0 0 0', opacity: 0.9 }}>
-            Journal of Computational Intelligence and Decision Science
-          </p>
+          
+          {/* Publisher Info */}
+          <div style={{ textAlign: 'center', marginBottom: '20px', padding: '15px', background: 'rgba(255,255,255,0.1)', borderRadius: '8px' }}>
+            <h3 style={{ margin: '0 0 8px 0', fontSize: '1.3rem', fontWeight: 'bold' }}>📚 Genosis Press</h3>
+            <p style={{ margin: '0', fontSize: '0.9rem', opacity: 0.8 }}>Academic Publishing Excellence</p>
+            <p style={{ margin: '5px 0 0 0', fontSize: '0.8rem', opacity: 0.7 }}>2 Premium Journals</p>
+          </div>
+          
+          <div style={{ 
+            background: 'rgba(255,255,255,0.1)', 
+            padding: '10px', 
+            borderRadius: '8px',
+            textAlign: 'center',
+            marginBottom: '15px'
+          }}>
+            <p style={{ fontSize: '0.9rem', margin: '0', color: 'white', opacity: 0.9 }}>
+              📋 Navigate Journal Policies & Information
+            </p>
+          </div>
         </div>
         <div className="sidebar-content">
           {sidebarSections.map((section) => (
@@ -65,12 +80,12 @@ const Sidebar = ({ isOpen, onClose }) => {
               Quick Actions
             </div>
             
-            <div className="sidebar-item" onClick={() => window.location.href = '/submit'}>
+            <div className="sidebar-item" onClick={() => window.location.href = `/submit?journal=${selectedJournal}`}>
               <i className="fas fa-paper-plane"></i>
               <span>Submit Research</span>
             </div>
             
-            <div className="sidebar-item" onClick={() => window.location.href = 'mailto:submissions@jcids.org'}>
+            <div className="sidebar-item" onClick={() => window.location.href = `mailto:submissions@genosispress.org?subject=${selectedJournal.toUpperCase()} Submission Inquiry`}>
               <i className="fas fa-envelope"></i>
               <span>Contact Editorial</span>
             </div>
@@ -88,6 +103,25 @@ const Sidebar = ({ isOpen, onClose }) => {
             <div className="sidebar-item" onClick={() => window.location.href = '/admin'}>
               <i className="fas fa-user-shield"></i>
               <span>Admin Access</span>
+            </div>
+            
+            {/* Genosis Press Footer */}
+            <div style={{ 
+              marginTop: '20px', 
+              padding: '15px', 
+              background: 'rgba(255, 255, 255, 0.05)', 
+              borderRadius: '8px',
+              textAlign: 'center'
+            }}>
+              <div style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '5px' }}>
+                Powered by
+              </div>
+              <div style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'white' }}>
+                📚 Genosis Press
+              </div>
+              <div style={{ fontSize: '0.7rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '3px' }}>
+                Academic Publishing Excellence
+              </div>
             </div>
           </div>
         </div>
