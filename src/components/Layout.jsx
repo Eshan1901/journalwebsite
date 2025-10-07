@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
             <div className="brand-container">
               <div className="brand-icon">GP</div>
               <div className="brand-text">
-                <h1>GENOSIS PRESS</h1>
+                <h1>GNOSIS PRESS</h1>
                 <span className="brand-tagline">Academic Publishing Excellence</span>
               </div>
             </div>
@@ -112,7 +112,7 @@ const Layout = ({ children }) => {
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-brand">
-                <h4>GENOSIS PRESS</h4>
+                <h4>GNOSIS PRESS</h4>
                 <p>Leading academic publisher committed to advancing research and innovation through excellence in scholarly publishing.</p>
                 <div className="social-links">
                   <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
@@ -146,8 +146,8 @@ const Layout = ({ children }) => {
             <div className="footer-section">
               <h5>Contact Us</h5>
               <div className="contact-info">
-                <p><i className="fas fa-envelope"></i> <a href="mailto:info@genosispress.com">info@genosispress.com</a></p>
-                <p><i className="fas fa-paper-plane"></i> <a href="mailto:submissions@genosispress.com">submissions@genosispress.com</a></p>
+                <p><i className="fas fa-envelope"></i> <a href="mailto:info@gnosispress.com">info@gnosispress.com</a></p>
+                <p><i className="fas fa-paper-plane"></i> <a href="mailto:submissions@gnosispress.com">submissions@gnosispress.com</a></p>
                 <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
                 <p><i className="fas fa-map-marker-alt"></i> Global Publishing Network</p>
               </div>
@@ -156,7 +156,7 @@ const Layout = ({ children }) => {
           
           <div className="footer-bottom">
             <div className="footer-bottom-content">
-              <p>&copy; 2025 Genosis Press. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+              <p>&copy; 2025 Gnosis Press. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
               <div className="certifications">
                 <span className="cert-badge">COPE Member</span>
                 <span className="cert-badge">DOAJ Listed</span>

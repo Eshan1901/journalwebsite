@@ -37,7 +37,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           
           {/* Publisher Info */}
           <div style={{ textAlign: 'center', marginBottom: '20px', padding: '15px', background: 'rgba(255,255,255,0.1)', borderRadius: '8px' }}>
-            <h3 style={{ margin: '0 0 8px 0', fontSize: '1.3rem', fontWeight: 'bold' }}>📚 Genosis Press</h3>
+            <h3 style={{ margin: '0 0 8px 0', fontSize: '1.3rem', fontWeight: 'bold' }}>📚 Gnosis Press</h3>
             <p style={{ margin: '0', fontSize: '0.9rem', opacity: 0.8 }}>Academic Publishing Excellence</p>
             <p style={{ margin: '5px 0 0 0', fontSize: '0.8rem', opacity: 0.7 }}>2 Premium Journals</p>
           </div>
@@ -85,7 +85,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               <span>Submit Research</span>
             </div>
             
-            <div className="sidebar-item" onClick={() => window.location.href = `mailto:submissions@genosispress.org?subject=${selectedJournal.toUpperCase()} Submission Inquiry`}>
+            <div className="sidebar-item" onClick={() => window.location.href = `mailto:submissions@gnosispress.org?subject=${selectedJournal.toUpperCase()} Submission Inquiry`}>
               <i className="fas fa-envelope"></i>
               <span>Contact Editorial</span>
             </div>
@@ -105,7 +105,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               <span>Admin Access</span>
             </div>
             
-            {/* Genosis Press Footer */}
+            {/* Gnosis Press Footer */}
             <div style={{ 
               marginTop: '20px', 
               padding: '15px', 
@@ -117,7 +117,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                 Powered by
               </div>
               <div style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'white' }}>
-                📚 Genosis Press
+                📚 Gnosis Press
               </div>
               <div style={{ fontSize: '0.7rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '3px' }}>
                 Academic Publishing Excellence

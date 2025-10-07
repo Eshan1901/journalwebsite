@@ -52,7 +52,7 @@ const Home = () => {
                   marginBottom: '20px'
                 }}>
                   <span style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a5f2f' }}>
-                    📚 Published by Genosis Press
+                    📚 Published by Gnosis Press
                   </span>
                 </div>
                 <p style={{ 
@@ -500,7 +500,7 @@ const Home = () => {
                 <div style={{ padding: '30px' }}>
                   <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90', marginBottom: '20px' }}>
                     <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: '0 0 15px 0' }}>
-                      CMES is a fully open access journal under Genosis Press, allowing unrestricted access to all published content.
+                      CMES is a fully open access journal under Gnosis Press, allowing unrestricted access to all published content.
                     </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: 0 }}>
                       Articles are distributed under the Creative Commons Attribution (CC BY) license, which permits free sharing, distribution, and adaptation, provided proper attribution to the original authors is maintained.
@@ -537,7 +537,7 @@ const Home = () => {
                 <div style={{ padding: '30px' }}>
                   <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90', marginBottom: '20px' }}>
                     <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: 0 }}>
-                      Authors retain the copyright of their published work in CMES. Upon acceptance, authors grant Genosis Press a non-exclusive license to publish, archive, and distribute the article while maintaining ownership rights.
+                      Authors retain the copyright of their published work in CMES. Upon acceptance, authors grant Gnosis Press a non-exclusive license to publish, archive, and distribute the article while maintaining ownership rights.
                     </p>
                   </div>
                   
@@ -697,7 +697,7 @@ const Home = () => {
                 <div style={{ padding: '30px' }}>
                   <div style={{ background: '#f8fff8', padding: '25px', borderRadius: '8px', border: '1px solid #90ee90', marginBottom: '20px' }}>
                     <p style={{ fontSize: '1rem', lineHeight: '1.6', margin: 0 }}>
-                      CMES currently follows a transparent open access fee policy. While publication involves Article Processing Charges (APCs) to support open access infrastructure, Genosis Press offers waivers or discounts for authors from developing regions and for early-career researchers.
+                      CMES currently follows a transparent open access fee policy. While publication involves Article Processing Charges (APCs) to support open access infrastructure, Gnosis Press offers waivers or discounts for authors from developing regions and for early-career researchers.
                     </p>
                   </div>
                   
@@ -768,7 +768,7 @@ const Home = () => {
               marginBottom: '20px'
             }}>
               <span style={{ fontSize: '0.9rem', fontWeight: '600', color: '#1a3d6b' }}>
-                📚 Published by Genosis Press
+                📚 Published by Gnosis Press
               </span>
             </div>
             <p style={{ 
@@ -798,7 +798,7 @@ const Home = () => {
               }}>
                 📝 Submit Your Research
               </a>
-              <a href="mailto:submissions@genosispress.org?subject=JCIDS Submission" style={{ 
+              <a href="mailto:submissions@gnosispress.org?subject=JCIDS Submission" style={{ 
                 background: 'white',
                 color: '#2c4a80',
                 padding: '15px 30px',
@@ -2662,7 +2662,7 @@ const Home = () => {
             </div>
             
             <h1 className="hero-title">
-              GENOSIS PRESS
+              GNOSIS PRESS
             </h1>
             
             <p className="hero-subtitle">
@@ -2853,7 +2853,7 @@ const Home = () => {
             }}>
               📝 Submit Paper
             </a>
-            <a href="mailto:submissions@genosispress.org?subject=Editorial Inquiry" style={{ 
+            <a href="mailto:submissions@gnosispress.org?subject=Editorial Inquiry" style={{ 
               display: 'block',
               padding: '15px 20px',
               color: '#2c4a80',

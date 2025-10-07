@@ -383,7 +383,7 @@ const Journals = () => {
           maxWidth: '600px',
           margin: '0 auto 32px'
         }}>
-          Join thousands of researchers worldwide who trust Genosis Press for their academic publishing needs.
+          Join thousands of researchers worldwide who trust Gnosis Press for their academic publishing needs.
         </p>
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <button 
