@@ -100,11 +100,6 @@ const Sidebar = ({ isOpen, onClose }) => {
               <span>Reviewer Portal</span>
             </div>
             
-            <div className="sidebar-item" onClick={() => window.location.href = '/admin'}>
-              <i className="fas fa-user-shield"></i>
-              <span>Admin Access</span>
-            </div>
-            
             {/* Gnosis Press Footer */}
             <div style={{ 
               marginTop: '20px', 

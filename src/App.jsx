@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Submit from './pages/Submit'
-import Admin from './pages/Admin'
 import Journals from './pages/Journals'
 import './App.css'
 
@@ -13,7 +12,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/submit" element={<Submit />} />
-          <Route path="/admin" element={<Admin />} />
           <Route path="/journals" element={<Journals />} />
         </Routes>
       </Layout>

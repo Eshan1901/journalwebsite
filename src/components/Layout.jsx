@@ -43,10 +43,6 @@ const Layout = ({ children }) => {
               <i className="fas fa-paper-plane"></i>
               Submit Research
             </Link>
-            <Link to="/admin" className="header-btn secondary">
-              <i className="fas fa-user-shield"></i>
-              Portal
-            </Link>
           </div>
         </div>
       </header>
