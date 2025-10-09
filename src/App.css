@@ -816,8 +816,8 @@
   left: -300px;
   width: 300px;
   height: 100vh;
-  background: white;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
   transition: left 0.3s ease;
   z-index: 1000;
   overflow-y: auto;
@@ -828,26 +828,28 @@
 }
 
 .sidebar-header {
-  background: linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   color: white;
   padding: 20px;
-  text-align: center;
   position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sidebar-header h3 {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff !important;
 }
 
 .sidebar-content {
   padding: 0;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
 .sidebar-section {
   margin-bottom: 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0;
 }
 
@@ -856,39 +858,45 @@
 }
 
 .sidebar-item {
-  padding: 15px 20px;
+  padding: 12px 20px;
   display: flex;
   align-items: center;
   gap: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
-  color: #333;
+  color: #ffffff !important;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  margin: 2px 15px;
 }
 
 .sidebar-item:hover {
-  background-color: #f8f9fa;
-  color: #1a3d6b;
-  padding-left: 25px;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  transform: translateX(2px);
+}
+
+.sidebar-item.active {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+  color: #ffffff !important;
 }
 
 .sidebar-item i {
-  font-size: 0.8rem;
-  color: #666;
-  transition: transform 0.3s ease, color 0.2s ease;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.2s ease;
+  width: 16px;
 }
 
 .sidebar-item:hover i {
-  color: #1a3d6b;
+  color: #ffffff !important;
 }
 
-.sidebar-section {
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.sidebar-section:last-child {
-  border-bottom: none;
+.sidebar-item span {
+  color: #ffffff !important;
+  font-weight: 500;
 }
 
 .sidebar-close {
@@ -897,16 +905,16 @@
   right: 15px;
   background: none;
   border: none;
-  color: white;
+  color: #ffffff !important;
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 8px;
+  border-radius: 6px;
   transition: background-color 0.3s ease;
 }
 
 .sidebar-close:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .sidebar-overlay {

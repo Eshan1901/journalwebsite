@@ -1,127 +1,178 @@
-import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const Sidebar = ({ isOpen, onClose }) => {
-  const sidebarSections = [
-    { id: 'vision', title: 'Vision & Mission', icon: 'fas fa-eye' },
-    { id: 'aim', title: 'Journal Aim', icon: 'fas fa-bullseye' },
-    { id: 'domain-tracks', title: 'Domain Tracks', icon: 'fas fa-sitemap' },
-    { id: 'editorial-policy', title: 'Editorial Policy', icon: 'fas fa-gavel' },
-    { id: 'reviewer-policy', title: 'Reviewer Policy', icon: 'fas fa-user-check' },
-    { id: 'journal-policy', title: 'Journal Policy', icon: 'fas fa-file-contract' },
-    { id: 'open-access', title: 'Open Access Policy', icon: 'fas fa-unlock-alt' },
-    { id: 'copyright', title: 'Copyright Policy', icon: 'fas fa-copyright' },
-    { id: 'plagiarism-ai', title: 'Plagiarism & AI Policy', icon: 'fas fa-robot' },
-    { id: 'retraction', title: 'Retraction Policy', icon: 'fas fa-undo' },
-    { id: 'fee-policy', title: 'Fee Policy', icon: 'fas fa-money-bill-wave' }
-  ]
+  const location = useLocation()
+
+  // Define sections based on current page
+  const getPageSections = () => {
+    switch (location.pathname) {
+      case '/journals':
+        return [
+          { id: 'welcome', title: 'Welcome', icon: '🏠' },
+          { id: 'vision', title: 'Vision & Mission', icon: '👁️' },
+          { id: 'aim', title: 'Journal Aim', icon: '🎯' },
+          { id: 'domain-tracks', title: 'Domain Tracks', icon: '🌐' },
+          { id: 'editorial-policy', title: 'Editorial Policy', icon: '📋' },
+          { id: 'reviewer-policy', title: 'Reviewer Policy', icon: '✅' },
+          { id: 'open-access', title: 'Open Access', icon: '🔓' }
+        ]
+      case '/editors':
+        return [
+          { id: 'editor-in-chief', title: 'Editor-in-Chief', icon: '👑' },
+          { id: 'associate-editors', title: 'Associate Editors', icon: '👔' },
+          { id: 'assistant-editors', title: 'Assistant Editors', icon: '👥' }
+        ]
+      case '/submit':
+        return [
+          { id: 'guidelines', title: 'Guidelines', icon: '📝' },
+          { id: 'process', title: 'Review Process', icon: '🔄' },
+          { id: 'contact', title: 'Contact', icon: '📧' }
+        ]
+      default:
+        return [
+          { id: 'about', title: 'About JCIDS', icon: 'ℹ️' },
+          { id: 'highlights', title: 'Highlights', icon: '⭐' },
+          { id: 'domains', title: 'Research Areas', icon: '🔬' }
+        ]
+    }
+  }
+
+  const currentSections = getPageSections()
 
   const handleSectionClick = (sectionId) => {
-    // Scroll to the content section on the main page
-    const mainContent = document.querySelector('.container')
-    if (mainContent) {
-      // Trigger section change on the home page
-      window.dispatchEvent(new CustomEvent('changeSectionFromSidebar', { 
-        detail: { sectionId } 
-      }))
-    }
-    onClose() // Close sidebar after navigation
+    window.dispatchEvent(new CustomEvent('changeSectionFromSidebar', { 
+      detail: { sectionId } 
+    }))
+    onClose()
+  }
+
+  const handlePageNavigation = (page) => {
+    window.location.href = page
+    onClose()
   }
 
   return (
-    <>
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <div className="sidebar-header">
-          <button className="sidebar-close" onClick={onClose}>
-            <i className="fas fa-times"></i>
-          </button>
-          
-          {/* Publisher Info */}
-          <div style={{ textAlign: 'center', marginBottom: '20px', padding: '15px', background: 'rgba(255,255,255,0.1)', borderRadius: '8px' }}>
-            <h3 style={{ margin: '0 0 8px 0', fontSize: '1.3rem', fontWeight: 'bold' }}>📚 Gnosis Press</h3>
-            <p style={{ margin: '0', fontSize: '0.9rem', opacity: 0.8 }}>Academic Publishing Excellence</p>
-            <p style={{ margin: '5px 0 0 0', fontSize: '0.8rem', opacity: 0.7 }}>2 Premium Journals</p>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className="sidebar-header">
+        <button className="sidebar-close" onClick={onClose}>
+          <i className="fas fa-times"></i>
+        </button>
+        
+        <div style={{ textAlign: 'center' }}>
+          <h3 style={{ 
+            margin: '0', 
+            fontSize: '1.1rem', 
+            fontWeight: '600',
+            color: '#ffffff'
+          }}>
+            📚 JCIDS
+          </h3>
+          <p style={{ 
+            margin: '4px 0 0 0', 
+            fontSize: '0.8rem', 
+            color: '#e2e8f0'
+          }}>
+            Journal Navigation
+          </p>
+        </div>
+      </div>
+      
+      <div className="sidebar-content">
+        {/* Current Page Sections */}
+        {currentSections.length > 0 && (
+          <div style={{ padding: '20px 0' }}>
+            <div style={{ 
+              padding: '0 20px 15px 20px',
+              fontSize: '0.75rem',
+              fontWeight: '700',
+              color: '#94a3b8',
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>
+              {location.pathname === '/journals' && 'Journal Sections'}
+              {location.pathname === '/editors' && 'Editorial Team'}
+              {location.pathname === '/submit' && 'Submission Info'}
+              {location.pathname === '/' && 'About JCIDS'}
+            </div>
+            
+            <div>
+              {currentSections.map((section) => (
+                <div key={section.id} 
+                     className="sidebar-item"
+                     onClick={() => handleSectionClick(section.id)}>
+                  <span style={{ fontSize: '16px' }}>{section.icon}</span>
+                  <span>{section.title}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* Navigation to other pages */}
+        <div style={{ 
+          padding: '20px 0',
+          borderTop: currentSections.length > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none'
+        }}>
+          <div style={{ 
+            padding: '0 20px 15px 20px',
+            fontSize: '0.75rem',
+            fontWeight: '700',
+            color: '#94a3b8',
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>
+            Other Pages
           </div>
           
-          <div style={{ 
-            background: 'rgba(255,255,255,0.1)', 
-            padding: '10px', 
-            borderRadius: '8px',
-            textAlign: 'center',
-            marginBottom: '15px'
-          }}>
-            <p style={{ fontSize: '0.9rem', margin: '0', color: 'white', opacity: 0.9 }}>
-              📋 Navigate Journal Policies & Information
-            </p>
+          <div>
+            {location.pathname !== '/' && (
+              <div className="sidebar-item" onClick={() => handlePageNavigation('/')}>
+                <i className="fas fa-home"></i>
+                <span>Home</span>
+              </div>
+            )}
+            
+            {location.pathname !== '/journals' && (
+              <div className="sidebar-item" onClick={() => handlePageNavigation('/journals')}>
+                <i className="fas fa-book-open"></i>
+                <span>Journal</span>
+              </div>
+            )}
+            
+            {location.pathname !== '/editors' && (
+              <div className="sidebar-item" onClick={() => handlePageNavigation('/editors')}>
+                <i className="fas fa-users"></i>
+                <span>Editorial Team</span>
+              </div>
+            )}
+            
+            {location.pathname !== '/submit' && (
+              <div className="sidebar-item" onClick={() => handlePageNavigation('/submit')}>
+                <i className="fas fa-paper-plane"></i>
+                <span>Submit Paper</span>
+              </div>
+            )}
           </div>
         </div>
-        <div className="sidebar-content">
-          {sidebarSections.map((section) => (
-            <div key={section.id} className="sidebar-section">
-              <div 
-                className="sidebar-item"
-                onClick={() => handleSectionClick(section.id)}
-              >
-                <i className={section.icon}></i>
-                <span>{section.title}</span>
-              </div>
-            </div>
-          ))}
-          
-          {/* Quick Actions Section */}
-          <div style={{ marginTop: '30px' }}>
-            <div style={{ 
-              padding: '15px 20px',
-              background: 'rgba(255, 255, 255, 0.1)',
-              borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-              color: 'white',
-              fontSize: '0.95rem',
-              fontWeight: '600'
-            }}>
-              Quick Actions
-            </div>
-            
-            <div className="sidebar-item" onClick={() => window.location.href = `/submit?journal=${selectedJournal}`}>
-              <i className="fas fa-paper-plane"></i>
-              <span>Submit Research</span>
-            </div>
-            
-            <div className="sidebar-item" onClick={() => window.location.href = `mailto:submissions@gnosispress.org?subject=${selectedJournal.toUpperCase()} Submission Inquiry`}>
-              <i className="fas fa-envelope"></i>
-              <span>Contact Editorial</span>
-            </div>
-            
-            <div className="sidebar-item">
-              <i className="fas fa-file-download"></i>
-              <span>Author Template</span>
-            </div>
-            
-            <div className="sidebar-item">
-              <i className="fas fa-search"></i>
-              <span>Reviewer Portal</span>
-            </div>
-            
-            {/* Gnosis Press Footer */}
-            <div style={{ 
-              marginTop: '20px', 
-              padding: '15px', 
-              background: 'rgba(255, 255, 255, 0.05)', 
-              borderRadius: '8px',
-              textAlign: 'center'
-            }}>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.7)', marginBottom: '5px' }}>
-                Powered by
-              </div>
-              <div style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'white' }}>
-                📚 Gnosis Press
-              </div>
-              <div style={{ fontSize: '0.7rem', color: 'rgba(255, 255, 255, 0.6)', marginTop: '3px' }}>
-                Academic Publishing Excellence
-              </div>
-            </div>
+        
+        {/* Contact Section */}
+        <div style={{ 
+          padding: '20px 15px',
+          borderTop: '1px solid rgba(255,255,255,0.1)'
+        }}>
+          <div className="sidebar-item" 
+               onClick={() => window.location.href = 'mailto:editorial@gnosispress.org'}
+               style={{
+                 backgroundColor: 'rgba(34, 197, 94, 0.15)',
+                 border: '1px solid rgba(34, 197, 94, 0.3)',
+                 borderRadius: '8px'
+               }}>
+            <i className="fas fa-envelope" style={{ color: '#4ade80' }}></i>
+            <span>Contact Editorial</span>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

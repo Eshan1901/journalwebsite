@@ -24,7 +24,7 @@ const Journals = () => {
               marginBottom: '20px', 
               fontWeight: 'bold' 
             }}>
-              Advancing Computational Intelligence & Decision Science
+              Journal of Computational Intelligence & Decision Science
             </h3>
             <div style={{ 
               background: 'rgba(26, 61, 107, 0.1)', 
