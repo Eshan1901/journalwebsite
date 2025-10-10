@@ -59,14 +59,25 @@ const Sidebar = ({ isOpen, onClose }) => {
         </button>
         
         <div style={{ textAlign: 'center' }}>
-          <h3 style={{ 
-            margin: '0', 
-            fontSize: '1.1rem', 
-            fontWeight: '600',
-            color: '#ffffff'
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '8px'
           }}>
-            📚 JCIDS
-          </h3>
+            <div className="sidebar-logo-container">
+              <img src="/logo.png" alt="Gnosis Press Logo" className="sidebar-logo" />
+            </div>
+            <h3 style={{ 
+              margin: '0', 
+              fontSize: '1.2rem', 
+              fontWeight: '700',
+              color: '#ffffff',
+              marginLeft: '12px'
+            }}>
+              JCIDS
+            </h3>
+          </div>
           <p style={{ 
             margin: '4px 0 0 0', 
             fontSize: '0.8rem', 

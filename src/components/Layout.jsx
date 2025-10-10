@@ -24,7 +24,9 @@ const Layout = ({ children }) => {
         <div className="header-content">
           <div className="journal-info">
             <div className="brand-container">
-              <div className="brand-icon">GP</div>
+              <div className="brand-icon-large">
+                <img src="/logo.png" alt="Gnosis Press Logo" className="brand-logo" />
+              </div>
               <div className="brand-text">
                 <h1>GNOSIS PRESS</h1>
                 <span className="brand-tagline">Academic Publishing Excellence</span>
@@ -108,7 +110,21 @@ const Layout = ({ children }) => {
           <div className="footer-content">
             <div className="footer-section">
               <div className="footer-brand">
-                <h4>GNOSIS PRESS</h4>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '16px'
+                }}>
+                  <div className="footer-logo-container">
+                    <img src="/logo.png" alt="Gnosis Press Logo" className="footer-logo" />
+                  </div>
+                  <h4 style={{ 
+                    margin: '0', 
+                    marginLeft: '12px',
+                    fontSize: '1.5rem',
+                    fontWeight: '700'
+                  }}>GNOSIS PRESS</h4>
+                </div>
                 <p>Leading academic publisher committed to advancing research and innovation through excellence in scholarly publishing.</p>
                 <div className="social-links">
                   <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
