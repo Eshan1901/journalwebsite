@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
             <div className="journal-meta">
               <div className="meta-badge">
                 <span className="badge-premium">PREMIUM</span>
-                <span className="badge-journals">2 Journals</span>
+                <span className="badge-journals">1 Journal</span>
               </div>
               <p>Double-Blind Peer Review • Open Access • Global Reach</p>
             </div>
@@ -136,12 +136,11 @@ const Layout = ({ children }) => {
             </div>
             
             <div className="footer-section">
-              <h5>Our Journals</h5>
+              <h5>Our Journal</h5>
               <ul>
-                <li><a href="/">JCIDS - Computational Intelligence</a></li>
-                <li><a href="/">CMES - Engineering Sciences</a></li>
-                <li><a href="/">Submit Your Research</a></li>
-                <li><a href="/">Editorial Guidelines</a></li>
+                <li><a href="/journals">JCIDS - Computational Intelligence</a></li>
+                <li><a href="/submit">Submit Your Research</a></li>
+                <li><a href="/editors">Editorial Guidelines</a></li>
               </ul>
             </div>
             
