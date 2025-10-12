@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Home = () => {
   return (
-    <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '20px' }}>
+    <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '15px' }}>
       {/* Hero Section */}
       <div className="hero-section">
         <div className="hero-content">
@@ -38,23 +38,23 @@ const Home = () => {
       {/* Featured Journal */}
       <div style={{ 
         background: 'white', 
-        borderRadius: '24px', 
-        padding: '40px', 
-        marginBottom: '60px',
-        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+        borderRadius: '20px', 
+        padding: '35px', 
+        marginBottom: '40px',
+        boxShadow: '0 8px 25px rgba(0, 0, 0, 0.08)',
         border: '2px solid #3b82f620'
       }}>
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '30px' }}>
           <h2 style={{ 
-            fontSize: '2.5rem', 
+            fontSize: '2.2rem', 
             fontWeight: '800', 
             color: '#1e293b', 
-            marginBottom: '16px' 
+            marginBottom: '12px' 
           }}>
             Our Premier Journal
           </h2>
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1.1rem', 
             color: '#64748b',
             maxWidth: '600px',
             margin: '0 auto'
@@ -66,60 +66,48 @@ const Home = () => {
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: '2fr 1fr',
-          gap: '40px',
+          gap: '35px',
           alignItems: 'center'
         }}>
           <div>
-            <div style={{ 
-              display: 'inline-block',
-              padding: '8px 20px',
-              background: '#3b82f6',
-              color: 'white',
-              borderRadius: '50px',
-              fontSize: '0.9rem',
-              fontWeight: '600',
-              marginBottom: '16px'
-            }}>
-              Artificial Intelligence & Machine Learning
-            </div>
             <h3 style={{ 
-              fontSize: '2.5rem', 
+              fontSize: '2.2rem', 
               fontWeight: '800', 
               color: '#3b82f6', 
-              marginBottom: '8px' 
+              marginBottom: '6px' 
             }}>
               JCIDS
             </h3>
             <h4 style={{ 
-              fontSize: '1.3rem', 
+              fontSize: '1.2rem', 
               color: '#64748b', 
-              marginBottom: '16px',
+              marginBottom: '15px',
               fontWeight: '600'
             }}>
               Journal of Computational Intelligence and Decision Science
             </h4>
             <p style={{ 
-              fontSize: '1.1rem', 
-              lineHeight: '1.6', 
+              fontSize: '1rem', 
+              lineHeight: '1.5', 
               color: '#475569',
-              marginBottom: '24px'
+              marginBottom: '25px'
             }}>
               Leading research in artificial intelligence, machine learning, and intelligent decision-making systems for advancing computational intelligence.
             </p>
             
             <div style={{ 
               display: 'flex',
-              gap: '16px',
-              marginTop: '24px'
+              gap: '14px',
+              marginTop: '25px'
             }}>
               <button
                 style={{
                   background: '#3b82f6',
                   color: 'white',
                   border: 'none',
-                  padding: '16px 32px',
-                  borderRadius: '12px',
-                  fontSize: '1.1rem',
+                  padding: '14px 28px',
+                  borderRadius: '10px',
+                  fontSize: '1rem',
                   fontWeight: '600',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease'
@@ -135,9 +123,9 @@ const Home = () => {
                   background: 'transparent',
                   color: '#3b82f6',
                   border: '2px solid #3b82f6',
-                  padding: '16px 32px',
-                  borderRadius: '12px',
-                  fontSize: '1.1rem',
+                  padding: '14px 28px',
+                  borderRadius: '10px',
+                  fontSize: '1rem',
                   fontWeight: '600',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease'
@@ -160,30 +148,30 @@ const Home = () => {
           <div>
             <div style={{ 
               background: '#f8fafc', 
-              padding: '30px', 
-              borderRadius: '16px',
+              padding: '25px', 
+              borderRadius: '14px',
               border: '1px solid #e2e8f0'
             }}>
-              <h5 style={{ color: '#1e293b', marginBottom: '20px', fontSize: '1.2rem' }}>Journal Highlights</h5>
+              <h5 style={{ color: '#1e293b', marginBottom: '18px', fontSize: '1.1rem' }}>Journal Highlights</h5>
               
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#3b82f6' }}>2348-8549</div>
-                <div style={{ color: '#64748b', fontSize: '0.9rem' }}>ISSN (Online)</div>
+              <div style={{ marginBottom: '14px' }}>
+                <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#3b82f6' }}>2348-8549</div>
+                <div style={{ color: '#64748b', fontSize: '0.85rem' }}>ISSN (Online)</div>
               </div>
               
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#10b981' }}>15-30</div>
-                <div style={{ color: '#64748b', fontSize: '0.9rem' }}>Days Review Time</div>
+              <div style={{ marginBottom: '14px' }}>
+                <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#10b981' }}>15-30</div>
+                <div style={{ color: '#64748b', fontSize: '0.85rem' }}>Days Review Time</div>
               </div>
               
-              <div style={{ marginBottom: '16px' }}>
-                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#f59e0b' }}>100%</div>
-                <div style={{ color: '#64748b', fontSize: '0.9rem' }}>Open Access</div>
+              <div style={{ marginBottom: '14px' }}>
+                <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#f59e0b' }}>100%</div>
+                <div style={{ color: '#64748b', fontSize: '0.85rem' }}>Open Access</div>
               </div>
               
               <div>
-                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#ef4444' }}>Global</div>
-                <div style={{ color: '#64748b', fontSize: '0.9rem' }}>Reach</div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#ef4444' }}>Global</div>
+                <div style={{ color: '#64748b', fontSize: '0.85rem' }}>Reach</div>
               </div>
             </div>
           </div>
@@ -193,21 +181,21 @@ const Home = () => {
       {/* Research Areas */}
       <div style={{ 
         background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)', 
-        borderRadius: '24px', 
-        padding: '60px 40px', 
-        marginBottom: '60px'
+        borderRadius: '20px', 
+        padding: '45px 35px', 
+        marginBottom: '45px'
       }}>
-        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <h2 style={{ 
-            fontSize: '2.5rem', 
+            fontSize: '2.2rem', 
             fontWeight: '800', 
             color: '#1e293b', 
-            marginBottom: '16px' 
+            marginBottom: '12px' 
           }}>
             Research Domain Tracks
           </h2>
           <p style={{ 
-            fontSize: '1.2rem', 
+            fontSize: '1.1rem', 
             color: '#64748b',
             maxWidth: '700px',
             margin: '0 auto'
@@ -218,8 +206,8 @@ const Home = () => {
 
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '25px' 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+          gap: '20px' 
         }}>
           {[
             {
@@ -267,27 +255,27 @@ const Home = () => {
               key={index}
               style={{
                 background: 'white',
-                padding: '30px',
-                borderRadius: '16px',
-                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.05)',
+                padding: '25px',
+                borderRadius: '14px',
+                boxShadow: '0 3px 12px rgba(0, 0, 0, 0.04)',
                 border: '1px solid #e2e8f0',
                 textAlign: 'center'
               }}
             >
-              <div style={{ fontSize: '3rem', marginBottom: '16px' }}>{track.icon}</div>
+              <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>{track.icon}</div>
               <h4 style={{ 
                 color: '#1e293b', 
-                marginBottom: '12px', 
-                fontSize: '1.2rem',
+                marginBottom: '10px', 
+                fontSize: '1.1rem',
                 fontWeight: '700'
               }}>
                 {track.title}
               </h4>
               <p style={{ 
                 margin: '0', 
-                lineHeight: '1.6', 
+                lineHeight: '1.5', 
                 color: '#64748b',
-                fontSize: '0.95rem'
+                fontSize: '0.9rem'
               }}>
                 {track.description}
               </p>
@@ -299,37 +287,37 @@ const Home = () => {
       {/* Call to Action */}
       <div style={{
         background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
-        borderRadius: '24px',
-        padding: '60px 40px',
+        borderRadius: '20px',
+        padding: '45px 35px',
         textAlign: 'center',
         color: 'white'
       }}>
         <h2 style={{ 
-          fontSize: '2.5rem', 
+          fontSize: '2.2rem', 
           fontWeight: '800', 
-          marginBottom: '16px',
+          marginBottom: '12px',
           color: 'white'
         }}>
           Ready to Publish Your Research?
         </h2>
         <p style={{ 
-          fontSize: '1.2rem', 
-          marginBottom: '32px', 
+          fontSize: '1.1rem', 
+          marginBottom: '28px', 
           color: '#dbeafe',
           maxWidth: '600px',
-          margin: '0 auto 32px'
+          margin: '0 auto 28px'
         }}>
           Join researchers worldwide who trust Gnosis Press for their academic publishing needs.
         </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <button 
             style={{
               background: 'white',
               color: '#3b82f6',
               border: 'none',
-              padding: '16px 32px',
-              borderRadius: '12px',
-              fontSize: '1.1rem',
+              padding: '14px 28px',
+              borderRadius: '10px',
+              fontSize: '1rem',
               fontWeight: '600',
               cursor: 'pointer',
               transition: 'all 0.2s ease'
@@ -345,9 +333,9 @@ const Home = () => {
               background: 'transparent',
               color: 'white',
               border: '2px solid white',
-              padding: '16px 32px',
-              borderRadius: '12px',
-              fontSize: '1.1rem',
+              padding: '14px 28px',
+              borderRadius: '10px',
+              fontSize: '1rem',
               fontWeight: '600',
               cursor: 'pointer',
               transition: 'all 0.2s ease'

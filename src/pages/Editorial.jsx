@@ -175,8 +175,8 @@ const Editorial = () => {
       )
     },
     {
-      id: 'associate-editors',
-      title: 'Associate Editors',
+      id: 'managing-editors',
+      title: 'Managing Editors',
       content: (
         <div>
           <div style={{ 
@@ -188,16 +188,16 @@ const Editorial = () => {
             marginBottom: '30px'
           }}>
             <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
-              Associate Editors
+              Managing Editors
             </h3>
             <p style={{ fontSize: '1.2rem', lineHeight: '1.6', margin: '0' }}>
-              Experienced researchers supporting the editorial process and peer review coordination.
+              Managing editorial operations and overseeing the publication process.
             </p>
           </div>
 
-          {/* Associate Editors - moved from Editorial Board */}
+          {/* Managing Editors */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '25px' }}>
-            {/* Ramkumar Sivasakthivel */}
+            {/* Dr. Ramkumar Sivasakthivel */}
             <div style={{ 
               background: 'white',
               padding: '30px',
@@ -246,44 +246,27 @@ const Editorial = () => {
                   Department of Computer Science<br/>
                   School of Sciences<br/>
                   Christ (Deemed to be University)<br/>
-                  Bangalore, Karnataka - 560 073, India
+                  Bangalore, India
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:ramkumar.s@christuniversity.in" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
                 }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:ramkumar.s@christuniversity.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ramkumar.s@christuniversity.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0002-6224-6167" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0002-6224-6167
-                  </a>
-                </div>
+                  ramkumar.s@christuniversity.in
+                </a>
               </div>
             </div>
 
-            {/* R. Gobinath */}
+            {/* Dr. Rajendran T */}
             <div style={{ 
               background: 'white',
               padding: '30px',
@@ -305,7 +288,7 @@ const Editorial = () => {
                   fontWeight: 'bold',
                   marginRight: '15px'
                 }}>
-                  RG
+                  RT
                 </div>
                 <div style={{ flex: 1 }}>
                   <h4 style={{ 
@@ -314,7 +297,7 @@ const Editorial = () => {
                     fontSize: '1.3rem',
                     fontWeight: '700'
                   }}>
-                    Dr. R. Gobinath
+                    Dr. Rajendran T
                   </h4>
                   <p style={{ 
                     color: '#2c4a80', 
@@ -329,133 +312,55 @@ const Editorial = () => {
               
               <div style={{ marginBottom: '15px' }}>
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of Computer Science<br/>
-                  School of Sciences<br/>
-                  Christ (Deemed to be University)<br/>
-                  Bangalore, Karnataka - 560 073, India
+                  Department of Computer Science and Engineering<br/>
+                  JCT College of Engineering and Technology<br/>
+                  Coimbatore, India
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:rajendran.thavasimuthusamy@ieee.org" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
                 }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:gobinath.r@christuniversity.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    gobinath.r@christuniversity.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0001-5800-9823" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0001-5800-9823
-                  </a>
-                </div>
+                  rajendran.thavasimuthusamy@ieee.org
+                </a>
               </div>
             </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'associate-editors',
+      title: 'Associate Editors',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Associate Editors
+            </h3>
+            <p style={{ fontSize: '1.2rem', lineHeight: '1.6', margin: '0' }}>
+              Experienced researchers supporting the editorial process and peer review coordination.
+            </p>
+          </div>
 
-            {/* R. Stephen */}
-            <div style={{ 
-              background: 'white',
-              padding: '30px',
-              borderRadius: '12px',
-              border: '1px solid #e2e8f0',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                <div style={{ 
-                  width: '60px', 
-                  height: '60px', 
-                  borderRadius: '50%', 
-                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '1.4rem',
-                  fontWeight: 'bold',
-                  marginRight: '15px'
-                }}>
-                  RS
-                </div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ 
-                    color: '#1a3d6b', 
-                    margin: '0 0 5px 0', 
-                    fontSize: '1.3rem',
-                    fontWeight: '700'
-                  }}>
-                    Dr. R. Stephen
-                  </h4>
-                  <p style={{ 
-                    color: '#2c4a80', 
-                    margin: '0', 
-                    fontSize: '1rem',
-                    fontWeight: '600'
-                  }}>
-                    Assistant Professor
-                  </p>
-                </div>
-              </div>
-              
-              <div style={{ marginBottom: '15px' }}>
-                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of Computer Science<br/>
-                  School of Sciences<br/>
-                  Christ (Deemed to be University)<br/>
-                  Bangalore, Karnataka - 560 073, India
-                </p>
-              </div>
-
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:stephen.r@christuniversity.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    stephen.r@christuniversity.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0001-7123-4371" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0001-7123-4371
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* K.Sathesh Kumar */}
+          {/* Associate Editors */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '25px' }}>
+            {/* Dr. K. Sathesh Kumar */}
             <div style={{ 
               background: 'white',
               padding: '30px',
@@ -503,120 +408,8 @@ const Editorial = () => {
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
                   Computer Science and Engineering<br/>
                   Alliance College of Advanced Computing<br/>
-                  Alliance University - Central Campus<br/>
-                  Chikkahadage Cross Chandapura, Anekal<br/>
-                  Main Road, Bengaluru, Karnataka 562106
-                </p>
-              </div>
-
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:satheshkumar.k@alliance.edu.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    satheshkumar.k@alliance.edu.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0003-4998-7101" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0003-4998-7101
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: 'assistant-editors',
-      title: 'Assistant Editors',
-      content: (
-        <div>
-          <div style={{ 
-            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-            color: 'white',
-            padding: '30px', 
-            borderRadius: '12px', 
-            textAlign: 'center',
-            marginBottom: '30px'
-          }}>
-            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
-              Assistant Editors
-            </h3>
-            <p style={{ fontSize: '1.2rem', lineHeight: '1.6', margin: '0' }}>
-              Supporting editorial operations and coordinating manuscript processing.
-            </p>
-          </div>
-
-          {/* Assistant Editors */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '25px' }}>
-            {/* Rajendran T */}
-            <div style={{ 
-              background: 'white',
-              padding: '30px',
-              borderRadius: '12px',
-              border: '1px solid #e2e8f0',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                <div style={{ 
-                  width: '60px', 
-                  height: '60px', 
-                  borderRadius: '50%', 
-                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '1.4rem',
-                  fontWeight: 'bold',
-                  marginRight: '15px'
-                }}>
-                  RT
-                </div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ 
-                    color: '#1a3d6b', 
-                    margin: '0 0 5px 0', 
-                    fontSize: '1.3rem',
-                    fontWeight: '700'
-                  }}>
-                    Dr. Rajendran T
-                  </h4>
-                  <p style={{ 
-                    color: '#2c4a80', 
-                    margin: '0', 
-                    fontSize: '1rem',
-                    fontWeight: '600'
-                  }}>
-                    Associate Professor
-                  </p>
-                </div>
-              </div>
-              
-              <div style={{ marginBottom: '15px' }}>
-                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of Computer Science and Engineering<br/>
-                  JCT College of Engineering and Technology (Autonomous)<br/>
-                  Coimbatore, India
+                  Alliance University<br/>
+                  Bangalore, India
                 </p>
               </div>
 
@@ -627,16 +420,16 @@ const Editorial = () => {
                 fontSize: '0.85rem'
               }}>
                 <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                <a href="mailto:rajendran.thavasimuthusamy@ieee.org" style={{ 
+                <a href="mailto:satheshkumar.k@alliance.edu.in" style={{ 
                   color: '#2c4a80', 
                   textDecoration: 'none'
                 }}>
-                  rajendran.thavasimuthusamy@ieee.org
+                  satheshkumar.k@alliance.edu.in
                 </a>
               </div>
             </div>
 
-            {/* Sriramakrishnan Pathmanaban */}
+            {/* Dr. Sriramakrishnan Pathmanaban */}
             <div style={{ 
               background: 'white',
               padding: '30px',
@@ -684,8 +477,8 @@ const Editorial = () => {
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
                   Department of Mathematics<br/>
                   Amrita School of Physical Sciences<br/>
-                  Amrita Vishwa Vidyapeetham (Deemed to be University)<br/>
-                  Coimbatore Campus – 641 112, Tamil Nadu, India
+                  Amrita Vishwa Vidyapeetham<br/>
+                  Coimbatore, India
                 </p>
               </div>
 
@@ -705,6 +498,101 @@ const Editorial = () => {
               </div>
             </div>
 
+            {/* Dr. Gobinath */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  RG
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. Gobinath
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Associate Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of Computer Science<br/>
+                  School of Sciences<br/>
+                  Christ (Deemed to be University)<br/>
+                  Bangalore, India
+                </p>
+              </div>
+
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:gobinath.r@christuniversity.in" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
+                }}>
+                  gobinath.r@christuniversity.in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'assistant-editors',
+      title: 'Assistant Editors',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Assistant Editors
+            </h3>
+            <p style={{ fontSize: '1.2rem', lineHeight: '1.6', margin: '0' }}>
+              Supporting editorial operations and coordinating manuscript processing.
+            </p>
+          </div>
+
+          {/* Assistant Editors */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '25px' }}>
             {/* Dr. M. Arun */}
             <div style={{ 
               background: 'white',
@@ -754,7 +642,7 @@ const Editorial = () => {
                   Department of Computer Applications<br/>
                   School of Computing<br/>
                   Kalasalingam Academy of Research and Education<br/>
-                  Anand Nagar, Krishnan Koil - 626 126, India
+                  Krishnan Koil, Tamil Nadu, India
                 </p>
               </div>
 
@@ -770,6 +658,75 @@ const Editorial = () => {
                   textDecoration: 'none'
                 }}>
                   drarunmurugesan@gmail.com
+                </a>
+              </div>
+            </div>
+
+            {/* Dr. R. Stephen */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  RS
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. R. Stephen
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Assistant Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of Computer Science<br/>
+                  School of Sciences<br/>
+                  Christ (Deemed to be University)<br/>
+                  Bangalore, India
+                </p>
+              </div>
+
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:stephen.r@christuniversity.in" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
+                }}>
+                  stephen.r@christuniversity.in
                 </a>
               </div>
             </div>
