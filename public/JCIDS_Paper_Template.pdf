@@ -1,0 +1,124 @@
+%PDF-1.4
+%âăäź
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 2500
+>>
+stream
+BT
+/F1 14 Tf
+72 720 Td
+(JCIDS Paper Template) Tj
+0 -30 Td
+(Journal of Computational Intelligence and Decision Science) Tj
+0 -20 Td
+(Gnosis Press) Tj
+0 -40 Td
+(Paper Title: [Enter Your Research Title Here]) Tj
+0 -30 Td
+(Abstract) Tj
+0 -20 Td
+([Provide a concise abstract of 150-300 words summarizing your research) Tj
+0 -15 Td
+(objectives, methodology, key findings, and conclusions.]) Tj
+0 -30 Td
+(Keywords: [4-6 keywords separated by commas]) Tj
+0 -40 Td
+(1. Introduction) Tj
+0 -20 Td
+([Introduce your research problem and objectives]) Tj
+0 -30 Td
+(2. Literature Review) Tj
+0 -20 Td
+([Review existing work and position your research]) Tj
+0 -30 Td
+(3. Methodology) Tj
+0 -20 Td
+([Describe your research methods and experimental setup]) Tj
+0 -30 Td
+(4. Results and Analysis) Tj
+0 -20 Td
+([Present findings with figures and tables]) Tj
+0 -30 Td
+(5. Discussion) Tj
+0 -20 Td
+([Interpret results and discuss implications]) Tj
+0 -30 Td
+(6. Conclusion) Tj
+0 -20 Td
+([Summarize key findings and future work]) Tj
+0 -30 Td
+(References) Tj
+0 -20 Td
+([IEEE format references]) Tj
+0 -40 Td
+(Author Information:) Tj
+0 -15 Td
+(Primary Author: [Name, Affiliation, Email]) Tj
+0 -15 Td
+(Corresponding Author: [Name and Email]) Tj
+0 -30 Td
+(Submission Guidelines:) Tj
+0 -15 Td
+(- Maximum 12 pages for full papers) Tj
+0 -15 Td
+(- Use IEEE format) Tj
+0 -15 Td
+(- Submit to: submissions@jcids.org) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Times-Roman
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000253 00000 n 
+0000002806 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+2885
+%%EOF

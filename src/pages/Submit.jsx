@@ -1,66 +1,6 @@
 import { useState } from 'react'
 
 const Submit = () => {
-  const [formData, setFormData] = useState({
-    title: '',
-    abstract: '',
-    keywords: '',
-    authorName: '',
-    authorEmail: '',
-    authorAffiliation: '',
-    correspondingAuthor: '',
-    category: '',
-    message: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState('')
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitMessage('')
-
-    try {
-      const response = await fetch('/api/submit-paper', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
-
-      const result = await response.json()
-
-      if (result.success) {
-        setSubmitMessage('Thank you! Your submission has been received. Please send your full manuscript to submissions@jcids.org')
-        setFormData({
-          title: '',
-          abstract: '',
-          keywords: '',
-          authorName: '',
-          authorEmail: '',
-          authorAffiliation: '',
-          correspondingAuthor: '',
-          category: '',
-          message: ''
-        })
-      } else {
-        setSubmitMessage('Error submitting paper. Please try again or contact support.')
-      }
-    } catch (error) {
-      setSubmitMessage('Error submitting paper. Please try again or contact support.')
-    }
-
-    setIsSubmitting(false)
-  }
-
   return (
     <div className="container">
       <div className="section">
@@ -71,198 +11,228 @@ const Submit = () => {
 
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <div className="card">
+            <h3><i className="fas fa-download"></i> Paper Template Download</h3>
+            <p>
+              Download our official PDF paper template to ensure your submission follows the correct format and includes all required sections.
+            </p>
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center',
+              margin: '20px 0'
+            }}>
+              <a 
+                href="/JCIDS_Paper_Template.pdf" 
+                download="JCIDS_Paper_Template.pdf"
+                className="btn"
+                style={{ 
+                  display: 'inline-flex', 
+                  alignItems: 'center', 
+                  gap: '10px',
+                  textDecoration: 'none',
+                  background: '#dc3545',
+                  color: 'white',
+                  padding: '15px 25px',
+                  borderRadius: '5px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontSize: '16px',
+                  fontWeight: '600'
+                }}
+              >
+                <i className="fas fa-file-pdf"></i>
+                Download PDF Template
+              </a>
+            </div>
+            <div style={{ 
+              background: '#e3f2fd', 
+              padding: '15px', 
+              borderRadius: '5px',
+              border: '1px solid #2196f3'
+            }}>
+              <p><strong><i className="fas fa-info-circle"></i> Template Instructions:</strong></p>
+              <ul style={{ marginBottom: '0', paddingLeft: '20px' }}>
+                <li>Download the PDF template and use it as a guide for structure</li>
+                <li>Follow the exact section format and replace placeholder text with your content</li>
+                <li>Ensure all sections are complete: Abstract, Introduction, Methodology, Results, Discussion, Conclusion</li>
+                <li>Submit your final paper as PDF to submissions@jcids.org</li>
+                <li>Maximum 12 pages for full papers, 6 pages for short papers</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="card">
             <h3><i className="fas fa-info-circle"></i> Submission Guidelines</h3>
             <ul>
               <li>Manuscripts must be original and unpublished work</li>
-              <li>Submit initial information below, then send full paper to <strong>submissions@jcids.org</strong></li>
+              <li>All submissions must be sent directly to <strong>submissions@jcids.org</strong></li>
               <li>Include all author information and conflict of interest statements</li>
               <li>Follow IEEE format for final submission</li>
               <li>Maximum length: 12 pages for full papers, 6 pages for short papers</li>
+              <li>Include paper title in the email subject line</li>
+              <li>Attach your manuscript as a PDF file</li>
             </ul>
           </div>
 
           <div className="card">
-            <h3><i className="fas fa-upload"></i> Paper Submission Form</h3>
+            <h3><i className="fas fa-envelope"></i> Email Submission Process</h3>
+            <p>
+              Submit your complete manuscript directly via email using the following process:
+            </p>
             
-            {submitMessage && (
-              <div style={{
-                background: submitMessage.includes('Error') ? '#ffe6e6' : '#e6ffe6',
-                color: submitMessage.includes('Error') ? '#d00' : '#060',
-                padding: '15px',
-                borderRadius: '5px',
-                marginBottom: '20px',
-                border: `1px solid ${submitMessage.includes('Error') ? '#d00' : '#060'}`
-              }}>
-                {submitMessage}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '25px', 
+              borderRadius: '8px', 
+              textAlign: 'center',
+              margin: '20px 0',
+              border: '2px solid #28a745'
+            }}>
+              <div style={{ marginBottom: '15px' }}>
+                <strong style={{ fontSize: '1.3rem', color: '#28a745', display: 'block', marginBottom: '10px' }}>
+                  📧 Email Submission Address
+                </strong>
+                <a href="mailto:submissions@jcids.org" style={{ 
+                  fontSize: '1.4rem', 
+                  color: '#2c5aa0',
+                  textDecoration: 'none',
+                  fontWeight: 'bold'
+                }}>
+                  submissions@jcids.org
+                </a>
               </div>
-            )}
+            </div>
 
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="title">Paper Title *</label>
-                <input
-                  type="text"
-                  id="title"
-                  name="title"
-                  value={formData.title}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter the title of your research paper"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="abstract">Abstract *</label>
-                <textarea
-                  id="abstract"
-                  name="abstract"
-                  value={formData.abstract}
-                  onChange={handleChange}
-                  required
-                  placeholder="Provide a concise abstract (150-300 words)"
-                  rows="6"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="keywords">Keywords *</label>
-                <input
-                  type="text"
-                  id="keywords"
-                  name="keywords"
-                  value={formData.keywords}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter 4-6 keywords separated by commas"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="authorName">Author Name(s) *</label>
-                <input
-                  type="text"
-                  id="authorName"
-                  name="authorName"
-                  value={formData.authorName}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter all author names"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="authorEmail">Contact Email *</label>
-                <input
-                  type="email"
-                  id="authorEmail"
-                  name="authorEmail"
-                  value={formData.authorEmail}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter corresponding author's email"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="authorAffiliation">Author Affiliation(s) *</label>
-                <input
-                  type="text"
-                  id="authorAffiliation"
-                  name="authorAffiliation"
-                  value={formData.authorAffiliation}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter institutional affiliations"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="correspondingAuthor">Corresponding Author *</label>
-                <input
-                  type="text"
-                  id="correspondingAuthor"
-                  name="correspondingAuthor"
-                  value={formData.correspondingAuthor}
-                  onChange={handleChange}
-                  required
-                  placeholder="Name of corresponding author"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="category">Research Category *</label>
-                <select
-                  id="category"
-                  name="category"
-                  value={formData.category}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Select a category</option>
-                  <option value="machine-learning">Machine Learning</option>
-                  <option value="deep-learning">Deep Learning</option>
-                  <option value="nlp">Natural Language Processing</option>
-                  <option value="computer-vision">Computer Vision</option>
-                  <option value="decision-science">Decision Science</option>
-                  <option value="optimization">Optimization Algorithms</option>
-                  <option value="data-mining">Data Mining</option>
-                  <option value="ai-ethics">AI Ethics</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">Additional Comments</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Any additional information or special requests"
-                  rows="4"
-                />
-              </div>
-
-              <div style={{ textAlign: 'center' }}>
-                <button 
-                  type="submit" 
-                  className="btn"
-                  disabled={isSubmitting}
-                  style={{ opacity: isSubmitting ? 0.7 : 1 }}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <i className="fas fa-spinner fa-spin"></i> Submitting...
-                    </>
-                  ) : (
-                    <>
-                      <i className="fas fa-paper-plane"></i> Submit Paper Information
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
+            <div style={{ 
+              background: '#fff3cd', 
+              padding: '20px', 
+              borderRadius: '5px',
+              border: '1px solid #ffc107',
+              marginTop: '20px'
+            }}>
+              <h4 style={{ color: '#856404', marginTop: '0' }}>
+                <i className="fas fa-checklist"></i> Email Submission Checklist:
+              </h4>
+              <ul style={{ marginBottom: '0', paddingLeft: '20px', color: '#856404' }}>
+                <li><strong>Subject Line:</strong> "JCIDS Submission: [Your Paper Title]"</li>
+                <li><strong>Attachment:</strong> PDF file of your complete manuscript</li>
+                <li><strong>Email Body:</strong> Include author names, affiliations, and brief abstract</li>
+                <li><strong>Corresponding Author:</strong> Clearly identify the corresponding author with contact details</li>
+                <li><strong>Research Category:</strong> Specify which domain track your research falls under</li>
+              </ul>
+            </div>
           </div>
 
           <div className="card">
-            <h3><i className="fas fa-envelope"></i> Next Steps</h3>
-            <p>
-              After submitting this form, please send your complete manuscript as a PDF to:
-            </p>
+            <h3><i className="fas fa-tags"></i> Research Categories</h3>
+            <p>Please specify which category best describes your research:</p>
             <div style={{ 
-              background: '#f8f9fa', 
-              padding: '20px', 
-              borderRadius: '5px', 
-              textAlign: 'center',
-              margin: '20px 0'
+              display: 'grid', 
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+              gap: '10px',
+              marginTop: '15px'
             }}>
-              <strong style={{ fontSize: '1.2rem', color: '#2c5aa0' }}>
-                submissions@jcids.org
-              </strong>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • Machine Learning
+              </div>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • Deep Learning
+              </div>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • Natural Language Processing
+              </div>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • Computer Vision
+              </div>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • Decision Science
+              </div>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • Optimization Algorithms
+              </div>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • Data Mining
+              </div>
+              <div style={{ background: '#f8f9fa', padding: '10px', borderRadius: '5px', border: '1px solid #dee2e6' }}>
+                • AI Ethics
+              </div>
             </div>
+          </div>
+
+          <div className="card">
+            <h3><i className="fas fa-clock"></i> Review Process</h3>
             <p>
-              Include your paper title in the email subject line and reference this submission form.
+              After submission, your manuscript will undergo the following process:
             </p>
+            <div style={{ marginTop: '15px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+                <div style={{ 
+                  width: '30px', 
+                  height: '30px', 
+                  borderRadius: '50%', 
+                  background: '#28a745', 
+                  color: 'white', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  marginRight: '15px',
+                  fontWeight: 'bold'
+                }}>1</div>
+                <div>
+                  <strong>Initial Review (2-3 days):</strong> Editorial screening for scope and format compliance
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+                <div style={{ 
+                  width: '30px', 
+                  height: '30px', 
+                  borderRadius: '50%', 
+                  background: '#17a2b8', 
+                  color: 'white', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  marginRight: '15px',
+                  fontWeight: 'bold'
+                }}>2</div>
+                <div>
+                  <strong>Peer Review (4-6 weeks):</strong> Double-blind review by subject matter experts
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+                <div style={{ 
+                  width: '30px', 
+                  height: '30px', 
+                  borderRadius: '50%', 
+                  background: '#ffc107', 
+                  color: 'white', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  marginRight: '15px',
+                  fontWeight: 'bold'
+                }}>3</div>
+                <div>
+                  <strong>Decision (1-2 weeks):</strong> Editorial decision and reviewer feedback
+                </div>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div style={{ 
+                  width: '30px', 
+                  height: '30px', 
+                  borderRadius: '50%', 
+                  background: '#dc3545', 
+                  color: 'white', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  marginRight: '15px',
+                  fontWeight: 'bold'
+                }}>4</div>
+                <div>
+                  <strong>Publication (2-3 weeks after acceptance):</strong> Final formatting and online publication
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
