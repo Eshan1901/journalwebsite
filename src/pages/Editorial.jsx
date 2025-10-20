@@ -360,6 +360,106 @@ const Editorial = () => {
 
           {/* Associate Editors */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '25px' }}>
+            {/* Dr. Loganathan Karuppusamy */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  LK
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. Loganathan Karuppusamy
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Assistant Professor (Research Track)
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of Mathematics and Statistics<br/>
+                  Manipal University Jaipur<br/>
+                  Jaipur, Rajasthan, India
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '10px' }}>
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:loganathan.karuppusamy@jaipur.manipal.edu" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    loganathan.karuppusamy@jaipur.manipal.edu
+                  </a>
+                </div>
+                
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://orcid.org/0000-0002-6435-2916" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    ORCID: 0000-0002-6435-2916
+                  </a>
+                </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57518838400" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    Scopus Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Dr. K. Sathesh Kumar */}
             <div style={{ 
               background: 'white',
@@ -429,76 +529,7 @@ const Editorial = () => {
               </div>
             </div>
 
-            {/* Dr. Sriramakrishnan Pathmanaban */}
-            <div style={{ 
-              background: 'white',
-              padding: '30px',
-              borderRadius: '12px',
-              border: '1px solid #e2e8f0',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
-                <div style={{ 
-                  width: '60px', 
-                  height: '60px', 
-                  borderRadius: '50%', 
-                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  fontSize: '1.4rem',
-                  fontWeight: 'bold',
-                  marginRight: '15px'
-                }}>
-                  SP
-                </div>
-                <div style={{ flex: 1 }}>
-                  <h4 style={{ 
-                    color: '#1a3d6b', 
-                    margin: '0 0 5px 0', 
-                    fontSize: '1.3rem',
-                    fontWeight: '700'
-                  }}>
-                    Dr. Sriramakrishnan Pathmanaban
-                  </h4>
-                  <p style={{ 
-                    color: '#2c4a80', 
-                    margin: '0', 
-                    fontSize: '1rem',
-                    fontWeight: '600'
-                  }}>
-                    Faculty, Department of Mathematics
-                  </p>
-                </div>
-              </div>
-              
-              <div style={{ marginBottom: '15px' }}>
-                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of Mathematics<br/>
-                  Amrita School of Physical Sciences<br/>
-                  Amrita Vishwa Vidyapeetham<br/>
-                  Coimbatore, India
-                </p>
-              </div>
-
-              <div style={{ 
-                background: '#f8f9fa', 
-                padding: '12px', 
-                borderRadius: '6px',
-                fontSize: '0.85rem'
-              }}>
-                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                <a href="mailto:p_sriramakrishnan@cb.amrita.edu" style={{ 
-                  color: '#2c4a80', 
-                  textDecoration: 'none'
-                }}>
-                  p_sriramakrishnan@cb.amrita.edu
-                </a>
-              </div>
-            </div>
-
-            {/* Dr. Gobinath */}
+            {/* Dr. Gobinath R */}
             <div style={{ 
               background: 'white',
               padding: '30px',
@@ -529,7 +560,7 @@ const Editorial = () => {
                     fontSize: '1.3rem',
                     fontWeight: '700'
                   }}>
-                    Dr. Gobinath
+                    Dr. Gobinath R
                   </h4>
                   <p style={{ 
                     color: '#2c4a80', 
@@ -566,6 +597,106 @@ const Editorial = () => {
                 </a>
               </div>
             </div>
+
+            {/* Dr. N. Rajkumar */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  NR
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. N. Rajkumar
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Associate Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of CSE<br/>
+                  Alliance University<br/>
+                  Bangalore, India
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '10px' }}>
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:rajkumar.n@alliance.edu.in" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    rajkumar.n@alliance.edu.in
+                  </a>
+                </div>
+                
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://orcid.org/0000-0001-7857-9452" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    ORCID: 0000-0001-7857-9452
+                  </a>
+                </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57027609100" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    Scopus Profile
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )
@@ -593,6 +724,206 @@ const Editorial = () => {
 
           {/* Assistant Editors */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '25px' }}>
+            {/* Dr. Ramkumar J */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  RJ
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. Ramkumar J
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Assistant Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of Information Technology<br/>
+                  Sri Krishna Arts and Science College<br/>
+                  Coimbatore, India
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '10px' }}>
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:ramkumarj@skasc.ac.in" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    ramkumarj@skasc.ac.in
+                  </a>
+                </div>
+                
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://orcid.org/0000-0001-9639-0899" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    ORCID: 0000-0001-9639-0899
+                  </a>
+                </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57203030824" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    Scopus Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Dr. K. Prathapchandran */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  KP
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. K. Prathapchandran
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Assistant Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Madanapalle Institute of Technology & Science (Deemed to be University)<br/>
+                  Andhra Pradesh, India<br/>
+                  <em style={{ fontSize: '0.85rem', color: '#888' }}>Research: ML, IoT, WSN, MANET</em>
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '10px' }}>
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:kprathapchandran@gmail.com" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    kprathapchandran@gmail.com
+                  </a>
+                </div>
+                
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://orcid.org/0000-0002-5125-1972" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    ORCID: 0000-0002-5125-1972
+                  </a>
+                </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=56405574100" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    Scopus Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Dr. M. Arun */}
             <div style={{ 
               background: 'white',
@@ -730,6 +1061,292 @@ const Editorial = () => {
                 </a>
               </div>
             </div>
+
+            {/* Dr. P. Nagaraja */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  PN
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. P. Nagaraja
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Assistant Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of Computer Science<br/>
+                  GITAM Deemed to be University<br/>
+                  India<br/>
+                  <em style={{ fontSize: '0.85rem', color: '#888' }}>Research: Medical Image Analysis, MRI Brain Image Segmentation, AI, Deep Learning</em>
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '10px' }}>
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:nperumal@gitam.edu" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    nperumal@gitam.edu
+                  </a>
+                </div>
+                
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://orcid.org/0000-0001-7070-7616" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    ORCID: 0000-0001-7070-7616
+                  </a>
+                </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57192652010" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    Scopus Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Dr. S. Prabagar */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  SP
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. S. Prabagar
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Program Coordinator (DevOps) & Associate Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of CSE<br/>
+                  Alliance University<br/>
+                  Bangalore, India
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '10px' }}>
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:prabagar.s@alliance.edu.in" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    prabagar.s@alliance.edu.in
+                  </a>
+                </div>
+                
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://orcid.org/0000-0002-3852-0082" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    ORCID: 0000-0002-3852-0082
+                  </a>
+                </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=58181863200" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    Scopus Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Dr. R. Rajasekar */}
+            <div style={{ 
+              background: 'white',
+              padding: '30px',
+              borderRadius: '12px',
+              border: '1px solid #e2e8f0',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
+                <div style={{ 
+                  width: '60px', 
+                  height: '60px', 
+                  borderRadius: '50%', 
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: '1.4rem',
+                  fontWeight: 'bold',
+                  marginRight: '15px'
+                }}>
+                  RR
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h4 style={{ 
+                    color: '#1a3d6b', 
+                    margin: '0 0 5px 0', 
+                    fontSize: '1.3rem',
+                    fontWeight: '700'
+                  }}>
+                    Dr. R. Rajasekar
+                  </h4>
+                  <p style={{ 
+                    color: '#2c4a80', 
+                    margin: '0', 
+                    fontSize: '1rem',
+                    fontWeight: '600'
+                  }}>
+                    Professor
+                  </p>
+                </div>
+              </div>
+              
+              <div style={{ marginBottom: '15px' }}>
+                <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
+                  Department of CSE<br/>
+                  Alliance University<br/>
+                  Bangalore, India
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gap: '10px' }}>
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:rajasekar.r@alliance.edu.in" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    rajasekar.r@alliance.edu.in
+                  </a>
+                </div>
+                
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57189223193" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    Scopus Profile
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )
@@ -841,7 +1458,7 @@ const Editorial = () => {
             }}>
               Editorial Office
             </a>
-            <a href="mailto:submissions@gnosispress.org?subject=JCIDS Submission Query" style={{ 
+            <a href="mailto:eic.jcids@gnosispress.org?subject=JCIDS Submission Query" style={{ 
               display: 'block',
               padding: '18px 24px',
               color: '#2c4a80',

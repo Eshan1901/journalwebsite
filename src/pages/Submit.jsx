@@ -54,7 +54,7 @@ const Submit = () => {
                 <li>Download the PDF template and use it as a guide for structure</li>
                 <li>Follow the exact section format and replace placeholder text with your content</li>
                 <li>Ensure all sections are complete: Abstract, Introduction, Methodology, Results, Discussion, Conclusion</li>
-                <li>Submit your final paper as PDF to submissions@jcids.org</li>
+                <li>Submit your final paper as PDF to eic.jcids@gnosispress.org</li>
                 <li>Maximum 12 pages for full papers, 6 pages for short papers</li>
               </ul>
             </div>
@@ -64,7 +64,7 @@ const Submit = () => {
             <h3><i className="fas fa-info-circle"></i> Submission Guidelines</h3>
             <ul>
               <li>Manuscripts must be original and unpublished work</li>
-              <li>All submissions must be sent directly to <strong>submissions@jcids.org</strong></li>
+              <li>All submissions must be sent directly to <strong>eic.jcids@gnosispress.org</strong></li>
               <li>Include all author information and conflict of interest statements</li>
               <li>Follow IEEE format for final submission</li>
               <li>Maximum length: 12 pages for full papers, 6 pages for short papers</li>
@@ -91,13 +91,13 @@ const Submit = () => {
                 <strong style={{ fontSize: '1.3rem', color: '#28a745', display: 'block', marginBottom: '10px' }}>
                   📧 Email Submission Address
                 </strong>
-                <a href="mailto:submissions@jcids.org" style={{ 
+                <a href="mailto:eic.jcids@gnosispress.org" style={{ 
                   fontSize: '1.4rem', 
                   color: '#2c5aa0',
                   textDecoration: 'none',
                   fontWeight: 'bold'
                 }}>
-                  submissions@jcids.org
+                  eic.jcids@gnosispress.org
                 </a>
               </div>
             </div>

@@ -158,8 +158,7 @@ const Layout = ({ children }) => {
               <h5>Contact Us</h5>
               <div className="contact-info">
                 <p><i className="fas fa-envelope"></i> <a href="mailto:info@gnosispress.com">info@gnosispress.com</a></p>
-                <p><i className="fas fa-paper-plane"></i> <a href="mailto:submissions@gnosispress.com">submissions@gnosispress.com</a></p>
-                <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i className="fas fa-paper-plane"></i> <a href="mailto:eic.jcids@gnosispress.org">eic.jcids@gnosispress.org</a></p>
                 <p><i className="fas fa-map-marker-alt"></i> Global Publishing Network</p>
               </div>
             </div>
