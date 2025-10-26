@@ -127,10 +127,9 @@ const Layout = ({ children }) => {
                 </div>
                 <p>Leading academic publisher committed to advancing research and innovation through excellence in scholarly publishing.</p>
                 <div className="social-links">
-                  <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
-                  <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                  <a href="#" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
-                  <a href="#" aria-label="ResearchGate"><i className="fab fa-researchgate"></i></a>
+                  <a href="https://www.linkedin.com/in/gnosis-press-03a13838a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+                  <a href="https://x.com/gnosispress" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>𝕏</a>
+                  <a href="https://www.facebook.com/profile.php?id=61582160369817" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
                 </div>
               </div>
             </div>
