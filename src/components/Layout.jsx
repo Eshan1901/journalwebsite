@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
             </li>
             <li>
               <Link to="/journals" className={`nav-link ${isActive('/journals') ? 'active' : ''}`}>
-                <span>Our Journals</span>
+                <span>Our Journal</span>
               </Link>
             </li>
             <li>
@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
             </li>
             <li>
               <Link to="/editors" className={`nav-link ${isActive('/editors') ? 'active' : ''}`}>
-                <span>Editorial</span>
+                <span>Editorial Inside</span>
               </Link>
             </li>
             <li>
@@ -156,8 +156,8 @@ const Layout = ({ children }) => {
             <div className="footer-section">
               <h5>Contact Us</h5>
               <div className="contact-info">
-                <p><i className="fas fa-envelope"></i> <a href="mailto:info@gnosispress.com">info@gnosispress.com</a></p>
-                <p><i className="fas fa-paper-plane"></i> <a href="mailto:eic.jcids@gnosispress.org">eic.jcids@gnosispress.org</a></p>
+                <p><i className="fas fa-envelope"></i> <a href="mailto:info@gnosispress.org">info@gnosispress.org</a></p>
+                <p><i className="fas fa-paper-plane"></i> <a href="mailto:submission.jcids@gnosispress.org">submission.jcids@gnosispress.org</a></p>
                 <p><i className="fas fa-map-marker-alt"></i> Global Publishing Network</p>
               </div>
             </div>

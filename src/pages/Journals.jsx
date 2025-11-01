@@ -16,31 +16,81 @@ const Journals = () => {
             marginBottom: '30px',
             border: '1px solid #bee5eb'
           }}>
-            <h3 style={{ 
-              color: '#1a3d6b', 
-              fontSize: '2rem', 
-              marginBottom: '20px', 
-              fontWeight: 'bold',
-              textAlign: 'center'
+            {/* Logo and Title Section */}
+            <div style={{ 
+              display: 'flex', 
+              flexDirection: 'column', 
+              alignItems: 'center', 
+              marginBottom: '30px' 
             }}>
-              About Gnosis Press
-            </h3>
+              <img 
+                src="/logo.png" 
+                alt="Gnosis Press Logo" 
+                style={{ 
+                  width: '120px', 
+                  height: '120px', 
+                  marginBottom: '20px',
+                  filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
+                }} 
+              />
+              <h3 style={{ 
+                color: '#1a3d6b', 
+                fontSize: '2.5rem', 
+                marginBottom: '10px', 
+                fontWeight: 'bold',
+                textAlign: 'center'
+              }}>
+                Gnosis Press
+              </h3>
+              <p style={{ 
+                fontSize: '1.2rem', 
+                color: '#2c4a80', 
+                fontStyle: 'italic',
+                textAlign: 'center',
+                margin: '0'
+              }}>
+                Independent Academic Publishing Platform
+              </p>
+            </div>
+
             <div style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
               <p style={{ marginBottom: '20px' }}>
-                Gnosis Press is an independent academic publishing platform dedicated to advancing high-quality research and knowledge dissemination across disciplines. It provides a space where scholars, practitioners, and policymakers can share original work that contributes to academic debates and addresses real-world challenges.
+                <strong>Gnosis Press</strong> is an independent academic publishing platform dedicated to advancing high-quality research and knowledge dissemination across disciplines. It provides a space where scholars, practitioners, and policymakers can share original work that contributes to academic debates and addresses real-world challenges.
               </p>
               <p style={{ marginBottom: '20px' }}>
-                The press follows an open access model, ensuring that all published research is freely available to readers worldwide without any subscription or paywall restrictions. Its publishing framework is built on the principles of academic rigor, ethical integrity, and global accessibility.
+                The press follows an <strong>open access model</strong>, ensuring that all published research is freely available to readers worldwide without any subscription or paywall restrictions. Its publishing framework is built on the principles of academic rigor, ethical integrity, and global accessibility.
               </p>
               <p style={{ marginBottom: '20px' }}>
-                Gnosis Press is committed to a transparent and efficient editorial process. All submissions undergo a double-blind peer review, and authors receive a first decision within six to eight weeks. Every published article is assigned a DOI, making it easily citable and permanently accessible.
+                Gnosis Press is committed to a <strong>transparent and efficient editorial process</strong>. All submissions undergo a double-blind peer review, and authors receive a first decision within six to eight weeks. Every published article is assigned a DOI, making it easily citable and permanently accessible.
               </p>
               <p style={{ marginBottom: '20px' }}>
-                The press adheres to internationally recognized ethical standards, including guidelines set by the Committee on Publication Ethics (COPE). It aims to create a global community of researchers and institutions by supporting open knowledge exchange, interdisciplinary scholarship, and innovative research practices.
+                The press adheres to internationally recognized <strong>ethical standards</strong>, including guidelines set by the Committee on Publication Ethics (COPE). It aims to create a global community of researchers and institutions by supporting open knowledge exchange, interdisciplinary scholarship, and innovative research practices.
               </p>
-              <p style={{ margin: '0' }}>
-                Through its journals and initiatives, Gnosis Press seeks to make scholarly publishing more inclusive, timely, and impactful.
+              <p style={{ marginBottom: '20px' }}>
+                Through its journals and initiatives, Gnosis Press seeks to make scholarly publishing more <strong>inclusive, timely, and impactful</strong>, bridging the gap between academic research and practical applications that benefit society.
               </p>
+              
+              {/* Key Features */}
+              <div style={{ 
+                background: 'white', 
+                padding: '25px', 
+                borderRadius: '8px', 
+                marginTop: '30px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+              }}>
+                <h4 style={{ color: '#1a3d6b', marginBottom: '15px', fontSize: '1.3rem' }}>
+                  Why Publish with Gnosis Press?
+                </h4>
+                <ul style={{ margin: '0', paddingLeft: '20px' }}>
+                  <li style={{ marginBottom: '10px' }}>✓ Open access to maximize research impact and visibility</li>
+                  <li style={{ marginBottom: '10px' }}>✓ Rigorous double-blind peer review ensuring quality</li>
+                  <li style={{ marginBottom: '10px' }}>✓ Fast turnaround: First decision within 6-8 weeks</li>
+                  <li style={{ marginBottom: '10px' }}>✓ DOI assignment for permanent citation and archiving</li>
+                  <li style={{ marginBottom: '10px' }}>✓ COPE-compliant ethical standards</li>
+                  <li style={{ marginBottom: '10px' }}>✓ Global community of scholars and practitioners</li>
+                  <li>✓ No submission fees, transparent publishing costs</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -136,7 +186,7 @@ const Journals = () => {
     },
     {
       id: 'vision',
-      title: 'Vision & Mission',
+      title: 'Journal Overview (Vision, Mission & Quality Statement)',
       content: (
         <div>
           <div style={{ background: '#e8f4fd', padding: '30px', borderRadius: '12px', marginBottom: '25px', border: '1px solid #bee5eb' }}>
@@ -146,7 +196,7 @@ const Journals = () => {
             </p>
           </div>
           
-          <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '12px', overflow: 'hidden' }}>
+          <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '12px', overflow: 'hidden', marginBottom: '25px' }}>
             <div style={{ background: '#2c4a80', color: 'white', padding: '20px', textAlign: 'center' }}>
               <h4 style={{ margin: '0', fontSize: '1.5rem' }}>Mission</h4>
             </div>
@@ -184,210 +234,53 @@ const Journals = () => {
               </div>
             </div>
           </div>
-        </div>
-      )
-    },
-    {
-      id: 'aim',
-      title: 'Journal Aim',
-      content: (
-        <div>
-          <div style={{ 
-            background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)', 
-            padding: '35px', 
-            borderRadius: '12px', 
-            marginBottom: '30px',
-            border: '1px solid #dee2e6',
-            textAlign: 'center'
-          }}>
-            <h3 style={{ color: '#1a3d6b', marginBottom: '25px', fontSize: '2rem' }}>
-              Journal Aim
-            </h3>
-            <p style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#2c4a80', margin: '0 0 20px 0', fontWeight: '500' }}>
-              The journal aims to advance and disseminate high-quality, original, and interdisciplinary research that contributes to academic scholarship, informs practice, and addresses emerging global challenges. It seeks to serve as a trusted platform that connects researchers, practitioners, and policymakers, promoting ethical, inclusive, and impactful knowledge creation.
-            </p>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.7', color: '#2c4a80', margin: '0' }}>
-              The Journal of Computational Intelligence and Decision Science aims to advance research and innovation in the fields of artificial intelligence, computational methods, and data-driven decision-making. The journal seeks to provide a platform for the publication of original, high-quality, and impactful research that integrates computational intelligence techniques with real-world decision support applications.
-            </p>
-          </div>
 
-          <div style={{ 
-            background: '#e8f4fd', 
-            padding: '30px', 
-            borderRadius: '12px',
-            border: '1px solid #bee5eb',
-            marginBottom: '25px'
-          }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0' }}>
-              The journal encourages contributions that combine theory, models, algorithms, systems, and applied studies to address complex decision problems in diverse domains such as business, management, engineering, healthcare, public policy, education, and technology. It welcomes interdisciplinary work that bridges computational intelligence with human-centered and organizational decision-making processes.
-            </p>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: 'scope',
-      title: 'Scope',
-      content: (
-        <div>
-          <div style={{ 
-            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-            color: 'white',
-            padding: '30px', 
-            borderRadius: '12px', 
-            textAlign: 'center',
-            marginBottom: '30px'
-          }}>
-            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
-              Journal Scope
-            </h3>
-            <p style={{ fontSize: '1.15rem', lineHeight: '1.7', margin: '0' }}>
-              The journal publishes original research work and reviews that advance knowledge at the intersection of computational intelligence, data-driven methods and decision science.
-            </p>
-          </div>
-
-          <div style={{ background: '#e8f4fd', padding: '30px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0 0 15px 0' }}>
-              It welcomes manuscripts that explore theory, algorithms, systems and applications in domains such as business & management, engineering & technology, healthcare & life sciences, education, public policy & governance, and sustainable development.
-            </p>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', fontWeight: '600' }}>
-              Topics of interest include but are not limited to:
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gap: '20px' }}>
-            {[
-              'Machine learning, deep learning and neural network-based decision support systems',
-              'Soft computing, fuzzy logic, evolutionary and meta-heuristic optimisation methods',
-              'Simulation, modelling, agent-based systems and intelligent automation for decision making',
-              'Data analytics, big data, knowledge representation and reasoning for decision processes',
-              'Human-in-the-loop and hybrid intelligence systems, expert systems, cognitive computing',
-              'Applications of computational intelligence in real-world settings: industry, finance, healthcare, education, smart cities, climate and sustainability',
-              'Interdisciplinary studies bridging computational methods with organisational, human, ethical and policy dimensions of decision making'
-            ].map((topic, index) => (
-              <div
-                key={index}
-                style={{
-                  background: 'white',
-                  padding: '20px 25px',
-                  borderRadius: '10px',
-                  border: '1px solid #e9ecef',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                  display: 'flex',
-                  alignItems: 'start',
-                  gap: '15px'
-                }}
-              >
-                <div style={{
-                  minWidth: '30px',
-                  height: '30px',
-                  borderRadius: '50%',
-                  background: '#2c4a80',
-                  color: 'white',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 'bold',
-                  fontSize: '0.9rem'
-                }}>
-                  {index + 1}
+          <div style={{ background: 'linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%)', border: '1px solid #bee5eb', borderRadius: '12px', overflow: 'hidden' }}>
+            <div style={{ background: '#1a3d6b', color: 'white', padding: '20px', textAlign: 'center' }}>
+              <h4 style={{ margin: '0', fontSize: '1.5rem' }}>Quality Statement</h4>
+            </div>
+            <div style={{ padding: '30px' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '20px' }}>
+                The Journal of Computational Intelligence and Decision Science is committed to maintaining the highest standards of quality in all aspects of scholarly publishing. Our quality commitment includes:
+              </p>
+              <div style={{ display: 'grid', gap: '20px' }}>
+                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
+                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
+                    <strong>Rigorous Peer Review:</strong> Double-blind peer review process ensuring unbiased evaluation of all submissions based solely on academic merit.
+                  </p>
                 </div>
-                <p style={{ margin: '5px 0 0 0', lineHeight: '1.6', color: '#333', fontSize: '1rem' }}>
-                  {topic}
-                </p>
-              </div>
-            ))}
-          </div>
+                
+                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
+                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
+                    <strong>Editorial Excellence:</strong> Distinguished editorial board with expertise across computational intelligence and decision science domains.
+                  </p>
+                </div>
+                
+                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
+                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
+                    <strong>Ethical Standards:</strong> Strict adherence to COPE guidelines, ensuring integrity in research conduct and publication practices.
+                  </p>
+                </div>
 
-          <div style={{ 
-            background: 'linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)', 
-            padding: '25px', 
-            borderRadius: '12px',
-            marginTop: '30px',
-            border: '1px solid #dee2e6',
-            textAlign: 'center'
-          }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', fontStyle: 'italic' }}>
-              The journal aims to serve academics, practitioners and policymakers by providing a high-quality open access platform for contributions that combine rigour with relevance, thereby promoting impactful research that informs intelligent decision making in diverse global contexts.
-            </p>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: 'domain-tracks',
-      title: 'Domain Tracks',
-      content: (
-        <div>
-          <div style={{ 
-            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-            color: 'white',
-            padding: '30px', 
-            borderRadius: '12px', 
-            textAlign: 'center',
-            marginBottom: '30px'
-          }}>
-            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
-              Research Domain Tracks
-            </h3>
-            <p style={{ fontSize: '1.2rem', lineHeight: '1.6', margin: '0' }}>
-              JCIDS welcomes research submissions across eight comprehensive domain tracks.
-            </p>
-          </div>
+                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
+                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
+                    <strong>Timely Processing:</strong> Efficient editorial workflow with first decision within 6-8 weeks of submission.
+                  </p>
+                </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '25px' }}>
-            {[
-              {
-                title: 'AI & Machine Learning',
-                description: 'Neural networks, deep learning, reinforcement learning, supervised/unsupervised learning, transfer learning, federated learning, AutoML, and AI optimization techniques.'
-              },
-              {
-                title: 'Data Mining & Big Data',
-                description: 'Knowledge discovery, pattern recognition, clustering, classification, association rules, big data processing, cloud computing, and distributed analytics.'
-              },
-              {
-                title: 'Natural Language Processing',
-                description: 'Text analysis, sentiment analysis, language models, machine translation, chatbots, voice recognition, and speech synthesis.'
-              },
-              {
-                title: 'Computer Vision',
-                description: 'Image recognition, object detection, facial recognition, medical imaging, video analysis, augmented reality, and 3D vision.'
-              },
-              {
-                title: 'IoT & Edge Computing',
-                description: 'Internet of Things, edge computing, sensor networks, smart devices, embedded intelligence, and real-time analytics.'
-              },
-              {
-                title: 'Cybersecurity & AI Ethics',
-                description: 'AI security, privacy-preserving ML, ethical AI, algorithmic fairness, AI governance, explainable AI, and bias detection.'
-              },
-              {
-                title: 'Health Informatics',
-                description: 'Medical AI, genomics, precision medicine, drug discovery, healthcare analytics, and telemedicine.'
-              },
-              {
-                title: 'Robotics & Automation',
-                description: 'Autonomous systems, robotic process automation, industrial automation, smart manufacturing, and human-robot interaction.'
-              }
-            ].map((track, index) => (
-              <div
-                key={index}
-                style={{
-                  background: 'white',
-                  padding: '25px',
-                  borderRadius: '12px',
-                  border: '1px solid #e9ecef',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
-                }}
-              >
-                <h4 style={{ color: '#2c4a80', margin: '0 0 15px 0', fontSize: '1.3rem' }}>
-                  Track {index + 1}: {track.title}
-                </h4>
-                <p style={{ margin: '0', lineHeight: '1.6', color: '#555', fontSize: '0.95rem' }}>
-                  {track.description}
-                </p>
+                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
+                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
+                    <strong>Global Accessibility:</strong> Open access publishing ensuring research reaches worldwide audiences without barriers.
+                  </p>
+                </div>
+
+                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
+                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
+                    <strong>Permanent Archiving:</strong> All published articles assigned DOI for permanent digital preservation and citation.
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       )
@@ -615,7 +508,7 @@ const Journals = () => {
             {[
               {
                 step: '1. Manuscript Submission',
-                desc: 'Authors submit their manuscripts ONLY to the email Id provided (eic.jcids@gnosispress.org). All required files, including the main manuscript, figures, tables, supplementary materials, author details, declarations, and ethical approvals (if applicable), must be provided at the time of submission.'
+                desc: 'Authors submit their manuscripts ONLY to the email Id provided (submission.jcids@gnosispress.org). All required files, including the main manuscript, figures, tables, supplementary materials, author details, declarations, and ethical approvals (if applicable), must be provided at the time of submission.'
               },
               {
                 step: '2. Initial Screening (Desk Review)',
@@ -717,8 +610,605 @@ const Journals = () => {
             textAlign: 'center'
           }}>
             <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', fontWeight: '600' }}>
-              For submission queries, please contact: <a href="mailto:eic.jcids@gnosispress.org" style={{ color: '#1a3d6b', textDecoration: 'none' }}>eic.jcids@gnosispress.org</a>
+              For submission queries, please contact: <a href="mailto:submission.jcids@gnosispress.org" style={{ color: '#1a3d6b', textDecoration: 'none' }}>submission.jcids@gnosispress.org</a>
             </p>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'publication-ethics',
+      title: 'Publication Ethics',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Publication Ethics
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Commitment to academic integrity and ethical publishing standards
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '25px' }}>
+              The Journal of Computational Intelligence and Decision Science adheres to the highest standards of publication ethics as outlined by the Committee on Publication Ethics (COPE). We are committed to maintaining academic integrity throughout the publication process.
+            </p>
+
+            <div style={{ marginBottom: '30px' }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Zero Tolerance for Misconduct</h4>
+              <ul style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                <li>Plagiarism is strictly prohibited. All submissions are screened using advanced plagiarism detection tools.</li>
+                <li>Manuscripts with more than 15% similarity (excluding references) are returned or rejected.</li>
+                <li>Duplicate submissions or redundant publications are not accepted.</li>
+                <li>Data manipulation and fabrication result in immediate rejection and potential author sanctions.</li>
+              </ul>
+            </div>
+
+            <div style={{ marginBottom: '30px' }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Author Responsibilities</h4>
+              <ul style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                <li>Authors must ensure their work is original and properly cited.</li>
+                <li>All contributors who meet authorship criteria must be listed as authors.</li>
+                <li>Conflicts of interest must be declared at the time of submission.</li>
+                <li>Research involving human subjects or animals must have appropriate ethical approval.</li>
+                <li>Authors must provide data and materials for verification if requested.</li>
+              </ul>
+            </div>
+
+            <div style={{ marginBottom: '30px' }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Reviewer Ethics</h4>
+              <ul style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                <li>Reviewers must maintain confidentiality of manuscripts under review.</li>
+                <li>Reviewers must disclose conflicts of interest and decline if unable to provide unbiased review.</li>
+                <li>Reviews must be objective, constructive, and completed in a timely manner.</li>
+                <li>Reviewers must not use unpublished information for personal advantage.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Editorial Integrity</h4>
+              <ul style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                <li>Editorial decisions are based solely on scientific merit and relevance.</li>
+                <li>Editors do not have conflicts of interest with submitted manuscripts.</li>
+                <li>The peer review process is fair, transparent, and unbiased.</li>
+                <li>Corrections, retractions, and errata are published when necessary.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'article-processing-charges',
+      title: 'Article Processing Charges',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Article Processing Charges
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Transparent and affordable publishing fees
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+            <div style={{ 
+              background: '#e8f4fd', 
+              padding: '25px', 
+              borderRadius: '8px', 
+              marginBottom: '30px',
+              textAlign: 'center'
+            }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.5rem', marginBottom: '10px' }}>No Submission Fees</h4>
+              <p style={{ fontSize: '1.1rem', color: '#2c4a80', margin: '0' }}>
+                JCIDS follows a <strong>no submission fee</strong> policy to encourage broad participation from researchers worldwide.
+              </p>
+            </div>
+
+            <div style={{ marginBottom: '30px' }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Publication Charges</h4>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '15px' }}>
+                Article Processing Charges (APC) are <strong>currently waived</strong> for the initial issues to support early contributors and build the journal's community.
+              </p>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                Future APCs, if introduced, will be announced well in advance and will remain competitive and transparent. Waivers and discounts will be available for authors from developing countries and those without institutional funding.
+              </p>
+            </div>
+
+            <div>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Fee Transparency</h4>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                All fee structures will be clearly communicated on the journal website. No hidden charges will be applied at any stage of the publication process.
+              </p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'instructions-authors',
+      title: 'Instructions to Authors',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Instructions to Authors
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Guidelines for manuscript preparation and submission
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+            <div style={{ marginBottom: '30px' }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Manuscript Preparation</h4>
+              <ul style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                <li>Manuscripts must be original, unpublished work not under consideration elsewhere.</li>
+                <li>Download and use the official JCIDS paper template (PDF format).</li>
+                <li>Maximum length: 12 pages for full papers, 6 pages for short papers.</li>
+                <li>Follow IEEE format for citations and references.</li>
+                <li>Include complete author information with affiliations and ORCID IDs.</li>
+              </ul>
+            </div>
+
+            <div style={{ marginBottom: '30px' }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Required Sections</h4>
+              <ul style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                <li><strong>Title:</strong> Clear, concise, and descriptive</li>
+                <li><strong>Abstract:</strong> 150-250 words summarizing objectives, methods, results, and conclusions</li>
+                <li><strong>Keywords:</strong> 4-6 relevant keywords</li>
+                <li><strong>Introduction:</strong> Background, research gap, and objectives</li>
+                <li><strong>Methodology:</strong> Detailed description of methods and materials</li>
+                <li><strong>Results:</strong> Clear presentation of findings with figures and tables</li>
+                <li><strong>Discussion:</strong> Interpretation of results and comparison with existing work</li>
+                <li><strong>Conclusion:</strong> Summary of key findings and future directions</li>
+                <li><strong>References:</strong> Complete bibliographic information in IEEE format</li>
+              </ul>
+            </div>
+
+            <div style={{ marginBottom: '30px' }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Submission Process</h4>
+              <ul style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                <li>Submit manuscripts via email to: <strong>submission.jcids@gnosispress.org</strong></li>
+                <li>Include paper title in the email subject line</li>
+                <li>Attach manuscript as PDF file</li>
+                <li>Include conflict of interest statement and ethical approval (if applicable)</li>
+                <li>All authors must approve the submission</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Review Timeline</h4>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+                Authors can expect an initial decision within <strong>6-8 weeks</strong> of submission. The journal is committed to a timely and transparent review process.
+              </p>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'editorial-board',
+      title: 'Editorial Board',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Editorial Board
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Distinguished experts guiding our academic excellence
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '30px' }}>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '30px', textAlign: 'center' }}>
+              Our editorial board consists of distinguished researchers and academics committed to maintaining the highest standards of scholarly excellence.
+            </p>
+            
+            {/* Editor-in-Chief */}
+            <div style={{ 
+              background: 'linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%)', 
+              padding: '25px', 
+              borderRadius: '12px',
+              marginBottom: '25px',
+              border: '1px solid #bee5eb'
+            }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.4rem', marginBottom: '15px', textAlign: 'center' }}>
+                <i className="fas fa-crown" style={{ marginRight: '10px', color: '#fbbf24' }}></i>
+                Editor-in-Chief
+              </h4>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
+                <div style={{ textAlign: 'center' }}>
+                  <h5 style={{ color: '#2c4a80', fontSize: '1.2rem', margin: '0 0 5px 0', fontWeight: '700' }}>
+                    Dr. Manikandan Rajagopal
+                  </h5>
+                  <p style={{ color: '#64748b', fontSize: '0.95rem', margin: '0' }}>
+                    Associate Professor<br/>
+                    Christ University, Bangalore
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Managing Editors */}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '25px', 
+              borderRadius: '12px',
+              marginBottom: '25px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px', textAlign: 'center' }}>
+                <i className="fas fa-user-tie" style={{ marginRight: '10px' }}></i>
+                Managing Editors
+              </h4>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '15px' }}>
+                <div style={{ textAlign: 'center', padding: '15px' }}>
+                  <h6 style={{ color: '#2c4a80', fontSize: '1.05rem', margin: '0 0 5px 0', fontWeight: '600' }}>
+                    Dr. Ramkumar Sivasakthivel
+                  </h6>
+                  <p style={{ color: '#64748b', fontSize: '0.9rem', margin: '0' }}>
+                    Christ University, Bangalore
+                  </p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '15px' }}>
+                  <h6 style={{ color: '#2c4a80', fontSize: '1.05rem', margin: '0 0 5px 0', fontWeight: '600' }}>
+                    Dr. Rajendran T
+                  </h6>
+                  <p style={{ color: '#64748b', fontSize: '0.9rem', margin: '0' }}>
+                    JCT College of Engineering, Coimbatore
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Associate Editors */}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '25px', 
+              borderRadius: '12px',
+              marginBottom: '25px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px', textAlign: 'center' }}>
+                <i className="fas fa-users" style={{ marginRight: '10px' }}></i>
+                Associate Editors (4)
+              </h4>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '12px' }}>
+                <div style={{ textAlign: 'center', padding: '10px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
+                    Dr. Loganathan Karuppusamy
+                  </p>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Manipal University Jaipur</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '10px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
+                    Dr. K. Sathesh Kumar
+                  </p>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Alliance University, Bangalore</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '10px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
+                    Dr. Gobinath R
+                  </p>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Christ University, Bangalore</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '10px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
+                    Dr. N. Rajkumar
+                  </p>
+                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Alliance University, Bangalore</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Assistant Editors */}
+            <div style={{ 
+              background: '#f8f9fa', 
+              padding: '25px', 
+              borderRadius: '12px',
+              marginBottom: '30px',
+              border: '1px solid #e2e8f0'
+            }}>
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px', textAlign: 'center' }}>
+                <i className="fas fa-user-friends" style={{ marginRight: '10px' }}></i>
+                Assistant Editors (7)
+              </h4>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
+                <div style={{ textAlign: 'center', padding: '8px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. Ramkumar J</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '8px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. K. Prathapchandran</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '8px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. M. Arun</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '8px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. R. Stephen</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '8px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. P. Nagaraja</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '8px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. S. Prabagar</p>
+                </div>
+                <div style={{ textAlign: 'center', padding: '8px' }}>
+                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. R. Rajasekar</p>
+                </div>
+              </div>
+            </div>
+
+            {/* View Full Details Button */}
+            <div style={{ textAlign: 'center' }}>
+              <a 
+                href="/editors" 
+                style={{ 
+                  display: 'inline-block',
+                  padding: '15px 40px',
+                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  transition: 'transform 0.2s',
+                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+                }}
+                onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
+                onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
+              >
+                <i className="fas fa-arrow-right" style={{ marginRight: '10px' }}></i>
+                View Complete Editorial Team with Full Details
+              </a>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'archives',
+      title: 'Archives',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Archives
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Past issues and published research
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '40px', borderRadius: '12px', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+            <i className="fas fa-archive" style={{ fontSize: '4rem', color: '#2c4a80', marginBottom: '20px' }}></i>
+            <h4 style={{ color: '#1a3d6b', fontSize: '1.5rem', marginBottom: '15px' }}>Archive Coming Soon</h4>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#64748b' }}>
+              As a newly launched journal, our archive will grow with each published issue. All articles will be permanently accessible with DOI assignment.
+            </p>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'current-issue',
+      title: 'Current Issue',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Current Issue
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Latest published research articles
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '40px', borderRadius: '12px', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+            <i className="fas fa-newspaper" style={{ fontSize: '4rem', color: '#2c4a80', marginBottom: '20px' }}></i>
+            <h4 style={{ color: '#1a3d6b', fontSize: '1.5rem', marginBottom: '15px' }}>First Issue In Progress</h4>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#64748b', marginBottom: '30px' }}>
+              Our inaugural issue is currently being prepared. High-quality submissions are undergoing peer review and will be published soon.
+            </p>
+            <a 
+              href="/submit" 
+              style={{ 
+                display: 'inline-block',
+                padding: '15px 40px',
+                background: '#28a745',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontSize: '1.1rem',
+                fontWeight: '600'
+              }}
+            >
+              <i className="fas fa-paper-plane" style={{ marginRight: '10px' }}></i>
+              Submit Your Research
+            </a>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'articles-in-press',
+      title: 'Articles in Press',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Articles in Press
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Accepted articles awaiting publication
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '40px', borderRadius: '12px', border: '1px solid #e2e8f0', textAlign: 'center' }}>
+            <i className="fas fa-clock" style={{ fontSize: '4rem', color: '#2c4a80', marginBottom: '20px' }}></i>
+            <h4 style={{ color: '#1a3d6b', fontSize: '1.5rem', marginBottom: '15px' }}>No Articles in Press Yet</h4>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#64748b' }}>
+              Accepted articles will be listed here prior to their inclusion in a published issue. Check back soon for updates.
+            </p>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'contact-information',
+      title: 'Contact Information',
+      content: (
+        <div>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
+            color: 'white',
+            padding: '30px', 
+            borderRadius: '12px', 
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
+              Contact Information
+            </h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
+              Get in touch with our editorial team
+            </p>
+          </div>
+
+          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '25px' }}>
+              <div style={{ 
+                background: '#e8f4fd', 
+                padding: '25px', 
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <i className="fas fa-paper-plane" style={{ fontSize: '2.5rem', color: '#2c4a80', marginBottom: '15px' }}></i>
+                <h4 style={{ color: '#1a3d6b', fontSize: '1.2rem', marginBottom: '10px' }}>Paper Submissions</h4>
+                <a href="mailto:submission.jcids@gnosispress.org" style={{ 
+                  color: '#2c4a80', 
+                  fontSize: '1.05rem',
+                  textDecoration: 'none',
+                  fontWeight: '600'
+                }}>
+                  submission.jcids@gnosispress.org
+                </a>
+              </div>
+
+              <div style={{ 
+                background: '#e8f4fd', 
+                padding: '25px', 
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <i className="fas fa-user-tie" style={{ fontSize: '2.5rem', color: '#2c4a80', marginBottom: '15px' }}></i>
+                <h4 style={{ color: '#1a3d6b', fontSize: '1.2rem', marginBottom: '10px' }}>Editor-in-Chief</h4>
+                <a href="mailto:eic.jcids@gnosispress.org" style={{ 
+                  color: '#2c4a80', 
+                  fontSize: '1.05rem',
+                  textDecoration: 'none',
+                  fontWeight: '600'
+                }}>
+                  eic.jcids@gnosispress.org
+                </a>
+              </div>
+
+              <div style={{ 
+                background: '#e8f4fd', 
+                padding: '25px', 
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <i className="fas fa-envelope" style={{ fontSize: '2.5rem', color: '#2c4a80', marginBottom: '15px' }}></i>
+                <h4 style={{ color: '#1a3d6b', fontSize: '1.2rem', marginBottom: '10px' }}>General Queries</h4>
+                <a href="mailto:info@gnosispress.org" style={{ 
+                  color: '#2c4a80', 
+                  fontSize: '1.05rem',
+                  textDecoration: 'none',
+                  fontWeight: '600'
+                }}>
+                  info@gnosispress.org
+                </a>
+              </div>
+            </div>
+
+            <div style={{ 
+              marginTop: '30px', 
+              padding: '30px', 
+              background: 'linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%)', 
+              borderRadius: '8px',
+              textAlign: 'center',
+              border: '1px solid #bee5eb'
+            }}>
+              <img 
+                src="/logo.png" 
+                alt="Gnosis Press Logo" 
+                style={{ 
+                  width: '80px', 
+                  height: '80px', 
+                  marginBottom: '15px',
+                  filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))'
+                }} 
+              />
+              <h4 style={{ color: '#1a3d6b', fontSize: '1.4rem', marginBottom: '10px', fontWeight: 'bold' }}>Publisher</h4>
+              <p style={{ fontSize: '1.05rem', color: '#2c4a80', margin: '0', lineHeight: '1.6' }}>
+                <strong style={{ fontSize: '1.2rem' }}>Gnosis Press</strong><br/>
+                Global Publishing Network<br/>
+                Open Access Academic Publisher
+              </p>
+            </div>
           </div>
         </div>
       )
@@ -828,9 +1318,22 @@ const Journals = () => {
               transition: 'background 0.2s',
               fontSize: '1rem'
             }}>
+              <i className="fas fa-paper-plane" style={{ marginRight: '10px' }}></i>
               Submit Paper
             </a>
-            <a href="mailto:eic.jcids@gnosispress.org?subject=JCIDS Editorial Inquiry" style={{ 
+            <a href="mailto:eic.jcids@gnosispress.org?subject=JCIDS Editorial Query" style={{ 
+              display: 'block',
+              padding: '18px 24px',
+              color: '#2c4a80',
+              textDecoration: 'none',
+              borderBottom: '1px solid #f0f0f0',
+              transition: 'background 0.2s',
+              fontSize: '1rem'
+            }}>
+              <i className="fas fa-envelope" style={{ marginRight: '10px' }}></i>
+              Contact Editor-in-Chief
+            </a>
+            <a href="/editors" style={{ 
               display: 'block',
               padding: '18px 24px',
               color: '#2c4a80',
@@ -838,7 +1341,8 @@ const Journals = () => {
               transition: 'background 0.2s',
               fontSize: '1rem'
             }}>
-              Contact Editorial
+              <i className="fas fa-users" style={{ marginRight: '10px' }}></i>
+              Editorial Team
             </a>
           </div>
         </div>

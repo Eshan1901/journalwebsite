@@ -112,25 +112,11 @@ const Editorial = () => {
                   lineHeight: '1.4'
                 }}>
                   Department of Lean Operations and Systems<br/>
-                  School of Business Management
+                  School of Business and Management<br/>
+                  Christ (Deemed to be University)<br/>
+                  Bangalore, Karnataka, India
                 </p>
               </div>
-            </div>
-            
-            <div style={{ 
-              background: '#f8f9fa', 
-              padding: '25px', 
-              borderRadius: '8px',
-              marginBottom: '20px'
-            }}>
-              <h4 style={{ color: '#1a3d6b', marginBottom: '15px', fontSize: '1.1rem' }}>
-                <i className="fas fa-university" style={{ marginRight: '8px' }}></i>
-                Institutional Affiliation
-              </h4>
-              <p style={{ margin: '0', lineHeight: '1.6', fontSize: '1rem' }}>
-                Christ (Deemed to be University)<br/>
-                Bangalore, Karnataka - 560 073, India
-              </p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
@@ -166,6 +152,24 @@ const Editorial = () => {
                     fontWeight: '500'
                   }}>
                     ORCID: 0000-0001-7915-0180
+                  </a>
+                </div>
+              </div>
+
+              <div style={{ 
+                background: '#e8f4fd', 
+                padding: '15px', 
+                borderRadius: '8px',
+                textAlign: 'center'
+              }}>
+                <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', fontSize: '1.2rem', marginBottom: '8px' }}></i>
+                <div style={{ fontSize: '0.9rem' }}>
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57197774378" target="_blank" rel="noopener noreferrer" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none',
+                    fontWeight: '500'
+                  }}>
+                    Scopus Profile
                   </a>
                 </div>
               </div>
@@ -891,6 +895,21 @@ const Editorial = () => {
                     kprathapchandran@gmail.com
                   </a>
                 </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:prathapchandrank@jct.ac.in" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    prathapchandrank@jct.ac.in
+                  </a>
+                </div>
                 
                 <div style={{ 
                   background: '#f8f9fa', 
@@ -1128,6 +1147,21 @@ const Editorial = () => {
                     textDecoration: 'none'
                   }}>
                     nperumal@gitam.edu
+                  </a>
+                </div>
+
+                <div style={{ 
+                  background: '#f8f9fa', 
+                  padding: '10px', 
+                  borderRadius: '6px',
+                  fontSize: '0.85rem'
+                }}>
+                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                  <a href="mailto:nagaraja@jctcollege.ac.in" style={{ 
+                    color: '#2c4a80', 
+                    textDecoration: 'none'
+                  }}>
+                    nagaraja@jctcollege.ac.in
                   </a>
                 </div>
                 
@@ -1447,7 +1481,7 @@ const Editorial = () => {
             borderRadius: '0 0 12px 12px',
             boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
           }}>
-            <a href="mailto:editorial@gnosispress.org?subject=JCIDS Editorial Inquiry" style={{ 
+            <a href="mailto:eic.jcids@gnosispress.org?subject=JCIDS Editorial Query" style={{ 
               display: 'block',
               padding: '18px 24px',
               color: '#2c4a80',
@@ -1456,9 +1490,20 @@ const Editorial = () => {
               transition: 'background 0.2s',
               fontSize: '1rem'
             }}>
-              Editorial Office
+              Editor-in-Chief
             </a>
-            <a href="mailto:eic.jcids@gnosispress.org?subject=JCIDS Submission Query" style={{ 
+            <a href="mailto:submission.jcids@gnosispress.org?subject=JCIDS Submission Query" style={{ 
+              display: 'block',
+              padding: '18px 24px',
+              color: '#2c4a80',
+              textDecoration: 'none',
+              borderBottom: '1px solid #f0f0f0',
+              transition: 'background 0.2s',
+              fontSize: '1rem'
+            }}>
+              Submission Queries
+            </a>
+            <a href="mailto:info@gnosispress.org?subject=JCIDS General Inquiry" style={{ 
               display: 'block',
               padding: '18px 24px',
               color: '#2c4a80',
@@ -1466,7 +1511,7 @@ const Editorial = () => {
               transition: 'background 0.2s',
               fontSize: '1rem'
             }}>
-              Submission Queries
+              General Queries
             </a>
           </div>
         </div>

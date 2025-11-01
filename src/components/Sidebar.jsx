@@ -8,13 +8,21 @@ const Sidebar = ({ isOpen, onClose }) => {
     switch (location.pathname) {
       case '/journals':
         return [
-          { id: 'welcome', title: 'Welcome', icon: '🏠' },
-          { id: 'vision', title: 'Vision & Mission', icon: '👁️' },
-          { id: 'aim', title: 'Journal Aim', icon: '🎯' },
-          { id: 'domain-tracks', title: 'Domain Tracks', icon: '🌐' },
+          { id: 'about-press', title: 'Publisher Homepage', icon: '�' },
+          { id: 'about-journal', title: 'Journal Homepage', icon: '📚' },
+          { id: 'vision', title: 'Journal Overview', icon: '👁️' },
+          { id: 'editorial-board', title: 'Editorial Board', icon: '👥' },
+          { id: 'editorial-workflow', title: 'Editorial Workflow', icon: '🔄' },
           { id: 'editorial-policy', title: 'Editorial Policy', icon: '📋' },
-          { id: 'reviewer-policy', title: 'Reviewer Policy', icon: '✅' },
-          { id: 'open-access', title: 'Open Access', icon: '🔓' }
+          { id: 'reviewer-policy', title: 'Review Policy', icon: '✅' },
+          { id: 'instructions-authors', title: 'Instructions to Authors', icon: '📝' },
+          { id: 'article-processing-charges', title: 'Article Processing Charges', icon: '💰' },
+          { id: 'open-access', title: 'Open Access Policy', icon: '🔓' },
+          { id: 'publication-ethics', title: 'Publication Ethics', icon: '⚖️' },
+          { id: 'archives', title: 'Archives', icon: '📦' },
+          { id: 'current-issue', title: 'Current Issue', icon: '📰' },
+          { id: 'articles-in-press', title: 'Articles in Press', icon: '⏳' },
+          { id: 'contact-information', title: 'Contact Information', icon: '📧' }
         ]
       case '/editors':
         return [
@@ -172,7 +180,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           borderTop: '1px solid rgba(255,255,255,0.1)'
         }}>
           <div className="sidebar-item" 
-               onClick={() => window.location.href = 'mailto:editorial@gnosispress.org'}
+               onClick={() => window.location.href = 'mailto:eic.jcids@gnosispress.org'}
                style={{
                  backgroundColor: 'rgba(34, 197, 94, 0.15)',
                  border: '1px solid rgba(34, 197, 94, 0.3)',
