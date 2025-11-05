@@ -237,15 +237,19 @@
 
 .navbar .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 32px;
   height: 64px;
+  gap: 24px;
+  position: relative;
 }
 
 .menu-toggle.modern {
+  position: absolute;
+  left: 32px;
   background: none;
   border: none;
   color: #64748b;
@@ -313,10 +317,50 @@
   opacity: 1;
 }
 
+/* Dropdown Menu Styles */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 8px 0 0 0;
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 1000;
+  border: 1px solid #e2e8f0;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 20px;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: #f1f5f9;
+  color: #3b82f6;
+  padding-left: 24px;
+}
+
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+.search-container {
+  position: relative;
 }
 
 .search-btn {
@@ -335,24 +379,44 @@
   color: #334155;
 }
 
-.language-selector {
+.search-form {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border: 1px solid #e2e8f0;
+  gap: 8px;
+  background: white;
+  border: 2px solid #3b82f6;
   border-radius: 8px;
-  color: #64748b;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 4px;
 }
 
-.language-selector:hover {
+.search-input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  width: 250px;
+  background: transparent;
+}
+
+.search-submit-btn,
+.search-close-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+}
+
+.search-submit-btn:hover {
   background: #f1f5f9;
-  border-color: #cbd5e1;
-  color: #334155;
+  color: #3b82f6;
+}
+
+.search-close-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
 }
 
 /* Modern Footer styles */

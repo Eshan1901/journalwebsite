@@ -4,6 +4,9 @@ import Sidebar from './Sidebar'
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [journalDropdownOpen, setJournalDropdownOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
   const location = useLocation()
 
   const toggleSidebar = () => {
@@ -16,6 +19,22 @@ const Layout = ({ children }) => {
 
   const isActive = (path) => {
     return location.pathname === path
+  }
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    if (searchQuery.trim()) {
+      // Encode the search query and navigate to a search results page
+      // Or open a modal with results
+      const query = encodeURIComponent(searchQuery.trim())
+      
+      // Option 1: Open search in new tab with Google site search
+      window.open(`https://www.google.com/search?q=site:${window.location.hostname} ${searchQuery.trim()}`, '_blank')
+      
+      // Close search and reset
+      setSearchOpen(false)
+      setSearchQuery('')
+    }
   }
 
   return (
@@ -61,10 +80,27 @@ const Layout = ({ children }) => {
                 <span>Home</span>
               </Link>
             </li>
-            <li>
-              <Link to="/journals" className={`nav-link ${isActive('/journals') ? 'active' : ''}`}>
-                <span>Our Journal</span>
-              </Link>
+            <li className="nav-dropdown">
+              <div 
+                className={`nav-link ${isActive('/journals') ? 'active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setJournalDropdownOpen(!journalDropdownOpen);
+                }}
+                style={{ cursor: 'pointer' }}
+              >
+                <span>Journal</span>
+                <i className={`fas fa-chevron-${journalDropdownOpen ? 'up' : 'down'}`} style={{ marginLeft: '5px', fontSize: '0.75rem' }}></i>
+              </div>
+              {journalDropdownOpen && (
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to="/journals" className="dropdown-item" onClick={() => setJournalDropdownOpen(false)}>
+                      JCIDS
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <Link to="/submit" className={`nav-link ${isActive('/submit') ? 'active' : ''}`}>
@@ -82,16 +118,6 @@ const Layout = ({ children }) => {
               </Link>
             </li>
           </ul>
-          
-          <div className="navbar-actions">
-            <button className="search-btn">
-              <i className="fas fa-search"></i>
-            </button>
-            <div className="language-selector">
-              <i className="fas fa-globe"></i>
-              <span>EN</span>
-            </div>
-          </div>
         </div>
       </nav>
 
@@ -137,7 +163,7 @@ const Layout = ({ children }) => {
             <div className="footer-section">
               <h5>Our Journal</h5>
               <ul>
-                <li><a href="/journals">JCIDS - Computational Intelligence</a></li>
+                <li><a href="/journals">Journal of Computational Intelligence and Decision Science</a></li>
                 <li><a href="/submit">Submit Your Research</a></li>
                 <li><a href="/editors">Editorial Guidelines</a></li>
               </ul>
@@ -158,7 +184,6 @@ const Layout = ({ children }) => {
               <div className="contact-info">
                 <p><i className="fas fa-envelope"></i> <a href="mailto:info@gnosispress.org">info@gnosispress.org</a></p>
                 <p><i className="fas fa-paper-plane"></i> <a href="mailto:submission.jcids@gnosispress.org">submission.jcids@gnosispress.org</a></p>
-                <p><i className="fas fa-map-marker-alt"></i> Global Publishing Network</p>
               </div>
             </div>
           </div>
@@ -167,9 +192,9 @@ const Layout = ({ children }) => {
             <div className="footer-bottom-content">
               <p>&copy; 2025 Gnosis Press. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
               <div className="certifications">
-                <span className="cert-badge">COPE Member</span>
-                <span className="cert-badge">DOAJ Listed</span>
-                <span className="cert-badge">Open Access</span>
+                <a href="https://publicationethics.org/" target="_blank" rel="noopener noreferrer" className="cert-badge" style={{ textDecoration: 'none' }}>COPE Member</a>
+                <a href="https://doaj.org/" target="_blank" rel="noopener noreferrer" className="cert-badge" style={{ textDecoration: 'none' }}>DOAJ Listed</a>
+                <a href="https://www.budapestopenaccessinitiative.org/" target="_blank" rel="noopener noreferrer" className="cert-badge" style={{ textDecoration: 'none' }}>Open Access</a>
               </div>
             </div>
           </div>

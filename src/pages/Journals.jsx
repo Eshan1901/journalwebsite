@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const Journals = () => {
-  const [activeSection, setActiveSection] = useState('about-press')
+  const [activeSection, setActiveSection] = useState('about-journal')
 
   const journalSections = [
     {
@@ -177,7 +177,7 @@ const Journals = () => {
               boxShadow: '0 4px 15px rgba(0,0,0,0.08)'
             }}>
               <h4 style={{ color: '#2c4a80', marginBottom: '12px', fontSize: '1.3rem' }}>ISSN</h4>
-              <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#2c4a80', marginBottom: '8px' }}>2348-8549</div>
+              <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#2c4a80', marginBottom: '8px' }}>XXXX-XXXX</div>
               <div style={{ color: '#666', fontSize: '1rem' }}>Online Journal</div>
             </div>
           </div>
@@ -811,193 +811,6 @@ const Journals = () => {
       )
     },
     {
-      id: 'editorial-board',
-      title: 'Editorial Board',
-      content: (
-        <div>
-          <div style={{ 
-            background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-            color: 'white',
-            padding: '30px', 
-            borderRadius: '12px', 
-            textAlign: 'center',
-            marginBottom: '30px'
-          }}>
-            <h3 style={{ color: 'white', marginBottom: '15px', fontSize: '2rem' }}>
-              Editorial Board
-            </h3>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', margin: '0' }}>
-              Distinguished experts guiding our academic excellence
-            </p>
-          </div>
-
-          <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '30px' }}>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '30px', textAlign: 'center' }}>
-              Our editorial board consists of distinguished researchers and academics committed to maintaining the highest standards of scholarly excellence.
-            </p>
-            
-            {/* Editor-in-Chief */}
-            <div style={{ 
-              background: 'linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%)', 
-              padding: '25px', 
-              borderRadius: '12px',
-              marginBottom: '25px',
-              border: '1px solid #bee5eb'
-            }}>
-              <h4 style={{ color: '#1a3d6b', fontSize: '1.4rem', marginBottom: '15px', textAlign: 'center' }}>
-                <i className="fas fa-crown" style={{ marginRight: '10px', color: '#fbbf24' }}></i>
-                Editor-in-Chief
-              </h4>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                <div style={{ textAlign: 'center' }}>
-                  <h5 style={{ color: '#2c4a80', fontSize: '1.2rem', margin: '0 0 5px 0', fontWeight: '700' }}>
-                    Dr. Manikandan Rajagopal
-                  </h5>
-                  <p style={{ color: '#64748b', fontSize: '0.95rem', margin: '0' }}>
-                    Associate Professor<br/>
-                    Christ University, Bangalore
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Managing Editors */}
-            <div style={{ 
-              background: '#f8f9fa', 
-              padding: '25px', 
-              borderRadius: '12px',
-              marginBottom: '25px',
-              border: '1px solid #e2e8f0'
-            }}>
-              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px', textAlign: 'center' }}>
-                <i className="fas fa-user-tie" style={{ marginRight: '10px' }}></i>
-                Managing Editors
-              </h4>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '15px' }}>
-                <div style={{ textAlign: 'center', padding: '15px' }}>
-                  <h6 style={{ color: '#2c4a80', fontSize: '1.05rem', margin: '0 0 5px 0', fontWeight: '600' }}>
-                    Dr. Ramkumar Sivasakthivel
-                  </h6>
-                  <p style={{ color: '#64748b', fontSize: '0.9rem', margin: '0' }}>
-                    Christ University, Bangalore
-                  </p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '15px' }}>
-                  <h6 style={{ color: '#2c4a80', fontSize: '1.05rem', margin: '0 0 5px 0', fontWeight: '600' }}>
-                    Dr. Rajendran T
-                  </h6>
-                  <p style={{ color: '#64748b', fontSize: '0.9rem', margin: '0' }}>
-                    JCT College of Engineering, Coimbatore
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Associate Editors */}
-            <div style={{ 
-              background: '#f8f9fa', 
-              padding: '25px', 
-              borderRadius: '12px',
-              marginBottom: '25px',
-              border: '1px solid #e2e8f0'
-            }}>
-              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px', textAlign: 'center' }}>
-                <i className="fas fa-users" style={{ marginRight: '10px' }}></i>
-                Associate Editors (4)
-              </h4>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '12px' }}>
-                <div style={{ textAlign: 'center', padding: '10px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
-                    Dr. Loganathan Karuppusamy
-                  </p>
-                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Manipal University Jaipur</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '10px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
-                    Dr. K. Sathesh Kumar
-                  </p>
-                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Alliance University, Bangalore</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '10px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
-                    Dr. Gobinath R
-                  </p>
-                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Christ University, Bangalore</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '10px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.95rem', margin: '0', fontWeight: '600' }}>
-                    Dr. N. Rajkumar
-                  </p>
-                  <p style={{ color: '#64748b', fontSize: '0.85rem', margin: '0' }}>Alliance University, Bangalore</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Assistant Editors */}
-            <div style={{ 
-              background: '#f8f9fa', 
-              padding: '25px', 
-              borderRadius: '12px',
-              marginBottom: '30px',
-              border: '1px solid #e2e8f0'
-            }}>
-              <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px', textAlign: 'center' }}>
-                <i className="fas fa-user-friends" style={{ marginRight: '10px' }}></i>
-                Assistant Editors (7)
-              </h4>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
-                <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. Ramkumar J</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. K. Prathapchandran</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. M. Arun</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. R. Stephen</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. P. Nagaraja</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. S. Prabagar</p>
-                </div>
-                <div style={{ textAlign: 'center', padding: '8px' }}>
-                  <p style={{ color: '#2c4a80', fontSize: '0.9rem', margin: '0', fontWeight: '600' }}>Dr. R. Rajasekar</p>
-                </div>
-              </div>
-            </div>
-
-            {/* View Full Details Button */}
-            <div style={{ textAlign: 'center' }}>
-              <a 
-                href="/editors" 
-                style={{ 
-                  display: 'inline-block',
-                  padding: '15px 40px',
-                  background: 'linear-gradient(135deg, #2c4a80 0%, #1a3d6b 100%)',
-                  color: 'white',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  fontSize: '1.1rem',
-                  fontWeight: '600',
-                  transition: 'transform 0.2s',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                }}
-                onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-                onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
-              >
-                <i className="fas fa-arrow-right" style={{ marginRight: '10px' }}></i>
-                View Complete Editorial Team with Full Details
-              </a>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
       id: 'archives',
       title: 'Archives',
       content: (
@@ -1231,15 +1044,6 @@ const Journals = () => {
         }}>
           Journal of Computational Intelligence and Decision Science
         </h1>
-        <p style={{ 
-          fontSize: '1.3rem', 
-          color: '#64748b', 
-          maxWidth: '800px', 
-          margin: '0 auto',
-          lineHeight: '1.6'
-        }}>
-          Advancing research in artificial intelligence, machine learning, and intelligent decision-making systems
-        </p>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '40px' }}>
@@ -1264,7 +1068,13 @@ const Journals = () => {
             {journalSections.map((section) => (
               <div
                 key={section.id}
-                onClick={() => setActiveSection(section.id)}
+                onClick={() => {
+                  if (section.id === 'about-press') {
+                    window.location.href = '/';
+                  } else {
+                    setActiveSection(section.id);
+                  }
+                }}
                 style={{
                   padding: '18px 24px',
                   cursor: 'pointer',
