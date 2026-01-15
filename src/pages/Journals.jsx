@@ -189,97 +189,140 @@ const Journals = () => {
       title: 'Journal Overview (Vision, Mission & Quality Statement)',
       content: (
         <div>
-          <div style={{ background: '#e8f4fd', padding: '30px', borderRadius: '12px', marginBottom: '25px', border: '1px solid #bee5eb' }}>
-            <h4 style={{ color: '#1a3d6b', marginBottom: '20px', fontSize: '1.5rem', textAlign: 'center' }}>Vision</h4>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: '#2c4a80', margin: '0', textAlign: 'center' }}>
-              To be a global leader in advancing knowledge by fostering open, ethical, and impactful research that bridges academic excellence with real-world relevance, empowering scholars, practitioners, and communities to drive sustainable progress.
-            </p>
+          {/* Vision Card */}
+          <div style={{ 
+            background: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)', 
+            padding: '45px', 
+            borderRadius: '16px', 
+            marginBottom: '30px', 
+            border: '2px solid #93c5fd', 
+            boxShadow: '0 10px 30px rgba(59, 130, 246, 0.2)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{ 
+              position: 'absolute',
+              top: '0',
+              left: '0',
+              width: '6px',
+              height: '100%',
+              background: 'linear-gradient(180deg, #3b82f6, #2563eb)'
+            }}></div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ marginBottom: '25px' }}>
+                <h4 style={{ 
+                  color: '#1e3a8a', 
+                  fontSize: '2.5rem', 
+                  fontWeight: '800',
+                  margin: '0 0 12px 0',
+                  letterSpacing: '-0.5px'
+                }}>Vision</h4>
+                <div style={{ 
+                  width: '100px', 
+                  height: '5px', 
+                  background: 'linear-gradient(90deg, #3b82f6, #2563eb)',
+                  borderRadius: '3px'
+                }}></div>
+              </div>
+              <p style={{ 
+                fontSize: '1.15rem', 
+                lineHeight: '1.9', 
+                color: '#1e40af', 
+                margin: '0',
+                textAlign: 'justify',
+                fontWeight: '500'
+              }}>
+                To become a globally recognized publishing house that advances scholarly communication through ethical, high-quality publications. We aim to empower researchers and institutions worldwide by providing accessible platforms for knowledge dissemination that drive innovation and contribute to academic and societal progress.
+              </p>
+            </div>
           </div>
           
-          <div style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '12px', overflow: 'hidden', marginBottom: '25px' }}>
-            <div style={{ background: '#2c4a80', color: 'white', padding: '20px', textAlign: 'center' }}>
-              <h4 style={{ margin: '0', fontSize: '1.5rem' }}>Mission</h4>
-            </div>
-            <div style={{ padding: '30px' }}>
-              <div style={{ display: 'grid', gap: '25px' }}>
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #2c4a80' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    • To provide a rigorous, peer-reviewed publishing platform that promotes high-quality interdisciplinary research.
-                  </p>
-                </div>
-                
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #2c4a80' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    • To ensure rapid and transparent dissemination of knowledge through open and accessible channels.
-                  </p>
-                </div>
-                
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #2c4a80' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    • To uphold the highest standards of publication ethics, integrity, and scholarly collaboration.
-                  </p>
-                </div>
-
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #2c4a80' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    • To nurture a vibrant global research community by connecting academics, policymakers, and industry leaders.
-                  </p>
-                </div>
-
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #2c4a80' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    • To support innovation, inclusivity, and capacity-building in emerging research domains.
-                  </p>
-                </div>
+          {/* Mission Card */}
+          <div style={{ 
+            background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)', 
+            padding: '45px', 
+            borderRadius: '16px', 
+            marginBottom: '30px', 
+            border: '2px solid #86efac', 
+            boxShadow: '0 10px 30px rgba(16, 185, 129, 0.2)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{ 
+              position: 'absolute',
+              top: '0',
+              left: '0',
+              width: '6px',
+              height: '100%',
+              background: 'linear-gradient(180deg, #10b981, #059669)'
+            }}></div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ marginBottom: '25px' }}>
+                <h4 style={{ 
+                  color: '#065f46', 
+                  fontSize: '2.5rem', 
+                  fontWeight: '800',
+                  margin: '0 0 12px 0',
+                  letterSpacing: '-0.5px'
+                }}>Mission</h4>
               </div>
+              <p style={{ 
+                fontSize: '1.15rem', 
+                lineHeight: '1.9', 
+                color: '#047857', 
+                margin: '0',
+                textAlign: 'justify',
+                fontWeight: '500'
+              }}>
+                GNOSIS Press publishes peer-reviewed journals, books, conference proceedings, and scholarly resources that meet international publishing standards. We provide researchers, academicians, and professionals with a transparent platform to disseminate original research to a global audience. Through rigorous peer review, editorial oversight, and digital innovation, we enhance the visibility and impact of published works while fostering interdisciplinary collaboration and supporting emerging scholars.
+              </p>
             </div>
           </div>
 
-          <div style={{ background: 'linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%)', border: '1px solid #bee5eb', borderRadius: '12px', overflow: 'hidden' }}>
-            <div style={{ background: '#1a3d6b', color: 'white', padding: '20px', textAlign: 'center' }}>
-              <h4 style={{ margin: '0', fontSize: '1.5rem' }}>Quality Statement</h4>
-            </div>
-            <div style={{ padding: '30px' }}>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '20px' }}>
-                The Journal of Computational Intelligence and Decision Science is committed to maintaining the highest standards of quality in all aspects of scholarly publishing. Our quality commitment includes:
-              </p>
-              <div style={{ display: 'grid', gap: '20px' }}>
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    <strong>Rigorous Peer Review:</strong> Double-blind peer review process ensuring unbiased evaluation of all submissions based solely on academic merit.
-                  </p>
-                </div>
-                
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    <strong>Editorial Excellence:</strong> Distinguished editorial board with expertise across computational intelligence and decision science domains.
-                  </p>
-                </div>
-                
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    <strong>Ethical Standards:</strong> Strict adherence to COPE guidelines, ensuring integrity in research conduct and publication practices.
-                  </p>
-                </div>
-
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    <strong>Timely Processing:</strong> Efficient editorial workflow with first decision within 6-8 weeks of submission.
-                  </p>
-                </div>
-
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    <strong>Global Accessibility:</strong> Open access publishing ensuring research reaches worldwide audiences without barriers.
-                  </p>
-                </div>
-
-                <div style={{ paddingLeft: '20px', borderLeft: '4px solid #1a3d6b' }}>
-                  <p style={{ margin: '0', fontSize: '1.05rem', lineHeight: '1.6', color: '#333' }}>
-                    <strong>Permanent Archiving:</strong> All published articles assigned DOI for permanent digital preservation and citation.
-                  </p>
-                </div>
+          {/* Quality Statement Card */}
+          <div style={{ 
+            background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)', 
+            padding: '45px', 
+            borderRadius: '16px', 
+            border: '2px solid #fcd34d', 
+            boxShadow: '0 10px 30px rgba(245, 158, 11, 0.2)',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{ 
+              position: 'absolute',
+              top: '0',
+              left: '0',
+              width: '6px',
+              height: '100%',
+              background: 'linear-gradient(180deg, #f59e0b, #d97706)'
+            }}></div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ marginBottom: '25px' }}>
+                <h4 style={{ 
+                  color: '#92400e', 
+                  fontSize: '2.5rem', 
+                  fontWeight: '800',
+                  margin: '0 0 12px 0',
+                  letterSpacing: '-0.5px'
+                }}>Quality Statement</h4>
+                <div style={{ 
+                  width: '100px', 
+                  height: '5px', 
+                  background: 'linear-gradient(90deg, #f59e0b, #d97706)',
+                  borderRadius: '3px'
+                }}></div>
               </div>
+              <p style={{ 
+                fontSize: '1.15rem', 
+                lineHeight: '1.9', 
+                color: '#92400e', 
+                margin: '0',
+                textAlign: 'justify',
+                fontWeight: '500'
+              }}>
+                GNOSIS Press maintains rigorous quality standards by adhering to internationally recognized editorial policies, ethical guidelines, and publishing best practices. Every manuscript undergoes systematic peer review and plagiarism screening to ensure originality, accuracy, and academic integrity. We emphasize consistency, transparency, and continuous improvement across all editorial workflows, production processes, and author services. Through the integration of advanced publishing technologies and experienced editorial oversight, we ensure timely publication, global discoverability, and long-term scholarly value.
+              </p>
             </div>
           </div>
         </div>

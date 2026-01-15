@@ -174,7 +174,7 @@ class Database {
 
   async getIssues() {
     return await this.readFile('issues.json');
-  }
+  }ity
 
   async addIssue(issue) {
     const issues = await this.getIssues();

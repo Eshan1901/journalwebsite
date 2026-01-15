@@ -86,7 +86,7 @@ const Home = () => {
             marginBottom: '25px',
             textAlign: 'justify'
           }}>
-            Gnosis Press is an independent academic publishing platform dedicated to advancing high-quality research and knowledge dissemination across disciplines. It provides a space where scholars, practitioners, and policymakers can share original work that contributes to academic debates and addresses real-world challenges.
+            <strong style={{ color: '#3b82f6' }}>GNOSIS PRESS</strong> is a new-age publishing house envisioned to redefine scholarly, professional, and creative publishing in the contemporary knowledge economy. Founded on the principle that ideas gain true value only when they are disseminated with clarity, credibility, and global reach, GNOSIS PRESS positions itself at the intersection of academic rigor, technological innovation, and ethical publishing practices.
           </p>
 
           <p style={{ 
@@ -96,7 +96,7 @@ const Home = () => {
             marginBottom: '25px',
             textAlign: 'justify'
           }}>
-            The press follows an <strong style={{ color: '#3b82f6' }}>open access model</strong>, ensuring that all published research is freely available to readers worldwide without any subscription or paywall restrictions. Its publishing framework is built on the principles of academic rigor, ethical integrity, and global accessibility.
+            The publisher is committed to nurturing original thought and impactful research across diverse domains including <strong style={{ color: '#3b82f6' }}>engineering, computer science, management, medical sciences, social sciences, humanities, and emerging interdisciplinary areas</strong>. With a strong emphasis on quality and transparency, GNOSIS PRESS follows internationally accepted editorial standards, robust peer-review mechanisms, and plagiarism-free publication workflows to ensure the integrity and reliability of every published work.
           </p>
 
           <p style={{ 
@@ -106,7 +106,7 @@ const Home = () => {
             marginBottom: '25px',
             textAlign: 'justify'
           }}>
-            Gnosis Press is committed to a <strong style={{ color: '#3b82f6' }}>transparent and efficient editorial process</strong>. All submissions undergo a double-blind peer review, and authors receive a first decision within six to eight weeks. Every published article is assigned a DOI, making it easily citable and permanently accessible.
+            Leveraging modern digital platforms, the press offers <strong style={{ color: '#3b82f6' }}>seamless end-to-end publishing solutions</strong> encompassing manuscript development, editorial refinement, professional typesetting, DOI assignment, indexing support, and global digital dissemination, thereby enabling authors to focus on innovation while the publisher manages visibility and reach.
           </p>
 
           <p style={{ 
@@ -116,7 +116,17 @@ const Home = () => {
             marginBottom: '25px',
             textAlign: 'justify'
           }}>
-            The press adheres to internationally recognized <strong style={{ color: '#3b82f6' }}>ethical standards</strong>, including guidelines set by the Committee on Publication Ethics (COPE). It aims to create a global community of researchers and institutions by supporting open knowledge exchange, interdisciplinary scholarship, and innovative research practices.
+            GNOSIS PRESS actively encourages contributions from <strong style={{ color: '#3b82f6' }}>early-career researchers, seasoned academicians, industry professionals, and institutional research groups</strong>, fostering an inclusive ecosystem that bridges academia, industry, and society. In alignment with open-knowledge philosophies, the publisher supports flexible access models that enhance discoverability and citation impact without compromising ethical standards.
+          </p>
+
+          <p style={{ 
+            fontSize: '1.1rem', 
+            lineHeight: '1.9', 
+            color: '#475569',
+            marginBottom: '25px',
+            textAlign: 'justify'
+          }}>
+            Beyond traditional books and journals, GNOSIS PRESS also curates <strong style={{ color: '#3b82f6' }}>edited volumes, conference proceedings, handbooks, and special thematic issues</strong> that address contemporary challenges and future-oriented research directions. The press adheres to internationally recognized ethical standards, including guidelines set by the Committee on Publication Ethics (COPE), ensuring transparent and efficient editorial processes with double-blind peer review.
           </p>
 
           <p style={{ 
@@ -126,7 +136,7 @@ const Home = () => {
             marginBottom: '35px',
             textAlign: 'justify'
           }}>
-            Through its journals and initiatives, Gnosis Press seeks to make scholarly publishing more <strong style={{ color: '#3b82f6' }}>inclusive, timely, and impactful</strong>.
+            Guided by the belief that <strong style={{ color: '#3b82f6' }}>knowledge should empower progress</strong>, GNOSIS PRESS aspires to become a trusted global platform for high-quality intellectual contributions, enabling authors and institutions to amplify their scholarly voice, advance innovation, and contribute meaningfully to the evolving landscape of education, research, and societal development.
           </p>
 
           {/* Key Features Grid */}
