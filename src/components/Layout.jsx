@@ -52,15 +52,11 @@ const Layout = ({ children }) => {
               </div>
             </div>
             <div className="journal-meta">
-              <div className="meta-badge">
-                <span className="badge-premium">PREMIUM</span>
-                <span className="badge-journals">1 Journal</span>
-              </div>
               <p>Double-Blind Peer Review • Open Access • Global Reach</p>
             </div>
           </div>
           <div className="header-buttons">
-            <Link to="/journals#instructions-authors" className="header-btn primary">
+            <Link to="/instructions-to-authors" className="header-btn primary">
               <i className="fas fa-paper-plane"></i>
               Submit Research
             </Link>
@@ -101,6 +97,11 @@ const Layout = ({ children }) => {
                   </li>
                 </ul>
               )}
+            </li>
+            <li>
+              <Link to="/instructions-to-authors" className={`nav-link ${isActive('/instructions-to-authors') ? 'active' : ''}`}>
+                <span>Instructions to Authors</span>
+              </Link>
             </li>
             <li>
               <Link to="/editors" className={`nav-link ${isActive('/editors') ? 'active' : ''}`}>
@@ -159,7 +160,7 @@ const Layout = ({ children }) => {
               <h5>Our Journal</h5>
               <ul>
                 <li><a href="/journals">Journal of Computational Intelligence and Decision Science</a></li>
-                <li><a href="/journals#instructions-authors">Submit Your Research</a></li>
+                <li><a href="/instructions-to-authors">Submit Your Research</a></li>
                 <li><a href="/editors">Editorial Guidelines</a></li>
               </ul>
             </div>
@@ -168,9 +169,9 @@ const Layout = ({ children }) => {
               <h5>Resources</h5>
               <ul>
                 <li><Link to="/journals#instructions-authors">Author Guidelines</Link></li>
-                <li><Link to="/">Reviewer Portal</Link></li>
-                <li><Link to="/">Publication Ethics</Link></li>
-                <li><Link to="/">Open Access Policy</Link></li>
+                <li><a href="/journals#reviewer-policy" style={{ color: 'inherit', textDecoration: 'none' }}>Reviewer Portal</a></li>
+                <li><a href="/journals#publication-ethics" style={{ color: 'inherit', textDecoration: 'none' }}>Publication Ethics</a></li>
+                <li><a href="/journals#open-access" style={{ color: 'inherit', textDecoration: 'none' }}>Open Access Policy</a></li>
               </ul>
             </div>
             
@@ -185,7 +186,7 @@ const Layout = ({ children }) => {
           
           <div className="footer-bottom">
             <div className="footer-bottom-content">
-              <p>&copy; 2025 Gnosis Press. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+              <p>&copy; 2026 Gnosis Press. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
               <div className="certifications">
                 <a href="https://publicationethics.org/" target="_blank" rel="noopener noreferrer" className="cert-badge" style={{ textDecoration: 'none' }}>COPE Member</a>
                 <a href="https://doaj.org/" target="_blank" rel="noopener noreferrer" className="cert-badge" style={{ textDecoration: 'none' }}>DOAJ Listed</a>

@@ -1,101 +1,24 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Journals = () => {
   const [activeSection, setActiveSection] = useState('about-journal')
 
-  const journalSections = [
-    {
-      id: 'about-press',
-      title: 'About the Press',
-      content: (
-        <div>
-          <div style={{ 
-            background: 'linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%)', 
-            padding: '40px 30px', 
-            borderRadius: '12px', 
-            marginBottom: '30px',
-            border: '1px solid #bee5eb'
-          }}>
-            {/* Logo and Title Section */}
-            <div style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              marginBottom: '30px' 
-            }}>
-              <img 
-                src="/logo.png" 
-                alt="Gnosis Press Logo" 
-                style={{ 
-                  width: '220px', 
-                  height: '220px', 
-                  marginBottom: '20px',
-                  filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
-                }} 
-              />
-              <h3 style={{ 
-                color: '#1a3d6b', 
-                fontSize: '2.5rem', 
-                marginBottom: '10px', 
-                fontWeight: 'bold',
-                textAlign: 'center'
-              }}>
-                Gnosis Press
-              </h3>
-              <p style={{ 
-                fontSize: '1.2rem', 
-                color: '#2c4a80', 
-                fontStyle: 'italic',
-                textAlign: 'center',
-                margin: '0'
-              }}>
-                Independent Academic Publishing Platform
-              </p>
-            </div>
+  useEffect(() => {
+    // Check if there's a hash in the URL on mount
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1) // Remove the '#'
+      setActiveSection(hash)
+      // Scroll to the section after a short delay to ensure content is rendered
+      setTimeout(() => {
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    }
+  }, [])
 
-            <div style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
-              <p style={{ marginBottom: '20px' }}>
-                <strong>Gnosis Press</strong> is an independent academic publishing platform dedicated to advancing high-quality research and knowledge dissemination across disciplines. It provides a space where scholars, practitioners, and policymakers can share original work that contributes to academic debates and addresses real-world challenges.
-              </p>
-              <p style={{ marginBottom: '20px' }}>
-                The press follows an <strong>open access model</strong>, ensuring that all published research is freely available to readers worldwide without any subscription or paywall restrictions. Its publishing framework is built on the principles of academic rigor, ethical integrity, and global accessibility.
-              </p>
-              <p style={{ marginBottom: '20px' }}>
-                Gnosis Press is committed to a <strong>transparent and efficient editorial process</strong>. All submissions undergo a double-blind peer review, and authors receive a first decision within six to eight weeks. Every published article is assigned a DOI, making it easily citable and permanently accessible.
-              </p>
-              <p style={{ marginBottom: '20px' }}>
-                The press adheres to internationally recognized <strong>ethical standards</strong>, including guidelines set by the Committee on Publication Ethics (COPE). It aims to create a global community of researchers and institutions by supporting open knowledge exchange, interdisciplinary scholarship, and innovative research practices.
-              </p>
-              <p style={{ marginBottom: '20px' }}>
-                Through its journals and initiatives, Gnosis Press seeks to make scholarly publishing more <strong>inclusive, timely, and impactful</strong>, bridging the gap between academic research and practical applications that benefit society.
-              </p>
-              
-              {/* Key Features */}
-              <div style={{ 
-                background: 'white', 
-                padding: '25px', 
-                borderRadius: '8px', 
-                marginTop: '30px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
-              }}>
-                <h4 style={{ color: '#1a3d6b', marginBottom: '15px', fontSize: '1.3rem' }}>
-                  Why Publish with Gnosis Press?
-                </h4>
-                <ul style={{ margin: '0', paddingLeft: '20px' }}>
-                  <li style={{ marginBottom: '10px' }}>✓ Open access to maximize research impact and visibility</li>
-                  <li style={{ marginBottom: '10px' }}>✓ Rigorous double-blind peer review ensuring quality</li>
-                  <li style={{ marginBottom: '10px' }}>✓ Fast turnaround: First decision within 6-8 weeks</li>
-                  <li style={{ marginBottom: '10px' }}>✓ DOI assignment for permanent citation and archiving</li>
-                  <li style={{ marginBottom: '10px' }}>✓ COPE-compliant ethical standards</li>
-                  <li style={{ marginBottom: '10px' }}>✓ Global community of scholars and practitioners</li>
-                  <li>✓ No submission fees, transparent publishing costs</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    },
+  const journalSections = [
     {
       id: 'about-journal',
       title: 'About the Journal',
@@ -135,19 +58,19 @@ const Journals = () => {
               About the Journal
             </h3>
             <div style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
-              <p style={{ marginBottom: '20px' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
                 The Journal of Computational Intelligence and Decision Science is an open access, peer-reviewed academic journal published by Gnosis Press. It focuses on advancing research and applications in the areas of computational intelligence, data-driven decision-making, and intelligent systems across multiple domains. The journal welcomes contributions that integrate theory, methodology, and practice to address complex decision problems through innovative computational approaches.
               </p>
-              <p style={{ marginBottom: '20px' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
                 The journal provides immediate and free access to all its published content, enabling researchers, practitioners, and institutions worldwide to engage with the latest findings without any subscription or access barriers. A rigorous double-blind peer review process ensures the quality, originality, and scientific integrity of every manuscript.
               </p>
-              <p style={{ marginBottom: '20px' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
                 Authors can expect an initial decision within six to eight weeks of submission, reflecting the journal's commitment to a timely and transparent review process. All published articles are assigned DOI numbers to ensure global discoverability and persistent access.
               </p>
-              <p style={{ marginBottom: '20px' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
                 The journal adheres to the highest standards of publication ethics and follows the guidelines of the Committee on Publication Ethics (COPE). It encourages interdisciplinary submissions and fosters research that bridges artificial intelligence, computational methods, and decision science to generate real-world impact.
               </p>
-              <p style={{ margin: '0' }}>
+              <p style={{ margin: '0', textAlign: 'justify' }}>
                 The Journal of Computational Intelligence and Decision Science aims to serve as a platform for academic excellence and practical innovation, bringing together researchers, industry experts, and policymakers to shape the future of intelligent decision-making.
               </p>
             </div>
@@ -1023,52 +946,6 @@ const Journals = () => {
               <p style={{ margin: 0 }}>
                 <strong><i className="fas fa-exclamation-triangle"></i> File Size Limit:</strong> The total file size for all submissions must not exceed 200 MB. If the file size exceeds this limit, please contact the Editorial Office at <strong>submission.jcids@gnosispress.org</strong>.
               </p>
-            </div>
-
-            <div style={{ 
-              background: '#f8f9fa', 
-              padding: '20px', 
-              borderRadius: '8px',
-              border: '1px solid #dee2e6',
-              textAlign: 'center',
-              marginTop: '20px',
-              marginBottom: '20px'
-            }}>
-              <h3 style={{ marginTop: 0, color: '#2c5aa0' }}><i className="fas fa-file-word"></i> Download JCIDS Template</h3>
-              <p style={{ marginBottom: '20px' }}>
-                Use our official Microsoft Word template to ensure your submission follows the correct format.
-              </p>
-              <a 
-                href="/JCIDS_Template_2026.docx" 
-                download="JCIDS_Template_2026.docx"
-                style={{ 
-                  display: 'inline-flex', 
-                  alignItems: 'center', 
-                  gap: '10px',
-                  textDecoration: 'none',
-                  background: '#28a745',
-                  color: 'white',
-                  padding: '15px 30px',
-                  borderRadius: '5px',
-                  fontSize: '18px',
-                  fontWeight: '600',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                  transition: 'all 0.3s'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.background = '#218838'
-                  e.target.style.transform = 'translateY(-2px)'
-                  e.target.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)'
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.background = '#28a745'
-                  e.target.style.transform = 'translateY(0)'
-                  e.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'
-                }}
-              >
-                <i className="fas fa-download"></i>
-                Download JCIDS Template (DOCX)
-              </a>
             </div>
 
             <h3>Template Instructions:</h3>
@@ -2875,11 +2752,15 @@ const Journals = () => {
               borderBottom: '1px solid #f0f0f0',
               transition: 'background 0.2s',
               fontSize: '1rem'
+            }} onClick={(e) => {
+              e.preventDefault();
+              setActiveSection('instructions-authors');
+              document.getElementById('instructions-authors')?.scrollIntoView({ behavior: 'smooth' });
             }}>
               <i className="fas fa-paper-plane" style={{ marginRight: '10px' }}></i>
               Submit Paper
             </a>
-            <a href="mailto:eic.jcids@gnosispress.org?subject=JCIDS Editorial Query" style={{ 
+            <a href="#contact-information" style={{ 
               display: 'block',
               padding: '18px 24px',
               color: '#2c4a80',
@@ -2887,6 +2768,10 @@ const Journals = () => {
               borderBottom: '1px solid #f0f0f0',
               transition: 'background 0.2s',
               fontSize: '1rem'
+            }} onClick={(e) => {
+              e.preventDefault();
+              setActiveSection('contact-information');
+              document.getElementById('contact-information')?.scrollIntoView({ behavior: 'smooth' });
             }}>
               <i className="fas fa-envelope" style={{ marginRight: '10px' }}></i>
               Contact Editor-in-Chief

@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Submit from './pages/Submit'
 import Journals from './pages/Journals'
 import Editorial from './pages/Editorial'
+import InstructionsToAuthors from './pages/InstructionsToAuthors'
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/submit" element={<Submit />} />
           <Route path="/journals" element={<Journals />} />
           <Route path="/editors" element={<Editorial />} />
+          <Route path="/instructions-to-authors" element={<InstructionsToAuthors />} />
         </Routes>
       </Layout>
     </Router>

@@ -119,15 +119,16 @@ const Editorial = () => {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
+            <div style={{ display: 'grid', gap: '12px' }}>
               <div style={{ 
                 background: '#e8f4fd', 
                 padding: '15px', 
                 borderRadius: '8px',
-                textAlign: 'center'
+                display: 'flex',
+                alignItems: 'center'
               }}>
-                <i className="fas fa-envelope" style={{ color: '#2c4a80', fontSize: '1.2rem', marginBottom: '8px' }}></i>
-                <div style={{ fontSize: '0.9rem' }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', fontSize: '1.2rem', marginRight: '12px' }}></i>
+                <div style={{ fontSize: '0.95rem' }}>
                   <a href="mailto:manikandan.rajagopal@christuniversity.in" style={{ 
                     color: '#2c4a80', 
                     textDecoration: 'none',
@@ -142,10 +143,11 @@ const Editorial = () => {
                 background: '#e8f4fd', 
                 padding: '15px', 
                 borderRadius: '8px',
-                textAlign: 'center'
+                display: 'flex',
+                alignItems: 'center'
               }}>
-                <i className="fas fa-id-card" style={{ color: '#2c4a80', fontSize: '1.2rem', marginBottom: '8px' }}></i>
-                <div style={{ fontSize: '0.9rem' }}>
+                <i className="fas fa-id-card" style={{ color: '#2c4a80', fontSize: '1.2rem', marginRight: '12px' }}></i>
+                <div style={{ fontSize: '0.95rem' }}>
                   <a href="https://orcid.org/0000-0001-7915-0180" target="_blank" rel="noopener noreferrer" style={{ 
                     color: '#2c4a80', 
                     textDecoration: 'none',
@@ -160,10 +162,11 @@ const Editorial = () => {
                 background: '#e8f4fd', 
                 padding: '15px', 
                 borderRadius: '8px',
-                textAlign: 'center'
+                display: 'flex',
+                alignItems: 'center'
               }}>
-                <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', fontSize: '1.2rem', marginBottom: '8px' }}></i>
-                <div style={{ fontSize: '0.9rem' }}>
+                <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', fontSize: '1.2rem', marginRight: '12px' }}></i>
+                <div style={{ fontSize: '0.95rem' }}>
                   <a href="https://www.scopus.com/authid/detail.uri?authorId=57197774378" target="_blank" rel="noopener noreferrer" style={{ 
                     color: '#2c4a80', 
                     textDecoration: 'none',
@@ -416,51 +419,19 @@ const Editorial = () => {
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '10px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:loganathan.karuppusamy@jaipur.manipal.edu" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
                 }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:loganathan.karuppusamy@jaipur.manipal.edu" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    loganathan.karuppusamy@jaipur.manipal.edu
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0002-6435-2916" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0002-6435-2916
-                  </a>
-                </div>
-
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57518838400" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    Scopus Profile
-                  </a>
-                </div>
+                  loganathan.karuppusamy@jaipur.manipal.edu
+                </a>
               </div>
             </div>
 
@@ -654,51 +625,19 @@ const Editorial = () => {
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:rajkumar.n@alliance.edu.in" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
                 }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:rajkumar.n@alliance.edu.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    rajkumar.n@alliance.edu.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0001-7857-9452" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0001-7857-9452
-                  </a>
-                </div>
-
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57027609100" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    Scopus Profile
-                  </a>
-                </div>
+                  rajkumar.n@alliance.edu.in
+                </a>
               </div>
             </div>
           </div>
@@ -759,7 +698,7 @@ const Editorial = () => {
                     fontSize: '1.3rem',
                     fontWeight: '700'
                   }}>
-                    Dr. Ramkumar J
+                    Dr. J. Ramkumar
                   </h4>
                   <p style={{ 
                     color: '#2c4a80', 
@@ -767,64 +706,32 @@ const Editorial = () => {
                     fontSize: '1rem',
                     fontWeight: '600'
                   }}>
-                    Assistant Professor
+                    Associate Professor
                   </p>
                 </div>
               </div>
               
               <div style={{ marginBottom: '15px' }}>
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of Information Technology<br/>
-                  Sri Krishna Arts and Science College<br/>
-                  Coimbatore, India
+                  Department of Computer Science<br/>
+                  Kristu Jayanti University<br/>
+                  Bengaluru, India
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '10px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:jramkumar1986@gmail.com" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
                 }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:ramkumarj@skasc.ac.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ramkumarj@skasc.ac.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0001-9639-0899" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0001-9639-0899
-                  </a>
-                </div>
-
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57203030824" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    Scopus Profile
-                  </a>
-                </div>
+                  jramkumar1986@gmail.com
+                </a>
               </div>
             </div>
 
@@ -908,36 +815,6 @@ const Editorial = () => {
                     textDecoration: 'none'
                   }}>
                     prathapchandrank@jct.ac.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0002-5125-1972" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0002-5125-1972
-                  </a>
-                </div>
-
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=56405574100" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    Scopus Profile
                   </a>
                 </div>
               </div>
@@ -1164,36 +1041,6 @@ const Editorial = () => {
                     nagaraja@jctcollege.ac.in
                   </a>
                 </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0001-7070-7616" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0001-7070-7616
-                  </a>
-                </div>
-
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57192652010" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    Scopus Profile
-                  </a>
-                </div>
               </div>
             </div>
 
@@ -1249,51 +1096,19 @@ const Editorial = () => {
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '10px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:prabagar.s@alliance.edu.in" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
                 }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:prabagar.s@alliance.edu.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    prabagar.s@alliance.edu.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-id-card" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://orcid.org/0000-0002-3852-0082" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    ORCID: 0000-0002-3852-0082
-                  </a>
-                </div>
-
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=58181863200" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    Scopus Profile
-                  </a>
-                </div>
+                  prabagar.s@alliance.edu.in
+                </a>
               </div>
             </div>
 
@@ -1349,36 +1164,19 @@ const Editorial = () => {
                 </p>
               </div>
 
-              <div style={{ display: 'grid', gap: '10px' }}>
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
+              <div style={{ 
+                background: '#f8f9fa', 
+                padding: '12px', 
+                borderRadius: '6px',
+                fontSize: '0.85rem'
+              }}>
+                <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
+                <a href="mailto:rajasekar.r@alliance.edu.in" style={{ 
+                  color: '#2c4a80', 
+                  textDecoration: 'none'
                 }}>
-                  <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:rajasekar.r@alliance.edu.in" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    rajasekar.r@alliance.edu.in
-                  </a>
-                </div>
-                
-                <div style={{ 
-                  background: '#f8f9fa', 
-                  padding: '10px', 
-                  borderRadius: '6px',
-                  fontSize: '0.85rem'
-                }}>
-                  <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57189223193" target="_blank" rel="noopener noreferrer" style={{ 
-                    color: '#2c4a80', 
-                    textDecoration: 'none'
-                  }}>
-                    Scopus Profile
-                  </a>
-                </div>
+                  rajasekar.r@alliance.edu.in
+                </a>
               </div>
             </div>
           </div>

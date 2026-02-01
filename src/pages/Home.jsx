@@ -3,51 +3,6 @@ import { useState } from 'react'
 const Home = () => {
   return (
     <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '15px' }}>
-      {/* Hero Section */}
-      <div className="hero-section">
-        <div className="hero-content">
-          <div className="hero-badge">
-            <span className="badge-text">Leading Academic Publisher</span>
-          </div>
-          
-          <h1 className="hero-title">
-            GNOSIS PRESS
-          </h1>
-          
-          <p className="hero-subtitle">
-            Empowering Global Research Through Excellence in Academic Publishing
-          </p>
-
-          <p style={{ 
-            fontSize: '1.1rem', 
-            lineHeight: '1.7', 
-            color: '#64748b',
-            maxWidth: '900px',
-            margin: '25px auto 30px',
-            textAlign: 'center'
-          }}>
-            An independent academic publishing platform dedicated to advancing high-quality research and knowledge dissemination across disciplines. 
-            We follow an open access model, ensuring all published research is freely available worldwide. Through rigorous double-blind peer review 
-            and adherence to COPE ethical standards, we create a global community of researchers committed to academic excellence and real-world impact.
-          </p>
-          
-          <div className="hero-stats">
-            <div className="stat-item">
-              <div className="stat-number">1</div>
-              <div className="stat-label">Premium Journal</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">25+</div>
-              <div className="stat-label">Countries</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Open Access</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* About Gnosis Press */}
       <div style={{ 
         background: 'white', 
@@ -386,7 +341,7 @@ const Home = () => {
               cursor: 'pointer',
               transition: 'all 0.2s ease'
             }}
-            onClick={() => window.location.href = '/journals#instructions-authors'}
+            onClick={() => window.location.href = '/instructions-to-authors'}
             onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
             onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
           >
