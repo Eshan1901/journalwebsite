@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
             </div>
           </div>
           <div className="header-buttons">
-            <Link to="/submit" className="header-btn primary">
+            <Link to="/journals#instructions-authors" className="header-btn primary">
               <i className="fas fa-paper-plane"></i>
               Submit Research
             </Link>
@@ -101,11 +101,6 @@ const Layout = ({ children }) => {
                   </li>
                 </ul>
               )}
-            </li>
-            <li>
-              <Link to="/submit" className={`nav-link ${isActive('/submit') ? 'active' : ''}`}>
-                <span>Publish With Us</span>
-              </Link>
             </li>
             <li>
               <Link to="/editors" className={`nav-link ${isActive('/editors') ? 'active' : ''}`}>
@@ -164,7 +159,7 @@ const Layout = ({ children }) => {
               <h5>Our Journal</h5>
               <ul>
                 <li><a href="/journals">Journal of Computational Intelligence and Decision Science</a></li>
-                <li><a href="/submit">Submit Your Research</a></li>
+                <li><a href="/journals#instructions-authors">Submit Your Research</a></li>
                 <li><a href="/editors">Editorial Guidelines</a></li>
               </ul>
             </div>
@@ -172,10 +167,10 @@ const Layout = ({ children }) => {
             <div className="footer-section">
               <h5>Resources</h5>
               <ul>
-                <li><a href="/">Author Guidelines</a></li>
-                <li><a href="/">Reviewer Portal</a></li>
-                <li><a href="/">Publication Ethics</a></li>
-                <li><a href="/">Open Access Policy</a></li>
+                <li><Link to="/journals#instructions-authors">Author Guidelines</Link></li>
+                <li><Link to="/">Reviewer Portal</Link></li>
+                <li><Link to="/">Publication Ethics</Link></li>
+                <li><Link to="/">Open Access Policy</Link></li>
               </ul>
             </div>
             

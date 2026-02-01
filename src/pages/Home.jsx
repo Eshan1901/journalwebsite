@@ -270,109 +270,81 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Research Areas */}
+      {/* Vision, Mission, Quality Statement */}
       <div style={{ 
-        background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)', 
-        borderRadius: '20px', 
-        padding: '45px 35px', 
-        marginBottom: '45px'
+        background: 'white', 
+        borderRadius: '12px', 
+        padding: '50px 45px', 
+        marginBottom: '40px',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+        border: '1px solid #e5e7eb'
       }}>
-        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h2 style={{ 
-            fontSize: '2.2rem', 
-            fontWeight: '800', 
-            color: '#1e293b', 
-            marginBottom: '12px' 
-          }}>
-            Research Domain Tracks
-          </h2>
-          <p style={{ 
-            fontSize: '1.1rem', 
-            color: '#64748b',
-            maxWidth: '700px',
-            margin: '0 auto'
-          }}>
-            JCIDS welcomes research across eight comprehensive tracks covering the full spectrum of computational intelligence
-          </p>
-        </div>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          {/* Vision */}
+          <div style={{ marginBottom: '40px', paddingBottom: '40px', borderBottom: '1px solid #e5e7eb' }}>
+            <h3 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: '700', 
+              color: '#1e293b',
+              marginBottom: '18px',
+              letterSpacing: '-0.02em'
+            }}>
+              Vision
+            </h3>
+            <p style={{ 
+              fontSize: '1.05rem', 
+              lineHeight: '1.8', 
+              color: '#475569',
+              textAlign: 'justify',
+              margin: 0
+            }}>
+              To emerge as a globally respected new-age publishing house that empowers knowledge creation, dissemination, and impact by delivering credible, ethical, and technology-driven scholarly and professional publications that advance research, innovation, and societal progress.
+            </p>
+          </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-          gap: '20px' 
-        }}>
-          {[
-            {
-              icon: '⚡',
-              title: 'AI & Machine Learning',
-              description: 'Neural networks, deep learning, reinforcement learning, and AI optimization techniques'
-            },
-            {
-              icon: '📊',
-              title: 'Data Mining & Analytics',
-              description: 'Big data processing, pattern recognition, clustering, and cloud analytics'
-            },
-            {
-              icon: '💬',
-              title: 'Natural Language Processing',
-              description: 'Text analysis, language models, machine translation, and conversational AI'
-            },
-            {
-              icon: '👁️',
-              title: 'Computer Vision',
-              description: 'Image recognition, object detection, video analysis, and visual pattern recognition'
-            },
-            {
-              icon: '🌐',
-              title: 'IoT & Edge Computing',
-              description: 'Internet of Things, edge computing, sensor networks, and intelligent systems'
-            },
-            {
-              icon: '🔒',
-              title: 'AI Security & Ethics',
-              description: 'AI security, privacy-preserving ML, ethical AI, and algorithmic fairness'
-            },
-            {
-              icon: '🏥',
-              title: 'Health Informatics',
-              description: 'Medical AI, genomics, precision medicine, and healthcare analytics'
-            },
-            {
-              icon: '🤖',
-              title: 'Robotics & Automation',
-              description: 'Autonomous systems, robotic automation, and human-robot interaction'
-            }
-          ].map((track, index) => (
-            <div
-              key={index}
-              style={{
-                background: 'white',
-                padding: '25px',
-                borderRadius: '14px',
-                boxShadow: '0 3px 12px rgba(0, 0, 0, 0.04)',
-                border: '1px solid #e2e8f0',
-                textAlign: 'center'
-              }}
-            >
-              <div style={{ fontSize: '2.5rem', marginBottom: '12px' }}>{track.icon}</div>
-              <h4 style={{ 
-                color: '#1e293b', 
-                marginBottom: '10px', 
-                fontSize: '1.1rem',
-                fontWeight: '700'
-              }}>
-                {track.title}
-              </h4>
-              <p style={{ 
-                margin: '0', 
-                lineHeight: '1.5', 
-                color: '#64748b',
-                fontSize: '0.9rem'
-              }}>
-                {track.description}
-              </p>
-            </div>
-          ))}
+          {/* Mission */}
+          <div style={{ marginBottom: '40px', paddingBottom: '40px', borderBottom: '1px solid #e5e7eb' }}>
+            <h3 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: '700', 
+              color: '#1e293b',
+              marginBottom: '18px',
+              letterSpacing: '-0.02em'
+            }}>
+              Mission
+            </h3>
+            <p style={{ 
+              fontSize: '1.05rem', 
+              lineHeight: '1.8', 
+              color: '#475569',
+              textAlign: 'justify',
+              margin: 0
+            }}>
+              GNOSIS Press is committed to publishing high-quality books, journals, conference proceedings, and scholarly resources that uphold international publishing standards and ethical practices. The mission of GNOSIS Press is to provide an inclusive and transparent platform for researchers, academicians, professionals, and creative thinkers to share original ideas and impactful research with a global audience. Through rigorous peer review, editorial excellence, digital innovation, and wide dissemination, GNOSIS Press strives to enhance the visibility, accessibility, and citation impact of published works while supporting interdisciplinary research, early-career scholars, and industry-academia collaboration.
+            </p>
+          </div>
+
+          {/* Quality Statement */}
+          <div>
+            <h3 style={{ 
+              fontSize: '1.5rem', 
+              fontWeight: '700', 
+              color: '#1e293b',
+              marginBottom: '18px',
+              letterSpacing: '-0.02em'
+            }}>
+              Quality Statement
+            </h3>
+            <p style={{ 
+              fontSize: '1.05rem', 
+              lineHeight: '1.8', 
+              color: '#475569',
+              textAlign: 'justify',
+              margin: 0
+            }}>
+              GNOSIS Press is dedicated to maintaining uncompromising quality in all aspects of publishing by adhering to internationally recognized editorial policies, ethical guidelines, and best practices. Every manuscript is subjected to a systematic peer-review and plagiarism-screening process to ensure originality, accuracy, and academic integrity. The press emphasizes consistency, transparency, and continuous improvement in editorial workflows, production standards, and author services. By integrating advanced publishing technologies with experienced editorial oversight, GNOSIS Press ensures timely publication, global discoverability, and long-term value of intellectual contributions, reaffirming its commitment to excellence, trust, and knowledge dissemination.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -414,11 +386,11 @@ const Home = () => {
               cursor: 'pointer',
               transition: 'all 0.2s ease'
             }}
-            onClick={() => window.location.href = '/submit'}
+            onClick={() => window.location.href = '/journals#instructions-authors'}
             onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
             onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
           >
-            Submit Your Paper
+            Submit Research
           </button>
           <button 
             style={{
