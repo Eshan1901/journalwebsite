@@ -2198,58 +2198,6 @@ const Journals = () => {
               {/* Archive Years */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 
-                {/* 2026 */}
-                <div 
-                  style={{ 
-                    background: '#ffffff',
-                    padding: '30px',
-                    borderRadius: '8px',
-                    border: '1px solid #d1d5db',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-                    e.currentTarget.style.borderColor = '#9ca3af';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
-                    e.currentTarget.style.borderColor = '#d1d5db';
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
-                    <div>
-                      <h4 style={{ color: '#1f2937', fontSize: '1.8rem', margin: '0 0 8px 0', fontWeight: 'bold' }}>
-                        2026
-                      </h4>
-                      <p style={{ color: '#6b7280', fontSize: '1.1rem', margin: '0', fontWeight: '500' }}>
-                        Volume 3, Issue 3
-                      </p>
-                    </div>
-                    <button 
-                      style={{ 
-                        padding: '12px 28px',
-                        background: '#374151',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '6px',
-                        fontSize: '1rem',
-                        fontWeight: '600',
-                        cursor: 'pointer',
-                        transition: 'all 0.2s ease'
-                      }}
-                      onMouseOver={(e) => e.currentTarget.style.background = '#1f2937'}
-                      onMouseOut={(e) => e.currentTarget.style.background = '#374151'}
-                    >
-                      View Papers →
-                    </button>
-                  </div>
-                  <p style={{ color: '#6b7280', fontSize: '0.95rem', margin: '15px 0 0 0' }}>
-                    Published articles from 2026
-                  </p>
-                </div>
-
                 {/* 2025 */}
                 <div 
                   style={{ 
@@ -2602,12 +2550,20 @@ const Journals = () => {
                   eic.jcids@gnosispress.org
                 </a>
               </div>
+            </div>
 
+            <div style={{ 
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '25px'
+            }}>
               <div style={{ 
                 background: '#e8f4fd', 
                 padding: '25px', 
                 borderRadius: '8px',
-                textAlign: 'center'
+                textAlign: 'center',
+                maxWidth: '350px',
+                width: '100%'
               }}>
                 <i className="fas fa-envelope" style={{ fontSize: '2.5rem', color: '#2c4a80', marginBottom: '15px' }}></i>
                 <h4 style={{ color: '#1a3d6b', fontSize: '1.2rem', marginBottom: '10px' }}>General Queries</h4>

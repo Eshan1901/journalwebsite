@@ -161,7 +161,7 @@ const Layout = ({ children }) => {
               <ul>
                 <li><a href="/journals">Journal of Computational Intelligence and Decision Science</a></li>
                 <li><a href="/instructions-to-authors">Submit Your Research</a></li>
-                <li><a href="/editors">Editorial Guidelines</a></li>
+                <li><a href="/journals#editorial-workflow">Editorial Guidelines</a></li>
               </ul>
             </div>
             

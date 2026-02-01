@@ -8,17 +8,15 @@ const Sidebar = ({ isOpen, onClose }) => {
     switch (location.pathname) {
       case '/journals':
         return [
-          { id: 'about-press', title: 'Publisher Homepage', icon: '�' },
-          { id: 'about-journal', title: 'Journal Homepage', icon: '📚' },
-          { id: 'vision', title: 'Journal Overview', icon: '👁️' },
-          { id: 'editorial-board', title: 'Editorial Board', icon: '👥' },
-          { id: 'editorial-workflow', title: 'Editorial Workflow', icon: '🔄' },
+          { id: 'about-journal', title: 'About the Journal', icon: '📚' },
+          { id: 'vision', title: 'Journal Overview', icon: '🎯' },
           { id: 'editorial-policy', title: 'Editorial Policy', icon: '📋' },
-          { id: 'reviewer-policy', title: 'Review Policy', icon: '✅' },
-          { id: 'instructions-authors', title: 'Instructions to Authors', icon: '📝' },
-          { id: 'article-processing-charges', title: 'Article Processing Charges', icon: '💰' },
+          { id: 'reviewer-policy', title: 'Reviewer Policy', icon: '✅' },
           { id: 'open-access', title: 'Open Access Policy', icon: '🔓' },
+          { id: 'editorial-workflow', title: 'Editorial Workflow', icon: '🔄' },
           { id: 'publication-ethics', title: 'Publication Ethics', icon: '⚖️' },
+          { id: 'article-processing-charges', title: 'Processing Charges', icon: '💰' },
+          { id: 'instructions-authors', title: 'Instructions to Authors', icon: '📝' },
           { id: 'archives', title: 'Archives', icon: '📦' },
           { id: 'current-issue', title: 'Current Issue', icon: '📰' },
           { id: 'articles-in-press', title: 'Articles in Press', icon: '⏳' },
@@ -26,22 +24,15 @@ const Sidebar = ({ isOpen, onClose }) => {
         ]
       case '/editors':
         return [
+          { id: 'editorial-board', title: 'Editorial Board', icon: '👥' },
           { id: 'editor-in-chief', title: 'Editor-in-Chief', icon: '👑' },
           { id: 'associate-editors', title: 'Associate Editors', icon: '👔' },
-          { id: 'assistant-editors', title: 'Assistant Editors', icon: '👥' }
+          { id: 'assistant-editors', title: 'Assistant Editors', icon: '🤝' }
         ]
-      case '/submit':
-        return [
-          { id: 'guidelines', title: 'Guidelines', icon: '📝' },
-          { id: 'process', title: 'Review Process', icon: '🔄' },
-          { id: 'contact', title: 'Contact', icon: '📧' }
-        ]
+      case '/instructions-to-authors':
+        return []
       default:
-        return [
-          { id: 'about', title: 'About JCIDS', icon: 'ℹ️' },
-          { id: 'highlights', title: 'Highlights', icon: '⭐' },
-          { id: 'domains', title: 'Research Areas', icon: '🔬' }
-        ]
+        return []
     }
   }
 
@@ -110,8 +101,6 @@ const Sidebar = ({ isOpen, onClose }) => {
             }}>
               {location.pathname === '/journals' && 'Journal Sections'}
               {location.pathname === '/editors' && 'Editorial Team'}
-              {location.pathname === '/submit' && 'Submission Info'}
-              {location.pathname === '/' && 'About JCIDS'}
             </div>
             
             <div>
@@ -153,22 +142,22 @@ const Sidebar = ({ isOpen, onClose }) => {
             
             {location.pathname !== '/journals' && (
               <div className="sidebar-item" onClick={() => handlePageNavigation('/journals')}>
-                <i className="fas fa-book-open"></i>
-                <span>Journal</span>
+                <i className="fas fa-book"></i>
+                <span>JCIDS Journal</span>
               </div>
             )}
             
             {location.pathname !== '/editors' && (
               <div className="sidebar-item" onClick={() => handlePageNavigation('/editors')}>
-                <i className="fas fa-users"></i>
-                <span>Editorial Team</span>
+                <i className="fas fa-user-tie"></i>
+                <span>Editorial Board</span>
               </div>
             )}
             
-            {location.pathname !== '/submit' && (
-              <div className="sidebar-item" onClick={() => handlePageNavigation('/submit')}>
-                <i className="fas fa-paper-plane"></i>
-                <span>Submit Paper</span>
+            {location.pathname !== '/instructions-to-authors' && (
+              <div className="sidebar-item" onClick={() => handlePageNavigation('/instructions-to-authors')}>
+                <i className="fas fa-file-alt"></i>
+                <span>Author Guidelines</span>
               </div>
             )}
           </div>
@@ -179,8 +168,31 @@ const Sidebar = ({ isOpen, onClose }) => {
           padding: '20px 15px',
           borderTop: '1px solid rgba(255,255,255,0.1)'
         }}>
+          <div style={{ 
+            padding: '0 5px 10px 5px',
+            fontSize: '0.75rem',
+            fontWeight: '700',
+            color: '#94a3b8',
+            textTransform: 'uppercase',
+            letterSpacing: '1px'
+          }}>
+            Quick Actions
+          </div>
+          
           <div className="sidebar-item" 
-               onClick={() => window.location.href = 'mailto:eic.jcids@gnosispress.org'}
+               onClick={() => window.location.href = '/instructions-to-authors'}
+               style={{
+                 backgroundColor: 'rgba(59, 130, 246, 0.15)',
+                 border: '1px solid rgba(59, 130, 246, 0.3)',
+                 borderRadius: '8px',
+                 marginBottom: '10px'
+               }}>
+            <i className="fas fa-paper-plane" style={{ color: '#60a5fa' }}></i>
+            <span>Submit Paper</span>
+          </div>
+          
+          <div className="sidebar-item" 
+               onClick={() => window.location.href = 'mailto:submission.jcids@gnosispress.org'}
                style={{
                  backgroundColor: 'rgba(34, 197, 94, 0.15)',
                  border: '1px solid rgba(34, 197, 94, 0.3)',

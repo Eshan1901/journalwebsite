@@ -782,8 +782,7 @@ const Editorial = () => {
               <div style={{ marginBottom: '15px' }}>
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
                   Madanapalle Institute of Technology & Science (Deemed to be University)<br/>
-                  Andhra Pradesh, India<br/>
-                  <em style={{ fontSize: '0.85rem', color: '#888' }}>Research: ML, IoT, WSN, MANET</em>
+                  Andhra Pradesh, India
                 </p>
               </div>
 
@@ -1006,8 +1005,7 @@ const Editorial = () => {
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
                   Department of Computer Science<br/>
                   GITAM Deemed to be University<br/>
-                  India<br/>
-                  <em style={{ fontSize: '0.85rem', color: '#888' }}>Research: Medical Image Analysis, MRI Brain Image Segmentation, AI, Deep Learning</em>
+                  India
                 </p>
               </div>
 
@@ -1083,7 +1081,7 @@ const Editorial = () => {
                     fontSize: '1rem',
                     fontWeight: '600'
                   }}>
-                    Program Coordinator (DevOps) & Associate Professor
+                    Associate Professor
                   </p>
                 </div>
               </div>
