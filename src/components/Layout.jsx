@@ -1,21 +1,11 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import Sidebar from './Sidebar'
 
 const Layout = ({ children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [journalDropdownOpen, setJournalDropdownOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const location = useLocation()
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen)
-  }
-
-  const closeSidebar = () => {
-    setSidebarOpen(false)
-  }
 
   const isActive = (path) => {
     return location.pathname === path
@@ -39,7 +29,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="layout">
-      <header className={`journal-header ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      <header className="journal-header">
         <div className="header-content">
           <div className="journal-info">
             <div className="brand-container">
@@ -64,12 +54,8 @@ const Layout = ({ children }) => {
         </div>
       </header>
 
-      <nav className={`navbar ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      <nav className="navbar">
         <div className="container">
-          <button className="menu-toggle modern" onClick={toggleSidebar}>
-            <i className="fas fa-bars"></i>
-            <span>Menu</span>
-          </button>
           <ul className="navbar-nav">
             <li>
               <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
@@ -117,13 +103,7 @@ const Layout = ({ children }) => {
         </div>
       </nav>
 
-      <Sidebar isOpen={sidebarOpen} onClose={closeSidebar} />
-      
-      {sidebarOpen && (
-        <div className="sidebar-overlay active" onClick={closeSidebar}></div>
-      )}
-
-      <main className={`main-content ${sidebarOpen ? 'sidebar-open' : ''}`}>
+      <main className="main-content">
         {children}
       </main>
 

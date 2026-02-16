@@ -619,7 +619,8 @@ const Editorial = () => {
               
               <div style={{ marginBottom: '15px' }}>
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of CSE<br/>
+                  Computer Science and Engineering<br/>
+                  Alliance College of Advanced Computing<br/>
                   Alliance University<br/>
                   Bangalore, India
                 </p>
@@ -1088,9 +1089,9 @@ const Editorial = () => {
               
               <div style={{ marginBottom: '15px' }}>
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of CSE<br/>
-                  Alliance University<br/>
-                  Bangalore, India
+                  Department of Computer Science & Engineering (Data Science)<br/>
+                  Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology<br/>
+                  Avadi, Chennai, Tamil Nadu, India
                 </p>
               </div>
 
@@ -1101,11 +1102,11 @@ const Editorial = () => {
                 fontSize: '0.85rem'
               }}>
                 <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                <a href="mailto:prabagar.s@alliance.edu.in" style={{ 
+                <a href="mailto:drprabagars@veltech.edu.in" style={{ 
                   color: '#2c4a80', 
                   textDecoration: 'none'
                 }}>
-                  prabagar.s@alliance.edu.in
+                  drprabagars@veltech.edu.in
                 </a>
               </div>
             </div>
@@ -1156,7 +1157,8 @@ const Editorial = () => {
               
               <div style={{ marginBottom: '15px' }}>
                 <p style={{ margin: '0', fontSize: '0.95rem', lineHeight: '1.4', color: '#666' }}>
-                  Department of CSE<br/>
+                  Computer Science and Engineering<br/>
+                  Alliance College of Advanced Computing<br/>
                   Alliance University<br/>
                   Bangalore, India
                 </p>

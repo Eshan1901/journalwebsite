@@ -2610,9 +2610,24 @@ const Journals = () => {
   ]
 
   return (
-    <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px 20px' }}>
-      {/* Header */}
-      <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+    <>
+      {/* Marquee Announcement - No Publication Charges */}
+      <div style={{ 
+        background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)',
+        color: 'white',
+        padding: '15px 0',
+        boxShadow: '0 4px 15px rgba(22, 163, 74, 0.3)',
+        overflow: 'hidden',
+        width: '100%'
+      }}>
+        <marquee behavior="scroll" direction="left" scrollamount="6" style={{ fontSize: '1.2rem', fontWeight: '600' }}>
+          JCIDS Journal - No Publication Charges | Zero Article Processing Fees | Free Open Access Publishing | Submit Your Research Today at No Cost | 100% Free for Authors
+        </marquee>
+      </div>
+      
+      <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px 20px' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
         <h1 style={{ 
           fontSize: '3rem', 
           fontWeight: '800', 
@@ -2772,6 +2787,7 @@ const Journals = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
