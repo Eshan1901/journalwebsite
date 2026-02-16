@@ -810,11 +810,11 @@ const Editorial = () => {
                   fontSize: '0.85rem'
                 }}>
                   <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:prathapchandrank@jct.ac.in" style={{ 
+                  <a href="mailto:drprathapchandrank@mits.ac.im" style={{ 
                     color: '#2c4a80', 
                     textDecoration: 'none'
                   }}>
-                    prathapchandrank@jct.ac.in
+                    drprathapchandrank@mits.ac.im
                   </a>
                 </div>
               </div>
@@ -1033,11 +1033,11 @@ const Editorial = () => {
                   fontSize: '0.85rem'
                 }}>
                   <i className="fas fa-envelope" style={{ color: '#2c4a80', marginRight: '6px' }}></i>
-                  <a href="mailto:nagaraja@jctcollege.ac.in" style={{ 
+                  <a href="mailto:pnagaraja02@gmail.com" style={{ 
                     color: '#2c4a80', 
                     textDecoration: 'none'
                   }}>
-                    nagaraja@jctcollege.ac.in
+                    pnagaraja02@gmail.com
                   </a>
                 </div>
               </div>

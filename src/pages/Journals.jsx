@@ -2,6 +2,129 @@ import { useState, useEffect } from 'react'
 
 const Journals = () => {
   const [activeSection, setActiveSection] = useState('about-journal')
+  const [expandedArchive, setExpandedArchive] = useState(null)
+
+  // 2024 Papers Data
+  const papers2024 = [
+    {
+      id: 1,
+      title: "Research Paper 1",
+      doi: "10.XXXX/jcids.2024.001",
+      file: "/2024/1.pdf"
+    },
+    {
+      id: 2,
+      title: "Research Paper 2",
+      doi: "10.XXXX/jcids.2024.002",
+      file: "/2024/2.pdf"
+    },
+    {
+      id: 3,
+      title: "Research Paper 3",
+      doi: "10.XXXX/jcids.2024.003",
+      file: "/2024/3.pdf"
+    },
+    {
+      id: 4,
+      title: "Research Paper 4",
+      doi: "10.XXXX/jcids.2024.004",
+      file: "/2024/4.pdf"
+    },
+    {
+      id: 5,
+      title: "Research Paper 5",
+      doi: "10.XXXX/jcids.2024.005",
+      file: "/2024/5.pdf"
+    },
+    {
+      id: 6,
+      title: "Research Paper 6",
+      doi: "10.XXXX/jcids.2024.006",
+      file: "/2024/6.pdf"
+    },
+    {
+      id: 7,
+      title: "Research Paper 7",
+      doi: "10.XXXX/jcids.2024.007",
+      file: "/2024/7.pdf"
+    },
+    {
+      id: 8,
+      title: "Research Paper 8",
+      doi: "10.XXXX/jcids.2024.008",
+      file: "/2024/8.pdf"
+    },
+    {
+      id: 9,
+      title: "Research Paper 9",
+      doi: "10.XXXX/jcids.2024.009",
+      file: "/2024/9.pdf"
+    },
+    {
+      id: 10,
+      title: "Research Paper 10",
+      doi: "10.XXXX/jcids.2024.010",
+      file: "/2024/10.pdf"
+    }
+  ]
+
+  // 2025 Papers Data
+  const papers2025 = [
+    {
+      id: 11,
+      title: "Research Paper 11",
+      doi: "10.XXXX/jcids.2025.011",
+      file: "/2025/11.pdf"
+    },
+    {
+      id: 13,
+      title: "Research Paper 13",
+      doi: "10.XXXX/jcids.2025.013",
+      file: "/2025/13.pdf"
+    },
+    {
+      id: 14,
+      title: "Research Paper 14",
+      doi: "10.XXXX/jcids.2025.014",
+      file: "/2025/14.pdf"
+    },
+    {
+      id: 15,
+      title: "Research Paper 15",
+      doi: "10.XXXX/jcids.2025.015",
+      file: "/2025/15.pdf"
+    },
+    {
+      id: 16,
+      title: "Research Paper 16",
+      doi: "10.XXXX/jcids.2025.016",
+      file: "/2025/16.pdf"
+    },
+    {
+      id: 17,
+      title: "Research Paper 17",
+      doi: "10.XXXX/jcids.2025.017",
+      file: "/2025/17.pdf"
+    },
+    {
+      id: 18,
+      title: "Research Paper 18",
+      doi: "10.XXXX/jcids.2025.018",
+      file: "/2025/18.pdf"
+    },
+    {
+      id: 19,
+      title: "Research Paper 19",
+      doi: "10.XXXX/jcids.2025.019",
+      file: "/2025/19.pdf"
+    },
+    {
+      id: 20,
+      title: "Research Paper 20",
+      doi: "10.XXXX/jcids.2025.020",
+      file: "/2025/20.pdf"
+    }
+  ]
 
   useEffect(() => {
     // Check if there's a hash in the URL on mount
@@ -2205,20 +2328,29 @@ const Journals = () => {
                     padding: '30px',
                     borderRadius: '8px',
                     border: '1px solid #d1d5db',
-                    cursor: 'pointer',
                     transition: 'all 0.3s ease',
                     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
                   }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-                    e.currentTarget.style.borderColor = '#9ca3af';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
-                    e.currentTarget.style.borderColor = '#d1d5db';
-                  }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
+                  <div 
+                    style={{ 
+                      display: 'flex', 
+                      justifyContent: 'space-between', 
+                      alignItems: 'center', 
+                      flexWrap: 'wrap', 
+                      gap: '15px',
+                      cursor: 'pointer'
+                    }}
+                    onClick={() => setExpandedArchive(expandedArchive === '2025' ? null : '2025')}
+                    onMouseOver={(e) => {
+                      e.currentTarget.parentElement.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                      e.currentTarget.parentElement.style.borderColor = '#9ca3af';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.parentElement.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                      e.currentTarget.parentElement.style.borderColor = '#d1d5db';
+                    }}
+                  >
                     <div>
                       <h4 style={{ color: '#1f2937', fontSize: '1.8rem', margin: '0 0 8px 0', fontWeight: 'bold' }}>
                         2025
@@ -2242,12 +2374,122 @@ const Journals = () => {
                       onMouseOver={(e) => e.currentTarget.style.background = '#1f2937'}
                       onMouseOut={(e) => e.currentTarget.style.background = '#374151'}
                     >
-                      View Papers →
+                      {expandedArchive === '2025' ? '▲ Hide Papers' : '▼ View Papers'}
                     </button>
                   </div>
                   <p style={{ color: '#6b7280', fontSize: '0.95rem', margin: '15px 0 0 0' }}>
-                    Published articles from 2025
+                    Published articles from 2025 - {papers2025.length} Papers
                   </p>
+
+                  {/* Papers List */}
+                  {expandedArchive === '2025' && (
+                    <div style={{ marginTop: '30px', paddingTop: '25px', borderTop: '2px solid #e5e7eb' }}>
+                      <h5 style={{ 
+                        color: '#1f2937', 
+                        fontSize: '1.3rem', 
+                        marginBottom: '20px',
+                        fontWeight: '600'
+                      }}>
+                        Published Papers
+                      </h5>
+                      
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                        {papers2025.map((paper, index) => (
+                          <div 
+                            key={paper.id}
+                            style={{ 
+                              background: '#f9fafb',
+                              padding: '20px',
+                              borderRadius: '8px',
+                              border: '1px solid #e5e7eb',
+                              transition: 'all 0.2s ease'
+                            }}
+                            onMouseOver={(e) => {
+                              e.currentTarget.style.background = '#f3f4f6';
+                              e.currentTarget.style.borderColor = '#d1d5db';
+                            }}
+                            onMouseOut={(e) => {
+                              e.currentTarget.style.background = '#f9fafb';
+                              e.currentTarget.style.borderColor = '#e5e7eb';
+                            }}
+                          >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px', flexWrap: 'wrap' }}>
+                              <div style={{ flex: '1', minWidth: '250px' }}>
+                                <div style={{ 
+                                  color: '#2c4a80', 
+                                  fontSize: '0.85rem', 
+                                  fontWeight: '600',
+                                  marginBottom: '8px',
+                                  textTransform: 'uppercase',
+                                  letterSpacing: '0.5px'
+                                }}>
+                                  Paper #{paper.id}
+                                </div>
+                                <h6 style={{ 
+                                  color: '#1f2937', 
+                                  fontSize: '1.15rem', 
+                                  margin: '0 0 10px 0',
+                                  fontWeight: '600',
+                                  lineHeight: '1.4'
+                                }}>
+                                  {paper.title}
+                                </h6>
+                                <div style={{ 
+                                  marginTop: '10px'
+                                }}>
+                                  <span style={{ 
+                                    color: '#6b7280', 
+                                    fontSize: '0.9rem'
+                                  }}>
+                                    <strong>DOI:</strong> {paper.doi}
+                                  </span>
+                                </div>
+                              </div>
+                              
+                              <a 
+                                href={paper.file}
+                                download
+                                style={{ 
+                                  padding: '10px 24px',
+                                  background: '#2c4a80',
+                                  color: 'white',
+                                  border: 'none',
+                                  borderRadius: '6px',
+                                  fontSize: '0.95rem',
+                                  fontWeight: '600',
+                                  cursor: 'pointer',
+                                  textDecoration: 'none',
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '8px',
+                                  transition: 'all 0.2s ease',
+                                  whiteSpace: 'nowrap'
+                                }}
+                                onMouseOver={(e) => e.currentTarget.style.background = '#1a3d6b'}
+                                onMouseOut={(e) => e.currentTarget.style.background = '#2c4a80'}
+                              >
+                                <svg 
+                                  width="16" 
+                                  height="16" 
+                                  viewBox="0 0 24 24" 
+                                  fill="none" 
+                                  stroke="currentColor" 
+                                  strokeWidth="2" 
+                                  strokeLinecap="round" 
+                                  strokeLinejoin="round"
+                                >
+                                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                  <polyline points="7 10 12 15 17 10"></polyline>
+                                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download PDF
+                              </a>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* 2024 */}
@@ -2257,20 +2499,29 @@ const Journals = () => {
                     padding: '30px',
                     borderRadius: '8px',
                     border: '1px solid #d1d5db',
-                    cursor: 'pointer',
                     transition: 'all 0.3s ease',
                     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)'
                   }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-                    e.currentTarget.style.borderColor = '#9ca3af';
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
-                    e.currentTarget.style.borderColor = '#d1d5db';
-                  }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '15px' }}>
+                  <div 
+                    style={{ 
+                      display: 'flex', 
+                      justifyContent: 'space-between', 
+                      alignItems: 'center', 
+                      flexWrap: 'wrap', 
+                      gap: '15px',
+                      cursor: 'pointer'
+                    }}
+                    onClick={() => setExpandedArchive(expandedArchive === '2024' ? null : '2024')}
+                    onMouseOver={(e) => {
+                      e.currentTarget.parentElement.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+                      e.currentTarget.parentElement.style.borderColor = '#9ca3af';
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.parentElement.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                      e.currentTarget.parentElement.style.borderColor = '#d1d5db';
+                    }}
+                  >
                     <div>
                       <h4 style={{ color: '#1f2937', fontSize: '1.8rem', margin: '0 0 8px 0', fontWeight: 'bold' }}>
                         2024
@@ -2294,12 +2545,122 @@ const Journals = () => {
                       onMouseOver={(e) => e.currentTarget.style.background = '#1f2937'}
                       onMouseOut={(e) => e.currentTarget.style.background = '#374151'}
                     >
-                      View Papers →
+                      {expandedArchive === '2024' ? '▲ Hide Papers' : '▼ View Papers'}
                     </button>
                   </div>
                   <p style={{ color: '#6b7280', fontSize: '0.95rem', margin: '15px 0 0 0' }}>
-                    Published articles from 2024 (Inaugural Issue)
+                    Published articles from 2024 (Inaugural Issue) - {papers2024.length} Papers
                   </p>
+
+                  {/* Papers List */}
+                  {expandedArchive === '2024' && (
+                    <div style={{ marginTop: '30px', paddingTop: '25px', borderTop: '2px solid #e5e7eb' }}>
+                      <h5 style={{ 
+                        color: '#1f2937', 
+                        fontSize: '1.3rem', 
+                        marginBottom: '20px',
+                        fontWeight: '600'
+                      }}>
+                        Published Papers
+                      </h5>
+                      
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                        {papers2024.map((paper, index) => (
+                          <div 
+                            key={paper.id}
+                            style={{ 
+                              background: '#f9fafb',
+                              padding: '20px',
+                              borderRadius: '8px',
+                              border: '1px solid #e5e7eb',
+                              transition: 'all 0.2s ease'
+                            }}
+                            onMouseOver={(e) => {
+                              e.currentTarget.style.background = '#f3f4f6';
+                              e.currentTarget.style.borderColor = '#d1d5db';
+                            }}
+                            onMouseOut={(e) => {
+                              e.currentTarget.style.background = '#f9fafb';
+                              e.currentTarget.style.borderColor = '#e5e7eb';
+                            }}
+                          >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px', flexWrap: 'wrap' }}>
+                              <div style={{ flex: '1', minWidth: '250px' }}>
+                                <div style={{ 
+                                  color: '#2c4a80', 
+                                  fontSize: '0.85rem', 
+                                  fontWeight: '600',
+                                  marginBottom: '8px',
+                                  textTransform: 'uppercase',
+                                  letterSpacing: '0.5px'
+                                }}>
+                                  Paper #{paper.id}
+                                </div>
+                                <h6 style={{ 
+                                  color: '#1f2937', 
+                                  fontSize: '1.15rem', 
+                                  margin: '0 0 10px 0',
+                                  fontWeight: '600',
+                                  lineHeight: '1.4'
+                                }}>
+                                  {paper.title}
+                                </h6>
+                                <div style={{ 
+                                  marginTop: '10px'
+                                }}>
+                                  <span style={{ 
+                                    color: '#6b7280', 
+                                    fontSize: '0.9rem'
+                                  }}>
+                                    <strong>DOI:</strong> {paper.doi}
+                                  </span>
+                                </div>
+                              </div>
+                              
+                              <a 
+                                href={paper.file}
+                                download
+                                style={{ 
+                                  padding: '10px 24px',
+                                  background: '#2c4a80',
+                                  color: 'white',
+                                  border: 'none',
+                                  borderRadius: '6px',
+                                  fontSize: '0.95rem',
+                                  fontWeight: '600',
+                                  cursor: 'pointer',
+                                  textDecoration: 'none',
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '8px',
+                                  transition: 'all 0.2s ease',
+                                  whiteSpace: 'nowrap'
+                                }}
+                                onMouseOver={(e) => e.currentTarget.style.background = '#1a3d6b'}
+                                onMouseOut={(e) => e.currentTarget.style.background = '#2c4a80'}
+                              >
+                                <svg 
+                                  width="16" 
+                                  height="16" 
+                                  viewBox="0 0 24 24" 
+                                  fill="none" 
+                                  stroke="currentColor" 
+                                  strokeWidth="2" 
+                                  strokeLinecap="round" 
+                                  strokeLinejoin="round"
+                                >
+                                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                  <polyline points="7 10 12 15 17 10"></polyline>
+                                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download PDF
+                              </a>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
               </div>
@@ -2611,20 +2972,6 @@ const Journals = () => {
 
   return (
     <>
-      {/* Marquee Announcement - No Publication Charges */}
-      <div style={{ 
-        background: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)',
-        color: 'white',
-        padding: '15px 0',
-        boxShadow: '0 4px 15px rgba(22, 163, 74, 0.3)',
-        overflow: 'hidden',
-        width: '100%'
-      }}>
-        <marquee behavior="scroll" direction="left" scrollamount="6" style={{ fontSize: '1.2rem', fontWeight: '600' }}>
-          JCIDS Journal - No Publication Charges | Zero Article Processing Fees | Free Open Access Publishing | Submit Your Research Today at No Cost | 100% Free for Authors
-        </marquee>
-      </div>
-      
       <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px 20px' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>

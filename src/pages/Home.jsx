@@ -2,7 +2,22 @@ import { useState } from 'react'
 
 const Home = () => {
   return (
-    <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '15px' }}>
+    <>
+      {/* Marquee Announcement - No Publication Charges */}
+      <div style={{ 
+        background: 'linear-gradient(135deg, #dc2626 0%, #b91c1c 100%)',
+        color: 'white',
+        padding: '15px 0',
+        boxShadow: '0 4px 15px rgba(220, 38, 38, 0.3)',
+        overflow: 'hidden',
+        width: '100%'
+      }}>
+        <marquee behavior="scroll" direction="left" scrollamount="6" style={{ fontSize: '1.2rem', fontWeight: '600' }}>
+          Gnosis Press - No Publication Charges | Zero Article Processing Fees | Free Open Access Publishing | Submit Your Research Today at No Cost
+        </marquee>
+      </div>
+      
+      <div className="container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '15px' }}>
       {/* About Gnosis Press */}
       <div style={{ 
         background: 'white', 
@@ -374,6 +389,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
