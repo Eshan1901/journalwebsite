@@ -444,7 +444,15 @@ const PaperDetail = () => {
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '25px' }}>
             <button
-              onClick={() => navigate('/journals')}
+              onClick={() => {
+                navigate('/journals');
+                setTimeout(() => {
+                  const archivesElement = document.getElementById('archives');
+                  if (archivesElement) {
+                    archivesElement.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}
               style={{
                 background: 'rgba(255,255,255,0.2)',
                 border: 'none',
@@ -557,7 +565,9 @@ const PaperDetail = () => {
             border: '1px solid #3b82f630',
             boxShadow: '0 2px 8px rgba(59, 130, 246, 0.1)'
           }}>
-            Volume {paper.volume} | Issue {paper.issue} | Year {paper.year} | Pages {paper.pages} | Article Id. {paper.articleId}
+            Volume {paper.volume} | Issue {paper.issue} | Year {paper.year} | Pages {paper.pages}
+            <br />
+            Article Id. {paper.articleId}
             <br />
             DOI: <a 
               href={`https://doi.org/${paper.doi}`} 
@@ -586,7 +596,7 @@ const PaperDetail = () => {
               lineHeight: '1.9',
               color: '#475569',
               textAlign: 'justify',
-              whiteSpace: 'pre-wrap',
+              textJustify: 'inter-word',
               background: '#f8fafc',
               padding: '25px',
               borderRadius: '10px',
@@ -612,7 +622,8 @@ const PaperDetail = () => {
               fontSize: '0.95rem',
               lineHeight: '1.9',
               color: '#475569',
-              whiteSpace: 'pre-wrap',
+              textAlign: 'justify',
+              textJustify: 'inter-word',
               background: '#f8fafc',
               padding: '25px',
               borderRadius: '10px',
@@ -643,6 +654,8 @@ const PaperDetail = () => {
               color: '#475569',
               lineHeight: '1.8',
               fontStyle: 'italic',
+              textAlign: 'justify',
+              textJustify: 'inter-word',
               boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
             }}>
               {paper.citation}

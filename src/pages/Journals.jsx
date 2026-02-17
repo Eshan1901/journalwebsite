@@ -649,7 +649,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '25px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
               The editorial process is designed to maintain academic standards, provide fair and timely review, and support open access dissemination of research.
             </p>
           </div>
@@ -715,7 +715,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '25px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
               The review system is designed to maintain academic integrity, provide constructive feedback to authors, and support timely editorial decisions.
             </p>
           </div>
@@ -781,7 +781,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '30px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
               The journal supports unrestricted access to research findings, encouraging wider dissemination, increased visibility, and greater impact of published work.
             </p>
           </div>
@@ -841,7 +841,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '25px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
               The workflow is designed to maintain academic standards, minimize delays, and provide authors with a clear understanding of the process from submission to publication.
             </p>
           </div>
@@ -980,7 +980,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '25px' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '25px', textAlign: 'justify' }}>
               The Journal of Computational Intelligence and Decision Science adheres to the highest standards of publication ethics as outlined by the Committee on Publication Ethics (COPE). We are committed to maintaining academic integrity throughout the publication process.
             </p>
 
@@ -1065,17 +1065,17 @@ const Journals = () => {
 
             <div style={{ marginBottom: '30px' }}>
               <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Publication Charges</h4>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '15px' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '15px', textAlign: 'justify' }}>
                 Article Processing Charges (APC) are <strong>currently waived</strong> for the initial issues to support early contributors and build the journal's community.
               </p>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', textAlign: 'justify' }}>
                 Future APCs, if introduced, will be announced well in advance and will remain competitive and transparent. Waivers and discounts will be available for authors from developing countries and those without institutional funding.
               </p>
             </div>
 
             <div>
               <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Fee Transparency</h4>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', textAlign: 'justify' }}>
                 All fee structures will be clearly communicated on the journal website. No hidden charges will be applied at any stage of the publication process.
               </p>
             </div>
@@ -2768,7 +2768,11 @@ const Journals = () => {
                               fontWeight: '600',
                               lineHeight: '1.8'
                             }}>
-                              Volume {paper.volume} | Issue {paper.issue} | Year {paper.year} | Article Id. {paper.articleId} | DOI: <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ color: '#1e40af', textDecoration: 'underline' }}>https://doi.org/{paper.doi}</a>
+                              Volume {paper.volume} | Issue {paper.issue} | Year {paper.year}
+                              <br />
+                              Article Id. {paper.articleId}
+                              <br />
+                              DOI: <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ color: '#1e40af', textDecoration: 'underline' }}>https://doi.org/{paper.doi}</a>
                             </div>
 
                             {/* Citation */}
@@ -2793,7 +2797,8 @@ const Journals = () => {
                                 fontSize: '0.9rem',
                                 color: '#374151',
                                 lineHeight: '1.7',
-                                fontStyle: 'italic'
+                                fontStyle: 'italic',
+                                textAlign: 'justify'
                               }}>
                                 {paper.citation}
                               </div>
@@ -3024,7 +3029,11 @@ const Journals = () => {
                               fontWeight: '600',
                               lineHeight: '1.8'
                             }}>
-                              Volume {paper.volume} | Issue {paper.issue} | Year {paper.year} | Article Id. {paper.articleId} | DOI: <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ color: '#1e40af', textDecoration: 'underline' }}>https://doi.org/{paper.doi}</a>
+                              Volume {paper.volume} | Issue {paper.issue} | Year {paper.year}
+                              <br />
+                              Article Id. {paper.articleId}
+                              <br />
+                              DOI: <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ color: '#1e40af', textDecoration: 'underline' }}>https://doi.org/{paper.doi}</a>
                             </div>
 
                             {/* Citation */}
@@ -3049,7 +3058,8 @@ const Journals = () => {
                                 fontSize: '0.9rem',
                                 color: '#374151',
                                 lineHeight: '1.7',
-                                fontStyle: 'italic'
+                                fontStyle: 'italic',
+                                textAlign: 'justify'
                               }}>
                                 {paper.citation}
                               </div>
@@ -3390,17 +3400,19 @@ const Journals = () => {
         <div style={{ 
           marginTop: '30px', 
           marginBottom: '40px',
+          marginLeft: '-20px',
+          marginRight: '-20px',
+          width: 'calc(100% + 40px)',
           overflow: 'hidden'
         }}>
           <div style={{ 
             background: 'linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%)',
             color: 'white',
             padding: '15px 0',
-            borderRadius: '8px',
             boxShadow: '0 4px 12px rgba(30, 58, 138, 0.3)'
           }}>
             <marquee behavior="scroll" direction="left" scrollamount="6" style={{ fontSize: '1.1rem', fontWeight: '500' }}>
-              🎓 JCIDS: Advancing Research in Computational Intelligence & Decision Science | Open Access Platform for Global Researchers | Rigorous Double-Blind Peer Review | Fast Track Publication - Decision within 6-8 Weeks | DOI Assigned to All Articles | Published by Gnosis Press
+              🎓 Journal of Computational Intelligence and Decision Science (JCIDS) | Open Access Platform for Global Researchers | Rigorous Double-Blind Peer Review | Fast Track Publication - Decision within 6-8 Weeks | DOI Assigned to All Articles | Published by Gnosis Press
             </marquee>
           </div>
         </div>

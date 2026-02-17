@@ -69,7 +69,7 @@ const Submit = () => {
           {/* Overview Section */}
           <div id="overview" className="card">
             <h2><i className="fas fa-info-circle"></i> Overview</h2>
-            <p>
+            <p style={{ textAlign: 'justify' }}>
               All manuscripts must be submitted via email to <strong>submission.jcids@gnosispress.org</strong>, and manuscripts submitted for publication must be prepared according to the guidelines given below.
             </p>
             <div style={{ 
@@ -105,10 +105,10 @@ const Submit = () => {
                 </a>
               </div>
             </div>
-            <p style={{ marginTop: '15px' }}>
+            <p style={{ marginTop: '15px', textAlign: 'justify' }}>
               This guideline is intended to assist authors as they prepare their manuscripts. To avoid any delay and time-consuming restructuring, Journal of Computational Intelligence and Decision Science (JCIDS) asks and encourages authors to read the guidelines before writing the manuscript.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify' }}>
               JCIDS publishes review and research articles. All papers must be written in English, and follow a clear, concise style. The language editors may have to check the language and grammar of your submitted manuscript, and make editorial changes if deemed necessary.
             </p>
           </div>
@@ -230,7 +230,7 @@ const Submit = () => {
           {/* Cover Letter */}
           <div id="cover-letter" className="card">
             <h2><i className="fas fa-envelope-open-text"></i> Cover Letter</h2>
-            <p>
+            <p style={{ textAlign: 'justify' }}>
               A submitted manuscript must be accompanied by a cover letter. The cover letter must clearly state that:
             </p>
             <ul>
@@ -241,12 +241,12 @@ const Submit = () => {
               <li>All authors have approved the submission to the journal</li>
               <li>All authors have accepted full responsibilities pertaining to the manuscript's delivery and contents</li>
             </ul>
-            <p>
+            <p style={{ textAlign: 'justify' }}>
               If there are any ethical, copyright, or disclosure issues that come with the manuscript, please reveal them in the cover letter. Authors need to declare that there is no conflict of interests or disclose all conflicts of interest regarding the manuscript submitted.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Statement of Novelty</h3>
-            <p>
+            <p style={{ textAlign: 'justify' }}>
               The statement of novelty should be submitted with a manuscript. The statement should be <strong>100-200 words</strong>, and must not be a paraphrase of the abstract.
             </p>
             <p>In the statement of novelty, the authors should address:</p>
@@ -259,7 +259,7 @@ const Submit = () => {
           {/* Templates */}
           <div id="templates" className="card">
             <h2><i className="fas fa-file-alt"></i> Templates</h2>
-            <p>
+            <p style={{ textAlign: 'justify' }}>
               Authors are strongly encouraged to use the Microsoft Word template to prepare their manuscript. Using the provided template will significantly speed up the copy-editing and publication process for accepted manuscripts.
             </p>
             
@@ -325,7 +325,7 @@ const Submit = () => {
             <h3>Template Instructions:</h3>
             <div style={{ marginBottom: '20px' }}>
               <h4><i className="fas fa-file-word"></i> Microsoft Word Template</h4>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 Manuscripts prepared in Microsoft Word must be submitted as a single file. The template includes predefined styles accessible via the "Styles" gallery in Word. Figures should be inserted into the main text immediately after the paragraph where they are first cited.
               </p>
               <ul style={{ marginTop: '10px' }}>
@@ -338,7 +338,7 @@ const Submit = () => {
 
             <div>
               <h4><i className="fas fa-paperclip"></i> Supplementary Files</h4>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 These can be in any format, though it is recommended to use common, non-proprietary formats whenever possible.
               </p>
             </div>
@@ -360,12 +360,12 @@ const Submit = () => {
               </ul>
 
               <h4 style={{ marginTop: '20px' }}>• Title</h4>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 The title of your manuscript should be precise, clear, and directly related to the study. Acronyms are not allowed in paper titles. They can be used in abstracts only if the related expanded form is provided (just after the acronym, in parentheses) the first time they are used.
               </p>
 
               <h4>• Author Information</h4>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 Please provide the full names of all authors, including first and last names, with middle name initials included if necessary. Affiliations should follow the PubMed/MEDLINE standard format, including detailed address information such as city, postal code, state/province, and country. At least one author must be designated as the corresponding author, whose email address will be publicly displayed in the published article.
               </p>
               <div style={{ 
@@ -381,24 +381,24 @@ const Submit = () => {
               </div>
 
               <h4 style={{ marginTop: '20px' }}>• Author Affiliations</h4>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 All authors must include their current affiliation as well as the institution where the majority of the research for the manuscript was conducted. Authors who are not currently associated with any university, institution, or organization should identify themselves as <strong>"Independent Researchers."</strong>
               </p>
 
               <h4>• Abstract</h4>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 Abstracts of a research paper should be typically <strong>200 to 400 words</strong> in length, and <strong>150 to 300 words</strong> for a review paper. Abstracts shall be running continuously and shall not include reference citations. Abbreviations that appear only once in the abstract should be defined in full.
               </p>
 
               <h4>• Keywords</h4>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 Please list <strong>3 to 10</strong> pertinent keywords specific to the article yet reasonably common within the subject discipline.
               </p>
             </div>
 
             <div style={{ marginTop: '30px' }}>
               <h3><i className="fas fa-chevron-right"></i> Main Text</h3>
-              <p>
+              <p style={{ textAlign: 'justify' }}>
                 For Articles, a structured format is recommended: <strong>Introduction, Results, Discussion, Methods, Conclusions</strong>. Reviews may use a more flexible structure.
               </p>
             </div>

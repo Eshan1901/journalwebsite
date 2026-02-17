@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
               </div>
             </div>
             <div className="journal-meta">
-              <p>Double-Blind Peer Review • Open Access • Global Reach</p>
+              <p>Double-Blind Peer Review • Open Access</p>
             </div>
           </div>
           <div className="header-buttons">
