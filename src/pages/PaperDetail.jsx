@@ -47,8 +47,8 @@ const PaperDetail = () => {
         id: 1,
         type: 'Research Article',
         articleId: 'jcids.2024.001',
-        title: 'Hybrid Stacked Ensemble Approach with AdaBoost for Accurate Cryptocurrency Price Prediction',
-        authors: 'Ashima Kukkar, Shweta Sankhwar, Prakhar Rathore, Akshay Kumar Gupta, Sweta Sinha',
+        title: 'Optimized Neural Fusion Architecture for Secure Data Validation and Cryptographic Key Regulation in Advanced Cloud Ecosystems',
+        authors: 'Niranchana Radhakrishnan, C. Viji, Balusamy Nachiappan',
         received: '09 June 2024',
         accepted: '25 December 2024',
         published: '14 January 2026',
@@ -58,7 +58,7 @@ const PaperDetail = () => {
         pages: '1-17',
         doi: '10.62656/jcids.v1i1.1',
         file: '/2024/1.pdf',
-        citation: 'Kukkar A, Sankhwar S, Rathore P, Gupta AK, Sinha S. Hybrid stacked ensemble approach with AdaBoost for accurate cryptocurrency price prediction. J Comput Intell Decis Sci. 2024;1(1):1.'
+        citation: 'Niranchana Radhakrishnan, C. Viji, Balusamy Nachiappan. Optimized neural fusion architecture for secure data validation and cryptographic key regulation in advanced cloud ecosystems. J Comput Intell Decis Sci. 2024;1(1):1.'
       },
       {
         id: 2,
@@ -81,8 +81,8 @@ const PaperDetail = () => {
         id: 3,
         type: 'Research Article',
         articleId: 'jcids.2024.003',
-        title: 'Forecasting of Univariate Time Series using Hybrid Deep Learning Technique',
-        authors: 'Mohit Mittal, Rohit Beniwal, Nitin Mittal, Akshay Kumar Gupta',
+        title: 'Privacy-Preserving Framework for Safeguarding Healthcare Data with Embedded Authentication Across Federated Cloud Platforms',
+        authors: 'S. Sivakumar, T. Karthikeyan',
         received: '16 July 2024',
         accepted: '07 August 2024',
         published: '30 December 2024',
@@ -92,14 +92,14 @@ const PaperDetail = () => {
         pages: '29-40',
         doi: '10.62656/jcids.v1i1.3',
         file: '/2024/3.pdf',
-        citation: 'Mittal M, Beniwal R, Mittal N, Gupta AK. Forecasting of univariate time series using hybrid deep learning technique. J Comput Intell Decis Sci. 2024;1(1):3.'
+        citation: 'Sivakumar S, Karthikeyan T. Privacy-preserving framework for safeguarding healthcare data with embedded authentication across federated cloud platforms. J Comput Intell Decis Sci. 2024;1(1):3.'
       },
       {
         id: 4,
         type: 'Research Article',
         articleId: 'jcids.2024.004',
-        title: 'Semantic Feature-based Improved Word Sense Disambiguation using Deep Convolutional Neural Network',
-        authors: 'Sanjeev Sharma, Deepak Kumar Sharma',
+        title: 'Enhanced Correlation Mapping Framework Employing Hybrid Evolutionary Strategy for Drug–Disease Association Discovery Across Diverse Biomedical Sources',
+        authors: 'Thimmiaraja J, J. Macklin Abraham Navamani, Siva Shankar Ramasamy',
         received: '12 August 2024',
         accepted: '24 September 2024',
         published: '30 December 2024',
@@ -109,14 +109,14 @@ const PaperDetail = () => {
         pages: '41-49',
         doi: '10.62656/jcids.v1i1.4',
         file: '/2024/4.pdf',
-        citation: 'Sharma S, Sharma DK. Semantic feature-based improved word sense disambiguation using deep convolutional neural network. J Comput Intell Decis Sci. 2024;1(1):4.'
+        citation: 'Thimmiaraja J, Navamani JMA, Ramasamy SS. Enhanced correlation mapping framework employing hybrid evolutionary strategy for drug–disease association discovery across diverse biomedical sources. J Comput Intell Decis Sci. 2024;1(1):4.'
       },
       {
         id: 5,
         type: 'Research Article',
         articleId: 'jcids.2024.005',
-        title: 'Advanced Techniques in Multiobjective Feature Selection: Comparative Analysis and Future Directions',
-        authors: 'Madjid Khalilian, Norwati Mustapha, Md Nasir Sulaiman, Abbas Khosravi',
+        title: 'Cognitive Resource Allocation System with Deep Learning-Based Offloading for Enhanced Mobile Computing Performance',
+        authors: 'M. Nalini, Sivakumar Vengusamy',
         received: '20 August 2024',
         accepted: '10 September 2024',
         published: '30 December 2024',
@@ -126,14 +126,14 @@ const PaperDetail = () => {
         pages: '50-63',
         doi: '10.62656/jcids.v1i1.5',
         file: '/2024/5.pdf',
-        citation: 'Khalilian M, Mustapha N, Sulaiman MN, Khosravi A. Advanced techniques in multiobjective feature selection: comparative analysis and future directions. J Comput Intell Decis Sci. 2024;1(1):5.'
+        citation: 'Nalini M, Vengusamy S. Cognitive resource allocation system with deep learning-based offloading for enhanced mobile computing performance. J Comput Intell Decis Sci. 2024;1(1):5.'
       },
       {
         id: 6,
         type: 'Research Article',
         articleId: 'jcids.2024.006',
-        title: 'Optimizing Artificial Neural Networks: A Comparative Analysis of Algorithms',
-        authors: 'Abdelmonaim Lahdoud, Mohammed Bennamoun',
+        title: 'Optimized Sequence Recognition Framework for Memory-Assisted Threat Mitigation in Wireless Intrusion Environments',
+        authors: 'K. Padmavathi, Basheer Riskhan',
         received: '05 September 2024',
         accepted: '10 October 2024',
         published: '30 December 2024',
@@ -143,14 +143,14 @@ const PaperDetail = () => {
         pages: '64-72',
         doi: '10.62656/jcids.v1i1.6',
         file: '/2024/6.pdf',
-        citation: 'Lahdoud A, Bennamoun M. Optimizing artificial neural networks: a comparative analysis of algorithms. J Comput Intell Decis Sci. 2024;1(1):6.'
+        citation: 'Padmavathi K, Riskhan B. Optimized sequence recognition framework for memory-assisted threat mitigation in wireless intrusion environments. J Comput Intell Decis Sci. 2024;1(1):6.'
       },
       {
         id: 7,
         type: 'Research Article',
         articleId: 'jcids.2024.007',
-        title: 'Load Balanced Spectrum Allocation Approach Using Intelligent Water Drops in Cognitive Radio Network',
-        authors: 'E. Suganya, P. Anitha',
+        title: 'Reliability-Driven Cloudlet Allocation Framework Leveraging Chaotic Evolutionary Techniques for Mobile Cloud Environments',
+        authors: 'P. Jayasheelan, Swamynathan Ramakrishnan',
         received: '09 September 2024',
         accepted: '08 October 2024',
         published: '30 December 2024',
@@ -160,14 +160,14 @@ const PaperDetail = () => {
         pages: '73-85',
         doi: '10.62656/jcids.v1i1.7',
         file: '/2024/7.pdf',
-        citation: 'Suganya E, Anitha P. Load balanced spectrum allocation approach using intelligent water drops in cognitive radio network. J Comput Intell Decis Sci. 2024;1(1):7.'
+        citation: 'Jayasheelan P, Ramakrishnan S. Reliability-driven cloudlet allocation framework leveraging chaotic evolutionary techniques for mobile cloud environments. J Comput Intell Decis Sci. 2024;1(1):7.'
       },
       {
         id: 8,
         type: 'Research Article',
         articleId: 'jcids.2024.008',
-        title: 'Machine Learning: A New Technique for Emotion Recognition by Facial Recognition',
-        authors: 'Vandna Sharma, Kusum Grewal, Krishna Kant',
+        title: 'Nature-Inspired Feature Engineering and Cancer Detection Framework Leveraging Ensemble Convolutional Neural Architectures',
+        authors: 'S. Hemalatha, Arokiaraj Selvaraj',
         received: '12 October 2024',
         accepted: '20 December 2024',
         published: '30 December 2024',
@@ -177,14 +177,14 @@ const PaperDetail = () => {
         pages: '86-96',
         doi: '10.62656/jcids.v1i1.8',
         file: '/2024/8.pdf',
-        citation: 'Sharma V, Grewal K, Kant K. Machine learning: a new technique for emotion recognition by facial recognition. J Comput Intell Decis Sci. 2024;1(1):8.'
+        citation: 'Hemalatha S, Selvaraj A. Nature-inspired feature engineering and cancer detection framework leveraging ensemble convolutional neural architectures. J Comput Intell Decis Sci. 2024;1(1):8.'
       },
       {
         id: 9,
         type: 'Research Article',
         articleId: 'jcids.2024.009',
-        title: 'Cyber Attack Detection Using Deep Learning Techniques',
-        authors: 'Keshav Kaushik, Kamna Solanki, Akshay Singhal, Sachin Lalar, Manoj Kumar',
+        title: 'Automated MRI-Based Brain Lesion Delineation Using Deep Convolutional Neural Models',
+        authors: 'K. Dhiyaneshwaran, Shanmugan Joghee',
         received: '19 October 2024',
         accepted: '01 November 2024',
         published: '30 December 2024',
@@ -194,14 +194,14 @@ const PaperDetail = () => {
         pages: '97-104',
         doi: '10.62656/jcids.v1i1.9',
         file: '/2024/9.pdf',
-        citation: 'Kaushik K, Solanki K, Singhal A, Lalar S, Kumar M. Cyber attack detection using deep learning techniques. J Comput Intell Decis Sci. 2024;1(1):9.'
+        citation: 'Dhiyaneshwaran K, Joghee S. Automated MRI-based brain lesion delineation using deep convolutional neural models. J Comput Intell Decis Sci. 2024;1(1):9.'
       },
       {
         id: 10,
         type: 'Research Article',
         articleId: 'jcids.2024.010',
-        title: 'Improving Question Answering through Soft Computing, Lemmatization, and Parsing Technique',
-        authors: 'Vandana Niranjan, Deepti Mehrotra',
+        title: 'Optimized Term Importance Framework for Automated Feature Derivation in Complex and High-Dimensional Big Data',
+        authors: 'Yanglem Loijing Khomba Khuman, Iyyappan Moorthi',
         received: '08 November 2024',
         accepted: '25 November 2024',
         published: '30 December 2024',
@@ -211,7 +211,7 @@ const PaperDetail = () => {
         pages: '105-117',
         doi: '10.62656/jcids.v1i1.10',
         file: '/2024/10.pdf',
-        citation: 'Niranjan V, Mehrotra D. Improving question answering through soft computing, lemmatization, and parsing technique. J Comput Intell Decis Sci. 2024;1(1):10.'
+        citation: 'Khuman YLK, Moorthi I. Optimized term importance framework for automated feature derivation in complex and high-dimensional big data. J Comput Intell Decis Sci. 2024;1(1):10.'
       }
     ];
 
@@ -220,8 +220,8 @@ const PaperDetail = () => {
         id: 11,
         type: 'Research Article',
         articleId: 'jcids.2025.001',
-        title: 'Enhanced Query Expansion Model For Retrieving Relevant Medical Documents',
-        authors: 'Ajantha Devi V, R. Rajeswara Rao',
+        title: 'Dynamic Multi-Level Heuristic Framework for Predicting Lung Cancer from CT Scan Data',
+        authors: 'S. Dinesh Kumar, T. N. Prabakaran',
         received: '12 November 2024',
         accepted: '20 December 2024',
         published: '14 January 2026',
@@ -231,14 +231,14 @@ const PaperDetail = () => {
         pages: '118-132',
         doi: '10.62656/jcids.v1i2.11',
         file: '/2025/11.pdf',
-        citation: 'Ajantha Devi V, Rajeswara Rao R. Enhanced query expansion model for retrieving relevant medical documents. J Comput Intell Decis Sci. 2025;1(2):11.'
+        citation: 'Dinesh Kumar S, Prabakaran TN. Dynamic multi-level heuristic framework for predicting lung cancer from CT scan data. J Comput Intell Decis Sci. 2025;1(2):11.'
       },
       {
         id: 12,
         type: 'Research Article',
         articleId: 'jcids.2025.002',
-        title: 'Efficient VLSI Architecture for Multi-Criteria Sorting, Searching and Finding Maximum Value',
-        authors: 'John Z. F. Pang, W. Z. Zhu',
+        title: 'Enhanced User Authorization Framework in Cloud Environments Using Weighted Proximity-Based Trust Evaluation',
+        authors: 'T. Pandiyavathi, K. Selvakumar',
         received: '18 November 2024',
         accepted: '28 December 2024',
         published: '14 January 2026',
@@ -248,14 +248,14 @@ const PaperDetail = () => {
         pages: '133-150',
         doi: '10.62656/jcids.v1i2.12',
         file: '/2025/12.pdf',
-        citation: 'Pang JZF, Zhu WZ. Efficient VLSI architecture for multi-criteria sorting, searching and finding maximum value. J Comput Intell Decis Sci. 2025;1(2):12.'
+        citation: 'Pandiyavathi T, Selvakumar K. Enhanced user authorization framework in cloud environments using weighted proximity-based trust evaluation. J Comput Intell Decis Sci. 2025;1(2):12.'
       },
       {
         id: 13,
         type: 'Research Article',
         articleId: 'jcids.2025.003',
-        title: 'Senti-N: An Algorithm for Sentiment Analysis of Tweets using Afinn-165 Wordlist',
-        authors: 'Ashwini Kodipalli, Shweta Taneja',
+        title: 'Advanced Sequence Modeling Framework for Analyzing Learner Feedback in Educational Systems',
+        authors: 'B. Amutha, S. Ponmalar',
         received: '25 November 2024',
         accepted: '05 January 2025',
         published: '14 January 2026',
@@ -265,14 +265,14 @@ const PaperDetail = () => {
         pages: '151-157',
         doi: '10.62656/jcids.v1i2.13',
         file: '/2025/13.pdf',
-        citation: 'Kodipalli A, Taneja S. Senti-N: an algorithm for sentiment analysis of tweets using Afinn-165 wordlist. J Comput Intell Decis Sci. 2025;1(2):13.'
+        citation: 'Amutha B, Ponmalar S. Advanced sequence modeling framework for analyzing learner feedback in educational systems. J Comput Intell Decis Sci. 2025;1(2):13.'
       },
       {
         id: 14,
         type: 'Research Article',
         articleId: 'jcids.2025.004',
-        title: 'Sentiment Analysis on Big Data Using HDFS and MapReduce Framework',
-        authors: 'Upendra Singh, Sandeep Harit',
+        title: 'Two-Dimensional Signal Decomposition for Feature Reduction and Deep Learning-Based Object Detection',
+        authors: 'Ananthi Sheshasaayee, Priyanka Vijayan',
         received: '02 December 2024',
         accepted: '10 January 2025',
         published: '14 January 2026',
@@ -282,14 +282,14 @@ const PaperDetail = () => {
         pages: '158-167',
         doi: '10.62656/jcids.v1i2.14',
         file: '/2025/14.pdf',
-        citation: 'Singh U, Harit S. Sentiment analysis on big data using HDFS and MapReduce framework. J Comput Intell Decis Sci. 2025;1(2):14.'
+        citation: 'Sheshasaayee A, Vijayan P. Two-dimensional signal decomposition for feature reduction and deep learning-based object detection. J Comput Intell Decis Sci. 2025;1(2):14.'
       },
       {
         id: 15,
         type: 'Research Article',
         articleId: 'jcids.2025.005',
-        title: 'Sentiment Analysis of Social Media Content for Disaster Management',
-        authors: 'Nishtha Jatana, Deepti Malik, Bhavya Dabas',
+        title: 'Microarray-Based Cancer Classification via Optimized Gene Selection Using Evolutionary Population Strategies',
+        authors: 'S. Vijipriya, S. Anandhi Rajamani',
         received: '08 December 2024',
         accepted: '12 January 2025',
         published: '14 January 2026',
@@ -299,14 +299,14 @@ const PaperDetail = () => {
         pages: '168-176',
         doi: '10.62656/jcids.v1i2.15',
         file: '/2025/15.pdf',
-        citation: 'Jatana N, Malik D, Dabas B. Sentiment analysis of social media content for disaster management. J Comput Intell Decis Sci. 2025;1(2):15.'
+        citation: 'Vijipriya S, Rajamani SA. Microarray-based cancer classification via optimized gene selection using evolutionary population strategies. J Comput Intell Decis Sci. 2025;1(2):15.'
       },
       {
         id: 16,
         type: 'Research Article',
         articleId: 'jcids.2025.006',
-        title: 'Student Academic Performance Prediction Through Computational Intelligence',
-        authors: 'Maya Nayak G, G. Amarnath, V. Sumalatha',
+        title: 'Hybrid Recommendation Framework Combining Enhanced Density-Based Clustering and Transductive Support Vector Learning',
+        authors: 'S. Karthikeyan, P. Geetha',
         received: '15 December 2024',
         accepted: '15 January 2025',
         published: '14 January 2026',
@@ -316,14 +316,14 @@ const PaperDetail = () => {
         pages: '177-184',
         doi: '10.62656/jcids.v1i2.16',
         file: '/2025/16.pdf',
-        citation: 'Maya Nayak G, Amarnath G, Sumalatha V. Student academic performance prediction through computational intelligence. J Comput Intell Decis Sci. 2025;1(2):16.'
+        citation: 'Karthikeyan S, Geetha P. Hybrid recommendation framework combining enhanced density-based clustering and transductive support vector learning. J Comput Intell Decis Sci. 2025;1(2):16.'
       },
       {
         id: 17,
         type: 'Research Article',
         articleId: 'jcids.2025.007',
-        title: 'Hybrid Intrusion Detection System Using Machine Learning Techniques',
-        authors: 'M. Govindarajan',
+        title: 'Exploratory Study of Artificial Intelligence Techniques for Detecting Milk Adulteration in Food Safety',
+        authors: 'Anand Nayyar, Shaik Khan Zakir, Shubha Singh',
         received: '22 December 2024',
         accepted: '18 January 2025',
         published: '14 January 2026',
@@ -333,14 +333,14 @@ const PaperDetail = () => {
         pages: '185-197',
         doi: '10.62656/jcids.v1i2.17',
         file: '/2025/17.pdf',
-        citation: 'Govindarajan M. Hybrid intrusion detection system using machine learning techniques. J Comput Intell Decis Sci. 2025;1(2):17.'
+        citation: 'Nayyar A, Zakir SK, Singh S. Exploratory study of artificial intelligence techniques for detecting milk adulteration in food safety. J Comput Intell Decis Sci. 2025;1(2):17.'
       },
       {
         id: 18,
         type: 'Research Article',
         articleId: 'jcids.2025.008',
-        title: 'Smart Health Monitoring System Based on Predictive and Contextual Analysis',
-        authors: 'Richa Gupta, Deepti Sharma',
+        title: 'Collaborative Mobility-Aware Resource Allocation Framework Using Evolutionary Lion Optimization for Next-Generation Mobile Networks',
+        authors: 'V. Subramanian, R. Mohan',
         received: '28 December 2024',
         accepted: '20 January 2025',
         published: '14 January 2026',
@@ -350,14 +350,14 @@ const PaperDetail = () => {
         pages: '198-208',
         doi: '10.62656/jcids.v1i2.18',
         file: '/2025/18.pdf',
-        citation: 'Gupta R, Sharma D. Smart health monitoring system based on predictive and contextual analysis. J Comput Intell Decis Sci. 2025;1(2):18.'
+        citation: 'Subramanian V, Mohan R. Collaborative mobility-aware resource allocation framework using evolutionary lion optimization for next-generation mobile networks. J Comput Intell Decis Sci. 2025;1(2):18.'
       },
       {
         id: 19,
         type: 'Research Article',
         articleId: 'jcids.2025.009',
-        title: 'A Multi-Feature Fusion Framework for Enhancing Image Classification Accuracy',
-        authors: 'Manish Sharma, Rinkle Rani',
+        title: 'Optimized Feature Weighting Framework for Multi-Document Summarization Using Binary Swarm Intelligence Techniques',
+        authors: 'K. Saranya, R. Saravanan',
         received: '04 January 2025',
         accepted: '23 January 2025',
         published: '14 January 2026',
@@ -367,14 +367,14 @@ const PaperDetail = () => {
         pages: '209-220',
         doi: '10.62656/jcids.v1i2.19',
         file: '/2025/19.pdf',
-        citation: 'Sharma M, Rani R. A multi-feature fusion framework for enhancing image classification accuracy. J Comput Intell Decis Sci. 2025;1(2):19.'
+        citation: 'Saranya K, Saravanan R. Optimized feature weighting framework for multi-document summarization using binary swarm intelligence techniques. J Comput Intell Decis Sci. 2025;1(2):19.'
       },
       {
         id: 20,
         type: 'Research Article',
         articleId: 'jcids.2025.010',
-        title: 'Deep Neural Networks for Automatic Speaker Recognition',
-        authors: 'Soumi Chattopadhyay, Priyanka Singh',
+        title: 'Refined Gabor Feature Extraction Combined with Optimized Bayesian Classification for Facial Expression Analysis',
+        authors: 'R. Parvathi, J. Janet',
         received: '10 January 2025',
         accepted: '25 January 2025',
         published: '14 January 2026',
@@ -384,7 +384,7 @@ const PaperDetail = () => {
         pages: '221-231',
         doi: '10.62656/jcids.v1i2.20',
         file: '/2025/20.pdf',
-        citation: 'Chattopadhyay S, Singh P. Deep neural networks for automatic speaker recognition. J Comput Intell Decis Sci. 2025;1(2):20.'
+        citation: 'Parvathi R, Janet J. Refined Gabor feature extraction combined with optimized Bayesian classification for facial expression analysis. J Comput Intell Decis Sci. 2025;1(2):20.'
       }
     ];
 
