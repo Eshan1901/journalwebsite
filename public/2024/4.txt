@@ -1,0 +1,765 @@
+﻿ARTICLE 
+
+Enhanced Correlation Mapping Framework Employing Hybrid 
+Evolutionary Strategy for Drug–Disease Association Discovery Across 
+Diverse Biomedical Sources   
+
+Thimmiaraja J1,*, J. Macklin Abraham Navamani2 and Siva Shankar Ramasamy3 
+
+1Assistant Professor, Department of IT, Dr. Mahalingam College of Engineering and Technology, India. 
+2Associate Professor, Division of Digital Sciences, Karunya School of Sciences, Arts & Media, Karunya Institute of 
+Technology and Sciences, (Deemed to be University), India. 
+3International College of Digital Innovation, Chiang Mai University, Chiang Mai, Thailand, 50200. 
+*Corresponding Author: Thimmiaraja J. Email: thimmia@gmail.com  
+
+Received: 01 July 2024; Accepted: 15 October 2024; Published: 30 December 2024 
+
+ABSTRACT: Hepatocellular carcinoma (HCC) is one of the most common malignant tumors with a high rate of 
+morbidity and mortality. Predicting new drug indications in drug development for HCC analysis becomes a 
+major and difficult task. Few algorithms have been devoted to drug prediction for a specific disease. This work 
+provides an integrative framework to predict novel drugs and diseases for HCC based on a multi-source 
+Imperialist Competitive Algorithm-based random walk (PDDH-MICARW). Firstly, based on gene expression 
+and disease interaction network, construct a gene-gene weighted interaction network (GWIN). Then, 
+dimensionality reduction is performed by using the Improved Regularized Linear Discriminant Analysis 
+(IRLDA). Then, based on a multi-source random walk in GWIN, build a drug-drug similarity network and, 
+disease-drug similarity network. Finally, based on the known drugs for HCC, score all drugs in the drug-drug 
+similarity network, disease-drug bipartite graph network. This network provides more information on these 
+interactions, compared to the component or parent networks. The robustness of PDDH-MICARW predictions 
+is measured for HCC. It concludes that the proposed work can effectively identify new drug indications. The 
+robustness of our predictions, their overlap with those reported in the Comparative Toxicogenomics Database 
+(CTD) and literature, and their enriched Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway 
+demonstrate proposed approach can effectively identify new drug indications. 
+
+KEYWORDS: Hepatocellular Carcinoma (HCC), dimensionality reduction, Improved Regularized Linear 
+Discriminant Analysis (IRLDA), gene-Gene Weighted Interaction Network (GWIN), and Multi-source 
+Imperialist Competitive Algorithm-based Random Walk (MICARW). 
+
+1 Introduction 
+Nature presented itself as a potential drug resource for scientists, enabling serendipitous 
+
+discoveries for centuries. The venture of drug discovery started with random screening of crude 
+plants such as reserpine, lavender, and opium, and later created the drug industry, which is one of 
+the most advanced industries in our society [1]. As a part of this industry, the drug discovery process 
+has enormous investments in infrastructure. Research and development (R&D) require huge 
+amounts of time and money. Further, translation of the promising molecule to an approved drug has 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+48 J Comput Intell Decis Sci. 2024;1(1):4 
+ 
+
+major problems, including high failure rates and withdrawal risks by reason of safety or efficacy 
+problems [2]. 
+
+Drug repositioning (DR), which is an auxiliary process to conventional drug discovery, has 
+gained attention from both academia and pharmaceutical companies. Drug repositioning, also named 
+“drug repurposing or drug recycling,” is a promising approach to overcome hurdles in discovering 
+and developing new drugs via the identification of new therapeutic applications of known drugs. 
+Repurposed drug candidates have established formulations and manufacturing methods, extensive 
+pharmacokinetic properties, known adverse effects, clinical trial information, and post-marketing 
+surveillance safety data, which make a beeline for the drug development with less chance of failure 
+[3]. With the generation of large-scale genomic, transcriptomic, and proteomic data, computational 
+prediction of new drug indications has become one of the leading ways to investigate drug-disease 
+treatment. Several computational methods have been introduced to solve this problem. Those 
+methods are discussed in detail in the review section. 
+
+In the review work few methods have been introduced to solve the drug prediction for a specific 
+disease. This is also one reason why the prediction accuracy of many results is not high enough. 
+Hepatocellular Carcinoma (HCC) is the sixth most common cancer and the third leading cause of 
+cancer-related death worldwide, and its incidence is increasing [4]. Despite the widespread use of 
+surveillance programs in at-risk populations, more than half of HCC cases are diagnosed late, and 
+curative therapies such as surgical resection, transplantation, or radiofrequency ablation are possible 
+in fewer than 30% of the patients. Most HCC patients have unresectable disease at diagnosis [5]. The 
+prognosis of patients with HCC remains poor, and life expectancy is difficult to predict. HCC 
+development is often related to the presence of a chronic liver disease, which represents one of the 
+most important risk factors for this neoplasia. In particular, cirrhosis, which can occur as a 
+consequence of chronic viral hepatitis, excessive alcohol intake, nonalcoholic fatty liver disease, or 
+genetic diseases (e.g., hemochromatosis), is a frequent setting for HCC onset as well as a cause of liver 
+dysfunction. 
+
+In this study, the precise drug prediction is taken as an extremely hard process. As a result, this 
+research is used to find out numerous accurate drug signs for HCC. This method finds novel drugs 
+and diseases for HCC based on predict novel drugs and diseases for HCC based on multi-source 
+Imperialist Competitive Algorithm-based random walk (PDDH-MICARW) with several steps: at the 
+start of the research, integrate gene expression data, a gene set, and a drug disease similarity network 
+to construct a GWIN for HCC. Subsequently, the data dimensionality is decreased by means of utilizing 
+Improved Regularized Linear Discriminant Analysis (IRLDA) to enhance the prediction accuracy. 
+After that, based on GWIN, a disease-drug similarity network and a drug-drug similarity network are 
+constructed. Finally, taking all the existing drugs for the treatment of HCC, all drugs in the networks 
+are scored to find new appropriate drugs for HCC.  
+
+2 Literature Review 
+Li et al [6] developed a computational framework to build disease-specific drug-protein 
+
+connectivity maps. Also integrated gene/protein and drug connectivity information based on protein 
+interaction networks and literature mining, without requiring gene expression profile information 
+derived from drug perturbation experiments on disease samples. To achieve overall good data 
+coverage and quality, a series of statistical methods has been developed to overcome high levels of 
+data noise in biological networks and literature mining results. 
+
+Dudley et al [7] showed that computational methods for drug repositioning can be classified in 
+two axes: drug-based, where discovery initiates from the chemical perspective, or disease-based, 
+where discovery initiates from the clinical perspective of disease or its pathology. Newer algorithms 
+for computational drug repositioning will likely span these two axes, will take advantage of newer 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):4 49 
+ 
+
+types of molecular measurements, and will certainly play a role in reducing the global burden of 
+disease. 
+
+Jin et al [8] defined a new network component called Cancer-Signaling Bridges (CSB) and 
+integrated it with a Bayesian Factor Regression Model (BFRM) to form a new hybrid method termed 
+CSB-BFRM. Proof-of-concept studies were conducted in breast and prostate cancer cells and in 
+promyelocytic leukemia cells. In each system, CSB-BFRM analysis could accurately predict clinical 
+responses to more than 90% of drugs approved by the U.S. Food and Drug Administration and more 
+than 75% of experimental clinical drugs that were tested. Mechanistic investigation of Off-Target 
+Effects (OTE) for several high-ranking drug–dose pairs suggested repositioning opportunities for 
+cancer therapy, based on the ability to enforce retinoblastoma-dependent repression of important 
+E2F-dependent cell-cycle genes.  
+
+Hurle et al [9] reviewed highlights of computational techniques for systematic analysis of 
+transcriptomics, such as Connectivity Map (CMap), side effects, and genetics Genome‐Wide 
+Association Study (GWAS) data to generate new hypotheses for additional indications. Also discuss 
+data domains such as Electronic Health Records (EHRs) and phenotypic screening that we consider 
+promising for novel computational repositioning methods. 
+
+Ye et al [10] developed a drug-drug network that was constructed based on the similarities 
+between their clinical side effects. The indications of a drug may be inferred by the enriched FDA-
+approved functions of its neighbouring drugs in the network. Furthermore, the method could be 
+extended to predict drugs not covered in the network. In summary, a method that is based on the 
+indications enriched by network neighbors may provide new clues for drug repositioning using side 
+effects. 
+
+Wang et al [11] proposed a computational framework based on a heterogeneous network model 
+and applied the approach to drug repositioning by using existing omics data about diseases, drugs, 
+and drug targets. The novelty of the framework lies in the fact that the strength between a disease–
+drug pair is calculated through an iterative algorithm on the heterogeneous graph that also 
+incorporates drug-target information. Comprehensive experimental results show that the proposed 
+approach significantly outperforms several recent approaches. Case studies further illustrate its 
+practical usefulness. 
+
+Yang et al [12] proposed a Causal Inference-Probabilistic Matrix Factorization (CI-PMF) 
+approach was proposed to predict and classify drug–disease associations, and further used for drug-
+repositioning predictions. In terms of drug–disease association prediction, modified causal inference 
+included in CI-PMF outperformed existing causal inference with a higher AUC (area under the 
+receiver operating characteristic curve) score and greater precision. Overall, CI-PMF is a useful 
+approach for associating drugs with complex diseases and provides potential value for drug 
+repositioning. 
+
+Jiao et al [13] provided a brief overview of recent advances in the computational drug 
+repositioning for anticancer applications with a specific emphasis on the repositioning of non-cancer 
+drugs by use of various computational approaches. Wang et al [14] proposed a novel 
+recommendation‐based drug repositioning strategy to simultaneously determine novel drug 
+indications and side effects in one integrated framework. This strategy provides a complementary 
+method to medical genetics‐based drug repositioning, which reduces the occurrence of false 
+positives in medical genetics‐based drug repositioning, resulting in a ranked list of new candidate 
+indications and/or side effects with different confidence levels. Several new drug indications and side 
+effects are reported with high prediction confidence. 
+
+Gayvert et al [15] developed a Computational Drug Repositioning Approach for Targeting 
+Oncogenic Transcription Factors (CRAFTT) approach for targeting TF activity. Dexamethasone 
+
+
+
+50 J Comput Intell Decis Sci. 2024;1(1):4 
+ 
+
+significantly decreased cell invasion and migration in an ERG-dependent manner. Furthermore, 
+analysis of electronic medical record data indicates a protective role for dexamethasone against 
+prostate cancer. Altogether, the method provides a broadly applicable strategy for identifying drugs 
+that specifically modulate TF activity. 
+
+Sun et al [16] introduced a new data fusion model based on n-cluster editing as a novel multi-
+source triangulation strategy, which was further combined with semantic literature mining. The 
+proposed evaluation suggests that utilizing drug–gene–disease triangulation coupled to 
+sophisticated text analysis is a robust approach for identifying new drug candidates for repurposing. 
+
+Vanhaelen et al [17] provided a comprehensive overview of the current status of in silico 
+repurposing methods by establishing links between current technological trends, data availability, 
+and characteristics of the algorithms used in these methods. Using the case of the computational 
+repurposing of fasudil as an alternative autophagy enhancer, suggest a generic modular organization 
+of a repurposing workflow. Reviewed a three-dimensional (3D) structure-based, similarity-based, 
+inference-based, and Machine Learning (ML)-based methods. Finish by discussing current directions 
+of research, including possibilities offered by new deep learning. 
+
+3 Proposed Methodology 
+This research is used to find out numerous accurate drug signs for HCC. This method finds novel 
+
+drugs and diseases for HCC based on predict novel drugs and diseases for HCC based on multi-source 
+Imperialist Competitive Algorithm-based random walk (PDDH-MICARW) with several steps: at the 
+start of the research, integrate gene expression data, a gene set, and a drug disease similarity network 
+to construct a GWIN for HCC. Afterwards, the data dimensionality is decreased by means of utilizing 
+Improved Regularized Linear Discriminant Analysis (IRLDA) to enhance the prediction accuracy. 
+After that, based on GWIN, a disease-drug similarity network and a drug-drug similarity network are 
+constructed. Also, with the intention of evaluating and filtering the drug-drug network, disease-drug 
+similarity network, use z-score and a cutoff. Finally, taking the available drugs utilized for handling 
+HCC in the form of drug seeds, all drugs in the networks are scored to find new potential drugs for 
+HCC. As well, segregate the drugs identified by the features of their targets and get nine more reliable 
+drugs. 
+
+3.1 Construction of Gene-Gene Weighted Interaction Network (GWIN) 
+The general genes along with their associated edges in the gene network are discussed in this 
+
+segment. For each gene pair ‘i’ and ‘j’, while there is a relationship amongst them, calculate the 
+Pearson Correlation Coefficient (PCC) along with its corresponding p-value. The PCC assesses the 
+edge between gene ‘i’ and ‘j’; instead, while its p-value ≥ 0.05, eliminate the edge. GWIN is represented 
+as G = (V, E), wherein V and E denote the group of nodes as well as edges, respectively. 
+
+3.2 Dimensionality reduction by using IRLDA 
+In this section, describe the basic notations used in the work for dimension reduction of gene 
+
+disease samples. Let 𝑋 =  {𝑥1, 𝑥2, . . . , 𝑥𝑛} denote n training samples (or vectors of drug disease 
+samples) in a d-dimensional space having class labels Ω= {ω1, ω2,...,ωn}, where ω ∈ {1, 2,..., c} and c is 
+the number of classes. The gene drug diseases dataset X can be subdivided into c subsets X1, X2, ..., Xc, 
+where Xj belongs to class j and consists of nj number of samples such that 𝑛 =  ∑𝑐
+
+𝑗=1 𝑛𝑗. The data 
+1 1
+
+subset 𝑋𝑗  ⊂  𝑋 and X1∪ X2∪···∪ Xc = X. If 𝜇𝑗  = ∑x∈ x  s t e c n r i  f X
+𝑛 X  i  h  e t o d o  j and μ = ∑ ∈ x  i  
+
+𝑛 x X  s
+j
+
+𝑗
+
+the centroid of X, then the total scatter matrix ST, within-class scatter matrix SW, and between-class 
+scatter matrix SB are defined as follows. 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):4 51 
+ 
+
+𝑆𝑇 = ∑ 𝑇
+𝑥∈𝑋(𝑥 − 𝜇)(𝑥 − 𝜇)    (1) 
+
+𝑆 𝑐 𝑇
+𝑊 = ∑𝑗=1 ∑𝑥∈𝑋 (𝑥 − 𝜇𝑗)(𝑥 − 𝜇 )    (2) 
+
+𝑗 𝑗
+
+𝑇
+𝑆𝐵 = ∑𝑐
+
+𝑗=1 𝑛𝑗(𝜇𝑗 − 𝜇)(𝜇𝑗 − 𝜇)    (3) 
+
+In the SSS problem, d > n, which will make scatter matrices singular. Let rt be the rank of the ST matrix. 
+The eigenvector decomposition of ST can be given as 
+
+Λ 𝑈𝑇
+𝑆𝑇 = [𝑈1, 𝑈2] [ 𝑇 .
+
+] [ 1 ) 
+. 0 𝑈𝑇]   (4
+
+2
+
+where 𝑈 𝑡 )
+1 ∈  ℝ𝑑×𝑟  corresponds to eigenvalues Λ𝑇 and 𝑈2 ∈  ℝ𝑑×(𝑑−𝑟𝑡  corresponds to the zero 
+
+eigenvalues. The matrix 𝑈1 is the range space of 𝑆𝑇 and the matrix 𝑈2 is the null space of 𝑆𝑇 . Since 
+the null space of 𝑆𝑇 does not contain any discriminant information, the dimensionality can be 
+reduced from d-dimensional space to r t-dimensional space by applying Principal Component 
+Analysis (PCA) [18] as a pre-processing step. The range space of ST matrix, 𝑈 𝑑×𝑟𝑡
+
+1  ∈ ℝ , will be used 
+as a transformation matrix. In the reduced-dimensional space, the scatter matrices can be computed 
+by: 𝑆𝑊 ← 𝑈𝑇
+
+1 𝑆𝑊𝑈1  and 𝑆 𝑇
+𝐵  ←  𝑈1  𝑆𝐵𝑈1 . After this procedure 𝑆𝑊 ∈ ℝ𝑟𝑡×𝑟𝑡  and 𝑆 𝑡×𝑟𝑡
+
+𝐵 ∈ ℝ𝑟  are 
+reduced-dimensional within-class scatter matrix and reduced-dimensional between-class scatter 
+matrix, respectively. In RLDA, the regularization of the within-class scatter matrix SW is carried out 
+by adding a perturbation term α to the diagonal elements of SW; i.e., 𝑆̂𝑊  =  𝑆𝑊  +  𝛼𝐼. The addition 
+of α will make the within-class scatter non-singular and invertible. This would help to maximize the 
+modified Fisher’s criterion. 
+
+𝑤𝑇𝑆
+𝐽(𝑤, 𝛼) = 𝐵𝑤
+
+   (5) 
+𝑤𝑇(𝑆𝑊 + 𝛼𝐼)𝑤
+
+where w ∈ ℝ𝑟𝑡×1 is the orientation vector. To avoid any heuristic approach in the determination of 
+the parameter α, we solve Eq.(5) in the following manner. Let us denote the function f = wT w 𝑆𝐵𝑤 
+and a constraint function. 
+
+g = wT(SW+αI)w−c = 0   (6) 
+
+where c > 0 is any constant. 
+
+3.3 Construction of drug-drug similarity network 
+
+For each drug, obtain a set of gene targets. To construct the drug-drug similarity network to be 
+conscious of the association among all of the drugs. The association between any two drugs is derived 
+by calculating the correlation between their target sets. By imitating the process, which involves 
+multiple random walkers [19] with Imperialist Competitive Algorithm (ICA) called MICARW wander 
+on GWIN, the power of association amongst any two target sets is to be scored. Figure 1 shows the 
+flowchart of the imperialist competitive algorithm. ICA starts with an initial population of drug 
+information. The best correlation value between the target set (countries) is selected as imperialist 
+countries, and the rest form the imperialist colonies. All colonies of the initial population are divided 
+among the imperialist countries based on their weight matrix of GWIN. After dividing all the colonies 
+among the imperialists, the colonies begin the movement towards their imperialist countries. The 
+total weight matrix of GWIN of all the empires depends on the weight matrix of GWIN of the 
+imperialist countries and the weight matrix of GWIN of their colonies. This fact is defined with the 
+
+
+
+52 J Comput Intell Decis Sci. 2024;1(1):4 
+ 
+
+total weight matrix of GWIN of an empire by the weight matrix of GWIN of the imperialist country 
+plus a percentage of the average weight matrix of GWIN of their colonies. When the imperialist 
+competition between the empires starts, any empire that cannot remain in this competition and 
+cannot augment its weight matrix of GWIN will be removed from the imperialist competition. The 
+imperialist competition will result in an increment in the weight matrix of GWIN of the most weight 
+matrix of GWIN empires and a decrement in the weight matrix of GWIN of the weaker empires. The 
+weakest empires will lose their weight matrix of GWIN partially and, ultimately, will collapse one by 
+one. All countries will eventually become a state in which there is only one empire in the entire world, 
+and all remaining countries are colonies of that empire. 
+
+ 
+Figure 1: Flowchart of Imperialist Competitive Algorithm (ICA) 
+
+The algorithm continues with the mentioned steps (Assimilation, Revolution, Competition) until 
+a stop condition is satisfied. The equations for the formation of empires (Initialization) are the 
+following: 
+
+𝐶𝑜𝑢𝑛𝑡𝑟𝑦 = [𝑝1, … . 𝑝𝑁 ]   (7) 
+𝑣𝑎𝑟
+
+𝑐𝑜𝑠𝑡 = 𝑓(𝑐𝑜𝑢𝑛𝑡𝑟𝑦) = 𝑓(𝑝1, … 𝑝𝑛)   (8) 
+
+𝑁𝑐𝑜𝑙 = 𝑁𝑝𝑜𝑝 − 𝑁𝑖𝑚𝑝   (9) 
+
+𝐶𝑛 = max{𝑐𝑖} − 𝑐𝑛   (10) 
+𝑖
+
+𝐶
+𝑝 𝑛
+
+𝑛 = 𝑁    
+𝑖𝑚𝑝 (11) 
+
+∑ 𝐶
+𝑖=1 𝑖
+
+𝑁𝐶𝑛 = 𝑅𝑜𝑢𝑛𝑑 {𝑝𝑛, 𝑁𝑐𝑜𝑙}   (12) 
+
+In Equation (7), Country represents a country, Nvar is the number of drugs of interest, and pi is 
+the value of i-th drug. Equation (8) represents the cost of a country, Equation (9) is necessary to obtain 
+the number of colonies of the population, and used to obtain the normalized cost of each imperialist, 
+where cn is the n-th imperialist’s cost, and Cn is the normalized cost of n-th imperialist, Equation (10) 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):4 53 
+ 
+
+obtains the power of each imperialist where pn is the power of n-th imperialist and Equation (11) 
+represents the number of colonies that can possess that imperialist. The equations for moving the 
+colonies towards their imperialist country (assimilation) are: 
+
+𝑥~𝑈(0, 𝛽𝑑)   (13) 
+
+𝜃~𝑈(−𝛾, 𝛾)   (14) 
+
+Equation (13) represents a colony that moves a distance x towards its imperialist, where β is a 
+number between 1 and 2, and d represents the distance between the drug and diseases among the 
+colony and its imperialist. Equation (14) helps us to search for different positions around the 
+imperialist. In which γ is a parameter, where a large value estimates a global search of the weight 
+matrix and a small value impacts the local search of the weight matrix. The Equation for the full 
+weight matrix of an empire is as follows: 
+
+𝑇𝐶𝑛 = 𝐶𝑜𝑠𝑡(𝑖𝑚𝑝) + 𝜉𝑚𝑒𝑎𝑛{𝑐𝑜𝑠𝑡(𝑐𝑜𝑙)}   (15) 
+
+This equation represents the total cost of nth empire, and ξ is a number between 0 and 1. Where, 
+with a small value of ξ, it has a greater influence of the imperialist weight matrix on determining the 
+total weight matrix of the empire, and with a large value of ξ, it has a greater influence on the average 
+weight matrix of the colonies to determine the total weight matrix of the empire. The equations for 
+the imperialist competition are the following: 
+
+𝑁𝑇𝐶𝑛 = max{𝑇𝐶𝑖} − 𝑇𝐶𝑛   (16) 
+𝑖
+
+𝑁𝑇𝐶
+𝑝 𝑛 𝑁
+
+𝑝 = 𝑁  𝑤ℎ𝑒𝑟𝑒 ∑ 𝑖𝑚𝑝 𝑝 = 1   
+𝑛 𝑖𝑚𝑝 𝑖=1 𝑝𝑖 (17) 
+
+∑ 𝑁𝑇𝐶
+𝑖=1 𝑖
+
+Equation (16) starts with the imperialist competition, where the normalized total cost is 
+calculated, and in Equation (17), we provide the probability of possessing a colony. Let S = (sij)m×m be 
+called the weight matrix of GWIN, which is also a transition matrix, where m is the number of genes. 
+Let d(0)=(di(0))m×1 is called initial probabilities. Obtain Sij by allotting probabilities comparative to 
+gene similarities with the neighbors of the complete genes in the target set TA and 0 otherwise. Let 
+p(0)= sd(0), wherein s is called an invariant for ease of computation p(t) includes the scores that the 
+walkers stay at each node at time t, and comprises the iterative formula. 
+
+Pt+1 = (1 − r)DTp(t) + rp(0)   (18) 
+
+By iterating the iteration many steps, even now, p(t) is constant, and obtain the steady state p(t). 
+The random walk model is not sensitive to the parameters. As a result, set default values for the 
+parameters as r=0, as well as s=1000. Two weighted edges are there with various directions among 
+them for each drug-drug pair. The network is represented as Gdd = (Vdd, Edd), wherein  Vdd  and 
+Edd are similarly nodes as well as edge sets in Gdd. 
+
+3.4 Disease-Drug Similarity Network by using a Bipartite Graph Network 
+The disease drug-associated genes interconnecting with one another suggest that they tend to 
+
+get grouped in the same neighborhood of the interactome and form a disease module or a drug 
+module, a connected subgraph that comprises the entire molecular mechanisms of a disease or a 
+
+
+
+54 J Comput Intell Decis Sci. 2024;1(1):4 
+ 
+
+drug. As a result, the accurate evaluation of relations among disease modules as well as drug modules 
+is considered to be an important step to identify potent drug-disease associations. A bipartite graph 
+[20] is called a graph of two genes X and Y wherein edges (assume undirected) are simply let from 
+one node in X to one node in Y. Consider associating a weight w with each edge in the bipartite graph, 
+get a weighted bipartite graph. In a projection of a bipartite graph, simply one group of genes (X or 
+Y) appears with edges from one node to another, while they were associated with the same node in 
+the original graph. Also, the projection comprises several weights on the edges. For example, one 
+possible weighting for an edge from node x1 to x2 in a projection of the set X is called the number of 
+nodes in Y that x1 and x2 are associated with each other. 
+
+A graph is represented as 𝐺 = (𝑉, 𝐸), wherein G is called the graph, V is known as the collection 
+of vertices, and E is called the collection of edges. An edge connecting the vertices u, v ∈ V is 
+represented as {u, v} ∈ E. The reality that two vertices u and v are linked would also be represented 
+as u ∼ v. The number of neighbors of a node u is known as the degree of u and is signified as d(u) = 
+|{v ∈ V | u ∼ v}|. 
+
+Bipartite graphs are graphs wherein the collection of nodes (X, Y) is split into two separate sets, 
+with the intention that every edge links a vertex of one partition with a vertex of the other partition. 
+A bipartite graph is signified as 
+
+𝐺 = (𝑉1, 𝑉2, 𝐸)   (19) 
+
+Wherein  𝑉1 𝑎𝑛𝑑 𝑉2 are known as the two disjoint vertex sets, and E is called the collection of 
+edges. A corresponding description of bipartite graphs is the graphs that do not comprise odd cycles, 
+that is to say, cycles encompassing an odd number of edges. Especially, it keeps an eye on whether a 
+bipartite network does not encompass triangles. Finally, in order to make the distances score 
+comparable to the drug-disease relationships, the distance scores are treated as so. Firstly, transform 
+all of the distances into positive by comprising the least distance score to each distance, and 
+afterwards get their reciprocals. Finally, with the intention of normalizing the complete distances, 
+use the maximum-minimum. As a result, the higher the distance score, the more related among drug 
+and disease. Finally, for every disease-drug association, get its corresponding p-value. Eliminate the 
+complete edges whose p-values are not lower than 0.01. 
+
+4 Results and Discussion 
+In this segment, the presented PDDH-MICARW, PDD-MSBARW-based drug prediction for HCC 
+
+performance is assessed, and the performance outcomes are matched up with previous PDD with 
+Multi-Source Bat Algorithm based Random Walk (PDD-MBARW), PDD with MS Simulated Annealing 
+Random walker (PDD-MSSARW), PD-MRW, and PREDICT techniques. Primarily, obtain the gene set 
+related to human HCC from CTD (version 2014). Afterwards, download gene expression profiles of 
+HCC from Gene Expression Omnibus (GEO) http://www.ncbi.nlm.nih.gov/ geo/) datasets (GDS). The 
+Drug Bank database combines by means of drug info with entire drug target info and Drug Bank 
+database (version 4.0). In this research, we obtain the chemical–HCC associations from CTD (version 
+2014). This presented technique evaluates the consequence of various network aggregation methods 
+on the whole ranking performance. Give five sets of results corresponding to five various cutoff 
+values, that is to say, {1.25, 2.5, 5, 10, and 15}. The scores of the top-20 drugs are normalized with a 
+logarithm so as to describe the results more obviously. 
+
+4.1 Performance analysis 
+Precision is defined as the ratio of correctly found positive observations to all of the expected 
+
+positive observations. 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):4 55 
+ 
+
+Precision = TP/TP+FP   (20) 
+
+Sensitivity is defined as the ratio of correctly identified positive observations to the overall 
+observations in the real class – yes. 
+
+Recall = TP/TP+FN (21) 
+
+F1 score is defined as the weighted average of Precision as well as Recall. As a result, it produces 
+false positives and false negatives. 
+
+F1 Score = 2*(Recall * Precision) / (Recall + Precision) (22) 
+
+Accuracy is calculated in terms of positives and negatives as follows: 
+
+Accuracy = (TP+FP)/(TP+TN+FP+FN) (23) 
+
+Here, by using a 5-fold cross-validation method reiterated 10 times, we evaluated the PDD-
+MSBARW method, existing PDD-MSSARW, PD-MRW, and PREDICT techniques. Table 1 represents 
+the AUC and accuracy; recall averaged crosswise the Drug Bank classes with more than 20 drugs, 
+using the GWIN as well as BGN networks. In Figure 2, the performance assessment results of the three 
+various cutoffs of weight w values are calculated among five methods. Instead, the increased weight 
+values, proposed PDDH-MICARW method provides improved precision value of  97.83% for w=15, 
+when other methods such as PD-MSSARW, PD-MRW, and PREDICT methods provide precision value 
+of 96.67%, 94.22% and 92.60%values respectively. The proposed technique performs superiorly 
+when compared with other methods. 
+
+Table 1: Metrics comparison with Drug Bank categories with greater than 20 drugs 
+
+wcutoffvalues   Metrics PREDICT PD-MRW PDD-MSSARW PDD-MSBARW PDDH-MICARW 
+
+w=5 Precision (%) 89.76 90.02 91.05 92.56 96.93 
+
+Recall  (%) 88.70 89.91 90.10 91.34 96.93 
+
+F-measure  (%) 89.23 89.965 90.575 91.95 96.93 
+
+Accuracy  (%) 88.35 89.71 91.82 92.76 94.40 
+
+w=10 Precision  (%) 91.18 93.38 95.56 96.45 96.96 
+
+Recall  (%) 91.11 92.31 93.48 94.32 97.81 
+
+F-measure  (%) 91.145 92.845 94.52 95.385 97.38 
+
+Accuracy  (%) 91.25 92.49 93.53 94.65 95.20 
+
+w=15 Precision  (%) 92.60 94.22 96.77 97.12 97.83 
+
+Recall  (%) 94.57 95.19 96.77 97.21 97.83 
+
+F-measure  (%) 93.585 94.705 96.77 97.165 97.83 
+
+Accuracy  (%) 92.64 93.41 94.75 95.68 96.00 
+
+ 
+
+
+
+56 J Comput Intell Decis Sci. 2024;1(1):4 
+ 
+
+w=5 w=10 w=15
+100
+98
+96
+94
+92
+90
+88
+86
+84
+
+Methods  
+Figure 2: Precision vs. methods (with different weight values) 
+
+In Figure 2, the performance assessment results of the three various cutoffs of weight w values 
+are calculated among five methods. Instead, the increased weight values, proposed PDDH-MICARW 
+method provides improved precision value of 97.83% for w=15, when other methods such as PD-
+MSSARW, PD-MRW, and PREDICT methods provide precision value of 96.67%, 94.22% and 
+92.60%values respectively. The proposed technique performs superiorly when compared with other 
+methods.  
+
+w=5 w=10 w=15
+100
+98
+96
+94
+92
+90
+88
+86
+84
+
+Methods  
+Figure 3: Recall vs. methods (with different weight values) 
+
+In Figure 3, the recall assessment results of the three various cutoffs of weight w values are 
+calculated among five PDDH-MICARW methods, existing PDD-MSBARW, PDD-MSSARW, PD-MRW, 
+and PREDICT techniques are represented. Instead, the increased weight values, proposed PDDH-
+MICARW technique provides a superior recall value of 97.83% for w=15, when other methods such 
+as PDD-MSBARW, PDD-MSSARW, PD-MRW, and PREDICT techniques provide recall value of 91.21%, 
+96.77%, 95.19% and 94.57% values respectively. The proposed technique performs superiorly when 
+compared with other methods.  
+
+Precision(%)
+Recall(%)
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):4 57 
+ 
+
+w=5 w=10 w=15
+100
+98
+96
+94
+92
+90
+88
+86
+84
+
+Methods  
+Figure 4: F-measure vs. methods (with different weight values) 
+
+In Figure 4, the f-measure assessment results of the three various cutoffs of weight w values are 
+calculated among five PDDH-MICARW methods, existing PDD-MSBARW, PDD-MSSARW, PD-MRW, 
+and PREDICT techniques are represented. Instead, the increased weight values, proposed PDDH-
+MICARW technique provides a superior f-measure value of 97.83% for w=15, when other methods 
+such as PDD-MSBARW, PDD-MSSARW, PD-MRW, and PREDICT techniques provide f-measure value 
+of 97.165%, 96.77%, 94.705% and 93.585% values respectively. The proposed technique performs 
+superiorly when compared with other methods. 
+
+w=5 w=10 w=15
+98
+96
+94
+92
+90
+88
+86
+84
+
+Methods
+
+ 
+Figure 4: Accuracy vs. methods (with different weight values) 
+
+In Figure 5, the accuracy assessment results of the three various cutoffs of weight w values are 
+calculated among five PDDH-MICARW methods, existing PDD-MSBARW, PDD-MSSARW, PD-MRW, 
+and PREDICT techniques are represented. Instead, the increased weight values, proposed PDDH-
+MICARW technique provides a superior recall value of 96.00% for w=15, when other methods such 
+as PDD-MSBARW, PDD-MSSARW, PD-MRW, and PREDICT techniques provide recall value of 95.68%, 
+
+F-measure(%)
+Accuracy(%)
+
+
+
+58 J Comput Intell Decis Sci. 2024;1(1):4 
+ 
+
+94.75%, 93.41% and 92.64% values respectively. The proposed technique performs superiorly when 
+compared with other methods. 
+
+5 Conclusion and Future Work 
+Drug repositioning is one of the most important methods for improving the drug discovery 
+
+process. Most of the previous methods for drug repositioning don’t focus on a specific disease and 
+tend to use a specific source of data to predict drug-disease associations. In this study, focusing on a 
+Hepatocellular Carcinoma (HCC), a new PDDH-MICARW method for novel drug usage prediction is 
+proposed. PDDH-MICARW consists of several major steps: Firstly, integrate gene expression data, a 
+gene set, and a protein-protein interaction (PPI) network to construct a gene-gene weighted 
+interaction network for HCC (GWIN). Secondly, based on GWIN, use the theory of multi-source 
+random walk to construct a drug-drug similarity network. Here, “multi-source random walk” means 
+a random walk starting from multiple given vertices simultaneously, i.e., the multiple starting 
+vertexes corresponding to multiple sources. A novel Improved Regularized Linear Discriminant 
+Analysis (IRLDA) algorithm for dimensionality reduction is presented, which raised the prediction 
+accuracy. Subsequently, a drug-drug similarity network is constructed, a disease-drug similarity 
+network. Lastly, dependent upon the known drugs for HCC, score each drug in the drug-drug 
+similarity network, disease-drug bipartite graph network. The proposed PDDH-MICARW method 
+integrates heterogeneous data and knowledge, and uses the theory of multi-source random walk to 
+obtain the similarity between each pair of drugs. In the simulation experiment, firstly, filter predicted 
+drugs using the features of drug targets. The experimentation outcomes prove that the proposed 
+method achieved greater performance outcomes in regard to accuracy, prediction, recall, and F-
+measure, matched up with existing techniques. Plan to broaden the applicability of our method by 
+incorporating disease-specific symptoms and side effects of drugs are focused in future work. This is 
+likely to be of significance in the near future, with the accumulation of clinical phenotypes and drug 
+side effects, in conjunction with patient-specific genetic information. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: Thimmiaraja J; supervision and writing: J. 
+Macklin Abraham Navamani; review and editing: Siva Shankar Ramasamy. All authors reviewed the 
+results and approved the final version of the manuscript.  
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+
+1. Mukherjee PK, Rai S, Kumar V, Mukherjee K, Hylands PJ, Hider RC. Plants of Indian origin in drug discovery. 
+Expert Opin Drug Discov. 2007;2(5):633-57. 
+
+2. Sinha S, Vohora D. Drug discovery and development: An overview. Pharm Med Transl Clin Res. 2018:19-
+32. 
+
+3. Deotarse PP, Jain AS, Baile MB, Kolhe NS, Kulkarni AA. Drug repositioning: a review. Int J Pharma Res Rev. 
+2015;4:51-8. 
+
+4. Nevola R, Acierno C, Sasso FC, Marrone A, Buffardi F, Adinolfi LE, Rinaldi L. Hepatocellular carcinoma and 
+non-alcoholic fatty liver disease; a dangerous liaison. WCRJ. 2019;6:e1299. 
+
+5. Cabibbo G, Enea M, Attanasio M, Bruix J, Craxì A, Cammà C. A meta‐analysis of survival rates of untreated 
+patients in randomized clinical trials of hepatocellular carcinoma. Hepatology. 2010;51(4):1274-83. 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):4 59 
+ 
+
+6. Li J, Zhu X, Chen JY. Building disease-specific drug-protein connectivity maps from molecular interaction 
+networks and PubMed abstracts. PLoS Comput Biol. 2009;5(7):e1000450. 
+
+7. Dudley JT, Deshpande T, Butte AJ. Exploiting drug–disease relationships for computational drug 
+repositioning. Brief Bioinform. 2011;12(4):303-11. 
+
+8. Jin G, Fu C, Zhao H, Cui K, Chang J, Wong ST. A novel method of transcriptional response analysis to 
+facilitate drug repositioning for cancer therapy. Cancer Res. 2012;72(1):33-44. 
+
+9. Hurle MR, Yang L, Xie Q, Rajpal DK, Sanseau P, Agarwal P. Computational drug repositioning: from data to 
+therapeutics. Clin Pharmacol Ther. 2013;93(4):335-41. 
+
+10. Ye H, Liu Q, Wei J. Construction of drug network based on side effects and its application for drug 
+repositioning. PloS One. 2014;9(2):e87864. 
+
+11. Wang W, Yang S, Zhang X, Li J. Drug repositioning by integrating target information through a 
+heterogeneous network model. Bioinformatics. 2014;30(20):2923-30. 
+
+12. Yang J, Li Z, Fan X, Cheng Y. Drug–disease association and drug-repositioning predictions in complex 
+diseases using causal inference–probabilistic matrix factorization. J Chem Inf Model. 2014;54(9):2562-9. 
+
+13. Jiao M, Liu G, Xue Y, Ding C. Computational drug repositioning for cancer therapeutics. Curr Top Med Chem. 
+2015;15(8):767-75. 
+
+14. Wang H, Gu Q, Wei J, Cao Z, Liu Q. Mining drug–disease relationships as a complement to medical genetics‐
+based drug repositioning: Where a recommendation system meets genome‐wide association studies. Clin 
+Pharmacol Ther. 2015;97(5):451-4. 
+
+15. Gayvert KM, Dardenne E, Cheung C, Boland MR, Lorberbaum T, Wanjala J, Chen Y, Rubin MA, Tatonetti NP, 
+Rickman DS, Elemento O. A computational drug repositioning approach for targeting oncogenic 
+transcription factors. Cell Rep. 2016;15(11):2348-56. 
+
+16. Sun P, Guo J, Winnenburg R, Baumbach J. Drug repurposing by integrated literature mining and drug–
+gene–disease triangulation. Drug Discov Today. 2017;22(4):615-9. 
+
+17. Vanhaelen Q, Mamoshina P, Aliper AM, Artemov A, Lezhnina K, Ozerov I, Labat I, Zhavoronkov A. Design 
+of efficient computational workflows for in silico drug repurposing. Drug Discov Today. 2017;22(2):210-
+22. 
+
+18. Greenacre M, Groenen PJ, Hastie T, d’Enza AI, Markos A, Tuzhilina E. Principal component analysis. Nat 
+Rev Methods Primers. 2022;2(1):100. 
+
+19. Hosseini S, Al Khaled A. A survey on the imperialist competitive algorithm metaheuristic: implementation 
+in engineering domain and directions for future research. Appl. Soft Comput. 2014;24:1078-94. 
+
+20. He X, Gao M, Kan MY, Wang D. Birank: Towards ranking on bipartite graphs. IEEE Trans Knowl Data Eng. 
+2016;29(1):57-71.

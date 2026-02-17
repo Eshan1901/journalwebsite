@@ -1,0 +1,945 @@
+﻿ARTICLE 
+
+Nature-Inspired Feature Engineering and Cancer Detection Framework 
+Leveraging Ensemble Convolutional Neural Architectures 
+
+S. Hemalatha1,* and Arokiaraj Selvaraj2 
+
+1Assistant Professor, Department of Computer Applications, Kongu Arts and Science College (Autonomous), Erode, 
+Tamilnadu, India. 
+2General Manager, Delloite Middle East, Dubai, UAE. 
+*Corresponding Author: S. Hemalatha. Email: shlatha@gmail.com  
+
+Received: 25 June 2024; Accepted: 06 September 2024; Published: 30 December 2024 
+
+ABSTRACT: In general, diagnosing a brain tumor usually begins with magnetic resonance imaging (MRI). Once 
+an MRI shows that there is a tumor in the brain, the most common way to determine the type of brain tumor is 
+to look at the results from a sample of tissue after a biopsy or surgery. This study addresses the problems of 
+segmentation and detection of abnormal brain tissues and normal tissues. Image processing is used in medical 
+tools for the detection of tumors. Only MRI images are not able to identify the tumorous region. An improved 
+semi-supervised clustering algorithm and morphological-based segmentation are proposed for the 
+identification of tumor regions with the preprocessing of the image. Preprocessing is performed by a Median 
+filter, and skull masking is used, followed by image enhancement using Contrast Limited Adaptive Histogram 
+Equalization (CLAHE). The tumor segmentation process has been performed by the Semi-Supervised Fuzzy C-
+Means (SSFCM) clustering algorithm. After the tumor area is segmented, feature extraction is carried out by 
+using the Gray Level Co-occurrence Matrix (GLCM). Then, to reduce the number of dimensions from features, 
+the Artificial Bee Colony (ABC) algorithm is introduced, which increases the detection rate of the classifier. An 
+Ensemble Convolution Neural Network (ECNN) detection system is used in an unsupervised manner, which 
+will be used to create and maintain the pattern for future use. Also, for patterns, are have to find out the feature 
+to train ECNN. The simulation results prove the significance in terms of quality parameters and accuracy in 
+comparison to state-of-the-art techniques. 
+
+KEYWORDS: Brain Tumor, MRI Images, Cancer Detection, CLAHE, GLCM, ABC Optimization, ECCN. 
+
+1 Introduction 
+Brain tumors affect humans badly because of the abnormal growth of cells within the brain. It 
+
+can disrupt proper brain function and be life-threatening. The brain controls all the necessary 
+functions of the body. The most complex organ in the human body is the brain, and it is part of the 
+central nervous system (CNS). The skull covers the brain, and the brain is composed of three matters: 
+“gray matter (GM), white matter (WM), and cerebrospinal fluid (CSF).” CSF is a transparent liquid 
+that encapsulates the brain and the spinal cord and provides many functions to the CNS. It provides 
+a barrier against shocks, which consists of glucose, oxygen, and ions. It is distributed throughout the 
+nervous tissue. CSF helps in the removal of waste products from nervous tissues [1]. According to the 
+World Health Organization (WHO), there are 120 types of brain tumors. Broadly, brain tumors are 
+categorized into two types: Primary brain tumors and Secondary brain tumors. 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+120 J Comput Intell Decis Sci. 2024;1(1):8 
+ 
+
+Primary Brain Tumors originate in the brain, and Secondary Brain Tumors do not originate in 
+the brain but come into the brain through other body parts. This process of spreading the tumor is 
+known as metastasis. Two types of brain tumors [2] have been identified as Malignant and Benign. 
+Malignant tumors are fast-growing and cancerous. Benign tumors are slow-growing and non-
+cancerous, and less harmful than malignant tumors. In the medical field, brain tumors are 
+characterized by their GRADE. The GRADE of a tumor can be decided according to its behavior under 
+microscopic observation. GRADE I tumors are known as benign. Their look is nearly the same as 
+normal brain cells, and their growth rate is slow compared to other grades.  
+
+GRADE I and GRADE II are known as low-grade tumors. GRADE III and GRADE IV are known as 
+high-grade tumors. Their behavior is much different from normal cells and requires urgent treatment 
+to cure. These types of tumors show the fastest growth rate and have the worst abnormal behavior 
+than other grades. GRADE 1 and GRADE 2 are slow-growing, with fewer chances to come back. Do 
+not spread in and need only surgery, other parts not Radiotherapy. GRADE 3 and GRADE 4 are fast-
+growing, come back even after surgery, spread to other parts, and Need Radiotherapy and 
+Chemotherapy [3]. 
+
+It is important to detect the brain tumor at an earlier stage to reduce the death rate, so most of 
+the researchers suggested that the brain imaging techniques help radiologists and researchers to 
+detect problems in the human brain, without the need for neurosurgery. There are a number of 
+techniques available in hospitals throughout the world that have been proven to be safe [4-7]. (A) CT 
+scan: Computed Tomography (CT) is used to construct brain images through a series of X-ray scans. 
+(B) PET Scan: A Positron Emission Tomography (PET) scan is used to get a functional view of the 
+brain. (C) MRI Scan In the last few years, the use of Magnetic Resonance Imaging (MRI) scanners in 
+the medical field has grown superbly [8].  
+
+Doctors may use MRI scans in diagnosing brain tumors and cancer. An MRI scan is an efficient 
+way to look inside the human body without the need to cut body. In an MRI system, the strength of 
+the magnetic field is measured in terms of tesla and gauss (1tesla=10000gauss). Most of the medical 
+applications use 0.5 to 2.0 tesla. Magnetic Resonance Imaging (MRI) is widely used as it provides 
+greater contrast images of the brain and cancerous tissues compared with other medical imaging 
+techniques. In MRI Modalities, the tissue appearance can be affected by the variable behavior of 
+protons shown in different tissues. The speed at which mobile hydrogen protons are moving becomes 
+helpful in determining the amount of signal produced by specific tissue [9]. This technique is basically 
+used to detect the differences in the tissues, which is a far better technique as compared to computed 
+tomography (CT). So, this makes this technique a special one for brain tumor detection. From the MRI 
+images, the information such as the tumor's location provided the radiologists, an easy way to 
+diagnose the tumor and plan the surgical approach for its removal.  
+
+Previously, various techniques or algorithms were used in image processing techniques to 
+identify the brain tumor by using MRI images, but it is very important to get an accurate result, so 
+this work will be used to improve the accuracy for identifying the brain tumor by using MRI images. 
+Therefore, brain tumor identification can be done through MRI images by using image processing 
+techniques to find tumors in early stages. This paper focuses on the identification of brain tumors 
+using image processing techniques. The work consists of different stages. First stage of this work is 
+preprocessing, consists of grey level conversion, noise gets removal using median filter and skull 
+masking followed by image enhancement will be takes place. Secondly, brain tumor segmentation by 
+a semi-supervised Fuzzy C-Means clustering algorithm. The third stage will be featuring extraction 
+using the GLCM feature extraction method. The fourth stage is dimension reduction using the ABC 
+algorithm, and the sixth stage is detection of a brain tumor using an Ensemble Convolution Neural 
+Network classifier. These stages are explained briefly in the proposed methodology. 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):8 121 
+ 
+
+2 Literature Review 
+Badran et al [10] proposed a computer-based method for defining the tumor region in the brain 
+
+using MRI images. The classification of the brain into a healthy brain or a brain having a tumor is first 
+done, which is then followed by further classification into benign or malignant tumors. The algorithm 
+incorporates steps for preprocessing, image segmentation, feature extraction, and image 
+classification using neural network techniques. Finally, the tumor area is specified by the region of 
+interest technique as a confirmation step.  
+
+Sonavane and Sonar [11] proposed a method for classification of Brain tumors using a Classifier 
+and a Neural Network that uses segmentation algorithms, which include Skull stripping along with 
+morphological operations, aiming at preprocessing. Anisotropic Diffusion Filtering is used for noise 
+removal and smoothing, with edge detection locating the boundaries of the image. Secondly, wavelet 
+transforms are used in the decomposition and the feature extraction of MRI, and in combining 
+features of MRI images. Finally, Adaboost uses classification techniques, which learn by selecting 
+discriminative features, proposed to classify MRI images into tumorous (malignant) and non-
+tumorous (benign). 
+
+Selvapandian and Manivannan [12] surveyed various conventional methodologies for brain 
+tumor detection, and segmentation methodologies are presented with their tumor segmentation 
+performance evaluation parameters. Conventional methods are classified as feature-based tumor 
+classification systems and classifier-based tumor classification systems. 
+
+Sivakumar and Ganeshkumar [13] proposed a method that consists of preprocessing, feature 
+extraction, and classification. The brain image is enhanced using the Heuristic histogram equalization 
+technique. Then, texture and morphological features are extracted from the preprocessed image. 
+These features are optimized using a Genetic Algorithm and trained and classified using an ANFIS 
+classifier. The performance of the proposed ischemic stroke detection system is analyzed in terms of 
+sensitivity, specificity, accuracy, positive predictive value, and negative predictive value. 
+
+Shree and Kumar [14] concentrated on a noise removal technique, the extraction of gray-level 
+co-occurrence matrix (GLCM) features, and DWT-based brain tumor region growing segmentation to 
+reduce the complexity and improve the performance. This was followed by morphological filtering, 
+which removes the noise that can be formed after segmentation. The probabilistic neural network 
+classifier was used to train and test the performance accuracy in the detection of tumor location in 
+brain MRI images. 
+
+Sugapriya [15] proposed a new cooperative scheme that applies a semi-supervised fuzzy 
+clustering algorithm. Specifically, the Otsu (Oral Tracheal Stylet Unit) method is used to remove the 
+Background area from a Magnetic Resonance Image. Finally, the Semi-supervised Entropy 
+Regularized Fuzzy Clustering algorithm (SER-FCM) is applied to improve the quality level. The 
+intensity, shape deformation, symmetry, and texture features were extracted from each image. The 
+usefulness and significance of this research are fully demonstrated within the extent of real-life 
+application. 
+
+Bagri & Johari [16] compared the combination of texture and shape features using with texture 
+Gray Level Co-occurrence Matrix and Hu-moments, and the combination of Tamura texture and 
+shape invariant Hu-moments. For the performance evaluation of the system, we use the most 
+commonly used methods, namely precision and recall. 
+
+Prasartvit et al [17] propose a novel method for dimension reduction based on artificial bee 
+colony (ABC). The method employs swarm intelligence based on the bee foraging model in order to 
+select features that allow us to generate subsets of dimensions from the original high-dimensional 
+data, while the resulting subsets satisfy the defined objective. Support vector machine (SVM) is used 
+in this study as a fitness evaluation of ABC in classification problems. To evaluate our method, we 
+
+
+
+122 J Comput Intell Decis Sci. 2024;1(1):8 
+ 
+
+tested it with five datasets and compared it with other dimension reduction algorithms. The result of 
+this study shows that using ABC and SVM is suitable for reducing the dimension of data. 
+
+Nanni et al [18] proposed a system that represents a very simple yet effective way of boosting 
+the performance of trained CNNs by composing multiple CNNs into an ensemble and combining 
+scores by the sum rule. Several types of ensembles are considered, with different CNN topologies 
+along with different learning parameter sets. The proposed system not only exhibits strong 
+discriminative power but also generalizes well over multiple datasets thanks to the combination of 
+multiple descriptors based on different feature types, both learned and handcrafted. Separate 
+classifiers are trained for each descriptor, and the entire set of classifiers is combined by the sum 
+rule. 
+
+3 Proposed Methodology 
+In this work, brain tumor detection is done by an image processing technique. The main aim of 
+
+this work is to detect the early stage of a brain tumor. Here, the input image is sent to preprocessing. 
+Two processes are taking place in the preprocessing region.  
+
+Pre-processing 
+
+Data set 
+Median filter and skull masking 
+
+Image enhancement 
+
+Contrast Limited Adaptive Histogram Equalization 
+
+Segmentation 
+
+ Semi Supervised FCM clustering 
+
+Feature extraction 
+
+GLCM Texture Feature 
+
+Dimensionality reduction 
+
+Artificial Bee Colony Algorithm 
+
+Classification 
+
+ECNN 
+
+Output image 
+ 
+
+Figure 1: Overview of proposed methodology 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):8 123 
+ 
+
+The first one is noise removal using a median filter and skull masking, followed by image 
+enhancement. To improve the performance and to reduce the complexity semi semi-supervised-
+based segmentation takes place. Feature extraction is done by using a texture feature extraction 
+method, followed by feature dimension reduction to reduce the space by using an enhanced bee 
+colony optimization algorithm. The brain tumor detection is done by using an Ensemble Convolution 
+Neural Network classifier in an unsupervised manner. Figure 1. Shows a clear overview of the 
+proposed methodology. 
+
+3.1 Pre-processing 
+In image acquisition, the image can be passed through whatever processes need to modify it or 
+
+to extract information from it. The images are obtained from an MRI Scan of the brain. Different 
+formats like JPG, PNG, etc. are used for storing the digital images obtained from the MRI of the brain. 
+These images are stored in matrix form in MATLAB. MRI Scan images may be in RGB format. So RGB 
+to grey conversion takes place here. Then the Median filter is used to denoising the MRI images by 
+converting the image. Then, skull masking is the process that will be performed on the denoised 
+image. The purpose of this process is to remove fatty tissue, skull part, and hair part in the MRI so we 
+can process purely brain tissues only, and the ambiguity in the identification of tumors is reduced. 
+For morphological filtering, we are using different masks on the MRI image: horizontal, diagonal, 
+anti-diagonal, and vertical masks are used to process the skull masking. The functions performed by 
+the preprocessing process are: 
+
+a. Noise removing – median filter. 
+b. Skull masking and 
+c. Image enhancement – CLAHE. 
+ 
+
+3.1.1 Median filter 
+This is the most common technique which used for noise elimination [19]. It is a ‘non-linear’ 
+
+filtering technique. This is used to eliminate ‘Salt and Pepper noise’ from the greyscale image [20]. 
+The median filter is based on the average value of pixels. The advantages of the median filter are 
+efficient in reducing Salt and Pepper noise and Speckle noise. Also, the edges and boundaries are 
+preserved. The median filter is a nonlinear signal processing technology based on statistics. The noisy 
+value of the digital image or the sequence is replaced by the median value of the neighborhood 
+(mask). The pixels of the mask are ranked in the order of their gray levels, and the median value of 
+the group is stored to replace the noisy value. The median filtering output is g(x, y) = med{ f (x - i, y - 
+j), i, j∈W}, where f (x, y), g(x, y) are the original image and the output image respectively, W is the 
+two-dimensional mask: the mask size is n x n(where n is commonly odd) such as 3 x 3, 5 x 5, etc.; the 
+mask shape may be linear, square, circular, cross, etc. 
+The noise-reducing performance of the median filter 
+
+The mathematical analysis is relatively complex for the image with random noise because the 
+median filter is a nonlinear filter [21]. For an image with zero mean noise under a normal 
+distribution, the noise variance of the median filtering is approximately, 
+
+𝜎2
+
+𝜎2 1 𝑖 𝜋
+𝑚𝑒𝑑 =   ≈  𝜋 .     (1) 
+
+4𝑛𝑓2(𝑛̅) 𝑛+ −1 2
+2
+
+where 𝜎2
+𝑖  is input noise power (the variance), n is the size of the median filtering mask, and f 
+
+(n) is the function of the noise density. And the noise variance of the average filtering is, 
+
+
+
+124 J Comput Intell Decis Sci. 2024;1(1):8 
+ 
+
+𝜎2 1
+0 = 𝜎2    2) 
+
+𝑛 𝑖 (
+
+Comparing (1) and (2), the median filtering effects depend on two things: the size of the mask 
+and the distribution of the noise. The median filtering performance of random noise reduction is 
+better than the average filtering performance, but for the impulse noise, especially when narrow 
+pulses are farther apart and the pulse width is less than n / 2, the median filter is very effective. It 
+will be followed by a skull masking process using a morphological-based operation. 
+3.1.2 Skull masking 
+
+It means removal of non-brain tissues like skull, scalp, fat, eyes, neck, etc, from the MRI brain 
+image. It helps to improve the speed and accuracy of the system in medical applications. Skull 
+stripping is an important process in biomedical image analysis, and it is required for the effective 
+examination of brain tumors from the MR images. By skull stripping, it is possible to remove 
+additional cerebral tissues such as fat, skin, and skull in the brain images [22]. Skull stripping 
+methods are broadly classified into five categories: mathematical morphology-based methods, 
+intensity-based methods, deformable surface-based methods, atlas-based methods, and hybrid 
+methods. In this work, skull stripping is done based on a mathematical morphological method. 
+Morphology-Based Methods 
+
+To analyze geometrical structures such as size, shape, connectivity, mathematical morphology 
+is a tool used, which is based on set theory. It was developed originally for binary images but can be 
+used for grayscale and color images. The procedure is to search the image at different locations with 
+a pre-defined shape and to decide how this shape fits or misses the shapes in the image. This is called 
+the structuring element, and it is also a binary image. Choice of size and shape of the structuring 
+element is need-based. Diamond, square, disc, horizontal line, vertical line, cross, etc., are the most 
+commonly used structuring elements. Erosion and dilation are the two essential operations in 
+mathematical morphology. 
+Erosion and dilation 
+
+Let I be the binary image. S is the structuring element. Erosion of I by the structuring element S 
+is denoted by IƟS. It denotes the set of all pixels for which S placed at that pixel is contained within I. 
+Erosion shrinks or performs thinning of the object. It excludes all small unwanted objects in the 
+image. 
+
+IƟS={z ǀ(S) z ⊆ I}                                       (3) 
+
+Dilation of I by the structuring element S is denoted by I ⊕ S. I overlaps by at least one element. 
+Dilation performs thickening of an image. It highlights small objects in the image. 
+
+I ⊕ S= { z ǀ(S) z ∩ I ≠ ϕ}                    (4) 
+
+After the process of morphological-based operation, the image enhancement process will take 
+place using CLAHE for the improvement of the segmentation process. 
+3.1.3 Image enhancement- Contrast Limited Adaptive Histogram Equalization (CLAHE) 
+
+Adaptive histogram equalization is a computer image processing technique used to improve 
+contrast in images. It differs from ordinary histogram equalization in the respect that the adaptive 
+method computes several histograms, each corresponding to a distinct section of the image, and uses 
+them to redistribute the lightness values of the image. Ordinary histogram equalization simply uses 
+a single histogram for an entire image.  
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):8 125 
+ 
+
+Consequently, adaptive histogram equalization is considered an image enhancement technique 
+capable of improving an image's local contrast, bringing out more detail in the image. However, it can 
+also produce significant noise. A generalization of adaptive histogram equalization called contrast-
+limited adaptive histogram equalization, also known as CLAHE, was developed to address the 
+problem of noise amplification. CLAHE operates on small regions in the image, called tiles, rather 
+than the entire image. Each tile's contrast is enhanced so that the histogram of the output region 
+approximately matches the histogram specified by the 'Distribution' parameter. The neighbouring 
+tiles are then combined using bilinear interpolation to eliminate artificially induced boundaries. The 
+contrast, especially in homogeneous areas, can be limited to avoid amplifying any noise that might 
+be present in the image. After image enhancement, segmentation will take place by using the SSFCM 
+algorithm. Segmenting makes an image easier to further analyze and recognize important 
+information from a digital image. 
+
+3.2 Segmentation 
+Image Segmentation is the procedure of partitioning a digital image into numerous regions or 
+
+sets of pixels. Essentially, in image partitions are different objects have the same texture or color. The 
+image segmentation results are a set of regions that cover the whole image together and a set of 
+contours extracted from the image. All of the pixels in a region are similar with respect to some 
+characteristics such as color, intensity, or texture. Neighboring regions are considerably different 
+with respect to the same individuality. In our work, segmentation is done by using SSFCM will be 
+discussed in the following section. 
+3.2.1 Semi-Supervised Fuzzy C-Means clustering algorithm (SSFCM) 
+
+There are different types of SSFCM [24] algorithms that differ in similarity and dissimilarity 
+measurements, scaling factor, and optimization function. In this research, the proposed SSFCM 
+algorithm is used to cluster the image. The main objective function of the SSFCM algorithm involves 
+two supervised and unsupervised parts that are expressed in the following equation: 
+
+J = ∑𝐶 ∑𝑁 𝑝
+𝑢𝑖 𝑑2 𝑐
+
+𝑖𝑗 + 𝛼 ∑ ∑𝑁
+𝑗 (𝑢 2
+
+= 𝑖𝑗 − 𝑓 𝑝
+𝑖=1 𝑗=1 𝑗 𝑖=1 1 𝑖𝑗𝑏𝑗) 𝑑𝑖𝑗    (5) 
+
+Where uij is the membership value of data pattern j in cluster i, dij is the distance between the 
+center of cluster vi and data pattern j, c is the number of clusters, fij is the membership value of 
+training data pattern j in cluster I, which never gets updated in the algorithm, bj is a Boolean vector 
+indicating that a particular pattern is training (3) or is not training (0), p is the fuzzifier parameter 
+that is commonly set as 2 and α is a scaling factor that balances the supervised and unsupervised 
+learning components. The scalding factor is usually expressed as a ratio (N/M) between the number 
+of all data patterns (N) and training data patterns (M)[24]. 
+
+The algorithm used in SSFCM is summarized in the following steps: 
+1. The first step is to determine the initial parameters, including the number of clusters c, initial 
+
+membership values of training data patterns to each cluster (matrix F), vector b, and initial 
+fuzzy partitioning matrix U0 with random values between 0 and 1, where: {U│uk ∈ [0,1]; 
+
+∑𝐶 𝑛
+𝑖=1 𝑢𝑖𝑘 = 1; 0 < ∑𝑘=1 𝑢𝑖𝑘 < 𝑛    (6) 
+
+2. Start the iterative procedure of the algorithm. 
+
+3. Calculate the cluster centers V=[vi] (prototypes) as: 
+
+∑𝑁
+
+𝑣 𝑗 𝑢2
+
+𝑖 =  =1 𝑖𝑗𝑥𝑗
+ ( )
+
+∑𝑁    7  
+𝑗= 𝑢2
+
+1 𝑖𝑗
+
+
+
+126 J Comput Intell Decis Sci. 2024;1(1):8 
+ 
+
+  It should be noted that in calculating the initial cluster centers, only training data are used. 
+4. Update the partition matrix U: 
+
+1 1+𝛼(1−𝑏 𝐶
+𝑗 ∑ 𝑓𝑖𝑗
+
+𝑢𝑖𝑗 = { 𝑙=1 )
+
+1+𝛼 2 + 𝛼𝑓𝑖𝑗𝑏𝑗}                         (8) 
+𝑑
+
+𝐶 𝑖𝑗
+∑𝑙=1( )
+
+𝑑𝑖𝑗
+
+5. And finally define the stopping criteria: If Jr−Jr−1<ε stop the iteration; else repeat steps 2 to 5 by 
+considering U=Ur. Equations for partitioning matrix (Eq. (8)) and prototypes (Eq. (7)) are derived by 
+minimizing the objective function (Eq. (5)) using an optimization technique such as Lagrange 
+multipliers. The minimization of the objective function is an iterative procedure that, for each 
+iteration, calculates the membership matrix of non-training data, and the cluster's prototypes are 
+calculated. The iterative procedure continues until the variation in the objective function in two 
+consecutive iterations meets a termination criterion. Prototypes of each cluster and the membership 
+of each sample to different clusters (partitioning matrix) are the outputs of the SSFCM clustering 
+analysis.  
+Then, the feature extraction takes place by using GLCM for texture extraction, which extracts high-
+level features needed in order to perform classification of targets. 
+
+3.3 Feature extraction 
+The feature extraction [16] is extracting the cluster that shows the predicted tumor at the FCM 
+
+output. Gray Level Co-occurrence Matrix (GLCM) is a statistical method for examining texture 
+features that consider the spatial relationship of pixels. In this, a GLCM matrix is created by 
+calculating how often a pixel with the intensity value i occurs in a specific spatial relationship to a 
+pixel with the value j. GLCM consists of the frequencies at which two pixels are separated by a certain 
+vector in the image. GLCM properties by which the distribution in the matrix will depend on the 
+distance and angular or directions, like horizontal, vertical, diagonal, and anti-diagonal relationships 
+between the pixels. Suppose an input image has M total number of pixels in horizontal directions and 
+M total number of pixels in vertical directions. Suppose the gray level that appears at each pixel is 
+quantized to z number of levels, assume Nx =1,2,3,…….M consists of horizontal space, and 
+Ny=1,2,3…….N consists of vertical space, and G =0,1,2,3…Z consists of the set of Z quantized gray 
+levels. In a given distance d and direction given by θ , the GLCM is calculated by using gray scale pixel 
+i and j, expressed as the number of co-occurrence matrix in different directions. 
+
+𝑝(𝑖,𝑗│𝑑,𝜃)
+P(i, j│d, θ)  =      (9) 
+
+∑𝑖 ∑𝑗 𝑝(𝑖,𝑗│𝑑,𝜃)
+
+Among them are five features: Contrast, Correlation, Entropy, Energy, and Homogeneity.  
+3.3.1 Contrast 
+
+Contrast measures intensity between a pixel and its neighbor over the whole image, and it is 
+considered zero for a constant image and it is also known as variance and moment of inertia. 
+
+𝐶𝑜𝑛𝑡𝑟𝑎𝑠𝑡 = ∑ (𝑖 − 𝑗)2
+𝑖,𝑗 𝑝(𝑖, 𝑗)    (10) 
+
+3.3.2 Correlation 
+Correlation measures how a pixel is correlated to its neighbor over the whole image.  
+
+(1−𝜇𝑖)(𝑗−𝜇
+𝐶𝑜𝑟𝑟𝑒𝑙𝑎𝑡𝑖𝑜𝑛 = ∑ 𝑗)𝑝(𝑖,𝑗)
+
+𝑖,𝑗     (11) 
+𝛿𝑖𝛿𝑗
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):8 127 
+ 
+
+3.3.3 Entropy 
+Entropy gives a measure of the complexity of the image, and this complex texture tends to higher 
+
+entropy. 
+
+𝐸𝑛𝑡𝑟𝑜𝑝𝑦 =  ∑𝑖 ∑𝑗 𝑝(𝑖, 𝑗)    (12) 
+
+3.3.4 Energy 
+Energy is the sum of squared elements in the GLCM, and it is by default one for a constant image. 
+
+𝐸𝑛𝑒𝑟𝑔𝑦 =  ∑ (𝑖, 𝑗)2
+𝑖,𝑗     (13) 
+
+Here, texture feature extraction is done by using GLCM Texture Feature for an efficient 
+classification result. The next process is dimensionality reduction using the Artificial Bee Colony 
+(ABC) algorithm. 
+3.3.5 Dimensionality Reduction 
+
+Dimensionality reduction is introduced to increase the detection rate of the classifier. It is done 
+by using an Artificial Bee Colony (ABC). High dimensionality of data is a limiting factor to data 
+processing in many fields. It causes ambiguity in identifying significant factors for data analysis. 
+Dimension reduction is needed to separate irrelevant data from the desired data. This research 
+proposes a novel method for dimension reduction based on ABC. 
+3.3.6 Artificial Bee Colony Optimization algorithm 
+
+Artificial Bee Colony (ABC) algorithm [17] simulates the foraging behaviour of bees. These 
+specialized bees try to maximize the nectar amount stored in the hive by performing efficient division 
+of self-organization. These bees are used to reduce the number of dimensions of the texture features. 
+In order to perform this task, the ABC algorithm consists of three kinds of bees: Employed bees, 
+onlooker bees, and scout bees. Half of the colony comprises employed bees, and the other half 
+includes the onlooker bees. Employed bees are responsible for exploiting the information of texture 
+features from the nectar sources explored before and giving feature information to the other waiting 
+bees (onlooker bees) in the hive about the quality of the food source site, which they are exploiting. 
+Onlooker bees wait in the hive and decide on a food source to exploit depending on the feature 
+information shared by the employed bees. Scouts randomly search the environment in order to find 
+a new food source, depending on features information. Let the bees select the feature subsets at 
+random and calculate their fitness, and find the best one at each iteration. This procedure is repeated 
+for several iterations to find the reduced feature subset.  
+
+In the first step of the algorithm, for each employed bee, whose total number is equal to half of 
+the number of food sources, a new source is produced by: 
+
+vij = xij + ϕij(xij-xkj)                               (14) 
+
+where, φij is a uniformly distributed real random number within the range [-1,1], k is the index of the 
+solution chosen randomly from the colony (k = int (rand * N) + 1), j = 1,...D, and D are the dimensions of 
+the problem. After producing vi, this new reduced feature set is compared to solution xi, and the employed 
+bee exploits the better source. In the second step of the algorithm, an onlooker bee chooses a food source 
+with a probability and produces a new reduced feature source at the selected food source site. As for the 
+employed bee, the better source is decided based on the objective value (fi). Fitness value has to be 
+maximized, as given in the following equation: 
+
+
+
+128 J Comput Intell Decis Sci. 2024;1(1):8 
+ 
+
+1
+               𝑖𝑓 𝑓
+
+fiti = { 1+𝑓 𝑖 ≥ 0
+𝑖     (15) 
+
+1 + 𝑎𝑏𝑠(𝑓𝑖)     𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒
+
+The probability is calculated by means of fitness value using the following equation: 
+
+𝑓𝑖𝑡
+Pi =  𝑖
+
+∑𝑁    1
+𝑗=1 𝑓𝑖𝑡  ( 6) 
+
+𝑗
+
+where, fiti is the fitness of the solution xi. After all onlookers are distributed to the sources, the 
+sources are checked to determine whether they are to be abandoned. If the number of cycles that a 
+source cannot be improved is greater than a predetermined limit, the source is considered to be 
+exhausted. The employed bee associated with the exhausted source becomes a scout and makes a 
+random search in the problem domain by the following equation: 
+
+xij = 𝑥𝑚𝑖𝑛+(𝑥𝑚𝑎𝑥
+𝑗 − 𝑥𝑚𝑖𝑛
+
+𝑗 𝑗 )*r and      (17) 
+
+Algorithm for Artificial Bee Colony for dimensionality reduction 
+C, the set of all conditional features; 
+D, the set of decision features. 
+
+(1) Select the initial parameter values for ABC. 
+(2) Initialize the population(xi). 
+(3) Calculate the objective and fitness value. 
+(4) Find the optimum feature subset globally. 
+(5) Do. 
+a. Produce a new feature subset(vi). 
+b. Apply the greedy selection between xi and vi. 
+c. Calculate the fitness and probability values. 
+d. Produce the solutions for onlookers. 
+e. Apply greedy selection for onlookers. 
+f. Determine the abandoned solution. 
+g. Calculate the cycle best feature subset. 
+h. Memorize the best optimum feature subset. 
+(6) Repeat       // for the maximum number of cycles. 
+
+After the process of dimensionality reduction using the ABC algorithm, an ECNN will be considered 
+as the last stage to identify the tumor and non-tumor images. 
+ 
+3.3.7 Algorithm Classification- Ensemble Convolution Neural Network (ECNN) 
+
+In this work, the classification is used to differentiate tumor and non-tumor regions by an 
+Ensemble Convolution Neural Network classifier. 
+
+ 
+3.3.8 Ensemble Convolution Neural Network (ECNN) classifier 
+
+Ensemble is a process of combining the different classifier outputs into a single output to 
+produce a better and efficient result. Here, various convolution neural networks will be combined 
+using an ensemble method using the sum rule. To obtain a better estimator of the posterior 
+probability by combining the resulting estimates of the individual members of the ensemble is the 
+idea underlying multiple classifier fusion.  CNNs are a class of deep feed-forward neural networks 
+[18]. Like most neural networks, CNNs are composed of interconnected neurons that have inputs 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):8 129 
+ 
+
+with learnable weights, biases, and activation functions. CNN layers have neurons arranged in three 
+dimensions: width, height, and depth. This means that every layer in a CNN transforms a 3D input 
+volume into a 3D output volume of neuron activations. 
+
+CNNs are built with five classes of layers:  convolutional (CONV), activation (ACT), pooling 
+(POOL), followed by a last stage, including Fully-Connected (FC), and classification (CLASS). The 
+CONV layer is the core building block of a CNN and is also what makes CNNs so computationally 
+expensive. These layers compute the outputs of neurons that are connected to local regions by 
+applying a convolution operation to the input. The spatial extent of connectivity of these local regions 
+is a hyperparameter called the receptive field, and a parameter sharing scheme is used in CONV 
+Layers to control the number of parameters. This means that the parameters of CONV layers are 
+shared sets of weights (also called kernels or filters) that have relatively small receptive fields. 
+
+POOL layers perform non-linear down-sampling operations. Max pooling is the most common 
+non-linear operation: it partitions the input into a set of non-overlapping rectangles and outputs the 
+maximum for each group. In this way, POOL reduces the spatial size of the representation while 
+simultaneously reducing 1) the number of parameters, 2) the possibility of over-fitting, and 3) the 
+computational complexity of the network. It is common practice to insert a POOL layer between 
+CONV layers. ACT layers apply some activation functions, such as the non-saturating ReLU(Rectified 
+Linear Unit) function f(x) – max(0,x) or the saturating hyperbolic tangent f(x) – tanh(x), f(x) 
+=│tanh(x)|, or the sigmoid function f(x) = (1+e-x)-1. 
+
+FC layers have neurons that are fully connected to all the activations in the previous layer and 
+are applied after CONV and POOL layers.  
+
+Finally, combine the results of all classifiers by using an average function. The average function 
+is performed based on the arithmetic mean, giving the formula [27] 
+
+𝑓𝑎𝑚 1
+𝑖 (𝑐𝑙𝑖) = ∑𝑁 𝑐𝑙 )  𝑜
+
+𝑁 𝑗=1 𝑖(𝑗 , 𝑗 = 1 … 𝑁 𝑛  𝑜𝑓 𝑠𝑎𝑚𝑝𝑙𝑒𝑠,     (18) 
+
+where 𝑐𝑙𝑖  denotes the classification results from CNNs, i belongs to the number of classifiers, and j 
+belongs to the number of samples; finally, classifier is used for the purpose to classify the tumor and 
+non-tumor regions. Also, have the comparison on various classification methods, and the results are 
+discussed in the following section briefly. 
+
+4 Results and Discussion 
+In this section, we are going to discuss various techniques with our proposed method. The 
+
+dataset used here is the Brain Web dataset [28], which consists of full three-dimensional simulated 
+brain MR data obtained using three sequences of modalities, namely, T1- T1-weighted MRI, T2-
+weighted MRI, and proton density-weighted MRI. This dataset included a variety of slice thicknesses, 
+noise levels, and levels of intensity non-uniformity. The images used for our analysis are mostly 
+included T2-weighted modality with 1 mm slice thickness, 3% noise, and 20% intensity non-
+uniformity.  
+
+In this dataset, 13 out of 44 images included are tumor-infected brain tissues. The last dataset 
+collected from expert radiologists consisted of 135 images of 15 patients with all modalities. This 
+dataset had ground truth images that helped to compare the results of the proposed method with the 
+manual analysis of radiologists. Results of various classification techniques and the proposed method 
+are measured in terms of sensitivity, specificity, and accuracy. The classification techniques used for 
+the comparison are K-Nearest Neighbours(K-NN), Adaptive Fuzzy Inference System (ANFIS), 
+Support Vector Machine (SVM), and Ensemble Convolution Neural Network (ECNN) [29]. The three 
+types of aspects, namely sensitivity, specificity, and accuracy, are discussed briefly with a comparison 
+between various classification methods in the following section. 
+
+
+
+130 J Comput Intell Decis Sci. 2024;1(1):8 
+ 
+
+4.1 Sensitivity 
+Sensitivity (also called the true positive rate, the recall, or probability of detection in some fields) 
+
+measures the proportion of actual positives that are correctly identified as such (e.g., the percentage of 
+sick people who are correctly identified as having the condition). It can be written as, 
+
+𝑇𝑟𝑢𝑒 𝑃𝑜𝑠𝑖𝑡𝑖𝑣𝑒
+𝑆𝑒𝑛𝑠𝑖𝑡𝑖𝑣𝑖𝑡𝑦 =      (19) 
+
+𝑇𝑟𝑢𝑒 𝑃𝑜𝑠𝑖𝑡𝑖𝑣𝑒+𝐹𝑎𝑙𝑠𝑒 𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒
+
+100
+
+98
+
+96
+
+94
+
+92
+
+90
+
+88
+K-NN ANFIS SVM ECNN
+
+Classification techniques
+
+ 
+Figure 2: Comparison of various techniques with Sensitivity 
+
+Figure 2 shows the comparison of various classification techniques with sensitivity. It is clear that 
+the proposed ECNN has 98.82% as sensitivity, and the existing K-NN, ANFIS, and SVM classification 
+have 92.34%, 94.35% and 98% respectively. 
+
+4.2 Specificity 
+Specificity (also called the true negative rate) measures the proportion of actual negatives that are 
+
+correctly identified as such (e.g., the percentage of healthy people who are correctly identified as not 
+having the condition). It can be written as, 
+
+𝑇𝑟𝑢𝑒 𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒
+ 𝑆𝑝𝑒𝑐𝑖𝑓𝑖𝑐𝑖𝑡𝑦 =      (20) 
+
+𝑇𝑟𝑢𝑒 𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒+𝐹𝑎𝑙𝑠𝑒 𝑃𝑜𝑠𝑖𝑡𝑖𝑣𝑒
+
+Figure 3 shows the comparison of various classification techniques with specificity. It is clear that the 
+proposed ECNN has 88.89% a specificity and the existing K-NN, ANFIS, and SVM classification has a 
+specificity value of 61.54%, 69.23% and 87.12% respectively. 
+
+4.3 Accuracy 
+The accuracy is the proportion of the total number of correct predictions. It is used to calculate the 
+
+rate of the classifier by using the equation: 
+
+𝑇𝑟𝑢𝑒 𝑃𝑜𝑠𝑖𝑡𝑖𝑣𝑒+𝑇𝑟𝑢𝑒 𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒
+𝐴𝑐𝑐𝑢𝑟𝑎𝑐𝑦 =      (21) 
+
+𝑃𝑜𝑠𝑖𝑡𝑖𝑣𝑒+𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒
+
+ 
+
+sensitivity(%)
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):8 131 
+ 
+
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+
+K-NN ANFIS SVM ECNN
+
+Classification techniques
+
+ 
+
+Figure 3: Comparison of various techniques with Specificity 
+
+100
+
+98
+
+96
+
+94
+
+92
+
+90
+
+88
+
+86
+
+84
+
+82
+
+80
+K-NN ANFIS SVM ECNN
+
+Classification techniques
+
+ 
+Figure 4: Comparison of various techniques with Accuracy 
+
+Figure 4 shows the comparison of various classification techniques with accuracy. It is clear that the 
+proposed ECNN has 97.33% an accuracy and the existing K-NN, ANFIS, and SVM classification has 
+accuracy values of 87%, 90% and 96.51% respectively. Hence, the proposed ECNN classifier has high 
+accuracy, specificity, and sensitivity values when it is compared to all other existing work. 
+
+5 Conclusion 
+In this work, a tumor is detected by using a data mining process. Various stages are carried out 
+
+for the detection of tumors. The stages included in this process are pre-processing, segmentation, 
+feature extraction, and classification. Pre-processing consists of filtering, skull masking, and image 
+enhancement by CLAHE for an efficient segmentation process. The important role of this work is 
+feature texture extraction using GLCM and classification using Ensemble Convolution Neural 
+Network (ECNN) for the detection of brain tumors, and it has a comparison between the proposed 
+ECNN classifier with other existing methods, namely K-NN, ANFIS, and SVM, and proves that the 
+
+specificity(%)
+
+Accuracy(%)
+
+
+
+132 J Comput Intell Decis Sci. 2024;1(1):8 
+ 
+
+proposed ECNN method has a high accuracy, sensitivity, and specificity value when it is compared 
+with other existing classifiers. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: S. Hemalatha; supervision and writing—review 
+and editing: Arokiaraj Selvaraj. All authors reviewed the results and approved the final version of the 
+manuscript.  
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Toure ML, Beiji Z, Musau F, Camara AD. Advanced algorithm for brain segmentation using fuzzy to localize 
+
+cancer and epilespy region. In 2010 International Conference on Electronics and Information Engineering; 
+2010 Aug 1, Kyoto, Japan;2010. Vol. 2, p.V2-488. 
+
+2. Kapse RS, Salankar SS, Babar M. Literature survey on detection of brain tumor from MRI images. IOSR-
+JECE. 2015;10(1):80-6. 
+
+3. Joshi MA, Shah DH. Survey of brain tumor detection techniques through MRI images. AIJRFANS ISSN. 
+2015:2328-3785. 
+
+4. Demirhan A, Törü M, Güler I. Segmentation of tumor and edema along with healthy tissues of brain using 
+wavelets and neural networks.IEEE J Biomed Health Inform. 2014;19(4):1451-8. 
+
+5. Madhukumar S, Santhiyakumari N. Evaluation of k-Means and fuzzy C-means segmentation on MR images 
+of brain. Egypt J Radiol Nucl Med. 2015;46(2):475-9. 
+
+6. Kong Y, Deng Y, Dai Q. Discriminative clustering and feature selection for brain MRI segmentation. IEEE 
+Signal Process Lett. 2014;22(5):573-7. 
+
+7. El-Melegy MT, Mokhtar HM. Tumor segmentation in brain MRI using a fuzzy approach with class center 
+priors. Eurasip J Image Video Process. 2014;2014(1):21. 
+
+8. Anitha V, Murugavalli SJ. Brain tumour classification using two‐tier classifier with adaptive segmentation 
+technique. IET Comput Vis. 2016;10(1):9-17. 
+
+9. Poonam JP. Review of image processing techniques for automatic detection of tumor in human brain. Int J 
+Mob Comput Multimed Commun. 2013;2(11):117-22. 
+
+10. Badran EF, Mahmoud EG, Hamdy N. An algorithm for detecting brain tumors in MRI images. In The 2010 
+International Conference on Computer Engineering & Systems; 2010 Nov 30, Cairo, Egypt; 2010. p. 368-
+373. 
+
+11. Sonavane R, Sonar P. Classification and segmentation of brain tumor using Adaboost classifier. In 2016 
+International Conference on Global Trends in Signal Processing, Information Computing and 
+Communication (ICGTSPICC); 2016 Dec 22, Jalgaon, India; 2016. p. 396-403. 
+
+12. Selvapandian A, Manivannan K. A detailed survey on brain tumor detection and classification systems 
+based on features and classifiers. J Appl Nat Sci. 2017;11(7):341-5. 
+
+13. Sivakumar P, Ganeshkumar P. An efficient automated methodology for detecting and segmenting the 
+ischemic stroke in brain MRI images. Int J Imaging Syst Technol. 2017;27(3):265-72. 
+
+14. Varuna Shree N, Kumar TN. Identification and classification of brain tumor MRI images with feature 
+extraction using DWT and probabilistic neural network. Brain Inform. 2018;5(1):23-30. 
+
+15. Sugapriya C. Semi supervised approach-based brain tumor detection with noise removal. Int J Recent 
+Innov Trends Comput Commun. 2017;5(5):446-52. 
+
+16. Bagri N, Johari PK. A comparative study on feature extraction using texture and shape for content-based 
+image retrieval. Int J Adv Sci Technol. 2015;80(4):41-52. 
+
+17. Prasartvit T, Kaewkamnerdpong B, Achalakul T. Dimensional reduction based on artificial bee colony for 
+classification problems. In International Conference on Intelligent Computing; 2011 Aug 11, Berlin, 
+Heidelberg; 2011. p. 168-175. 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):8 133 
+ 
+
+18. Nanni L, Ghidoni S, Brahnam S. Ensemble of convolutional neural networks for bioimage classification. 
+Appl Comput Inform. 2021;17(1):19-35. 
+
+19. Telrandhe SR, Pimpalkar A, Kendhe A. Implementation of brain tumor detection using segmentation 
+algorithm & SVM. Comput Sci Eng. 2016;8(7):278-84. 
+
+20. Rajesh, C.P. and Bhalchandra, A.S., 2012. Brain tumour extraction from MRI images using MATLAB. Int. J. 
+Electron. Commun. Soft Comput. Sci. Eng, 2(1), pp.1-4. 
+
+21. Zhu Y, Huang C. An improved median filtering algorithm for image noise reduction. Phys Procedia. 
+2012;25:609-16. 
+
+22. Pydi V, Josyula SB. Detection of Brain Tumor Using PCA With SVM. Int J Inf Commun Technol Educ. 
+2015;4(8):535-39. 
+
+23. Vij K, Singh Y. Enhancement of images using histogram processing techniques. Int J Comp Tech Appl. 
+2009;2(2):309-13. 
+
+24. Fatehi M, Asadi HH. Application of semi-supervised fuzzy c-means method in clustering multivariate 
+geochemical data, a case study from the Dalli Cu-Au porphyry deposit in central Iran. Ore Geol Rev. 
+2017;81:245-55. 
+
+25. Sharma R, Sharma R. Image segmentation using morphological operation for automatic region growing. 
+IJIRCCE. 2014;2(9):5686-93. 
+
+26. Chai HY, Wee LK, Swee TT, Salleh SH, Ariff AK. Gray-level co-occurrence matrix bone fracture detection. 
+Am J Appl Sci. 2011;8(1):26. 
+
+27. Alexandre LA, Campilho AC, Kamel M. On combining classifiers using sum and product rules. Pattern 
+Recognit Lett. 2001;22(12):1283-9. 
+
+28. Brainweb: Simulated BrainDatabase,” http://brainweb.bic.mni.mcgill.ca/cgi/brainweb1. 
+29. Bahadure NB, Ray AK, Thethi HP. Image analysis for MRI based brain tumor detection and feature 
+
+extraction using biologically inspired BWT and SVM. Int J Biomed Imaging. 2017;2017(1):9749108.

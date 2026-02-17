@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Journals = () => {
+  const navigate = useNavigate()
   const [activeSection, setActiveSection] = useState('about-journal')
   const [expandedArchive, setExpandedArchive] = useState(null)
 
@@ -8,63 +10,173 @@ const Journals = () => {
   const papers2024 = [
     {
       id: 1,
-      title: "Research Paper 1",
+      type: "Research Article",
+      articleId: "jcids.2024.001",
+      title: "Optimized Neural Fusion Architecture for Secure Data Validation and Cryptographic Key Regulation in Advanced Cloud Ecosystems",
+      authors: "Niranchana Radhakrishnan, C. Viji, Balusamy Nachiappan",
+      received: "09 Jun 2025",
+      accepted: "25 Dec 2025",
+      published: "14 Jan 2026",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "1-18",
       doi: "10.XXXX/jcids.2024.001",
-      file: "/2024/1.pdf"
+      file: "/2024/1.pdf",
+      citation: 'Niranchana Radhakrishnan, C. Viji, Balusamy Nachiappan, "Optimized Neural Fusion Architecture for Secure Data Validation and Cryptographic Key Regulation in Advanced Cloud Ecosystems," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 1-18, 2024.  https://doi.org/10.XXXX/jcids.2024.001'
     },
     {
       id: 2,
-      title: "Research Paper 2",
+      type: "Research Article",
+      articleId: "jcids.2024.002",
+      title: "Context-Aware Opinion Mining Framework for Interpreting Learner Reflections through Advanced Sequence Modeling",
+      authors: "C. Vijay and Chandrasekaran Neelakandan",
+      received: "30 Jun 2024",
+      accepted: "07 Oct 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "19-35",
       doi: "10.XXXX/jcids.2024.002",
-      file: "/2024/2.pdf"
+      file: "/2024/2.pdf",
+      citation: 'C. Vijay and Chandrasekaran Neelakandan, "Context-Aware Opinion Mining Framework for Interpreting Learner Reflections through Advanced Sequence Modeling," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 19-35, 2024. https://doi.org/10.XXXX/jcids.2024.002'
     },
     {
       id: 3,
-      title: "Research Paper 3",
+      type: "Research Article",
+      articleId: "jcids.2024.003",
+      title: "Privacy-Preserving Framework for Safeguarding Healthcare Data with Embedded Authentication Across Federated Cloud Platforms",
+      authors: "S. Sivakumar and T. Karthikeyan",
+      received: "20 Jun 2024",
+      accepted: "09 Sep 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "36-54",
       doi: "10.XXXX/jcids.2024.003",
-      file: "/2024/3.pdf"
+      file: "/2024/3.pdf",
+      citation: 'S. Sivakumar and T. Karthikeyan, "Privacy-Preserving Framework for Safeguarding Healthcare Data with Embedded Authentication Across Federated Cloud Platforms," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 36-54, 2024. https://doi.org/10.XXXX/jcids.2024.003'
     },
     {
       id: 4,
-      title: "Research Paper 4",
+      type: "Research Article",
+      articleId: "jcids.2024.004",
+      title: "Enhanced Correlation Mapping Framework Employing Hybrid Evolutionary Strategy for Drug–Disease Association Discovery Across Diverse Biomedical Sources",
+      authors: "Thimmiaraja J, J. Macklin Abraham Navamani and Siva Shankar Ramasamy",
+      received: "01 Jul 2024",
+      accepted: "15 Oct 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "55-70",
       doi: "10.XXXX/jcids.2024.004",
-      file: "/2024/4.pdf"
+      file: "/2024/4.pdf",
+      citation: 'Thimmiaraja J, J. Macklin Abraham Navamani and Siva Shankar Ramasamy, "Enhanced Correlation Mapping Framework Employing Hybrid Evolutionary Strategy for Drug–Disease Association Discovery Across Diverse Biomedical Sources," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 55-70, 2024. https://doi.org/10.XXXX/jcids.2024.004'
     },
     {
       id: 5,
-      title: "Research Paper 5",
+      type: "Research Article",
+      articleId: "jcids.2024.005",
+      title: "Cognitive Resource Allocation System with Deep Learning-Based Offloading for Enhanced Mobile Computing Performance",
+      authors: "M. Nalini and Sivakumar Vengusamy",
+      received: "10 Jun 2024",
+      accepted: "12 Oct 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "71-92",
       doi: "10.XXXX/jcids.2024.005",
-      file: "/2024/5.pdf"
+      file: "/2024/5.pdf",
+      citation: 'M. Nalini and Sivakumar Vengusamy, "Cognitive Resource Allocation System with Deep Learning-Based Offloading for Enhanced Mobile Computing Performance," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 71-92, 2024. https://doi.org/10.XXXX/jcids.2024.005'
     },
     {
       id: 6,
-      title: "Research Paper 6",
+      type: "Research Article",
+      articleId: "jcids.2024.006",
+      title: "Optimized Sequence Recognition Framework for Memory-Assisted Threat Mitigation in Wireless Intrusion Environments",
+      authors: "K. Padmavathi and Basheer Riskhan",
+      received: "09 Jun 2024",
+      accepted: "20 Sep 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "93-108",
       doi: "10.XXXX/jcids.2024.006",
-      file: "/2024/6.pdf"
+      file: "/2024/6.pdf",
+      citation: 'K. Padmavathi and Basheer Riskhan, "Optimized Sequence Recognition Framework for Memory-Assisted Threat Mitigation in Wireless Intrusion Environments," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 93-108, 2024. https://doi.org/10.XXXX/jcids.2024.006'
     },
     {
       id: 7,
-      title: "Research Paper 7",
+      type: "Research Article",
+      articleId: "jcids.2024.007",
+      title: "Reliability-Driven Cloudlet Allocation Framework Leveraging Chaotic Evolutionary Techniques for Mobile Cloud Environments",
+      authors: "P. Jayasheelan and Swamynathan Ramakrishnan",
+      received: "25 Jun 2024",
+      accepted: "13 Sep 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "109-125",
       doi: "10.XXXX/jcids.2024.007",
-      file: "/2024/7.pdf"
+      file: "/2024/7.pdf",
+      citation: 'P. Jayasheelan and Swamynathan Ramakrishnan, "Reliability-Driven Cloudlet Allocation Framework Leveraging Chaotic Evolutionary Techniques for Mobile Cloud Environments," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 109-125, 2024. https://doi.org/10.XXXX/jcids.2024.007'
     },
     {
       id: 8,
-      title: "Research Paper 8",
+      type: "Research Article",
+      articleId: "jcids.2024.008",
+      title: "Nature-Inspired Feature Engineering and Cancer Detection Framework Leveraging Ensemble Convolutional Neural Architectures",
+      authors: "S. Hemalatha and Arokiaraj Selvaraj",
+      received: "25 Jun 2024",
+      accepted: "06 Sep 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "126-143",
       doi: "10.XXXX/jcids.2024.008",
-      file: "/2024/8.pdf"
+      file: "/2024/8.pdf",
+      citation: 'S. Hemalatha and Arokiaraj Selvaraj, "Nature-Inspired Feature Engineering and Cancer Detection Framework Leveraging Ensemble Convolutional Neural Architectures," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 126-143, 2024. https://doi.org/10.XXXX/jcids.2024.008'
     },
     {
       id: 9,
-      title: "Research Paper 9",
+      type: "Research Article",
+      articleId: "jcids.2024.009",
+      title: "Automated MRI-Based Brain Lesion Delineation Using Deep Convolutional Neural Models",
+      authors: "K. Dhiyaneshwaran and Shanmugan Joghee",
+      received: "21 Jun 2024",
+      accepted: "15 Sep 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "144-159",
       doi: "10.XXXX/jcids.2024.009",
-      file: "/2024/9.pdf"
+      file: "/2024/9.pdf",
+      citation: 'K. Dhiyaneshwaran and Shanmugan Joghee, "Automated MRI-Based Brain Lesion Delineation Using Deep Convolutional Neural Models," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 144-159, 2024. https://doi.org/10.XXXX/jcids.2024.009'
     },
     {
       id: 10,
-      title: "Research Paper 10",
+      type: "Research Article",
+      articleId: "jcids.2024.010",
+      title: "Optimized Term Importance Framework for Automated Feature Derivation in Complex and High-Dimensional Big Data",
+      authors: "Yanglem Loijing Khomba Khuman and Iyyappan Moorthi",
+      received: "14 Jun 2024",
+      accepted: "11 Sep 2024",
+      published: "30 Dec 2024",
+      volume: "01",
+      issue: "01",
+      year: "2024",
+      pages: "160-175",
       doi: "10.XXXX/jcids.2024.010",
-      file: "/2024/10.pdf"
+      file: "/2024/10.pdf",
+      citation: 'Yanglem Loijing Khomba Khuman and Iyyappan Moorthi, "Optimized Term Importance Framework for Automated Feature Derivation in Complex and High-Dimensional Big Data," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 160-175, 2024. https://doi.org/10.XXXX/jcids.2024.010'
     }
   ]
 
@@ -72,57 +184,173 @@ const Journals = () => {
   const papers2025 = [
     {
       id: 11,
-      title: "Research Paper 11",
+      type: "Research Article",
+      articleId: "jcids.2025.011",
+      title: "Dynamic Multi-Level Heuristic Framework for Predicting Lung Cancer from CT Scan Data",
+      authors: "Nongmaithem Ajith Singh and Rajkumar Palaniappan",
+      received: "26 Jul 2025",
+      accepted: "17 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "1-20",
       doi: "10.XXXX/jcids.2025.011",
-      file: "/2025/11.pdf"
+      file: "/2025/11.pdf",
+      citation: 'Nongmaithem Ajith Singh and Rajkumar Palaniappan, "Dynamic Multi-Level Heuristic Framework for Predicting Lung Cancer from CT Scan Data," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 1-20, 2025. https://doi.org/10.XXXX/jcids.2025.011'
+    },
+    {
+      id: 12,
+      type: "Research Article",
+      articleId: "jcids.2025.012",
+      title: "Enhanced User Authorization Framework in Cloud Environments Using Weighted Proximity-Based Trust Evaluation",
+      authors: "D. Nethra Pingala Suthishni, K. Prabavathy and Balusamy Nachiappan",
+      received: "20 Jul 2025",
+      accepted: "15 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "21-37",
+      doi: "10.XXXX/jcids.2025.012",
+      file: "/2025/12.pdf",
+      citation: 'D. Nethra Pingala Suthishni, K. Prabavathy and Balusamy Nachiappan, "Enhanced User Authorization Framework in Cloud Environments Using Weighted Proximity-Based Trust Evaluation," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 21-37, 2025. https://doi.org/10.XXXX/jcids.2025.012'
     },
     {
       id: 13,
-      title: "Research Paper 13",
+      type: "Research Article",
+      articleId: "jcids.2025.013",
+      title: "Advanced Sequence Modeling Framework for Analyzing Learner Feedback in Educational Systems",
+      authors: "K. Nirmala Devi, Radhika K and Chandrasekaran Neelakandan",
+      received: "11 Aug 2025",
+      accepted: "18 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "38-50",
       doi: "10.XXXX/jcids.2025.013",
-      file: "/2025/13.pdf"
+      file: "/2025/13.pdf",
+      citation: 'K. Nirmala Devi, Radhika K and Chandrasekaran Neelakandan, "Advanced Sequence Modeling Framework for Analyzing Learner Feedback in Educational Systems," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 38-50, 2025. https://doi.org/10.XXXX/jcids.2025.013'
     },
     {
       id: 14,
-      title: "Research Paper 14",
+      type: "Research Article",
+      articleId: "jcids.2025.014",
+      title: "Two-Dimensional Signal Decomposition for Feature Reduction and Deep Learning-Based Object Detection",
+      authors: "K. Reena, A. Kalaivani and T. Karthikeyan",
+      received: "13 Aug 2025",
+      accepted: "25 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "51-72",
       doi: "10.XXXX/jcids.2025.014",
-      file: "/2025/14.pdf"
+      file: "/2025/14.pdf",
+      citation: 'K. Reena, A. Kalaivani and T. Karthikeyan, "Two-Dimensional Signal Decomposition for Feature Reduction and Deep Learning-Based Object Detection," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 51-72, 2025. https://doi.org/10.XXXX/jcids.2025.014'
     },
     {
       id: 15,
-      title: "Research Paper 15",
+      type: "Research Article",
+      articleId: "jcids.2025.015",
+      title: "Microarray-Based Cancer Classification via Optimized Gene Selection Using Evolutionary Population Strategies",
+      authors: "T. Saravanan, Krishnaveni Sakkarapani and Siva Shankar Ramasamy",
+      received: "15 Jul 2025",
+      accepted: "11 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "73-89",
       doi: "10.XXXX/jcids.2025.015",
-      file: "/2025/15.pdf"
+      file: "/2025/15.pdf",
+      citation: 'T. Saravanan, Krishnaveni Sakkarapani and Siva Shankar Ramasamy, "Microarray-Based Cancer Classification via Optimized Gene Selection Using Evolutionary Population Strategies," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 73-89, 2025. https://doi.org/10.XXXX/jcids.2025.015'
     },
     {
       id: 16,
-      title: "Research Paper 16",
+      type: "Research Article",
+      articleId: "jcids.2025.016",
+      title: "Hybrid Recommendation Framework Combining Enhanced Density-Based Clustering and Transductive Support Vector Learning",
+      authors: "V. Vasanthi, M. Karthi and Sivakumar Vengusamy",
+      received: "22 Jun 2025",
+      accepted: "14 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "90-107",
       doi: "10.XXXX/jcids.2025.016",
-      file: "/2025/16.pdf"
+      file: "/2025/16.pdf",
+      citation: 'V. Vasanthi, M. Karthi and Sivakumar Vengusamy, "Hybrid Recommendation Framework Combining Enhanced Density-Based Clustering and Transductive Support Vector Learning," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 90-107, 2025. https://doi.org/10.XXXX/jcids.2025.016'
     },
     {
       id: 17,
-      title: "Research Paper 17",
+      type: "Research Article",
+      articleId: "jcids.2025.017",
+      title: "Exploratory Study of Artificial Intelligence Techniques for Detecting Milk Adulteration in Food Safety",
+      authors: "Sulochana V, S. Prabhu and Basheer Riskhan",
+      received: "06 Aug 2025",
+      accepted: "17 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "108-120",
       doi: "10.XXXX/jcids.2025.017",
-      file: "/2025/17.pdf"
+      file: "/2025/17.pdf",
+      citation: 'Sulochana V, S. Prabhu and Basheer Riskhan, "Exploratory Study of Artificial Intelligence Techniques for Detecting Milk Adulteration in Food Safety," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 108-120, 2025. https://doi.org/10.XXXX/jcids.2025.017'
     },
     {
       id: 18,
-      title: "Research Paper 18",
+      type: "Research Article",
+      articleId: "jcids.2025.018",
+      title: "Collaborative Mobility-Aware Resource Allocation Framework Using Evolutionary Lion Optimization for Next-Generation Mobile Networks",
+      authors: "V. Bakyalakshmi, K. Brindha and Swamynathan Ramakrishnan",
+      received: "26 Jul 2025",
+      accepted: "21 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "121-144",
       doi: "10.XXXX/jcids.2025.018",
-      file: "/2025/18.pdf"
+      file: "/2025/18.pdf",
+      citation: 'V. Bakyalakshmi, K. Brindha and Swamynathan Ramakrishnan, "Collaborative Mobility-Aware Resource Allocation Framework Using Evolutionary Lion Optimization for Next-Generation Mobile Networks," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 121-144, 2025. https://doi.org/10.XXXX/jcids.2025.018'
     },
     {
       id: 19,
-      title: "Research Paper 19",
+      type: "Research Article",
+      articleId: "jcids.2025.019",
+      title: "Optimized Feature Weighting Framework for Multi-Document Summarization Using Binary Swarm Intelligence Techniques",
+      authors: "Vijayalakshmi P. S, P. Ananthi and Arokiaraj Selvaraj",
+      received: "11 Jul 2025",
+      accepted: "23 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "145-158",
       doi: "10.XXXX/jcids.2025.019",
-      file: "/2025/19.pdf"
+      file: "/2025/19.pdf",
+      citation: 'Vijayalakshmi P. S, P. Ananthi and Arokiaraj Selvaraj, "Optimized Feature Weighting Framework for Multi-Document Summarization Using Binary Swarm Intelligence Techniques," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 145-158, 2025. https://doi.org/10.XXXX/jcids.2025.019'
     },
     {
       id: 20,
-      title: "Research Paper 20",
+      type: "Research Article",
+      articleId: "jcids.2025.020",
+      title: "Refined Gabor Feature Extraction Combined with Optimized Bayesian Classification for Facial Expression Analysis",
+      authors: "K. Nirmala Devi, S. Thanga Prasath and Shanmugan Joghee",
+      received: "30 Jul 2025",
+      accepted: "25 Oct 2025",
+      published: "22 Dec 2025",
+      volume: "02",
+      issue: "02",
+      year: "2025",
+      pages: "159-175",
       doi: "10.XXXX/jcids.2025.020",
-      file: "/2025/20.pdf"
+      file: "/2025/20.pdf",
+      citation: 'K. Nirmala Devi, S. Thanga Prasath and Shanmugan Joghee, "Refined Gabor Feature Extraction Combined with Optimized Bayesian Classification for Facial Expression Analysis," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 159-175, 2025. https://doi.org/10.XXXX/jcids.2025.020'
     }
   ]
 
@@ -2393,97 +2621,182 @@ const Journals = () => {
                         Published Papers
                       </h5>
                       
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
                         {papers2025.map((paper, index) => (
                           <div 
                             key={paper.id}
+                            onClick={() => navigate(`/paper/${paper.year}/${paper.id}`)}
                             style={{ 
-                              background: '#f9fafb',
-                              padding: '20px',
-                              borderRadius: '8px',
-                              border: '1px solid #e5e7eb',
-                              transition: 'all 0.2s ease'
+                              background: '#ffffff',
+                              padding: '30px',
+                              borderRadius: '12px',
+                              border: '2px solid #e5e7eb',
+                              transition: 'all 0.3s ease',
+                              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                              cursor: 'pointer'
                             }}
                             onMouseOver={(e) => {
-                              e.currentTarget.style.background = '#f3f4f6';
-                              e.currentTarget.style.borderColor = '#d1d5db';
+                              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
+                              e.currentTarget.style.borderColor = '#2c4a80';
+                              e.currentTarget.style.transform = 'translateY(-2px)';
                             }}
                             onMouseOut={(e) => {
-                              e.currentTarget.style.background = '#f9fafb';
+                              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
                               e.currentTarget.style.borderColor = '#e5e7eb';
+                              e.currentTarget.style.transform = 'translateY(0)';
                             }}
                           >
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px', flexWrap: 'wrap' }}>
-                              <div style={{ flex: '1', minWidth: '250px' }}>
+                            {/* Article Type and ID */}
+                            <div style={{ 
+                              display: 'flex', 
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
+                              marginBottom: '15px',
+                              flexWrap: 'wrap',
+                              gap: '10px'
+                            }}>
+                              <div style={{ 
+                                color: '#2c4a80', 
+                                fontSize: '0.9rem', 
+                                fontWeight: '700',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                              }}>
+                                {paper.type}
+                              </div>
+                              <div style={{ 
+                                color: '#6b7280', 
+                                fontSize: '0.85rem', 
+                                fontWeight: '600'
+                              }}>
+                                {paper.articleId}
+                              </div>
+                            </div>
+
+                            {/* Article Title */}
+                            <h6 style={{ 
+                              color: '#1f2937', 
+                              fontSize: '1.3rem', 
+                              margin: '0 0 20px 0',
+                              fontWeight: '700',
+                              lineHeight: '1.5'
+                            }}>
+                              {paper.title}
+                            </h6>
+
+                            {/* Authors */}
+                            <div style={{ 
+                              color: '#374151',
+                              fontSize: '1rem',
+                              marginBottom: '20px',
+                              fontWeight: '500'
+                            }}>
+                              <strong>Authors:</strong> {paper.authors}
+                            </div>
+
+                            {/* Dates */}
+                            <div style={{ 
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+                              gap: '15px',
+                              padding: '15px',
+                              background: '#f9fafb',
+                              borderRadius: '8px',
+                              marginBottom: '20px'
+                            }}>
+                              <div>
                                 <div style={{ 
-                                  color: '#2c4a80', 
-                                  fontSize: '0.85rem', 
-                                  fontWeight: '600',
-                                  marginBottom: '8px',
-                                  textTransform: 'uppercase',
-                                  letterSpacing: '0.5px'
+                                  color: '#6b7280', 
+                                  fontSize: '0.85rem',
+                                  marginBottom: '5px',
+                                  fontWeight: '600'
                                 }}>
-                                  Paper #{paper.id}
+                                  Received
                                 </div>
-                                <h6 style={{ 
-                                  color: '#1f2937', 
-                                  fontSize: '1.15rem', 
-                                  margin: '0 0 10px 0',
-                                  fontWeight: '600',
-                                  lineHeight: '1.4'
-                                }}>
-                                  {paper.title}
-                                </h6>
                                 <div style={{ 
-                                  marginTop: '10px'
+                                  color: '#1f2937', 
+                                  fontSize: '0.95rem',
+                                  fontWeight: '600'
                                 }}>
-                                  <span style={{ 
-                                    color: '#6b7280', 
-                                    fontSize: '0.9rem'
-                                  }}>
-                                    <strong>DOI:</strong> {paper.doi}
-                                  </span>
+                                  {paper.received}
                                 </div>
                               </div>
-                              
-                              <a 
-                                href={paper.file}
-                                download
-                                style={{ 
-                                  padding: '10px 24px',
-                                  background: '#2c4a80',
-                                  color: 'white',
-                                  border: 'none',
-                                  borderRadius: '6px',
+                              <div>
+                                <div style={{ 
+                                  color: '#6b7280', 
+                                  fontSize: '0.85rem',
+                                  marginBottom: '5px',
+                                  fontWeight: '600'
+                                }}>
+                                  Accepted
+                                </div>
+                                <div style={{ 
+                                  color: '#1f2937', 
                                   fontSize: '0.95rem',
-                                  fontWeight: '600',
-                                  cursor: 'pointer',
-                                  textDecoration: 'none',
-                                  display: 'inline-flex',
-                                  alignItems: 'center',
-                                  gap: '8px',
-                                  transition: 'all 0.2s ease',
-                                  whiteSpace: 'nowrap'
-                                }}
-                                onMouseOver={(e) => e.currentTarget.style.background = '#1a3d6b'}
-                                onMouseOut={(e) => e.currentTarget.style.background = '#2c4a80'}
-                              >
-                                <svg 
-                                  width="16" 
-                                  height="16" 
-                                  viewBox="0 0 24 24" 
-                                  fill="none" 
-                                  stroke="currentColor" 
-                                  strokeWidth="2" 
-                                  strokeLinecap="round" 
-                                  strokeLinejoin="round"
-                                >
-                                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                  <polyline points="7 10 12 15 17 10"></polyline>
-                                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                                </svg>
-                                Download PDF
-                              </a>
+                                  fontWeight: '600'
+                                }}>
+                                  {paper.accepted}
+                                </div>
+                              </div>
+                              <div>
+                                <div style={{ 
+                                  color: '#6b7280', 
+                                  fontSize: '0.85rem',
+                                  marginBottom: '5px',
+                                  fontWeight: '600'
+                                }}>
+                                  Published
+                                </div>
+                                <div style={{ 
+                                  color: '#1f2937', 
+                                  fontSize: '0.95rem',
+                                  fontWeight: '600'
+                                }}>
+                                  {paper.published}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Volume, Issue, Year, Article ID, DOI */}
+                            <div style={{ 
+                              padding: '15px',
+                              background: '#eff6ff',
+                              borderRadius: '8px',
+                              marginBottom: '20px',
+                              fontSize: '0.95rem',
+                              color: '#1e40af',
+                              fontWeight: '600',
+                              lineHeight: '1.8'
+                            }}>
+                              Volume {paper.volume} | Issue {paper.issue} | Year {paper.year} | Article Id. {paper.articleId} | DOI: <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ color: '#1e40af', textDecoration: 'underline' }}>https://doi.org/{paper.doi}</a>
+                            </div>
+
+                            {/* Citation */}
+                            <div style={{ 
+                              marginBottom: '20px'
+                            }}>
+                              <div style={{ 
+                                color: '#374151', 
+                                fontSize: '0.9rem', 
+                                fontWeight: '700',
+                                marginBottom: '10px',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                              }}>
+                                Cite This Article:
+                              </div>
+                              <div style={{ 
+                                padding: '15px',
+                                background: '#f3f4f6',
+                                borderLeft: '4px solid #2c4a80',
+                                borderRadius: '4px',
+                                fontSize: '0.9rem',
+                                color: '#374151',
+                                lineHeight: '1.7',
+                                fontStyle: 'italic'
+                              }}>
+                                {paper.citation}
+                              </div>
                             </div>
                           </div>
                         ))}
@@ -2564,97 +2877,182 @@ const Journals = () => {
                         Published Papers
                       </h5>
                       
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
                         {papers2024.map((paper, index) => (
                           <div 
                             key={paper.id}
+                            onClick={() => navigate(`/paper/${paper.year}/${paper.id}`)}
                             style={{ 
-                              background: '#f9fafb',
-                              padding: '20px',
-                              borderRadius: '8px',
-                              border: '1px solid #e5e7eb',
-                              transition: 'all 0.2s ease'
+                              background: '#ffffff',
+                              padding: '30px',
+                              borderRadius: '12px',
+                              border: '2px solid #e5e7eb',
+                              transition: 'all 0.3s ease',
+                              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
+                              cursor: 'pointer'
                             }}
                             onMouseOver={(e) => {
-                              e.currentTarget.style.background = '#f3f4f6';
-                              e.currentTarget.style.borderColor = '#d1d5db';
+                              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.12)';
+                              e.currentTarget.style.borderColor = '#2c4a80';
+                              e.currentTarget.style.transform = 'translateY(-2px)';
                             }}
                             onMouseOut={(e) => {
-                              e.currentTarget.style.background = '#f9fafb';
+                              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
                               e.currentTarget.style.borderColor = '#e5e7eb';
+                              e.currentTarget.style.transform = 'translateY(0)';
                             }}
                           >
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px', flexWrap: 'wrap' }}>
-                              <div style={{ flex: '1', minWidth: '250px' }}>
+                            {/* Article Type and ID */}
+                            <div style={{ 
+                              display: 'flex', 
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
+                              marginBottom: '15px',
+                              flexWrap: 'wrap',
+                              gap: '10px'
+                            }}>
+                              <div style={{ 
+                                color: '#2c4a80', 
+                                fontSize: '0.9rem', 
+                                fontWeight: '700',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                              }}>
+                                {paper.type}
+                              </div>
+                              <div style={{ 
+                                color: '#6b7280', 
+                                fontSize: '0.85rem', 
+                                fontWeight: '600'
+                              }}>
+                                {paper.articleId}
+                              </div>
+                            </div>
+
+                            {/* Article Title */}
+                            <h6 style={{ 
+                              color: '#1f2937', 
+                              fontSize: '1.3rem', 
+                              margin: '0 0 20px 0',
+                              fontWeight: '700',
+                              lineHeight: '1.5'
+                            }}>
+                              {paper.title}
+                            </h6>
+
+                            {/* Authors */}
+                            <div style={{ 
+                              color: '#374151',
+                              fontSize: '1rem',
+                              marginBottom: '20px',
+                              fontWeight: '500'
+                            }}>
+                              <strong>Authors:</strong> {paper.authors}
+                            </div>
+
+                            {/* Dates */}
+                            <div style={{ 
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+                              gap: '15px',
+                              padding: '15px',
+                              background: '#f9fafb',
+                              borderRadius: '8px',
+                              marginBottom: '20px'
+                            }}>
+                              <div>
                                 <div style={{ 
-                                  color: '#2c4a80', 
-                                  fontSize: '0.85rem', 
-                                  fontWeight: '600',
-                                  marginBottom: '8px',
-                                  textTransform: 'uppercase',
-                                  letterSpacing: '0.5px'
+                                  color: '#6b7280', 
+                                  fontSize: '0.85rem',
+                                  marginBottom: '5px',
+                                  fontWeight: '600'
                                 }}>
-                                  Paper #{paper.id}
+                                  Received
                                 </div>
-                                <h6 style={{ 
-                                  color: '#1f2937', 
-                                  fontSize: '1.15rem', 
-                                  margin: '0 0 10px 0',
-                                  fontWeight: '600',
-                                  lineHeight: '1.4'
-                                }}>
-                                  {paper.title}
-                                </h6>
                                 <div style={{ 
-                                  marginTop: '10px'
+                                  color: '#1f2937', 
+                                  fontSize: '0.95rem',
+                                  fontWeight: '600'
                                 }}>
-                                  <span style={{ 
-                                    color: '#6b7280', 
-                                    fontSize: '0.9rem'
-                                  }}>
-                                    <strong>DOI:</strong> {paper.doi}
-                                  </span>
+                                  {paper.received}
                                 </div>
                               </div>
-                              
-                              <a 
-                                href={paper.file}
-                                download
-                                style={{ 
-                                  padding: '10px 24px',
-                                  background: '#2c4a80',
-                                  color: 'white',
-                                  border: 'none',
-                                  borderRadius: '6px',
+                              <div>
+                                <div style={{ 
+                                  color: '#6b7280', 
+                                  fontSize: '0.85rem',
+                                  marginBottom: '5px',
+                                  fontWeight: '600'
+                                }}>
+                                  Accepted
+                                </div>
+                                <div style={{ 
+                                  color: '#1f2937', 
                                   fontSize: '0.95rem',
-                                  fontWeight: '600',
-                                  cursor: 'pointer',
-                                  textDecoration: 'none',
-                                  display: 'inline-flex',
-                                  alignItems: 'center',
-                                  gap: '8px',
-                                  transition: 'all 0.2s ease',
-                                  whiteSpace: 'nowrap'
-                                }}
-                                onMouseOver={(e) => e.currentTarget.style.background = '#1a3d6b'}
-                                onMouseOut={(e) => e.currentTarget.style.background = '#2c4a80'}
-                              >
-                                <svg 
-                                  width="16" 
-                                  height="16" 
-                                  viewBox="0 0 24 24" 
-                                  fill="none" 
-                                  stroke="currentColor" 
-                                  strokeWidth="2" 
-                                  strokeLinecap="round" 
-                                  strokeLinejoin="round"
-                                >
-                                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                  <polyline points="7 10 12 15 17 10"></polyline>
-                                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                                </svg>
-                                Download PDF
-                              </a>
+                                  fontWeight: '600'
+                                }}>
+                                  {paper.accepted}
+                                </div>
+                              </div>
+                              <div>
+                                <div style={{ 
+                                  color: '#6b7280', 
+                                  fontSize: '0.85rem',
+                                  marginBottom: '5px',
+                                  fontWeight: '600'
+                                }}>
+                                  Published
+                                </div>
+                                <div style={{ 
+                                  color: '#1f2937', 
+                                  fontSize: '0.95rem',
+                                  fontWeight: '600'
+                                }}>
+                                  {paper.published}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Volume, Issue, Year, Article ID, DOI */}
+                            <div style={{ 
+                              padding: '15px',
+                              background: '#eff6ff',
+                              borderRadius: '8px',
+                              marginBottom: '20px',
+                              fontSize: '0.95rem',
+                              color: '#1e40af',
+                              fontWeight: '600',
+                              lineHeight: '1.8'
+                            }}>
+                              Volume {paper.volume} | Issue {paper.issue} | Year {paper.year} | Article Id. {paper.articleId} | DOI: <a href={`https://doi.org/${paper.doi}`} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ color: '#1e40af', textDecoration: 'underline' }}>https://doi.org/{paper.doi}</a>
+                            </div>
+
+                            {/* Citation */}
+                            <div style={{ 
+                              marginBottom: '20px'
+                            }}>
+                              <div style={{ 
+                                color: '#374151', 
+                                fontSize: '0.9rem', 
+                                fontWeight: '700',
+                                marginBottom: '10px',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.5px'
+                              }}>
+                                Cite This Article:
+                              </div>
+                              <div style={{ 
+                                padding: '15px',
+                                background: '#f3f4f6',
+                                borderLeft: '4px solid #2c4a80',
+                                borderRadius: '4px',
+                                fontSize: '0.9rem',
+                                color: '#374151',
+                                lineHeight: '1.7',
+                                fontStyle: 'italic'
+                              }}>
+                                {paper.citation}
+                              </div>
                             </div>
                           </div>
                         ))}
@@ -2987,6 +3385,25 @@ const Journals = () => {
         }}>
           Journal of Computational Intelligence and Decision Science
         </h1>
+
+        {/* Marquee Text */}
+        <div style={{ 
+          marginTop: '30px', 
+          marginBottom: '40px',
+          overflow: 'hidden'
+        }}>
+          <div style={{ 
+            background: 'linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%)',
+            color: 'white',
+            padding: '15px 0',
+            borderRadius: '8px',
+            boxShadow: '0 4px 12px rgba(30, 58, 138, 0.3)'
+          }}>
+            <marquee behavior="scroll" direction="left" scrollamount="6" style={{ fontSize: '1.1rem', fontWeight: '500' }}>
+              🎓 JCIDS: Advancing Research in Computational Intelligence & Decision Science | Open Access Platform for Global Researchers | Rigorous Double-Blind Peer Review | Fast Track Publication - Decision within 6-8 Weeks | DOI Assigned to All Articles | Published by Gnosis Press
+            </marquee>
+          </div>
+        </div>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', gap: '40px' }}>

@@ -1,0 +1,595 @@
+﻿ARTICLE 
+
+Refined Gabor Feature Extraction Combined with Optimized Bayesian 
+Classification for Facial Expression Analysis 
+
+K. Nirmala Devi1,*, S. Thanga Prasath2 and Shanmugan Joghee3 
+
+1Associate Professor, Department of CSE-Data Science, Madanapalle Institute of Technology & Science (MITS) - Deemed to 
+be University, Madanapalle, Andhra Pradesh - 517325, India. 
+2Assistant Professor, Department of Artificial Intelligence, Madanapalle Institute of Technology & Science (MITS), Deemed 
+to be University,  
+Madanapalle, Andhra Pradesh - 517325, India. 
+3Professor & Discipline leader - Marketing, School of Business, Horizon University College, Al Jurf, Ajman, United Arab 
+Emirates. 
+*Corresponding Author: K. Nirmala Devi. Email: nirmaladevik.cse@gmail.com  
+
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025 
+
+ABSTRACT: Face recognition is a subdomain of computational biometrics, which is an automated technique 
+for verifying the identity of a human based on some parameters, like the pattern in the iris and face dimensions. 
+It is a multi-faceted process as there are only a limited images available for the purpose of training, and different 
+images are obtained through various conditions and surroundings. There is a constant challenge that 
+researchers face, which is how to efficiently handle the sensitivity of the classifier under illumination, 
+expressions, and performance under low-resolution images. Conventional methods of face recognition have a 
+lower accuracy in the classification, and hence, this paper proposes a Modified Gabor Filtering technique based 
+on NB classifier (MGF+ENBA) for overcoming the issue. The MGF technique extracts only the most important 
+features from the available data efficiently. The ENBA algorithm is then used for the classification of facial 
+expression in a more accurate way, with the emotion detection, such as sad, happy, angry, fear, and neutral 
+emotional features. The experiments were performed using the Cohn-Kanade data and the JAFFE database. The 
+results prove that the proposed technique performs better than the other methods in terms of precision, recall, 
+and F-measure, which proves improved accuracy. 
+
+KEYWORDS: Facial expression, Modified Gabor Filter with Enhanced Naïve Bayes Algorithm (MGF+ENBA), 
+image processing. 
+ 
+
+1 Introduction 
+Facial expression detection systems are largely being researched in the AI domain. A lot of facial 
+
+expression recognition (FER) applications apply traditional ML methods for the feature extraction, 
+and these traditional methods have an overhead of poor accuracy when new images are tested. Many 
+Artificial Intelligence-based systems are being developed for the detection of facial expressions for 
+improving business domains, such as in customer attention marketing, health monitoring, and other 
+intelligent systems based on emotions. Owing to a great demand and lack of supply, the facial 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+118 J Comput Intell Decis Sci. 2025;2(2):10 
+ 
+
+recognition systems with emotional intelligence have attracted a large volume of research 
+community towards the computer vision domain [1-2].  
+
+Human emotions often facilitate more meaning than words. Thus, the importance of 
+understanding emotions is crucial in the context of social communications. Many techniques are 
+available for the detection of emotions, such as voice recognition, NLP, and complex techniques, 
+including EEGs. However, a much easier and stronger way for emotion detection is through facial 
+expressions. The common facial expressions include anger, happiness, fear, surprise, and disgust, and 
+more complex expressions which have the combination of basic emotions are still under 
+investigation [3-4]. Hence, a utility that can detect the motions from facial expressions is in great 
+demand.  
+
+The conventional method has used feature selection based on hand-crafted techniques. These 
+include techniques such as the Local Binary Patterns (LBP), the non-negative factorization (NMF), 
+and spatial learning [5-6]. In the year 2013, various competitions on FER [21] and emotion detection 
+were conducted, which have largely collected enough training data in real-time [7-8]. Owing to the 
+great advancements in chip-level technologies and well-architected networks, various research has 
+commenced in the usage of deep learning methods that have achieved a lot in the accurate detection 
+of emotions [9-10]. Also, given the effectiveness of the training of data, deep learning has shown a 
+dramatic efficiency for handling the most challenging issues in emotional detection.  
+
+In any image processing technique, feature selection plays a vital role in the classification part. 
+If there are no sufficient features, the performance of the classifier will be poor. In most cases of facial 
+expression classification, a large number of features will be generated, and only the significant 
+features will be needed for the classification, which is done through optimization techniques [11-12]. 
+Among the famous techniques, the Gabor Wavelet Feature extraction has attracted many researchers 
+owing to its performance. Although widely adopted, the computational cost is very high for the 
+coevolution of facial images with multi-bank filters for extracting the scalar and orientation 
+parameters. Further, this technique suffers from a couple of major hindrances, such as the bandwidth 
+of the GF is always limited to a single octave, and the filters are not optimized. These require the 
+intervention of a log form in GF filters for efficient feature extraction.  
+
+In order to overcome this hindrance, this paper proposes a modified Gabor Filtering technique 
+based on an NB classifier (MGF+ENBA) for overcoming the issue. The MGF technique extracts only 
+the most important features from the available data efficiently. The ENBA algorithm is then used for 
+the classification of facial expression in a more accurate way, with the emotion detection, such as sad, 
+happy, angry, fear, and neutral emotional features. The rest of the paper is organized in the following 
+manner. Section 2 provides the gist of important works in the literature on emotion detection, Section 
+3 explains the proposed method in detail, Section 4 elaborates on the results and discussion, and 
+Section 5 concludes the research. 
+
+2 Related Works 
+Kim et al [15] gave special attention to the utilization of contrast representation, which can 
+
+embed a distinct feature factor for a discriminative intent. The contrast representation that embeds 
+a deep neural network is used for the comparison of the given image with that of a reference. The 
+authors attempted to use a generic reference that is estimated from the given image. As a 
+consequence, the DNNs are deployed, which can combine to form an iterative model that has an end-
+to-end training. In the proposed network, an attempt to disintegrate the expressive factor in a couple 
+of steps, which includes the learning development framework, is carried out. The experiments were 
+carried out using public data sets available, and it is seen that the proposed method has high detection 
+accuracy.  
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):10 119 
+ 
+
+Dewi et al [16] performed a critical review on the introduction of facial emotions and developed 
+the LGBP-TOP combined with SVM, which tends to focus on the images of faces and lips alone. A novel 
+algorithm was developed for extracting the features of lips and eyes using the 3D blocks, which is 
+then used as the input for the LGBP-TOP technique. Later, the results are classified by using the SVM 
+technique. The experimental results proved an overall accuracy of 82% and found to perform better 
+than the entire face and also specific areas such as eyes and lips.  
+
+Luo et al [17] presented the PCA method, which is based on statistical analysis that is extracted 
+from the grey scales of the full image. The grey-scale features are highly sensitive towards the 
+environment, and hence, a hybrid method that combines the PCA and LBP was proposed. The LBP is 
+determined to extract the locally available grey features on the regions surrounding the mouth and 
+eyes. The SVM methods are used for the detection of facial emotions. The experimental results prove 
+that the proposed method can able to classify the various expressions more effectively and can 
+achieve a higher rate of recognition than the present traditional methods.  
+
+Krestinkaya et al [18] used the simplest method for feature selection, which is also effective. The 
+authors have proposed a straightforward technique for the recognition of emotions to reduce the 
+issue of the inter-class mismatch among the pixels during the process of classification. The proposed 
+method uses the application of normalizing the pixels for the removal of offsets caused due to 
+intensity, followed by the Min-Max metrics in a nearest classifier that is competent for the outlier 
+suppression of features, which forms the outliers. The experimental results indicate that there is a 
+significant improvement in the performance of 18% when the Min_max classification process is 
+tested on the JAFFE base. The proposed technique outperforms all the other existing methods that 
+are based on template matching. 
+
+3 Proposed Methodology 
+The main objective of the proposed Modified Gabor Filter with NB Algorithm (MGF+ENBA) is to 
+
+improve the FER performance.   
+
+3.1 Image Dataset 
+All the facial emotion classification sets that are used in the proposed method are from a couple 
+
+of databases, the JAFFE [19] and Cohn-Kanade [20]. The former database contains 239 images of 7 
+basic facial expressions. These images are taken from the female models belonging to Japan. The 
+emotions expressed in each of the pictures are tested for their subjectivity on 60 different volunteers. 
+The sample set of images is shown in Figure 1. 
+
+ 
+Figure 1: Sample static images from the JAFFE database 
+
+
+
+120 J Comput Intell Decis Sci. 2025;2(2):10 
+ 
+
+ 
+Figure 2: Image sequences from the Cohn-Kanade database 
+
+3.2 Image Acquisition 
+The images that are used in the proposed method are static in nature. In order to capture the 
+
+images of various expressions, a Panasonic model of camera with a focal length of 7mm is used. The 
+JPEG format is used for images with 24-bit coloring. The resolution was fixed as 4320*3240 pixels. 
+The maximum distance between the camera and the person was kept at 4 feet, and the images of 
+seven basic expressions of each of the persons were taken. The image sequence is shown in Figure 2. 
+
+3.3 Image Preprocessing 
+The pre-processing is an important step in the image processing and not an exception in the case of 
+
+facial expression detection. Pre-processing aims to pick out the images that have normal intensity with 
+uniform shapes and size, and represent only the face that has emotion. The pre-processing helps in 
+reducing the effect of illumination and as well as lighting. The representation of the expression can be 
+difficult to translate and rotate. To overcome these hindrances of the pointless changes, the facial images 
+are geometrically processed before entering classification. The pre-processing technique becomes more 
+important in the FER task. The objective of pre-processing is to gather images that have normal intensity 
+and uniform size and shape, and depict only the face expressions.  
+
+The preprocessing is also expected to remove the effect of lighting. The area pertaining to the face of 
+a given image is detected using the Viola-Jones method using the AdaBoost algorithm. The method uses 
+an object detection technique that provides a comprehensive detection of objects in real time. It is initially 
+designed for the issue of face detection. The significant features that are used by the viola are obtained 
+from the pixels that are selected from a rectangular area, which are imposed over the picture, and show 
+a high level of sensitivity for the vertical and horizontal lines. AdaBoost has an adaptive learning 
+mechanism that can be used in conjunction with all other learning methods for performance 
+improvement. AdaBoost is considered adaptive as the subsequent classifiers are built iteratively and are 
+made to fix the instances that are misclassified by the former classifiers. At every iteration, a distributed 
+weight is updated in such a way that the weights of every incorrect classification are increased, which 
+enables the new classification to be focused.  
+
+The last step in the pre-processing phase is the detection of a facial picture that has emotion within 
+the maximum intensity level of a given emotion. The mutual information-based method is used for face 
+detection. For every frame, this information present in-between the present frame and the initial one is 
+computed, and the particular frame that has the mutual kind of information is then selected as the one 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):10 121 
+ 
+
+that represents a particular emotion with the maximum level of intensity. At last, the images are brought 
+back to the initial size. Figure 4 shows images after the preprocessing. 
+
+ 
+Figure 3: Images after the pre-processing step 
+
+3.4 Feature extraction using Modified Gabor Filters (MGF) 
+
+The Gabor Filters (GF) are generally considered as one of the best choices for getting local frequency 
+information. However, they commonly suffer from a couple of important limitations. The total bandwidth 
+in the case of a GF is limited to a single octave, and also, these filters are not optimal if one of them seeks 
+spectral information that has more localization. Log-based GFs help to overcome this limitation. The DC 
+component is nullified here and can be built with an approximate bandwidth that can be able to produce 
+the filter that has minimal spatial extent. Log-based filters in the frequency issue are defined in terms of 
+polar bi-coordinates using H(f, θ) = Hf × Hθ, where Hf depicts the radial item and Hθ, the angular 
+component. 
+
+𝑓
+−[ln( )]2
+
+𝑓
+𝐻(𝑓, 𝜃) = exp⁡{ 0 −(𝜃−𝜃 )2
+
+𝜎 }exp⁡{ 0    
+𝑓  (1) 
+
+2[ln( )]2 2𝜎2
+𝜃
+
+𝑓0
+
+Here, the f() is the frequency at the center of the filter, and θ0 represents the direction of the filter. Σf 
+is the constant value that defines the bandwidth (B) of the octaves. The coefficients of the MGF are then 
+calculated in an off-line speedup. The GF filters are with different orientations and are employed through 
+the coefficients that are calculated respectively. This gives a variety of filters. 
+
+ 
+
+Figure 4: Eye images used for training and testing 
+
+
+
+122 J Comput Intell Decis Sci. 2025;2(2):10 
+ 
+
+ 
+
+Figure 5: Mouth images used for training and testing 
+
+3.5 FER classification using Enhanced Naïve Bayes Algorithm (ENBA)  
+ 
+
+The NB classifier is based on the probability that has displayed effectiveness in many problems 
+of classification [21]. The NB classifiers are simple but are effective in classification, which is based 
+on Bayes' theorem. The Naive Bayes theorem is trained by using the images that are captured in a 
+supervised learning environment. It is assumed that the presence of a given feature in a class is not 
+related to the presence of any other feature. If c represents the class variable, then the features are 
+represented using the set {f1,f2,…, fk}, and the decision of the classifier is made by using the formula. 
+
+𝐶 = argmax{𝑝(𝑐)∏𝑘
+𝑗=1𝑝(𝑓𝑖|𝑐)}    (2) 
+
+𝑐
+
+Where the p(c) represents the total samples in the set {c} / the total no of samples is the 
+conditional table that is learnt in the example, and k represents the feature vector length. Although 
+there is an existence of independent assumptions, the NB has proven to be a good choice for 
+classification for real-time data, in par with many complex classifiers. The overall architecture of the 
+proposed scheme is given in Fig. 6. 
+
+4 Experimental Result 
+The JAFFE repository has a total of 596 image sequences ranging with 124 subjects in the age 
+
+range between 18-35. The DB includes faces that show the basic 7 emotions for which there were 
+{45,98,56,58,78,35,142} images, respectively. The proposed method is compared with that of the 
+Nearest Neighbor Classification and SVM for evaluating the JAFFE database along the MMSNN 
+algorithm. The performance metrics chosen are precision, recall, and F-Measure as measures of 
+accuracy. 
+
+4.1 Precision 
+The precision can be viewed as the computational parameter of accuracy or a quality, and is 
+
+calculated using the formula, 
+
+True⁡positive⁡
+𝑃𝑟𝑒𝑐𝑖𝑠𝑖𝑜𝑛 = ⁡     (3) 
+
+True⁡positive+False⁡positive
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):10 123 
+ 
+
+JAFFE (JF) and Cohn-
+
+Kanade (C-K) databases 
+
+Image Acquisition 
+
+ 
+
+Image pre-processing  
+
+AdaBoost learning 
+
+Normalize the intensity 
+
+Feature extraction 
+
+  
+Modified Gabor filter 
+
+Anger 
+
+Extract most 
+Sad 
+
+informative features 
+
+Fear 
+
+Classify FER expressions using 
+
+enhanced naïve bayes Happy  
+
+Performance evaluation  
+Neutral 
+
+Surprise 
+ 
+
+Figure 6: Overall block diagram of the proposed system 
+
+The recall is the measure of completeness, or in other words, it is a quality parameter. Usually, the 
+high value of precision indicates that the algorithm has given back more relevant results. In the 
+classification problem, the precision of a given class is the total count of true positives divided by the 
+total elements that belong to the positive class. 
+
+From Figure 7, it is observed that the plot is drawn taking the existing and the proposed method 
+and compared for its precision. In the X axis, the methods are assigned, and in the Y axis, the values of 
+precision are plotted. It is observed that the proposed method has more precision than the other 
+popular methods, such as the HMM and SVM. This concludes that the proposed method can increase 
+facial expressions. 
+
+
+
+124 J Comput Intell Decis Sci. 2025;2(2):10 
+ 
+
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+
+HMM SVM MGF+ENBA
+
+Methods
+ 
+
+Figure 7: Precision comparison 
+
+4.2 Recall 
+Recall is generally defined as the no of appropriate documents received by a given search divided 
+
+by the total count of existing such documents, and is calculated as, 
+
+True⁡positive⁡
+𝑅𝑒𝑐𝑎𝑙𝑙 = ⁡     (4) 
+
+True⁡positive+False⁡negative
+
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+
+0
+HMM SVM MGF+ENBA
+
+Methods
+ 
+
+Figure 8: Recall 
+
+From Figure 8, it is seen that the comparative metric is evaluated between the proposed and the 
+existing method. In the X axis, the methods are assigned, and in the Y axis, the values of recall are 
+plotted. It is observed that the proposed method has more precision than the other popular methods, 
+such as the HMM and SVM. This concludes that the proposed method MGF+ENBA can increase the 
+detection performance of the facial expressions, such as sad, happy, anger, fear, neutral, and surprise 
+expressions, accurately for the given databases. 
+
+4.3 F-measure 
+𝐹1-score calculated as, 
+
+2×precision×recall
+F1 − score =     (5) 
+
+precision+recall
+
+Recall Precision
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):10 125 
+ 
+
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+
+0
+HMM SVM MGF+ENBA
+
+Methods
+ 
+
+Figure 9: F-measure 
+
+From Figure 9, it is seen that the comparative metric is evaluated between the proposed and the 
+existing method. In the X axis, the methods are assigned, and in the Y axis, the values of F-Measure 
+are plotted. It is observed that the proposed method has more precision than the other popular 
+methods, such as the HMM and SVM. This concludes that the proposed method MGF+ENBA can 
+increase the detection performance of the facial expressions, such as sad, happy, anger, fear, neutral, 
+and surprise expressions, accurately for the given databases. 
+
+4.4 Accuracy 
+Accuracy is the correctness of a given model, and it is calculated as the total count of actual 
+
+parameters (Tp + Tn)of classification that are segregated by the sum of all of the classification’s 
+parameters Tp + Tn + Fp + Fn).⁡The same is computed as, 
+
+Tp+Tn
+Accuracy⁡ =     (6) 
+
+(Tp+Tn+Fp+Fn)
+
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+
+0
+HMM SVM MGF+ENBA
+
+Methods  
+Figure 10: Accuracy 
+
+From Figure 10, it is seen that the comparative metric is evaluated between the proposed and 
+the existing method. In the X axis, the methods are assigned, and in the Y axis, the values of accuracy 
+are plotted. It is observed that the proposed method has more precision than the other popular 
+methods, such as the HMM and SVM. This concludes that the proposed method MGF+ENBA can 
+increase the detection performance of the facial expressions, such as sad, happy, anger, fear, neutral, 
+and surprise expressions, accurately for the given databases. 
+
+5 Conclusion 
+In this study, an efficient method for the calculation of an accurate FER rate using the MGF+ENBA 
+
+technique is presented. The FERs are based on the hybrid facial regions, which are taken for 
+
+Accuracy(%) F-measure
+
+
+
+126 J Comput Intell Decis Sci. 2025;2(2):10 
+ 
+
+investigation. The part of the face that shows the most discriminative information on facial emotional 
+expression classification. The vector representing the features is extracted from the original image. 
+Then, the significant features are selected based on the mutual information. These are classified using 
+the ENBA classifier. The experiments are carried out using the JAFFE database images, and it is found 
+that the proposed MGF+ENBA algorithm gives more accuracy and better performance than other 
+competitive methods, such as HMM and SVM algorithms. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: K. Nirmala Devi; supervision and writing: S. 
+Thanga Prasath; review and editing: Shanmugan Joghee. All authors reviewed the results and 
+approved the final version of the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Zeng N, Zhang H, Song B, Liu W, Li Y, Dobaie AM. Facial expression recognition via learning deep sparse 
+
+autoencoders. Neurocomputing. 2018;273:643-9. 
+2. Yang H, Ciftci U, Yin L. Facial expression recognition by de-expression residue learning. In Proceedings of 
+
+the IEEE conference on computer vision and pattern recognition; 2018. p. 2168-2177. 
+3. A. Kołakowska, A. Landowska, M. Szwoch, W. Szwoch, and M. R. Wrobel, ´ Human-Computer Systems 
+
+Interaction: Backgrounds and Applications 3, ch. Emotion Recognition and Its Applications, pp. 51–62. 
+Cham: Springer International Publishing, 2014.  
+
+4. Krizhevsky A, Sutskever I, Hinton GE. Imagenet classification with deep convolutional neural networks. 
+Adv Neural Inf Process Syst. 2012;25. 
+
+5. Liu P, Han S, Meng Z, Tong Y. Facial expression recognition via a boosted deep belief network. In 
+Proceedings of the IEEE conference on computer vision and pattern recognition; 2014. p. 1805-1812. 
+
+6. Zhao G, Pietikainen M. Dynamic texture recognition using local binary patterns with an application to facial 
+expressions. IEEE Trans Pattern Anal Mach Intell. 2007;29(6):915-28. 
+
+7. Goodfellow IJ, Erhan D, Carrier PL, Courville A, Mirza M, Hamner B, Cukierski W, Tang Y, Thaler D, Lee DH, 
+Zhou Y. Challenges in representation learning: A report on three machine learning contests. In 
+International conference on neural information processing; 2013 Nov 3, Berlin; 2013. p. 117-124. 
+
+8. Dhall A, Ramana Murthy OV, Goecke R, Joshi J, Gedeon T. Video and image-based emotion recognition 
+challenges in the wild: Emotiw 2015. In Proceedings of the 2015 ACM on international conference on 
+multimodal interaction; 2015 Nov 9, 2015. p. 423-426. 
+
+9. Krizhevsky A, Sutskever I, Hinton GE. Imagenet classification with deep convolutional neural networks. 
+Adv Neural Inf Process Syst. 2012;25. 
+
+10. Simonyan K, Zisserman A. Very deep convolutional networks for large-scale image recognition. arXiv 
+preprint arXiv:1409.1556. 2014 Sep 4. 
+
+11. Rifai S, Vincent P, Muller X, Glorot X, Bengio Y. Contractive auto-encoders: Explicit invariance during 
+feature extraction. In Proceedings of the 28th international conference on machine learning; 2011 Jun 28, 
+2011. p. 833-840. 
+
+12. Masci J, Meier U, Cireşan D, Schmidhuber J. Stacked convolutional auto-encoders for hierarchical feature 
+extraction. In International conference on artificial neural networks; 2011 Jun 14, Berlin; 2011. p. 52-59. 
+
+13. Knyazev B, Shvetsov R, Efremova N, Kuharenko A. Convolutional neural networks pretrained on large face 
+recognition datasets for emotion classification from video. arXiv preprint arXiv:1711.04598. 2017 Nov 13. 
+
+14. Ciregan D, Meier U, Schmidhuber J. Multi-column deep neural networks for image classification. In 2012 
+IEEE conference on computer vision and pattern recognition; 2012 Jun 16, Providence, RI, USA; 2012. p. 
+3642-3649. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):10 127 
+ 
+
+15. Kim Y, Yoo B, Kwak Y, Choi C, Kim J. Deep generative-contrastive networks for facial expression 
+recognition. arXiv preprint arXiv:1703.07140. 2017 Mar 21. 
+
+16. Dewi RR, Sthevanie F, Arifianto A. Face expression recognition using local Gabor binary pattern three 
+orthogonal planes (LGBP-TOP) and support vector machine (SVM) method. In Journal of Physics: 
+Conference Series; 2019. Vol. 1192, No. 1, p. 012048. 
+
+17. Luo Y, Wu CM, Zhang Y. Facial expression recognition based on fusion feature of PCA and LBP with SVM. 
+Optik. 2013;124(17):2767-70. 
+
+18. Krestinskaya O, James AP. Facial emotion recognition using min-max similarity classifier. In 2017 
+International Conference on Advances in Computing, Communications and Informatics (ICACCI); 2017 
+Sep 13, Udupi, India; 2017. p. 752-758. 
+
+19. Kanade T, Cohn JF, Tian Y. Comprehensive database for facial expression analysis. In Proceedings fourth 
+IEEE international conference on automatic face and gesture recognition (cat. No. PR00580); 2000 Mar 
+28, Grenoble, France; 2000. p. 46-53. 
+
+20. Azcarate A, Hageloh F, Sande K, Valenti R. Automatic facial emotion recognition. Universiteit van 
+Amsterdam. 2005 Jun:1-6. 
+
+21. Rish I. An empirical study of the naive Bayes classifier. In IJCAI 2001 workshop on empirical methods in 
+artificial intelligence; 2001 Aug 4, 2001. Vol. 3, No. 22, pp. 41-46.

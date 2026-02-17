@@ -1,0 +1,748 @@
+﻿ARTICLE 
+
+Automated MRI-Based Brain Lesion Delineation Using Deep 
+Convolutional Neural Models 
+
+K. Dhiyaneshwaran1,* and Shanmugan Joghee2 
+
+1Assistant Professor, Department of Computer Technology and Information Technology, Kongu Arts and Science College, 
+India. 
+2Professor & Discipline leader - Marketing, School of Business, Horizon University College, Al Jurf, Ajman, United Arab 
+Emirates. 
+*Corresponding Author: K. Dhiyaneshwaran. Email: dhiyaneskailas@gmail.com  
+
+Received: 21 June 2024; Accepted: 15 September 2024; Published: 30 December 2024 
+
+ABSTRACT: In medical image processing, Brain tumor segmentation plays an important role. Early detection 
+of these tumors is highly required to provide Treatment for patients. The patient's life chances are improved 
+by the early detection of it. The process of diagnosing brain tumour by physicians is normally carried out using 
+a manual way of segmentation. It is a time-consuming and difficult one. To solve these problems, Enhanced 
+Convolutional Neural Networks (ECNN) are proposed with loss function optimization by the BAT algorithm for 
+an automatic segmentation method. The primary aim is to present optimization-based MRI image 
+segmentation. Small kernels allow the design of a deep architecture. It has a positive consequence with respect 
+to overfitting, provided the lesser weights are assigned to the network. Skull stripping and image enhancement 
+algorithms are used for pre-processing. The experimental result shows better performance when compared 
+with the existing methods. The compared parameters are precision, recall, and accuracy. In the future, different 
+selection schemes can be adopted to improve the accuracy. 
+
+KEYWORDS: Brain tumor, segmentation, hybrid CNN, BAT algorithm, early detection, pre-processing, 
+Standardizing Intensity Scales. 
+ 
+
+1 Introduction 
+Uncontrolled growth of cancer cells causes cancer in any part of the body. There are different 
+
+types of tumors and their characteristics, as well as the treatments, differ in different ways [1]. Brain 
+tumors are classified as primary and metastatic brain tumors. They started to grow in the brain and 
+will stay in the brain. Later begins as a cancer in any part of the body and will spread to the brain.  
+
+ Diagnosing the tumor in the primary stage can save lives significantly. Planning of treatment 
+and intervention by the medical personnel depends on the Accurate segmentation of brain tumors. A 
+qualified specialist requires a longer period of time to segment the tumors manually. So, it requires 
+automatic segmentation and quantitative analysis of tumors [2].  
+
+High variation of Shape, structure, and location makes this process a challenging task. The 
+arrangement of the surrounding normal tissues is changed by the tumor mass effect [3]. Intensity 
+inhomogeneity [4] and different intensity ranges among the same sequences and acquisition 
+scanners are produced in MRI images. 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+135 J Comput Intell Decis Sci. 2024;1(1):9 
+ 
+
+Diagnosing the tumors in the brain is usually done manually, way of segmentation by the experts. 
+It is a time-consuming and difficult one. The major aim of this work is to introduce a new enhanced 
+classification model to improve the tumor segmentation results. Enhanced Convolutional Neural 
+Networks (ECNN) are introduced to resolve brain tumor segmentation. The BAT algorithm is used 
+for automatic segmentation, which utilizes the loss function. Skull stripping and image enhancement 
+[5] techniques are used to pre-process the MRI images. By using small kernels, deeper architectures 
+are designed. Despite having a positive impact with respect to overfitting, provided the number of 
+weights is less in a network [6]. 
+
+2 Literature Review 
+Shen et al. [7] extended the traditional fuzzy [21]c-means (FCM) clustering algorithm to form a 
+
+robust segmentation technique. Relative location and features of neighboring pixels define the 
+neighborhood attraction, which is used to improve the segmentation performance dramatically. A 
+neural network model is used to optimize the degree of attraction. But still, the accuracy of the 
+classifier is not enhanced. The superiority of the proposed technique is compared to other FCM-based 
+methods via real brain MR images with different noise levels. This is the currently deployed 
+segmentation method for MRI images.  
+
+ Kazerooni et al [8] modified the traditional GVF algorithm by applying the multi-scale idea to 
+segment the brain tumors in MRI images. Scaled edge maps are used to evolve the active contour. 
+Threshold-based edge detector is used to improve the performance of this method. Active contour is 
+represented by selecting a B-spline snake. The B-spline snake is selected because of its ability to 
+capture corners and its local control. 30% of accuracy improvement is achieved by using this method 
+when compared to traditional GVF. Currently focusing on improving the robustness of the algorithm 
+in high noise environments, but the detection rate has not improved.  
+
+ Kalavathi and Ilakkiyamuthu [9] implemented a wavelet-based Fuzzy C-means (FCM) 
+Clustering algorithm for segmentation. They have used Grey Level Co-occurrence Matrix (GLCM) 
+feature extraction methods. Jaccard similarity and Dice coefficient values were used in evaluating the 
+performance of the method that is currently proposed. Improved segmentation and classification of 
+the tumors in the brain are attained using this method.  
+
+ Par meet Knur and Harish Kundra [10] improved the intelligent water drops algorithm in order 
+to detect the brain tumors. The IWD algorithm is used to detect brain tumors from the input MRI 
+images. The improvement in the intelligent water drops algorithm is based on the SVM classifier. 
+Cancer and non-cancer cells from the MRI images are classified by the SVM classifier. The output from 
+IWD is fed to the SVM classifier. The performance of this system is detected in MATLAB. It provides 
+a 20 % increase in the detection accuracy. The execution time is also reduced to 1.5 seconds. 
+
+ Josephine [11] used the symmetry character of the brain image for segmentation of the Brain 
+image. Automatic detection of tumor position and edge is the major goal of this work. Real images 
+are used for experimentation. The experimental results show the flexibility and convenience of the 
+proposed algorithm. It identifies the tumor region from T1, T2-weighted MRI brain images efficiently. 
+The current classification methods are not applied to tumor types such as benign and malignant.  
+
+ Yasmeen Khan and Anshul Bhatia [12] segmented the MRI image into the tumor region and the 
+non-tumor region. Segmentation of the tumor area is done by utilizing Active Contour calculation. 
+Early preparation is not required in this method. Median filters are used to remove the noise from 
+the image. Different parameters are used for assessment and comparison with existing methods. The 
+results have proven its efficiency.  
+
+ Chen et al [13] combined fuzzy clustering and MRF to segment the MRI image. Fuzzy clustering 
+is done on the original image in order to utilize the gray level information and to eliminate noise 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):9 136 
+ 
+
+disturbance. It is also based on the coarse-scale image of multi-scale decomposition. MRF is used to 
+improve the integrity of the segmented image and to reduce the noise effect. Maximum a Posteriori 
+Markov Random Field (MAP-MRF) is used to integrate the spatial constraints and the gray level 
+information. 
+
+3 Proposed Methodology 
+The proposed architecture of the brain tumor segmentation is discussed in this section. There 
+
+are two phases of operation: i. pre-processing, ii. Segmentation. Skull stripping and image 
+enhancement methods are used in pre-processing. A Hybrid Convolutional Neural Network (HCNN) 
+is used for segmentation. Loss function is optimized using the BAT algorithm. Figure 1 shows the 
+proposed architecture. 
+
+ 
+
+      Lables Loss function 
+
+optimizing using BAT 
+
+TRANING SET MRI Patch Patch        
+ECNN 
+
+PREPROCESSIN extraction pre-processing 
+
+G 
+
+Percentils and landmarks Mean and variance Weights 
+
+Patch Patch       ECNN 
+TESTING SET MRI 
+
+extraction pre-processing  
+PREPROCESSING 
+
+  
+
+Post processing 
+
+ 
+Figure 1: Overall Architecture of the Proposed Model 
+
+Various techniques for Pre-processing are available for dealing with the MRI images of the brain. 
+Here, the MRI images get converted into a grey type of image, which is again smoothed by adjusting 
+the contrast. 
+
+3.1 Skull Stripping 
+This is one of the popular pre-processing techniques that produces improved results. The 
+
+surroundings of the brain are termed the skull. The Skull stripping is the process of eradicating the 
+tissues that are not cerebral. It is difficult to distinguish the non-cerebral and the intracranial tissues 
+because of their homogeneity in intensity. This is the major problem of skull stripping. Seed point 
+selection is affected by this. To identify the range in which the grey value lies in a particular portion 
+of the skull, observations are mandatory. Binary images are constructed using contrast adjustment. 
+Crop locations are found in the binary images. The images with their contrasts adjusted are then 
+cropped to find the part where the tumor is located in the brain. Cropped contrast adjusted image is 
+converted into binary using a low threshold value and also converted into binary image. 
+
+
+
+137 J Comput Intell Decis Sci. 2024;1(1):9 
+ 
+
+Morphological operation 'thicken' is applied to this binary image. Region-based binary mask 
+extraction is used to extract the brain region [14]. 
+
+3.2 Region-Based Binary Mask Extraction 
+Properties of each block that satisfy some criteria are used to perform the Region-based 
+
+extraction. Max-min difference and mean values of the blocks are the most widely used criteria. The 
+brain mask is applied to the original MRI data. This produces the brain image with the cortex 
+stripped. 
+
+3.3 Image Enhancement 
+The resultant images [22] are made suitable for display or further analysis by using Image 
+
+enhancement techniques. It is termed the process in which adjustments are made for a digital image. After 
+the process of skull stripping, the cortex of the brain can now be viewed as a unique dark ring that 
+surrounds the brain in an MRI image. Image-enhanced methods are used to remove the distinct dark ring 
+surrounding the brain tissues. For example, key features are identified by using the noise removal 
+process. Morphological operation 'thicken' is applied to the binary image. Mean intensity value and 
+standard deviation of all training patches extracted for each sequence after normalization. Patches on 
+each sequence are normalized to have zero mean and unit variance. An Enhanced Convolutional Neural 
+Network (ECNN) is used to segment the brain image after pre-processing. 
+
+3.4 Construction of the Central-Point-Enhanced Layer  
+Feather maps are classified by using the dominant point due to the CNN’s invariant characteristics. 
+
+The results from the segmentation process of CNN might not match the brain tumor category if the feather 
+map contains the pixels that belong to other brain parts, which are non-brain categories [15]. 
+
+ 
+ 
+
+Figure 2: Processing of the central-point-enhanced algorithm 
+
+A new layer is constructed for the CNN to solve this problem. Consider the following aspects: 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):9 138 
+ 
+
+(1) The layers that are designed freshly have to filter out the pixels that are different from those of 
+the tumor, so that the dominant point exists for the prevention of the decision being affected. This layer 
+must have the capacity to preserve the exact texture or the characters in the feather map.  
+
+(2) The calculation on the matrix is used for the integration of the new design layer along the 
+structure of the CNN. It is basically because of the fact that the GPU’s acceleration, which is involved in the 
+process of calculation in a CNN which works the Matrix calculation instead of using the process of 
+conditional branching. Figure 2 depicts the algorithm that is a central point enhanced. 
+
+In Figure 2, the layer with an enhanced central point is generated for each input feather map. The 
+(CE-Alg) is defined as  
+
+Input: The feather map matrix denoted by m and the difference threshold represented by α 
+Output: The mR, which is the result of the feather map matrix.  
+Step 1: Get the template of the matrix filtration represented as mA. 
+ The difference between an element and the central point is computed using (1) 
+
+𝑑𝑖𝑓𝑓(𝑥) = (1 − 𝑒−5(𝑥−𝑥𝑐𝑒𝑛𝑡𝑟𝑒)2
+)    (1) 
+
+where x defines an element in matrix m, the central point of matrix m is given by x centre. The value 
+of diff approaches 0 as the value of x approaches the central point’s value. The value gets increased with 
+the increase in the difference in-between x to the central point. The Matrix of mA is gained using (2), 
+
+ 𝑚𝐴 = 𝑑𝑖𝑓𝑓(𝑚) < 𝑎    (2) 
+
+After the calculation of the diff of all the elements in m, they are compared with the logical ‘<’ 
+expression. In the resultant matrix, 0 denotes ‘false’ and 1 denotes ‘true’. The mA matrix is constructed 
+using this way. The value ‘0’ corresponds to the high difference from the central point, and the value ‘1’ 
+denotes the small difference between the central point. In Figure 2, mA, ‘0’ and ‘1’ represent the grey and 
+white colours respectively. 
+
+Step 2: Based on mA, mB, and mC are computed. Diagonal matrix J is constructed with width and 
+height equal to the width and height of m:  
+
+0 0 0 1
+0 0 1 0
+
+𝐽 = [ ]    (3) 
+. . . .
+1 0 0 0
+
+mB is obtained as follows, 
+
+𝑚𝑏 = ((𝑚𝑎 − 1`) + (𝑗. 𝑚𝑎 . 𝑗) − 1 + 2) == 0    (4) 
+
+Logical equals comparison is denoted by ‘ = = ’ and the dot product of a matrix is denoted by ‘•’. In 
+mB, logical ‘true’ corresponds to ‘1’ and logical ‘false’ corresponds to ‘0’. Once the rotation of the elements 
+in mA is done surrounding the central point in mB, the positions that remain ‘0’s are marked with ‘1’, and 
+the rest of the elements are marked as ‘0’. The matrix mC is constructed based on mA and mB as, 
+
+𝑚𝑐 = −((𝑗. 𝑚𝑎.  . 𝑗) − 1) − 𝑚𝐵    (5) 
+
+After rotating mA around the central point in mC, the positions with the value equals ‘1’ corresponds 
+to positions ‘0’ in mB and marked with ‘1’ all the other elements are marked ‘0’.  
+
+Step 3: mA, mB, and mC are filtered to obtain results t1, t2, and t3, mis-filtered through the mA. The 
+values that are retained correspond to the elements that are similar to the central point in a feather map. 
+
+
+
+139 J Comput Intell Decis Sci. 2024;1(1):9 
+ 
+
+𝑡1 = 𝑚 × 𝑚𝑎    (6) 
+
+Elements in the matrix are then multiplied separately by the position with the use of ‘×’. Matrix t2 is 
+obtained by assigning the value of the central point to obtain the ‘1’ in mB as follows 
+
+𝑡2 = 𝑚𝑏 × 𝑥𝑐𝑒𝑛𝑡𝑟𝑒    (7) 
+
+The Filtration process of m is executed through mC. Filtered results are then rotated surrounding 
+the central point. The t3 type of Matrix is attained using (8), 
+
+𝑡3 = 𝑗. (𝑚 × 𝑚𝑐)    (8) 
+
+Step 4: Result matrix is obtained by combing t1, t2, and t3. The resulting feather map matrix mr is 
+calculated as follows: 
+
+𝑚𝑟 = 𝑡1 + 𝑡2 + 𝑡3    (9) 
+
+Elements having huge differences as the number of central points in a feather map, are filtered using 
+this preceding algorithm. Corresponding positions are filled by pixels that are in the positions of 
+symmetry with that of the central point. If one happens to filter the elements that are present in the 
+symmetric positions, then the CPV “Central Point Value” is used for filling the element. Processing for the 
+CE-L is shown as follows: 
+
+    Processing for CE-L 
+Input: Feather map Set S={𝑀1, … . , 𝑀𝑛}, distance threshold α 
+Output: Feather map Set R={𝑅1, … . , 𝑅𝑛} 
+Begin  
+Step 1: 𝑅 = 𝜑 
+Step 2: for i in 1:N 
+                  𝑅𝑖 = 𝐶𝐸 − 𝑎𝑙𝑔(𝑀𝑖, 𝑎) 
+                  𝑅𝑖 = 𝑅 ∪ 𝑅𝑖 
+              End for  
+Step 3: return R 
+End 
+
+CE-Alg processes every input feather map in I. All feather map sets are formed by input and 
+output CELs. CE-Alg involves the matrix calculations. This layer can be integrated effectively with a 
+CNN structure by using this characteristic. 
+
+3.5 Structure of the CE-CNN 
+Figure 3 depicts the primary blocks, the input, process, and the output in a CEL. The brain tumor 
+
+image includes the set of images n whose width is w and height is h. This set of brain images is normalized 
+onto the interval [0, 1]. Consider the pixel p with location (x,y). The central point of a square 
+neighbourhood region is denoted as p. It is constructed with one pixel. The square region’s width and 
+height are L = 2 1 + 1. The image patch is cut from the image based on a neighbourhood square region, 
+and it is used to construct the feather map set S = {M1, M2,... .,Mn}. Each set of similar images corresponds 
+to one feather map Mi. The input of the CE-CNN is given by S, and it is processed as, 
+
+(1) Central-point-enhanced layer: for all the feather maps inside S, an improved feather map set R 
+= {R1, R2,… .,Rn} is constructed using CE-Alg. 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):9 140 
+ 
+
+(2) Convolutional layer: W no of feature maps are gained through W kernels with sizes of K × K by 
+convolution calculation. 
+
+(3) Max-pooling layer: a maximum W input feature maps with each of n × n block is conducted. 
+Critical characteristics are obtained by reducing the size of the feather map. 
+
+(4) Flatten layer: The previous layer's output feature maps are reshaped. The neurons obtained as 
+output are then changed to gain a one-dimensional vector. 
+
+(5) Fully connected three-layer MLP: This is a multi-layered network that is neural and has all the 
+input, hidden, and output layers. The first layer is connected directly to the layer that is flat. The count of 
+the neurons present in the hidden layer is double that of the one which is in the output layer.  
+
+The transmission function used here is ReLU. A more complicated and non-linear pattern in samples 
+is expressed by the hidden layer. The MLP’s ability to segment input samples is highly influenced by the 
+number of neurons in the hidden layer. 
+
+ 
+Figure 3: Structure, input, and output of the CE-CNN 
+
+A minimum no of nodes present in the hidden layer will lead to the non-adequate expression of 
+the neural network, which affects the accuracy of the segmentation.  
+
+Large numbers of nodes will lead to overfitting to training data. That reduces the network’s 
+generalization ability. So twice the number of neurons in the output layer is set as the default number 
+of nodes in the hidden layer. MLP was capable of expressing the pattern inside the brain tumor test 
+samples and refrained from overfitting. The count of the criteria will equal the count of the output 
+layers. The transmission function used here is the Softmax. The ability in terms of the pixel in a CNN 
+is improved by CE-CNN [16]. In the second section of the CE-CNN, the tiniest kernels (3 × 3 in size) 
+are selected in the convolutional layer. The third section of the CE-CNN deals with the max-pooling 
+by the selection of the smallest kernel. These two layers are then used to obtain the spatial data. 
+Reducing the dimensions of the feather map that is taken as input will help the consequent CE-CNN 
+for predicting the sample more efficiently. 
+
+Single-group convolutional/max-pooling layers were required to achieve this objective when 
+the input feature map was small. Input feather map set S = {M1, M2,… .,Mn}is processed through these 
+five parts to obtain the corresponding brain tumor categories for the pixel p. During the training stage 
+for the CE-CNN, each training sample pixel is transformed into a training feather map set.  Each 
+
+
+
+141 J Comput Intell Decis Sci. 2024;1(1):9 
+ 
+
+pixel of the image is transformed into the feather map set at the image segmentation stage. The 
+category is obtained by the learned segmentation model. The pixel’s category is written into the 
+corresponding pixel’s position in the resulting image. The prediction error is computed using a loss 
+function like categorical cross-entropy. Once the forward pass is complete, the backpropagation 
+begins. This is used to update the weights and biases for error and loss reduction. The BAT 
+optimization algorithm is used to optimize the loss function. 
+
+3.6 Novel Bat Optimization Algorithm (NBOA) for Loss Function 
+The ECNN output represents the estimated probability of a pixel belonging to a skin tumor. ECNN 
+
+performs a pixel-wise segmentation. The loss function used here is cross-entropy. 
+A new Novel Bat Optimization Algorithm (NBOA) is proposed to reduce the errors in the brain 
+
+tumor segmentation. The difference between a non-optimal (obstacle) and an optimal error (prey) is 
+decided based on the Echolocation mechanism. It allows them to hunt even in total darkness [17-18]. The 
+ability of echolocation of bats in NBOA methods is used to reduce the error SU = SU = {f1, f2,...,fm} from the 
+brain tumor image dataset. In NBOA, the echolocation distinctiveness is idealized by the following rules. 
+These rules are formed by the reduction of errors by bats [19]: 
+
+Segmentation accuracy is sensed by echolocation by bats. Bats also know the difference between 
+higher brain tumor segmentation accuracy (prey/food) and surrounding barriers. 
+
+The velocity, feature position, frequency, loudness, and wavelength of a bat are given by veli, fpi, 
+freqmin, A0, and γ. Bats fly randomly to search for improved tumor segmentation accuracy. Depending on 
+the closeness of their Segmentation accuracy, wavelength, and emitted pulses are fine-tuned.  
+
+Loudness can fluctuate in many ways. It ranges from a large value A0 to the smallest value Amin. 
+For every bat bi, starting feature position fpi, velocity veli, and frequency freqi are initialized. For 
+
+each iteration t, the movement of the virtual bats is specified. This is done by updating their velocity and 
+position. They are given by equations (10), (11), and (12) as follows: T defines the maximum number of 
+iterations, 
+
+𝑓𝑟𝑒𝑞𝑖 = 𝑓𝑟𝑒𝑞𝑚𝑖𝑛 + (𝑓𝑟𝑒𝑞𝑚𝑎𝑥 − 𝑓𝑟𝑒𝑞𝑚𝑖𝑛)𝛽    (10) 
+
+𝑣𝑒𝑙𝑡 = 𝑣𝑒𝑙𝑡−1
+𝑖 𝑖 + (𝑓𝑝𝑡
+
+𝑖 − 𝑓𝑝∗)𝑓𝑟𝑒𝑞𝑖    (11) 
+
+𝑓𝑝𝑡 𝑡
+𝑖 = 𝑓𝑝𝑡−1
+
+𝑖 + 𝑣𝑖     (12) 
+
+Random vector β ∈ [0, 1] is drawn from a uniform distribution. Frequency of each bat is defined 
+by freqi. Current global optimal error is given by 𝐟𝐩. It is located after comparing all the solutions 
+among all n errors at each iteration ‘t’. A random number is created after the error position updating 
+of bats. A fuzzy membership function is used for the same. A new error position will be created 
+around the current best selected error if the random number is larger than the pulse emission rate 
+ri. It is given by (13), 
+
+𝑓𝑝𝑛𝑒𝑤 = 𝑓𝑝𝑜𝑙𝑑+∈ 𝐴𝑡    (13) 
+
+where ∈ [-1,1] is a random number. The average loudness of all the bats at the current iteration 
+is given by At. The loudness Ai and f(fpi)<f(fp). Ai, the pulse emission rate ri will be updated, and a 
+solution will be accepted if a random number is less than loudness Ai and f(fpi)<f(fp). Ai and ri are 
+updated by (14-15), 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):9 142 
+ 
+
+𝐴𝑡+1 = 𝛼𝐴𝑡
+𝑖 𝑖     (14) 
+
+𝑟𝑡+1 𝑜
+𝑖 = 𝑟𝑖 [1 − 𝑒𝑥𝑝(−𝛾𝑡)]    (15) 
+
+where α, γ are constants. The algorithm iterates until the termination criteria are met. In the 
+proposed NBOA algorithm, the parameters of the bats, such as β, ∈, Ai, γ, and ri, are tuned via the use 
+of a Gaussian fuzzy membership function (GFMF). The Gaussian membership function is usually 
+represented as Gaussian(x:μ,σ), where μ, σ represent the mean and standard deviation, 
+
+1 𝑥−𝜇 𝑚
+𝐹𝐴(𝑥, 𝜇, 𝜎, 𝑚) = exp [− | | ]    (16) 
+
+2 𝜎
+
+where m belongs to the Fuzzification parameter (m=2). 
+Algorithm for Novel Bat Optimization Algorithm (NBOA) 
+
+1. Bat population is initialized fpi( i=1,2,….n) and veli 
+2. The pulse frequency freqi at fp is defined  
+3. The pulse rates ri along with the loudness Ai are defined 
+4. While (t <Max number of iterations)  
+
+  4.1. Generation of fresh solutions by frequency adjustments and update velocities /locations 
+and solutions [equations (10) to (12)]  
+
+4.2. if (rand >ri )  
+   4.2.1. The optimal error column is selected  
+   4.2.2. Local error is generated surrounding the best errors that are selected  
+  4.3. end if  
+
+4.4. Generate a new solution by flying randomly  
+   4.4.1. if (rand < Ai &f (fpi) < f ( fp*)) //compute Ai via fuzzy membership function. 
+   (i) Accept the new solutions 
+   (ii) Increase ri and reduce Ai 
+
+4.4.2. end if  
+4.5. Rank the bats and find the current best x* 
+
+5. end while 
+6. Postprocess results and visualization 
+
+It can be efficiently integrated into the backpropagation during network training. 
+
+4 Results and Discussion 
+This section discusses the experimental results of the proposed model. The model is implemented 
+
+using Java. The existing Convolutional Neural Network (CNN) algorithm [20] and proposed Enhanced 
+Convolutional Neural Network (ECNN) are compared in terms of precision, recall and accuracy for the 
+dataset of the Brain Tumor Segmentation Challenge 2015 database (BRATS 2015), obtaining 
+simultaneously the first position for the complete, core, and enhancing regions in Dice Similarity 
+Coefficient metric for the Challenge data set. 
+
+ 
+
+
+
+143 J Comput Intell Decis Sci. 2024;1(1):9 
+ 
+
+4.1 Performance Metrics 
+
+4.1.1 Precision 
+Precision refers to the percentage of the relevant results, which is defined as, 
+
+𝑇𝑟𝑢𝑒𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒
+Precision =     (17) 
+
+𝑡𝑟𝑢𝑒𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒+𝑓𝑎𝑙𝑠𝑒𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒
+
+4.1.2 Recall 
+Recall refers to the percentage of total relevant results correctly classified by the proposed 
+
+algorithm, which are defined as, 
+
+𝑇𝑟𝑢𝑒 𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒
+Recall =      (18) 
+
+𝑡𝑟𝑢𝑒 𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒+𝐹𝑎𝑙𝑠𝑒  𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒 
+
+4.1.3 Accuracy 
+Accuracy is one metric for evaluating classification models. Informally, accuracy is the fraction 
+
+of predictions this model got right. Formally, accuracy has the following definition: 
+
+𝑇𝑟𝑢𝑒𝑝𝑜𝑠𝑖𝑡𝑖𝑣𝑒+𝑇𝑟𝑢𝑒𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒
+𝐴𝑐𝑐𝑢𝑟𝑎𝑐𝑦 =     (19) 
+
+𝑇𝑜𝑡𝑎𝑙
+
+88
+
+87
+
+86
+
+85
+
+84
+
+83 CNN
+
+82 ECNN
+
+81
+
+80
+
+79
+CNN ECNN
+
+DIFFERENT METHODS 
+
+ 
+Figure 4: Precision results of different methods 
+
+Figure 4 shows the performance comparison results of the proposed ECNN method and the 
+existing CNN methods in terms of Precision. From the results, it is concluded that the proposed ECNN 
+model produces higher precision results of 87% whereas the existing CNN method produces only 
+82%. 
+
+PRECISION (%)
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):9 144 
+ 
+
+91
+
+90
+
+89
+
+88
+
+87
+
+86 CNN
+
+85 ECNN
+
+84
+
+83
+
+82
+CNN ECNN
+
+DIFFERENT METHODS 
+
+ 
+Figure 5: Recall results of different methods 
+
+Figure 5 shows the performance comparison results of the proposed ECNN method and the 
+existing CNN methods in terms of Recall. From the results, it is concluded that the proposed ECNN 
+model produces higher recall results of 90% whereas the existing CNN method produces only 85%. 
+
+92.5
+
+92
+
+91.5
+
+91
+
+90.5
+
+90
+CNN
+
+89.5
+
+89 ECNN
+
+88.5
+
+88
+
+87.5
+CNN ECNN
+
+DIFFERENT METHODS 
+
+ 
+Figure 6: Accuracy results of different methods 
+
+Figure 6 shows the performance comparison results of the proposed ECNN method and the 
+existing CNN methods in terms of accuracy. The results indicate that the proposed ECNN model. From 
+the results, it is concluded that the proposed ECNN model produces higher accuracy results of 92% 
+whereas the existing CNN method produces only 89%. 
+
+5 Conclusion and Future Work 
+Enhanced Convolutional Neural Networks (ECNN) with loss function optimization by the BAT 
+
+algorithm are used in order to perform segmentation of an MRI image in an automated manner. Tiny 
+
+Accuracy  (%) recall (%)
+
+
+
+145 J Comput Intell Decis Sci. 2024;1(1):9 
+ 
+
+kernels are used to achieve a deep architecture. It has a positive effect against overfitting, given the 
+smaller number of weights in the network. Skull stripping and image enhancement algorithms are 
+used for pre-processing. The experimental results show better performance when compared with 
+the existing methods. The compared parameters are precision, recall, and accuracy. In the future, 
+different selection schemes can be adopted to improve the accuracy. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: K. Dhiyaneshwaran; supervision and writing—
+review and editing: Shanmugan Joghee. All authors reviewed the results and approved the final version 
+of the manuscript.  
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Gupta MP, Shringirishi MM, Singh Y. Implementation of brain tumor segmentation in brain mr images 
+
+using k-means clustering and fuzzy c-means algorithm. Int J Comput Appl Technol. 2013;5(1):54-9. 
+2. Louis DN, Ohgaki H, Wiestler OD, Cavenee WK, Burger PC, Jouvet A, Scheithauer BW, Kleihues P. Acta 
+
+Neuropathol. 2007;114(2):97-109. 
+3. Menze BH, Jakab A, Bauer S, Kalpathy-Cramer J, Farahani K, Kirby J, Burren Y, Porz N, Slotboom J, Wiest R, 
+
+Lanczi L. The multimodal brain tumor image segmentation benchmark (BRATS). IEEE Trans Med Imaging. 
+2014;34(10):1993-2024. 
+
+4. Tustison NJ, Avants BB, Cook PA, Zheng Y, Egan A, Yushkevich PA, Gee JC. N4ITK: improved N3 bias 
+correction. IEEE Trans Med Imaging. 2010;29(6):1310-20. 
+
+5. Balafar MA, Ramli AR, Saripan MI, Mashohor S. Review of brain MRI image segmentation methods. Artif 
+Intell Rev. 2010;33(3):261-74. 
+
+6. Ejaz K, Rahim MS, Rehman A, Chaudhry H, Saba T, Ejaz A, Ej CF. Segmentation method for pathological 
+brain tumor and accurate detection using MRI. Int J Adv Comput Sci Appl. 2018;9(8):394-401. 
+
+7. Shen S, Sandham W, Granat M, Sterr A. MRI fuzzy segmentation of brain tissue using neighborhood 
+attraction with neural-network optimization. IEEE Trans Biomed Eng. 2005;9(3):459-67. 
+
+8. Kazerooni AF, Ahmadian A, Serej ND, Rad HS, Saberi H, Yousefi H, Farnia P. Segmentation of brain tumors 
+in MRI images using multi-scale gradient vector flow. In 2011 Annual International Conference of the IEEE 
+Engineering in Medicine and Biology Society; 2011 Aug 30, Boston, MA, USA; 2011. p. 7973-7976. 
+
+9. Kalavathi P, Ilakkiyamuthu R. Feature extraction-based hybrid method for segmentation of brain tumor 
+in MRI brain images. Int J Inf Technol Comput Sci. 2017;5:95-100. 
+
+10. Kaur P, Kundra H. Usage of Brain Tumor Segmentation in MRI Images Using Intelligent Water Drops 
+Algorithm. Int J Eng Comput Sci. 2017;6(6):21732-6. 
+
+11. Josephine S. Brain tumor MRI image detection and segmentation using genetic algorithm. Int J Eng Comput 
+Sci. 2018;6(2). 
+
+12. Khan Y, Bhatia A. Active contour-based segmentation for brain tumor segmentation in MRI. Int J Adv Res 
+Electron Commun Eng. 2017;6(11):1165-71. 
+
+13. Chen M, Yan Q, Qin M. A segmentation of brain MRI images utilizing intensity and contextual information 
+by Markov random field. Comput Assis Surg. 2017;22(sup1):200-11. 
+
+14. Reddy BV, Reddy PB, Kumar PS, Reddy SS. Developing an approach to brain MRI image preprocessing for 
+tumor detection. Int J Res. 2014;1(6):725-31. 
+
+15. Pan X, Zhao J. A central-point-enhanced convolutional neural network for high-resolution remote-sensing 
+image classification. Int J Remote Sens. 2017;38(23):6554-81. 
+
+16. Bruna J, Mallat S. Invariant scattering convolution networks. IEEE Trans Pattern Anal Mach Intell. 
+2013;35(8):1872-86. 
+
+17. Yang XS. Bat algorithm for multi-objective optimisation. Int J Bio-Inspired Comput. 2011;3(5):267-74. 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):9 146 
+ 
+
+18. Yang XS, Hossein Gandomi A. Bat algorithm: a novel approach for global engineering optimization. Eng 
+Comput. 2012;29(5):464-83. 
+
+19. Yang XS, He X. Bat algorithm: literature review and applications. Int J Bio-Inspired Comput. 2013;5(3):141-
+9. 
+
+20. Pereira S, Pinto A, Alves V, Silva CA. Brain tumor segmentation using convolutional neural networks in 
+MRI images. IEEE Trans Med Imaging. 2016;35(5):1240-51. 
+
+21. Senthil Selvi A, Sukumar R. Removal of salt and pepper noise from images using hybrid filter (HF) and 
+fuzzy logic noise detector (FLND). Concurr Comput Pract Exp. 2019;31(12):e 4501. 
+
+22. Senthilselvi A, Sukumar R. A survey on image restoration technique. Int J Emerg Eng Res Technol. 
+2014;2(8):123-8.

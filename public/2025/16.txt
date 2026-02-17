@@ -1,0 +1,675 @@
+﻿ARTICLE 
+
+Hybrid Recommendation Framework Combining Enhanced Density-
+Based Clustering and Transductive Support Vector Learning 
+
+V. Vasanthi1,*, M. Karthi2 and Sivakumar Vengusamy3 
+
+1Assistant Professor, Department of Information Technology, Hindusthan College of Arts and Science, Coimbatore - 
+641028, India. 
+2Professor, Department of Information Technology, Hindusthan College of Arts and Science, Coimbatore -641028, India. 
+3Af Associate Professor, School of Computing, Asia Pacific University of Technology and Innovation (APU), Malaysia. 
+*Corresponding Author: V. Vasanthi. Email: vasanthi.v@hicas.ac.in  
+
+Received: 22 June 2025; Accepted: 14 October 2025; Published: 22 December 2025 
+
+ABSTRACT: Recommendation Systems play a crucial role in improving business strategies and providing 
+customers or users with the choice to opt for a product or service. Given the growth and power of information 
+analytics tools and the inclination of data mining techniques, a wide range of recommender systems, 
+particularly for web-based users, have evolved over the past decade. The conventional “One model – Fit for all” 
+model fails in most cases due to the common fact that not all users have the same interests, and has paved the 
+way for tailor-made recommender systems. It is hence highly important to provide a personalized framework 
+that can accumulate the specific interests of the users. Web data are normally highly sparse in nature, and 
+formulating a personalized user profile was a difficult task. The previous methods used user user-based CF 
+method to address the former issue, while Extended Jaccard Similarity (EJS) was introduced to address the 
+latter. Although these methods were found to be effective, there was scope for improvement in the Query 
+processing time and accuracy. To solve this problem, the proposed system designs an Enhanced DBSCAN and 
+TSVM-based hybrid recommendation scheme. In the proposed system, the user's interests and profile are 
+analyzed by mining the web logs. After de-noising, user profile clustering is done through an improved DB scan, 
+where Anarchic Society Optimization is used for parameter fine-tuning. The sequential pattern of the users has 
+evolved based on the GSP approach. The user interests are then evaluated using the TSVM, which makes use of 
+the weighted mean for the calculation of the trust value of the users. Lastly, the personalized recommendations 
+are generated based on the clicks, selections, and browsing patterns. The proposed method is applied to MOVIE 
+LENS data and found to perform better than the previous methods and other state-of-the-art recommendation 
+models in terms of MAE, Speed, and Accuracy. 
+
+KEYWORDS: Recommendation Systems, DBSCAN, Support Vector Machines (SVM), Anarchic Society 
+Optimization (ASO), Extended Jaccard Similarity (EJS). 
+  
+
+1 Introduction 
+In the digital era, with the rise in online web-based services, recommender systems play a crucial 
+
+role in day-to-day life. Recommender systems touch every aspect of the online world, starting from 
+e-commerce to online advertisements that target the interests of a specific type of user. Generically, 
+recommender systems are the methodologies or the algorithms that aim to suggest the most relevant 
+items or services to a particular user (ex, the movies to watch, the books to read, to choose a product, 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+65 J Comput Intell Decis Sci. 2025;2(2):6 
+ 
+
+etc.) [1-2]. The recommender systems have evolved as a critical parameter in many industries, as 
+they stand as vital in business expansion and acquisition of customers [3-4].  
+
+Traditionally, recommender systems are categorized into collaborative and content-based 
+filtering approaches [5-6]. The usage of the Hybrid approach has become more popular among 
+researchers who combine the filtering approaches for increased performance. There are always 
+many hindrances in combining these filter techniques [7-8]. Even the same type of techniques, when 
+tried to hybridize face issues. Hybrid approaches are possible in many ways: by generating the 
+recommendations through collaborative and content-based filtering and then combining the results, 
+by incorporating the features of content-based filtering in collaborative filtering and vice versa, or by 
+a unified approach that combines both methods. Various studies have proven that the hybrid 
+approach outperforms better than the individual approaches [9]. These hybrid approaches are also 
+proven to solve major issues such as data sparsity and user profile clustering. In short, the hybrid 
+approach solves the bottleneck in knowledge engineering in various knowledge-based systems [10-
+11].  
+
+The previous methods used user user-based CF method to address the former issue, while 
+Extended Jaccard Similarity (EJS) was introduced to address the latter. Although these methods were 
+found to be effective, there was scope for improvement in the Query processing time and accuracy. 
+To solve this problem, the proposed system designs an Enhanced DBSCAN and TSVM-based hybrid 
+recommendation scheme. In the proposed system, the user's interests and profile are analyzed by 
+mining the web logs. After de-noising, user profile clustering is done through an improved DB scan, 
+where Anarchic Society Optimization is used for parameter fine-tuning. The sequential pattern of the 
+users has evolved based on the GSP approach. The user interests are then evaluated using the TSVM, 
+which makes use of the weighted mean for the calculation of the trust value of the users. Lastly, the 
+personalized recommendations are generated based on the clicks, selections, and browsing patterns. 
+The proposed method is applied to MOVIE LENS data and found to perform better than the previous 
+methods and other state-of-the-art recommendation models in terms of MAE, Speed, and Accuracy. 
+
+2 Literature Survey 
+Wu-Yang et al (2019) proposed a methodology that combines Singular Value Decomposition 
+
+(SVD) and Hybrid Collaborative Filtering for an effective and optimized solution for the data sparsity 
+issue. The SVD is used for bringing in a reduction in user-view matrices that are obtained through 
+web usage mining [12]. Both of the low-ranked matrices are then employed for generating item-
+based and user-oriented predictions. An automated framework for building an automatic system in 
+a real-time scenario is proposed. The recommendation engine performs in an online, real-time 
+scenario. The experimental results through the MOVIE LENS data prove the efficiency of the proposed 
+method.  
+
+Hussein et al (2019) proposed the novel Hybrid framework, which builds complex and context-
+aware solutions in online recommendation. The proposed method is based on the concept of dynamic 
+conceptualization [13]. The proposed framework gives a range of algorithms for producing a set of 
+recommendations or also known as templates, to combine various methods into hybrid 
+recommenders. The proposed framework was also meant for integrating the existing user or product 
+information from outside sources, such as social networks, MovieLens, etc. The hybrid method 
+combines the extraordinary characteristics of state-of-the-art methods and Collaborative filtering 
+methods. The evaluation is based on three conceptual foundations. The results indicate that the 
+proposed method was efficient in terms of accuracy by reducing the loss and Mean Square error 
+value.  
+
+Shreya et al (2019) improved the quality of the Movie recommendation system through a Hybrid 
+approach that combines both the CF models using SVM as a classifier. A genetic model is also 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):6 66 
+ 
+
+proposed, and the comparative result showed significant improvement in terms of quality, 
+scalability, and accuracy of the Movie recommendation [14].  
+
+G M Sarene et al (2020) investigated that the performance of a recommender system is more 
+affected due to over- and above specifications, data sparsity, and scalability. In order to mitigate some 
+of the major negative effects, a hybrid system called the Relevance-based Recommender was 
+introduced [15]. The proposed method exploits the individual measures in predictive relevance that 
+are computed for every user for every instance of interest, which ensures high precision and recall 
+values. Experimental results show that the advantages which are introduced through this 
+recommender system have potential suggestions.  
+
+J. Grivolla et al (2021) proposed a hybrid recommender system that integrates the demographics 
+of users and the characteristics of the item set interactions [16]. The proposed system is then 
+evaluated on the MOVIE Lens data, which includes gene information and the user data, which 
+operates to provide a tailor-made discount to the customers. The proposed method included 
+additional items and more information about the users, which has more information and impact on 
+the quality of information, specifically where less interaction between the user profiles is available.  
+
+Palit R et al (2020) provided a basic recommender system and how to implement it using the 
+content and collaborative filter methods [17]. The proposed model takes the matrix of user ratings 
+of movies as the top inputs, and recommendations are generated. The proposed method also 
+discusses the hybrid or mixture of recommender models for effective recommendations. The 
+experimental results show that the proposed method outperforms other state-of-the-art methods.  
+
+3 Proposed Methodology   
+The Proposed methodology is shown in Figure 3.1 
+
+3.1 Data preprocessing   
+The system distinguishes various patterns of user style and behaviour during testing the 
+
+browsing styles of users and taking out their server blogs. Normally, the log file might include various 
+unnecessary behaviors in extremely short periods of time. Unfortunately, these behaviors might 
+happen numerous times in a similar pattern. One more problem is that, in one pattern, it might 
+include simply an action. These are between the noises to be removed from the beta version of 
+sequential datasets. The noise finding and elimination steps are extremely significant since they be 
+able to modify the result of information examination in the future. 
+
+Algorithm 1: Denoised based on one source de-noising   
+
+1. Given user u, content m, trial t=1,2,3, and > 0 
+2. Rut ={𝑟1, … , 𝑟𝑘}(𝑟𝑎𝑡𝑖𝑛𝑔𝑠 ≠ 0 𝑓𝑜𝑟  𝑢𝑠𝑒𝑟 𝑢 𝑖𝑛 𝑜𝑛𝑒 𝑡𝑟𝑖𝑎𝑙) 
+3. 𝑅𝑢𝑡′ ={𝑟1, … , 𝑟𝑘}(𝑟𝑎𝑡𝑖𝑛𝑔𝑠 ≠ 0 𝑓𝑜𝑟  𝑢𝑠𝑒𝑟 𝑢 𝑖𝑛 𝑑𝑖𝑓𝑓𝑒𝑟𝑒𝑛𝑡 𝑡𝑟𝑖𝑎𝑙) 
+4. Being 0 the value of the non-rated item 
+5. for 𝑟𝑖 ∈ 𝑅𝑢𝑡 𝑑𝑜   
+6. if 0< |𝑅𝑢𝑡(𝑚) − 𝑅𝑢𝑡′(𝑚) > 𝛾 then   
+7. 𝑅𝑢𝑡(𝑚)=0(SD: we delete rating)  
+8. 𝑒𝑙𝑠𝑒  𝑖𝑓 0 < |𝑅𝑢𝑡(𝑚) − 𝑅𝑢𝑡′(𝑚)| > 𝛾 (MD: ratings in both trials differ by less than a given 
+
+threshold) then   
+9.  𝑅𝑢𝑡(𝑚) = 𝑀(𝑅𝑢𝑡(𝑚), 𝑅𝑢𝑡′(𝑚)) 
+10. else 
+
+
+
+67 J Comput Intell Decis Sci. 2025;2(2):6 
+ 
+
+11. 𝑅𝑢𝑡(𝑚) = 𝑅𝑢𝑡′(𝑚)  
+12. end if  
+13. end for  
+
+ 
+Figure 1: Proposed Methodology 
+
+In this work, if each one's rating differs by more than a specified threshold, there is a Strong 
+Disagreement (SD) condition, and the rating is removed from the present dataset. At last, if at least 
+two ratings are different by means of less than there is a Mild Disagreement (MD) condition. 
+
+3.2 Clustering Module     
+Recommendations should not be designed for the entire pool of users, but still for users by 
+
+means of related specific interests; their ability to handle a task is able to differ appropriately toward 
+variations in their information level. In the proposed work, a clustering technique is carried out as 
+an initial step toward grouping users based on their browsing styles of the user. These groups are 
+used to recognize logical choices in common sequences of user behaviors. Depending on the various 
+patterns of browsing style and users’ behaviors, the clustering is carried out via the use of the 
+DBSCAN clustering algorithm. 
+
+DBSCAN is used to group similar kinds of user profiles. The DBSCAN method usually observes 
+the user groups as dense regions of objects in the information space, with the purpose are dividing 
+by means of regions of low-density objects. It generally has two parameters, such as Eps and MinPts, 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):6 68 
+ 
+
+as inputs for grouping similar Users. From the following description, it simply requires finding out 
+every one of the maximal densities connected spaces to cluster the users in a search space. These 
+spaces are known as groups. Every user's data not contained in any group is measured as noise and 
+be able to be ignored from the original Users. It makes use of the idea of density, such as reachability 
+and connectivity. 
+
+3.2.1 Density Reachability 
+An users’ data at a point "p" is said toward be density reachable from a user data at a point "q" if point 
+
+"p" is in ε distance from Users data at a point "q" and "q" has sufficient number of user data at points in 
+its neighbors who are inside distance ε.   
+
+3.2.2 Density Connectivity  
+Users’ data at a point "p" and "q" are said in the direction of is density connected if there exist a users’ 
+
+data at a point "r" which has sufficient number of Users’ data at a point in its neighbors and both the Users’ 
+data at a points "p" and "q" are in the ε distance. This is sequence progression. So, if "q" is neighbor of 
+Users’ data at a point "r", "r" is neighbor of Users’ data at a point "s", "s" is neighbor of Users’ data at a 
+point "t" which in turn is neighbor of Users’ data at a point "p" implies with the purpose of Users’ data at 
+a point "q" is neighbor of Users’ data at a point "p".  
+
+Calculating the Parameters ε and Min Pts,  
+The dynamic steps permit two input Users’ data points; the automatically created parameters differ 
+
+in the direction of various Users’ data points. 
+1. The distance between two Users’ data points 
+The distance d (a, b) function measures the similarity of two Users’ data points.   
+
+d (a, b)  =  q√(𝜇1|𝑋𝑎1 − 𝑋𝑏1 | 𝑞 + 𝜇2 |𝑋𝑎2 − 𝑋𝑏2| 𝑞 + ⋯ + 𝜇𝑝|𝑋𝑎𝑝 − 𝑋𝑏𝑝| 𝑞     (1) 
+ 
+
+Where, a = (xa1, xa2, . . . ,xap) and b = (xb1,xb2, . . . ,xbp) are two p-dimensional Users’ data points, and q is 
+a positive integer.    
+
+2. Automatic parameters creation dynamic method 
+The proposed DBSCAN algorithm discovers groups inside varied densities by creating multiple 
+
+pairs of ε and MinPts routinely. 
+ 
+Algorithm 1:   
+ Let X = {x1, x2, x3... xn} be a set of Users’ data points (users). DBSCAN requires three parameters: 
+
+ε (eps), similarity, and the smallest number of Users’ data points (users) necessary to form a cluster 
+(minPts).    
+
+Step 1: Start with an arbitrary starting Users data point with the purpose of has not been visited  
+Step 2: Extract the neighborhood of this leaner’s data points using 𝜀.  
+Step 3: If there is similar browsing style of user around this Users data points (user) then 
+
+clustering process starts and Users data points is marked as visited  
+Step 4: else Users data points is labeled as noise 
+Step 5: if a user’s data points (user) is found to be a part of the cluster then its neighborhood is 
+
+also the part of the group and the above procedure from step 2 is repeated for all 𝜀 neighborhood 
+Users data points. This is repeated in anticipation of each and every one Users’ data points (users) in 
+the group are found.  
+
+
+
+69 J Comput Intell Decis Sci. 2025;2(2):6 
+ 
+
+Step 6: A new visited Users’ data points (user) is retrieved and processed, leading in the direction 
+of the discovery of a further cluster.    
+
+Step 7: This process continues until each and every one Users data points (users) are marked as 
+visited.   
+
+The major issue with this clustering is that it needs to tune its two parameters ε and minPts. To 
+solve this issue, these two parameters are tuned via the use of the Anarchic Society Optimization 
+(ASO) algorithm [18]. Anarchic Society Optimization (ASO) is a new optimization method from 
+swarm intelligence. Initially, several community parts are chosen randomly inside the search space 
+for tuning of two parameters, ε and minPts. Then, the clustering accuracy of every part is calculated 
+depending on the two parameters ε and minPts. According to the computed fitness value and 
+comparison with 𝑋∗(k), 𝑃𝑏𝑒𝑠𝑡and 𝐺𝑏𝑒𝑠𝑡
+
+𝑖 , the movement arrangement and a new value of the part will 
+be found. After a sufficient number of iterations, at least one of the parts’ determinations reaches the 
+optimal position of the cluster parameters.  
+
+Algorithm 2: ASO Algorithm   
+Input: N parts  
+Output: Optimal parameters ε and minPts.    
+
+1. Initialize the N parts, part position and set of iterations counter I=0  
+2. Generate M initial solutions and evaluate their fitness values   
+3. While (termination criteria are not satisfied)   
+4. Determining the values of 𝑋∗(k), 𝑃𝑏𝑒𝑠𝑡
+
+𝑖  and, 𝐺𝑏𝑒𝑠𝑡      
+5. For i=1:M 
+6. Computing FIi (k)  
+7. If F𝐼𝑖 (k) is less than threshold 𝑋𝑖  (k), then 𝑋𝑖  (k) moves towards 𝑋∗(k)  
+8. Else 𝑋𝑖  (k) moves towards a random part  
+
+9. End if 
+10. End for    
+11. For i=1:M 
+12. 12.Computing E𝐼𝑖 (k) 
+13. 3.If E𝐼𝑖 (k) is less than threshold 𝑋𝑖  (k), then 𝑋𝑖  (k) moves towards 𝐺𝑏𝑒𝑠𝑡    
+14. 14.Else 𝑋𝑖  (k) moves towards a random part  
+15. 15.End if & End for   
+16. 17.For i=1:M 
+17. 18.Computing IIi (k)    
+18. 19.If IIi (k) is less than threshold 𝑋𝑖  (k), then 𝑋𝑖  (k) moves towards 𝑃𝑏𝑒𝑠𝑡
+
+𝑖  
+19. 20.Else 𝑋𝑖  (k) moves towards a random part 
+20. 21.End if & End for  
+21. 23.For i=1:M 
+22. 24. Updating the position by combining the movement arrangement 
+23. Calculate the fitness values  
+24. End for & End While while   
+25. Report the best solution 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):6 70 
+ 
+
+26. End     
+
+3.3 Generalized Sequential Pattern (GSP)     
+Users with different browsing styles have various arrangements of rehashed succession. 
+
+Consequently, students were grouped based on their styles of the students and afterward personal 
+conduct standards were found intended for each student through the utilization of the Generalized 
+Sequential Pattern algorithm (GPS) [19]. The large GPS is proposed for comprehending continuous 
+example mining issues. One route toward making use of the level-wise model is to initially find every 
+single one of the continuous students in a style which is level-wise manner. This essentially accounts for 
+the checking of events of every last one singleton part in the database. In this way, non-frequent items are 
+expelled to channel the exchanges. At the end of the work, each exchange incorporates just the incessant 
+parts it initially contained. This altered database is then given as a contribution toward the GSP 
+calculation. This progression needs one to disregard the entire database. Various disregards of the 
+database are finished by methods for the GSP Algorithm. In the primary pass, every single one particular 
+thing (1 sequence) is tallied. Accordingly, from the found continuous things, a place of candidate 2-
+sequences is made, and in this manner, pass is made to perceive their recurrence. These successive 2-
+groupings are utilized to make the candidate 3-sequences, and this calculation is repeated until the point 
+that no more frequent sequences are found. The calculation incorporates two noteworthy advances. 
+
+3.3.1 Candidate Creation 
+Specified the set of frequent (i-1) and their frequent sequences Fn(i-1), the candidates used for the 
+
+next pass are created by combining Fn(i-1) by means of itself. As a minimum, one of whose subsequences 
+is not frequent is removed by means of the pruning step. 
+
+3.3.2 Pruning phase 
+A pruning step removes some sequence at least one of whose series is not frequent.  
+
+3.3.3 Support Counting 
+Frequently, a hash tree–based search is proposed for capable support counting. Subsequently lastly 
+
+non-non-maximal frequent sequences are removed. 
+
+Algorithm   
+
+1. Fn1 = the set of frequent 1-sequence  
+2. i=2,   
+3. do while Fn(ii-1)!=Null;  
+4. Generate candidates sets Cni (set of candidates i sequences);  
+5. For all i/p sequences Q in the database D do   
+6. Raise count of all a in Cni if Q supports a Fni={a ∈ Cni such that its frequency exceeds the 
+
+threshold} i=i+1; 
+7. Result =Set of all recurrent sequences is the union of all Fnis   
+8. End do  
+9. END 
+
+3.4 TSVM        
+To know the Users’ data, the transductive support vector machine is proposed in this work. 
+
+Depending on the percentage ideal answer, the Users’ rating is able to be explained, which is completed 
+
+
+
+71 J Comput Intell Decis Sci. 2025;2(2):6 
+ 
+
+in the direction of dividing the clustered users depending on the ratings of these frequent sequences [20]. 
+TSVM is generally a continuous classifier that regularly finds the best hyperplane in the user’s space with 
+a transductive procedure, with the purpose of including unlabeled samples in the training step.  
+
+The browsing step of the TSVM can be designed as an optimization issue and described as follows: 
+
+1
+J(w, 𝜉,  𝜉∗)= ||𝑤||2+C∑𝑙
+
+𝑖=1 𝜉 + 𝐶∗ ∑𝑑
+2 𝑖 𝑗= 𝜉 ∗1 𝑗     (2) 
+
+Will be focused on,   
+
+𝑦𝑖(𝜑𝑋𝑖).w+b)≥ 1-𝜉 𝑖, 𝜉 𝑖 ≥ 0; 𝑖 = 1,2, … . 𝑙     (3) 
+
+𝑦𝑗(𝜑𝑋𝑗).w+b)≥ 1-𝜉 ∗, 𝜉 ∗𝑗 𝑗 ≥ 0; 𝑖 = 1,2, … . 𝑑     (4) 
+
+Where C and 𝐶∗- user mentioned a penalty value of together the training and the transductive 
+samples 𝜉𝑖 , and 𝜉∗
+
+𝑗  - random variables and d - total number of transductive samples. Training the 
+TSVM relates in the direction of handling the above-mentioned issues. Lastly, the conclusion function 
+of the TSVM with Lagrange multipliers 𝛼𝑖 and 𝛼∗
+
+𝑗  are described as follows,   
+
+f(x)= sgn [[∑𝑙 𝑑 ∗𝛼∗
+𝑖= 𝑦𝑖𝛼𝑖𝑘(𝑥, 𝑥𝑖) + ∑𝑗=1 𝑦𝑗 𝑗 𝑘(𝑥, 𝑥∗
+
+1 𝑗 + 𝑏)]    (5) 
+
+If two Users were calculated by the system by means of the parallel rating designed for a comparable 
+navigational series, then they are supposed to be similar. Recommendation procedure is able to be 
+performed depending on these browsing styles, which is performed based on the Personalized Browsing 
+Approach (PLA).    
+
+3.5 Recommendation process          
+The student preferences and browsing behavior be able to be described by means of the subsequent 
+
+three ways: 
+1. Clicks: This step is described as a small listing of material. 
+2. Selection: This step is described as the material chosen and added to the cart. 
+3. Browsing: This step is described as reading the material  
+All of the above steps are used to recognize the Users' comparative preferences LPij used for every 
+
+material referred from the information sources. The formula used to find the LPij is described as follows: 
+𝐿𝑃𝑐 𝑐
+
+𝐿𝑃 𝑖𝑗−𝑀𝑖𝑛1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗)
+𝑖𝑗 =  
+
+𝑀𝑎𝑥 𝑐
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗)−𝑀𝑖𝑛 𝑐
+
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗)
+ 
+
+ (6) 
+
+ 
+
+ 𝐿𝑃𝑐
+𝑖𝑗, 𝐿𝑃𝑠
+
+𝑖𝑗  and 𝐿𝑃𝑙
+𝑖𝑗 describes the number of references toward material during clicks, selection, 
+
+and browsing steps performed by the user ‘i' in the material ‘j’ correspondingly. 
+𝑀𝑎𝑥 𝑐
+
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗), 𝑀𝑎𝑥 𝑠
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗), 𝑀𝑎𝑥 𝑙
+
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗) describes the highest no. of clicks, selections, 
+and browsings performed by the User ‘i' in the material ‘M’. 𝑀𝑖𝑛 𝑐
+
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗), 𝑀𝑖𝑛 𝑠
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗) , 
+
+𝑀𝑖𝑛 𝑙
+1≤𝑗≤|𝑀|(𝐿𝑃𝑖𝑗) describes the lesser no. of clicks, selections, and browsing performed by the User ‘i' in 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):6 72 
+ 
+
+the material ‘M’.  The proposed personalized recommendation system is used to improve users’ 
+browsing knowledge.     
+
+4 Experimental Results 
+The experiment is deployed in Java with “Oracle Easy” as the Database. The performance chart of 
+
+the proposed Enhanced DBSCAN and TSVM-based hybrid recommendation scheme is computed and 
+distinguished from the existing state-of-the-art methods and from the previous methods. The present 
+and proposed methods are distinguished with respect to query processing time, Mean absolute error 
+(MAE) metric, and accuracy. The MOVIE LENS Data is used for an experimental purpose, which is open-
+sourced and available from the data world. The proposed method, DBSCN: TSVM, is then compared 
+with other state-of-the-art methods, such as K-Means Neural Network (KNN), DBSCAN, Simple Support 
+Vector Machine (SVM), Artificial Neural Network (ANN), Collaborative Filter Partial Timing (CFPT), and 
+Extended Jacard Similarity (EJS). 
+
+ 
+Figure 2: Dataset 
+
+The overall result analysis is shown in Table 4.1. 
+
+Table 1: Result analysis 
+
+Methods Processing Mean Absolute Error Accuracy 
+
+Time in Ms 
+
+KNN 0.92 0.96 0.69 
+
+DBSCAN 0.86 0.82 0.78 
+
+SVM 0.98 0.89 0.81 
+
+ANN 0.72 0.76 0.83 
+
+CFPT 0.68 0.62 0.79 
+
+EJS 0.86 0.73 0.80 
+
+
+
+73 J Comput Intell Decis Sci. 2025;2(2):6 
+ 
+
+DBSCAN: TSVM 0.41 0.25 0.96 
+
+4.1 Query Processing Time      
+The query processing time is defined as the time taken for the recommendation set to be 
+
+generated for a particular click, selection, or search operation by the user. The experiment was 
+conducted with 100 users as the initial set, which was slowly increased to 100000 users in a similar 
+environment. The average time taken is calculated for each instance and is recorded. Figure 4.2 
+shows the comparative analysis of the query processing time of the proposed method with that of 
+other state-of-the-art methods. 
+
+ 
+Figure 3: Comparison of Query Processing Time 
+
+Figure 3 represents the comparison chart of query processing time performance for the 
+proposed Enhanced DBSCAN with TSVM-based hybrid recommendation and existing methods. The 
+proposed system accomplished better output than the current system, which is proven in the 
+experimental results. 
+
+4.2 Mean Absolute Error (MAE) metric 
+The MAE is figured by summing these total blunders of the N, which is proportional to ratings– 
+
+forecast matches, and afterward calculating the normal esteem. For each combination, <pi, qi> of 
+anticipated appraisals pi and the genuine evaluations qi, this metric yields the supreme blunder 
+among them, i.e., | pi-qi |. To figure the measurable exactness, the MAE metric is used, which is a 
+calculation of the suggestions' deviations from their actual user-indicated values. Formally, 
+
+ MAE= (∑𝑁
+𝑖=1 |𝑝𝑖 − 𝑞𝑖|)/𝑁                         (7) 
+
+Figure 4 represents the comparison output of the proposed enhanced DBSCAN and TSVM-based 
+hybrid recommendation, existing DBSCAN with SVM-based hybrid recommendation, and trust-based 
+hybrid recommendation strategy with respect to MAE. The designed system accomplished better 
+output than the current system, which is proven in the experimental results. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):6 74 
+ 
+
+ 
+Figure 4: MAE comparison 
+
+4.3 Accuracy comparison 
+The accuracy is calculated by initially calculating the True Positive (TP), True Negative (TN), 
+
+False Positive (FP), and False Negative (FN), and through the calculation as shown below, 
+
+ Accuracy = TP + TN / TP+TN+FP+FN  (8) 
+
+Figure 5 represents a comparison of the accuracy performance for the proposed Enhanced 
+DBSCAN with TSVM-based hybrid recommendation and existing methods. It is found that the 
+proposed method outperforms the existing methods with an accuracy of 96%. 
+
+ 
+Figure 5: Accuracy comparison 
+
+
+
+75 J Comput Intell Decis Sci. 2025;2(2):6 
+ 
+
+5 Conclusion 
+The recommender system framework is provided for a personalized item recommendation, 
+
+specifically giving the recommendations to help Users identify and choose the effective information. 
+In our work, clustering is done by the Enhanced DBSCAN algorithm, which works according to the 
+browsing style of the Users. Then the TSVM algorithm computes the Users’ evaluation based on their 
+habits and their interests. The student preferences and browsing behavior be able to be described by 
+means of the subsequent three ways, like clicks, selections, and browsing. Finally, the experimental 
+result shows that the designed system accomplishes good output when distinguished from the 
+current system with respect to Processing time. MAE metric and accuracy. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: V. Vasanthi; supervision and writing: M. Karthi; 
+review and editing: Sivakumar Vengusamy. All authors reviewed the results and approved the final 
+version of the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Burke R. Hybrid web recommender systems. The adaptive web: methods and strategies of web 
+
+personalization. 2007:377-408. 
+2. Nagowah SD, Rajarai K, Lallmahamood MM. A hybrid approach for recommender systems in a proximity 
+
+based social network. In International Conference on Emerging Trends in Electrical, Electronic and 
+Communications Engineering; 2018 Nov 28, 2018. p. 302-312. 
+
+3. Patel AA, Dharwa JN. An integrated hybrid recommendation model using graph database. In 2016 
+International Conference on ICT in Business Industry & Government (ICTBIG); 2016 Nov 18, Indore, India; 
+2016. p. 1-5. 
+
+4. Aggarwal CC. Ensemble-based and hybrid recommender systems. In Recommender Systems: The 
+Textbook 2016. p. 199-224. 
+
+5. Lin CY, Wang LC, Tsai KH. Hybrid real-time matrix factorization for implicit feedback recommendation 
+systems. IEEE Access. 2018;6:21369-80. 
+
+6. Bezerra B, de AT de Carvalho F. A symbolic hybrid approach to face the new user problem in recommender 
+systems. In Australasian Joint Conference on Artificial Intelligence; 2004 Dec 4, Berlin; 2004. p. 1011-
+1016. 
+
+7. Yang Y, Jang HJ, Kim B. A hybrid recommender system for sequential recommendation: combining 
+similarity models with markov chains. IEEE Access. 2020;8:190136-46. 
+
+8. Nieves EH. RETRACTED CHAPTER: New Approach to Recommend Banking Products Through a Hybrid 
+Recommender System. In International Symposium on Ambient Intelligence; 2020 Jun 17, 2020. p. 262-
+266. 
+
+9. Patro SG, Mishra BK, Panda SK, Kumar R, Long HV, Taniar D, Priyadarshini I. A hybrid action-related K-
+nearest neighbour (HAR-KNN) approach for recommendation systems. IEEE Access. 2020;8:90978-91. 
+
+10. Shirude SB, Kolhe SR. Improved hybrid approach of filtering using classified library resources in 
+recommender system. In Intelligent Computing Paradigm: Recent Trends; 2019 Apr 24, Singapore; 2019. 
+p. 1-10. 
+
+11. Huang Z, Yu C, Ni J, Liu H, Zeng C, Tang Y. An efficient hybrid recommendation model with deep neural 
+networks. IEEE access. 2019;7:137900-12. 
+
+12. Yuan-hong W, Xiao-qiu T. A real-time recommender system based on hybrid collaborative filtering. In 
+2010 5th International Conference on Computer Science & Education; 2010 Aug 24, Hefei, China; 2010. p. 
+1909-1912. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):6 76 
+ 
+
+13. Hussein T, Linder T, Gaulke W, Ziegler J. Hybreed: A software framework for developing context-aware 
+hybrid recommender systems. User Model User-Adapt Interact. 2014;24(1):121-74. 
+
+14. Agrawal S, Jain P. An improved approach for movie recommendation system. In 2017 international 
+conference on I-SMAC (IoT in social, mobile, analytics and cloud) (I-SMAC); 2017 Feb 10, Palladam, India; 
+2017. p. 336-342. 
+
+15. Sarnè GM. A novel hybrid approach improving effectiveness of recommender systems. J Intell Inf Syst. 
+2015;44(3):397-414. 
+
+16. Grivolla J, Campo D, Sonsona M, Pulido JM, Badia T. A hybrid recommender combining user, item and 
+interaction data. In 2014 international conference on computational science and computational 
+intelligence; 2014 Mar 10, Las Vegas, NV, USA; 2014. p. 297-301. 
+
+17. Palit R, Chatterjee R. Recommender system using K-nearest neighbors and singular value decomposition 
+algorithms: A hybrid approach. In Progress in Computing, Analytics and Networking: Proceedings of 
+ICCAN; 2020 Mar 27, Singapore; 2020. p. 497-504. 
+
+18. Dooms S, De Pessemier T, Martens L. Online optimization for user-specific hybrid recommender systems. 
+Multimed Tools Appl. 2015;74(24):11297-329. 
+
+19. Li R, Zhu H, Fan L, Song X. Hybrid deep framework for group event recommendation. IEEE Access. 
+2019;8:4775-84. 
+
+20. Gabriel De Souza PM, Jannach D, Da Cunha AM. Contextual hybrid session-based news recommendation 
+with recurrent neural networks. IEEE access. 2019;7:169185-203.

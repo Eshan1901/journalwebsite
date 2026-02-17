@@ -1,0 +1,1053 @@
+﻿ARTICLE 
+
+Two-Dimensional Signal Decomposition for Feature Reduction and Deep 
+Learning-Based Object Detection 
+
+K. Reena1,*, A. Kalaivani2 and T. Karthikeyan3 
+
+1Assistant Professor, Department of Mathematics, Nehru Arts and Science College (Autonomous), Coimbatore, India. 
+2Associate Professor, Computer Applications, Nehru Arts and Science College, Coimbatore, India. 
+3Department of Information Technology, University of Technology and Applied Sciences - Salalah, Thumrait Rd Thumrayt 
+Street – OM 211, Sultanate of Oman. 
+*Corresponding Author: K. Reena. Email: nascreena@nehrucolleges.com  
+
+Received: 13 August 2025; Accepted: 25 October 2025; Published: 22 December 2025 
+
+ABSTRACT: Object detection is one of the important and widely used methods for the identification of target 
+objects in a specific image and for the determination of the position and category for achieving machine vision’s 
+understanding. A lot of approaches are proposed in the literature for obtaining a solution to this problem. Best 
+results have been obtained by using deep learning and computer vision-based methods. However, most of the 
+existing techniques perform under expectation, particularly in detecting the small and dense objects and in the 
+detection of objects which has random transformations in geometric measures. The sparse representation 
+methods often fail to perform particularly in cases where the rate of recognition is higher. The problem of object 
+detection can be represented in three stages, namely the representation, dimension reduction, and object 
+detection. Initially, a dictionary is used for the representation of samples undergoing test, followed by a sparse 
+representation. Secondly, in order to resolve the issue of high dimensionality of the features, Bi-Dimensional 
+Empirical Mode Decomposition (BEMD) is introduced for dimension reduction. Thirdly, an architecture called 
+AlexNET is proposed for getting the multi-scaled feature and to add a convolutional structure for the detection 
+of dictionaries for the identification of objects, which is used as a guideline for the selection of architecture for 
+achieving performance measures such as speed, memory, and accuracy. Lastly, the visualization of images from 
+the COCO dataset, which shows side-to-side comparison with the existing methods which lies on the “optimal 
+front” of the speed vs. accuracy plot. The experimental results are compared with the state-of-the-art 
+techniques in various performance metrics, with emphasis on speed and accuracy of the latest methods of 
+object detection. 
+
+KEYWORDS: Object Detectors, Bi-dimensional Empirical Mode Decomposition (BEMD), deep learning, 
+AlexNet, Sparse Reduction, and Common Objects in Context (COCO) dataset. 
+ 
+
+1 Introduction 
+Object detection is a basic research issue in the computer vision domain, and numerous methods 
+
+are available in the literature for addressing the challenges. The importance of object detection is for 
+the identification of one or more targets image/video. It includes a large range of methods such as 
+image processing, recognition of patterns, and ML. The applications of these are widely adopted, such 
+as traffic control and prevention of accidents [1], to issue warnings in factories, military-related 
+monitoring, and in advanced human-system interaction [2,3]. As the application domains are mostly 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+35 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+in the use cases of multi-target scenarios, the relationship between the accuracy and cost has become 
+difficult to balance.  
+
+The process of object detection is conventionally established through manual extraction of the 
+models of features, where commonly identified features are represented through Histogram of 
+Oriented Gradient (HOG), SIFT, Haar–based features, and other classical techniques that rely on 
+grayscale. SVM-based methods or Adaboost techniques are normally used for classification to obtain 
+target data. These classical methods of extracting models were only capable of determining low-level 
+data on the features, such as information on contour and textures, and have limitations for detecting 
+multiple levels of targets under complex scenarios, owing to poor performance.  
+
+Numerous studies have been made in the recent past on the issues of object detection owing to 
+the usage of CNNs. These are ML models that come under Deep learning. In order to perform image 
+recognition, the CNNs can make use of the image information as inputs without pre-processing and 
+additional feature extractions. Hence, Conventional Neural Networks (CNNs) are very much suitable 
+for the extraction of features in images, which include shapes, textures, and topology. Advanced 
+methods such as Fast R-CNN [4], R-FCN [5], SSD [6], multi-box [7], and YOLOs [8] are presently good 
+for deployment in consumer-based products, which normally run in mobile devices. 
+
+Server-based production techniques, which are used in web applications such as Google or 
+Facebook, have more importance to accuracy but are still subject to throughput. Advanced methods 
+such as the COCO challenge [9] are more optimized in terms of accuracy, often rely on models that 
+ensembles multi-crops-based techniques, which are very slow to be used practically. Only a few 
+researches [5,7,8] addresses the issue of running time in a detailed manner. Further, it is also 
+identified that these methods are good in achieving frame-rate but do not provide a clear picture of 
+the speed and accuracy that relies on other factors such as the extractor, input size, and image, etc.  
+
+It is highly difficult for the researchers to come to a conclusion on which architecture shall be 
+used for the application, and also the standard metrics of accuracy. The average precision (mAP) does 
+not speak much here, as the real-time deployment of computer vision, running time, and usage of 
+memory are also vital. It is identified that the existing methods perform poorly in order to detect 
+small and dense objects, and even more difficult to identify the objects that undergo frequent 
+geometric transformations. With an aim of high-dimensional problems including deep features, the 
+Bi-Dimensional Empirical Mode of Decomposition (BEMD) is introduced for reducing the 
+dimensions. It is used for serving as a guideline for identifying a suitable architecture that achieves 
+higher speed and less memory usage with high accuracy in a specific application. Finally, AlexNet is 
+introduced for object detection, and the architecture is proposed for obtaining multi-scaled features 
+and which adds deformable structures. Experiments are carried out to trace the speed vs accuracy 
+curve for various detection systems, which vary in meta-architecture, feature extraction, and image 
+resolution. Etc. 
+
+2 Literature Review 
+Bell et al [10] proposed Inside-Outside Net (ION) for detecting objects that exploit the 
+
+information both in and out of the regions of interest. The context information, which lies outside the 
+regions of interest, is integrated with the aid of spatial and recurrent neural networks. On the inner 
+side, a skip pooling technique is used for the evaluation of design spaces, which provides readers 
+with an overview of which methods are most important. The proposed method improves the most 
+used PASCAL-based VOC method of detecting objects from 73.9 to 77.9% mAP. The proposed model 
+has shown an improvement of 19.6% to 33.1% in mAP in the challenging MS common object in 
+context (COCO). The proposed method confirms that the usage of ION plays a vital role in the multi-
+scale representation and improves the detection of small objects.  
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 36 
+ 
+ 
+
+Erhan et al [11] proposed the Deep Convolution Neural Network (DCNNs), which achieves state-
+of-the-art performance in numerous image recognition including the ImageNet Visual Challenge of 
+Recognition (ILSVRC-2012). The proposed model is based on the localization, which uses a single 
+bounding box and a score for the confidence of every object in the image. Such models capture 
+contexts of the whole image around the required objects, but cannot handle the issue of multiple 
+instances of the same object. The proposed method uses a saliency-based neural network for object 
+detection that predicts the set of bounding boxes termed as class-agnostics with scores for every box, 
+and the corresponding likelihoods are calculated. The proposed method inherits a number for each 
+variable of instances and for each class, a generalization is allowed in a high-level order of the 
+network. The proposed method has the advantage of having a grid in regular grid that predicts the 
+boxes that are written as predictors on the images, which has shared parameters.  
+
+Fu et al [12] proposed the Single Shot Multibox (SSD) method for the introduction of additional 
+contexts in the modern methods for detecting objects. In order to achieve the same, the authors have 
+combined a classifier with a rapid detection framework called SSD. The proposed SSD with a de-
+convolution layer is introduced with additional contexts for the detection of objects and to improve 
+accuracy, especially for the small objects, which calls the result system – DSSD for de-convolution 
+single shot-based detector. The scenario of using these contributions can be easily described in a 
+high-level manner, but a traditional method does not give success. The experimental results show 
+that a potential way forward is achieved in terms of the detection parameters of PASCAL, VOC, and 
+COCO.  
+
+Kim et al [13] investigated how accuracy can be achieved at the maximum level in the case of 
+multi-category object detection, while minimizing the cost. The proposed method adapts and 
+combines the recent methodologies. The technique also follows the common pipeline of CNN-based 
+feature extraction and ROI classification that aligns with the recent techniques such as truncated 
+SVDs. The principle of design adapted here is the “less channeled and more layered” approach with 
+adaptation of building blocks, which includes concatenated ReLU and Hypernet. The proposed 
+framework is deep as well as thin, which is trained with the aid of batch-based normalization and 
+with residual-enabled connections, where the rate of scheduling is based on plateau detection.  
+
+Lin et al [14] proposed the technique that uses a multi-scale and parametric hierarchy in a deep 
+convolution network for constructing a features’ pyramid that has marginal additional cost. The top-
+down approach with laterally biased connections is developed to build high-level semantics-based 
+maps in all scales. The proposed Feature Pyramid Network (FPN) proved significantly better when 
+compared with generic methods of feature extraction. The technique uses a fundamental R-CNN 
+system that achieves state-of-the-art results on the COCO models without whistles, which includes 
+those from the 2016 challenge winners. Finally, the technique, which can run at 5 frames per second 
+on a single GPU, has also been developed, bringing out practical and more accurate solutions for 
+object detection.  
+
+Shrivatsav et al [15] introduced a simple but powerful technique called the Online Hard Example 
+Mining (OHEM) for the training of ConvNet detection. The authors are motivated by the dataset, 
+which had higher count of easy objects and a small count of hard objects. OHEM uses a simple 
+algorithm that eliminates the heuristics and extra parameters in common use. The proposed method 
+consistently increases the performance on standards such as PASCAL VOC 2007 and 2012. The 
+effectiveness of the proposed method increases as the size of the data increases and yields better 
+results in the MS COCO dataset. Moreover, these are combined with the advances of OHEM, which 
+leads to better results with 78.9% mAP.  
+
+Huang et al [16] conducted research on different types of trade accuracy for ensuring speed and 
+the usage of memory in modern methods of CNN-based object detection systems. A range of 
+successful techniques has been introduced in the recent past, but comparisons such as apples-to-
+
+
+
+37 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+apples were difficult. A unified mode of implementation on the fast region-based CNN and SSD 
+methods is adopted by making use of alternate feature extraction and other parameters, such as the 
+size of the image within all of the meta-architecture. At one end of the spectrum, where the speed as 
+well as the memory are vital, a common detector is introduced that can achieve all the speeds 
+required in real-time in a mobile device. As far as the accuracy is concerned, a detector is introduced 
+that can achieve better performance based on the COCO detections. Wei et al [17] introduced an 
+image recognition approach based on DNN with adaptive and weight-based Joint Sparse 
+Representation (D-AJSR). The proposed model is a data-lightweight framework that can classify and 
+recognize objects well within a few training samples. In the proposed method, CNN is used for the 
+extraction of deep features on the training samples as well as the testing samples. Then, the AD-WJSR 
+method is adopted for sparse representation, where the Eigen vectors are again reconstructed 
+through the calculation of each of the eigen vectors. Aiming at the problem of high dimension, the 
+PCA is implemented for dimension reduction. At last, these models are combined with the sparse 
+model, the common features, and the private features of these images, which are extracted through 
+the samples, for constructing a dictionary. Sparse-based classifiers are used for object detection. The 
+experimental results show that the proposed method is superior to the existing methods.  
+
+Lu et al [18] introduced a method for object detection which are based on an improvised R-CNN 
+technique. The improved method can easily identify the regions where the objects belong to and are 
+scattered in different complex appliances more quickly and in an automated manner. The feature-
+enhanced framework named the deeper proposal network (RPN) is an enhancement model for the 
+effective extraction of features in an object in a kitchen appliance scene. The U-shape network is then 
+restructured with the aid of a series of enhancement modules of the feature. The experiments 
+performed best in object detection and have attained a mean average precision of 89%. The 
+experiments also prove that the proposed method achieves more detection accuracy than the other 
+modern methods of object detection. The proposed method also works well when applied to the 
+recognition of texts. Cao et al [19] made an analysis of the mainstream-based object detection 
+methods and a multi-scaled deformable object detection framework, which are proposed for dealing 
+with the issues faced by the present methods. The research analysis demonstrates that the strong 
+performance is on par with or even better than the state of the methods. Deep methods are 
+introduced for obtaining multi-level features and to add DCS structures for overcoming the geometric 
+transformations. Fusion of multi-scaled and multi-level features is generated using sampling for the 
+implementation of the final recognition of objects and regression. The experiments prove that the 
+suggested frameworks can improve the efficiency in detecting the small objects that have geometrical 
+deformation, which shows a consistent improvement in the trade-offs between speed and accuracy.   
+
+3 Proposed Methodology 
+In the initial stage, a dictionary is made for representing the samples taken for testing, and then 
+
+the sparse representation coefficients are used. Next, in order to resolve the issue of high-
+dimensionality, the Bi-Dimensional Empirical Mode Decomposition (BEMD) is introduced. Thirdly, 
+the architecture named Alexnet is implemented for obtaining the features that are multi-scaled in 
+nature, and to which the deformable CNNs are added for detecting the dictionary for object 
+identification. Primarily, the four recent meta-architectures, the SSD, R-CNN, R-FCN, and AlexNet, are 
+proposed. 
+
+3.1 Sparse Representation  
+This framework for object detection is then gradually implemented for other classifications of 
+
+images and object recognition. If there are N images in training, X =  [x1, x2, . . . , xn](xi  ∈
+ Rm, general m <<  n), that belong to K number of classes, then all the training data shall be given as, 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 38 
+ 
+ 
+
+W = [W1, … .Wk] ∈ Rm∗n    (1) 
+
+Here, Wi = [vi,1, vi,2, . . . , vi,n], vi,j  denotes the jth number of samples in the ith class, and ni 
+denotes the number of samples in the ith class. According to the theory of Sparsed Representation, 
+SR, fresh test samples such as y ∈  Rm of the class “i” shall be expressed linearly by the sample 
+taken for training, and the same is represented as Wi  as in [20]: 
+
+y = αi,1vi,1 + αi,2vi,2 + ⋯+ αi,n vi,n    
+i i  (2) 
+
+where αi,j ∈ R  is the sparse representation coefficient of y, j ∈  1, 2, . . . , ni . Without 
+considering the noise, equation (2) can be written as equation (3), 
+
+y = Wx    (3) 
+
+T
+where x =  [0, . . . , 0, αi,1,αi,2, . . . , αi,n , . . . , 0]  ∈  Rn. To get the sparsest x, object detectors need 
+
+i
+
+to solve the following l1 minimization problem by equation (4), 
+
+x′ = argmin||x||  s. t Wx = y    (4) 
+1
+
+Here, x denotes the coefficient vectors and  ||x||1 = ∑i|xi|  is in l1 norm. For each of the 
+classes, a mapping function is introduced, such as δi(x
+
+′) =  [0, . . . , 0, xi, 0, . . . , 0] for representing 
+the non-zero elements which are selected in the corresponding vector of the ith class, the samples 
+taken for test are then reconstructed using the coefficient of sparsity as y′ = Wδi(x
+
+′)𝑠. Hence, y is 
+determined for classification in class(i) through the minimum residual through equation (5), 
+
+class(i) = argmin ||y − W δi(x
+′)||2     (5) 
+
+i
+
+In the above equation, ‖. ‖2 is l2 norm and i =  1, 2, . . . , k. In case of sparse representations, 
+owing to the correlation between different images, the related images can be used as a single set 
+where every image shall be represented in terms of a combination of public and private means of 
+features in a specific sparse representation. The public features are a part of all images in one set, 
+whereas the private features are the characteristic part and are unique to every image. Hence, the jth 
+image shall be represented by means of public features and can ascertain its own features, which are 
+private and are represented as, 
+
+yj = zc + zj, j ∈ {1,… J}     (6) 
+
+In the above equation, zc depicts the features that are classified as public and zj denotes the 
+features that are private to the jth image. Assuming such that the images are divided into K number 
+of classes and as there are J images for training in every training image in every category. If a 
+particular image is represented in terms of a single-dimensional vector, the image on the ith object 
+
+T
+can be given in terms denoted as yi  ∈  [yi,1, yi,2, . . . , yi,j] . As far as the sparse representations are 
+considered, the jth image of the ith class shall be represented in the equation as follows, 
+
+y c
+i,j = zi + zi
+
+i,j, j ∈ {1, … J}     (7) 
+
+In the above equation, zc
+i  denotes the features that are public on the images of the ith number 
+
+of object and zi
+i,j denotes the own private features. In case of Ψ ∈  RN×N is orthonormal, which 
+
+can represent the training image, then the equation (7) shall be represented as in (8), 
+
+
+
+39 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+θ c
+i,j = Ψzi + Ψzi c
+
+i,j = i
+θi + θi,j    (8) 
+
+Here, the θi,j  ∈ Ψyi,j defines the representation of yi,j based on transformation and Ψ and 
+θc
+
+i = Ψzc
+i  and θc
+
+i,j = Ψzi
+i,j  represents the parts in terms of public and private denoted by Ψ , 
+
+respectively. Multiplied by ΨT, on both the sides, then (8) is reduced to (9), 
+
+ΨTθi,j = ΨTΨzc c i
+i + ΨTΨzi T
+
+i,j = ΨTθi + Ψ θi,j = zc
+i + zi
+
+i,j    (9) 
+
+c c
+Combined with equation (7), y T
+
+i,j = ΨTθi  +  Ψ θi,j, so the joint representation of the image 
+can be expressed by equation (10), 
+
+C
+
+y  θi  
+i,1 i
+
+ y  ΨT ΨT 0 … 0  θi,1 
+i,2
+
+ ΨT 0 ΨT … 0  
+⋮  i
+
+  = [ ] . θ  
+i,2    
+
+⋮ ⋮ ⋮ ⋱ 0   (10) 
+ ⋮  
+
+ΨT 0 0 … ΨT  ⋮  
+[yi,j ]  ⋮  
+
+i
+[θi,j ]
+
+Equation (10) can be simplified to equation (11), 
+
+yi = Ψ̃Wi    (11) 
+
+T
+Here, yi = [xi,1, xi,2, . . . , xi,j] and W c
+
+i = [ i i
+θi , θi,1, θi,2  · · · i T
+
+θi,j] . Ψ̃ = [A, B]  are the complete 
+T
+
+dictionary, which consists of a couple of parts; A = [ΨT ΨT  · · ·  ΨT ]  and B =  diag(A) . 
+Wi preserves the discriminated information, and the same representation in sparse shall be obtained 
+through solving the (l1) minimization of the following equation (12), 
+
+Wi = argmin||Wi|| s. t. yi = Ψ̃Wi    (12) 
+1
+
+After obtaining 𝑊𝑖 , the public features of all images in object i, and the private features of each 
+image can be obtained in the Ψ field according to the inverse transformation, 
+
+zc = ΨT c
+i θi     (13) 
+
+zi T i
+i,j = Ψ θi,j    (14) 
+
+All the features that are public form a joint feature D, and the same is represented as in (15), 
+
+D = [zc, zc
+2, … . zc
+
+k, z
+1 2
+1,1, … z1
+
+1 1,J, z2,1, … z2
+2,J, … , zk
+
+K,1, … , zk
+K,J]    (15) 
+
+3.2 Bi-dimensional Empirical Mode Decomposition (BEMD) 
+The process of iteration and shifting of Bi-Dimensional Empirical Mode (BEMD) is the same as 
+
+that of EMD. The method is a time-bound method of analysis, especially suited for non-linear and 
+non-stationary data. The important idea is to find an intrinsic multi-scale variation of the input image. 
+Du et al [21], intrinsic functions are expressed through the Equation (16) as follows, 
+
+X(t) = ∑n
+i=1 IMFi + Rn    (16) 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 40 
+ 
+ 
+Here, the X(t) indicates the image taken as input, and the RN is the residue, which is decomposed into 
+Intrinsic Mode Function (IMFs) and residue. The images can be considered as a 2D matrix f(x,y).   
+3.2.1 Definition of Extrema Point 
+
+Given a one-dimensional input, it is easy to define the required peaks and the valleys of an image 
+as the extremes. The identification of these extremes in a two-dimensional image is then performed 
+by searching for the same in octa directions individually along the rows and columns, including 
+diagonals, in a matrix of pixels, which are tabulated. If a given point is taken as a peak or as a valley 
+in all directions, then the same is called a two-dimensional extreme. As the BEMD involves more 
+shifting and iteration, the time consumption is higher for identifying the extrema. Initially, the 
+extremes along the columns are identified, and then the rows that have the extrema values of the 
+corresponding columns are found. This sequence helps in saving time. A condition is termed 
+exceptional when there is a flat peak in the image. In this scenario, the middle point is only 
+considered.  
+3.2.2 Interpolation and Smoothness 
+
+After obtaining the extreme points, the next step aims to get the maximum and the minimum 
+surface envelopes through the smoothness and through the interpolation. Triangulation is used in 
+the cubic spline interpolation of the traditional EMD technique. If the point is seen outside the convex 
+hull, the triangulation fails on the point, which results in its infinity, and may also cause the boundary 
+effect of dimension reduction. However, the function is a distance-based interpolation technique 
+where N points of pixels are pointed to a full N*N matrix that shall be generated. A system of 
+equations is then solved by making use of the matrix. Hence, the function tends to be quieter and 
+slow down even when applied to problems of even size. In order to tackle the above issues, the Gridoff 
+tool is used for the extrapolation of the outside convex hull and for generating a smooth surface 
+envelope for the reduction of the actual input matrix of the image.  
+3.2.3 Stopping Criteria in the Iteration Process  
+
+In most conditions, the value obtained for IMFs that use the BEMD cannot satisfy the conditions 
+of the IMF’s definition. The global solution is to be proposed for judging the convergence. Additional 
+iterative decomposition shall not provide excess information when the criteria for convergence are 
+very small. As an alternative, one can also make use of the methods with a stopping criterion. The 
+criteria for SD are denoted as, 
+
+2
+
+SD = ∑x ∑y |Hi,(j−1)(x,y)−Hi,j(x,y)|
+i=0 j=0 [ 2 ] < 𝑟    (17) 
+
+Hi,(j−1)(x,y)
+
+Where SD is a stopping criterion. r is defined as a constant that is pre-defined in the range of 0.2 to 
+0.3. The details of the decomposition methods (BEMD) are given as,  
+
+1. To find all the local minimum and maximum of the function f(x,y) to reduce the dimension of 
+the original matrix image. 
+
+2. To perform the interpolation of the surface that uses the extrema from step 1 to obtain the 
+maximum envelope surface 𝐸𝑚𝑎𝑥(𝑥, 𝑦) with the minimum value of the envelope surface 
+𝐸𝑚𝑖𝑛(𝑥, 𝑦) . Here, the extension of the image is necessary for avoiding the invalid 
+interpolations caused by boundary conditions. 
+
+3. To calculate the mean envelope surface Avg(x,y), which is based on the maximum envelope 
+surface and the minimum envelope surface.  
+
+4. 𝐻𝑖𝑗  is then obtained through the subtraction of the average envelope from the basic 
+signal(x,y), where; 𝐻𝑖𝑗 indicates the jth iterations of the ith process of shifting.  
+
+
+
+41 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+5. To confirm whether the criteria for stopping are satisfied. If not, then the 𝐻𝑖𝑗 is defined as 
+f(x, y), and to repeat the steps from 1 to 4. If the condition for stopping is already satisfied, it 
+is possible to obtain the 𝐼𝑀𝐹𝑖 as, 
+
+IMFi(x, y) = f(x, y) − Hij(x, y)    (18) 
+
+This is termed as complete process of shifting. The steps through 1-5 are then repeated till the 
+threshold becomes a constant and which indicates that the BEMD process of shifting is complete. 
+3.3 Object detection  
+
+The anchor methodology is intended to minimize the losses in terms of combined regressions 
+and classification. For every anchor, an initial and best-matching truth box b is proposed. If there is a 
+match found, it is termed as “positive anchor” and assigned as (1) in a class label 𝒚𝒂  ∈ {𝟏,… ,𝑲} and 
+(2) denotes the vector encoding of the box b corresponding to an anchor ‘a’ and set to the class label 
+as 𝒚𝒂 =  𝟎 . If an anchor is a predicted box that has the encoding of 𝒇𝒍𝒐𝒄(𝑰;  𝒂;  𝜽)  which 
+corresponds to the class 𝒇𝒄𝒍𝒔(𝑰;  𝒂;   𝜽) , where I denotes the image and 𝜽  denotes the model’s 
+parameter. In this context, the loss for ‘a’ is then measured as the weighted sum of the location-based 
+losses and the classification-based losses, and the same is represented as, 
+
+ℒ(a, ℐ; θ) = α. 1[a is positive]. ℓloc(ϕ(ba, a) − floc(ℐ; a, θ)) + β. ℓcls(ya, fcls(ℐ; a, θ))    (19) 
+
+Here, 𝜶,𝜷  denote the weights of the balancing localizations as well as the losses due to 
+classification. In order to train the model, Equation (19) is leveraged over the anchors and also 
+minimized in terms of parameter θ. In the case of multibox[11], these “box priors” are generated by 
+the clustering of truth boxes of the dataset. In advanced techniques, these anchors are then generated 
+through the tiling of a collection of various boxes in different aspect ratios and in different scales 
+regularly across the given image. One advantage of having such an anchor is that these predictors 
+shall be written as tiled predictions of the image that share parameters and are reminiscent of 
+conventional sliding window techniques. The fast R-CNN[4] and the latest multibox[6] are the ones 
+to adopt this technique in the preliminary experiments.  
+3.3.1 Single Shot Detector (SSD) 
+
+This refers to the broad architecture which uses a single feed-forward network for direct 
+prediction of classes and the offsets of anchors that does not require a second stage per-proposal of 
+classification operation [22]. Under these definitions, the SSD architecture has been explored in 
+numerous precursors as mentioned in [22]. Both the Multibox and the RPN stage of Faster CNN [6] 
+can use this approach for predicting the class-agonistic boxes for predicting the final class labels [12]. 
+3.3.2 Faster R-CNN 
+
+In the case of the faster R-CNN settings, the detection is expected to be in a couple of stages. In 
+the initial stage, the region proposals are called using the RPNs, and the images are processed using 
+a feature extractor, and the features are selected at an intermediate level, such as in conv5 are used 
+for the prediction of class-agonistic proposals. The loss functions are taken in the form as in 
+equation(19), which uses the anchor grids. In the later stage, these proposals are then used for the 
+cropping of features in the same intermediate maps that are subsequently fed into the remains of the 
+extractor (such as in fc7) for predicting the class and class-specific refinement of every proposal. The 
+loss functions for these stages also take the form of equation(19) by using the proposals that are 
+generated from the RPN of anchors. It is also to be noted that the crop proposals are obtained directly 
+from the image and are re-run using the feature extractions, which can be duplicated in 
+computations. However, there is a part of the computations that must be run only once in a region, 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 42 
+ 
+ 
+which makes the run time dependent on the number of independent regions that are proposed by 
+RPN.  
+3.3.3 Region-based Fully Convolutional Networks (R-FCN) 
+
+The faster R-CNN is considered in terms of magnitude, which is faster than the R-CNN, the facts 
+that these are region-specific components that must be applied several times on an image. Dai et 
+al[15] have proposed the R-FCN methods, which are like the Faster R-CNN, but here, instead of 
+features being cropped in the same layer, the crops are instead taken from the final layers of feature 
+prediction. This kind of approach, by pushing the cropping into the last layers, is then taken from the 
+features before the prediction. This kind of pushing the cropping into the last layer actually minimizes 
+the volume of per-region computations that need to be performed. Dai et al[5] recommend that the 
+object recognition task needs to localize the representations that respect the translation variance, 
+and thus, which can propose the sensitive mechanisms that are used instead of more standard ROI 
+operations[4] and the differentiated crop technique. They, in turn, show that the R-FCN model, which 
+uses the Resnet 101, should achieve more accuracy for faster CNNs often than the running times.  
+3.3.4 AlexNet CNN deep learning architecture 
+
+In this work, the AlexNET architecture with CNN deep learning[22] is introduced for the 
+detection of objects. The network is presented in a deeper way than the regular CNN with 5 
+convolution layers, which is followed by three kinds of pooling layers. A dropout of 0.5 percent can 
+be applied to the fully connected layers to avoid the issue of overfitting. The proposed architecture is 
+shown in Figure 1. 
+
+ 
+Figure 1: AlexNET convolution neural network architecture of the proposed framework 
+
+In this work, the input layer is presented as the pre-processing layer where the input images 
+are sampled from the initial size to 227*227 in spatial resolution to reduce the cost of computation. 
+The proposed system then used five CONV layers, which are then followed by the three POOL layers 
+and a Rectifying Linear Unit (RELU).  
+
+
+
+43 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+Each of the convolutional layers generates a feature map. These maps are of the first, second, 
+and the fifth layer, which are used in various combinations with the pooling layers of a 3*3 matrix 
+and with the side of a 2*2 matrix. These frameworks are comprised of eight different layered 
+architectures that have 4096 nodes. These generate the trainable feature sets in a feature extraction 
+phenomenon of these layers. These are then subjected to Soft Max activation for the determination 
+of classification probability used for the final classification output. These probabilities, which are in 
+the softmax layer, can make categories up to 1000 various other classifiers.  
+3.3.4.1. Convolution Network Layer 
+
+This layer is significant in the deep learning context with neural networks, which generates 
+feature maps that are confined to the classification. It has a kernel that can slide over the image, which 
+is taken as input, and which generates an output called a feature map. In each location of the input, a 
+matrix multiplication is performed, which is followed by the integration of the results. The feature 
+map’s output is then defined as, 
+
+𝑟
+
+𝑁𝑟 𝑁𝑟−1−𝐿𝑟
+= 𝑥 𝑥 𝑁 −1−𝐿𝑟
+
+𝑦
++ ,𝑁𝑟 𝑦
+
+𝑥 =
+𝑆𝑟 1 𝑦  ( 0  
+
+𝑆𝑟 + 1   2 )
+𝑥 𝑦
+
+Here, 𝑵𝒙, 𝑵𝒚 denotes the width as well as the height of the expected output of the feature map 
+in the final layer, and  𝑳𝒙, 𝑳𝒚 denote the size of the kernel 𝑺𝒙, 𝑺𝒚 which depicts the total count of 
+the pixels that are skipped through the kernel in a horizontal and vertical direction with index r that 
+indicates the corresponding layer, i.e, r=1.  Convolution is then applied to the input, and the kernel 
+is used to get the output, which is defined as, 
+
+𝑋1(𝑚, 𝑛) = (𝐽 ∗ 𝑅)(𝑚, 𝑛)    (21) 
+
+Here, 𝑿𝟏(𝒎,𝒏)  denote a 2D output of the feature map, which is obtained through the 
+convolution of a 2D kernel R of the size (𝑳𝒙, 𝑳𝒚) with the feature map denoted by J. The * symbol is 
+used for the representation of convolution between the J&R. The same is represented as, 
+
+𝐿 𝐿𝑦
+𝑝=+ 𝑥 𝑞=+
+
+𝑋1(𝑚, 𝑛) = ∑ 2 2
+𝐿 ∑ 𝐿 𝐽(𝑚 − 𝑝, 𝑛 − 𝑞)𝑅(𝑝, 𝑞)    (22) 
+
+𝑝=− 𝑥 𝑦
+2 𝑞=−
+
+2
+
+In the proposed method, there are five layers of CONV along with RELU, and the normalization 
+layers are used for extracting the maximum number of feature maps from the input stage for training 
+the dataset to ensure maximum efficiency.  
+
+3.3.4.2. Rectified Linear Unit Layer 
+
+In the following stage, the activation of the RELU function is done for all the layers that are 
+trainable for strengthening the network to make it non-linear. The proposed layer accounts for the 
+non-linearity in all possible manners. It is then applied over the feature map, which has been 
+generated from the CL. The use of 𝒕𝒂𝒏𝒉(.) and the RELU function makes the non-linear gradient to 
+get saturate and results in terms of training time. The same is expressed as, 
+
+𝐿 𝐿𝑦
+𝑝=+ 𝑥 𝑞=+
+
+𝑋1(𝑚, 𝑛) = ∑ 2 2
+𝐿 ∑ 𝐿 𝐽(𝑚 − 𝑝, 𝑛 − 𝑞)𝑅(𝑝, 𝑞)    (23) 
+
+𝑝=− 𝑥 𝑦
+2 𝑞=−
+
+2
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 44 
+ 
+ 
+
+Values of the final feature maps are then obtained by applying the RELU, and the same is 
+represented as, 
+
+0, 𝑖𝑓 𝑋
+𝑋(𝑚, 𝑛) = 2(𝑚, 𝑛 < 0)
+
+{     (24) 
+𝑋2(𝑚, 𝑛), 𝑖𝑓 𝑋2(𝑚, 𝑛 ≥ 0)
+
+Here, the 𝑥(𝑚. 𝑛) is achieved through the transformation of negative inputs to zero and then 
+returning the same on receipt of any positive values. The RELU layer is then considered to be the 
+proposed framework as the deep neural networks are trained much faster and are intact with the 
+RELU layers.  
+
+3.3.4.3. Maximum Pooling Layer 
+A layer for pooling is then included in the architecture proposed after the initial and final 
+
+convolution, and then through the 5th CONV for decreasing the spatial size of every image to bring 
+down the cost of computation of the framework proposed. The pooling operation simply picks the 
+value that is maximum value for every slice on the image. The applications of the pooling layer, which 
+is on the activation’s output for down-sampling, are shown in Figure 2. 
+
+  
+
+Figure 2: Maximum Pooling Layer 
+
+In the proposed method, the pooling is applied for using the maximum values against every 
+slice, and the same brings better results with this mechanism. 
+
+3.3.4.4. Response Normalization Layer and the Softmax Activation 
+This is performed after two successful sessions to reduce the error while testing the proposed 
+
+networks. The layer helps in normalizing the input layers inside the network all along with the inputs 
+of the whole network, and the same is described as, 
+
+𝑁𝑥 𝑏𝑥
+𝑒,𝑓
+
+𝑒,𝑓 =
+𝑐 𝑌   
+
+min(𝑇−1,𝑥+ ) 2  (25) 
+(𝑧+𝛼 ∑ 2 (𝑏𝑥
+
+𝑐 𝑒,𝑓) )
+𝑗=max(0,𝑥− )
+
+2
+
+Here, the 𝑁𝑥
+𝑒,𝑓 represent the activity of normalization, consisting of 𝑏𝑥
+
+𝑒,𝑓 number of neurons which 
+are computed in position (𝑒, 𝑓) within the use of Kernel K. T is the total range within the layers, z,c, 
+and 𝛼 are the given constants, which are hyperparameters of adjustable values through application 
+of validation sets respectively. The soft-max is a classifier on top of the features extracted. After the 
+
+
+
+45 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+performance of five series of CNNs, the output is then fed into the soft-max layer for the multi-
+classification, which helps in determining the probabilities of the classification. These are, in turn, 
+used by the final classification layer for classifying the input images into different classes. 
+
+3.3.4.5. Dropout Layer 
+This layer is then applied to the two layers, which are fully connected when the total count of 
+
+the iterations gets doubled in the network to avoid the overfitting of data by substantially increasing 
+the count of iterations by a factor of two, which makes the neurons dense. It then performs the 
+average model along the neural network, which shows an efficient result in regularizing the data 
+which are trained. The maximum number of layers that are used for pooling and the size of the kernel 
+are processed in such a way that the output maps of the feature are down-sampled into a single pixel 
+per map. Figure 3 then depicts the regularization of methods on layers that are fully connected prior 
+to and after the dropout being applied. 
+
+ 
+
+Figure 3: Fully Connected Layers (FC) before and after applying dropout 
+
+The layers that are fully connected also get connected to the output of the top layers in a single-
+dimensional vector. The upper layers are always fully connected to those of the output for a given 
+class label, such that the high-level features are formed from the training data.  
+
+3.4. Matching 
+The targets of classification are determined for every anchor, which requires matching anchors 
+
+for instances of ground truth. The common approaches include Greedy Bi-Partite (ex, which are 
+based on Jaccard overlap) or many-one matching techniques where the Jaccard method is not used, 
+but the matchings are kept discarded if the value of overlap is very low. Referring to these strategies, 
+as bipartite or Argmax, the experiments use a throughput with given thresholds, which are suggested 
+in the original work for every meta-architecture. Once the matching process is over, there is a typical 
+sampling procedure which are designed for bringing the total count of positive anchors and the 
+negative anchors in a desired ratio. In the experiments, recommended ratios are fixed for every meta-
+architecture.  
+
+ 
+4 Results and Discussion  
+
+This section analyses the data that has been collected during the training and benchmarking, 
+and sweeps over the model configurations. Every model included here is a choice of meta-
+architectures with feature extractors stride (for Resnet and Inception), as well as the resolution of 
+the input and number of proposals. These models were trained on some images scaled up to M 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 46 
+ 
+ 
+number of pixels in the shorter edges whereas in SSD, these images are always resized to a particular 
+shape defined by m*m. The evaluation models are then explored for down-scaled images to assess 
+the accuracy and speed. In particular, these images are trained through different peaks of resolutions 
+in each model. The experimental setup has M=600, and for high resolution and M is set to 300 for low 
+resolution images. In either of the cases, it means that the SSD should at any time process only fewer 
+pixels on average than a faster R-CNN, Alexnet, or R-FCN model that has all other variables which are 
+held constant. The networks are then trained with the COCO data by making use of all training images 
+as a substitute for image validation.  
+
+For every model, the time is measured in GPU, and the memory required, precision, and recall 
+are calculated. The most important ones are defined below. True positive indicates the correct 
+detection of a ground-truth bounding box and is represented as TP. A false positive is the instances 
+of incorrect detection of a non-existent object in an existing object. It is represented as FP. A False 
+negative is the instances where the ground-truth bounding boxes are undetected. It is vital to note 
+that in the context of object detection, a TN does not apply, as there is an infinite count of bounding 
+boxes that need not be detected in a certain image. Assessment of the detection mechanism is 
+normally based on the parameters such as precision P, recall R, and the same is represented as, 
+
+𝑇𝑃 𝑇𝑃
+𝑃 = =     (26) 
+
+𝑇𝑃+𝐹𝑃 𝐴𝑙𝑙 𝑑𝑒𝑡𝑒𝑐𝑡𝑖𝑜𝑛𝑠
+
+𝑇𝑃 𝑇𝑃
+𝑅 = =     (27) 
+
+𝑇𝑃+𝐹𝑁 𝐴𝑙𝑙 𝑔𝑟𝑜𝑢𝑛𝑑 𝑡𝑟𝑢𝑡ℎ𝑠
+
+𝑃∗𝑅
+𝐹 − 𝑚𝑒𝑎𝑠𝑢𝑟𝑒 =  2     (28) 
+
+𝑃+𝑅
+
+Precision is considered the ability of a model it identifies each relevant object. It is the percentile 
+of the accurate positive count of predictions. Recall is the model’s ability to understand and find all 
+the cases that are relevant. It is calculated as the percentile of accurate predictions out of all the given 
+truths. F-Measure denotes the harmonic mean of the precision and the recall together. In all the 
+interpolations, it is seen that one can interpolate via all the points in such a way that are defined as 
+follows, 
+
+𝐴𝑃𝑎𝑙𝑙 = ∑𝑛(𝑅𝑛+1 − 𝑅𝑛)𝑃𝑖𝑛𝑡𝑒𝑟𝑝(𝑅𝑛+1)    (29) 
+
+𝑃𝑖𝑛𝑡𝑒𝑟𝑝(𝑅𝑛+1) = max 𝑃( 𝑅̃)     (30) 
+𝑅̃:𝑅̃≥𝑅𝑛+1
+
+Here, instead of using the precision that is observed by the few points, the AP can now be 
+obtained through the interpolated precision at every level, which takes the maximum amount of 
+precision for measuring the accuracy in object detection in all the classes of a given database. The 
+mAP is simply the average AP over all classes [4], [7], which is described as, 
+
+1
+𝑚𝐴𝑃 = ∑𝑁
+
+𝑖= 𝐴𝑃 ( 1  
+𝑁 1 𝑖    3 )
+
+
+
+47 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+With 𝐴𝑃𝑖 being the AP in the ith class, and N is the total number of classes being evaluated. 
+Figure 4(a-c) shows the input image, segmented image, and object detected of Air France. Figure 4(d-
+f) shows the input image, segmented image, and object detected of pizza. 
+
+   
+
+(a) Air France image     (b) Segmented image   (c) Object detected in the Air France 
+
+   
+
+(d) Pizza image   (e) Segmented image   (f) Object detected pizza image 
+
+Figure 4: Image Results 
+
+ 
+
+Figure 5: Accuracy vs time comparison with respect to feature extractors 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 48 
+ 
+ 
+
+Figure 5 shows some visualizations of the MAP in each of the classifiers along with feature 
+extractors. It is seen from the results that it can be concluded that the proposed method, RCNN, and 
+the AlexNet type of models are fast when compared to the R-FCN. In terms of accuracy, R-FCN holds 
+an upper hand. When the GPU time is increased, AlexNET, with the aid of Resnet, the feature 
+extraction has a greater Map than when compared to the inception of the Resnet extraction model. 
+The proposed Resnet 101- Alexnet gives a higher mAP value of 54% for GPU time of 1000 
+milliseconds, whereas other methods such as Inception Resnet-SSD, Inception Resnet-R-FCN, 
+Inception Resnet-RCNN, Inception Resnet-Alexnet, Resnet 101-SSD, Resnet 101-R-FCN, and Resnet 
+101-RCNN give mAP values of 35%, 37%,39%, 48%, 40%, 42% and 44% respectively. 
+
+ 
+
+Figure 6: Accuracy stratified by object size, Meta-Architecture, and Feature extractor, Image resolution to 
+300 
+
+In Figure 6, the performance analysis is done on the different models with various sizes of 
+objects. It is not surprising to see that all the methods perform better in the case of large objects. It 
+can be concluded that the SSD techniques have meager performance in case of small objects and are 
+competitive with faster RCNN and R-FCN in case of large objects, which outperforms these meta-
+architectures for faster and lightweight extractors. The proposed Resnet 101- Alexnet gives a higher 
+mAP value (Large) of 59.21%, whereas other methods such as Inception Resnet-SSD, Inception 
+Resnet-R-FCN, Inception Resnet-RCNN, Inception Resnet-Alexnet, Resnet 101-SSD, Resnet 101-R-
+FCN, and Resnet 101-RCNN give mAP values of 43.67%, 41.36%,46.58%, 55.12%, 45.32%, 47.21% 
+and 50.15% respectively. 
+
+
+
+49 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+ 
+Figure 7: GPU Time (Milliseconds) for each model, for image resolution of 300 
+
+In Figure 7, a plot of GPU time for each of the models is shown. This has a constraint of platform 
+dependency. The counting and floating-point operations provide us a platform-independent measure 
+for the computation, which shall or shall not be linear with respect to the exact running cost and 
+times owing to the number of issues such as caching, I/O, and optimization, etc. The GPU time of the 
+proposed Alexnet and the Inception Resnet has a faster GPU time of the order of 42 and 36 
+Milliseconds. 
+
+ 
+
+Figure 8: Memory (Mb) usage for each model vs. feature extraction methods 
+
+Figure 8 measures the total usage of memory other than the peak memory usage. These error bars 
+reflect the variance in the usage of memory by the various proposals for faster R-CNN. The figure 
+plots a few of the similar information in a more detailed manner by drilling down into the meta-
+architecture and the feature extractor selections. It can be concluded from the figure that the 
+proposed Alexnet with the Resnet 101 and the incent has a lower memory usage of the order of 1014 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 50 
+ 
+ 
+MB and 428 MB, which has lesser usage when these are compared to the R-FCN and RCNN, 
+respectively. 
+
+ 
+
+Figure 9: Precision and Recall results comparison of each model vs. feature extraction methods 
+
+Figure 9 shows the precision and recall comparison by using different numbers of proposals. From 
+the figure, it is concluded that the proposed Alexnet with Resnet 101 and Inception Resnet has a 
+higher precision value of 85.7143% and 75.63% whereas other methods, such as Inception Resnet-
+SSD, Inception Resnet-R-FCN, Inception Resnet-RCNN, Restnet 101-SSD, Restnet 101-R-FCN, Restnet 
+101-RCNN, have given precision values of 56.21%, 59.25%, 64.98%, 65.51%, 72.63% and 80.41% 
+respectively. 
+
+ 
+
+Figure 10: F- measure results comparison of each model vs. feature extraction methods 
+
+Figure 10 shows the f-measure comparison by using different numbers of proposals. From the figure, 
+it is concluded that the proposed Alexnet with Resnet 101 and Inception Resnet has a higher f-
+measure value of 87.2727% and 78.575% whereas other methods, such as Inception Resnet-SSD, 
+Inception Resnet-R-FCN, Inception Resnet-RCNN, Restnet 101-SSD, Restnet 101-R-FCN, Restnet 101-
+
+
+
+51 J Comput Intell Decis Sci. 2025;2(2):4 
+ 
+
+RCNN, have given f-measure values of 59.23%, 62.235%, 67.745%, 66.995%, 74.02% and 81.825% 
+respectively. 
+
+5 Conclusion and Future Work 
+Object detection is one of the important and widely used methods for the identification of target 
+
+objects in a specific image and for the determination of the position and category for achieving 
+machine vision’s understanding. In this research, the dimensionality reduction is addressed using the 
+BEMD technique for achieving high-order object detection that even in a low-dimensional space of 
+dimension. The identification of the extrema in a two-dimensional image is carried out through 
+searching for extreme values in eight different directions individually among various columns, rows, 
+and diagonals as tabulated pixels. For each object detection, the methodology which are introduced 
+is to minimize the combined effect of classification and the regression loss. Implementation of flexible 
+and unified implementations are of four meta-architectures, R-FCNs s R-CNN, and Alexnet classifiers. 
+AlexNet is designed in a deeper way than the standard CNN, with five CNNs followed by three pooling 
+layers. The COCO detection is taken as a challenge that provides bounding box coordinates of more 
+than 200,000 images with 80 object categories. This data is used for the comparison of results with 
+other object detection methods. The performance metrics used are the Average precision (AP), Mean 
+Average precision (mAP), the precision, and the recall with F-Measure. The results indicate that when 
+fewer proposals are used, the Alexnet can speed up very fast without involving huge losses in terms 
+of accuracy, and thus making it competitive with a faster R-FCN, SSD, and the RFCN. The proposed 
+way of implementation does not require any modifications of the detection models for matching with 
+different input formats and parameters that tune to object detection, and the same is left as the scope 
+for future study. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: K. Reena; supervision and writing: A. Kalaivani; 
+review and editing: T. Karthikeyan. All authors reviewed the results and approved the final version of 
+the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Shine L, CV J. Automated detection of helmet on motorcyclists from traffic surveillance videos: a 
+
+comparative analysis using hand-crafted features and CNN. Multimed Tools Appl. 2020;79(19):14179-99. 
+2. Liu J, Yang Y, Lv S, Wang J, Chen H. Attention-based BiGRU-CNN for Chinese question classification. J 
+
+Ambient Intell Humaniz Comput. 2019:1-2. 
+3. Cao D, Zhu M, Gao L. An image caption method based on object detection. Multimed Tools Appl. 
+
+2019;78(24):35329-50. 
+4. Ren S, He K, Girshick R, Sun J. Faster r-cnn: Towards real-time object detection with region proposal 
+
+networks. Adv Neural Inf Process Syst. 2015;28. 
+5. Dai J, Li Y, He K, Sun J. R-fcn: Object detection via region-based fully convolutional networks. Adv Neural 
+
+Inf Process Syst. 2016;29. 
+6. Szegedy C, Reed S, Erhan D, Anguelov D, Ioffe S. Scalable, high-quality object detection. arXiv preprint 
+
+arXiv:1412.1441. 2014 Dec 3. 
+7. Liu W, Anguelov D, Erhan D, Szegedy C, Reed S, Fu CY, Berg AC. Ssd: Single shot multibox detector. In 
+
+European conference on computer vision; 2016 Sep 17, 2016. p. 21-37. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):4 52 
+ 
+ 
+8. Redmon J, Divvala S, Girshick R, Farhadi A. You only look once: Unified, real-time object detection. In 
+
+Proceedings of the IEEE conference on computer vision and pattern recognition; 2016. p. 779-788. 
+9. Lin TY, Maire M, Belongie S, Hays J, Perona P, Ramanan D, Dollár P, Zitnick CL. Microsoft coco: Common 
+
+objects in context. In European conference on computer vision; 2014 Sep 6, 2014. p. 740-755. 
+10. Bell S, Zitnick CL, Bala K, Girshick R. Inside-outside net: Detecting objects in context with skip pooling and 
+
+recurrent neural networks. In Proceedings of the IEEE conference on computer vision and pattern 
+recognition; 2016. p. 2874-2883. 
+
+11. Erhan D, Szegedy C, Toshev A, Anguelov D. Scalable object detection using deep neural networks. In 
+Proceedings of the IEEE conference on computer vision and pattern recognition; 2014. p. 2147-2154. 
+
+12. Fu CY, Liu W, Ranga A, Tyagi A, Berg AC. Dssd: Deconvolutional single shot detector. arXiv preprint 
+arXiv:1701.06659. 2017 Jan 23. 
+
+13. Kim KH, Hong S, Roh B, Cheon Y, Park M. Pvanet: Deep but lightweight neural networks for real-time object 
+detection. arXiv preprint arXiv:1608.08021. 2016 Aug 29. 
+
+14. Lin TY, Dollár P, Girshick R, He K, Hariharan B, Belongie S. Feature pyramid networks for object detection. 
+In Proceedings of the IEEE conference on computer vision and pattern recognition; 2017. p. 2117-2125. 
+
+15. Shrivastava A, Gupta A, Girshick R. Training region-based object detectors with online hard example 
+mining. In Proceedings of the IEEE conference on computer vision and pattern recognition; 2016. p. 761-
+769. 
+
+16. Huang J, Rathod V, Sun C, Zhu M, Korattikara A, Fathi A, Fischer I, Wojna Z, Song Y, Guadarrama S, Murphy 
+K. Speed/accuracy trade-offs for modern convolutional object detectors. In Proceedings of the IEEE 
+conference on computer vision and pattern recognition; 2017. p. 7310-7311. 
+
+17. Wei W, Can T, Xin W, Yanhong L, Yongle H, Ji L. Image Object Recognition via Deep Feature‐Based Adaptive 
+Joint Sparse Representation. Comput Intell Neurosci. 2019;2019(1):8258275. 
+
+18. Lu M, Chen L. [Retracted] Efficient Object Detection Algorithm in Kitchen Appliance Scene Images Based 
+on Deep Learning. Math Probl Eng. 2020;2020(1):6641491. 
+
+19. Cao D, Chen Z, Gao L. An improved object detection algorithm based on multi-scaled and deformable 
+convolutional neural networks. Hum-centric Comput Inf Sci. 2020;10(1):14. 
+
+20. Zhang S, Zhang C, Wang Z, Kong W. Combining sparse representation and singular value decomposition 
+for plant recognition. Appl Soft Comput. 2018;67:164-71. 
+
+21. Du S, Liu T, Huang D, Li G. A fast and adaptive bi-dimensional empirical mode decomposition approach for 
+filtering of workpiece surfaces using high-definition metrology. J Manuf Syst. 2018;46:247-63. 
+
+22. Krizhevsky A, Sutskever I, Hinton GE. Imagenet classification with deep convolutional neural networks. 
+Adv Neural Inf Process Syst. 2012;25.

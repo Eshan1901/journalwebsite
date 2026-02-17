@@ -1,0 +1,484 @@
+﻿ARTICLE 
+
+Exploratory Study of Artificial Intelligence Techniques for Detecting Milk 
+Adulteration in Food Safety 
+
+Sulochana V1,*, S. Prabhu2 and Basheer Riskhan3 
+
+1Associate Professor, Department of Computer Science, Hindusthan College of Arts and Science, Coimbatore - 641028, 
+India. 
+2Assistant Professor, Department of Computer Science, KG College of Arts and Science, Coimbatore - 641035, India. 
+3Dean and Associate Professor, School of Computing and Informatics, Albukhary International University, Malaysia. 
+*Corresponding Author: Sulochana V. Email: sulochana.v@hicas.ac.in  
+
+Received: 06 August; Accepted: 17 October 2025; Published: 22 December 2025 
+
+ABSTRACT: Food adultery is the process where the quality is compromised by adding certain chemicals or 
+other substitutions, which, when consumed, cause health hazards. The process includes not only the purposeful 
+addition of additives but also the contamination occurring in the growing stage, storage, and when distributed. 
+Adulteration has become a big business. We belong to a land where our ancestors taught that “food is medicine. 
+Milk is one of the important foods consumed irrespective of age that ranging from infants to old people. In 
+contrast, in the recent business era, milk is getting adulterated in more complicated ways that bypass the 
+normal tests, and hence, there is a huge demand for a cutting-edge technology for detecting the same. The 
+application of Artificial Intelligence has emerged in many diverse fields, not limited to the identification of food 
+adulteration. This paper gives a gist of the most significant research that has been carried on in the detection 
+of adulterated food, particularly milk, using the techniques of machine learning. Special attention is kept on the 
+Machine Learning techniques that are designed specifically to detect milk adulteration. 
+
+KEYWORDS: Adulteration, Artificial Intelligence, Machine Learning, Contamination. 
+ 
+
+1 Introduction 
+The adulteration of milk and other dairy products has grabbed the attention globally after the 
+
+identification of melamine particles in milk in Chinese products in the year 2018 [1]. The practice of 
+milk adultery is a very old scenario. The milk scandal that was reported in the year 1850 caused 
+nearly 8000 infants to lose their lives in the city of New York. Milk is one of the chiefs and most used 
+food items and has nutrients required for all ages of humans. It is also a rich source of many essential 
+minerals and proteins. Milk is subject to adultery easily across the globe. The prime reasons behind 
+this are the gap between supply and demand and high business motives. This also occurs due to the 
+affordability of the customers to buy and the lack of efficient mechanisms to detect the same [2]. 
+Although the motive is economic, the impact the adultery costs lives [3]. The situation is 
+unmanageable in most of the underdeveloped and developing countries owing to the lack of efficient 
+mechanisms and proper laws to enforce strict action against the culprits. Adulteration of milk can be 
+identified either using qualitative or quantitative mechanisms. The former uses various chemical 
+reactions for the purpose, and the latter identifies the nature of the adulterants. Milk adulteration 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+78 J Comput Intell Decis Sci. 2025;2(2):7 
+ 
+
+detection methods need a swift transition from old manual methods to highly accurate machine-
+based techniques [4].  
+
+Food Safety policies and tools have been generated and are being it in all over the world. On 
+adopting the available tools, still, many challenges still arise in various aspects, such as the accuracy 
+of contamination prediction. The issue of food adulteration is a contemporary mechanism, and it is 
+as old as the food production techniques themselves. Owing to the lower accuracy and time 
+complexity involved in the conventional methods of identifying milk adultery, modern scientific 
+development is needed, and since there are a large variety and complex information available on this, 
+many data mining techniques in terms of supervised [5] and unsupervised models have been 
+employed. Those models focus on the microbiological or toxic chemical hazards. The ultimate goal of 
+the study is to examine the data mining technique employed for food adulteration and contamination. 
+The remaining sections of the paper are organized as follows: Section 2 gives the preliminaries on 
+the types of machine learning, and Section 3 gives the best research works carried out on each of 
+them, with the methods, advantages, and the area for improvement. Section 4 gives a comparative 
+study on the results obtained through the methods adopted in the literature, and the conclusion and 
+future directions are projected in Section 5.   
+
+2 Preliminaries 
+
+2.1 Machine Learning 
+Machine Learning is the buzzword in the current digital era. The important reason behind this 
+
+is the increase in data accumulation and a parallel increase in computational powers and hardware 
+capacities. ML is almost used everywhere, from automation to producing intelligent decisions in 
+almost every domain [6]. The ML methods have hit the floor in such a way that the users themselves 
+would have already been using the devices without their understanding. ML techniques are those 
+that enable the system to learn from the Data and improve its performance itself without being given 
+explicit programming. ML is a category of algorithms that allows the application software to be more 
+accurate in the process of outcome prediction without additional programming [7]. The basic intent 
+of ML methods is to constitute algorithms that can get data as input and use various statistical 
+methods for predicting the output as and when new data are accumulated. 
+
+2.2 Types 
+Machine Learning algorithms are more generally classified as supervised, unsupervised, and 
+
+reinforcement learning [8].  
+In the case of supervised methods, the system is given the data along with the labels, which 
+
+indicate that all the data are tagged correctly with the label. The motive is to make the mapping 
+function appropriate such that when we have X as the input data, the output Y can be predicted. The 
+important methods of supervised learning are i. Classification where the output variable is of any of 
+the categories, such as “color”, “shape”, or simple YES or NO, and the other methods are the regression 
+models.  
+
+As the unsupervised learning is considered, the Artificial Intelligence systems here are presented 
+with data that are not labelled and which are not categorized, and the algorithms act upon the data 
+without training. The output here is dependent on the algorithms, which are pre-coded. Using 
+unsupervised learning is a kind of testing of the AI systems. The unsupervised learning is normally 
+classified as i. clustering, where the intention is to discover under which group a particular entity 
+falls, and ii. An association where the intention is to identify the rules that describe a large part of the 
+data, such that “customers who bought X are likely to buy Y also”.  
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):7 79 
+ 
+
+A reinforcement learning method is where the agent interacts with the environment for learning 
+purposes. The agents here get the rewards if they perform correctly and penalties if they malfunction. 
+The agent here learns without the influence of the human for maximum rewards and minimum 
+penalty [9]. This is also considered a dynamic programming, which trains the algorithms to use a 
+system of rewards and penalties. The commonly used methods are i. Q-Learning, which is considered 
+to be an offshore policy learning, where the algorithm seeks to identify the best-fit action to be 
+performed if the current state is given. It is termed offshore because the systems’ actions are outside 
+the present policy, such that random actions. ii. Deep learning, where the ML techniques use multiple 
+level of layers for progress through high-level features from the input. For instance, in the image 
+processing domain, the low level may identify edges and the high levels identify the core concepts 
+that are relevant to humans, such as digits or letters. Figure 1 gives a generalized view of the 
+classification of ML techniques. 
+
+ 
+Figure 1: Generic classification of ML methods 
+
+3 Studies on Ml methods in food adulteration 
+
+3.1 Review of supervised learning in food adulteration detection 
+Wabben et al [10] proved that the concurrent use of both targeted and untargeted models, which 
+
+are applied to the FT-IR spectrum in identifying milk adultery, is efficient. By the use of appropriate 
+methods, the detection limits, sensitivity, and specificity are identified. The proposed model used a 
+multivariate linear regression model for the practical implications of the method. The theoretical 
+limitations are also provided for a potential range of adulterants used. The performance metrics used 
+here are the Precision, F-score, and Recall.  
+
+Zhang et al [11] proposed a series of samples of adulterated milk by adding different levels of 
+aqueous dextrin. The improvised Support Vector Machines are used for the purpose of building the 
+classification model for differentiating the milk that was adulterated based on the NIR spectrum of 
+various sample sets. Uniformity in the design of tables was made use of. The results showed that the 
+milks in which the adultered content is greater than 5 % are well detected by the proposed SVM 
+combined with NIR based spectroscopy, with a very high validation ratio. The proposed methods 
+outperformed other methods in terms of Specificity, Sensitivity, and Correlation values.  
+
+Neto et al (2019) introduced the ML algorithms on milk spatial data. The proposed methods 
+were able to find the most common adulteration methods that prevail in the dairy industry. Both 
+classification and linear regression methods were used for the binary and multiclass means of 
+classification, and the experimental results were compared. The proposed classification and 
+regression methods were able to perform better than the FITR device and also the other traditional 
+
+
+
+80 J Comput Intell Decis Sci. 2025;2(2):7 
+ 
+
+methods of dairy manufacturing. The performance measures included the cosine value and the 
+correlation.  
+
+Mahood et al (2017) developed a new infrared-based spectroscopy (NIR), which is combined 
+with that of the multivariate linear regression for identifying the level of formalin in cows’ milk. The 
+methods, such as PCA and partial test regression (PCA), are applied for a statistical investigation of 
+the NIR data. The PLS-NIR methods were used for checking the difference between the pure and 
+adulterated milk. A regression model using PLS was built for quantifying the formalin levels in milk.  
+The proposed method used Entropy, F Score, Precision, and recall as the performance measures.  
+
+Rebechi et al (2016) conducted research to test for accuracy in the fatty acid for the detection of 
+adulterants, which replaced milk fat with that of animal fat, and also proposed a regression model for 
+the evaluation of this kind of adulterant. On every adulterant, the Multiple Linear model of regression 
+(MLR) was implied by choosing a model, and later it was validated. The matrix between the 
+calibrations and validation is constructed by implementing a genuine mechanism to differentiate 
+between pure and adultered milk. The proposed models were able to find the milk adulteration at 
+levels which are greater than 10%. The proposed method was better in terms of Specificity, 
+Sensitivity, and Entropy when compared to other techniques.  
+
+Table 1 shows the tabular description of the most important research carried out using 
+supervised ML methods for milk adulteration detection. 
+
+Table 1: Review of supervised methods 
+
+Author(s) Method Advantages Metrics 
+
+Wabben et FT-IR Spectra Identification of Potential F score, Precision, Recall 
+
+al Adulterants 
+
+Zhang et al Improved v-support vector Accuracy increased to 5% Specificity and Sensitivity, 
+
+machines Correlation 
+
+Neto et al Principle component analysis Outperforms traditional FITR Cosine similarity and 
+
+(PCA) correlation 
+
+Mahood et Partial least discriminant Identifies Formalin Adulterant Entropy, F Score, Precision, and 
+
+al analysis Recall 
+
+Rebechi et Multiple Linear Regression Accuracy increase over 10% Specificity, Sensitivity, Entropy 
+
+al 
+
+ 
+Roney et al (2015) investigated the effect of Raman Microscopy and the ANN as a practical means 
+
+of assessing fluid milk by the addition of whey to it. The Quantitative findings of adulteration were 
+done through the feed-forward ANN. Various configurations of the Neural Networks were made and 
+are evaluated based on their coefficient. The proposed model observed that the data from both 
+training and validation had a high value for Recall, such as 99.9% which proved that the combined 
+method of ANN and the Raman spectroscopy is a very fast, simple, and efficient method for the 
+identification of quality milk from being adulterated by whey. The model outperformed others in 
+terms of Root Mean Square and Average area under the curve.  
+
+Jiang et al (2019) made an attempt to develop an integrated mechanism that used least-square 
+SVMs with the NMR technique for the identification of the level of adulteration in milk powder. It is 
+proven that the proposed model can better identify adulterated milk. The experimental results prove 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):7 81 
+ 
+
+that the proposed SVM-NMR can yield very high and dense clusters with an accuracy of more than 
+98%. The proposed method used F Score, Precision, and recall as its performance metrics.  
+
+Hsieh et al (2011) implemented the LS-SVM method for the calibration and also a prediction 
+model to identify adulteration in the cows’ milk. The grid-based search technique was used to arrive 
+at a better value for the Network parameters. The graph from the results shows that the adulteration 
+ratio of above 10% is very well distinguished from those that are pure. The proposed method uses F-
+score, Precision, and Recall as its performance metrics.  
+
+Kuswandi et al (2015) made use of a couple of datasets that were recorded using the FTIR means 
+of Spectroscopy using the total attenuated reflection (ATR) based on the spectrum data. The chemical 
+analysis was made using the various modelling methods, such as LDA, SMCA, and SVM, on the data. 
+At last, the optimum results of the models in the data set on the analysis of milk adulteration were 
+selected, and the best-fit model was compared with the famous ELISA method. The proposed method 
+seemed more efficient than that of the ELISA model in terms of Specificity, Sensitivity, and 
+Correlation. 
+
+Leonardi et al (2015) discussed the ML method, which aims the define in order to assess the 
+authenticity of some high-value milk powders. It was also demonstrated that the classification’s 
+effectiveness is very high in the proposed model in terms of the ability to exploit features on the 
+chemical profile of milk that are obtained from biochemical methods. The proposed method was 
+found to be more efficient when applied to real-time data and with synthetic data generated from a 
+Bayesian generative model.  
+
+Table 2 shows the gist of research carried out using unsupervised learning for milk adultery 
+identification with the metrics used. 
+
+Table 2: Review of unsupervised methods 
+
+Author(s) Method Advantages Metrics 
+
+Roney et al Artificial neural network Simple and efficient Root mean square and Average area 
+
+under the curve 
+
+Jiang et al Least-squares support Accuracy is 98% F score, Precision, Recall 
+
+vector machine 
+
+Hsieh et al Grid search SVM Accuracy increases by 10% Specificity and Sensitivity, 
+
+Correlation 
+
+Kuswandi et Fourier Transform Better than the ELISA method Cosine similarity and correlation 
+
+al Infrared (FTIR) 
+
+Leonardi et Bayesian network model Identifies Chemical ingredients Entropy, F Score, Precision, and 
+
+al in a better way Recall 
+
+3.2 Review on reinforcement learning for food adulteration 
+Lei-Hong et al (2019) provided a solution for the automatic identification of common beetle 
+
+species that frequently contaminate milk products. The approach was based on the convolutional 
+neural network, which trained a dataset having 6900 images of various elytra fragments. The 
+proposed methods acquired an accuracy level of 83% when cross-validated. It is also to be noted that 
+the performance of the classification is obtained without the need to design and select the images 
+that are domain specific, which depicts the deep learning importance in milk adultery. The proposed 
+methods produced better results in terms of Root mean square and Average area under the curve. 
+
+
+
+82 J Comput Intell Decis Sci. 2025;2(2):7 
+ 
+
+Al-Sarayreh et al (2018) investigated the accuracy of hyperspectral imaging for the 
+authentication and classification of fresh samples of milk. These samples are acquired from goat, cow, 
+and buffalo milk. A 3-dimensional artificial neural network was proposed for the extraction of 
+spectral features of the milk. A comparison was also made on the proposed methods with that of the 
+existing methods, including the least square discrimination methods and SVM methods. The results 
+prove that the 3D-ANN performs better in terms of F-score, Precision, and Recall than other methods.  
+
+Jayanthi et al (2019) introduced a system that used a histogram of the gradients along with the 
+SVM classifier for the detection of fungus in milk. The features of the milk species are captured using 
+real-time cameras and are extracted by the Gradients Algorithm. The features are then fed to the 
+ensemble SVM classification algorithm, which compares with the trained and projects the quality of 
+the samples. The proposed method is implemented using the ARM processor. Experimental results 
+prove that the proposed methods produce very good results in terms of Specificity and Sensitivity.  
+
+Mahdi et al (2018) evaluated the portable system that is intelligent in identifying adulteration in 
+milk using the machine-based vision method. The evaluation was done on 13 samples of milk and the 
+mixed ingredients. For the identification of adulteration, the ANNs were deployed and evaluated 
+using a hidden layer with the count of neurons starting from 1 to 20. The best fit network having the 
+structure 12-6-7 is provided for the prediction of the samples with R as the coefficient of correlation 
+and MSE. The proposed methods are found to be effective in terms of Cosine similarity and 
+correlation. 
+
+SanaJawaid et al (2017) introduced the SB-ATR-based Fourier transformation as a tool to 
+identify the adulteration in milk. This proposed method is specifically used to test the melanin 
+content in milk. The PLS model was incorporated for identifying the correlation of the data spectrum 
+to melanin concentration. Deep neural networks were deployed to classify pure from impure milk. 
+The proposed technique also took very little time for setup and running time. The performance 
+metrics used here are Entropy, F-Score, Precision, and Recall. 
+
+Table 3 shows the gist of research carried out using reinforcement learning for milk adultery 
+identification with the metrics used. 
+
+Table 3: Review on reinforcement learning 
+
+Author(s) Method Advantages Metrics 
+
+Lei-Hong et al Convolutional neural Cross-Validated accuracy of 84% Root mean square and Average 
+
+network area under the curve 
+
+Al-Sarayreh et 3D convolution neural spectral-spatial learned features F score, Precision, Recall 
+
+al network (CNN) of milk are classified 
+
+Jayanthi et al SVM classifier Real-time capture of fungus Specificity and Sensitivity, 
+
+growth Correlation 
+
+Mahdi et Artificial Neural Network More samples also yield good Cosine similarity and correlation 
+
+al(2018) (ANN) results 
+
+SanaJawaid et Partial least-squares (PLS) Very little time complexity Entropy, F Score, Precision, and 
+
+al model Recall 
+
+ 
+
+4 Comparative Analysis 
+The graphical representation shows the comparative analysis of the metrics tabulated in each 
+
+section and which are obtained from the results of various methods. These graphs are self-
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):7 83 
+ 
+
+explanatory and are intended to produce a visual comparative analysis. Figure 2 shows the graphical 
+representation of the various results obtained through the methods discussed in Section 3. 
+
+ 
+
+  
+
+ 
+
+Figure 2: Comparison of unsupervised methods, supervised methods, and reinforcement methods. 
+
+5 Conclusion 
+Food adultery is the process where the quality is compromised by adding certain chemicals or 
+
+other substitutions, which, when consumed, cause health hazards. The process includes not only the 
+purposeful addition of additives but also the contamination occurring in the growing stage, storage, 
+and when distributed. Milk is the most common food product being adulterated. Although many 
+studies have been carried out to bring out an accurate method for the detection of adulteration in 
+milk, the usage of Machine Learning in the domain was very limited. This paper gives the gist of such 
+few studies using Machine Learning methods for Milk adulteration detection. This gives an insight 
+into the future research that can be pursued to solve the burning issue of milk adulteration and to 
+save humans from fatal diseases.   
+
+Acknowledgement: Not applicable. 
+
+
+
+84 J Comput Intell Decis Sci. 2025;2(2):7 
+ 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: Sulochana V; supervision and writing: S. 
+Prabhu; review and editing: Basheer Riskhan. All authors reviewed the results and approved the final 
+version of the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Food Adulteration - an overview | ScienceDirect Topics", Sciencedirect.com, 2018. [Online] .[Accessed: 14- 
+
+Aug- 2018]. 
+2. Adulteration and Harmful effects of Food Adulteration", India Study Channel, 2018. [Online].  
+3. PressReader.com - Connecting People Through News", Pressreader.com, 2018. [Online]. 
+4. Simon A, Deo MS, Venkatesan S, Babu DR. An overview of machine learning and its applications. Int J Electr 
+
+Eng. 2016;1(1):22-4. 
+5. Bowles M. Machine Learning with Spark and Python: Essential Techniques for Predictive Analytics. John 
+
+Wiley & Sons; 2019. 
+6. Kotsiantis SB, Zaharakis I, Pintelas P. Supervised machine learning: A review of classification techniques. 
+
+Emerging artificial intelligence applications in computer engineering. 2007;160(1):3-24. 
+7. Rokach L, Maimon O. Top-down induction of decision trees classifiers-a survey. IEEE Trans Syst Man 
+
+Cybern. 2005;35(4):476-87. 
+8. Al-Hmouz A, Shen J, Yan J. A machine learning based framework for adaptive mobile learning. In 
+
+International Conference on Web-Based Learning; 2009 Aug 19, Berlin; 2019. p. 34-43. 
+9. Stern D, nonero Candela JQ. Playing machines: Machine learning applications in computer games. CIG. 
+
+2008;9:1-. 
+10. Hansen PW, Holroyd SE. Development and application of Fourier transform infrared spectroscopy for 
+
+detection of milk adulteration in practice. Int J Dairy Technol. 2019;72(3):321-31. 
+11. Ni LJ, Zhang LG, Tang MY, Xue ZB, Zhang X, Gu X, Huang S. Discrimination of adulteration cow milk by 
+
+improved υ-support vector machines (υ-SVM) and near infrared spectroscopy. In 2012 8th International 
+Conference on Natural Computation; 2012 May 29, Chongqing, China; 2012. p. 69-73. 
+
+12. Neto HA, Tavares WL, Ribeiro DC, Alves RC, Fonseca LM, Campos SV. On the utilization of deep and 
+ensemble learning to detect milk adulteration. BioData Min. 2019;12(1):13. 
+
+13. Mabood F, Hussain J, Al Nabhani MM, Gilani SA. Detection and quantification of formalin adulteration in 
+cow milk using near infrared spectroscopy combined with multivariate analysis. J Adv Dairy Res. 
+2017;5(2). 
+
+14. Rebechi SR, Vélez MA, Vaira S, Perotti MC. Adulteration of Argentinean milk fats with animal fats: Detection 
+by fatty acids analysis and multivariate regression techniques. Food Chem. 2016;192:1025-32. 
+
+15. da Rocha RA, Paiva IM, Anjos V, Furtado MA, Bell MJ. Quantification of whey in fluid milk using confocal 
+Raman microscopy and artificial neural network. J dairy sci. 2015;98(6):3559-67. 
+
+16. Jiang L, Pan L, Gao H, Zheng H. Rapid identification and quantification of adulteration in Dendrobium 
+officinale using nuclear magnetic resonance spectroscopy combined with least-squares support vector 
+machine. J Food Meas Charact. 2020;14(3):1427-32. 
+
+17. Hsieh CL, Hung CY, Kuo CY. Quantization of adulteration ratio of raw cow milk by least squares support 
+vector machines (LS-SVM) and visible/near infrared spectroscopy. In International Conference on 
+Engineering Applications of Neural Networks; 2011 Sep 15, Berlin; 2011. p. 130-139. 
+
+18. Kuswandi B, Putri FK, Gani AA, Ahmad M. Application of class-modelling techniques to infrared spectra 
+for analysis of pork adulteration in beef jerkys. J Food Sci Technol. 2015;52(12):7655-68. 
+
+19. Leonardi G., Portinale L. (2017) Applying Machine Learning to High-Quality milk Identification. In: 
+Esposito F., Basili R., Ferilli S., Lisi F. (eds) AI*IA 2017 Advances in Artificial Intelligence. AI*IA 2017. 
+Lecture Notes in Computer Science, vol 10640. Springer, Cham 
+
+20. Wu L, Liu Z, Bera T, Ding H, Langley DA, Jenkins-Barnes A, Furlanello C, Maggio V, Tong W, Xu J. A deep 
+learning model to recognize food contaminating beetle species based on elytra fragments. Comput 
+Electron Agric. 2019;166:105002. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):7 85 
+ 
+
+21. Al-Sarayreh M, Reis MM, Yan WQ, Klette R. Deep spectral-spatial features of snapshot hyperspectral 
+images for red-meat classification. In 2018 international conference on image and vision computing New 
+Zealand (IVCNZ); 2018 Nov 19, Auckland, New Zealand; 2018. p. 1-6. 
+
+22. Jayanthy S, Ayswaria SV, Vaishali M, Poorani PU. A high quality embedded system for assessing food 
+quality using histogram of oriented gradients. ICTACT J Soft Comput. 2018;9(1). 
+
+23. Rashvand M, Akbarnia A. The feasibility of using image processing and artificial neural network for 
+detecting the adulteration of sesame oil. AIMS Agric Food. 2019;4(2):237-324. 
+
+24. Jawaid S, Talpur FN, Sherazi ST, Nizamani SM, Khaskheli AA. Rapid detection of melamine adulteration in 
+dairy milk by SB-ATR–Fourier transform infrared spectroscopy. Food chem. 2013;141(3):3066-71.

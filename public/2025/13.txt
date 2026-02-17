@@ -1,0 +1,528 @@
+﻿ARTICLE 
+
+Advanced Sequence Modeling Framework for Analyzing Learner 
+Feedback in Educational Systems 
+
+K. Nirmala Devi1,*, Radhika K2, and Chandrasekaran Neelakandan3 
+
+1Associate Professor, Master of Computer Application, MITS. 
+2Assistant Professor, Master of Computer Applications, Madanapalle Institute of Technology & Science (Deemed to be 
+University), India. 
+3Foreign Expat, School of Information Engineering, Shaoguan University, Guangdong, 521000, China. 
+*Corresponding Author: K. Nirmala Devi. Email: drnirmaladevik61@gmail.com  
+
+Received: 11 August 2025; Accepted: 18 October 2025; Published: 22 December 2025 
+
+ABSTRACT: Finding the opinion of the students improves the teaching learning process. It acts as information 
+to change the teaching style of a lecturer. Sentiment analysis is used to analyze feedback of the students, which 
+helps us to find their polarities, that is, positive, negative, and neutral. Sentiment analysis of the whole sentence 
+focused on the sentiment of the highest confident word. Previous research shows that the sentiments alone are 
+not enough to observe the feelings of the students. Different words express different sentiments in a sentence. 
+There is a need to extract the targets in a given sentence, which helps to find the sentiment towards those 
+targets. In this study, we proposed a novel model to find the targets of the given sentence using hybrid BILSTM 
+BIGRU techniques. We evaluate the model using the Facebook dataset. 
+
+Keywords: Learner Feedback, Educational System, Sentiment Analysis, Deep Learning, Sequence Modelling. 
+
+1 Introduction 
+Students' feedback can highlight the different issues of the students about the lectures. They 
+
+express their feelings or emotions about the lectures in the feedback. Students' feedback is the 
+teaching-learning process, equipping both the teachers as well as the students. Using students' 
+feedback lecturer changes the way of teaching [1]. Students' feedback mostly contains the emotions 
+of the students about their course and the instructor. One of the best methods used to classify the 
+emotions of the text is sentiment analysis. Sentiment analysis is used in various applications to 
+review the feedback. It is also powerful when it is applied to a specific domain [2]. Sentiment analysis 
+using deep learning gives better results compared to previous research. Deep learning automatically 
+captures the features with less training and also consumes less time. In the proposed work, we use 
+deep learning techniques to improve the result [3].  
+
+In our previous work, we found the polarity of the students, but that information alone is not 
+enough to observe the feelings of the students. Our proposed model is used to observe the overall 
+perception of the students in a clear manner. Our model contains three parts: i) Polarity detection: 
+Find the polarity of the students from students’ feedback using a multi-embedding and multi-head 
+attention fusion model. ii)Target extraction: Find the targets from the given sentence using the Bi-
+Integrated CRF model. iii) Target-based sentiment analysis: Merging the sentiment model + target 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+26 J Comput Intell Decis Sci. 2025;2(2):3 
+ 
+
+model to find the target and sentiments towards those targets. In this study, we focus only on the 
+target extraction using the Bi-Integrated CRF model. Given a sentence as input, it identifies the target 
+and returns a list containing all target terms. For example: I liked the staff, Mr. Joe, but not the subject 
+Embedded system, the targets for this sentence are {staff, MrJoe, subject, Embedded system}. We 
+evaluate the effectiveness of the approach using the dataset of the Computer Science department at 
+the University of Michigan, which contains a Facebook student group and also from a survey with the 
+students where students define their experience with classes. The final data set consists of 1,042 
+sentences written by both graduates and undergraduates, describing both classes and instructors [4]. 
+We compare the proposed model with the results of the BILSTM CRF model. The proposed model 
+gives better performance compared to the baseline model. 
+
+2 Related Works 
+Thinking of others has always been an important information. Student feedback is the 
+
+information used to equip the teacher as well as the students. Previous research on students’ 
+feedback based on a specific question called a reflective prompt [5]. The opinion of the students was 
+collected based on this prompt. Different aspects of the students cannot be observed through this 
+method. Another method to obtain the feedback is to ask questions directly to the students. In this 
+method, not all students will answer the questions [6]. Sentiment analysis is used to identify the 
+emotions described in a text. Previous researches concentrate on e-learning [7]. [8] argues that 
+students do not have the proper equipment to express their emotions. They also argue that emotion 
+of the students plays an important role in learning because positive emotions influence the students 
+to perform better, and negative emotions distract the students from learning. Previous methods have 
+some challenges in sentiment analysis, including i) similar lexical features show different sentiments, 
+ii) Different forms of writing but same sentiment, iii) subject name and professor can appear in 
+different forms, iv) sentiment lexicons are not sufficient for sentiment analysis v) feedback may not 
+be genuine [9][10]. In this study, we proposed a model which identifies the students’ sentiment 
+towards the courses and instructors as stated in their remarks. [28][29] Targets are words through 
+which opinions are expressed. It is very important because without knowing the target, the opinion 
+of the sentence has limited use.  
+
+Previous research based on target extraction has of limited results, and they are in need of 
+additional resources. The authors extracted the opinion words and the targets using double 
+propagation. Because they strongly believed that opinion words related to targets [11]. The work in 
+[12] proved that rich pooling functions extract the feature vector for the targets [13]. Combined word 
+embeddings with target embedding to learn the target in the sentence, and also used two networks 
+for the right and left context. This approach gave me the idea of an integrated approach, through 
+which we achieved better results [3]. There are several deep learning techniques that show 
+promising results on sentence-level or document-level sentiment analysis. The advantages of the 
+deep learning method are continuous learning of text. There are two steps in sentiment classification: 
+i) learn the word vectors continuously from using an embedding layer, ii) learn these resultant 
+vectors using deep learning techniques [14]. Sentiment analysis can be performed efficiently by 
+implementing deep learning models, including LSTM [15], BILSTM-CRF [3][16], Dropout layers [17], 
+Dense [18], BIGRU [19][20]. [3] BILSTM -CRF is used to extract the target from the given sentence 
+and classify the sentence according to the targets, and find the sentiments of classified sentences. It 
+gives better results compared to the previous methods [21]. Lample et al BILSTM CRF is the most 
+effective method used to classify sentences from social media and removes noisy and short messages 
+from social media messages [3]. Classifies the sentence in a better way, and it acts as a base for all 
+sentiments [22]. LSTM classifies long sentences and gives better results compared with the 
+traditional methods. [23] proved that the fusion model of BIGRU gives better results. [24] GRU learn 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):3 27 
+ 
+
+the dependencies in lengths of considerably large sequences in a better way. [25] GRU is a more 
+efficient method compared to LSTM and reduces the complexity of LSTM [26]. The dropout technique 
+is used to reduce overfitting on the training data [17]. They showed that dropout applied in hidden 
+layers gives better results. They also show that adding noise is not only suitable for unsupervised 
+feature training but also suited for supervised training features. 
+
+3 Experiments 
+
+3.1 Dataset 
+Sentences are extracted from a Facebook student group and also from a survey with the 
+
+students, where students define their experience with classes in the Computer Science department 
+at the University of Michigan. The data set consists of 1,042 sentences written by both graduates and 
+undergraduates, describing both classes and instructors. Sentences are annotated to identify the 
+course and instructors. Sentiments are labelled as positive, negative and neutral. If there is no explicit 
+sentiment and no evidence in the given sentence, then it is considered neutral. Table 1 shows the 
+students' feedback with the annotation that contains the class ID, instructors and sentiment towards 
+that statement are expressed. In total, the 1,042 sentences include 976 class mentions and 256 
+instructor mentions, for a total of 1,232 entities [27]. 
+
+Table 1: Students’ feedback on the annotation 
+
+S. Students feedback Annotation 
+
+No 
+
+1 The labs in EECS 588 are very engaging {class id=588,department=EECS, Sentiment=positive} 
+
+2 When I took 561, Rosita Williford was the {class id=561,instructor=Rosita Williford, 
+
+professor Sentiment=neutral} 
+
+3 I didn’t like EECS 417 {class id=417,department=EECS, Sentiment=negative} 
+
+ 
+
+3.2 Target Extraction 
+Sentences are preprocessed using the padding technique so that the maximum length of 
+
+sentences is fixed for the network. In which short sentences are padded with zero. In the proposed 
+work, the maximum length of each word of each sentence is set as seventy (70). The architecture of 
+the proposed work is given in Figure 2. 
+
+During training, sentence xt is given as an input to the Bi-Integrated model, which processes the 
+input in two directions. In both, the input is first passed through the embedding layer, which converts 
+the word vectors into to global word co-occurrence matrix using the Glove pretrained model. The 
+size of these embeddings is 300. It finds the words that are closely related to the target using the 
+probability ratio. The probability of the word vector depends on the probabilities of co-occurrence 
+rather than itself. A co-occurrence matrix can be found using the formula below, 
+
+𝑀 = ∑𝑣 𝑓(𝑍𝑖𝑗)(𝑤𝑖𝑤̃𝑗 + 𝑏𝑖 + 𝑏̃𝑗 − 𝑙𝑜𝑔(𝑍𝑖𝑗))
+2
+
+𝑖,𝑗=1                                                                              (1) 
+
+(𝑥⁄𝑥 ∝
+M is a co-occurrence matrix, f(Xij) is a weighting function calculated using 𝑓(𝑥) = { 𝑚𝑎𝑥)                                                                                                           
+
+1
+𝑤𝑖𝑤𝑗̃ words i and j,  𝑏𝑖𝑏𝑗̃ bias is used to restore the symmetry 𝑙𝑜𝑔( 𝑋𝑖𝑗) used to maintain the sparsity 
+of X. 
+
+
+
+28 J Comput Intell Decis Sci. 2025;2(2):3 
+ 
+
+The output of the embeddings is fed as input to the BILSTM layer. [3][16] Bi bidirectional LSTM 
+is used to find past and future context information. The input of the BILSTM is the sequence of word 
+vectors from the embedding layer, and it is processed along with the hidden states. BILSTM works in 
+both forward ℎ⃗⃗  ⃗
+
+𝑡 and backward direction ℎ⃖⃗ ⃗⃗𝑡. The output of the BILSTM is the concatenation of both 
+the LSTM, represented as yt. 
+
+ℎ⃗⃗  ⃗ = LSTM (wt, ℎ⃗⃗ ⃗⃗ ⃗⃗ ⃗⃗  𝑡 𝑡−1 )                                                                                                                     (2) 
+
+ℎ⃖⃗ ⃗⃗ = LSTM (wt ,ℎ⃖⃗ ⃗⃗ ⃗⃗ ⃗⃗ ⃗𝑡 𝑡+1  )                                                                                                      (3) 
+
+𝑦𝑡 = ( ℎ⃗⃗  ⃗ , ℎ⃖⃗ ⃗⃗𝑡 𝑡  )     (4) 
+
+The outputs of the BILSTM layers are scores for each target. The scores of the targets are given 
+to the BiGRU layer. [19][20] BiGRU is a combination of two GRUs (forward and backwards), which is 
+used to find the most relevant words using two gates: i) reset ignores the irrelevant words, and ii) 
+update gate updates the current value with the previous value if the score is larger. BiGRU is the 
+concatenation of forward  ⃗⃗ℎ⃗⃗ ⃗⃗ ⃗⃗  ⃗
+
+𝑡−1 and backwards ℎ⃖⃗ ⃗⃗ ⃗⃗ ⃗⃗ ⃗𝑡+1 represented using the following equation, 
+
+ℎ⃗⃗  ⃗ = GRU (wt, ⃗⃗ℎ⃗⃗ ⃗⃗ ⃗⃗  ⃗
+𝑡 𝑡−1 )      (5) 
+
+ℎ⃗⃗  ⃗
+𝑡 = GRU (wt, ℎ⃖⃗ ⃗⃗ ⃗⃗ ⃗⃗ ⃗𝑡+1)   (6) 
+
+𝑦𝑡  =  ( ℎ⃗⃗  ⃗
+𝑡  , ℎ⃖⃗ ⃗⃗𝑡 )                                                                                                                                        (7) 
+
+Dropout layers are added in both directions to remove the overfitting value after the BIGRU layer 
+[17]. The dropout range for this model is given as 0.01. The output from both directions will be 
+concatenated using the concatenation layer. The output of concatenation will be given to the dense 
+layer [18]. A dense layer is a collection of neurons in a neural network. Each neuron in the dense layer 
+receives input from all the neurons in the previous layer, so it is called a densely connected layer. The 
+output of the dense layer is represented using the following equation, 
+
+Ot = ReLU((yt  ×  wt) + bias)                                                                                       (8) 
+
+Where 𝑂𝑡  is the output of the dense layer, the weight matrix 𝑤𝑡 created by the layer, bias 
+vector created by the layer, and activation function ReLU passed as the activation argument. [3][16] 
+Conditional random fields find the probability of the input sequence with the tags. Let x be the input 
+and y be the tag, probability is computed using, 
+
+exp (𝑠𝑐𝑜𝑟𝑒(𝑥, 𝑦))
+𝑝(𝑦⁄𝑥) =                                                                                (9) 
+
+∑𝑦′ exp (𝑠𝑐𝑜𝑟𝑒(𝑥, 𝑦′))
+
+𝑛
+
+𝑠𝑐𝑜𝑟𝑒(𝑥, 𝑦) =  ∑𝑊𝑦𝑖−1,𝑦 . 𝐿𝑆𝑇𝑀(𝑥𝑖) + 𝑏                                                                              (10) 
+𝑖 𝑦𝑖−1𝑦  
+
+𝑖
+
+𝑖=0
+
+Where 𝑦′ ranges over all possible output sequences, W is the weight vector, and b is the bias 
+corresponding to the transition function 𝑦𝑖−1 to 𝑦𝑖 . 
+
+ 
+ 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):3 29 
+ 
+
+ 
+Figure 1: Bi-Integrated CRF Model 
+
+4 Results 
+4.1 Evaluation metrics 
+
+To measure the performance of the model, we used classification metrics that include Accuracy 
+(AC), recall (RL), precision (P), F1 score (F1) and misclassification rate. [confusion matrix]. 
+Performance of the model is evaluated using the count of test data correctly and incorrectly, using four 
+evaluation metrics, including NTP, NFP, NTN, NFN. True Positive Rate (NTP): Actual value is positive and 
+predicted value is positive, False Positive Rate (NFP): Actual value is positive and predicted value is 
+negative, True negative Rate (NTN): Actual value is negative and predicted value is negative, False 
+negative Rate (NFN): Actual value is negative and predicted value is positive. The standard evaluation 
+metrics can be defined as in equations (11) to (14), 
+
+𝑁𝑇𝑃 + 𝑁𝑇𝑁
+𝐴𝐶 =                                                           (11) 
+
+𝑁𝑇𝑃 + 𝑁𝑇𝑁 + 𝑁𝐹𝑃 + 𝑁𝐹𝑁
+
+𝑁𝐹𝑃
+𝑃 =   (12) 
+
+𝑁𝑇𝑁 + 𝑁𝐹𝑃
+
+ 
+
+
+
+30 J Comput Intell Decis Sci. 2025;2(2):3 
+ 
+
+𝑁𝑇𝑃
+𝑅𝐿 =         (13) 
+
+𝑁𝑇𝑃 + 𝑁𝐹𝑁
+
+P ×  RL
+𝐹1 = 2 ×                                                                          (14) 
+
+P +  RL
+
+4.2 Comparison with baseline model 
+For training and testing, we use the Facebook and students survey data set provided by Charles 
+
+Welch, Rada Mihalcea 2016 [27]. It contains 1,042 sentences, including 976 class mentions and 256 
+instructor mentions, for a total of 1,232 entities. The data set has 2571 unique words. 70% of the data 
+is used for training, and 30% is used for testing data. The input sentence is given to the embedding 
+layer glove (pretrained model). The size of the embedding is 300. The ’rmsprop’ optimization is used 
+to train the network with a learning rate of 0.5. And after each training epoch, the network is tested 
+on the validation data. For training the Bi-Integrated CRF model, ReLU is used as an activation 
+function, a dropout rate of 0.4, and the size of the word vectors is 300. We compared the proposed 
+model called the Bi-Integrated CRF model with the Bidirectional CRF evaluation criteria, including 
+Accuracy (AC), Precision (P), Recall (RL), and F1Score (F1) given below: 
+
+Table 2: Performance comparison of Bi-Integrated CRF with Bi-Directional CRF 
+
+Model Accuracy Precision Recall F1Score 
+
+Bi-Integrated CRF 98.40% 77.57% 75.55% 75.98% 
+
+Bi-Directional CRF [47] 98.76% 82.73% 81.44% 81.57% 
+
+It is observed that, compared with the baseline model, Bi-integrated CRF gives better results. 
+This indicates our approach outperforms the baseline model. 
+4.3 Comparison charts for evaluation metrics 
+
+The figure below compares the performance of the proposed approach, Bi-integrated CRF, with 
+the existing method, Bidirectional CRF. Figure 2 shows the accuracy, Figure 3 shows the precision, 
+Figure 4 shows the Recall, and Figure 5 shows the F1 score. 
+
+Accuracy
+98.80%
+98.70%
+
+Accuracy 98.60%
+98.50%
+
+(%) 98.40%
+98.30%
+98.20%
+
+ 
+Figure 2: Comparison chart using Accuracy 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):3 31 
+ 
+
+84.00%
+83.00%
+82.00%
+81.00%
+
+Precision 80.00%
+79.00%
+
+(%) 78.00%
+77.00%
+76.00%
+75.00%
+74.00%
+
+ 
+Figure 3: Comparison chart using Precision 
+
+82.00%
+81.00%
+80.00%
+79.00%
+
+Recall 78.00%
+77.00%
+
+(%) 76.00%
+75.00%
+74.00%
+73.00%
+72.00%
+
+ 
+Figure 4: Comparison chart using Recall 
+
+84
+
+82
+
+80
+
+78
+
+76
+
+74
+
+72
+
+70
+Bi-Integrated CRF Bi-Directional CRF 
+
+ 
+Figure 5: Comparison chart using F1 score - MISSING 
+
+5 Conclusion 
+This paper has presented a novel approach to improve the performance of the target extraction 
+
+model. The approach employs a Bi-Integrated CRF to extract the targets in the students’ feedback. 
+
+F1SCORE (%)
+
+
+
+32 J Comput Intell Decis Sci. 2025;2(2):3 
+ 
+
+We have conducted experiments to evaluate the proposed model using the Facebook datasets [27] 
+and compared it with the baseline model that employs Bidirectional-CRF [3]. Empirical results show 
+that our approach achieves state-of-the-art performance on the baseline model. In future studies, we 
+plan to explore the target for the given sentence and also find the sentiments for the same sentence. 
+Using statistical analysis, the overall observation of students will be found.   
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: K. Nirmala Devi; supervision and writing: 
+Radhika K; review and editing: Chandrasekaran Neelakandan. All authors reviewed the results and 
+approved the final version of the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Nasim Z, Rajput Q, Haider S. Sentiment analysis of student feedback using machine learning and lexicon-
+
+based approaches. In 2017 international conference on research and innovation in information systems 
+(ICRIIS); 2017 Jul 16, Langkawi, Malaysia; 2017. p. 1-6. 
+
+2. Tan S, Cheng X, Wang Y, Xu H. Adapting naive bayes to domain adaptation for sentiment analysis. In 
+European conference on information retrieval; 2009 Apr 6, Berlin; 2009. p. 337-349. 
+
+3. Chen T, Xu R, He Y, Wang X. Improving sentiment analysis via sentence type classification using BiLSTM-
+CRF and CNN. Expert Syst Appl. 2017;72:221-30. 
+
+4. Welch C, Mihalcea R. Targeted sentiment to understand student comments. In Proceedings of COLING 
+2016, the 26th international conference on computational linguistics: technical papers; 2016 Dec, Osaka, 
+Japan; 2016. p. 2471-2481. 
+
+5. Luo W, Liu F, Litman D. An improved phrase-based approach to annotating and summarizing student 
+course responses. In Proceedings of COLING 2016, the 26th International Conference on Computational 
+Linguistics: Technical Papers; 2016 Dec, Osaka, Japan; 2016. p. 53-63. 
+
+6. Stowell JR, Nelson JM. Benefits of electronic audience response systems on student participation, learning, 
+and emotion. Teach Psychol. 2007;34(4):253-8./ 
+
+7. Kechaou Z, Ammar MB, Alimi AM. Improving e-learning with sentiment analysis of users' opinions. In 2011 
+IEEE global engineering education conference (EDUCON); 2011 Apr 4, Amman, Jordan; 2011. p. 1032-
+1038. 
+
+8. Troussas C, Virvou M, Espinosa KJ, Llaguno K, Caro J. Sentiment analysis of Facebook statuses using Naive 
+Bayes classifier for language learning. In IISA 2013; 2013 Jul 10, Piraeus, Greece; 2013. p. 1-6. 
+
+9. Hussein DM. A survey on sentiment analysis challenges. J King Saud Univ Eng Sci. 2018;30(4):330-8. 
+10. Nazir A, Rao Y, Wu L, Sun L. Issues and challenges of aspect-based sentiment analysis: A comprehensive 
+
+survey. IEEE Trans Affect Comput. 2020;13(2):845-63. 
+11. Qiu G, Liu B, Bu J, Chen C. Opinion word expansion and target extraction through double propagation. 
+
+Comput Linguist. 2011;37(1):9-27. 
+12. Vo DT, Zhang Y. Target-dependent twitter sentiment classification with rich automatic features. In IJCAI; 
+
+2015 Jul 25, Singapore; 2015. p. 1347-1353. 
+13. Tang D, Qin B, Feng X, Liu T. Effective LSTMs for target-dependent sentiment classification. In Proceedings 
+
+of COLING 2016, the 26th international conference on computational linguistics: technical papers; 2016 
+Dec, Osaka, Japan; 2016. p. 3298-3307. 
+
+14. Katarya R, Arora Y. Capsmf: a novel product recommender system using deep learning-based text analysis 
+model. Multimed Tools Appl. 2020;79(47):35927-48. 
+
+15. Tai KS, Socher R, Manning CD. Improved semantic representations from tree-structured long short-term 
+memory networks. arXiv preprint arXiv:1503.00075. 2015 Feb 28. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):3 33 
+ 
+
+16. Lin BY, Xu FF, Luo Z, Zhu K. Multi-channel bilstm-crf model for emerging named entity recognition in social 
+media. In Proceedings of the 3rd Workshop on Noisy User-generated Text; 2017 Sep, Copenhagen, 
+Denmark; 2017. p. 160-165. 
+
+17. Hinton GE, Srivastava N, Krizhevsky A, Sutskever I, Salakhutdinov RR. Improving neural networks by 
+preventing co-adaptation of feature detectors. arXiv preprint arXiv:1207.0580. 2012 Jul 3. 
+
+18. Swamynathan M. Step 6–deep and reinforcement learning. In Mastering Machine Learning with Python in 
+Six Steps: A Practical Implementation Guide to Predictive Data Analytics Using Python; 2017 Jun 7, 
+Berkeley, CA; 2017. p. 297-344. 
+
+19. Liu J, Yang Y, Lv S, Wang J, Chen H. Attention-based BiGRU-CNN for Chinese question classification. J 
+Ambient Intell Humaniz Comput. 2019:1-2. 
+
+20. Yuan L, Zeng Z, Lu Y, Ou X, Feng T. A character-level BiGRU-attention for phishing classification. In 
+International Conference on Information and Communications Security; 2019 Dec 15, 2019. p. 746-762. 
+
+21. Lample G, Ballesteros M, Subramanian S, Kawakami K, Dyer C. Neural architectures for named entity 
+recognition. arXiv preprint arXiv:1603.01360. 2016 Mar 4. 
+
+22. Li D, Qian J. Text sentiment analysis based on long short-term memory. In 2016 First IEEE International 
+Conference on Computer Communication and the Internet (ICCCI); 2016 Oct 13, Wuhan, China; 2016. p. 
+471-475. 
+
+23. Zhang J, Liu FA, Xu W, Yu H. Feature fusion text classification model combining CNN and BiGRU with multi-
+attention mechanism. Future Internet. 2019;11(11):237. 
+
+24. Ortega-Bueno R, Rosso P, Pagola JE. UO UPV2 at HAHA 2019: BiGRU neural network informed with 
+linguistic features for humor recognition. In Proceedings of the Iberian languages evaluation forum 
+(IberLEF 2019). CEUR workshop proceedings, CEUR-WS; 2019 9, Bilbao,Spain; 2019. 
+
+25. Chung J, Gulcehre C, Cho K, Bengio Y. Empirical evaluation of gated recurrent neural networks on sequence 
+modeling. arXiv preprint arXiv:1412.3555. 2014 Dec 11. 
+
+26. Hochreiter S, Schmidhuber J. Long short-term memory. Neural Comput. 1997;9(8):1735-80. 
+27. Welch C, Mihalcea R. Targeted sentiment to understand student comments. In Proceedings of COLING 
+
+2016, the 26th international conference on computational linguistics: technical papers; 2016 Dec, Osaka, 
+Japan; 2016. p. 2471-2481. 
+
+28. Zhang M, Zhang Y, Vo DT. Gated neural networks for targeted sentiment analysis. In Proceedings of the 
+AAAI conference on artificial intelligence; 2016 Mar 5, 2016. Vol. 30, No. 1. 
+
+29. Tang D, Qin B, Feng X, Liu T. Effective LSTMs for target-dependent sentiment classification. In Proceedings 
+of COLING 2016, the 26th international conference on computational linguistics: technical papers; 2016 
+Dec, Osaka, Japan; 2016. p. 3298-3307.

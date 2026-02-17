@@ -1,0 +1,1310 @@
+﻿ARTICLE 
+
+Collaborative Mobility-Aware Resource Allocation Framework Using 
+Evolutionary Lion Optimization for Next-Generation Mobile Networks 
+
+V. Bakyalakshmi1, K. Brindha2 and Swamynathan Ramakrishnan3 
+
+1Assistant Professor, Department of Computer Science, Dr. N. G. P Arts and Science College, India. 
+2Assistant Professor, Department of Data Science, Sri Krishna Adithya College of Arts & Science, India. 
+3Amity Business School, Amity University, Dubai. 
+*Corresponding Author: V. Bakyalakshmi. Email: vbakyalakshmi@yahoo.co.in  
+
+Received: 26 July 2025; Accepted: 21 October 2025; Published: 22 December 2025 
+
+ABSTRACT: In terms of computer networking, Software-Defined Networking (SDN) provides a fast, 
+convenient, maneuverable, and cost-effective method for controlling network flow with a minimum investment 
+to reduce costs and increase benefits for massive mobile users. Future cellular networks face new challenges 
+given the explosive growth of mobile data traffic and the limited availability of spectrum resources. Particularly, 
+resource management in terms of load sensing and handover decisions in heterogeneous networks has become 
+critical. Recently, the Group Mobility Model (GMM) named MoMo was introduced to solve the handover 
+decision issue. The technology which distributes traffic among neighbouring Access Points (APs) to reduce 
+congestion over an area is called Resource management and through which the optimal use of resources can 
+be achieved by ensuring that wireless traffic has a proportionate share. To provide seamless and ubiquitous 
+wireless connectivity to mobile users, efficient mobility management is necessary to ensure Quality of Service 
+(QoS). In this study, an SDN-based Group Mobility Model (GMM) and resource management algorithm by 
+Mutation Lion Optimization Algorithm (MLOA) is proposed to alleviate handover and address issues arising 
+out of congestion in the network. The proposed method researches on the SDN controller in a global 
+perspective of the given network for achieving network conditions and the end user QoS requirements into 
+consideration. The proposed method shall be used dynamically for managing the flow of traffic and to support 
+a large number of mobile users in a given SDN with optimum resource utilization. SDN-GMM provides 
+transparent and efficient mobility support for ongoing sessions in each handoff scenario, thus eliminating 
+congestion overhead and packet loss related to mobile traffic, and as a result, improving QoS for mobile users. 
+The performance analysis through experiments depicts that the proposed model gives enhanced performance 
+when compared to that of the other conventional methods and also has proven efficiency in terms of other 
+parameters such as latency, cost of signaling, throughput and packet losses. The results from the simulation 
+show that the proposed method, GMM-MLOA, greatly improves the performance of handovers and maintains 
+optimum resource utilization and efficiency. 
+
+KEYWORDS: Group Mobility Management (GMM), Software Defined Network (SDN), Quality of Service (QoS), 
+Future Mobile Networks, Mutation Lion Optimization Algorithm (MLOA), MoMo model, handover. 
+ 
+
+1 Introduction 
+The rapidly growing mobile traffic in recent years is expected to reach 77.5 EB per month by 
+
+2022 and account for 71% of total internet traffic. The growth in mobile traffic is accelerating owing 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+87 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+to the advent of smartphones and the expansion of video services. Most of the network service 
+providers face more issues, such as heavy traffic and optimum resource allocation for complicated 
+services, which require more connectivity requirements and thus the need for maintaining a 
+seamless service amid diverse technologies and changing business requirements has become a 
+mandate [1-2]. The network operators are hence in need of an innovative solution for performance 
+improvement and efficiency, and also to minimize the operational cost and maintenance. In this 
+connection, 3GPP, the third-generation partnership project, have proposed a flat optimization 
+method such as the local IP and selective IP for traffic offload and IP flow mobility (IFOM) [3]. In order 
+to combat the limitations of current centralized mobility management systems, the IETF created the 
+Distributed Mobility Management (DMM) Working Group, which specifies an IP mobility 
+management architecture separating the data plane from the control plane [4-5]. Design and 
+development of flat architectures are being designed for improving the data plane, but still the cost 
+was not under control, and also the complexity of controlling the plane was increasing in orders [6]. 
+SDN combined with Network Functions Virtualizations (NFV) helps in decoupling the data and planes 
+to offer an altogether new architecture of network, which is tailor-made for improvement in 
+managing the control plane at both the backhaul as well as core network level [7]. In this way, the 
+network operator shall reduce the overall operational cost and maintenance for the deployment of 
+the service.  
+
+Particularly, the separation of the data transfer and control parts of a network device through 
+SDN can be successfully integrated with DMM technology in accordance with the method of 
+distributing mobility functions in DMM. DMM schemes to enhance network structure by dispersing 
+mobility functions have been researched. The DMM scheme can prevent the problem of excessive 
+traffic concentration on some specific devices (e.g., Home Agent (HA) and Local Mobility Agent 
+(LMA)) and improve the reliability of the network by solving the problem of service interruptions in 
+the case of device failure. Additionally, by moving the mobile anchor closer to the user, the packet 
+delivery path can be optimized, and effective interworking can be ensured with a content delivery 
+network. However, the disadvantage of the DMM scheme is largely overcome by reducing the burden 
+of signaling processing by designating a specific router as a centralized mobile anchor for some 
+sessions.  
+
+Group Mobility Model (GMM) is a mobility pattern described to predict the movement of the 
+mobile node in terms of continuous changeover time, such as velocity, location, and acceleration [8]. 
+In this model, each of the mobile nodes moves randomly together within the group using the Random 
+Waypoint approach [9] and Reference Point Group Mobility Pattern (RPGP) [10]. Both group mobility 
+and individual mobility are used DynnaMo approach, which provides a memory-related model. The 
+MoMo model combines a memory-based individual model and a flexible group model, which 
+increases the accuracy of the mobility model [11]. In order to combat the limitations of current 
+centralized mobility management systems, the IETF created the Distributed Mobility Management 
+(DMM) Working Group, which specifies an IP mobility management architecture separating the data 
+plane from the control plane. Due to the fact that existing protocols were designed at present levels 
+of network density, they will become a bottleneck in dense small cell deployments, as well as being 
+used more frequently to communicate mobile management messages. OF-SDNs are yet another 
+candidate solution which largely supports DMM features and exceeds the performance of 
+conventional solutions. There are numerous advantages of OpenFlow, which make it more familiar 
+in the use of SDN-based solutions. This includes reaching out to the plane, which is being forwarded, 
+that switches between the network and services. In this research paper, SDN SDN-based MoMo model 
+is proposed for future mobile networks to reduce the handover latency, signaling cost, and packet 
+drop ratio. OpenFlow-Based Group Mobility Model (GMM) with an integrated DS for mobile services 
+in SDNs. The contribution of the proposed SDN-based GMM work comprises of following steps: The 
+proposed model, the Mobility Management Module (MME) and the Admission Control module are 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 88 
+ 
+
+incorporated into the SDN architecture. The Mutation Lion Optimization Algorithm (MLOA) is 
+proposed to alleviate handover and solve the congestion issues. The proposed method addresses the 
+SDN controller view in a global perspective and the end user QoS requirements addicted to 
+consideration. In the handover phase, the grouping of each node is checked periodically based on two 
+conditions, namely, the Free State and Forced State processes. Finally, the performances such as 
+latency, throughput, cost of signaling and losses are then assessed for the proposed work, which 
+shows an improved efficiency than the existing GMM technique. 
+
+2 Literature Review 
+Duan et al [12] introduced SDN-enabled resource optimization techniques applied in futuristic 
+
+cellular networks. In the proposed method, three objectives were considered, namely the shortage of 
+spectrum through effective offloading of traffic, addressing of congestion in the network through 
+optimal load balancing across different cells and to achieve these while maintaining the expected 
+QoS. In this method, SDN enables partial offloading of data, and load balance techniques are 
+proposed. The technique identifies the opportunities in a global perspective for achieving optimum 
+resource allocation. The proposed method is analyzed for its performance in a simulated 
+environment. A framework is also proposed for the quantification of delays which are incurred by 
+virtue of SDN-enabled processing of data. Simulation results have shown that the proposed method 
+of load balancing considerably increases the extent of equilibrium and the stability of the network 
+when compared to that of baseline methods. The proposed method also shows a satisfactory result 
+in QoS while also achieving significant savings in the usage of cellular resources.  
+
+Yang and Kim [13] applied the SDN concept to the Distributed Mobility Management (DMM) 
+architecture to support efficient mobility management and to solve existing problems in centralized 
+mobility schemes. In our proposed scheme, we define a new mobility management entity for reducing 
+tunnelling overhead, supporting route optimization. To evaluate the proposed management scheme, 
+establish an analytical model and formulate signaling and packet-delivery costs. Nguyen et al [14] 
+proposed a DMM-enabled solution, which is based on the architecture of SDN, named S-DMM. The 
+proposed technique gives more advantages that including a deployment-free mobility component 
+which accesses the router and is independent of the underlying methods and flow-based mobile 
+support. The experimental results have proven that the S-DMM architecture is more stable and also 
+scalable when compared to conventional DMM. The results have also proven that the proposed S-
+DMM has zero penalty on performance (in terms of latency and delay) when compared to that of the 
+conventional DMM, yet the cost is a bit higher in management, which makes the proposed technique 
+best suitable for the upcoming 5G network.  
+
+Ko et al [15] introduced an SDN-based technique for DMM, which is different from the normal 
+network and terminal-based techniques. The proposed SDN-DMM is implemented on the location 
+and handover management in the centralized controller when the packet forwarding functions are 
+completely distributed in routers. This makes the SDN-DMM achieve packet forwarding 
+optimizations and also provides constant benefits, such as networks and to manage traffic effectively. 
+
+ Jeon et al [16] presented the Distributed Mobility Management (DMM) as a core idea for 
+tackling the hindrances which can impact present networks by presenting the deployment of various 
+points of anchors which are much closer to the terminus. There were various proposals for building 
+DMM-based solutions that focus on the merits of futuristic networks that aim to overcome limitations 
+in the present centralized MMS. A detailed analysis of the experimental results is carried out, and the 
+essential design constraints and options are also identified through the impact analysis on 
+performance. To add this, the recent advancements in DMM with the emerging techniques, such as 
+control and separation of the data plane, are also left for future study, which can impact the network 
+paradigm for the forthcoming generation.  
+
+
+
+89 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+Khan et al [17] analyzed the effect of various system variables on overall handover delays in 
+SDNized wireless networks and designed diverse mobility management approaches. The authors 
+have also studied various enhancements in handling delays caused during handovers in a couple of 
+aspects. (i) when the proactive MMA algorithm is implemented, and (ii) when the delegation of 
+partial control of MMA is implemented on the controller. To implement the proposed techniques in 
+an OF network, the authors also suggest different potential extensions for the OpenFlow-based 
+protocol. The experiments are performed in a large-scale demonstrator that exhibits proactive 
+results which are better than the reactive measures for the topologies that are smaller in size. 
+Further, the authors have suggested a Long-term Evolution (LTE) that has specific delegation control 
+as a case study.  
+
+In Park et al [18], SDN have been proposed to provide mobility management based on OpenFlow 
+(OMM) and a data structure for mobility services. Mobility Management Entities (MMEs) are 
+incorporated into one scheme to manage mobility functions and to organize a new data structure 
+based on Local Mobility Anchors (LMAs) and Mobile Access Gateways (MAGs). MAG and LMA entries 
+that have duplicate content are eliminated, and the entries that have duplicate content are integrated.  
+
+Cominardi et al [19] introduced the proxy-based Mobile IPV6 solution using the DMM, where it 
+serves as a definite baseline which explores DMM standards in SDN, which also include the detection 
+of DMM, its principles and challenges. Based on the investigation, the SDN-enabled DMM is evaluated 
+with the standard methods in both analytical and experimental views.  
+
+A Bursty Multi-node Handover scheme (BMH–DMM) architecture was used in Huang et al. [20] 
+to deal with this problem of mobile internet in part by utilizing partially distributed mobility 
+management. For a group that has n MNs, the proposed BMH-DMM method eliminates n sets of 
+control messages for handover from a group of them with one set of control messages. The analysis 
+shows that the amount of handover overhead does not increase so much when the number of MNs 
+switch over at the same time and place, which means the proposed BMH-DMM method can reduce 
+the bandwidth consumption for exchanging handover signaling messages by about 30%. 
+Additionally, using the proposed BMH-DMM scheme is less likely to cause network utilization, 
+handover delay, packet loss, and blocking during the handover process than using the individual 
+handover model. 
+
+Bi et al [21] introduced an SDN modelled Mobility Manager scheme to provide support for the 
+seamless domain handovers along with optimized routes. By decoupling SDN mobility management 
+from packet forwarding, SDN-MM provides route optimization and mobility control logic in an SDN 
+controller while excluding traffic redirection from it. An extensive set of signaling operations is 
+created by means of SDN-MM in order to provide transparent and efficient mobility support for 
+ongoing sessions in a handover scenario, which mitigates packet loss and unnecessary tunnelling 
+overhead, and accordingly improves QoS for mobile users. In SDN-MM, an SDN controller calculates 
+the most efficient end-to-end route in advance of handover and decides whether to migrate traffic to 
+the route based on the performance gain and the signaling overhead, which greatly increases 
+bandwidth utilization. The simulation results show that the proposed SDN-MM enhances handover 
+performance and ensures high resource utilization efficiency at the same time. 
+
+In order to evaluate the accuracy of this Make-Before-Break (MBB) method, Jaumard et al [22] 
+developed a near-optimal two-phase defragmentation process to assess its accuracy. To calculate the 
+best rerouting, e.g., with the least bandwidth requirements, first construct an exact optimization 
+model for the decomposition scheme. Second, demonstrate the best MBB reroute option if possible, 
+with the resultant re-routing; otherwise, demonstrate no option. Numerous experiments in many 
+datasets are performed in small and medium-sized datasets to compare the proposed method with 
+that of the two-phased models. Finally, the focus was made on the real-time scalability of the 
+proposed method in large and real-time data. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 90 
+ 
+
+ 
+
+3 Proposed System 
+In this study, an SDN-based Group Mobility Model (GMM) and a resource management algorithm 
+
+by Mutation Lion Optimization Algorithm (MLOA) are proposed to alleviate handover and to address 
+the network congestion issues. Group-based Mobility Management (GMM) method, named MoMo, is 
+proposed by utilizing Distributed Mobility Management (DMM) is introduced to SDN environment. 
+By using an SDN controller's global view of the network, the proposed algorithm takes network 
+conditions and end-user QoS requirements into account to achieve network quality. An SDN 
+controller's global view of the network and the optimization of resource allocation decisions are 
+handled by MLOA. The proposed system has four phases of operation, namely the Initial Phase, 
+Handover (HO) Preparation phase, Resource management phase, and HO Phase. 
+
+3.1 Network Model 
+
+ 
+Figure 1: SDN-based wireless heterogeneous network structure with control plane design 
+
+Consider Figure 1, where the environment of a network with cellular BSs and Wi-Fi access points 
+(APs) is shown. A licensed communication is used by BSs, while an unlicensed communication is used 
+by Access points, which are present in a random manner inside each cell. OpenFlow-based protocol 
+is followed in BSs, APs and switches for enabling ease of control to the SDN controller using a secured 
+channel. Assumption is made in such a way that every BS and the access points are strongly 
+connected with the OpenFlow switches as presented in Figure 1. For a given cellular network, these 
+switches are then co-located with the Base stations. Different from macro cell switches, the femtocell 
+directly connects to the internet, whereas macro cells are then a part of core networks. On the other 
+
+
+
+91 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+side, as far as the access points are considered, these switches will be found located inside the ISP 
+and every switch is then connected to many access points. All the switches will then be found 
+controlled in a centralized manner using SDN, and given the incidence that the proposed controller 
+is just a program which runs on the server, the same can be fixed anywhere inside the network, even 
+in a distant data center [23]. 
+
+In Figure 1, the OpenFlow switch is similar to an access point, except that its original control 
+functions have been transferred to the controller, leaving it with only data forwarding functionality, 
+which makes it equivalent to a pure data channel. Controlling devices, managing OpenFlow switches 
+and APs, and delivering flow tables is the function of the controller, which is a centralized and unified 
+logic control unit. Furthermore, in this architecture, the SDN controller is a fundamental component, 
+and as a fundamental component of the architecture, the SDN framework must be outlined and 
+discussed in depth. The controller application consists of two core modules, namely, Offload Manager 
+(OM) and Resource Management (RM). As part of the OM module, the service-level rules describe the 
+traffic features and characteristics that are necessary for the offload manager, such as the 
+corresponding IP address, port number, bit rate, and delay sensitivity, based on the TFT [22] and the 
+corresponding QoS descriptions. Additionally, the RM module features load measurement and mobile 
+management features, which execute algorithms to measure and balance cell load. The overall 
+framework of the proposed method is presented in Figure 2, where it is observed that SDN 
+applications can make use of the global view of access points to improve the management of a 
+network. 
+
+ 
+Figure 2: SDN-based offloading scenario and module framework 
+
+The focus of this section is to present SDN-based resource management algorithms for the 
+heterogeneous network shown in Figure 2. The aim is to solve spectrum shortage problems and 
+network congestion in cellular networks by enabling mobile data offloading and Resource 
+Management within the SDN. An SDN-based model in which partial offloading of data carried out is 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 92 
+ 
+
+depicted in the model. As the process indicates, here, only a part of the data is transferred to the Wi-
+Fi and the rest of the traffic is then transferred across various cellular networks. For further 
+elaboration, the network will be unable to satisfy the requirement due to delay and loss-sensitive 
+flow, as only part of the data is offloaded. It is shown in the latter part of this paper how the proposed 
+method can help in improving the performance by considering various requirements. The access 
+points in a network are then stripped of the management of control functions, and each of the access 
+points can be connected with different mobile terminals. There exists a module for managing a larger 
+volume of access points with the terminals in the network, and hence, a module for management is 
+deployed in the controller for managing the terminals. The proposed model is segregated into 
+sublevels: The access point management and the terminal management. The access point 
+management helps in discovering and configuring the APs, and in managing and collecting the 
+information in each of the access points. 
+
+3.2 Offloading Management 
+The proposed algorithm proceeds as follows: The data is queued in the OpenFlow switch and 
+
+waits for further processing; OM selects traffic flows based on delay thresholds when a mobile user 
+moves within the Wi-Fi coverage, where optimum traffic selection is made for offloading. Given the 
+fact that these Wi-Fi networks give high rates in the absence of QoS, which guarantees the unlicensed 
+bands, the privilege to offload traffic shall be made discrete. The aim is to minimize the usage of 
+cellular leverage using Wi-Fi connection as available while performing the same in the absence of any 
+performance degradation. The algorithm used for the appropriate flow is presented below.  
+
+Step 1: The OM collects the requirements of traffic flow from all users inside the Wi-Fi area, and 
+the resources required are calculated. It is assumed that every user has a certain demand for traffic 
+represented by ui and a rate of link lrw
+
+i  for the access points. Each user of the Wi-Fi has a resource 
+demand, calculated as w
+
+θi =  u w
+i/ri . The resources of Wi-Fi that are available for the offloading shall 
+
+be estimated based on the same.  
+Step 2: If Wi-Fi cannot transfer all the data before the deadline, partial offloading is performed. 
+
+The OM calculates the amount of data that can be transferred over the Wi-Fi network within the delay 
+tolerance threshold, and in other words, all the data will be offloaded to the Wi-Fi network. The delay 
+in tolerance of the threshold is calculated (Ths) and the volume of data represented by Vs which 
+are transferred in a given time frame Ths. With the effect of parallel transmission, the bursts are 
+subjected to arrive at the receiver's end in a similar time and thus which minimises the period of wait 
+that is required for every packet to reach the receiver’s device. Hence, the overall time delay for the 
+arrival of the packet is minimized using the offloading method.  
+
+Step 3: The Om then updates the records of the Wi-Fi sources available after the process of 
+offloading and QoS, which can be provided during the PDO and these records are kept for a while, 
+and it helps in quick decision making where a new flow of traffic arrives. The direction of the mobility 
+of a particular user is estimated by OM and assuming that a user enters and then leaves an offloading 
+region at two different times, namely tiin and tiout and as a consequence, the time of connection 
+would be tic  =  tiout −  tiin. Here, the tolerance of the delay threshold Ths will be equal to that of the 
+difference among the applications in a specific deadline, represented as Thd, which are then obtained 
+through TFT filters of the network model and hence the waiting time in the SDN process is 
+represented as D, which is explained in the following section. Let the amount of data transmitted be 
+represented as 𝑉𝑠. Let 𝑏𝑤1, 𝑏𝑤2 represent the bandwidths that are allotted by the cellular network 
+and the Wi-Fi network, respectively. As represented in [24], the smallest value among the 𝑡𝑖𝑟  and 
+Ths shall be used for the calculation of the present volume of data. Hence, 𝑉𝑠 is denoted as, 
+
+Vs = bw1Ths + bw2 min(tir, Ths)    (1) 
+
+
+
+93 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+3.3 Resource management 
+It consists of two modules: the resource sensing and the handover decision module, deployed at the 
+
+application layer. The management module installed in the controller is responsible for obtaining most of 
+the state information about each of the access points, and the load sensing module is mainly responsible 
+for obtaining the state information about the network. As a consequence of the AP weight algorithm 
+proposed in this paper, each AP is assigned a weight, and each terminal is switched according to the 
+weights. This balances network resource management by scheduling traffic and switching terminals 
+appropriately. An improved seamless handover technique and a method for resource management 
+handover are proposed, which can improve QoS and resource utilization of networks. 
+
+3.4 Seamless handover 
+The terminal handover delay and the network delay both occur in four steps: queuing, node 
+
+processing, transmission, and propagation, with delays in the first three steps being on the order of a few 
+microseconds and hence the proposed technique mainly concentrates on the delays due to handover and 
+propagation. The traditional handover method usually takes hundreds of milliseconds [25]. The handover 
+phase comprises two modules, such as the MMM and the admission controlling module and the dummy 
+and tiny cells are administered in the data planes for managing mobility. Furthermore, the Mobility 
+Management Entity (MME) is made to handle the HO procedure. In this way, the required mobility-related 
+data, for instance, the MN subscription data, mobile identification, and tackling trail area posts are 
+attained. The mobile node ID (MN_ID) and Evolving Node ID (EN_ID) parameters are employed for MNs 
+and small cells [25].In the proposed SDN–GMM, MoMo model, the number of evolving nodes in the 
+network contains a hexagonal architecture. This utilizes the Automatic Neighbour Relation (ANR) 
+function of evolving node count by which the neighbour relation tables are updated. Accordingly, the 
+proposed SDN-GMM MoMo model reaches the valid neighbour relations of the evolving new nodes from 
+these tables. In future mobile networks, the random-access channel (RACH) is utilized by MN to start the 
+session with an arbitrary access preamble throughout the primary movement of the connection process. 
+In addition, this preamble comprises the MN_ID. Next, the goal evolving node manages the OF table to 
+discover the arriving MN_ID. If this MN_ID is integrated into the table, an HO response is given to the MN. 
+This response specifies that the HO appeal is established by the evolving node. Then the connect process 
+continues amid the MN and evolving nodes with the equivalent message series as Downlink Shared 
+Channel (DL-SCH), uplink shared channel (UL-SCH).  
+
+We investigate delays observed in the HO training stage, and if no MN_ID was found, we transfer the 
+request to the controller, where a revision of the set of OF tables is made, and we proceed to the HO phase, 
+which describes how the nodes of the SD, where an intelligent and futuristic network lies. 
+
+3.5 Distance among nodes 
+The proposed SDN-GMM-based MoMo model defines the binding conditions related to physical 
+
+proximity between the nodes. The binding condition between two nodes, namely i and j are in the same 
+group, are referred to as group mates, and is defined as in equation (2), 
+
+dij ≤ Dc    (2) 
+
+Where, dij = dji is the distance between nodes i and j. If the binding condition in equation (2) is 
+satisfied, the two nodes are said to be distance Dc connected. Consider a group of size M. For the generic 
+node jth set of Mc
+
+j  group mates that the node detects as connected are called its connected set. The ratio 
+between Mc
+
+j  and the total number M of group mates is called the grouping factor ρj in equation (3), 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 94 
+ 
+
+Mc
+
+ρj = j
+    (3) 
+
+M−1
+
+The behaviour of node j depends on the Grouping Condition (GC) defined on ρj in equation (4), 
+
+ρj ≥ ρmin    (4) 
+
+where the grouping threshold ρmin is a tunable model parameter. Every node occasionally verifies 
+whether the GC is satisfied, with period ∇u based on the result, the node transitions into one of the two 
+subsequent states, like free and forced: Free State occurs when the GC is satisfied. Here, the node freely 
+moves based on the boundless mobility model; a forced state occurs when the GC is not satisfied. Here, 
+the node travels towards the closest group mate, k, is not part of its connected set, to improve its grouping 
+factor. The speed variables v and θ are set as in equations (5) and (6), 
+
+v = vmax    (5) 
+
+ 
+
+min(βkj, θold + γminTlu), ifβkj ≥ θold
+θ = {     (6) 
+
+max(βkj, θold − γmaxTlu), otherwise
+
+y −y
+Where, βkj = arctan ( k j) , (x , y  n  x , j  r  
+
+k−x k k) a d ( j y ) a e the locations of nodes k and j, 
+x j
+
+respectively, θold  is the previous direction, and Tluis the time elapsed until the final position update. 
+Equation (5) and Equation (6) ensure that the node j  attains the chosen group mate k in the shortest 
+probable time frame, while evading although destruction of the limitation on linear and angular speed. 
+The MN is still associated with the previous Access Points (AP) that detect the next AP. It established a 
+signal strength which is advanced than the predefined value of threshold and which is the uppermost on 
+all of the APs that are in range. The MNS throws back reports are messages where the next information 
+of the access point is conveyed to that of the first one. 
+
+ 
+
+Figure 3: Example of the function of the SDN – GMM Momo mobility model for a group of 8 nodes 
+
+Figure 3 a), the measured node (black node) is linked to three striped nodes in its collection, out of 
+its 7 group mates, and the grouping factor ρ = 3/7 calculated by the node is less than the necessary ρmin. 
+As a result, the node goes into forced mode and travels towards the nearby group mate among its 
+
+
+
+95 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+connected set. The node preserves this behaviour until the GCis is satisfied, evolving towards the situation 
+in 2. b), where the range of the connected set is increased to 4, corresponding to ρ ≥ ρmin. The behaviour 
+defined in the forced mode, which is moving towards the closest group mate not in the connected set, is 
+not the only possible one. More complex behaviours, e.g., moving towards the centroid of the points of 
+group mates, can be easily established in the framework of the proposed SDN–GMM MoMo model. Figure 
+3 demonstrates an instance of the application of the SDN–GMM MoMo model in the case of a group of 8 
+nodes with ρmin= 0.5. Lines between nodes indicate connectivity for the SDN–GMM MoMo mobility 
+model. In Figure 3a), the size 3 of the connected set for the black node leads to a grouping factor ρ = 0.43. 
+The GC is thus not satisfied, and the node moves to the closest group mate not part of its connected set, 
+until the condition is satisfied, as in the configuration shown in Figure 3b, in which Mc= 4, ρ = 0.57). 
+The definition of connectivity and the corresponding meaning of the threshold Dc is a key feature in 
+SDN –GMM MoMo. The replication for a flexible definition of the theory of association, rooted in the 
+application scenario: 
+
+ Connectivity related to radio communications - here, two nodes are associated either during a 
+straight radio connection (physical layer associativity), while they are in the radio range, or during 
+conveying, assured by additional group mates (network associativity); 
+
+ Connectivity is rooted in a radio-independent constraint - for instance, if a collection will become a 
+security team, material visibility may correspond to association: a team member will go freely until it is 
+capable of viewing a minimum count of team members, and travels nearer to the extra members of the 
+team when the circumstance is not met any longer. 
+
+3.6 Propagation delay 
+In the future, the flow table in the AP will still be updated when the terminal performs the handover, 
+
+but the terminal associated with the AP has changed. Through the management modules, all the 
+underlying APs and all the mobile terminal's state information are collected, including the parameters 
+affecting AP performance, and are passed to the load balancing module. The load balancing module 
+determines the merits of each AP's comprehensive performance by calculating its weight value according 
+to the state information collected by the algorithm, before deciding whether to hand over to that AP which 
+performs better. By using this handover method, you can balance the load on the network and improve 
+its efficiency. Assume that the signal strength S, then S is an average of the signal strength S by equation 
+(7). 
+
+S = αS̅t + (1 − α)S̅t−1    (7) 
+
+Where α is a smoothing factor. In this work, the AP historical traffic of the latest n unit time ti0 of 
+the AP is counted. The unit flow of the AP in the ith ti0 time by equation (8), 
+
+T R
+F x x
+
+T(i) i +F
+= i     (8) 
+
+ti0
+
+where T
+F x
+
+i  represent that the traffic which is sent by the access points in the ith unit under a specific 
+time ti0 of a queue where R
+
+F x
+i  represent traffic that is received in the access points of the ith unit in a 
+
+time ti0 of the queue. The throughput T̃ of the access point is presented in Eq. (9), 
+
+∑n
+
+T̃ i=1 T(i)
+=     (9) 
+
+n
+
+Based on the known number of APs and the historical performance of the AP, propose a resource 
+index based on the throughput and total number of AP terminals. The index of the resource is represented 
+as APk on a given network is Rk which is again computed using Eq (10), 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 96 
+ 
+
+T̃
+R k N
+
+k = + k     (10) 
+Tmax Nmax
+
+where T̃k  denote the old throughput in APk  for a given period of time. Tmax  represent the 
+maximum amount of throughput which the APk shall withstand. Nk denote the total terminals which 
+are associated with the APk . Tmax  and Nmax  are obtained through intense testing. Hence, it can be 
+concluded that these performance weights for an AP are then calculated through the Eq (11), 
+
+S
+w = k    (11) 
+
+Lk
+
+To sum up is calculated by equation (12), 
+
+αS̅
+w t+(1−α)S̅
+
+= t−1   
+T̃k N
+
++ k  (12) 
+Tmax Nmax
+
+In the resource balancing handover method, the controller monitors the AP through its global 
+perspective and allocates appropriate weights for each AP based on the collected AP state information. In 
+order to serve an STA, the controller picks the AP with the best performance according to the weight size 
+of the AP associated with a strong signal, a relatively small number of STAs, and a low historical 
+throughput. 
+
+ 
+3.6.1 Parameters affecting AP performance 
+
+As a general rule, the signal strength S of APs and the number of connected terminals N affect their 
+performance, and the stronger the received signal strength, the better the wireless link's transmission 
+quality. Handover based on signal strength has been traditional. The number of terminals associated with 
+each AP can provide some indication of the AP load, and in general, terminals associated with the same 
+content are selected. The potential of every terminal to contest for a channel is constant. If there is a large 
+number of access points associated with a given terminal and if the competition is mode, the impact will 
+also be great in the resultant collision in performance. 
+3.7 Mutation Lion Optimisation Algorithm (MLOA) 
+
+This is a population-based method of developing a weighted solution in SDN [26,27] wherein 
+the first step is to create a random population over the solution space, referred to as a ''Lion'' weight 
+value. In given 𝑵𝒗𝒂𝒓 dimension optimisation problems, a Lion is denoted as 𝑳𝒊𝒐𝒏 = [𝒙𝟏, … 𝒙𝑵 ]. 
+
+𝒗𝒂𝒓
+
+N-pop solutions are generated randomly in the search space for delay comparison and throughput 
+estimation of SDN networks. The percentile of N generated values of weight and traffic values are 
+selected in nomad lion representation based on equations (13 and 8) as factors to decide delay. The 
+remaining population are randomly segregated into P no of prides. Each of the solutions present in 
+this technique has a specific gender and remains constant throughout the optimisation, and to 
+eliminate the fact, in every pride, a percentage of S in the overall population is obtained in the last 
+step, which are known as females, and the rest are treated as males. In the process of searching, the 
+lion makes its best visit position. 
+3.7.1 Hunting 
+
+A few females hunt for prey (weight calculations, delay calculations, and throughput calculations) 
+and in a group in order to provide food to their pride, and these females do not use the same strategies to 
+catch the prey in every pride. A dummy sort of prey denoted as PREY is then considered at the centre and 
+represented as hunters (𝑷𝑹𝑬𝒀 =  ∑  𝒉𝒖𝒏𝒕𝒆𝒓𝒔( 𝒙𝟏, … 𝒙𝑵 )). During the process of hunting, the 
+
+𝒗𝒂𝒓
+
+hunters are often selected sequentially for the calculation of delay and for computing throughput in SDNs, 
+and each of the hunters who are selected on a dummy prey for which the procedure is defined at a later 
+
+
+
+97 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+part, as per the group which has selected the lion (where the weight of the access points and SDN) belongs. 
+During the whole process of hunting, in case a particular hunter moves its fineness through eq (12), the 
+PREY shall escape from the hunter, the fresh PREY is obtained through equation (13), 
+
+PREY′ = PREY + rand(0,1) × PerI × (PREY − Hunter)    (13) 
+
+Where the PREY is in the present position of the prey for the calculation of the weight of an access 
+point with any weight by altering the path to the nearest access point. The hunter will be in a new position, 
+who can now attack the prey, and the PI denote the percentile of the improvement in the level of fitness 
+of the hunter through the reduction in traffic and which increases the throughput of the access points. 
+The changed positions of the hunters belonging to both left as well as right wings are then generated as 
+in Eq. (14). 
+
+rand((2 × PREY − Hunter), PREY), (2 × PREY − Hunter) < 𝑃𝑅𝐸𝑌
+Hunter′ = {     (14) 
+
+rand(PREY(2 × PREY − Hunter)), (2 × PREY − Hunter) > 𝑃𝑅𝐸𝑌
+
+Here, PREY represent the present position of the selection of an alternate access point along with the 
+values of weight in SDN. Hunter denotes the present position, and the new position is represented as 
+Hunter'. The central hunter is generated using the Eq (15), 
+
+rand(Hunter, PREY), Hunter < 𝑃𝑅𝐸𝑌
+Hunter′ = {     (15) 
+
+rand(PREY, Hunter),          Hunter > 𝑃𝑅𝐸𝑌
+
+In both of the above equations, the function 𝑟𝑎𝑛𝑑(𝑎, 𝑏) is used to generate a number between the 
+interval [a, b], where a and b denote the upper and subsequent lower bounds. In the present work, we are 
+introducing the mutation operator for the generation of a and b. The mutation value adds new a ' and b’ 
+values via the upper and lower bounds based on the throughput speed of the terminals in the AP. It may 
+increase the weight value of the AP and reduce the traffic congestion of the AP in the network. 
+3.7.2 Moving Toward a Safe Place 
+
+As discussed in the previous section, in every pride, a few females go hunting. The females which 
+remain go towards one of the territories. As the territory related to every pride has a personal best (AP) 
+of each of the members, which assists in Mutation Lion Optimization (MLO) for saving the better solutions 
+obtained till time in due course of iteration and can be used as valuable and reliable input for solutions to 
+improve in MLOA. Hence, the new position of a female shall be obtained through the Eq (16). 
+
+Female Lion′ = Female Lion + 2D × rand(0,1){R1} + U(−1,1) × tan(θ) × D × {R2}  (16) 
+{R1}. {R2} = 0, ||{R2}|| = 1  
+
+In the above equation, Female Lion indicates the present position of the female lion, and D denotes 
+the distance in-between the position and a selected point, which is chosen by the tournament and 
+computed using equation (2). {R1} denote a vector that starts in a prior location of a female lion, i.e the 
+access points (AP), and it is directed towards the given AP’s position. It is seen that {R2} will be 
+perpendicular to that of {R1}. Initially, the success of a lion is defined if it improves its own personal best 
+in the last iteration of MLOA. Given a group P, the success of a lion ‘i’ (AP) at a given iteration ‘t’ is then 
+defined as in Eq(17). 
+
+1 Bestt t−1
+i,p < Besti,p
+
+S(i, t, P) = {
+0 Bestt      (17) 
+
+,p = Bestt−1
+i i,p
+
+where Bestt
+i,p indicate the best position of AP identified by a lion ‘i’ in an iteration ‘t’. A large number 
+
+of successes ensure that these lions have converged on an access point that has minimized traffic, which 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 98 
+ 
+
+is far away from the point of optimization. By using the success values of Kj(s)shall be computed using 
+Eq(18). 
+
+Kj(s) = ∑n
+i=1 S(i, t, P) j = 1, … P     (18) 
+
+In the above equation, n denotes the total count of lions in a given pride (AP), Kj(s) denote the total 
+count of lions in a given pride j that has an improvement in the fitness from the previous iterations. This 
+enables the size of the tournament to be adaptive for every iteration. It indicates that as the success rate 
+decreases, the size of the tournament will increase, which can lead to diversity. Hence, the size of the 
+tournament shall be calculated using Eq. (19). 
+
+TSize Kj(s)
+j = max (2, ceil ( )) , j = 1,2 … . P     (19) 
+
+2
+
+ 
+3.7.3 Moving Toward a Safe Place 
+
+As part of the Mutation Lion Optimization Algorithm (MLOA), roaming is a strong local search and 
+results in the Lion moving in the direction of the selected territory by x units, where x is a random number 
+with uniform distribution. 
+
+x~U(0, 2 × d)     (20) 
+
+In this equation, d represents the distance between the male lion's location and the selection of 
+territory, and angle ∗ represents the angle added to this direction to determine throughput history 
+when searching for a wider area AP. In equation (21), we calculate the new AP position of nomad lions 
+using the MLOA algorithm based on the nomad lions' adaptive roaming assist to avoid local optima. 
+
+Lion   f r n >
+Lion′ ij i  a dj pri
+
+ij = {     (21) 
+RANDj  else
+
+Here, Lioni denote the present position of AP of the ith lion, j denotes the dimension, and RANDj 
+
+denotes a uniform number allotted randomly in the range [0, 1], RAND indicate a randomly generated 
+vector in every search space, and pri indicate the probabilities which are computed for every lion which 
+is a nomad and are independently calculated using Eq(22). 
+
+(Nomadi−Best
+pri = 0.1 + min (0.5, nomad)
+
+)  i = 1,2, … , number of nomad lions     (22) 
+Bestnomad
+
+Nomadi and Bestnomad depict the computational cost of the present position of the ith lion (AP) 
+present in nomads, along with the corresponding best cost. 
+
+ 
+3.7.4 Mating 
+
+According to the equations below, following the selection of the female and male (s) for mating, the 
+new cubs are created. Mating is an essential process, as it involves a linear combination between parents 
+(APs). 
+
+(1−β)
+Offspringj1 = β × Female Lionj + ∑
+
+∑NR × MaleLioni
+j × Si    (23) 
+
+i=1 Si
+
+β
+Offspringj2 = (1 − β) × Female Lionj + ∑
+
+∑NR × MaleLioni
+j × Si    (24) 
+
+i=1 Si
+
+
+
+99 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+This formula is as follows: j = dimension, 𝑆_𝑖 =  1, otherwise it equals 0, NR = number of males in 
+the pride, β is a randomly generated number from a normal distribution with a mean value of 0.5 and a 
+standard deviation of 0:1, where any one of the offspring is randomly selected as a male and the other as 
+female. 
+3.7.5 Migration 
+
+For the migration operator, some females (AP with reduced traffic) were selected randomly and 
+became nomads. When selected females (APs with reduced traffic) are migrated from a pride and become 
+nomads, the new and old females are arranged according to the weight of the access points (APs). The 
+best females are then selected from the group in a random way and are distributed to the prides to fill the 
+empty place of a migrated female (AP with minimized traffic). This methodology helps to maintain the 
+entire population and shares information between the prides. 
+
+4 Results and Discussions 
+In this section, the HO presentation is evaluated with the proposed GMM- MLOA model and 
+
+estimates performance metrics including signaling cost, average HO latency, and packet loss rate. The 
+simulation result of the proposed method is estimated by using the NS-3 network simulator version 
+3.26. It is a discrete-event network simulator using the OpenFlow module. By using it, the HO process 
+is verified. The simulation environment comprises four sorts of network essentials with 50 MUs, 10 
+routers that manage 10 APs, 10 corresponding nodes, and 802.11n infrastructure. The simulation is 
+continuously performed 30 times to discover the regular outcomes. In order to evaluate the proposed 
+method of handover, the performance indicators that are more intuitive and which reflect the 
+performance of the network, such as cost of signaling, Latency in handover, throughput, packet loss, 
+rate of transmission and delay, are considered. 
+
+4.1 Signalling cost 
+It is defined as the HO update of mobility binding acquired during the processing of Hos. Therefore, 
+
+the mobile management protocol will cost more when signaling messages are delivered via wired and 
+wireless networks, depending on the number of hops, the dimension of the message, and the weighting 
+scale, respectively. The proposed SDN-GMM, the global assessment makes provision for the SDN 
+controller to gain agents' routers and for managing the signal messages in processing of MN’s HO. Both 
+the MME and the MODULE are expected to hold the mobility administration and to handle MN’s 
+registration to have GMM service. The signaling cost for the proposed SDN-GMM is represented as in 
+Eq. (25). 
+
+ℎ𝐿𝑖𝑛𝑓𝑜𝑟𝑚ℎ𝑜𝑝𝑀𝑁−𝑟𝑜𝑢𝑡𝑒𝑟
+
+𝑐𝑜𝑠𝑡 = 𝜇 [ +𝜌𝐿ℎ𝑖ℎ𝑜𝑝𝑟𝑜𝑢𝑡𝑒𝑟−𝑟𝑜𝑢𝑡𝑒𝑟 ]    (25) 
++𝜌𝐿ℎ𝑎𝑐𝑘ℎ𝑜𝑝𝑟𝑜𝑢𝑡𝑒𝑟−𝑟𝑜𝑢𝑡𝑒𝑟
+
+Where h and ρ are wired, and wireless link’s weight factor, µ is the arrival rate of each MN via 
+router, Linform refers to the dimension of handover message, Lhi and Lhacks indicate the dimension of HI 
+and Hack message respectively, hop specifies the connection between two nodes. Figures 4 and 5 
+portray the difference in the signaling cost based on the diverse velocity of MNs and with varying hop 
+counts. It is seen that the velocity of MN is increased from 5 to 30 m/s, and when the hop count is set 
+between 1 and 10, the radius of the corresponding binding message of the proposed GMM-MLOA is 
+smaller when compared to conventional approaches such as CMM [28], S-hDMM [29], GMM [30], and 
+SDN-GMM. The proposed technique achieves 187, 243, 300, 357, 419, and 498 signaling costs per 
+packet versus mn’s velocity from 5 to 30 m/s. Similarly, considering the signaling cost versus hop count 
+and it shows that the proposed method attains 390 signaling cost per packet from 10 hop count, 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 100 
+ 
+
+whereas other methods, such as CMM, S-hDMM, GMM, and SDN-GMM, have a higher signal cost of 807, 
+784, 677, and 439, respectively, per packet from 10 hop count. 
+
+900
+800
+700
+600 CMM
+500
+
+S-hDMM
+400
+300 GMM
+
+200 SDN-GMM
+100
+
+GMM-MLOA
+0
+
+5 10 15 20 25 30
+
+Velocity of MN(m/seonds)
+
+ 
+Figure 4: Handover signaling cost versus velocity of MNs 
+
+900
+800
+700
+600 CMM
+500
+
+S-hDMM
+400
+300 GMM
+200 SDN-GMM
+100
+
+0 GMM-MLOA
+
+1 2 3 4 5 6 7 8 9 10
+
+Number of hop count
+ 
+
+Figure 5: Handover signaling cost versus the number of hops count 
+
+1400
+
+1200
+
+1000
+CMM
+
+800
+S-hDMM
+
+600
+GMM
+
+400
+
+200 SDN-GMM
+
+0 GMM-MLOA
+
+100 150 200 250 300 350
+
+Radius of Cell(m)
+ 
+
+Figure 6: Handover signaling cost versus radius of cells 
+
+Signalling Cost(Packet) Signalling Cost(Packet) Signalling Cost(Packet)
+
+
+
+101 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+The result of the radius of the cell is analyzed, and it is found that as the radius gets larger, the HO 
+occurrence rate gets lowered occurrence rate. In this analysis result, the proposed GMM-MLOA model 
+attains an improved output of 92 signaling cost efficiency for a 350 radius of cell in metres, whereas 
+other methods such as CMM, S-hDMM, GMM, and SDN-GMM give higher signaling costs of 472, 315, 
+284, and 185 for a 350 radius of cell, respectively. The comparison graph of handover signaling loss 
+versus radius of cell using different techniques is revealed in Figure 6. 
+
+4.2 Handover latency 
+The HO latency is defined as the time it takes for MN to accept the first packet from its novel 
+
+mobility router from the moment it begins the HO process. In order to move a packet over wired or 
+wireless links, the delay time must be taken into account, including propagation time, transmission 
+delay, and queueing time. A packet sent from u to v is modelled and which involves the hop count 
+distance from the source to the destination. Assuming the wired links are steady and reliable, the packet 
+delay time is represented by equation (26), where p is the packet size. 
+
+𝑆𝑚𝑠𝑔
+𝐷𝑡𝑚,𝑛 = ℎ𝑜𝑝𝑐𝑜𝑢𝑛𝑡 ∗ ( + 𝐿 + 𝑊 )
+
+𝐵𝑊 𝑝𝑙 𝑎𝑞     (26) 
+𝑏𝑛𝑑
+
+ 
+Where  Smsg , Lpl , hop count, BWbnd  and Waq  are the average message volume, latency of 
+
+propagation,  
+Hop distance and the bandwidth accessible, and the average delay in the queue in each router. 
+
+From Figure 7, the proposed GMM-MLOA model achieves 75 ms of handover latency for an average 
+queuing delay time of 50ms, whereas other methods, such as S-hDMM, GMM, and SDN-GMM, give 
+higher latencies of 325ms, 275ms, 185ms, and 102ms for an average queuing delay time of 50ms, 
+respectively. The proposal SDN-GMM method exhibits lower HO latency than the traditional handover 
+technique, which increases the average queuing delay at each router. 
+
+350
+
+300
+
+250
+CMM
+
+200
+S-hDMM
+
+150
+GMM
+
+100
+SDN-GMM
+
+50
+GMM-MLOA
+
+0
+10 20 30 40 50
+
+Average Queuing Delay(ms)
+
+ 
+Figure 7: Handover delay versus average queuing delay 
+
+4.3 Throughput 
+Throughput (𝑡ℎ𝑟𝑡) is defined as the complete volume of data which is transmitted per session 
+
+(𝑆𝑎𝑑 ∗ 𝐿𝑢) in the particular session’s delivery time, and the same is represented as in Eq(27). 
+
+Handover Latency(ms)
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 102 
+ 
+
+𝑡ℎ𝑟𝑡𝑠𝑑𝑛−𝑔𝑚𝑚 = 𝑆𝑎𝑑 ∗ 𝐿𝑢⁄[(𝑃𝐷𝑇𝑠𝑑𝑛−𝑔𝑚𝑚 + (𝑆𝑎𝑑 − 1) ∗ 𝜌) + 𝑇𝐻𝑂−𝑠𝑑𝑛−𝑔𝑚𝑚 ∗ 𝑡𝐻𝑂−𝑛𝑜]    (27) 
+
+Here, 𝑆𝑎𝑑 defines the mean count of packets that are transmitted per session and 𝐿𝑢 gives the 
+average size of a packet from a given node to MNs, and the packet-packet time is represented as 
+𝑃𝐷𝑇𝑠𝑑𝑛−𝑔𝑚𝑚 gives the time taken for the delivery of 𝐿𝑢  number of packets. Packet delivery time 
+(PDT) is the time it takes packets to make it from a given node to the MNs, calculated by equation (27). 
+𝑇𝐻𝑂−𝑠𝑑𝑛−𝑔𝑚𝑚 is computed as a ratio in the HO μ and the mean incoming charge of the session. 
+
+30000
+
+25000
+
+20000
+CMM
+
+15000 S-hDMM
+
+GMM
+10000
+
+SDN-GMM
+
+5000 GMM-MLOA
+
+0
+20 40 60 80 100
+
+Average no.of transmitted  packets
+
+ 
+Figure 8: Throughput versus count of packets in a session 
+
+The comparison based on throughput performance of the proposed method and the conventional 
+methods is shown in Fig. 9. Here, the packets are routed for a count of packets from 20 to 100. It 
+shows the proposed method has a better throughput of 26987 Kbyte/sec, whereas other methods, 
+such as S-hDMM, GMM, and SDN-GMM, give reduced throughput of 16100 Kbyte/sec, 19875 
+Kbyte/sec, 22457 Kbyte/sec, and 24572 Kbyte/sec for 100 transmitted packets, respectively. 
+
+25
+
+20 CMM
+
+S-hDMM
+
+15 GMM
+
+SDN-GMM
+
+GMM-MLOA
+10
+
+10 20 30 40 50
+
+Simulation time (Seconds)
+
+ 
+Figure 9: Network throughput comparison as a function of the simulation time 
+
+Throughput (Mbps)
+Throughput (Kbytes/sec)
+
+
+
+103 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+Figure 9 illustrates how network throughput and resource management performance can be 
+compared. As can be seen from Figure 9, the network throughput trend follows the resource 
+management extent outlined in Figure 8. Hence, the resource will be more efficiently utilized when it is 
+managed within the network, thus resulting in a higher network throughput of 23.32 Mbps, where the 
+conventional methods, such as S-hDMM, GMM, and SDN-GMM, have significantly lesser throughput for 
+a given simulation time of 50 seconds. 
+
+4.4 Packet loss 
+ In MN, during handover, the packet loss rate is proportional to either the delay in HO or the rate at 
+which packets arrive per second during the HO procedure. Suppose that Sad denote the mean count of 
+the packets that are delivered in a session, then the loss rates of the proposed SDN-GMMHO are 
+computed using Eq. (28). 
+
+𝐶𝑠𝑑𝑛−𝑔𝑚𝑚 = 𝜑 ∗ 𝑆𝑎𝑑 ∗ 𝑇𝐻𝑂−𝑑𝑒𝑙𝑎𝑦−𝑠𝑑𝑛−𝑔𝑚𝑚    (28) 
+
+Whereas 𝑇𝐻𝑂−𝑑𝑒𝑙𝑎𝑦−𝑠𝑑𝑛−𝑔𝑚𝑚 denote the average HO delay of the proposed SDN-GMM method. 
+
+400
+
+350
+
+300
+
+250 CMM
+
+200 S-hDMM
+
+150 GMM
+
+100 SDN-GMM
+
+50 GMM-MLOA
+
+0
+0.12 0.16 0.2 0.24 0.28
+
+Mobility Rate
+
+ 
+Figure 10: Packet loss versus mobility rate 
+
+According to Figure 10, the proposed method and the traditional methods result in improvements 
+to HO rates of 0.12 to 0.28. The count of missing packets by the proposed method is partly the same as 
+that by the existing method. The packet loss of the proposed method was 79, which is comparatively 
+less than that of the existing methods, such as S-hDMM, GMM, and SDN-GMM, which have lesser 
+throughput values of 377, 287 and 192, respectively, in a mobility rate of 0.28. 
+
+4.5 Transmission rate 
+In addition, the conventional methods show a decreased transmission rate and hence maintain a 
+
+state of disconnection, whereas in the proposed method, the rate of handover is minimized, keeping 
+the connection stable. 
+
+Packet Loss
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 104 
+ 
+
+12
+
+10
+CMM
+
+8 S-hDMM
+
+GMM
+
+6 SDN-GMM
+
+GMM-MLOA
+
+4
+0 5 10 15 20 25 30
+
+Simulation time(Seconds)
+ 
+
+Figure 11: Transmission rate for methods 
+
+Figure 11 illustrates the transmission rate comparison of the proposed and conventional methods 
+in terms of simulation time. Figure 11, when the HO rate is improved from 0 to 35, the transmission 
+rate achieved by the proposed method is increased than the other methods. The proposed technique 
+gives a higher transmission rate of 10.23 Mb/s, whereas other methods, such as S-hDMM, GMM, and 
+SDN-GMM, give lesser throughput of 8.22 Mb/s, 8.78 Mb/s, 9.62 Mb/s, and 9.95 Mb/s against the 
+simulation time of 30 seconds. 
+
+4.6 Delay 
+From Figure 12, the terminal starts to move from t = 0 s to 50 s. At this point in time, a handover is 
+
+done where the delay is kept increasing in conventional methods and finally disconnected, whereas the 
+proposed method found a stable state and had only a 6 ms delay in transmissions. 
+
+14
+
+12
+CMM
+
+10 S-hDMM
+
+GMM
+
+8 SDN-GMM
+
+GMM-MLOA
+6
+
+0 5 10 15 20 25 30
+
+Simulation time(Seconds)
+ 
+
+Figure 12: Delay results comparison of methods 
+
+Figure 12 illustrates the delay results comparison of the proposed method and the traditional 
+methods in terms of simulation time. The proposed technique has a lesser delay of 10.18 ms, whereas 
+other methods, such as S-hDMM, GMM, and SDN-GMM, give improved delays of 12.49 ms, 11.87 ms, 
+11.21 ms, and 10.71 ms against the simulation time of 30 seconds, respectively. 
+
+Delay(ms) Transmission Rate(Mb/Seconds)
+
+
+
+105 J Comput Intell Decis Sci. 2025;2(2):8 
+ 
+
+5 Conclusion and Future Work 
+In this study, an architecture for an SDN-enabled mobility model for seamless handovers and 
+
+optimum resource management is proposed using the SDN paradigm. The Mutation Lion 
+Optimization Algorithm (MLOA) is used for obtaining a global view of the network, which makes it 
+more important to make decisions in an effective and optimal usage of resources. In case of seamless 
+handovers, the MLOA are introduced for reducing the propagation of data through the early release 
+of the OpenFlow table. In cases of optimum resource management and handovers, the proposed 
+technique uses weights for Access Point, which are calculated based on factors like throughput, delay, 
+and distance. Group-based Mobility Management (GMM) method, named MoMo, is proposed by 
+utilizing Distributed Mobility Management (DMM) is then introduced to SDN. In order to prove the 
+efficiency, the proposed method is compared with that of the conventional handover techniques over 
+the Network Simulator 3(NS3) simulation environment. The results of the proposed method and 
+existing methods are measured via metrics like signaling cost, handover latency, throughput, packet 
+loss, transmission rate, and delay. In future, the proposed SDN-GMM method can be practical in the 
+vehicular setting. The results show that SDN-based solutions represent a more effective approach for 
+handling data traffic with high delay tolerance, as well as being a suitable enabling technology for 
+introducing intelligence into wireless networks and providing operators with fine-grained control. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: V. Bakyalakshmi; supervision and writing: K. 
+Brindha; review and editing: Swamynathan Ramakrishnan. All authors reviewed the results and 
+approved the final version of the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Brief OS. OpenFlow-enabled SDN and network functions virtualization. Open Netw Found. 2014;17:1-2. 
+2. Zuniga JC, Bernardos CJ, De La Oliva A, Melia T, Costa R, Reznik A. Distributed mobility management: A 
+
+standards landscape. IEEE Commun Mag. 2013;51(3):80-7. 
+3. Sankaran CB. Data offloading techniques in 3GPP Rel-10 networks: A tutorial. IEEE Commun Mag. 
+
+2012;50(6):46-53. 
+4. Seite P, Liu D, Yokota H, Korhonen J, Chan HA. Requirements for distributed mobility management. IETF 
+
+RFC7333. 2014. 
+5. Chan HA, Yokota H, Xie J, Seite P, Liu D. Distributed and dynamic mobility management in mobile internet: 
+
+current approaches and issues. J Commun. 2011;6(1):4-15. 
+6. Ahn CW, Chung SH. SDN‐Based Mobile Data Offloading Scheme Using a Femtocell and WiFi Networks. Mob 
+
+Inf Syst. 2017;2017(1):5308949. 
+7. Hakiri A, Gokhale A, Berthou P, Schmidt DC, Gayraud T. Software-defined networking: Challenges and 
+
+research opportunities for future internet. Comput Netw. 2014;75:453-71. 
+8. Kumar S, Agrawal GS, Sharma SK. Impact of mobility models on MANETs routing protocols. INROADS-
+
+IJJNU. 2014;3(1s):142-7. 
+9. Kumar S, Agrawal GS, Sharma SK. Impact of mobility on MANETs routing protocols using group mobility 
+
+model. Int J Microw Wirel Technol. 2017;7(2):1-2. 
+10. Guimarães DA, Frigieri EP, Sakai LJ. Influence of node mobility, recharge, and path loss on the optimized 
+
+lifetime of wireless rechargeable sensor networks. Ad Hoc Netw. 2020;97:102025. 
+11. De Nardis L, Di Benedetto MG. MoMo: a group mobility model for future generation mobile wireless 
+
+networks. arXiv preprint arXiv:1704.03065. 2017 Apr;9. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):8 106 
+ 
+
+12. Duan X, Akhtar AM, Wang X. Software-defined networking-based resource management: data offloading 
+with load balancing in 5G HetNet. Eurasip J Wirel Commun Netw. 2015;2015(1):181. 
+
+13. Yang H, Kim Y. SDN-based distributed mobility management. In 2016 international conference on 
+information networking (ICOIN); 2016 Jan 13, Kota Kinabalu, Malaysia; 2016. p. 337-342. 
+
+14. Nguyen TT, Bonnet C, Harri J. SDN-based distributed mobility management for 5G networks. In 2016 IEEE 
+Wireless Communications and Networking Conference; 2016 Apr 3, Doha, Qatar; 2016. p. 1-7. 
+
+15. Ko H, Jang I, Lee J, Pack S, Lee G. SDN-based distributed mobility management for 5G. In 2017 IEEE 
+International Conference on Consumer Electronics (ICCE); 2017 Jan 8, Las Vegas, NV; 2017.p. 116-117. 
+
+16. Jeon S, Figueiredo S, Aguiar RL, Choo H. Distributed mobility management for the future mobile networks: 
+A comprehensive analysis of key design options. IEEE Access. 2017;5:11423-36. 
+
+17. Khan MA, Dang XT, Doersch T, Peters S. Mobility management approaches for SDN-enabled mobile 
+networks. Ann Telecommun. 2018;73(11):719-31. 
+
+18. Park PW, Kim SM, Min SG. Openflow-based mobility management scheme and data structure for the 
+mobility service at software defined networking. Int J Distrib Sens Netw. 2016;12(3):3674192. 
+
+19. Cominardi L, Giust F, Bernardos CJ, De La Oliva A. Distributed mobility management solutions for next 
+mobile network architectures. Comput Netw. 2017;121:124-36. 
+
+20. Huang CM, Dao DT, Chiang MS. A Bursty Multi-node Handover scheme for mobile internet using the 
+partially Distributed Mobility Management (BMH–DMM) architecture.Telecommun Syst. 2018;69(1):113-
+30. 
+
+21. Bi Y, Han G, Lin C, Guizani M, Wang X. Mobility management for intro/inter domain handover in software-
+defined networks. IEEE J Sel Areas Commun. 2019;37(8):1739-54. 
+
+22. Jaumard B, Duong HQ, Armolavicius R, Morris T, Djukic P. Efficient real-time scalable make-before-break 
+network re-routing. J Opt Commun Netw. 2019;11(3):52-66. 
+
+23. Duan X, Akhtar AM, Wang X. Software-defined networking-based resource management: data offloading 
+with load balancing in 5G HetNet. Eurasip J wirel commun netw. 2015;2015(1):181. 
+
+24. Sou SI. Mobile data offloading with policy and charging control in 3GPP core network. IEEE Trans Veh 
+Technol. 2013;62(7):3481-6. 
+
+25. Yazdani M, Jolai F. Lion optimization algorithm (LOA): a nature-inspired metaheuristic algorithm. J 
+Comput Des Eng. 2016;3(1):24-36. 
+
+26. Wang B, Jin X, Cheng B. Lion pride optimizer: An optimization algorithm inspired by lion pride behavior. 
+Sci China Inf Sci. 2012;55(10):2369-89. 
+
+27. Bilen T, Canberk B, Chowdhury KR. Handover management in software-defined ultra-dense 5G networks. 
+IEEE Netw. 2017;31(4):49-55. 
+
+28. Balfaqih M, Balfaqih Z, Shepelev V, Alharbi SA, Jabbar WA. An analytical framework for distributed and 
+centralized mobility management protocols. J Ambient Intell Humaniz Comput. 2022;13(7):3393-405. 
+
+29. Wie S. SDN-based Hybrid Distributed Mobility Management. J Inf Commun Converg Eng. 2019;17(2). 
+30. Kumar S, Agrawal GS, Sharma SK. Impact of mobility on MANETs routing protocols using group mobility 
+
+model. Int J Microw Wirel Technol. 2017;7(2):1-2.

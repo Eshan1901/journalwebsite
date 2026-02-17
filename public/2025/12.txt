@@ -1,0 +1,597 @@
+﻿ARTICLE 
+
+Enhanced User Authorization Framework in Cloud Environments Using 
+Weighted Proximity-Based Trust Evaluation 
+
+D. Nethra Pingala Suthishni1,*, K. Prabavathy2, and Balusamy Nachiappan3 
+
+1Assistant Professor, Department of Information Technology, Avinashilingam Institute for Home Science and Higher 
+Education for Women, Coimbatore, India. 
+2Assistant Professor and Head, Department of B.Sc., (Data Science and Analytics), Sree Saraswathi Thyagaraja College, 
+India. 
+3Tech Lead, Prologis, USA. 
+*Corresponding Author: Nethra Pingala Suthishni. Email: nethra_it@avinuty.ac.in  
+
+Received: 20 July 2025; Accepted: 15 October 2025; Published: 22 December 2025 
+
+ABSTRACT: Cloud computing is generally a service-based technology that offers technology services such as 
+IaaS, PaaS, and SaaS through the internet. Since its inception, cloud computing has rapidly spread and is used 
+in many web applications. The main advantage of these lies in the fact that the resources and services are 
+accessible to thin clients. Although it seems advantageous, there are many vulnerabilities possible in terms of 
+cyber threats and different attacks. Various levels of protection-based solutions are offered for cloud security, 
+and access control is one of them. This paper presents a novel access control model for enhancing the security 
+of the cloud. The proposed model uses the trust model for authorizing users to access different resources. The 
+KNN model has recently been proposed for the prediction of trust, but the sensitivity in the present method for 
+classifying the choices is not stable, especially when an imbalanced situation in the data arises. It is also noticed 
+that the exponential distance, if chosen as the scheme for weighting, offers better classification performance 
+and also lowers the variance. In this paper, a weights K-means nearest neighbor is proposed for the prediction 
+of trust values of the user. The results have demonstrated that the proposed method is more efficient with 
+respect to throughput and cost, and delay.    
+
+KEYWORDS: Access control-nearest neighbor, cloud environment, and trust value. 
+ 
+
+1 Introduction 
+Cloud computing is the brainchild of distributed computing that gives services to the 
+
+stakeholders I different aspects. The objective of these systems is to give a scalable and online-
+demand-based service for the users at a low cost. The users have a lower overhead of installation of 
+high-end computational devices. Also, the users do not need to procure the sophisticated 
+infrastructure for high-end processing [1,2]. The important types of services that are offered through 
+the cloud are Infrastructure as a Service, Platform as a Service, and Software as a Service. All these 
+services are deployed in different models. There are four models in which these services are usually 
+deployed, which are categorized as private, public, community, and cloud. One of the main reasons 
+for organizations to move their business to the cloud is the ownership of data and processes. There 
+may be a loss of control over the data and processes if used in a cloud environment. Further, these 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+16 J Comput Intell Decis Sci. 2025;2(2):2 
+ 
+
+are vulnerable to various attacks and threats. It is a common fact that both the organization and the 
+cloud service provider must have trust in the users before starting the services. They should have a 
+mutual trust exchanged between them before initiating the service. The users' trust in a CSP is based 
+on the level of security and QoS. In turn, the CSP trusts the users based on the user profile and other 
+parameters [3-5]. Recently, the KNN model has recently proposed for the prediction of trust, but the 
+sensitivity in the present method for classifying the choices is not stable, especially when an 
+imbalanced situation in data arises. It is also noticed that the exponential distance, if chosen as the 
+scheme for weighting, offers better classification performance and also lowers the variance. Taking 
+these factors, this paper proposes a k-nearest method for the prediction of the trust value of a user. 
+
+2 Related works 
+Jain et al [2016] introduced a trust method that used the QoS parameters for evaluating the trust. 
+
+The fuzzy concept is used for the computation of the trust value of the service providers in the cloud 
+systems. This offered an increased performance in the evaluation of the system. The parameters, such 
+as the turnaround time, reliability, and availability, are considered for the experiment.  
+
+Tang et al [2017] introduced the trustworthy framework for the selection of a service provider 
+called the TRUSS. The method aimed for the development of an enhanced trust-based evaluation of 
+the QoS through an integrated approach for the trust evaluation using the combined objective as well 
+as the subjective assessment of trust. The former is based on the monitoring of QoS, and the latter is 
+based on the ratings through feedback. The experiments were performed using data which is 
+synthesized, and the results show that the proposed method is better than the other state-of-the-art 
+methods.  
+
+Shote et al [2019] focus on the security of data from the stakeholders' perspective, i.e, based on 
+the ownership of data and the providers. Out of the analysis from the survey, it is found that there is 
+still a high demand for a still more efficient method to be developed for the trust to secure the data, 
+and also, user control policies need to be further investigated. The primary need is to improve the 
+data access policies, and the second is to ensure QoS, and the third is to ensure that trust is maintained 
+between both the users and the provider. 
+
+3 Proposed Methodology 
+The following section describes the proposed method in detail. The method uses a weighted k-
+
+nearest method for the prediction of trust for a given user. Figure 1 shows the proposed model 
+framework. The framework consists of trust trust-dependent access control model that has different 
+sub-module which uses ML techniques. If any user wants to get access to any cloud-based service, 
+the request will be channeled through various levels of modules before authorization. This ensures 
+the security of all the services and resources as well. The catalogue of the resource has different items 
+with different reputations and trust values as well. When a certain user requests a particular 
+resource, the framework checks for the trust of the user before granting access. If found as trustable, 
+then the resources will be granted access, and this also ensures that there is a mutual trust 
+maintained between the user and the CSP. The detailed description of each of the components is 
+discussed below 
+3.1 Identity and Authentication Management (IDAM) 
+
+This is a module-based responsibility for the purpose of storing the user’s authentication and 
+information on their identity, such as the user credentials. It then acts as a perfect interface in-
+between the user and the cloud system. Activities such as the new user registration and update of 
+any data of the users, and the removal of users are all taken care of by this module. Whenever a login 
+request arises, the database of the identity is checked, and once there is a match, the user will be 
+allowed to access the resource, and if not, the permission will be denied. Once authenticated, the 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):2 17 
+ 
+
+service request will be forwarded to the URM for initiating the level 2 authentication by this specific 
+module.  
+
+Drop box Amazon Google 
+
+Log access management 
+
+permission Log file collector 
+
+user 
+
+Decision 
+Identity User Request  Policy 
+
+authentication on 
+
+Identity DB Policy 
+Ranking of resource 
+
+information 
+
+Catalog 
+
+Service 
+Trust Management 
+
+User trust based on 
+
+WKNN 
+
+ 
+ 
+
+Figure 1: Overall Architecture of the Proposed Work 
+
+3.2 Catalog Service Management of Resource (CSMR):  
+The CSRM does the job of updating all the records pertaining to the services that are offered 
+
+through cloud cloud-based service vendor (CSP). When a particular user enters the system, the 
+requested service is looked up in the catalogue, and access will be granted based on the user's profile.  
+3.3 User Request Management (URM)  
+
+This particular module receives the user trust from the given PIP module, and then the same is 
+forwarded as a request space vector toward making a decision and the policy enforcement module.  
+ 
+
+
+
+18 J Comput Intell Decis Sci. 2025;2(2):2 
+ 
+
+3.4 Policy Information point   
+The PIP module holds the responsibility of providing the users with a trust value when requests 
+
+are received from a URM.  
+3.5 Decision and Policy Enforcement 
+
+The DPE module takes a vital role in the decision-making regarding whether a particular 
+resource which is requested to be allotted or not. As and when the request is received by a DPE, the 
+URM fetches the corresponding policy from the database. It then performs the comparison of all the 
+details of the users with that of the given policies and the threshold value, and then appropriate 
+access would be either granted or denied. The log file module collects all the information pertaining 
+to the user, whether valid or invalid. Through this, a mutual trust is maintained between the 
+organization and CSP.  
+3.6 Log Access Management (LAM)  
+
+This module is responsible for the secure access of the users to the services of the cloud. The 
+activities and the corresponding behavior of the users are kept stored in logs. Once the execution of 
+a request is completed, feedback will be submitted back to the trust module. As this maintains a log 
+of trusts of the users, these can be used in the future to update the same to be updated with new trust 
+values.  
+3.7 Ranking of Resources Management 
+
+The RRM module has the complete list of resources that are available in the cloud. All these 
+resources are then ranked according to the capability and the performance that can be updated 
+regularly when the RRM gets a trusted reputation from the cloud. There are several trust-based 
+methods for controlling access that use ML techniques. The decision of which better resource to be 
+allotted to a user is based on the decision taken by RRM.  
+3.8 Trust Management Module (TTM)  
+
+The TTM takes the responsibility of a real-time assignment of the value of the user’s trust based 
+on evidence. These evidences are obtained from the user behavior and is used for the evaluation of 
+trust. This module takes the log file that projects all the interactions of a user that are based on the 
+cloud, and it recomputes the trust value. It also computes the reputation that a particular resource 
+has on the cloud and sends the trust value back to RRM for assigning a rank to the trust.  
+3.9 Authorization Process 
+
+Whenever a user wishes to access any of the cloud services, a request is required to be submitted 
+to the CSP. The services are, in turn, provided by the cloud without any negotiation by the CSP. The 
+negotiations would have already been covered in the service level agreement (SLA). The following 
+section describes the process of authentication step by step.  
+
+1. Only after the successful authentication by IDAM are the users allowed to request a 
+particular resource in the cloud.  
+
+2. The users are enabled with the option to choose the services required from the available 
+catalogue maintained by the CSMR. The module then redirects the same to the IDAM. 
+
+3. The IDAM, in turn, collects the requirements of the user from the CSMR, and further, a 
+request is framed through the request information vector to the URM. 
+
+4. The URM sends the user identity to the PIP module for the evaluation of trust value, and 
+the PIP forwards the same to the TMM. The TMM at last forwards the trust to the PIP.  
+
+5. Now, the URM needs to add the value of the trust of a given user in terms of a vector, and 
+then forward the decision and the policy module (DPE). 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):2 19 
+ 
+
+6. The DPE then obtains information from the URM. The DPE then makes a comparison 
+between the vector that is received with the needed policies for accessing the database of policies.  
+
+7. The RRM module then selects the most trusted and suitable resource as per the job and 
+then sends it to the DPE. It enables secure access for the user to get the requested resource. It also 
+has the logs that are forwarded to the TMM.  
+
+8. The TMM finally gives secure access for the user, such that the user can access the service 
+in a safe mode. It also has log files, which are forwarded later. The TMM keeps processing the log files 
+of a user and their behavior.  
+
+The proposed model was able to achieve the secured accesses that are based on a mutual level 
+of trust. 
+3.10 Trust Management Module (TMM) 
+
+The TTM takes the responsibility of a real-time assignment of the value of the user’s trust based 
+on evidence. These evidences are obtained from the user behavior and is used for the evaluation of 
+trust. This module takes the log file that projects all the interactions of a user that are based on the 
+cloud, and it re-computes the trust value. It also computes the reputation that a particular resource 
+has on the cloud and sends the trust value back to RRM for assigning a rank to the trust. The model 
+is depicted in Figure 2. TMM is not biased towards any of the service providers or the users. It can 
+also be noticed that the TMM has different phases for computing the trust. The following section 
+describes how the value of trust can be calculated based on the various functionalities.  
+3.10.1 Cloud user 
+
+Each user needs to register prior to getting access to the resources. The database maintained 
+for the identity has all the information about the users. When a particular user requests a resource, 
+the authenticity and the authorization are checked through different components, and the services 
+will be accessible only if the process is successful.   
+3.10.2 Resources 
+
+Both the hardware and the software can be a resource. All the cloud-based resources are 
+prioritized based on the pre-defined reputation and the trust value of the cloud. The trust-based 
+access controls use different ML techniques before providing the grant to the particular resource.  
+3.10.3 Log file of user behavior  
+
+The logs that are created when the LAM module records all the activities that are performed by 
+the user in a given cloud. The same will capture the realistic behavior of all users through the trust 
+that is predicted using ML methods.  
+3.10.4 SLA monitoring module 
+
+This module captures the real-time allocation of services in the cloud. The performances of the 
+resources are also monitored in this module. 
+3.10.5 Feature extraction module 
+
+This module feeds in all the logs. The module tends to capture all the relevant parameters and 
+the respective values from the log files. These values are then passed to the ML-based training 
+algorithms and then to the predictive module. In the proposed method, the log files from the Apache 
+servers are considered. Each of the parameters is then combined with the weighted factors, and the 
+corresponding strengths are determined by the factor of contribution. Here, some of the parameters 
+are found to be more dominant than the others. The parameters P1, P2, …, Pn is intended to detect 
+attacks and other unauthorized access requests. The user’s behavior analysis is done, and the 
+corresponding output is to be included in calculating the trust values.  
+ 
+
+
+
+20 J Comput Intell Decis Sci. 2025;2(2):2 
+ 
+
+3.11 Trust Value Prediction Using Weighted K-Nearest Neighbor 
+The module takes up parameters and data from the FE module. The data is then fed to the 
+
+corresponding K-means model, and training is done. In the conventional KNN model, the 
+classification sensitivity towards the choices of neighbors exists particularly in the imbalanced data. 
+Hence, we introduced the weighting schemes for better classification and accurate performance, and 
+also low variance. 
+
+Start 
+
+Read value of k type of 
+
+distance (D) & test data 
+
+Find k nearest neighbor to the test data 
+
+Set maximum lable class 
+
+of k the test data 
+
+End 
+
+ 
+ 
+
+Figure 2: Flow chart for KNN 
+
+The proposed method takes advantage of the distance calculation for the purpose of 
+classification, with the belief that there must be a concrete candidate that is chosen for the scheme of 
+weighting. In this proposed method, an improved KNN is introduced to conquer the influence of the 
+neighbors of K in case of precipitation in the data. Given a training set T = {{𝑥𝑛 ∈ 𝑅𝑑}𝑁
+
+𝑛−1 that has M 
+number of classes and N denotes the random numbers of the set T, and d represents the dimension 
+of the feature. The labels of the class are obtained through the query point x are obtained through the 
+steps as follows [9-11].  
+
+First, the K nearest values for the query points that are not known in a given set T are identified, 
+and let 𝑇̅ = {𝑥𝑁𝑁
+
+𝑖 , 𝑐𝑁𝑁 𝑘
+𝑖 }𝑥𝑖−1 represent the k-near value of x, and let K near neighbor are denoted by 
+
+denote the set of 𝑥𝑁𝑁, 𝑥𝑁𝑁
+2 , … … . . , 𝑥𝑁𝑁
+
+1 𝐾  are then sorted in ascending order based on the respective 
+Euclidean distance to x as described in Eq(1). Allocation of various weights to the K near neighbors, 
+and the weight of the X and J-1 neighbor is calculated as  
+
+𝒅 −𝒅
+𝒆𝒙𝒑 (− ( 𝒌 𝒋 𝒅 +𝒅
+
+) . ( 𝒌 𝒋)) , 𝒅𝒌   ≠ 𝒅
+𝝎𝒋 = { 𝒅𝒌−𝒅𝟏 𝒅𝒌+𝒅 𝟏
+
+𝒋     (1) 
+𝟏                                                                        𝒅𝒌 = 𝒅𝟏
+
+ 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):2 21 
+ 
+
+ 
+Figure 3: Working procedure of k-nearest neighbor 
+
+Classification of the query point x of the class C is done by the majority weighted voting of the 
+neighbors. 
+
+𝒂𝒓𝒈 𝒎𝒂𝒙
+𝒄̅ = ∑
+
+(𝒙 𝝎 (𝒄 = 𝑵𝑵)
+𝒄 𝑵𝑵.𝑪𝑵𝑵 𝒋. 𝒄𝒋  ( )
+
+𝑱 )∈𝑻̅    2  
+𝑱
+
+WEIGHTED K-NEAREST NEIGHBOR 
+The steps are given as under 
+1. Calculate the distances of the nearest neighbors of the query 
+2. Arrange the distances in increasing order 
+3. Search the k-nearest neighbors of the query X_ 
+4. Compute the weight of the K-Nearest Neighbors  
+5. For i=1 to K, do Steps 1-5 
+6. End for  
+7. Assign the major weighted voter class label Y1 and X1 
+8. End 
+
+4 Results and Discussion 
+Owing to the wide range of the cloud and the practical difficulty in conducting real-time 
+
+experiments, the JAVA simulator and the cloud-sim are used for experimental purposes. In order to 
+evaluate the proposed WKNN model, the comparison is made with that of the other methods, taking 
+the performance metrics as Throughput, Delay, and Accuracy, and the benchmark methods such as 
+FL and KNN. Figure 4 depicts the performance outcomes for the existing FL, KNN, and the proposed 
+technique as of throughput is considered. From the figure, it seems that the proposed WKNN model 
+has more throughput than the FL and KNN methods, with 590 kbps. 
+
+Table 1: Performance comparison results 
+
+ Methods 
+
+Metrics FL KNN WKNN 
+
+Throughput(kbp 450(kbps) 572(kbps) 590(kbps) 
+
+s) 
+
+Delay(sec) 700(sec) 650(sec) 530(sec) 
+
+
+
+22 J Comput Intell Decis Sci. 2025;2(2):2 
+ 
+
+Accuracy (%) 74 82 90 
+
+ 
+
+700
+600
+500
+400
+
+FL
+300
+200 KNN
+
+100 WKNN
+
+0
+FL KNN WKNN
+
+methods
+
+ 
+
+Figure 4: Throughput results vs. classification methods 
+
+ 
+
+800
+
+700
+
+600
+
+500
+
+400 FL
+
+300 KNN
+200
+
+WKNN
+100
+
+0
+FL KNN WKNN
+
+methods
+
+ 
+
+Figure 5: Delay results vs. classification methods 
+
+100
+
+80
+
+60
+FL
+
+40
+KNN
+
+20 WKNN
+
+0
+FL KNN WKNN
+
+methods
+
+ 
+Figure 6: Accuracy results vs. classification methods 
+
+ACCURACY(%) Delay(sec) Throughput(kbps)
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):2 23 
+ 
+
+Figure 5 shows the graph, which is the comparative analysis of the FL and KNN with the 
+proposed method, taking the delay as the metric. From the graph, it is evident that the proposed 
+model has a lower delay of 530 seconds when compared to FL (700S) and KNN (650S), respectively. 
+
+Figure 6 shows the graph, which is the comparative analysis of the FL and KNN with the 
+proposed method, taking the accuracy as the metric. From the graph, it is evident that the proposed 
+model has a high accuracy of 87% when compared to FL (68%) and KNN (81%), respectively. 
+
+1
+
+0.9
+
+0.8
+
+0.7
+
+0.6
+
+0.5 Normal users
+
+0.4 Malicisous users
+
+0.3
+
+0.2
+
+0.1
+
+0
+10 20 30 40 50
+
+Iterations  
+Figure 7: User trust value on communication results vs. iterations 
+
+Figure 7 depicts the trust value of the communication outcomes in the proposed WKNN 
+technique. From the graph, it is seen that the X-axis refers to the iteration and the Y-axis refers to the 
+value of trust in the communication. From the graph, it is seen that the malicious users who have a 
+trust value below 0.5 are detected by the proposed method. 
+
+5 Conclusion and Future Work 
+This paper presents an effective evaluation mechanism for trust using the weighted K nearest 
+
+neighbor for accurate prediction of trust of a user using the weighted K nearest neighbor algorithm. 
+It is identified that the weighted scheme shows more accuracy and better classification performance 
+with less variance that the user to be trusted before accessing the resource. The contributions of the 
+proposed system are pointed out as follows: 1. It enables a scheme of trust evaluation of the efficiency 
+of the cloud 2. It aimed to ease the IaaS selection process and offer more stability in the service when 
+using clouds through the consideration of performance in the selection phase. The future research is 
+aimed at building different policies for selection for cloud usage and brokers based on the proposed 
+method to further automate the deployment. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: D. Nethra Pingala Suthishni; supervision and 
+
+User trust value on communication
+
+
+
+24 J Comput Intell Decis Sci. 2025;2(2):2 
+ 
+
+writing: K. Prabavathy; review and editing: Balusamy Nachiappan. All authors reviewed the results and 
+approved the final version of the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Chiregi M, Navimipour NJ. A comprehensive study of the trust evaluation mechanisms in the cloud 
+
+computing. J Serv Sci Res. 2017;9(1):1-30. 
+2. Arora S, Dalal S. Trust evaluation factors in cloud computing with open stack. J Comput Theor Nanosci. 
+
+2019;16(12):5073-7. 
+3. Rathi P, Ahuja H, Pandey K. Rule based trust evaluation using fuzzy logic in cloud computing. In 2017 6th 
+
+International Conference on Reliability, Infocom Technologies and Optimization (Trends and Future 
+Directions) (ICRITO); 2017 Sep 20, Noida, India; 2017. p. 510-514. 
+
+4. Sule MJ, Li M, Taylor G. Trust modeling in cloud computing. In 2016 IEEE Symposium on Service-Oriented 
+System Engineering (SOSE); 2016 Mar 29, Oxford, UK; 2016. p. 60-65. 
+
+5. Abdullayeva F. CPTrustworthiness: new robust model for trust evaluation in cloud computing. In 2016 
+IEEE 10th International Conference on Application of Information and Communication Technologies 
+(AICT); 2016 Oct 12, Baku, Azerbaijan; 2016. p. 1-6. 
+
+6. Jain S. A trust model in cloud computing based on fuzzy logic. In 2016 IEEE International Conference on 
+Recent Trends in Electronics, Information & Communication Technology (RTEICT); 2016 May 20, 
+Bangalore, India; 2016. p. 47-52. 
+
+7. Tang M, Dai X, Liu J, Chen J. Towards a trust evaluation middleware for cloud service selection. Future 
+Gener Comput Syst. 2017;74:302-12. 
+
+8. Dhote BL, Krishna Mohan G. Trust and security to shared data in cloud computing: open issues. In 
+International Conference on Advanced Computing Networking and Informatics: ICANI; 2018 Nov 28, 
+Singapore; 2018. p. 117-126. 
+
+9. Deng Z, Zhu X, Cheng D, Zong M, Zhang S. Efficient kNN classification algorithm for big data. 
+Neurocomputing. 2016;195:143-8. 
+
+10. Popescu M, Keller JM. Random projections fuzzy k-nearest neighbor (RPFKNN) for big data classification. 
+In 2016 IEEE International Conference on Fuzzy Systems (FUZZ-IEEE); 2016 Jul 24, Vancouver, BC, 
+Canada; 2016. p. 1813-1817. 
+
+11. Guo Y, Cao H, Han S, Sun Y, Bai Y. Spectral–spatial hyperspectral image classification with k-nearest 
+neighbor and guided filter. IEEE Access. 2018;6:18582-91.

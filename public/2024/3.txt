@@ -1,0 +1,1003 @@
+﻿ARTICLE 
+
+Privacy-Preserving Framework for Safeguarding Healthcare Data with 
+Embedded Authentication Across Federated Cloud Platforms 
+
+S. Sivakumar1,* and T. Karthikeyan2 
+
+1Assistant Professor, PG Department of Computer Science, Government Arts College, Udumalpet, India. 
+2Department of Information Technology, University of Technology and Applied Sciences - Salalah, Thumrait Rd Thumrayt 
+Street – OM 211, Sultanate of Oman. 
+*Corresponding Author: S. Sivakumar. Email: drsivacsphd@gmail.com  
+
+Received: 20 June 2024; Accepted: 09 September 2024; Published: 30 December 2024 
+
+ABSTRACT: Cloud Computing (CC) technology, because of its distributed environment, possesses more 
+complicated reliability issues and privacy preservation issues of its outsourced data. The proposed design 
+influences cloud infrastructures to give cost competitiveness, fast exploitation, scalability, and flexibility to 
+have room for unstable workloads. The research system could be utilized to safeguard diverse medical health 
+care records. Privacy-protecting storage framework presents a compressive sensing method in a multi-cloud 
+design. The major motivation of this work is to introduce a new secure system for Medical Healthcare records. 
+The proposed Secure Medical Healthcare Content Protection System (SMCPS) consists of two major steps: (i) 
+Hybrid Key Generation (HKG) and (ii) storage management. In the initial step of the work, key values are 
+created for medical healthcare records by using two encryption techniques, such as Advanced Encoding 
+Standard (AES) cryptography and Message Digest (MD5) algorithm for safe multiparty computation. This 
+proposed Hybrid Key Generation (HKG) algorithm is different from the usual key generation algorithm, since 
+the proposed HKG algorithm adds the key values of AES and MD5. A new key value is created from these two 
+algorithms, thus increasing the security level of the system. The HKG algorithm creates dynamic and 
+representative keys of medical healthcare records; it is computationally resourceful to calculate and contrast, 
+in addition, it needs a small storage. In the second step of the work, a Compressive Sensing (CS) based 
+framework for storage management of medical healthcare records was developed. The distributed matching 
+engine achieves greater adaptability, and it is created to work among different healthcare records gathered 
+from the UCI machine learning vault. The applicability is further examined for the applicability of sparse coding-
+based frameworks, including a variety of medical healthcare records, which influences the ability of the Multi 
+Cloud Computing (MCC) environment. The experimentation work is performed by using the Miscellaneous 
+database for watermark pattern, and any medical healthcare records are taken as input in the MCC 
+environment results prove that safe watermark recognition in the CS domain is possible for medical healthcare 
+records.  
+
+KEYWORDS: Cloud Computing (CC), Secure Watermark Detection, Secure Multiparty Computation, Privacy 
+Preserving, Compressive Sensing (CS), Cryptography Algorithms. 
+
+1 Introduction 
+Cloud Computing (CC) is considered to be an Information Technology (IT) structural design for 
+
+ventures of future generation, as it consists of its extensive list of extraordinary benefits in IT records 
+[1]: on-demand self-service, transfer of risk, rapid resource flexibility, location self-governing 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+28 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+resource pooling, present network access, and usage-based pricing [2]. By utilizing information 
+technology, CC has become the nature of businesses with insightful entailments as a troublesome 
+technique. One basic facet of this Model shifting has the basic facet of data centralization or 
+outsourcing to the Cloud. From the standpoint of users, comprising individuals and IT enterprises, 
+storage of data in distant means to the cloud provides advantages in an adaptable, on-demand way: 
+despite the trouble in storage management, avoidance of resource expenses on hardware, and 
+general data access along with site independence, software, and human resources maintenance, and 
+so on [3]. 
+
+In the meantime, social networks and the internet have attained an enormous growth, which 
+makes it extremely easy for users to gather a huge volume of data on medical health care from varied 
+sources without pointing out the copyright information of that data. Simultaneously, CC transforms 
+these benefits more alluring than yet, as it carries novel and tough security threats well in the 
+direction of outsourced data of users. Time to time exposing of instances of outages and security 
+breaches occur in striking cloud services [4]. Cloud Service Provider (CSP) provides a variety of 
+inspirations as a secondary to perform faithless laying the direction of the cloud users, which 
+concerns their outsourced data status. By removal of data, CSP may regain storage as an instance for 
+economic reasons which is not often used, or still conceal data loss events in order to preserve a 
+reputation [5]. In brief, though outsourcing data to the cloud for long-term significant storage is 
+inexpensively attractive, it does not provide any assurance instantly on data accessibility and 
+integrity. In case this difficulty is not addressed appropriately, it might obstruct the triumph of cloud 
+architecture.  
+
+For resolving this issue, proposed work uses the methodology called AES cryptography [6] and 
+Message Digest (MD5) algorithm [7] which facilitates watermark pattern that owner wants to share 
+the data devoid of dripping data of local copy and radical decreasing of communication consequently 
+and computational overhead as contrasted for clear-cut data sharing among the users of the cloud. 
+In addition, the cloud user might desire to gain the benefit of the storage in the cloud, and 
+simultaneously, work with copyright owners for watermark recognition whilst maintaining the self-
+gathered medical healthcare data as private. The watermark pattern owners are in require of 
+maintaining their watermark patterns as private for the particular duration of watermark 
+recognition. An authorized cloud providing storage services as well wishes to take part in recognition 
+of watermark initiated by the users, or kick off watermark recognition devoid of taking part in the 
+users, for ensuring whether the uploaded medical healthcare data is copyright protected. Encrypted 
+medical healthcare data provides an additional advantage of storing data and enables encrypted 
+domain recognition of the watermark in the cloud, so that the encrypted data could be reprocessed 
+if the image data holder is required to work with other watermark owners for safe watermark 
+recognition at a later time. Additionally, the proposed work provides a Compressive Sensing (CS) 
+based watermark recognition, which influences a safe MCC environment. 
+
+2 Literature Review 
+Kim et al [8] show an open evaluation convention for educational media information outsourced 
+
+to the distributed storage. By making use of irregular esteems and also a homomorphic hash work, 
+the exhibited convention ensures information protection for the cloud, notwithstanding the Third-
+Party Auditor (TPA). In addition, it is sheltered, contrary to losing an attack and a temper attack. 
+Furthermore, the presented protocol is capable of aiding entirely dynamic auditing. Security and 
+performance investigation outcomes prove that the presented method is safe whilst assuring the 
+least additional computation costs. The foremost concern is how to guard the private data of the 
+image whilst facilitating image computation. In order to deal with this basic confrontation, we should 
+learn the privacy prerequisites in outsourcing Scalar Invariant Feature Transform (SIFT) 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 29 
+ 
+
+computation and need to present SecSIFT, which is a high-performance privacy-preserving SIFT 
+feature recognition system. One of the general methods in preceding private image computation 
+involves enciphering the private image in a public key-based homomorphic technique, which would 
+facilitate the real processing techniques as intended for the plaintext domain to be carried out over 
+the ciphertext domain. The system is not restricted by the competence restrictions of the 
+homomorphic encryption method in the challenge of these works. Qin et al [9] presented a novel 
+system that could share the computation processes of SIFT to a self-regulating group, supportive 
+cloud servers, and it remains as the outsourced computation processes as simple as possible in order 
+to avoid the utilization of a homomorphic encryption scheme. Thus, it enables the implementation of 
+realistic computation with communication complexity. Comparison between SecSIFT and original 
+SIFT on image benchmarks occurs which whilst preserving the privacy in a competent manner in this 
+experimentation. 
+
+Voloshynovskiy et al [10] present the multimedia content privacy-preserving detection for a 
+cloud-based Bag-of-Feature (BoF) framework. They systematically model utilization of geometric 
+information, which could be a shared secret and drawn from a tradeoff among the ability of detection, 
+computational load, and privacy. In addition, a recommendation of a descriptor ambiguity technique 
+is performed that presents ambiguity to the server with the real interest of data users. Zhang et al 
+[11] guarded the private data; the BGV encryption technique is utilized by the presented model to 
+encipher the private data, which applies cloud servers to carry out the high-order back-propagation 
+method competently on encrypted data for training of an in-depth computation model. In addition, 
+the better accuracy of the presented method of the sigmoid function as a polynomial function helps 
+the safe computation of the activation function with the encryption of BGV. The BGV encryption 
+method includes simple encryption operations as well as the decryption operations that are carried 
+out by the client, whilst the computation tasks are entirely carried out on the cloud. Outcomes of 
+experimentation prove that our method is enhanced roughly by 2.5 times in the training competence, 
+which is contrasted with the deep conventional computation model, which is devoid of exposing 
+private data by utilizing cloud computing, comprising ten nodes. Most significantly, the presented 
+model is greatly scalable by means of applying more cloud servers, which is mainly appropriate for 
+big data. 
+
+Kang et al [12] presented a structure, simultaneously to examine the applicability of the previous 
+Compressive Sensing (CS)-based on multimedia compression, and is firmly compressive multimedia 
+“trans-detecting" techniques which rely upon effective coding to solidly appropriate compressive 
+detection of interactive media information over a cloud-aware situation. Besides, they also inspect 
+the utilization of past scanty coding-based structures for various sight and sound applications by 
+utilizing the well-designed capacity of a media cloud. To think about the numerous basic confronts 
+for multimedia cloud computing in purpose, security, and network/device heterogeneities, for 
+instance, which examine the applications of sparse coding methods and CS in multimedia 
+applications and delivery. Likewise, build a fused cloud-mindful structure for protection, saving 
+mixed media applications by methods for inadequate coding. The above-stated techniques are used 
+to simplify a single cloud computing environment, and storage management issues are resolved in 
+some of the works only. How the data is protected by utilizing algorithms in the MCC environment is 
+discussed in this way. 
+
+Alqahtani and Sant [13] presented solution would consider the benefits of multi-clouds, data 
+cryptography, and data compression to protect the distributed data; by dividing the data into 
+sections, enciphering the sections, compressing the sections, sharing out the sections by means of 
+multi-clouds whilst maintaining one section on the mobile device memory that would secure taking 
+out the data when the shared out segments are phished. Liu et al [14] propose a competent and 
+several domains’ crossways Privacy-preserving Skyline Computation structure, which is known as 
+
+
+
+30 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+EPSC. Safer calculation of a skyline outcome from various service providers in the EPSC framework 
+offers the client improved services. Meanwhile, the least privacy disclosure would be extracted from 
+one service provider to another service provider for the extraction of privacy disclosure for the 
+duration of skyline computation. In Particular, for controlling the privacy of service provider 
+disclosure and approximate attainment of real-time skyline processing as well as transmission, 
+present an Efficient Secure Vector Comparison (ESVC) protocol for building EPSC that is completely 
+dependent upon new methods: Fast Secure Permutation Protocol (FSPP) as well as Fast Secure 
+Integer Comparison (FSIC) protocol. Computation of skyline outcome is allowed by both the 
+protocols synergistically in a privacy-preserving manner. A thorough security examination can attain 
+multi-domain skyline computation as proved by the EPSC framework with devoid of disclosing it to 
+everyone that the susceptible information. Performance assessments, in addition to widespread 
+simulations, also show the EPSC's effectiveness in the words of giving skyline computation and 
+transmission whilst which decreases the privacy disclosure of crosswise diverse domains. Fast 
+Secure Integer Comparison Protocol, as well as Fast Secure Permutation Protocol, have been 
+developed. The skyline set is calculated in a privacy-preserving and competent manner by means of 
+widespread simulation. 
+
+The issue of the present work is that even though outsourcing healthcare data is inexpensively 
+attractive to the multi-cloud for long-standing significant storage as it will not instantly provide any 
+assurance on data accessibility and integrity. In case this difficulty is not appropriately addressed, 
+this might obstruct the cloud architecture achievement. To solve this problem, the Secure Medical 
+Healthcare Content Protection System (SMCPS) is being proposed for the large-scale medical 
+healthcare records. The advantage of this SMPCS system is that it can be applied easily to a multi-
+cloud environment and is more secure for medical healthcare records. By adding the CS framework, 
+the size of the original file is reduced, which reduces the storage space and decreases the time 
+complexity of storage. 
+
+3 Proposed Methodology 
+In this work, a new Secure Medical Healthcare Content Protection System (SMCPS) is proposed 
+
+for large-scale medical healthcare records. This SMCPS framework uses cloud foundations to give 
+cost viability, rapid organization, versatility, higher security, and adaptability to contain fluctuating 
+workloads. This SMCPS system consists of two major steps: (i) Hybrid Key Generation (HKG) and (ii) 
+storage management.  
+
+In order to increase the security of the cloud, the initial step of the work encrypt the cloud 
+medical healthcare records by using the Hybrid Key Generation (HKG) algorithm, and the encrypted 
+key values are stored in the data owner phase. This proposed Hybrid Key Generation (HKG) 
+algorithm is different from the usual key generation algorithm, since the proposed HKG algorithm 
+adds the key values of AES and MD5. A new key value is created from these two algorithms, thus 
+increasing the security level of the system. In the second step of the work, a Compressive Sensing 
+(CS) based framework for storage management of medical healthcare records was developed. The 
+distributed matching engine attains more scalability as well, and it is developed to among diverse 
+healthcare records that are being collected from the UCI machine learning repository. 
+Experimentation work was performed by using the Signal and Image Processing Institute (SIPI) 
+database for the watermark pattern, and any medical healthcare records were taken as input in the 
+MCC environment. Results demonstrated that the safe watermark recognition in the CS domain is 
+possible for medical healthcare records. 
+
+ 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 31 
+ 
+
+ 
+
+Data owner X Encryption of 
+Health care text 
+
+healthcare records 
+Compression of records 
+
+ records  
+using Hybrid Key 
+
+Data owner Y using CS framework  
+Generation (HKG) 
+
+ 
+
+Data owner Z Secure storage in multi-
+
+cloud  
+
+Secured key  Watermark pattern  
+
+Decrypted healthcare records  
+
+ 
+
+Distribution to multiple users   
+Figure 1: Secure Medical Healthcare Content Protection System (SMCPS) 
+
+ 
+
+Figure 2: The workflow of operations  
+
+Figure 2 demonstrates the workflow of operations. It illustrates how the medical healthcare 
+records could interact and keep informed of the multi-cloud status; and at wherein stage the 
+healthcare records on-site storage and healthcare records need to be accomplished. 
+
+
+
+32 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+3.1 Multi-clouds model 
+As stated above, this presented SMCPS technique is based on the multi-clouds conception; with 
+
+the intention that, there are an amount of a variety of free clouds would be used to construct the 
+multi-clouds model. According to the service-based model, the developers would develop a service, 
+which would work more similarly to a third party among the users and the clouds, and that could be 
+illustrated in Figure 3. Here, the developed service (mediator) allocates resources among the user 
+and the clouds. 
+
+ 
+
+ 
+
+Cloud owner 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+
+Figure 3: Multi-cloud service-based architecture 
+
+3.2 Data Splitting  
+In the data splitting, we divide the healthcare data file into segments is most significant for 
+
+various reasons: 
+i. Sharing out over the multi-clouds 
+ii. Evadecloud maximum-size file issue 
+Additionally, dividing the healthcare records would improve the use of the offered bandwidth and 
+enable load balancing. In addition, it would enable the encrypt/decryption processes by decreasing 
+the size of the computed files. Officially, the health care records division enhances the processing 
+throughout, by letting the pipeline and parallel processes that would decrease the operational cost 
+as well as the consumed time. 
+
+3.3 Encrypt/Decrypt 
+To enhance the offered security and assure the integrity of the healthcare records, the 
+
+presented method would consist of encryption methods. Utilizing Hybrid Key Generation (HKG) 
+would improve the protection of the developed API level. As a consequence of diversity in medical 
+healthcare records abilities and the user's security needs, there are a number of cryptography 
+techniques that would help to facilitate the user selecting the appropriate method, and key length as 
+well. HKG is introduced in this work, which combines the procedure of data encryption methods such 
+as Advanced Encryption Standard (AES) and MD5 for encrypting healthcare records [15]. 
+
+ 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 33 
+ 
+
+3.3.1 Advanced Encryption Standard (AES)  
+Advanced Encryption Standard, simply AES, is used to enhance encryption performance. On the 
+
+other hand, AES simply lets a 128-bit healthcare record length, which could be split into four 
+fundamental operation blocks. Such blocks work on an array of bytes and are prearranged as a 4×4 
+matrix, which is known be the state. For complete encryption, data has been sent through Nr rounds 
+as (Nr = 10, 12, 14). These rounds have been directed by means of subsequent transformations: 
+(i) Bytesub transformation: It is a type of non-linear byte substitution, using a substitution table, 
+namely s-box, which has been built via multiplicative inverse and the affine transformation. 
+(ii) Shiftrows transformation: It is one of the easy byte transpositions, bytes in the final three rows 
+of the state are as clockwork shift; the offset of left shift could change from one to three bytes. 
+(iii) Mixcolumns transformation: It is similar to matrix multiplication of the columns of states. Each 
+column vector has been multiplied by a preset matrix. It should be noted that bytes are treated as 
+polynomials that are willingly than the numbers. The transformation could be determined by 
+following matrix multiplication on a state. 
+
+′
+02 03 01 01 𝑠 𝑠′ ′
+
+0,0 𝑠0,1 𝑠0,2 𝑠0,3  0,0 𝑠0,1 𝑠′
+0,2 𝑠0,3 
+
+01 02 03 01 𝑠1,0 𝑠1,1 𝑠1,2 𝑠1,3  𝑠
+′ ′
+1,0 𝑠1,1 𝑠′ ′
+
+1,2 𝑠1,3      
+[ ] [
+01 01 02 03 𝑠 𝑠 𝑠 ] =   
+
+2,0 2,1 2,2 𝑠2,3  𝑠′ ′
+2,0 𝑠 𝑠′ ′   
+
+2,1 2,2 𝑠2,3 (1) 
+03 01 01 02 𝑠3,0 𝑠3,1 𝑠3,2 𝑠  
+
+3,3 [𝑠′ ′ 𝑠′
+3,0 𝑠 𝑠′
+
+3,1 3,2 3,3]
+
+𝑠′
+0,𝑗 = (2. 𝑠0,𝑗)⨁(3. 𝑠1,𝑗)⨁𝑠2,𝑗⨁𝑠3,𝑗    (2) 
+
+𝑠′
+1,𝑗 = 𝑠0,𝑗⨁(2. 𝑠1,𝑗)⨁(3. 𝑠2,𝑗)⨁𝑠3,𝑗   (3) 
+
+𝑠′
+2,𝑗 = 𝑠0,𝑗⨁𝑠1,𝑗⨁(2. 𝑠2,𝑗)⨁(3. 𝑠3,𝑗)    (4) 
+
+𝑠′
+3,𝑗 = (3. 𝑠0,𝑗)⨁𝑠1,𝑗⨁𝑠2,𝑗⨁(2. 𝑠3,𝑗)     (5) 
+
+Where • represents multiplication over a finite field. If the label and these, namely A and the 
+A−1, in respectively labeled and label state, which is before the mix columns operation, such as S, and 
+also after S’. 
+
+𝐴𝑆 = 𝑆′       (6) 
+
+Therefore 
+
+𝐴−1𝑆′ = 𝐴−1𝐴𝑆 = 𝑆   (7) 
+
+(iv) Addroundkey transformation: It is an easy XOR between the working state and the roundkey. 
+
+Algorithm 1. Key expansion (byte Key(16), word w(44)) 
+{ 
+  Word Temp 
+  For(𝑖 = 0; 𝑖 < 4; 𝑖 + +) 
+      For(𝑖 = 0; 𝑖 < 44; 𝑖 + +) 
+
+𝑤[𝑖] = (𝑘𝑒𝑦[4 ∗ 𝑖], 𝑘𝑒𝑦[4 ∗ 𝑖 + 1], 𝑘𝑒𝑦[4 ∗ 𝑖 + 2], 𝑘𝑒𝑦[4 ∗ 𝑖 + 3]); 
+        { 
+
+
+
+34 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+          Temp=w[i-1]; 
+          If(i  mod 4=0)  
+
+𝑖
+           Temp=Sub word (Rotword(temp)) ⨁𝑅 [ ]; 
+
+4
+
+            w[i]=w[1-4] ⨁temp; 
+         } 
+   } 
+
+The key has been copied as the first four words of an expanded key. The remainder of the 
+expanded key has been filled in four words at a time. Each add word w[i] could depend on an 
+immediately preceding word, namely w[i − 1], and word four positions back as w[i − 4]. In four cases, 
+three cases are using simple XOR. For a word where the position in the w array is a multiple of 4, it is 
+a more complex function. 
+3.3.2 MD5 message-digest 
+
+MD5 could process variable-length healthcare records in a fixed-length output of 128 bits. The 
+input healthcare record has been broken up into chunks of 512-bit blocks, and the healthcare record 
+has been padded so that its own length is divisible by 512. The first single bit, namely 1, has been 
+appended to the end of healthcare records. This has been followed by many zeros that are required 
+for bringing the length of healthcare records up to 64 bits, which is less than a multiple of 512. The 
+remaining bits have been filled along 64 bits, which denotes the length of an original healthcare 
+record as a modulo 264. 
+3.3.3 HKG 
+
+The AES algorithm is used to provide security of healthcare data through encryption and the 
+decryption process. The MD5 helps generate an additional secret key for the data owner and the 
+cloud user for communication.  
+
+Health care records 
+
+AES algorithm  MD5 algorithm  
+
+Generate key 𝑘1 Generate key 𝑘2 
+
+Hybrid key 𝐻𝑘 by XOR operation  
+
+Encrypt data  
+
+Hybrid key 
+Cloud user 
+
+𝐻𝑘& cipher text 
+Decrypt the data  
+
+Healthcare records received by cloud users    
+Figure 4: HKG algorithm architecture diagram 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 35 
+ 
+
+In this proposed HKG algorithm, by using bit-wise XOR operation, the key values of AES and 
+MD5 algorithms are combined, and a new key value is created. This XOR operation increases the 
+security of the cloud user's healthcare records. This operation is performed by means of after 
+healthcare records are converted into ciphertext. In this proposed approach, first choose healthcare 
+records, then key values k1 & k2 are created from MD5, and AES. This would be used to perform the 
+XOR operation. Then, finding out the encryption and a decryption key could exponent and that has 
+been used for an encryption and also a decryption process. At the sender side, an encryption is being 
+done by an encryption algorithm. When encryption starts, the XOR operation might be performed 
+between the k1 & k2. A new key value has been created and then named Hk. After the operation secret 
+message has been sent via a medium. At the receiver side secret key and secret message that given 
+by the cloud user to receive the original health care records. Then decrypt the original file using the 
+hybrid key, ciphertext text and get the original healthcare records sent by the sender. The 
+diagrammatic representation of the proposed HKG algorithm is shown in the figure. 
+
+3.4 CS transformation  
+There are mainly three parties in the presented structure, the Data Holders, simply DH of the 
+
+possibly called watermarked images, Watermark Owners called WO, and Cloud, namely CLD, as 
+depicted in Figure 5. The structure as well needs a Certificate Authority, and simply as CA for bringing 
+out public keys as well as CS matrix keys to assure named parties of the structure. For DH, namely media 
+agencies, while it gathers a huge amount of medical healthcare data from the Internet and also stores 
+an encrypted version in CLD, it also needs to ensure that those medical healthcare records can be edited 
+and also republished officially. Watermark Owners, or shortly as WOs, provide that providers who can 
+share the watermarked content, which means watermark embedding has been carried out by means of 
+WO, previous to the content being published. WOs at all times desire to make out if their contents are 
+lawfully utilized and republished. 
+
+  
+Figure 5: Architecture of the proposed CS framework 
+
+
+
+36 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+Primarily, the CA wants to bring out the CS matrix matches to DH. The CS matrix also comprises 
+seeds and a random function utilized to produce the Gaussian CS matrix. Utilize CA to bring out a 
+random function to ensure the randomness of the produced Gaussian CS matrix. The CA, as well, wants 
+to bring out an AES and MD5 pair to DH and DH’s public key for WO. Generally, DH as well contains a 
+diverse private compressive sensing matrix (derived from the seed) for every image. DH changes the 
+image DCT coefficients to the compressive sensing domain, as well as considers CLD that contains CS 
+domain data for storage. In case watermark recognition with the WO is needed, we want CLD to contain 
+the watermark in an identical CS domain that has been attained by running a safe multiparty protocol. 
+Compressive Sensing (CS) Framework: The Restricted Isometry Property, called RIP, is a needed 
+condition particularly for perfect reconstruction in compressive sensing theory. Before presenting 
+compressive sensing theory, first of all, RIP has to be introduced. 
+
+Restricted Isometry Property (RIP): A vector called 𝑥 ∈ 𝑅𝑛 is a k-sparse and if |{ 𝑗 ∶  |𝑥𝑗| >  0}| ≤
+ 𝑘. A matrix called 𝛷 ∈ 𝑅𝑚×𝑛 is called having RIP of an order k and the level 𝛿 ∈ (0, 1) (which is 
+equivalently, and (k, δ)-RIP) if, 
+
+2 2 2
+(1 − 𝛿)||𝑥|| ≤ ||Φ𝑥|| ≤ (1 + 𝛿)||𝑥||    (8) 
+
+2 2 2
+
+For all the k-sparse 𝑥 ∈ 𝑅𝑛 . The restricted isometry constant called 𝛿𝑘  has been defined as the 
+smallest value of δ for above inequality holds.  
+The CS theory [16] asserts that while data can be represented using a small number of the nonzero 
+coefficients, they can be perfectly recovered after being transformed by a limited number of incoherent, 
+non-adaptive linear measurements. Suppose, data called 𝑑 ∈ ℝ𝑛  is a k-sparse vector, which means 
+that only k elements are out of n elements of the dare nonzero element, and transformed for 𝑑 ∈ ℝ𝑚, 
+whereas 𝑚 < 𝑛 𝑥 =  𝜙𝑚×𝑛 𝑑 . If 𝜙𝑚×𝑛 might satisfy RIP, it has been shown by solving the 
+optimization problem: 
+
+𝑚𝑖𝑛||𝑑|| 𝑠. 𝑡. 𝑥 = 𝜙𝑚×𝑛 𝑑   (9) 
+1
+
+Equation (9) is found as equivalent for finding out the sparsest solution called d to 𝑥 =  𝜙𝑚×𝑛 𝑑 
+providing m ≥Cklog(n/k), whereas C is small constant. Eq. (9) can present an L1 minimization problem 
+that can be solved through Orthogonal Matching Pursuit and simply OMP algorithms. It is also shown, 
+there are such many ways to construct a matrix, namely 𝜙𝑚×𝑛 Which meets RIP property, for instance, 
+if entries of the matrix called 𝜙𝑚×𝑛. Those have been generated from a Gaussian distribution with a 
+zero mean and a variance such as 1/m, 𝜙𝑚×𝑛 is RIP matrix along an overwhelming probability. In this 
+particular framework, the CS matrix was generated from a Gaussian distribution. Let, the X = {xi}, Y = 
+{yi} be a two n-dimensional cloud user data vectors and the 𝜙𝑚×𝑛 be an m ×n-dimensional random 
+matrix. Each particular entry of a 𝜙𝑚×𝑛 is found as independent and identically chosen from the 
+Gaussian distribution with the mean zero and the variance 1/m. In further, the P = 𝜙𝑚×𝑛 X; and the R 
+= 𝜙𝑚×𝑛 Y. Then, 
+
+𝐸[𝑋𝑇𝑌 − 𝑃𝑇𝑅] = 0   (10) 
+
+𝑉𝑎𝑟[𝑋𝑇𝑌 − 𝑃𝑇 1
+𝑅] = (∑𝑛
+
+𝑖 1 𝑥2 ∑𝑛 𝑦2 𝑛
+𝑖=1 𝑦
+
+𝑚 = 𝑖 𝑖=1 𝑖 + (∑ 𝑥𝑖 𝑖)
+2)   (11) 
+
+In Zeng and Liu’s work [17], the most excellent watermark recognition performance has been attained 
+by means of utilizing the selective DCT coefficients for the recognition. On the other hand, DH in the 
+framework may not have information that are regarding the criteria for the selection procedure. Still, 
+if we are presuming that DH could contain such type of information, DH can want to know DCT channels 
+that are being used for the watermark recognition. Embedding process as 𝑑′
+
+𝑖 = 𝑑𝑖  +  𝑤𝑖 , whereas 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 37 
+ 
+
+𝑤𝑖 is an inserted watermark signal that is derived from the watermark pattern {𝑦𝑖 }. In the detection 
+process, test cloud user data {𝑥𝑖 } has correlated along with the watermark pattern {𝑦𝑖 }. Detection of 
+watermarks has been accomplished through hypothesis testing. 
+𝐻0: 𝑥𝑖 = 𝑑𝑖 + 𝑛𝑖 without watermark 
+𝐻0: 𝑥𝑖 = 𝑑𝑖 + 𝑛𝑖 + 𝑤𝑖 with watermark 
+Where ni is noise. Normalized correlating detector can output a test statistic called q, which has been 
+compared with a threshold called T for identification, if the test image could contain claimed 
+watermarks: 
+
+∑𝑛 𝑀 ∗
+𝑞 = 𝑖=1 𝑧𝑖 𝑧 √𝑛
+
+= 𝑖    (12) 
+𝑉𝑧 ∗
+
+𝑖 √𝑛 𝑉𝑧𝑖
+
+Where as 𝑧𝑖 = 𝑥𝑖𝑦𝑖 , namely n is the size of the feature set called {zi}. 𝑀𝑧  and the 𝑉2
+𝑧  are the 
+
+𝑖 𝑖
+
+sample mean and the sample variance of 𝑡𝑒𝑟𝑚 𝑧𝑖  that given as follows: 
+
+∑𝑛 ∑𝑛
+
+𝑀 𝑖= 𝑧
+𝑧 = 1 𝑖 𝑖=1(𝑧𝑖−𝑀𝑧 )2
+
+, 𝑉2 = 𝑖  
+𝑖 𝑛 𝑧   (13) 
+
+𝑖 𝑛−1
+
+Finally, under the hypothesis called H0, for the large n, q has approximately a normal distribution, 
+such as q ∼ N(0, 1). Under the H1, q ∼ N(μ, 1), whereas μ > 0. 
+
+4 Experimental Results 
+In the experimental work assessed the presented SMCPS system was assessed utilizing some 
+
+standard images, such as Peppers, Baboon, and Lena, with 512×512 images. These standard 
+watermark pattern images were collected from the standard benchmark Signal and Image Processing 
+Institute (SIPI) database [18]. The SIPI database comprises 44 images, 16 colors, and a total of 28 
+monochromes. The sizes are 14 256x256, 26 512x512, and 4 1024x1024. For an individual image, 
+the first click on an image name, which is left of every line below for shows a 200x200 pixel preview 
+of the image. The 24-bit color-based images have been reduced to 8 bits/pixel in order to previewing 
+purposes. The proposed algorithms are implemented by using a JAVA environment with an SQL 
+database and an implemented Glowfish server. 
+
+Baboon: Courtesy of Signal and the Image Processing Institute at the University of Southern 
+California is illustrated in Figure 6. 
+
+ 
+Figure 6: Baboon Samples 
+
+Lena: Courtesy of a Signal and an Image Processing Institute at the University of Southern 
+California, and shown in Figure 7. 
+
+
+
+38 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+ 
+Figure 7: Lena input image 
+
+Peppers: Courtesy of the Signal and Image Processing Institute at the University of Southern 
+California is shown in Figure 8. 
+
+ 
+Figure 8: Pepper’s input image 
+
+Select the one wherein the watermark pattern used for the watermark recognition is openly 
+produced, particularly from a Normal distribution such as N (0, 1). The CS matrix size is exceedingly 
+huge, only if that transfers a 512×512 image for the vector to CS transformation. To replace specifically 
+for cutting an image into pieces, and each piece possesses 64 8×8 DCT blocks.  
+
+ 
+Figure 9: Patient attributes information 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 39 
+ 
+
+The Selective DCT coefficients of every piece could form a vector and also as changed to the CS 
+domain at a similar as CS rate in however, it utilizes the diversity of CS matrices. In the watermark 
+pattern, the healthcare dataset samples were collected from the benchmark UCI machine learning 
+repository. Many healthcare patients’ records were collected from this repository. In addition, the 
+research work on healthcare patients’ records is encrypted by adding attributes of the patients. The 
+sample attributes of patients are shown in Figure 9. In order to secure patient attributes and the 
+patient healthcare records; the files are encrypted using HKG and shown in Figure 10. 
+
+ 
+
+Figure 10: Patient attributes information with key values 
+
+ 
+Figure 11: Watermark patterns 
+
+
+
+40 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+In order to provide more security from unauthorized users, the proposed model encrypts 
+records and adds watermarks by using the standard watermark images, are shown in Figure 11. Once 
+the watermark patterns are selected, the files are embedded in the image, and it is shown in Figure 12. 
+
+ 
+Figure 12: Watermark image with the healthcare data  
+
+4.1 Compression methods comparison 
+Macro-scale compression, zero-knowledge watermark protocol, CS framework, and the proposed 
+
+SMCPS framework are compared in this evaluation. CS based privacy preserving framework, as the 
+DCT coefficients aren’t entirely sparse, in which CS restoration would produce distortion for the 
+reformed image, particularly when while CS rate is small. CS reformation error has been studied in a 
+lot of particular works. Currently, MCPS with CS reformation experimentation outcomes, while each 
+specific AC component has been modified to the CS domain. The results are measured in terms of 
+Peak Signal to Noise Ratio, which is shortly represented as PSNR, the Mean Squared Error, simply 
+MSE, and the Structural Similarity Index called SSIM. 
+4.2 Mean Squared Error (MSE)   
+
+PSNR is as most in easily defined through Mean Squared Error, called MSE. Given a noise-free 
+m×n monochrome image such as I and that noisy approximation called K, MSE is also defined by 
+
+1
+𝑀𝑆𝐸 = ∑𝑚−1 ∑𝑛−1
+
+𝑖=0 𝑗=0 [𝐼(𝑖, 𝑗) − 𝐾(𝑖, 𝑗)]2  (14) 
+𝑚𝑛
+
+4.3 Peak Signal to Noise Ratio(PSNR)  
+Peak Signal to Noise Ratio is found as the most commonly used measure quality of the 
+
+reconstruction of lossy compression codecs. The signal is original data, and the noise is an error 
+introduced by means of compression. While comparing compression codecs, the PSNR is an 
+approximation for human perception of the reconstruction quality. Although by higher PSNR 
+generally indicates reconstruction is found as higher in quality, in some cases it might not. One has 
+to be extremely careful with the range of validity of this particular metric; it is only conclusively valid 
+while it is utilized for comparing results from the same codec and the same content. The PSNR that 
+represented in dB, has been defined as: 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 41 
+ 
+
+𝑀𝐴𝑋2
+𝐼 𝑀𝐴𝑋
+
+𝑃𝑆𝑁𝑅 = 10 log10 ( ) = 20 log10 ( 𝐼)  (15) 
+𝑀𝑆𝐸 √𝑀𝑆𝐸
+
+𝑃𝑆𝑁𝑅 = 10 log10(𝑀𝐴𝑋𝐼) − 10 log10(𝑀𝑆𝐸)   (16) 
+
+4.4 Structural Similarity (SSIM) index 
+SSIM is for measuring similarity between the two images. SSIM index is a full reference metric; 
+
+namely, in other words, the measurement or the prediction of an image quality is purely based on an 
+initial uncompressed or a distortion-free image as by reference. The SSIM index has been calculated 
+on the various windows of the image. The measurement between two windows, called x and y, in a 
+common size called N×N, is 
+
+(2𝜇𝑥𝜇𝑦+𝑐1)(2𝜎𝑥𝑦+𝑐2)
+𝑆𝑆𝐼𝑀(𝑥, 𝑦) =   (17) 
+
+(𝜇2
+𝑥+𝜇2
+
+𝑦+𝑐1)(𝜎2+𝜎2  
+𝑥 𝑦+𝑐2)
+
+ 
+Figure 13: Comparison of the PSNR vs. other algorithms 
+
+ 
+The experimentation results prove that the Peak Signal-to-Noise Ratio of the proposed SMCPS 
+
+framework is about 40.5 dB, whereas the other compression methods, such as Macro-scale 
+compression, zero-knowledge watermark protocol, and CS framework, produce PSNR results of 
+32.89 dB, 34.15 dB, and 36.95 dB, while the CS rate is 1.0, as depicted in Figure 13 (See table 2). It 
+concludes the proposed SMCPS framework, which performs better when compared to the other 
+compression methods. 
+
+Table 1: PSNR vs. other algorithms 
+
+PSNR(dB) 
+
+CS rate Zero-knowledge Macro-scale compression CS Framework SMCPS-CS 
+
+0.2 30.12 31.52 32.5 34.8 
+
+0.4 30.87 32.15 33.69 35.51 
+
+0.6 31.05 32.98 34.1 36.89 
+
+0.8 32.46 33.5 35.25 38 
+
+1 32.89 34.15 36.95 40.5 
+
+ 
+
+
+
+42 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+ 
+Figure 14: MSE Comparison vs. other algorithms 
+
+ 
+
+Figure 14 shows the MSE performance comparison results of Macro-scale compression, zero-
+knowledge watermark protocol, CS framework, and proposed SMCPS framework. However, the 
+proposed SMCPS framework produces MSE results of 0.271, whereas the other compression 
+methods, such as Macro-scale compression, zero-knowledge watermark protocol, and CS framework, 
+produce MSE results of 0.41, 0.38 dB, and 0.328, at a CS rate is 1.0 (See table 2). It concludes that the 
+proposed SMCPS framework produces a lower MSE value when compared to other compression 
+methods. 
+
+Table 2: MSE vs. other algorithms 
+
+MSE 
+
+CS rate Zero-knowledge Macro-scale compression CS Framework SMCPS-CS 
+
+0.2 0.35 0.32 0.28 0.22 
+
+0.4 0.37 0.33 0.3 0.24 
+
+0.6 0.38 0.35 0.31 0.25 
+
+0.8 0.389 0.365 0.32 0.268 
+
+1 0.41 0.38 0.328 0.271 
+
+ 
+Figure 15 shows the SSIM performance comparison results of Macro-scale compression, zero-
+
+knowledge watermark protocol, CS framework, and proposed SMCPS framework. From the results, 
+the proposed SMCPS framework produces SSIM results of 0.8581, whereas the other compression 
+methods, such as Macro-scale compression, zero-knowledge watermark protocol, and CS framework, 
+produce MSE results of 0.76, 0.7825, and 0.823, at a CS rate is 1.0 (See table 3). It concludes that the 
+proposed SMCPS framework produces a lower MSE value when compared to other compression 
+methods. 
+ 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 43 
+ 
+
+ 
+Figure 15: SSIM Comparison vs. other algorithms 
+
+Table 3: SSIM vs. other algorithms 
+
+SSIM 
+
+CS rate Zero-knowledge Macro-scale compression CS Framework SMCPS-CS 
+
+0.2 0.72 0.76 0.78 0.82 
+
+0.4 0.723 0.768 0.791 0.828 
+
+0.6 0.746 0.77 0.798 0.834 
+
+0.8 0.753 0.78 0.814 0.8478 
+
+1 0.76 0.7825 0.823 0.8581 
+
+ 
+
+ 
+Figure 16: Comparison of the communication costs vs. other algorithms 
+
+In Figure 16 prove that as the amount of healthcare samples for safe watermark recognition 
+increases, the proposed SMCPS is compared with existing methods in terms of communication cost 
+(See table 4). SMCPS structure contains much superior scalability as well as superior competence 
+while carrying out safe watermark identification on a huge amount of healthcare samples, although 
+the SMCPS framework is superior to other algorithms. 
+
+ 
+
+
+
+44 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+Table 4: Communication costs vs. other algorithms 
+
+Communication costs(MB) 
+
+No. of samples Zero-knowledge Macro-scale compression CS Framework SMCPS-CS 
+ 
+
+20 356 325 265 218 
+
+40 512 484 452 381 
+
+60 598 541 498 412 
+
+80 742 665 569 518 
+
+100 847 765 625 543 
+
+ 
+Figure 17: Comparison of the security level vs. other algorithms 
+
+Figure 17 proves that as the amount of healthcare samples for safe watermark detection 
+enhances, the presented Secure Multimedia Content Protection System (SMCPS), existing methods in 
+words of security (See table 5). The SMCPS framework provides higher security while carrying out 
+safe watermark identification on a large number of healthcare samples. 
+
+Table 5: Security vs. other algorithms 
+
+Security(%) 
+
+No. of samples Zero-knowledge Macro-scale compression CS Framework SMCPS-CS 
+ 
+
+20 80.26 85.69 88.13 90.58 
+
+40 81.58 86.15 89.18 91.81 
+
+60 82.25 86.54 89.93 92.57 
+
+80 83.02 87.41 90.42 93.78 
+
+100 83.58 88.17 91.23 94.46 
+
+ 
+
+5 Conclusion 
+In this review, a new Secure Medical Healthcare Content Protection System (SMCPS) is 
+
+proposed for a Multi-Cloud Computing (MCC) environment. This SMCPS uses two different 
+
+
+
+J Comput Intell Decis Sci. 2024;1(1):3 45 
+ 
+
+encryption algorithms, such as AES and MD5 encryption, which create a new key by multiplying key 
+1 and key 2, which increases the security and efficiency. The proposed SMCPS system possesses two 
+major steps, namely, at an initial step, the key values are created for healthcare records by encryption 
+algorithms for secure computation, and the second step is a Compressive Sensing (CS) based 
+framework that is proposed for data storage management in the MCC environment. CS framework 
+reduces the size of the original medical or healthcare content for image acquisition. From the results, 
+it is concluded that the proposed SMCPS framework produces MSE results of 0.271, whereas the 
+other compression methods, such as Macro-scale compression, zero-knowledge watermark protocol, 
+and CS framework, produce MSE results of 0.41, 0.38 dB, and 0.328, at a CS rate is 1.0. In future work, 
+the proposed SMCPS system work is to be enhanced by including other encryption methods, which 
+might assist in increasing the security level. Finally, the work intends to expand the MCC to the 
+proposed SMCPS system to their individual cloud storage. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: S. Sivakumar; supervision and writing—review 
+and editing: T. Karthikeyan. All authors reviewed the results and approved the final version of the 
+manuscript.  
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. Senyo PK, Addae E, Boateng R. Cloud computing research: A review of research themes, frameworks, 
+
+methods, and future research directions. Int J Inf Manag. 2018;38(1):128-39. 
+2. Buyya R, Srirama SN, Casale G, Calheiros R, Simmhan Y, Varghese B, Gelenbe E, Javadi B, Vaquero LM, Netto 
+
+MA, Toosi AN. A manifesto for future generation cloud computing: Research directions for the next decade. 
+ACM Comput Surv. 2018;51(5):1-38. 
+
+3. Ullah A, Nawi NM, Ouhame S. Recent advancement in VM task allocation system for cloud computing: 
+review from 2015 to 2021. Artif Intell Rev. 2022;55(3):2529-73. 
+
+4. Suryateja PS. Threats and vulnerabilities of cloud computing: a review. Int J Comput Sci Eng. 
+2018;6(3):297-302. 
+
+5. Dawood M, Tu S, Xiao C, Alasmary H, Waqas M, Rehman SU. Cyberattacks and security of cloud computing: 
+a complete guideline. Symmetry. 2023;15(11):1981. 
+
+6. Mohammad HM, Abdullah AA. Enhancement process of AES: a lightweight cryptography algorithm-AES 
+for constrained devices. TELKOMNIKA. 2022;20(3):551-60. 
+
+7. Kasgar AK, Dhariwal MK, Tantubay N, Malviya H. A review paper of message digest 5 (MD5). Int J Mod Eng 
+Manag Res. 2013;1(4):29-35. 
+
+8. Kim D, Kwon H, Hahn C, Hur J. Privacy-preserving public auditing for educational multimedia data in cloud 
+computing. Multimed Tools Appl. 2016;75(21):13077-91. 
+
+9. Qin Z, Yan J, Ren K, Chen CW, Wang C. SecSIFT: Secure image SIFT feature extraction in cloud computing. 
+ACM Trans Multimed Comput Commun Appl. 2016;12(4s):1-24. 
+
+10. Voloshynovskiy S, Diephuis M, Holotyak T. Privacy preserving multimedia content identification for cloud-
+based bag-of-feature architectures. In 2015 IEEE International Conference on Multimedia & Expo 
+Workshops (ICMEW) 2015 Jun 29, Turin, Italy, 2015, p. 1-6. 
+
+11. Zhang Q, Yang LT, Chen Z. Privacy preserving deep computation model on cloud for big data feature 
+learning. IEEE Trans Comput. 2015;65(5):1351-62. 
+
+12. Kang LW, Muchtar K, Wei JD, Lin CY, Chen DY, Yeh CH. Privacy-preserving multimedia cloud computing 
+via compressive sensing and sparse representation. In 2012 International Conference on Information 
+Security and Intelligent Control 2012 Aug 14, Yunlin, Taiwan, 2012, p. 246-249. 
+
+
+
+46 J Comput Intell Decis Sci. 2024;1(1):3 
+ 
+
+13. Alqahtani HS, Sant P. A multi-cloud approach for secure data storage on smart device. In 2016 sixth 
+international conference on digital information and communication technology and its applications 
+(DICTAP) 2016 Jul 21, Konya, Turkey, 2016, p. 63-69. 
+
+14. Liu X, Choo KK, Deng RH, Yang Y, Zhang Y. PUSC: Privacy-preserving user-centric skyline computation over 
+multiple encrypted domains. In 2018 17th IEEE International conference on trust, security and privacy in 
+computing and communications/12th IEEE International conference on big data science and engineering 
+(TrustCom/BigDataSE) 2018 Aug 1, New York, NY, USA, 2018, p. 958-963. 
+
+15. Kumar R, Mahajan G. A novel framework for secure file transmission using modified AES and MD5 
+algorithms. Int J Inf Comput Secur. 2015;7(2-4):91-112. 
+
+16. Qaisar S, Bilal RM, Iqbal W, Naureen M, Lee S. Compressive sensing: From theory to applications, a survey. 
+J Commn Net. 2013;15(5):443-56. 
+
+17. Zeng W, Liu B. A statistical watermark detection technique without using original images for resolving 
+rightful ownerships of digital images. IEEE Trans Image Process. 1999;8(11):1534-48. 
+
+18. Yousif SF, Abboud AJ, Radhi HY. Robust image encryption with scanning technology, the El-Gamal 
+algorithm and chaos theory. IEEE Access. 2020;8:155184-209.

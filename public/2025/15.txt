@@ -1,0 +1,589 @@
+﻿ARTICLE 
+
+Microarray-Based Cancer Classification via Optimized Gene Selection 
+Using Evolutionary Population Strategies 
+
+T. Saravanan1,*, Krishnaveni Sakkarapani2 and Siva Shankar Ramasamy3 
+
+1Assistant Professor, Department of Computer Applications, MITS University. 
+2Assistant Professor, Department of Data Analytics (PG), PSGR Krishnammal College for Women, Coimbatore, India. 
+3International College of Digital Innovation, Chiang Mai University, Chiang Mai, Thailand, 50200. 
+*Corresponding Author: T. Saravanan. Email: drsaravanant.ml@gmail.com  
+
+Received: 15 July 2025; Accepted: 11 October 2025; Published: 22 December 2025 
+
+ABSTRACT: In the enormous field of bioinformatics research, a large volume of genetic data has been 
+generated. Higher throughput devices are made available at a lower cost, making the generate of huge 
+volumetric data. Handling such numerous data has become an extremely challenging task for selecting the 
+relevant disease-causing gene. The development of microarray technology provides a higher chance of cancer 
+diagnosis, by enabling to measurement of the expression level of multiple genes at the same time. Selecting the 
+relevant gene by using classifiers for the investigation of gene expression data is complicated. Proper 
+identification of genes from the gene expression datasets plays a vital role in improving classification accuracy. 
+In this study, the major task is identifying highly relevant genes from the gene expression data for cancer 
+treatment. By using a modified meta-heuristic approach known as parallel lion optimization (PLOA) for 
+selecting genes from microarray data that are able to classify various cancer sub-types with more accuracy. The 
+experimental results depict that PLOA outperforms LOA and other well-known approaches, considering the 
+five benchmark cancer gene expression datasets. It returns 99% classification accuracy for the dataset, namely 
+Prostate, Lung, Leukemia, and Central Nervous System (CNS), for the top 200 genes. Prostate and Lymphoma 
+dataset PLOA is 99.19% and 99.93% respectively. On evaluating the result with other algorithms, the higher 
+level of accuracy in gene selection is achieved by the proposed algorithm. 
+
+KEYWORDS: Cancer diagnosis, Parallel Lion Optimization, Gene Expression data, Genetic Algorithm, 
+Classification. 
+
+1 Introduction 
+The death rate due to cancer is increasing in current days. Technology is fast-growing; there is a 
+
+requirement for the detection and proper treatment of cancer. Microarray technology is gaining 
+importance, where the expression of genes can be used to measure and classify cancer cells. 
+
+ The microarray examination is a process where the RNA is mined and converted to mRNA, and 
+cDNA is produced [1]. Both mRNA and cDNA are kept in a DNA microarray such that individual cDNA 
+gets connected to its corresponding mRNA. Further, the image processing procedures are applied to 
+identify the genes [2]. The samples are very less, and as the features are more, identification is the 
+most motivating task. The main research is identifying the genes. Various methodologies for training 
+the samples are available. Neural networks and machine learning approaches have been proposed. 
+The dominant features of the gene to be selected, which help in accurate classification. The process 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+54 J Comput Intell Decis Sci. 2025;2(2):5 
+ 
+
+may be classified into two stages. They are Feature selection and classification. The block diagram 
+below shows the general model.  
+
+There are many gene selection techniques available, like wrapper, filter. Microarray data may 
+have relevant and irrelevant data, which indicates high dimensionality. Feature selection supports 
+selecting features that help in classification. It is a methodology where the available data is grouped 
+depending on the feature [3]. 
+
+ 
+Figure 1: Block Diagram 
+
+Various classification techniques, which are already available, are used, like k-NN, convolutional 
+neural networks, etc. Amongst the approaches, hybrid methodologies are gaining importance, which 
+makes the system accurate. This study discusses on Parallel Lion Optimization method for efficient 
+gene selection rate has been experimented with by comparing various techniques in previous 
+approaches. 
+
+2 Literature Survey 
+The multi-objective PSO [4] repeatedly executes the steps of calculation of fitness, after which 
+
+non-dominant sorting is done. GBest, which is a random solution among the results, is selected. This 
+was mainly tested for colon cancer, Lymphoma, and leukemia datasets. Classification, namely Bayes 
+family classifiers, function-based classifier, k-NN classifier, and tree-based classifier, was used. This 
+was mainly concentrated on analyzing gene data. The lion algorithm identifies the best solution, 
+which mainly performs the generation of pride, mating, territorial defense, and territorial takeover. 
+The algorithm is defined based on the lion's social behavior.  
+
+Classification approach for micro data analysis [5] has two stages: feature selection, which is 
+done with the help of embedded method, wrapper method, and filter method. Second are 
+classifications for which neural networks and hybrid classifiers various as are used. There are other 
+various approaches used, like gene classification, wavelet transformation, and swarm optimization, 
+etc., where, depending on the feature, the technique can be implemented.  
+
+Biography-based optimization [6] is a kind of wrapper method in feature selection. It mainly 
+works using the principle of special migration and mutation. This mainly avoids redundancy and 
+gives optimal results. Redundancy-based filter works by listing the features in decreasing order and 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):5 55 
+ 
+
+removing the related features from all features. IG-GA and dependency of feature are also the hybrid 
+approaches that use branch and bound, sequential forward process, respectively, and provide 
+optimal results.  
+
+Fuzzy approaches [7] are an order technique for feature selection. The fast algorithm initially 
+removes irrelevant features and constructs the minimum spanning tree; it is partitioned based on 
+the representative features. Bayes, C4.5 Ripper, and CFS classifier, along with this, give better results. 
+There are various approaches for the detection of cancer using microarray data [8]. The simplified 
+fuzzy ARTMAP, which uses cDNA microarray data for the identification of lymphoma. Gene 
+expression graph represents the graph structure that relates silenced and expressed genes, where 
+nodes are genes, and the edges represent gene expression relation [9]. Other approaches, like 
+kernelized Fuzzy Rough set and semi-supervised SVM, which use biomarkers [10]. Transductive SYM 
+adds the transductive samples to the original training set and continues the process of selecting and 
+adding the transductive samples. 
+
+3 Proposed Methodology 
+
+3.1 Initialization 
+In the initial step, Npop arrangements are created arbitrarily in the seek space. %N of produced 
+
+arrangements are arbitrarily picked as migrant lions. The rest of the populace will be haphazardly 
+partitioned into P prides. Every arrangement in this calculation has a particular orientation of sex 
+and remains steady amid the streamlining process. To imitate this reality, in every pride %S (%75– 
+%90) of the whole populace shaped at the end are referred to as females and the remaining as males. 
+For wanderer lions, this proportion is the other way about %(1_S). Lion is spoken to as taking after 
+[11]: 
+
+Lion = [x1, x2 ,x3, …,xNvar]     (1) 
+
+ 
+L2 L3 L4 . . . . . . . . . . . . . LN-3 LN-2 LN-1 LN 
+
+ 
+
+0.36 0.91 0.19 0.39 . . . . . . . . . . . . . 0.78 0.61 0.24 0.09 
+
+    . . . . . . . . . . . . .     
+
+0 1 0 0 . . . . . . . . . . . . . 1 1 0 0 
+
+ 
+
+Figure 2: Lion Representation in PLOA 
+
+Figure 2 shows the gene representation of lion optimization. The integer higher than the 
+maximum value is (0.50), and it will be 1, and the minimum value will be represented as 0. The genes 
+set that have a value of 1 will be chosen for further optimization. 
+
+ 
+
+
+
+56 J Comput Intell Decis Sci. 2025;2(2):5 
+ 
+
+3.2 Hunting 
+In each pride, some females search for prey in a gathering to give sustenance to their pride. These 
+
+seekers have specific methodologies to round up the prey and catch it. As a rule, lions took after 
+similar examples when chasing. The lions are partitioned into seven distinctive stalking parts. PREY 
+will escape from the seeker, and the new position of PREY is obtained as follows: 
+
+rand ((2 × PREY - Hunter), PREY), (2 × PREY - Hunter) < PREY
+Hunter'=   (2) 
+
+rand(PREY, (2 × PREY - Hunter)),  (2 × PREY - Hunter) > PREY
+ 
+
+3.3 Moving Toward a Safe Place 
+As specified in the previous subdivision, in all pride a few females go chasing. Left out females go 
+
+toward one of the regions. Since the region of every pride comprises the individual best so far, places of 
+every part and helps the Lion Optimization Algorithm (LOA) to save the best arrangements acquired so 
+far, after completing the course of emphasis, it can be utilized as significant and reliable data to enhance 
+arrangements in LOA. The female lion's new position might be meant as 
+
+Female Lion’ = Female Lion + 2D × rand (0, 1) {R1} + U (− 1,1) × tan ( ) × {R2} {R1}. {R2} =   (3) 
+0, ║ {R2} ║ 1    
+
+3.4 Roaming 
+Every male lion in a pride wander in that pride’s region because of a few reasons. To copy this 
+
+conduct of occupant guys, the % R of pride in an area is chosen haphazardly and is governed by that lion. 
+Along wandering, if an occupant male visits another position which is superior to anything its present 
+best position, refresh its best went by arrangement. This wandering is a solid neighborhood inquiry and 
+helps the Parallel Lion Optimization Algorithm (LOA) to look around for an answer to enhance it [12]. 
+
+X ~ U (0, 2 × d)     (4) 
+
+3.5 Mating Selection 
+Mating is a basic procedure that guarantees the lions’ survival and gives a chance for data exchange 
+
+among individuals. In each pride, %Ma of is female lions mate with one or a few inhabitant lions. These 
+guys are chosen haphazardly from an indistinguishable pride from the female to deliver posterity. For 
+traveler lions, it’s diverse in that a wanderer female just mates with one of the males who are chosen by 
+utilizing a roulette wheel determination process. The mating administrator is a direct blend of guardians 
+for delivering two new offspring. As indicated by the accompanying conditions, the new offspring are 
+created after choosing the female lion and male(s) for mating. 
+Roulette Wheel Selection 
+
+The thought behind the roulette wheel choice parent choice strategy is that every individual is 
+allowed to end up a parent to the extent of their wellness assessment. It is called roulette wheel 
+determination as the odds of choosing a parent can be viewed as turning a roulette wheel, with the extent 
+of the opening for each parent being relative to its wellness. Clearly, those with the biggest wellness (and 
+opening sizes) have more possibilities of being picked. Roulette wheel determination can be executed as 
+takes after  
+
+a.: Sum the wellness of all the population individuals. Call this TF (add up to wellness).    
+b. Generate a random number m in the vicinity of 0 and TF. 
+c. Return the primary population part whose wellness added to the former populace individuals are 
+
+more prominent than or equivalent to m. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):5 57 
+ 
+
+ 
+Figure 3: A and B representation of defense against new mature and no male 
+
+Figure 3 demonstrates the portrayal new developed occupant male choice. It is applied to the roulette 
+wheel determination strategy rather than irregular choice. The issue with roulette wheel choice is that 
+one part can overwhelm all the others and get chosen a great extent of times. The inverse is additionally 
+valid. On the off chance that the calculation of the individuals will be close, then they will have a relatively 
+measure up to possibility of being chosen [18]. To get around these issues, different wellness 
+standardization methods can be applied. 
+
+i
+Offspring  FemaleLion (1−  )
+
+ 1 =  × j  + 
+j     × 
+
+NR MaleLion × 
+j S i     (5) 
+
+i=1S i
+
+3.6 Defense 
+In a pride, male lions, when they develop, they end up forceful and fight other males in their pride. 
+
+Beaten guys desert their pride and turn into wanderers. Then again, if a wandering male lion is sufficiently 
+strong to endeavor to assume control over a pride by fighting its males, the beaten inhabitant male lion is 
+driven out of the pride and becomes a traveler. The resistance administrator is partitioned into two 
+fundamental advances: defense with respect to new mature resident males and defense with respect to 
+nomadic males. 
+
+3.7 Migration 
+Roused by the lion's switch life and transitory conduct in nature when one lion sets out starting with 
+
+one pride then onto another or switches its mode of life and the inhabitant female moves toward 
+becoming a traveler and the alternative way around, it improves the genetic variety of the objective pride 
+by its situation in the past pride. Then again, the lion’s movement and switch mode of life assemble the 
+scaffold for data trade.  
+
+In each pride, the maximum number of females is prevented from being mined by S% of the 
+population of the pride. For relocation administrators, some women chose arbitrarily and progress 
+toward becoming wanderers. The size of the moved female in each pride is equivalent to surplus females 
+in all prides, in addition to the maximum number of females in a pride. At the point when chosen females 
+move from prides and move toward becoming migrants, new wanderer females and old traveler females 
+are arranged by their fitness. At that point, the best females are chosen arbitrarily and dispersed to prides 
+to fill the vacant place by moving females. This system keeps up the decent variety of the entire population 
+and offers data among prides. 
+
+
+
+58 J Comput Intell Decis Sci. 2025;2(2):5 
+ 
+
+3.8 Convergence 
+For the halting condition, as normally considered in enhancement calculations, the best outcome is 
+
+computed where the ceasing condition might be accepted as the CPU time, the greatest number of 
+emphases, the number of cycles without change, and so forth.  
+
+The primary strides of the PLOA are condensed in the pseudo code. To perceive how PLOA can 
+tackle enhancement issues, a few points might be noted: In PLOA, every arrangement has a specific sexual 
+orientation, and every sex has its own particular system for looking. It helps PLOA to search for the ideal 
+point by various methodologies [13]. The general point in utilizing a few prides is that each pride centers 
+on a specific area and harmony between investigation and abuse. Its character of PLOA builds its ability 
+to work for the enhancement of multi-modular issues. Traveler lions and their versatile wandering help 
+PLOA to seek arrangement space haphazardly and escape from nearby optima. Individual best so far 
+places of lions can give significant and solid data discovered so far by the populace. The proposed pride’s 
+region PLOA to made the best arrangements so far to finish the sequence of the cycle. In PLOA, by mating, 
+lions share data between sexual orientations, while new whelps acquire character from the two sexes. 
+Occupant guys wandering help PLOA to misuse data from their separate pride’s neighbors that hold 
+significant information. This method can be referred to as a solid neighborhood search. Specifically, the 
+case ends up stale at a point. If best wellness esteem stagnates for a specific number of emphases in both 
+the forests, then combine the whole population of lions in two timberlands and recently partition the 
+prides and wanderers in light on their wellness value [14]. Figure 3 presents about the population 
+relocation convergence in the dormant circumstance. The pseudo code portrays every progression in the 
+Parallel Lion Optimization calculation amongst the two woodlands at the same time. 
+Pseudo code of PLOA 
+
+Begin 
+
+Define the fitness function f (x), x = x1 , x2 , x3 ,..............xn 
+
+Set the following parameters  
+
+Number of Lions, Number of Iterations, Number of Prides, Female Prides, Male Prides, 
+Female Nomads, Male Nomads, Immigration Rate, Mating Probability, Numbers of lions for 
+mating and moving  
+
+Define two forests and in each forest do the following steps in parallel  
+
+1. Generate random population of Lions Npop 
+
+2. Initialize prides and nomad lions within the population 
+
+a. Randomly select N% of initial population as nomad lions. Randomly 
+divide the remained lions into P prides and form each pride’s region 
+
+b. In each pride S% of entire population are assumed as female lions and the 
+remaining lions as males. 
+
+c. In each nomad (100-S) % of complete population are identified as females 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):5 59 
+ 
+
+and the left out as males. 
+
+3. For each pride do 
+
+a. Some female lions are randomly selected and go hunting 
+
+b. Each of remained female lion in pride go near one of the best selected 
+position from territory 
+
+c. In pride group, for each resident male; R% of territory lions are randomly 
+selected and checked. 
+
+d. Select Ma% of female lions from pride using Roulette Wheel Selection 
+
+e. Selected females in pride mate with one or several resident male. Do 
+mutation with Mutation Probability Mu. New cubs become mature. Merge new off 
+springs with prides  
+
+f. Weakest male drive out from pride and become nomad 
+
+      End For 
+
+ Select some strongest male lions from nomad and go hunting 
+
+4. For Nomad do 
+
+a. Nomad lion (Both male and female) moving randomly in search space 
+
+b. Select Ma% of females from nomad using Roulette Wheel Selection 
+
+c. Selected nomad females mate with one of the best nomad male 
+
+d. Do mating with Mating Probability Mu. New cubs become mature 
+
+e. Merge new off springs with prides  
+
+f. Selected prides randomly attacked by nomad male 
+
+    End For 
+
+5. For each pride do 
+
+a. Selected females from Pride with Immigration rate I become nomad 
+
+       End For 
+
+6. Do 
+
+
+
+60 J Comput Intell Decis Sci. 2025;2(2):5 
+ 
+
+a. First based on their fitness vale each gender of the nomad lions is sorted. 
+After that, the best females among them are selected and scattered to prides filling 
+empty places of migrated females. 
+
+b. With respect to maximum acceptable number of each gender, nomad 
+lions with smallest fitness value will be detached. 
+
+Find the overall best objective value from the whole population of lions 
+
+If best fitness value stagnates for particular number of iterations in both the forests 
+
+Merge the entire population of lions in two forests and newly divide the prides and 
+nomads based on their fitness value 
+
+End If 
+
+If termination condition is not satisfied, then go to step 3. 
+
+4 Analysis 
+
+4.1 Datasets 
+In this study, the cancer benchmark microarray datasets from Kent Ridge Biomedical Data 
+
+Repository [15] (http://datam.i2r.a-star.edu.sg/datasets/krbd/) are used for of experimental study. 
+For the evaluation of the proposed method, five binary-class microarray cancer datasets are taken. The 
+details of the datasets are given in Table 1. The third and fourth column representing Class1 and Class2, 
+respectively, specifies the count of samples denoted inside parentheses. To evaluate our proposed 
+algorithm, accuracy as a fitness function is used. 
+
+Table 1: Microarray gene expression datasets 
+
+Name of the Dataset Number of Class1 Class2 Total 
+
+Genes Samples 
+
+Acute myeloid leukemia – Acute 7129 ALL (47) AML (25) 72 
+
+lymphoblastic leukemia (AML-ALL) 
+
+Prostate 12600 Normal (59) Tumor (77) 136 
+
+Colon Tumor 2000 Tumor (40) Healthy (22) 62 
+
+Lung Harvard2 12533 Adenocarcinoma Mesothelioma (31) 181 
+
+(ADCA) (150) 
+
+Diffuse large  7129 DLBCL (58) Follicular lymphoma 77 
+
+B-cell lymphoma (DLBCL) Harvard (FL) (19) 
+
+ 
+As mentioned earlier, the T-statistics for all microarray data genes are calculated and ranked based 
+
+on their values. In this study, PLOA is applied to select informative genes from the top-M ranked genes. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):5 61 
+ 
+
+The kNN classifier is used as the classifier for the comparison of the performance of CSC. In this study, 
+top-50, top-100, and top-200 genes are selected from the dataset by applying the T-statistic measure. 
+Figure 4.1 shows PLOA convergence over 200 iterations on the Leukemia dataset with top 50, 100, and 
+200 genes. 
+
+Figures 4 depict the accuracy obtained for selected top 50, 100, and 200 genes from T-statistics for 
+leukemia, prostate, colon, lung, and lymphoma datasets. The results depict that the proposed PLOA 
+algorithm outperforms existing statistical methods and PLOA in all five cancer gene expression data 
+sets. 
+
+ 
+Figure 4: Convergence of the PLOA algorithm for the Leukemia Dataset 
+
+4.2 Comparative Analysis 
+We compared the efficiency of our approach with PSO, GA, and Harmony Search (HS). Table 2 
+
+depicts the maximum accuracy in a 200-epoch run of each method for each data set in the top 200 
+genes selection using the T-statistics measure. Seeing as the three benchmark methods are executing 
+in the same experimental setup, inputs, and gene expression data. Therefore, the results are exactly 
+accountable for comparison. The table of comparison shows that, compared to PSO, GA and HS have 
+an obvious advantage. The proposed PLOA method results in 99% classification accuracy for 
+Prostate, Lung Cancer, Michigan, and Lymphoma. For the Prostate dataset and Lymphoma outcome 
+dataset, the classification accuracy obtained by the proposed classifier is 99.19% and 99.93% 
+respectively. The results show that for most of the methods, the classification accuracy is dependent 
+on the number of genes. When the number of genes increases, classification accuracy also increases. 
+In terms of the correct rate, the search space of the solution capability of PLOA is better than the 
+other three competitors. 
+
+Table 2: Comparison of our proposed algorithm with some important methods 
+
+Dataset PSO CS HBMO LOA PLOA 
+
+Leukemia 83.51 90.34 88.55 92.22 96.12 
+
+Lymphoma 99.35 99.93 99.52 94.21 99.93 
+
+Lung 99.76 99.76 99.74 93.76 99.91 
+
+
+
+62 J Comput Intell Decis Sci. 2025;2(2):5 
+ 
+
+Prostate 88.50 87.66 88.37 91.45 99.19 
+
+Colon 96.64 97.86 98.81 95.23 99.94 
+
+4.3 Biological Analysis of Selected Genes for Leukemia Cancer Data 
+At last, the most significant subsets of genes were detected for every microarray data set. We 
+
+included all subsets having the maximum accuracy, as well as listed the selected genes. Table 3 lists 
+the highest selection frequency for the top 5 genes of the leukemia microarray data set. The roles or 
+activities of the identified genes are confirmed by both the biological experiment as well as by the 
+PLOA-based method. This indicates that it has a greater chance to act as biomarkers; these genes 
+have been demonstrated to be the potential reason for leukemia cancer. Table 3 denotes the top 5 
+genes with the highest frequency in the leukemia data sets. 
+
+Table 3: Top 5 genes with the highest selection frequency of the leukemia data set 
+
+Dataset PSO GA HS LOA PLOA 
+
+Leukemia 87.16 86.06 93.55 92.22 99.33 
+
+Lymphoma 91.77 93.86 88.56 94.21 99.80 
+
+Lung 90.33 93.87 96.62 93.76 99.19 
+
+Prostate 89.44 91.58 90.96 91.45 99.81 
+
+Colon 87.32 93.02 96.09 95.23 99.19 
+
+5 Conclusion 
+Microarray establishes the gene expression signatures associated with different phenotypes. 
+
+Gene expression profiles are valuable to distinguish tumors into new and well-established tumor 
+types. In this research, the meta-heuristic PLOA algorithm has been developed and implemented to 
+select the informative genes from microarray data. An accuracy of classification is obtained by 
+various eminent optimization algorithms like PSO, CS, HS, and LOA investigated. It is noticed that the 
+genes selected by the PLOA for different cancer datasets have significant biological relevance. The 
+result analysis acquired by the proposed algorithm is appropriate for the best gene selection, which 
+has been evaluated with various gene expression benchmark datasets. The obtained accuracy by the 
+PLOA method outperforms other methods. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: T. Saravanan; supervision and writing: 
+Krishnaveni Sakkarapani; review and editing: Siva Shankar Ramasamy. All authors reviewed the 
+results and approved the final version of the manuscript. 
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):5 63 
+ 
+
+References 
+1. Agapito G, Arbitrio M. Microarray data analysis protocol. In Microarray Data Analysis, 2021 Dec 14, New 
+
+York, NY: Springer US, 2021, p. 263-271. 
+2. Negi A, Shukla A, Jaiswar A, Shrinet J, Jasrotia RS. Applications and challenges of microarray and RNA-
+
+sequencing. Bioinformatics. 2022:91-103. 
+3. Nayak DS, Mohapatra S, Al-Dabass D, Swarnkar T. Deep learning approaches for high dimension cancer 
+
+microarray data feature prediction: A review. Comput Intell Cancer Diag. 2023:13-41. 
+4. Cui Y, Meng X, Qiao J. A multi-objective particle swarm optimization algorithm based on two-archive 
+
+mechanism. Appl Soft Comput. 2022;119:108532. 
+5. Sánchez-Maroño N, Fontenla-Romero O, Pérez-Sánchez B. Classification of microarray data. In Microarray 
+
+Bioinformatics, 2019 May 22, New York, NY: Springer New York, 2019, p. 185-205. 
+6. Singh UP, Chandra S. Optimal cleaning schedule in solar PV using the biography-based helianthus 
+
+optimization enabled coupled deep network. Sol Ener. 2023;266:112138. 
+7. Das AK, Chakraborty B, Goswami S, Chakrabarti A. A fuzzy set-based approach for effective feature 
+
+selection. Fuzzy Sets Syst. 2022;449:187-206. 
+8. Khalsan M, Mu M, Al-Shamery ES, Ajit S, Machado LR, Agyeman MO. A novel fuzzy classifier model for cancer 
+
+classification using gene expression data. IEEE Access. 2023;11:115161-78. 
+9. Matias AL, Neto AR, Mattos CL, Gomes JP. A novel fuzzy ARTMAP with area of influence. Neurocomputing. 
+
+2021;432:80-90. 
+10. Wang R, Chen D, Kwong S. Fuzzy-rough-set-based active learning. IEEE Trans Fuzzy Syst. 2013;22(6):1699-
+
+704. 
+11. Yazdani M, Jolai F. Lion optimization algorithm (LOA): a nature-inspired metaheuristic algorithm. J Comput 
+
+Des Eng. 2016;3(1):24-36. 
+12. Hussain I, Ullah I, Ali W, Muhammad G, Ali Z. Exploiting lion optimization algorithm for sustainable energy 
+
+management system in industrial applications. Sustain Energy Technol Assess. 2022;52:102237. 
+13. Sampathkumar A, Vivekanandan P. Gene selection using parallel lion optimization method in microarray 
+
+data for cancer classification. J Med Imaging Health Infor. 2019;9(6):1294-300. 
+14. Jiang K, Jiang M, Han Z, Wang F, Zhao Z. Research on the clustering competition coevolution optimization 
+
+framework under the parallel lion swarm optimization algorithm. In Proceedings of the 2024 9th 
+International Conference on Mathematics and Artificial Intelligence, 2024 May 10, New York, NY, USA, 
+2024, p. 115-121. 
+
+15. Mahmud MS, Fu X, Huang JZ, Masud MA. High-Dimensional Limited-Sample biomedical data classification 
+using variational autoencoder. In Australasian conference on data mining, 2018 Nov 28, Singapore, 2018, 
+p. 30-42.

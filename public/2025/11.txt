@@ -1,0 +1,807 @@
+﻿ARTICLE 
+
+Dynamic Multi-Level Heuristic Framework for Predicting Lung Cancer 
+from CT Scan Data 
+
+Nongmaithem Ajith Singh1,* and Rajkumar Palaniappan2 
+
+1Assistant Professor, Department of Computer Science, South East Manipur College, Komlatahabi, Chandel District, 
+Manipur, India. 
+2Associate Professor, Department of Mechatronics Engineering, University of Technology Bahrain, Bahrain. 
+*Corresponding Author: Nongmaithem Ajith Singh. Email: ajithex@gmail.com  
+
+Received: 26 July 2025; Accepted: 17 October 2025; Published: 22 December 2025 
+
+ABSTRACT: Lung cancer is the abnormal growth of cells in the lung, causing a severe risk to human health 
+because the lung has a connected network of blood vessels and lymphatic channels vulnerable to metastasis. 
+Lung cancer is known to be one of the most dangerous diseases, which is the main reason for disease and death 
+when diagnosed in primitive stages. Since lung cancer can only be detected more broadly after it spreads to the 
+lung region and the occurrence of lung cancer in the earlier stage is very difficult to predict. It causes a greater 
+risk as radiologists and specialist doctors assess the existence of lung cancer. The accuracy of detecting tumor 
+shape, location, and volume plays a vital role in the successful diagnosis and treatment of tumors. For this 
+reason, it is important to build a smart and automatic cancer prediction system that is accurate and at which 
+stage of cancer, or improve the accuracy of the previous cancer prediction, which will help determine the type 
+of treatment and treatment depth depending on the severity of the disease. Adaptive Hierarchical Heuristic 
+Mathematical Model (AHIHMM) has been proposed for the deep learning approach. To analyze deep learning 
+based on the historical therapy scheme in the development of Non-Small Cell Lung Cancers (NSCLC), automated 
+radiation adaptation protocols for optimizing local tumor regulation at lower rates. Computed Tomography 
+(CT) images are widely used for lung cancer detection as they provide information about different parts of the 
+lung. Furthermore, the proposed system consists of three steps, including acquiring the image, preprocessing, 
+segmentation, and classification. Firstly preprocessing stage, (i) Improved Median Filter (IMF) and Wiener 
+Filter (WF) techniques are introduced for removing or reducing the noise from the image, (ii) Image histogram 
+methods are used for image quality enhancement, Histogram Rehabilitated (HR) and Local Contrast 
+Enhancement (LCE) techniques that consists of two stages of processing to increase the potentiality of contrast 
+enhancement and to preserve the local details in the images, contrasted details to improve the quality of the CT 
+pulmonary image, then (iii) resulted image passed to edge detection done using Canny Edge Detection (CED) 
+algorithm. Secondly segmentation stage, the segmentation of the region injured by cancer by the use of the K-
+means clustering algorithm, using the enhanced lung CT image. Segmentation of the lung CT image is carried 
+out to extract any significant feature of a segmented image, and a specific feature extraction method is 
+implemented. Finally, classification stage, identification of lung cancer through an explosion-trained Deep 
+Learning Neural Network (DLNN). The image training should be carried out utilizing a deep-learning NN before 
+the classification process is done. The experimental results show that metrics such as accuracy and Efficiency 
+Ratio. The experimental results have been demonstrated with the help of a dataset downloaded from online. 
+The experiment result shows that the proposed AHIHMM achieves the highest accuracy compared with the 
+other modern methods, such as Deep Convolutional Neural Network (DCNN) and Artificial Neural Network 
+(ANN). 
+
+ 
+Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
+Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
+medium, provided the original work is properly cited. 
+
+ 
+ 
+
+
+
+2 J Comput Intell Decis Sci. 2025;2(2):1 
+ 
+
+KEYWORDS: Adaptive HIerarchical Heuristic Mathematical Model (AHIHMM), Lung Cancer Prediction (LCP), 
+Computed Tomography (CT), Improved Median Filter (IMF), Deep Learning Neural Network (DLNN). 
+ 
+
+1 Introduction 
+Cancer is one of the leading causes of death worldwide. It has caused more deaths than any other 
+
+disease, such as tuberculosis or malaria. World Health Organization (WHO) agencies for cancer 
+research (i.e, International Agency for Cancer Research (IACR) and American Cancer Society) report 
+that 17.1 million new cancer cases were recorded in 2018 worldwide [1]. WHO estimates that cancer 
+incidences might increase to 27.5 million by 2040, with an estimated 16.3 million deaths expected as 
+a result of cancer [1].  
+
+A malignant tumor labeled by uncontrolled cell growth in lung tissues is lung cancer, known as 
+lung carcinoma. This must be treated so that its growth is not spread to other parts of the body, 
+resulting in metastases. Carcinoma is the majority of cancers starting in the lung. The two main types 
+are carcinoma of small cells of the lung and non-small cells of the lung. The primary factor in 88% of 
+lung cancers is long-term smoking. Approximately 15-20 % of cases occur in humans who have not 
+smoked except for asthma, smoking, asbestos, and radon gas [2]. 
+
+Lung cancer arises when cells in the lung grow uncontrollably, forming a tumor lesion or nodule. 
+The reasons behind lung cancer are smoking, air pollution, harmful chemicals, etc. Based on the 
+cancer type, stage, and molecular characteristics, treatment includes surgery, radiation therapy, 
+chemotherapy, immunotherapy, and targeted therapy. Computed Tomography (CT) scan is one of 
+the widely used medical imaging technologies that presents useful information for various medical 
+and clinical diagnoses. Practical manual segmentation from CT images used to measure the volume 
+of lung tumors, which is operator-dependent and time-consuming [3].  
+
+The first and fundamental step for lung image analysis is the segmentation of the lung. 
+Segmentation is the process by which regions of interest of a digital image are portioned and labeled 
+in different segments using properties such as intensity, texture, etc., which is much easier to analyze. 
+Errors in lung segmentation would generate false information, so accurate segmentation is 
+necessary. The segmentation of lung tumors is very heuristic in nature as the CT images include 
+bones, bronchioles, trachea, soft tissues, and background artifacts, which share properties of 
+intensity, connectivity with tumor lesions [4]. 
+
+A CT scan combines a series of X-ray images taken from different angles and uses computer 
+processing to create cross-sectional image slices of the bones, blood vessels, and soft tissues. Special 
+x-ray equipment is used for a CT scan of the chest to examine abnormalities in the lung [5]. 
+
+The traditional method to predict the presence of lung cancer is CT and X-rays. Biopsy, which is 
+usually performed with a bronchoscope or a CT scan, confirms the diagnosis. The impact of death due 
+to cancer in men is due primarily to lung cancer, and a new and comprehensive approach to the early 
+diagnosis of lung cancer should, therefore, be established [6]. The method of image recognition has 
+been enhanced by recent technology in deep learning or Deep Neural Networks (DNN). Scan the 
+pattern in an image utilizing DNN and decide if it recognizes the pattern. Besides, it looks for several 
+patterns when analyzing an image. Neural network training requires a predetermined dataset to be 
+used by the network to recognize, learn, and classify a picture. DNN has become more and more 
+common because it can easily be used for recognizing image patterns and classifying images [7]. Most 
+of the patients with Non-Small-Cell Lung Cancer (NSCLC) are ineligible because of locally improved 
+diseases or remote metastases and therefore radiation treatment.  
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):1 3 
+ 
+
+In the proposed work, DNN can be used in various medical fields to extract features and classify 
+images. The DNN model has been trained and tested using functional CT data. The images have been 
+divided into one convolutional layer only. It is difficult to classify heavier images with DNN. While 
+images of the form CT are used primarily in medical imaging, unnecessary artifacts can be created. 
+The threshold has been used to prevent the images from displaying these objects. The threshold 
+procedure eliminates unwanted peaks in pixels of the medical image of lung cancer. The main 
+contributions of the proposed work steps are: 
+
+• Pre-processing stage, IMF and WF techniques are introduced for removing or reducing the 
+noise from the image, HR and LCE techniques to increase the potentiality of contrast enhancement 
+and to preserve the local details in the images, contrasted details to improve the quality of the CT 
+pulmonary image, and then edge detection is done using the CED algorithm. 
+
+• Adaptive HIerarchical Heuristic Mathematical Model (AHIHMM) to predict lung cancer 
+based on Deep learning using CT images. 
+
+• DNN framework to extract high-level features directly from the information and apply the 
+K-means clustering algorithm. 
+
+• The experimental results have been performed to enhance the accuracy in prediction, and 
+the dataset http://diagnijmegen.nl/index.php/Lung_Cancer has been utilized. 
+
+ The rest of the paper is organized as follows: The Literature review on LCP existing schemes is 
+briefly discussed in section 2. The proposed methodology for the LCP system using a deep learning 
+algorithm is presented in section 3. The results and discussion are briefly explained in section 4. The 
+conclusion is described in section 5. 
+
+2 Literature Review 
+Coudray et al [8] developed a Deep Convolutional Neural Network (inception v3) on whole-slide 
+
+images obtained from The Cancer Genome Atlas to accurately and automatically classify them into 
+LUAD, LUSC, or normal lung tissue. The performance of the method is comparable to that of 
+pathologists, with an average Area Under the Curve (AUC) of 0.97. The proposed model was validated 
+on independent datasets of frozen tissues, formalin-fixed paraffin-embedded tissues, and biopsies. 
+Furthermore, trained the network to predict the ten most commonly mutated genes in LUAD. Also, 
+found that six of them-STK11, EGFR, FAT1, SETBP1, KRAS, and TP53-can be predicted from pathology 
+images, with AUCs from 0.733 to 0.856 as measured on a held-out population. These findings suggest 
+that deep-learning models can assist pathologists in the detection of cancer subtypes or gene 
+mutations. 
+
+Wang et al [9] proposed a Support Vector Machine (SVM) for the prediction of malignant and 
+benign lung tumors. The early diagnosis of lung cancer plays a very important role in therapeutic 
+regimen selection. However, lung cancers are spatially and temporally heterogeneous; this limits the 
+use of invasive biopsy. But radiomics, which refers to the comprehensive quantification of tumour 
+phenotypes by applying a large number of quantitative image features, can capture intra-tumoral 
+heterogeneity in a non-invasive way. Here, carry out a radiomic analysis of 150 features quantifying 
+lung tumour image intensity, shape, and texture. These features are extracted from 593 patients' 
+Computed Tomography (CT) data on the Lung Image Database Consortium Image Database Resource 
+Initiative (LIDC-IDRI) dataset. By using SVM, we find that a large number of quantitative radiomic 
+features have diagnostic power. The accuracy of the prediction of malignant lung tumors is 86% in 
+the training set and 76.1% in the testing set. As CT imaging of lung tumors is widely used in routine 
+clinical practice, a radiomic classifier will be a valuable tool that can help clinical doctors diagnose 
+lung cancer. 
+
+
+
+4 J Comput Intell Decis Sci. 2025;2(2):1 
+ 
+
+Jakimovski and Davcev [10] introduced a double Convolutional Deep Neural Network (CDNN) 
+for lung cancer stage detection in Computed Tomography (CT) images. CT scans to train a CDNN and 
+a regular CDNN. These topologies were tested against lung cancer images to determine the Tx cancer 
+stage at which these topologies can detect the possibility of lung cancer. The first step was to pre-
+classify the CT images from the initial dataset so that the training of the CDNN could be focused. Next, 
+built the double CDNN with max pooling to perform a more thorough search. Finally, used CT scans 
+of different Tx cancer stages of lung cancer to determine the Tx stage in which the CDNN would detect 
+the possibility of lung cancer. Then tested the regular CDNN against the double CDNN. Using this 
+algorithm, doctors will have additional help in early lung cancer detection and early treatment. After 
+extensive training with 100 epochs, the double CDNN obtained the highest accuracy, whereas the 
+regular CDNN obtained only lower accuracy. 
+
+Teramoto et al [11] introduced a Deep Convolutional Neural Network (DCNN) for an automated 
+classification scheme of lung cancers. An automated classification scheme for lung cancers presented 
+in microscopic images using a DCNN, which is a major deep learning technique. DCNN used for 
+classification consists of three convolutional layers, three pooling layers, and two fully connected 
+layers. In evaluation experiments conducted, the DCNN was trained using the original database with 
+a graphics processing unit. Microscopic images were first cropped and resampled to obtain images 
+with a resolution of 256×256 pixels and, to prevent overfitting, collected images were augmented via 
+rotation, flipping, and filtering. The probabilities of three types of cancers were estimated using the 
+developed scheme, and their classification accuracy was evaluated using threefold cross-validation. 
+In the results obtained, approximately 71% of the images were classified correctly, which is on par 
+with the accuracy of cytotechnologists and pathologists. Thus, the developed scheme is useful for the 
+classification of lung cancers from microscopic images. 
+
+Yu et al [12] developed an Adaptive HIerarchical Heuristic Mathematical Model (AHIHMM) for 
+lung cancer prediction. To analyze deep learning based on the historical therapy scheme in the 
+development of Non-Small Cell Lung Cancers (NSCLC), automated radiation adaptation protocols 
+that aim at optimizing local tumor regulation at lower rates of grade 2 RP2 radiation pneumonitis. 
+Furthermore, the system proposed consists of several steps, including acquiring the image, 
+preprocessing, binarization, thresholding, and segmentation, extraction of features, and detection of 
+a Deep Neural Network (DNN). Segmentation of the lung CT image is carried out to extract any 
+significant feature of a segmented image, and a specific feature extraction method is implemented. 
+The test evaluation showed that the model proposed could detect the highest accuracy of the absence 
+or presence of lung cancer. 
+
+3 Proposed Methodology 
+AHIHMM has been proposed for the deep learning approach. CT images are widely used for lung 
+
+cancer detection as they provide information about different parts of the lung. Furthermore, the 
+proposed system consists of three steps, including acquiring the image, preprocessing, segmentation, 
+and classification. Firstly preprocessing stage, (i) IMF and WF techniques are introduced for 
+removing or reducing the noise from the image, resulted while keeping its features intact for better 
+understanding and recognition (ii) Image histogram methods are HR and LCE techniques that 
+consists of two stages of processing to increase the potentiality of contrast enhancement and to 
+preserve the local details in the images, contrasted details to improve the quality of the CT pulmonary 
+image, resulted image improve quality enhancement (iii) resulted image passed to edge detection 
+done using CED algorithm, the most useful image technique to improve quality of the image analysis 
+process, result in the blurring of fine-scaled image edges. Secondly segmentation stage, the 
+segmentation of the region injured by cancer by the use of the K-means clustering algorithm, using 
+the enhanced lung CT image. Segmentation of the lung CT image is carried out to extract any 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):1 5 
+ 
+
+significant feature of a segmented image, and a specific feature extraction method is implemented. 
+Finally, classification stage, identification of lung cancer through an explosion-trained DLNN. The 
+image training should be carried out utilizing a deep-learning NN before the classification process is 
+done. 
+
+In a wide variable list, the Bayesian network technique has been used for graph theory to define 
+the radiotherapy environment that allows the hierarchical links between variables and interesting 
+results to be recognized. The method used is based on the identification from a high-dimensional 
+data set of separate extended Markov blankets (MBs) for RP2 and LC. 
+
+Case 1: Deep Neural Network (DNN) Let's consider the data {𝑦𝑗}with labels {𝑧𝑗}such that 𝜒 =
+{(𝑦𝑗, 𝑥𝑗)|𝑦𝑗𝜖ℜ𝑚, 𝑧𝑗 ∈ ℜ𝑛, 𝑗 = 1, … 𝑀, a DNN determines a function 𝑓𝐷𝑁𝑁: ℜ𝑚 → ℜ𝑛 to weave via 
+data such that 𝑓𝐷𝑁𝑁(𝑦𝑗) ≅ 𝑧𝑗 as much as possible through the utility of 3 different parts: Neurons 
+𝑥𝑗 ∈ ℜ, layers of l neurons 𝑥 = (𝑥1, . . , 𝑥𝑙) and activation function 𝜌, if a deep neural network has 
+layers 𝑖 = 0, … 𝑘, each of which has mi neurons, then 𝑖 = 0 and 𝑘 would indicate the initial input 
+and last output layer, respectively. An activation function 𝜌: ℜ𝑚𝑖−1 → ℜ𝑚𝑖  links the neurons of (i-
+1)th layer 𝑥(𝑖−1) ∈ ℜ𝑚𝑖−1  would satisfy: 
+
+x(i) = ρ(Θ(i−1). 𝑥(𝑖−1) + 𝑎(𝑖−1))    (1) 
+
+ 
+
+A typical option of 𝜌 is a Rectified Linear Unit (ReLU) or sigmoid. Where Θ(i−1) ∈ ℜ𝑚𝑖×𝑚𝑖−1 and 
+𝑎(𝑖−1) ∈ ℜ𝑚𝑖−1  denotes the unknown weights and bias to be calculated. 
+
+3.1 Image-Preprocessing 
+Medical image processing methods have been used to predict changes present in the lungs of the 
+
+recorded CT pulmonary images. The lung cancer processing structure is shown in Figure 1. A lung 
+tumor has been successfully detected by the medical image processing technique according to the 
+processing structure of the lung picture. Image de-noising is an asset for image noise processing, 
+which includes filtering techniques that include different ways to de-noise an image. Accordingly, 
+noises are spotted with neighboring information and are removed using the best filtering techniques 
+without affecting the image quality, and reinforce the smoothness of the image taken for examination. 
+Image preprocessing is important to remove the noise and to enhance the quality of the image. IMF 
+is used to remove the salt and pepper noise, and WF is useful to remove speckle noise. HR and LCE 
+algorithms are used to increase the contrast of the image. 
+
+3.1.1 Median Filter (MF) 
+MF is a very popular technique for the removal of impulse noise because it runs through the 
+
+signal cell by cell and replaces the value of each cell with the neighboring by median of the intensity 
+levels of its mathematical accuracy. Due to this tendency of MF, the good pixel cells are replaced by 
+the corrupted ones. Therefore, de-noising often leads to the removal of fine details present in an 
+image because it is done at the cost of distorted and blurred features possessed by this filtering 
+technique. The noisy value of the digital image or the sequence is replaced by the median value of the 
+neighborhood (mask). The median filtering output is g(x, y) = med{ f (x − i, y − j), i, j ∈ W} where 
+f (x, y), g(x, y)are the original image and the output image respectively, W is the two-dimensional 
+mask: the mask size is n × n (where n is commonly odd) such as  3 × 3, 5 × 5, etc.; the mask shape 
+may be linear, square, circular, cross, etc. Because the median filter is nonlinear, its mathematical 
+analysis is relatively complex for an image with random noise. 
+
+
+
+6 J Comput Intell Decis Sci. 2025;2(2):1 
+ 
+
+ 
+Figure 1: The Architecture of the Proposed AHIHMM Method 
+
+For an image with zero mean noise under a normal distribution, the noise variance of the median 
+filtering is approximately [13]. 
+
+𝜎2 1 𝜎2 𝜋
+𝑚𝑒 = ≈ 𝑖
+
+𝑑 𝜋 .   
+4𝑛𝑓2  
+
+(𝑛̅) 𝑛+ −1 2∙∙  (2) 
+2
+
+where 𝜎2
+𝑖  is input noise power (the variance), n is the size of the median filtering mask, 𝑓  (𝑛̅) 
+
+is the function of the noise density. And the noise variance of the average filtering is, 
+
+𝜎2 1
+0 = 𝜎2   3  
+
+𝑛 𝑖..  ( )
+
+The median filtering performance of random noise reduction is better than the average filtering 
+performance, but for the impulse noise, especially when narrow pulses are farther apart, and the 
+
+𝑛
+pulse width is less than , the median filter is very effective. The median filter's noise-reducing 
+
+2
+effects depend on the size and shape of the filtering mask, and its algorithm complexity mainly 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):1 7 
+ 
+
+depends on how to get the median value. In order to improve the noise-reducing performance of the 
+median filter, improved methods for the Improved Median Filter (IFM) are proposed. 
+
+3.1.2 Improved Median Filtering (IFM) 
+The filtering mask is mainly an n × n square mask or a cross mask. The smaller the mask is, the 
+
+better the image details are retained, the weaker the noise reduction performance is; the larger the 
+mask is, the less the image details are retained, the stronger the noise reduction performance. In the 
+filtering process, it can adaptively resize the mask according to the noise levels of the mask. In the 
+mask, 𝑚𝑎𝑥  is the maximum value of gray levels, 𝑚𝑖𝑛  is the minimum value of gray 
+levels, 𝑎𝑣𝑒𝑟𝑎𝑔𝑒 is the average value of gray levels, 𝑚𝑒𝑑 is the median value of gray levels, 𝑓(𝑖, 𝑗) 
+is the central value of the mask, 𝑛 is the size of the mask. The adaptive filtering requires two steps: 
+
+Step 1: adaptively resizing the mask 
+ Initialization: let 𝑛 = 3; 
+ Computation: 𝐴1 = 𝑚𝑒𝑑 − 𝑚𝑖𝑛, 𝐴2 = 𝑚𝑒𝑑 − 𝑚𝑎𝑥 
+ Judgment: if 𝐴1 > 0 and 2 < 0, then turn to step 2; if not, then enlarge the size of the mask, 
+
+let 𝑛 = 𝑛 + 2. 
+Step 2: median filtering. 
+The average filter has better performance for filtering random noise. Combining the median 
+
+filter with the average filter for a certain size of the filtering mask. For the natural image, neighboring 
+pixels have a strong correlation. The gray value of each pixel is quite close to neighboring pixels, and 
+the edge pixels also have the same property. In the reducing-noise process, sequentially check each 
+pixel. If the value of a pixel is greater than the average value in the mask, then judge that the pixel is 
+contaminated by the noise and replace it with the median value of the mask; otherwise, retain the 
+original value of the pixel unchanged. This forms an iterative process; it not only decreases the time 
+complexity but also improves the noise-reducing effect. 
+
+3.1.3 Weiner Filter (WF) 
+The Weiner Filter (WF) is used to filter out the noise present in an image that possesses a 
+
+corrupted signal in it. This filtering technique uses a statistical approach to filter the noise from each 
+pixel of an image. WF is a technique that performs optimal trading involving opposite filtering and 
+noise smoothing. It removes the blurring and additional noise present in the image, and it is also very 
+optimal in relation to the mean squared error, where it minimizes the overall Mean Square Error in 
+the operation of the filtering technique for noise removal. WF is usually defined by the following [14]: 
+
+• Hypothesis: additive noise and image signal are inactive linear random processes 
+containing spectral characteristics.  
+
+• Necessity: The filter must be able to achieve and be accessed. 
+Performance criteria: It depends on the minimum Mean Squared Error. 
+
+3.1.4 Contrast Enhancement 
+Histogram Equalization (HE) uniformly distributes the output histogram by using the cumulated 
+
+histogram as its mapping function. HE has large backward difference values of mapping functions, 
+and the contrast enhancement potential should be enriched without losing the fine details in the CT 
+image. It is important to note that when the input histogram distribution is already uniform, the 
+mapping obtained from cumulating the distribution is 𝐶(𝑟𝑘)  = 𝑟𝑘 , 𝑟𝑘 is the kth gray level in the 
+image that identically maps input to output [15]. 
+
+
+
+8 J Comput Intell Decis Sci. 2025;2(2):1 
+ 
+
+Histogram Rehabilitation (HR): The main objective of this method is to find a rehabilitated 
+histogram 𝑟̅̅𝑔̅ that is closer to a uniform histogram, and to make the difference between (𝑟̅̅𝑔̅ − ℎ𝑔𝑖) 
+rehabilitated and input histogram small, which in turn increases the potential of image contrast 
+enhancement, and the resultant image would be more relevant to the input image. The optimization 
+problem for the lower sub image can be defined as 
+
+min‖𝑟̅̅𝑔̅ − ℎ𝑔𝑖‖ + 𝜍1‖̅̅𝑟𝑔̅ − 𝑢𝑖𝐿𝑜𝑤𝑒𝑟‖    (4) 
+
+The rehabilitated histogram for the lower sub image can be obtained by finding an analytical 
+solution as follows: 
+
+(𝑟̅̅𝑔̅𝐿𝑜𝑤𝑒𝑟 − ℎ𝑔𝑖𝐿𝑜𝑤𝑒𝑟) + 𝜍1𝑟̅̅𝑔̅𝐿𝑜𝑤𝑒𝑟 − 𝜍1𝑢𝑖𝐿𝑜𝑤𝑒𝑟 = 0    (5) 
+
+where 𝑟̅̅𝑔̅𝐿𝑜𝑤𝑒𝑟, ℎ𝑔𝑖𝐿𝑜𝑤𝑒𝑟, 𝑢𝑖𝐿𝑜𝑤𝑒𝑟, and 𝜍1 are the rehabilitated histogram, input histogram, 
+uniform histogram, and the contrast enhancement parameter for the lower sub histogram, 
+respectively. 
+
+Then, the bicriteria optimization problem for the upper sub image can be written as, 
+
+min‖𝑟̅̅𝑔̅𝑈𝑝𝑝𝑒𝑟 − ℎ𝑔𝑖𝑈𝑝𝑝𝑒𝑟‖ + 𝜍2‖𝑟̅̅𝑔̅𝑈𝑝𝑝𝑒𝑟 − 𝑢𝑖𝑈𝑝𝑝𝑒𝑟‖    (6) 
+
+ 
+The rehabilitated histogram for upper sub image can be obtained by finding an analytical 
+
+solution as follows: 
+
+(𝑟̅̅𝑔̅𝑈𝑝𝑝𝑒𝑟 − ℎ𝑔𝑖𝑈𝑝𝑝𝑒𝑟) + 𝜍1𝑟̅̅𝑔̅𝑈𝑝𝑝𝑒𝑟 − 𝜍2𝑢𝑖𝑈𝑝𝑝𝑒𝑟 = 0    (7) 
+
+where 𝑟̅̅𝑔̅𝑈𝑝𝑝𝑒𝑟, ℎ𝑔𝑖𝑈𝑝𝑝𝑒𝑟 , 𝑢𝑖𝑈𝑝𝑝𝑒𝑟, and 𝜍2 are the rehabilitated histogram, input histogram, 
+uniform histogram, and the contrast enhancement parameter for the lower sub histogram, 
+respectively. 
+
+𝑢𝑖𝐿𝑜𝑤𝑒𝑟, 𝑢𝑖𝑈𝑝𝑝𝑒𝑟 ∈ 𝑢𝑖∀  𝑢 256×1
+𝑖 ∈ 𝑅     (8) 
+
+Local Contrast Enhancement (LCE): Although the global approach for image contrast 
+enhancement is suitable for some cases. The number of pixels in this area may have a negligible 
+influence on the computation of the global transformation. The histogram modification process is the 
+first step in the given CT image, and then the local contrast enhancement method is applied to 
+histogram histogram-rehabilitated image. Let 𝕕𝑟 denote a discrete random variable representing 
+discrete gray levels in the range [0, L−1] and let 𝑃(𝕕𝑟𝑖) is the normalized histogram component 
+corresponding to the 𝑖th value of 𝕕𝑟. The 𝑛th moment of 𝕕𝑟 about its multipeak mean (𝔪𝜇) for 
+the purpose of enhancing the contrast as well as preserving essential details for any given gray scale 
+and colour images.is defined as, 
+
+𝑃(𝕕𝑟 𝑛
+𝔪𝜇𝑛(𝕕𝑟) = ∑𝐿−1 (𝕕𝑟 𝑖)
+
+𝑖=0 𝑖 − ∑𝑁𝑃
+𝑖=0 ) 𝑃(𝕕𝑟𝑖)    (9) 
+
+𝑁𝑃
+
+The local contrast enhancement for the CT image is obtained by applying the following equation 
+after the histogram-rehabilitated image is obtained. 
+
+𝐸. 𝑓(𝑥, 𝑦) 𝑖𝑓 𝔪𝜇𝑥,𝑦 ≤ 𝐾0𝑀 
+𝑔(𝑥, 𝑦) = {     (10) 
+
+𝑓(𝑥, 𝑦) 𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒
+
+where 𝑔(𝑥, 𝑦) and 𝑓(𝑥, 𝑦)  are final enhanced and histogram rehabilitated images, 
+respectively, E, and 𝐾0 <  1 are specified parameters. 𝑀 is the global multipeak mean of the input 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):1 9 
+ 
+
+image applied to the LCE method. These two parameters afford a simple yet powerful local contrast 
+enhancement by varying the enhancement parameter in the histogram modification process. 
+
+3.1.5 Canny Edge Detection (CED) 
+Edge detection is a fundamental tool in image processing, machine vision, and computer vision, 
+
+particularly in the areas of feature detection and feature extraction. CED is a technique to extract 
+useful structural information from different vision objects and dramatically reduces the amount of 
+data to be processed. Canny has found that the requirements for the application of edge detection on 
+diverse vision systems are relatively similar [16]. The general criteria for edge detection include: 
+
+1. Detection of edges with a low error rate, which means that the detection should accurately 
+catch as many edges shown in the image as possible. 
+
+2. The edge point detected by the operator should accurately localize on the center of the 
+edge. 
+
+3. A given edge in the image should only be marked once, and where possible, image noise 
+should not create false edges. 
+
+The Canny algorithm, as the first step, applies the LoG filter, which emphasizes the region of 
+fastest intensity change. LoG value is used to decompose the original image into two images. After 
+applying the LoG filter follows the usual steps: image smoothing and filtering, finding the gradient 
+magnitude and gradient direction, non-maxima suppression, and edge tracking by hysteresis [17]. 
+
+Process of the CED Algorithm 
+The process of the CED algorithm can be broken down into 5 different steps: 
+1. Apply the LoG filter to smooth the image  
+2. Find the intensity gradients of the image 
+3. Apply non-maximum suppression to get rid of the spurious response to edge detection 
+4. Apply a double threshold to determine potential edges 
+5. Detection of edges by suppressing all the other edges that are weak and not connected to 
+
+strong edges. 
+
+3.3 Image-Segmentation 
+Segmentation of the region injured by cancer by the use of the K-means clustering algorithm 
+
+using the enhanced lung CT image. The implemented segmentation approach inspects the pixel 
+similarity in the lung CT images and divides the images into several sub-settings to predict the area 
+of concern. The pixel or information is subsequently tested during the image fragmentation process 
+to predict the comparability of data using the same value of spectrum or pixels. The pixel similarity 
+attribute involves the quantitative image evaluation used to accurately shape the cluster. A modified 
+K-means clustering algorithm has been proposed. In the data of lung cancer modified K-means 
+clustering algorithm has been utilized, and the datasets have been divided into two groups of 
+clusters: one cluster of lung cancer patients and the other for cancer-free patients. Based on the value 
+of the attributes, the number of clusters is determined. Two clusters are formed based on these 
+plotted points and two centroid points. The effect of the new attributes on the cluster is described as 
+if the next attribute is smoking, the cluster moves to either left or right to a certain distance, 
+depending on the cluster's impact. K-means clustering is a data-partitioning algorithm that iteratively 
+assigns n observations to exactly one of the k clusters defined by centroids, where k is chosen before 
+the algorithm starts. 
+
+Let 𝑋 = {𝑥1, 𝑥2, … . , 𝑥𝑛} be the set of n data points and 𝐶 = {𝑐1, 𝑐2, … . , 𝑐𝑛} be the set of m 
+cluster centers. The 𝑛 data points are to be clustered into 𝑚 cluster centers. 
+
+
+
+10 J Comput Intell Decis Sci. 2025;2(2):1 
+ 
+
+𝐽 = ∑𝑚 ∑𝑛 2
+𝑖=1 𝑗=1‖𝑥𝑖 − 𝑐𝑗‖     (11) 
+
+Where 𝑘 = number of clusters, 𝑛 = total number of data, 𝑐𝑗 = 𝑗𝑡ℎ cluster center and 𝑥𝑖 =
+𝑖𝑡ℎ data point. The optimal centers are obtained by minimizing this objective function. 
+
+3.4 Image-Classification 
+The identification of lung cancer through an explosion-trained Deep Learning Neural Network 
+
+(DLNN). The image training should be carried out utilizing a deep-learning NN before the 
+classification process is done, since it does not need manual features. Alternatively, the deep learning 
+process uses a captured segmented image or lung CT image that utilizes a huge number of hidden 
+layers to identify the boundaries of the image and the corresponding features utilized for the 
+network's creation, with a large amount of information. 
+
+Case 2: Generative Adversarial Nets (GANs) have been utilized to synthesize more radiotherapy-
+like information, to mitigate the issue of small sample size in datasets when modeling difficult state 
+transitions in the circumstances of radiation. A GAN contains two neural networks, one generative 
+(H). The other is biased (E), which seeks to test the (dis)-similarity of the condensed data against the 
+actual data. In general, H is designed to generate inextricable data to confuse E, while E tries to 
+differentiate between the data produced by H or not. The adversary E and H character are generated 
+using the loss function of the mini-max two players: 
+
+min max 𝐿(𝐻, 𝐸) = min max 𝐺𝑦~𝑄 [log 𝐸(𝑦)] + 𝐺 [log (1 − 𝐸(𝐻 ))]    
+𝐻 𝐸 𝐻 𝐸 𝑑𝑎𝑡𝑎(𝑦) 𝑥~𝑄𝑝𝑟𝑖𝑜𝑟(𝑥) (𝑥) (12) 
+
+3.4.1 Deep Q Networks 
+In Reinforcement Learning (RL), there is a Markov Decision Process (MDP) and an agent. RL has 
+
+been utilized to mimic how doctors decide on the dose fraction tradeoff required to dictate to a 
+patient. Over a decision made by the present state 𝜋: 𝑊 → 𝐵 an agent acquires respective reward T 
+and gets reinforced to the next state. An agent taking care of supplying tasks 𝑏 ∈ 𝐵 in a condition, 
+which is explained by the different states 𝑤 ∈ 𝑊  in the conditions. A second opinion or the 
+presence of a specialist in the setting would be an external agent. In the next phase of a dose-
+escalation radiotherapy therapy course, the required dose per fraction (adaptation) will be 
+determined. 
+
+𝑃𝜋(𝑤, 𝑏) = 𝐺[∑∞ 𝛿𝑘
+𝑙=1 𝑇(𝑤𝑙 , 𝜋(𝑤𝑙))| 𝜋, 𝑤0 = 𝑤, 𝑏0 = 𝑏]    (13) 
+
+The convergence meets at the single fixed point as 𝑗 → ∞ based on the contraction mapping 
+theorem, 
+
+𝑃̃∗(𝑤, 𝑏) = 𝐺𝑟~𝑄 [𝑇(𝑤, 𝑏) + 𝛿 max 𝑃̃∗(𝑟, 𝑎)]   
+𝑤𝑏  (14) 
+
+𝑎∈𝐵
+
+Case 3: Radiotherapy Dose Adaptation is a key objective of has to determine whether it can 
+potentially use reinforcement learning to regenerate previously made established decisions before 
+attempting to use Deep Reinforcement Learning for autonomous decision-making. A therapy has 
+total fractions 𝑓(𝑟) fraction/dose 𝑏(𝑟) as a function of time r with V: 
+
+𝑏0, 0 ≤ 𝑟 ≤ 𝑟
+𝑓(𝑟∗) = 𝑓0, 𝑓(𝑅) = 30, 𝑏(𝑟) = { ∗    (15) 
+
+𝑏1, 𝑟∗ ≤ 𝑟 ≤ 𝑅
+
+The rest of the dose is given for the target, depending on the avid mid-therapy defined through 
+the Metabolic Tumor Volume (MTV). Firstly, local discovery algorithms based on constraints using 
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):1 11 
+ 
+
+the Markov blankets have been used to select high-dimensional (297 candidates) variables that relate 
+mostly to RP2/LC. Then, to build a single Bayesian network from the attributes chosen for both the 
+RP2 and the LC, with graphic learning algorithms. Finally, cross-validation has been used for 
+determining and assessing nodes in a Bayesian Network with the highest Area Under Curve value of 
+joint prediction for LC and RP2. This procedure resulted in 9 selected features, including SNPs, 
+cytokines, PET, and miRNA, which have been deemed to reflect the state variables as important 
+predictors. 
+
+Deep Neural Network structure and weights Θ that should be finetuned for the best estimation 
+of the actual Q-function: 
+
+𝑃(𝑤, 𝑏1)
+
+𝑃Θ
+DN ∶ W → T|B| 𝑏𝑦𝑃Θ 𝑃(𝑤, 𝑏2)
+
+N DNN(𝑤) = ( )     (16) 
+⋮
+
+𝑃(𝑤, 𝑏𝑙)
+
+4 Results and Discussion 
+The findings of segmentation included nodules connecting to the inner wall and precise 
+
+segmentation of the lung parenchyma. In the classification and detection of objects, efficient 
+segmentation is very important. An efficient method of segmentation is developed based on the 
+distribution of lung CT images by spatial pixel intensity. CT images will simply remove pulmonary 
+parenchyma in morphological operations; however, tissue around the lung can be included. The 
+experimental results have been performed to enhance the accuracy in prediction and the dataset 
+http://diagnijmegen.nl/index.php/Lung_Cancer has been utilized. The experimental results show 
+that metrics such as accuracy and Efficiency Ratio. The experiment result shows that the proposed 
+AHIHMM compares with the other modern methods, such as DCNN and ANN. 
+
+4.1 Accuracy 
+Accuracy in low-dose CT images, and the same approaches are recommended for separating the 
+
+lungs into high-resolution CT images. The measured value is compared with the extracted and trained 
+features for cancer classification based on deep learning. Double-time matching enhances the accuracy 
+of prediction and decreases the failure rate efficiently. The mean accuracy of the classifier specifies how 
+many samples have been correctly predicted by the total number of samples. 
+
+𝑇𝑟𝑢𝑒 𝑃𝑜𝑠𝑖𝑡𝑖𝑣𝑒+𝑇𝑟𝑢𝑒 𝑁𝑒𝑔𝑎𝑡𝑖𝑣𝑒
+𝐴𝑐𝑐𝑢𝑟𝑎𝑐𝑦 = ∗ 100    (17) 
+
+𝑇𝑜𝑡𝑎𝑙𝑛𝑜 𝑜𝑓 𝑝𝑟𝑒𝑑𝑖𝑐𝑡𝑖𝑜𝑛𝑠
+
+4.2 Efficiency Ratio 
+The efficiency of the proposed AHIHMM method was evaluated in various aspects of recognition 
+
+rate, misclassification ratio. The high number of CT data has enabled us to use a moderate mini-batch 
+size and to regulate training processes to achieve adequate speed and efficiency. In general, manual 
+inspection is difficult to identify these quantitative image features, computerized methods can 
+efficiently identify those features, and our classifiers can be used effectively in routine practices. 
+
+Table 1: Performance comparison metrics vs. LCP classification methods. 
+
+Methods Metrics 
+
+Accuracy (%) Efficiency Ratio (%) 
+
+DCNN 97.8 92.7 
+
+
+
+12 J Comput Intell Decis Sci. 2025;2(2):1 
+ 
+
+ANN 98.2 95.3 
+
+AHIHMM 99.5 97.5 
+
+ 
+
+100
+
+99.5
+
+99
+
+98.5
+DCNN
+
+98
+ANN
+
+97.5
+
+97 AHIHMM
+
+96.5
+DCNN ANN AHIHMM
+
+Methods
+ 
+
+Figure 2: Accuracy results evaluation of LCP classification methods 
+
+The accuracy results comparison of the three classification methods is shown in Figure 2. The 
+results disclose that the proposed AHIHMM classifier provides higher accuracy results of 99.5%, 
+whereas other existing methods, such as DCNN and ANN, give 97.8% and 98.2% respectively. 
+
+ 
+98
+97
+96
+95
+94
+
+DCNN
+93
+92 ANN
+91 AHIHMM
+90
+
+DCNN ANN AHIHMM
+
+Methods
+ 
+
+Figure 3: Efficiency ratio results evaluation of LCP classification methods 
+
+Figure 3 shows the efficiency ratio comparison results of the three classification methods. Those 
+methods are DCNN, ANN, and AHIHMM. The results disclose that the proposed AHIHMM classifier 
+provides a higher efficiency ratio of 97.5%, whereas other existing methods, such as DCNN, ANN, give 
+of 92.7% and 95.3% respectively. 
+
+5 Conclusion 
+Deep learning assisted AHIHMM to predict lung cancer on CT images, preprocessing stage, IMF 
+
+and WF for removing or reducing the noise from the image, HR and LCE techniques to increase the 
+potentiality of contrast enhancement and to preserve the local details in the images for improve the 
+quality, then uses Modified K-means algorithm to pre-classify pictures into slices of images in the 
+same image, where the DNN will concentrate on the image classification of images in similar images. 
+
+Efficiency Ratio (%)
+Accuracy (%)
+
+
+
+J Comput Intell Decis Sci. 2025;2(2):1 13 
+ 
+
+The next thing is the convolution layer with filtered edges to scan for lung cancer thoroughly. Then, 
+estimating the weighted mean function, which replaces the pixel utilizing the cumulative distribution 
+and likelihood distribution method, improved the image's quality. The injured portion has been 
+segmented by a pixel-like value measurement after the image has been improved. Based on the 
+similarity calculation, spectrally related features have been extracted. The AHIHMM system predicts 
+computed tomography scanning images of lung cancer successfully. 
+
+Acknowledgement: Not applicable. 
+
+Funding Statement: Not applicable. 
+
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, 
+methodology and writing—original draft preparation: Nongmaithem Ajith Singh; supervision and 
+writing—review and editing: Rajkumar Palaniappan. All authors reviewed the results and approved 
+the final version of the manuscript.  
+
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present 
+study. 
+
+References 
+1. American Cancer Society.  Global Cancer: Facts & Figures, 4th edition http://www.cancer.org/content/ 
+
+dam/cancer-org/research/cancer-facts-and-statistics/global-cancer-facts-and-figures/global-cancer-
+facts-and -figures-4th-edition.pdf, 2018. 
+
+2. Xie H, Yang D, Sun N, Chen Z, Zhang Y. Automated pulmonary nodule detection in CT images using deep 
+convolutional neural networks. Pattern Recognit. 2019;85:109-19. 
+
+3. Ait Skourt B, El Hassani A, Majda A. Lung CT image segmentation using deep neural networks. Procedia 
+Comput Sci. 2018;127:109-13. 
+
+4. Mansoor A, Bagci U, Foster B, Xu Z, Papadakis GZ, Folio LR, Udupa JK, Mollura DJ. Segmentation and image 
+analysis of abnormal lungs at CT: current approaches, challenges, and future trends. Radiographics. 
+2015;35(4):1056-76. 
+
+5. Huang X, Sun W, Tseng TL, Li C, Qian W. Fast and fully-automated detection and segmentation of 
+pulmonary nodules in thoracic CT scans using deep convolutional neural networks. Comput Med Imaging 
+Graph. 2019;74:25-36. 
+
+6. Wang X, Liu H, Shen Y, Li W, Chen Y, Wang H. Low-dose computed tomography (LDCT) versus other cancer 
+screenings in early diagnosis of lung cancer: A meta-analysis. Medicine. 2018;97(27):e11233. 
+
+7. Shakeel PM, Burhanuddin MA, Desa MI. Automatic lung cancer detection from CT image using improved 
+deep neural network and ensemble classifier. Neural Comput Appl. 2022;34(12):9579-92. 
+
+8. Coudray N, Ocampo PS, Sakellaropoulos T, Narula N, Snuderl M, Fenyö D, Moreira AL, Razavian N, Tsirigos 
+A. Classification and mutation prediction from non–small cell lung cancer histopathology images using 
+deep learning. Nat Med. 2018;24(10):1559-67. 
+
+9. Wang J, Liu X, Dong D, Song J, Xu M, Zang Y, Tian J. Prediction of malignant and benign of lung tumor using 
+a quantitative radiomic method. In 2016 38th Annual international conference of the IEEE engineering in 
+medicine and biology society (EMBC); 2016 Aug 16, Orlando, FL, USA; 2016. p. 1272-1275. 
+
+10. Jakimovski G, Davcev D. Using double convolution neural network for lung cancer stage detection. Appl 
+Sci. 2019;9(3):427. 
+
+11. Teramoto A, Tsukamoto T, Kiriyama Y, Fujita H. Automated classification of lung cancer types from 
+cytological images using deep convolutional neural networks. BioMed Res Int. 2017;2017(1):4067832. 
+
+12. Yu H, Zhou Z, Wang Q. Deep learning assisted predict of lung cancer on computed tomography images 
+using the adaptive hierarchical heuristic mathematical model. IEEE Access. 2020;8:86400-10. 
+
+13. Öztürk Ş, Akdemir B. HIC-net: A deep convolutional neural network model for classification of 
+histopathological breast images. Comput Electr Eng. 2019;76:299-310. 
+
+14. Baselice F, Ferraioli G, Ambrosanio M, Pascazio V, Schirinzi G. Enhanced Wiener filter for ultrasound image 
+restoration. Comput Methods Programs Biomed. 2018;153:71-81. 
+
+
+
+14 J Comput Intell Decis Sci. 2025;2(2):1 
+ 
+
+15. Mohan S, Ravishankar M. Modified contrast limited adaptive histogram equalization based on local 
+contrast enhancement for mammogram images. In International conference on advances in information 
+technology and mobile communication; 2012 Apr 27, 2012. p. 397-403. 
+
+16. Wahdan P, Saad A, Shoukry A. Automated breast tumour detection in ultrasound images using support 
+vector machine and ensemble classification. J Biomed Eng Biosci. 2016;3:4-11. 
+
+17. Stosic Z, Rutesic P. An improved canny edge detection algorithm for detecting brain tumors in MRI images. 
+Int J Signal Process. 2018;3:11-15.
