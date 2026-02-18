@@ -472,34 +472,6 @@ const Journals = () => {
               <div style={{ color: '#666', fontSize: '1rem' }}>Online Journal</div>
             </div>
           </div>
-
-          {/* Indexing Section */}
-          <div style={{ 
-            background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)', 
-            padding: '35px 30px', 
-            borderRadius: '12px', 
-            marginTop: '30px',
-            border: '1px solid #fed7aa'
-          }}>
-            <h3 style={{ 
-              color: '#9a3412', 
-              fontSize: '1.8rem', 
-              marginBottom: '15px', 
-              fontWeight: 'bold',
-              textAlign: 'center'
-            }}>
-              INDEXING
-            </h3>
-            <div style={{ 
-              textAlign: 'center', 
-              fontSize: '1.1rem', 
-              color: '#9a3412',
-              fontWeight: '600',
-              fontStyle: 'italic'
-            }}>
-              YET TO BE UPDATED
-            </div>
-          </div>
         </div>
       )
     },
