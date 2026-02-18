@@ -30,11 +30,11 @@ jobs:
 
       # 5️⃣ Deploy dist folder to MilesWeb via FTP
       - name: Deploy to MilesWeb
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_KEY }}
           local-dir: dist/
-          server-dir: public_html/
+          server-dir: ./
           dangerous-clean-slate: true
