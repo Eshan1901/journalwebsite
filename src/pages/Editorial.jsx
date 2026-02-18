@@ -30,11 +30,10 @@ const Editorial = () => {
             background: '#e8f4fd', 
             padding: '30px', 
             borderRadius: '12px', 
-            textAlign: 'center',
             border: '1px solid #bee5eb'
           }}>
-            <h4 style={{ color: '#1a3d6b', marginBottom: '15px', fontSize: '1.4rem' }}>JCIDS Editorial Structure</h4>
-            <p style={{ color: '#2c4a80', margin: '0', fontSize: '1.1rem', lineHeight: '1.6' }}>
+            <h4 style={{ color: '#1a3d6b', marginBottom: '15px', fontSize: '1.4rem', textAlign: 'center' }}>JCIDS Editorial Structure</h4>
+            <p style={{ color: '#2c4a80', margin: '0', fontSize: '1.1rem', lineHeight: '1.6', textAlign: 'justify', textJustify: 'inter-word' }}>
               Our editorial team consists of distinguished researchers across multiple domains of computational intelligence and decision science. 
               The editorial board includes our Editor-in-Chief, Associate Editors, and Assistant Editors, all committed to maintaining 
               the highest standards of academic excellence and peer review quality.

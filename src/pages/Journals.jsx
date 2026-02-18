@@ -409,19 +409,19 @@ const Journals = () => {
               About the Journal
             </h3>
             <div style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80' }}>
-              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify', textJustify: 'inter-word' }}>
                 The Journal of Computational Intelligence and Decision Science is an open access, peer-reviewed academic journal published by Gnosis Press. It focuses on advancing research and applications in the areas of computational intelligence, data-driven decision-making, and intelligent systems across multiple domains. The journal welcomes contributions that integrate theory, methodology, and practice to address complex decision problems through innovative computational approaches.
               </p>
-              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify', textJustify: 'inter-word' }}>
                 The journal provides immediate and free access to all its published content, enabling researchers, practitioners, and institutions worldwide to engage with the latest findings without any subscription or access barriers. A rigorous double-blind peer review process ensures the quality, originality, and scientific integrity of every manuscript.
               </p>
-              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify', textJustify: 'inter-word' }}>
                 Authors can expect an initial decision within six to eight weeks of submission, reflecting the journal's commitment to a timely and transparent review process. All published articles are assigned DOI numbers to ensure global discoverability and persistent access.
               </p>
-              <p style={{ marginBottom: '20px', textAlign: 'justify' }}>
+              <p style={{ marginBottom: '20px', textAlign: 'justify', textJustify: 'inter-word' }}>
                 The journal adheres to the highest standards of publication ethics and follows the guidelines of the Committee on Publication Ethics (COPE). It encourages interdisciplinary submissions and fosters research that bridges artificial intelligence, computational methods, and decision science to generate real-world impact.
               </p>
-              <p style={{ margin: '0', textAlign: 'justify' }}>
+              <p style={{ margin: '0', textAlign: 'justify', textJustify: 'inter-word' }}>
                 The Journal of Computational Intelligence and Decision Science aims to serve as a platform for academic excellence and practical innovation, bringing together researchers, industry experts, and policymakers to shape the future of intelligent decision-making.
               </p>
             </div>
@@ -520,7 +520,7 @@ const Journals = () => {
                 lineHeight: '1.9', 
                 color: '#4b5563', 
                 margin: '0',
-                textAlign: 'justify',
+                textAlign: 'justify', textJustify: 'inter-word',
                 fontWeight: '400'
               }}>
                 To provide a globally recognized platform for advancing high-quality research and innovation in computational intelligence and data science, fostering knowledge that drives technology for the betterment of society.
@@ -617,7 +617,7 @@ const Journals = () => {
                 lineHeight: '1.9', 
                 color: '#4b5563', 
                 margin: '0',
-                textAlign: 'justify',
+                textAlign: 'justify', textJustify: 'inter-word',
                 fontWeight: '400'
               }}>
                 The journal aims to publish and disseminate original research, critical reviews, and innovative case studies in computational intelligence and data science, thereby bridging the gap between theory and practical applications.
@@ -649,7 +649,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '25px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify', textJustify: 'inter-word' }}>
               The editorial process is designed to maintain academic standards, provide fair and timely review, and support open access dissemination of research.
             </p>
           </div>
@@ -715,7 +715,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '25px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify', textJustify: 'inter-word' }}>
               The review system is designed to maintain academic integrity, provide constructive feedback to authors, and support timely editorial decisions.
             </p>
           </div>
@@ -781,7 +781,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '30px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify', textJustify: 'inter-word' }}>
               The journal supports unrestricted access to research findings, encouraging wider dissemination, increased visibility, and greater impact of published work.
             </p>
           </div>
@@ -841,7 +841,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: '#e8f4fd', padding: '25px', borderRadius: '12px', marginBottom: '30px', border: '1px solid #bee5eb' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.7', color: '#2c4a80', margin: '0', textAlign: 'justify', textJustify: 'inter-word' }}>
               The workflow is designed to maintain academic standards, minimize delays, and provide authors with a clear understanding of the process from submission to publication.
             </p>
           </div>
@@ -980,7 +980,7 @@ const Journals = () => {
           </div>
 
           <div style={{ background: 'white', padding: '30px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '25px', textAlign: 'justify' }}>
+            <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '25px', textAlign: 'justify', textJustify: 'inter-word' }}>
               The Journal of Computational Intelligence and Decision Science adheres to the highest standards of publication ethics as outlined by the Committee on Publication Ethics (COPE). We are committed to maintaining academic integrity throughout the publication process.
             </p>
 
@@ -1065,17 +1065,17 @@ const Journals = () => {
 
             <div style={{ marginBottom: '30px' }}>
               <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Publication Charges</h4>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '15px', textAlign: 'justify' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', marginBottom: '15px', textAlign: 'justify', textJustify: 'inter-word' }}>
                 Article Processing Charges (APC) are <strong>currently waived</strong> for the initial issues to support early contributors and build the journal's community.
               </p>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', textAlign: 'justify' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', textAlign: 'justify', textJustify: 'inter-word' }}>
                 Future APCs, if introduced, will be announced well in advance and will remain competitive and transparent. Waivers and discounts will be available for authors from developing countries and those without institutional funding.
               </p>
             </div>
 
             <div>
               <h4 style={{ color: '#1a3d6b', fontSize: '1.3rem', marginBottom: '15px' }}>Fee Transparency</h4>
-              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', textAlign: 'justify' }}>
+              <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#2c4a80', textAlign: 'justify', textJustify: 'inter-word' }}>
                 All fee structures will be clearly communicated on the journal website. No hidden charges will be applied at any stage of the publication process.
               </p>
             </div>
@@ -1092,7 +1092,7 @@ const Journals = () => {
           {/* Overview Section */}
           <div className="card">
             <h2><i className="fas fa-info-circle"></i> Overview</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               All manuscripts must be submitted via email to <strong>submission.jcids@gnosispress.org</strong>, and manuscripts submitted for publication must be prepared according to the guidelines given below.
             </p>
             <div style={{ 
@@ -1128,10 +1128,10 @@ const Journals = () => {
                 </a>
               </div>
             </div>
-            <p style={{ marginTop: '15px' }}>
+            <p style={{ marginTop: '15px', textAlign: 'justify', textJustify: 'inter-word' }}>
               This guideline is intended to assist authors as they prepare their manuscripts. To avoid any delay and time-consuming restructuring, Journal of Computational Intelligence and Decision Science (JCIDS) asks and encourages authors to read the guidelines before writing the manuscript.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               JCIDS publishes review and research articles. All papers must be written in English, and follow a clear, concise style. The language editors may have to check the language and grammar of your submitted manuscript, and make editorial changes if deemed necessary.
             </p>
           </div>
@@ -1253,7 +1253,7 @@ const Journals = () => {
           {/* Cover Letter */}
           <div className="card">
             <h2><i className="fas fa-envelope-open-text"></i> Cover Letter</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               A submitted manuscript must be accompanied by a cover letter. The cover letter must clearly state that:
             </p>
             <ul>
@@ -1264,15 +1264,15 @@ const Journals = () => {
               <li>All authors have approved the submission to the journal</li>
               <li>All authors have accepted full responsibilities pertaining to the manuscript's delivery and contents</li>
             </ul>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               If there are any ethical, copyright, or disclosure issues that come with the manuscript, please reveal them in the cover letter. Authors need to declare that there is no conflict of interests or disclose all conflicts of interest regarding the manuscript submitted.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Statement of Novelty</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The statement of novelty should be submitted with a manuscript. The statement should be <strong>100-200 words</strong>, and must not be a paraphrase of the abstract.
             </p>
-            <p>In the statement of novelty, the authors should address:</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>In the statement of novelty, the authors should address:</p>
             <ol>
               <li>What is the novelty or originality of the research, compared to the existing literature</li>
               <li>The scientific impact of the research and interests to readers</li>
@@ -1282,7 +1282,7 @@ const Journals = () => {
           {/* Templates */}
           <div className="card">
             <h2><i className="fas fa-file-alt"></i> Templates</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors are strongly encouraged to use the Microsoft Word template to prepare their manuscript. Using the provided template will significantly speed up the copy-editing and publication process for accepted manuscripts.
             </p>
             
@@ -1302,7 +1302,7 @@ const Journals = () => {
             <h3>Template Instructions:</h3>
             <div style={{ marginBottom: '20px' }}>
               <h4><i className="fas fa-file-word"></i> Microsoft Word Template</h4>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 Manuscripts prepared in Microsoft Word must be submitted as a single file. The template includes predefined styles accessible via the "Styles" gallery in Word. Figures should be inserted into the main text immediately after the paragraph where they are first cited.
               </p>
               <ul style={{ marginTop: '10px' }}>
@@ -1315,7 +1315,7 @@ const Journals = () => {
 
             <div>
               <h4><i className="fas fa-paperclip"></i> Supplementary Files</h4>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 These can be in any format, though it is recommended to use common, non-proprietary formats whenever possible.
               </p>
             </div>
@@ -1324,7 +1324,7 @@ const Journals = () => {
           {/* General Format */}
           <div className="card">
             <h2><i className="fas fa-file-invoice"></i> General Format of Articles</h2>
-            <p>Manuscripts should comprise:</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>Manuscripts should comprise:</p>
             
             <div style={{ marginTop: '20px' }}>
               <h3><i className="fas fa-chevron-right"></i> Front Matter</h3>
@@ -1337,12 +1337,12 @@ const Journals = () => {
               </ul>
 
               <h4 style={{ marginTop: '20px' }}>• Title</h4>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 The title of your manuscript should be precise, clear, and directly related to the study. Acronyms are not allowed in paper titles. They can be used in abstracts only if the related expanded form is provided (just after the acronym, in parentheses) the first time they are used.
               </p>
 
               <h4>• Author Information</h4>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 Please provide the full names of all authors, including first and last names, with middle name initials included if necessary. Affiliations should follow the PubMed/MEDLINE standard format, including detailed address information such as city, postal code, state/province, and country. At least one author must be designated as the corresponding author, whose email address will be publicly displayed in the published article.
               </p>
               <div style={{ 
@@ -1358,24 +1358,24 @@ const Journals = () => {
               </div>
 
               <h4 style={{ marginTop: '20px' }}>• Author Affiliations</h4>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 All authors must include their current affiliation as well as the institution where the majority of the research for the manuscript was conducted. Authors who are not currently associated with any university, institution, or organization should identify themselves as <strong>"Independent Researchers."</strong>
               </p>
 
               <h4>• Abstract</h4>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 Abstracts of a research paper should be typically <strong>200 to 400 words</strong> in length, and <strong>150 to 300 words</strong> for a review paper. Abstracts shall be running continuously and shall not include reference citations. Abbreviations that appear only once in the abstract should be defined in full.
               </p>
 
               <h4>• Keywords</h4>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 Please list <strong>3 to 10</strong> pertinent keywords specific to the article yet reasonably common within the subject discipline.
               </p>
             </div>
 
             <div style={{ marginTop: '30px' }}>
               <h3><i className="fas fa-chevron-right"></i> Main Text</h3>
-              <p>
+              <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
                 For Articles, a structured format is recommended: <strong>Introduction, Results, Discussion, Methods, Conclusions</strong>. Reviews may use a more flexible structure.
               </p>
             </div>
@@ -1418,7 +1418,7 @@ const Journals = () => {
             </ul>
 
             <h3 style={{ marginTop: '25px' }}>Resolution and Format</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Figures should be scaled to a maximum width of <strong>16.51 cm (6.50 in)</strong> and height of <strong>20 cm (7.87 in)</strong>. The preferred format is <strong>.tif</strong>, with RGB color space, a DPI of 500+.
             </p>
             
@@ -1470,12 +1470,12 @@ const Journals = () => {
             </ul>
 
             <h3 style={{ marginTop: '25px' }}>Scale Bar</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               A scale bar, rather than magnification, must be provided for any micrographs. The scale bar should be explicitly and prominently displayed on each figure.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Copyright of Figures and Tables</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Ensure that permission has been obtained and there is no copyright issue. If copyright is needed, provide citation: "Reprinted/adapted with permission from reference [xx]. Copyright year, copyright owner's name". All figures, tables, and images will be published under a Creative Commons CC-BY license.
             </p>
           </div>
@@ -1485,12 +1485,12 @@ const Journals = () => {
             <h2><i className="fas fa-ruler"></i> Additional Guidelines</h2>
             
             <h3>Acronyms/Abbreviations/Initialisms</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Must be defined upon first use in three sections: the abstract, the main text, and the first figure or table. When first introduced, include the abbreviation in parentheses following the full term. Accepted abbreviations for statistical parameters are: P, n, SD, SEM, df, ns, ANOVA, t.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>International System of Units</h3>
-            <p>The use of SI Units is required. Key rules:</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>The use of SI Units is required. Key rules:</p>
             <ul>
               <li>Space between unit and number: <code>5 mm</code> NOT <code>5mm</code></li>
               <li>Space before and after operator: <code>3 cm × 5 cm</code> NOT <code>3 cm×5 cm</code></li>
@@ -1500,31 +1500,31 @@ const Journals = () => {
             </ul>
 
             <h3 style={{ marginTop: '25px' }}>Symbols</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Greek letters must be inserted using the correct Greek symbol (Times, Helvetica or Symbol font), NOT written in full. Examples: α (alpha), β (beta), γ (gamma).
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Equations</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               If preparing in Word, use the Microsoft Equation Editor or MathType add-on. Ensure equations are editable and not inserted as images.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Statistical Analysis</h3>
-            <p>When statistical analysis is performed, provide:</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>When statistical analysis is performed, provide:</p>
             <ul>
               <li>Name of the statistical test used</li>
               <li>The number for each analysis</li>
               <li>The comparisons of interest</li>
               <li>The alpha level and actual p-value</li>
             </ul>
-            <p>Reporting guidelines:</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>Reporting guidelines:</p>
             <ul>
               <li>When P &lt; 0.001, report as <em>P</em> &lt; 0.001</li>
               <li>When P &gt; 0.99, report as <em>P</em> &gt; 0.99</li>
             </ul>
 
             <h3 style={{ marginTop: '25px' }}>Scientific Naming</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Linnean scientific names should be in <em>italics</em>, while higher than generic taxa should not. Gene designations should be lowercase and in italics, while protein designations should be in regular capital letters. All <em>p</em> in p-value should be lowercase and italic.
             </p>
           </div>
@@ -1532,22 +1532,22 @@ const Journals = () => {
           {/* Back Matter / Declarations */}
           <div className="card">
             <h2><i className="fas fa-file-signature"></i> Declarations (Back Matter)</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The following 6 pieces of information need to be truthfully provided at the end of the article:
             </p>
 
             <h3>1. Acknowledgement</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               This section is for acknowledging any support not covered under Author Contributions or Funding Statement sections. If there are no acknowledgments, use "Not applicable".
             </p>
 
             <h3>2. Funding Statement</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Describe sources of funding that have supported the work, including specific grant numbers and URLs to sponsors' websites. Format: "This research was funded by Name of Funder, grant number xxx". If no funding: "The author(s) received no specific funding for this study".
             </p>
 
             <h3>3. Author Contributions</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Mandatory for research articles (except single-author papers). Suggested format:
             </p>
             <div style={{ 
@@ -1563,7 +1563,7 @@ const Journals = () => {
             </div>
 
             <h3 style={{ marginTop: '25px' }}>4. Availability of Data and Materials</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               This statement should inform readers where the data can be accessed. Select appropriate template:
             </p>
             <ul>
@@ -1575,7 +1575,7 @@ const Journals = () => {
             </ul>
 
             <h3 style={{ marginTop: '25px' }}>5. Ethics Approval</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               State whether the study included human or animal subjects. Include:
             </p>
             <ul>
@@ -1586,7 +1586,7 @@ const Journals = () => {
             </ul>
 
             <h3 style={{ marginTop: '25px' }}>6. Conflicts of Interest</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Declare conflicts of interest or state: "The author(s) declare(s) no conflicts of interest to report regarding the present study."
             </p>
           </div>
@@ -1594,15 +1594,15 @@ const Journals = () => {
           {/* References */}
           <div className="card">
             <h2><i className="fas fa-book"></i> References</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press recommends editors and authors to utilize professional reference management tools such as Mendeley or Zotero for academic writing and literature formatting.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               All references should be cited in the main text sequentially and listed individually at the end of the manuscript. We recommend preparing references with bibliography software (Mendeley, Zotero). Include the digital object identifier (DOI) for all references where available.
             </p>
 
             <h3>Citation Format</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Use square brackets and consecutive numbers: [1], [2,3], [4–6]. For embedded citations with pagination: [5] (p. 10), or [6] (p. 101–105). When a reference is the subject of a sentence, use author's last name: Rhee [1] or "Reference [1]". For multiple authors: Al-Khshali et al. [2].
             </p>
 
@@ -1692,7 +1692,7 @@ const Journals = () => {
           {/* Supplementary Materials */}
           <div className="card">
             <h2><i className="fas fa-folder-plus"></i> Supplementary Materials</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press encourages authors to provide supplementary materials that complement their main articles. These may include additional data, figures, tables, multimedia content, or relevant information.
             </p>
 
@@ -1709,10 +1709,10 @@ const Journals = () => {
           {/* Appendices */}
           <div className="card">
             <h2><i className="fas fa-file-medical-alt"></i> Appendices</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The appendix is an optional section containing details and data supplemental to the main text. Place before the References section. Multiple appendices should be ordered as A, B, C, etc.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Appendix sections must be referenced in the main text. Within appendices, figures, tables, and elements should be labeled starting with "A" (e.g., Figure A1, Figure A2).
             </p>
           </div>
@@ -1720,7 +1720,7 @@ const Journals = () => {
           {/* Data Sharing and Deposition */}
           <div className="card">
             <h2><i className="fas fa-database"></i> Data Sharing and Deposition</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               At Gnosis Press, we value open scientific exchange and believe in promoting transparency and reproducibility in research. To ensure consistency across Gnosis Press journals, authors are required to include a Data Availability Statement in all submissions.
             </p>
 
@@ -1738,7 +1738,7 @@ const Journals = () => {
             </div>
 
             <h3>Data Repositories</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors are strongly encouraged to deposit research data in reputable and discipline-specific data repositories. Preferred repositories should be recognized and indexed by DataCite, re3data, or other relevant organizations.
             </p>
             
@@ -1764,7 +1764,7 @@ const Journals = () => {
             </div>
 
             <h4 style={{ marginTop: '25px' }}>Specialized Repositories for Health Research:</h4>
-            <p style={{ fontSize: '14px', marginTop: '10px' }}>
+            <p style={{ fontSize: '14px', marginTop: '10px', textAlign: 'justify', textJustify: 'inter-word' }}>
               For journals with health research subjects, deposition of sequence information to community-endorsed public repositories is necessary. Accession numbers and relevant identifiers must be included in the submitted manuscript.
             </p>
             
@@ -1818,32 +1818,32 @@ const Journals = () => {
             </table>
 
             <h3 style={{ marginTop: '25px' }}>Data Citation</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Research data should be cited in the main article to give proper credit and acknowledge the efforts of data creators. Authors must properly reference deposited data in the reference list, including the dataset's persistent identifier (DOI, accession number, etc.).
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Analytic Methods (Code) Transparency</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               For work where novel computer code was developed, authors should release it either by depositing it in a recognized public repository such as GitHub or uploading it as supplementary information to the publication. The name, version, corporation and location information for all software used should be clearly indicated. Please include all the parameters used to run software/program analyses.
             </p>
 
             <h4 style={{ marginTop: '20px' }}>1. Code Availability</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors are strongly encouraged to share the computer code and software used to generate results presented in their articles. The availability of code enhances research reproducibility and allows other researchers to build upon the work.
             </p>
 
             <h4>2. Code Repositories</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors should deposit their code and software in well-established and reputable code repositories such as <strong>GitHub, GitLab, Bitbucket</strong>, or other relevant platforms. Providing a link to the code repository should be included in the Data Availability Statement.
             </p>
 
             <h4>3. Code Documentation</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors must ensure that the deposited code is well-documented, readable, and easy to understand. Sufficient comments and explanations should be provided within the code to facilitate its usage by others.
             </p>
 
             <h4>4. Citation</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors must provide a citation for the code in the article's reference list. Include the code's persistent identifier (e.g., DOI or URL) to facilitate proper acknowledgment and citation by other researchers.
             </p>
           </div>
@@ -1851,7 +1851,7 @@ const Journals = () => {
           {/* Suggesting Reviewers */}
           <div className="card">
             <h2><i className="fas fa-user-check"></i> Suggesting Reviewers</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors are welcome and encouraged to suggest reviewers when they submit their manuscripts. Authors should make sure suggested reviewers are totally independent and without conflicts of interest in any way.
             </p>
             <div style={{ 
@@ -1865,7 +1865,7 @@ const Journals = () => {
                 <strong><i className="fas fa-exclamation-circle"></i> Important:</strong> When suggesting reviewers, the Corresponding Author must provide an <strong>institutional email address</strong> for each suggested reviewer.
               </p>
             </div>
-            <p style={{ marginTop: '15px' }}>
+            <p style={{ marginTop: '15px', textAlign: 'justify', textJustify: 'inter-word' }}>
               Suggested reviewers should be experts in the field with no personal, professional, or financial relationships with the authors that could be perceived as conflicts of interest.
             </p>
           </div>
@@ -1873,10 +1873,10 @@ const Journals = () => {
           {/* English Editing Service */}
           <div className="card">
             <h2><i className="fas fa-language"></i> English Editing Service</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Clear and concise language enables both the journal editors and reviewers to concentrate on the scientific content of your manuscript. In order to facilitate a proper peer review process and ensure that submissions are judged exclusively on academic merit, JCIDS strongly encourages authors to prepare the language of their manuscripts with the utmost care.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               If you are an author whose native language is not English—or you have any concerns regarding the language quality of your manuscript—we recommend having your manuscript professionally edited by a qualified English-speaking researcher in your field prior to submission.
             </p>
             <div style={{ 
@@ -1897,7 +1897,7 @@ const Journals = () => {
             <h2><i className="fas fa-users"></i> Authorship and Contribution</h2>
             
             <h3>Authorship Criteria</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press follows the International Committee of Medical Journal Editors (ICMJE) guidelines regarding authorship and contributions. Authorship should be based on the following <strong>4 criteria</strong>:
             </p>
             <ol>
@@ -1920,7 +1920,7 @@ const Journals = () => {
             </div>
 
             <h3>Corresponding Author</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The corresponding author is the one individual who takes primary responsibility for communication with the journal during the manuscript submission, peer-review, and publication process. The corresponding author typically ensures that all the journal's administrative requirements are properly completed and reported, including:
             </p>
             <ul>
@@ -1929,12 +1929,12 @@ const Journals = () => {
               <li>Clinical trial registration documentation</li>
               <li>Disclosures of relationships and activities</li>
             </ul>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The corresponding author should be available throughout the submission and peer-review process to respond to editorial queries in a timely way, and should be available after publication to respond to critiques of the work and cooperate with any requests from the journal for data or additional information.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Multi-Author Groups</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               When work is conducted by a large multi-author group, it is advised that the list of authors be decided before the work starts and confirmed before manuscript submission. All members listed as authors should have met all four criteria for authorship with final approval of the manuscript, and should be able to take public responsibility for the work with full confidence in the accuracy and integrity of the work of all group authors.
             </p>
             <div style={{ 
@@ -1950,7 +1950,7 @@ const Journals = () => {
             </div>
 
             <h3 style={{ marginTop: '25px' }}>Non-Author Contributors</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Contributors who meet fewer than all 4 of the above criteria for authorship should not be listed as authors, but they should be acknowledged. Examples of activities that alone (without other contributions) do not qualify a contributor for authorship include:
             </p>
             <ul>
@@ -1958,12 +1958,12 @@ const Journals = () => {
               <li>General supervision of a research group or general administrative support</li>
               <li>Writing assistance, technical editing, language editing, and proofreading</li>
             </ul>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Those whose contributions do not justify authorship may be acknowledged individually or together as a group under a single heading (e.g., "Clinical Investigators" or "Participating Investigators"), and their contributions should be specified (e.g., "served as scientific advisors," "critically reviewed the study proposal," "collected data," "provided and cared for study patients," "participated in writing or technical editing of the manuscript").
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Alteration to Authorship</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Requests made for an authorship change after submission must be made to the editorial office with an explanation for the change, include the signature of all authors, and be submitted by the corresponding author.
             </p>
             <div style={{ 
@@ -1977,10 +1977,10 @@ const Journals = () => {
                 <strong><i className="fas fa-ban"></i> Critical Policy:</strong> Gnosis Press places significant importance on maintaining the integrity and transparency of authorship contributions. Gnosis Press journals do not accept any requests to change the <strong>first author or corresponding author</strong> during any stage of manuscript processing. Any insistence on altering the first author or corresponding author will result in the rejection of the manuscript without further review or consideration.
               </p>
             </div>
-            <p style={{ marginTop: '15px' }}>
+            <p style={{ marginTop: '15px', textAlign: 'justify', textJustify: 'inter-word' }}>
               Please note that if you have changed affiliation during the course of the research, your new affiliation could be acknowledged in a note. Gnosis Press does not normally take requests for changes to affiliations after the acceptance of manuscripts.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authorship issues found after publication may result in a correction. If and when the authors are unable to resolve among themselves an authorship-related dispute, Gnosis Press may raise the issue with the authors' institution(s) and abide by its/their guidelines.
             </p>
           </div>
@@ -1988,10 +1988,10 @@ const Journals = () => {
           {/* Editors and Journal Staff as Authors */}
           <div className="card">
             <h2><i className="fas fa-user-shield"></i> Editors and Journal Staff as Authors</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               In circumstances where Editors or editorial staff of the journal submit their own studies to the journal, they shall not be involved in the reviewing process, and the review process must be made transparently and rigorously.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Submissions authored by editors or editorial staff of the journal will be handled by another editor who has the least conflicts of interest (COIs) with the authors to minimize bias.
             </p>
           </div>
@@ -1999,7 +1999,7 @@ const Journals = () => {
           {/* Conflicts of Interest */}
           <div className="card">
             <h2><i className="fas fa-balance-scale"></i> Conflicts of Interest</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Conflicts of interest (COIs, also referred to as "competing interests") may indicate the potential to influence the validity or objectivity of research. Editors, authors, and reviewers may be involved in COIs, and JCIDS considers it essential to identify and seek to mitigate them so as to ensure the integrity of its role in the dissemination and preservation of knowledge.
             </p>
             <div style={{ 
@@ -2014,15 +2014,15 @@ const Journals = () => {
               </p>
             </div>
 
-            <p style={{ marginTop: '15px' }}>
+            <p style={{ marginTop: '15px', textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors must declare all potential conflicts of interest; if they have none to declare, they should state plainly, "The author(s) declare(s) no conflicts of interest to report regarding the present study".
             </p>
 
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               In order to limit COIs, all roles involved in the peer-review process must identify and declare any personal circumstances or associations that may be perceived as having such influence and acknowledge all funding sources for the work. However, COI statements relating to public funding sources, such as government agencies and charitable or academic institutions, need not be supplied.
             </p>
 
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               JCIDS defines a COI as any relationship that may have an impact on the authors, reviewers, or editors of a manuscript during the peer review process, on the making of editorial decisions, or generally on any stage in the path toward publication.
             </p>
 
@@ -2076,17 +2076,17 @@ const Journals = () => {
             <h3 style={{ marginTop: '25px' }}>COI Requirements by Role</h3>
             
             <h4><i className="fas fa-user-edit"></i> Authors</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press requires a declaration from all authors of a manuscript regarding any potential COIs that could be relevant to the integrity or reliability of the scientific and professional judgment presented therein. If there is, in fact, no conflict of interest, the authors should state plainly, "The authors declare no conflicts of interest to report regarding the present study."
             </p>
 
             <h4 style={{ marginTop: '20px' }}><i className="fas fa-user-check"></i> Reviewers</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Reviewers should declare any COIs when they are assigned a manuscript and disclose this information to the editor, who will then assess whether they should proceed with the review process.
             </p>
 
             <h4 style={{ marginTop: '20px' }}><i className="fas fa-user-tie"></i> Editors</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The evaluation procedure (i.e., peer review and decisions regarding publication) must be free of biased editorial decisions. If an editor, guest editor, or associate editor believes that a personal, professional, or financial connection to an author may compromise the procedure, he or she must inform the journal's editorial office of the fact.
             </p>
           </div>
@@ -2094,15 +2094,15 @@ const Journals = () => {
           {/* Artificial Intelligence Policy */}
           <div className="card">
             <h2><i className="fas fa-robot"></i> Artificial Intelligence Policy</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press acknowledges the evolving impact of Generative Artificial Intelligence (GenAI), including tools such as ChatGPT and other large language models (LLMs), on scholarly publishing. In line with guidance issued by the STM Association and the Committee on Publication Ethics (COPE), we have established the following policy to promote transparency and uphold academic integrity.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>1. Use of AI in Manuscript Preparation</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors who employ GenAI tools during the preparation of their manuscripts—for tasks such as text generation, graphical output, data analysis, study design, or interpretation—are required to declare such usage upon submission.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Specific details regarding the nature and scope of AI tool usage should be disclosed in the <strong>"Materials and Methods"</strong> section. Additionally, the tool's name and version must be acknowledged in the <strong>"Acknowledgments"</strong> section.
             </p>
             
@@ -2140,7 +2140,7 @@ const Journals = () => {
               </p>
             </div>
 
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors remain fully accountable for the accuracy, originality, integrity, and ethical compliance of all manuscript content, including any output generated or supported by GenAI tools. All materials must conform to Gnosis Press's Publication Ethics, including but not limited to, policies concerning plagiarism, data integrity, and image authenticity.
             </p>
 
@@ -2156,7 +2156,7 @@ const Journals = () => {
               </p>
             </div>
 
-            <p style={{ marginTop: '15px' }}>
+            <p style={{ marginTop: '15px', textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press reserves the right to request clarification or supporting information and will make editorial decisions in accordance with Gnosis Press's Editorial Policies and Terms and Conditions.
             </p>
 
@@ -2173,10 +2173,10 @@ const Journals = () => {
             </div>
 
             <h3 style={{ marginTop: '25px' }}>3. Use of AI in Peer Review</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Peer reviewers should not employ GenAI tools for the generation or structuring of review reports. Such use may compromise confidentiality, data protection, and proprietary information.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Limited application of AI for improving the linguistic clarity of a review report (e.g., grammar or punctuation) may be permitted but must be disclosed upon submission.
             </p>
             <div style={{ 
@@ -2192,11 +2192,11 @@ const Journals = () => {
             </div>
 
             <h3 style={{ marginTop: '25px' }}>4. Use of AI in Editorial Decision-Making</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The Editors (including Editors-in-Chief, Associate Editors, Guest Editors, or Editorial Board Members) are strictly prohibited from using GenAI tools in the editorial evaluation or decision-making process. Uploading any confidential manuscript materials to AI platforms constitutes a breach of Gnosis Press's Privacy Policy.
             </p>
 
-            <p style={{ marginTop: '20px', fontStyle: 'italic' }}>
+            <p style={{ marginTop: '20px', fontStyle: 'italic', textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press is committed to revisiting this Artificial Intelligence Policy in alignment with emerging best practices from STM Association, COPE, and the wider academic community.
             </p>
           </div>
@@ -2204,23 +2204,23 @@ const Journals = () => {
           {/* Copyright and Licensing */}
           <div className="card">
             <h2><i className="fas fa-copyright"></i> Copyright and Licensing</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               JCIDS publishes all articles under an open-access license, which means that the articles remain accessible to all without charge and without technical or legal barriers and that they can be reused with proper acknowledgment and citation.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Financial support for the open access publication is provided by the authors' institutions or by research funding agencies in the way of article processing charge (APC) once manuscripts have been accepted. More specifically, JCIDS publishes articles under the <strong>Creative Commons Attribution (CC BY) License</strong>. JCIDS is committed to open access publishing as a means to foster the exchange of research among scientists, especially across disciplines.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Copyright Retention</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The copyright and other proprietary rights related to papers published by JCIDS are <strong>retained by the authors</strong>. If the authors reproduce any text, figures, tables, or illustrations from papers published by JCIDS in their own future research, they must cite the originally published version.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors are asked to inform JCIDS's editorial office of any exceptional circumstances in this regard at the time of submission, for which exceptions may be granted at the discretion of the publisher.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Republished Material</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Articles published in JCIDS are likely to contain material republished with permission under a more restrictive license. When this situation arises, it should be indicated; it is the responsibility of the authors to seek permission for reuse from the copyright holder.
             </p>
 
@@ -2240,45 +2240,45 @@ const Journals = () => {
           {/* Corrections & Retractions */}
           <div className="card">
             <h2><i className="fas fa-exclamation-circle"></i> Corrections & Retractions</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press journals will issue corrections, and/or retraction statements, when deemed proper.
             </p>
 
             <h3>Corrections</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               JCIDS aims to publish every article online in its final form. Upon receiving the proofs of their accepted manuscripts, authors will have an opportunity to check for errors and oversights. Occasionally, a mistake is pointed out in a published article, necessitating the issuance of a correction statement.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               A correction is a statement rectifying an error or an omission. Authors or readers may submit such a statement either through the journal's online submission system, or by sending an email, along with the submission ID, to JCIDS's editorial office at <strong>submission.jcids@gnosispress.org</strong>. A correction notice, published and linked to the corresponding article, is freely accessible to all readers.
             </p>
 
             <h4 style={{ marginTop: '20px' }}>Correction Process</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               When making corrections to original articles, the original article both in PDF and XML versions are corrected and bi-directionally linked to and from the published amendment notice that details the original error. Any changes made to the original articles that affect data in figures, tables or text will have the amendment notice reproduce the original data.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               If it is not possible to correct the original article in both PDF and XML versions, the article will remain unchanged but will contain links that direct to and from the published correction notice.
             </p>
 
             <div style={{ marginTop: '20px' }}>
               <h4><i className="fas fa-user-edit"></i> Author's Correction</h4>
-              <p style={{ fontSize: '14px' }}>
+              <p style={{ fontSize: '14px', textAlign: 'justify', textJustify: 'inter-word' }}>
                 An Author's Correction may be published to correct an important error(s) made by the author that affects the scientific integrity of the published article, the publication record, or the reputation of the authors or the journal. The Managing Editor of that manuscript will be responsible for handling the correction process.
               </p>
 
               <h4 style={{ marginTop: '15px' }}><i className="fas fa-building"></i> Publisher's Correction</h4>
-              <p style={{ fontSize: '14px' }}>
+              <p style={{ fontSize: '14px', textAlign: 'justify', textJustify: 'inter-word' }}>
                 A Publisher's Correction may be published to correct an important error(s) made by the journal that affects the scientific integrity of the published article, the publication record, or the reputation of the authors or of the journal.
               </p>
             </div>
 
             <h3 style={{ marginTop: '30px' }}>Retractions</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               A retraction is a notice that a previously published paper should no longer be regarded as part of the published literature. The primary purpose of a retraction is to ensure the integrity and completeness of scholarly records by withdrawing any manuscript which is found to contain infringements of professional ethical codes, major errors, or where its main conclusion is seriously undermined as a result of new evidence coming to light.
             </p>
 
             <h4 style={{ marginTop: '20px' }}>Grounds for Retraction</h4>
-            <p>Violations of professional ethical codes include:</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>Violations of professional ethical codes include:</p>
             <ul>
               <li>Multiple submissions without proper citations or permission</li>
               <li>Redundant publications</li>
@@ -2286,16 +2286,16 @@ const Journals = () => {
               <li>Plagiarism</li>
               <li>Fraudulent use of data</li>
             </ul>
-            <p>Major errors cover any or all miscalculations or experimental errors, intentionally or due to honest mistakes.</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>Major errors cover any or all miscalculations or experimental errors, intentionally or due to honest mistakes.</p>
 
             <h4 style={{ marginTop: '20px' }}>Retraction Process</h4>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The retraction will be referred to the Editors-in-Chief, Associate Editors, and the Managing Editor who have handled the paper. Retracted articles will not be removed from the printed copies of the journal (e.g., from libraries) nor from the electronic archives. Their retracted status will be indicated as clearly as possible.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Bibliographic information about the article will be retained to ensure the permanence and integrity of the published scientific record. When an article is retracted, in most cases, the original manuscript is corrected and is bi-directionally linked (to and from) the published retraction notice which details the original error.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               For the purpose of transparency, when corrections made to the original article affect any data, figures, tables or texts, the retraction notice will display the original data alongside the corrected version. When a correction is not possible, all existing versions of the article will remain unchanged but will contain the bi-directional links, to and from, the published retraction notice.
             </p>
             <p>
@@ -2318,12 +2318,12 @@ const Journals = () => {
             <p>
               Article Withdrawal is only used for articles in press, which represent early versions of articles and sometimes contain errors, or may have been accidentally submitted twice. Occasionally, an article may contain infringements of professional ethical codes, such as multiple submissions, bogus claims of authorship, plagiarism, and fraudulent use of data or the like.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Articles that include errors or are discovered to be accidental duplicates of other published article(s), or are determined to violate our publishing ethics guidelines in the view of the editors may be "Withdrawn" by the article author or the journal editor.
             </p>
 
             <h3 style={{ marginTop: '30px' }}>Removal of Published Content</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Under special circumstances, Gnosis Press reserves the right to remove an article, book or other content from Gnosis Press's website and submission system. Such action may be taken when:
             </p>
             <ul>
@@ -2331,30 +2331,30 @@ const Journals = () => {
               <li>A court or government order requires removal of such content</li>
               <li>The content, if acted upon, would pose an immediate and serious risk to health</li>
             </ul>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Removal may be temporary or permanent. A statement will be published explaining the decision behind the removal.
             </p>
 
             <h3 style={{ marginTop: '30px' }}>Addressing Post-publication Issues</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press is fully committed to maintaining the integrity and completeness of the scientific record and recognizes its importance to researchers and the academic community at large. As such, Gnosis Press will thoroughly investigate concerns that are directly raised with us by authors and/or readers.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Authors are strongly encouraged to address any raised issues. In the course of our investigation, we may request original raw data, and consult with experts and other scholars in the field.
             </p>
             
             <h4 style={{ marginTop: '20px' }}>Possible Outcomes</h4>
-            <p>Depending on the seriousness of the issues, the following outcomes may ensue:</p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>Depending on the seriousness of the issues, the following outcomes may ensue:</p>
             <ul>
               <li>A manuscript still under consideration may be rejected and returned to the author</li>
               <li>A published online article, depending on the nature and severity of the issues, may result in a correction notice or a retraction notice</li>
               <li>Issues deemed to be serious may prompt Gnosis Press to inform the authors' institution and related affiliations</li>
             </ul>
 
-            <p style={{ marginTop: '15px' }}>
+            <p style={{ marginTop: '15px', textAlign: 'justify', textJustify: 'inter-word' }}>
               Our actions are driven by our dedicated aim for transparent notification to our readers and unabated commitment to the integrity of the published record, and not by any motivation to sanction individuals or attribute responsibility to specific named individuals. We may refer readers to the institutional investigations' reports if they are publicly available.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               While we are committed to addressing post-publication issues and correcting the record swiftly, investigations typically take some time to reach resolutions given the complexity of the discussions, the diligence in our process and the need to obtain original data and consult with experts. We will issue and regularly update relevant Editor's Notes and/or Editor's Expression of Concern as interim notifications to alert our readership of any concerns with published material.
             </p>
           </div>
@@ -2362,20 +2362,20 @@ const Journals = () => {
           {/* Appeals and Complaints */}
           <div className="card">
             <h2><i className="fas fa-gavel"></i> Appeals and Complaints</h2>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Gnosis Press's appeal and complaint procedures pertain to grievances against editorial decisions, discontent with procedural inaccuracies (such as tardiness in manuscript handling), and complaints regarding publishing ethics.
             </p>
 
             <h3 style={{ marginTop: '20px' }}>Submission of Appeals</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Queries of appeal and complaint must be accompanied by comprehensive justifications, and authors are requested to submit appeals and complaints in writing to JCIDS at <strong>submission.jcids@gnosispress.org</strong>.
             </p>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               The editorial office will provide a prompt response upon receipt of a formal appeal or complaint, and endeavor to resolve the matter within a reasonable time frame.
             </p>
 
             <h3 style={{ marginTop: '25px' }}>Ethical Misconduct Concerns</h3>
-            <p>
+            <p style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               Concerns regarding ethical misconduct may also be reported to Gnosis Press's Editorial Integrity Team. The Editorial Integrity team adheres to COPE Guidelines, and subsequently determines a suitable course of action, authorizing editorial offices to furnish the complainant with feedback.
             </p>
 
@@ -2798,7 +2798,7 @@ const Journals = () => {
                                 color: '#374151',
                                 lineHeight: '1.7',
                                 fontStyle: 'italic',
-                                textAlign: 'justify'
+                                textAlign: 'justify', textJustify: 'inter-word'
                               }}>
                                 {paper.citation}
                               </div>
@@ -3059,7 +3059,7 @@ const Journals = () => {
                                 color: '#374151',
                                 lineHeight: '1.7',
                                 fontStyle: 'italic',
-                                textAlign: 'justify'
+                                textAlign: 'justify', textJustify: 'inter-word'
                               }}>
                                 {paper.citation}
                               </div>

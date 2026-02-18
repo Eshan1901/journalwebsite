@@ -58,7 +58,7 @@ const PaperDetail = () => {
         pages: '1-17',
         doi: '10.62656/jcids.v1i1.1',
         file: '/2024/1.pdf',
-        citation: 'Niranchana Radhakrishnan, C. Viji, Balusamy Nachiappan. Optimized neural fusion architecture for secure data validation and cryptographic key regulation in advanced cloud ecosystems. J Comput Intell Decis Sci. 2024;1(1):1.'
+        citation: 'Niranchana Radhakrishnan, C. Viji, Balusamy Nachiappan, "Optimized Neural Fusion Architecture for Secure Data Validation and Cryptographic Key Regulation in Advanced Cloud Ecosystems," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 1-18, 2024.  https://doi.org/10.XXXX/jcids.2024.001'
       },
       {
         id: 2,
@@ -75,7 +75,7 @@ const PaperDetail = () => {
         pages: '18-28',
         doi: '10.62656/jcids.v1i1.2',
         file: '/2024/2.pdf',
-        citation: 'Vijay C, Neelakandan C. Context-aware opinion mining framework for interpreting learner reflections through advanced sequence modeling. J Comput Intell Decis Sci. 2024;1(1):2.'
+        citation: 'C. Vijay and Chandrasekaran Neelakandan, "Context-Aware Opinion Mining Framework for Interpreting Learner Reflections through Advanced Sequence Modeling," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 19-35, 2024. https://doi.org/10.XXXX/jcids.2024.002'
       },
       {
         id: 3,
@@ -92,7 +92,7 @@ const PaperDetail = () => {
         pages: '29-40',
         doi: '10.62656/jcids.v1i1.3',
         file: '/2024/3.pdf',
-        citation: 'Sivakumar S, Karthikeyan T. Privacy-preserving framework for safeguarding healthcare data with embedded authentication across federated cloud platforms. J Comput Intell Decis Sci. 2024;1(1):3.'
+        citation: 'S. Sivakumar and T. Karthikeyan, "Privacy-Preserving Framework for Safeguarding Healthcare Data with Embedded Authentication Across Federated Cloud Platforms," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 36-54, 2024. https://doi.org/10.XXXX/jcids.2024.003'
       },
       {
         id: 4,
@@ -109,7 +109,7 @@ const PaperDetail = () => {
         pages: '41-49',
         doi: '10.62656/jcids.v1i1.4',
         file: '/2024/4.pdf',
-        citation: 'Thimmiaraja J, Navamani JMA, Ramasamy SS. Enhanced correlation mapping framework employing hybrid evolutionary strategy for drug–disease association discovery across diverse biomedical sources. J Comput Intell Decis Sci. 2024;1(1):4.'
+        citation: 'Thimmiaraja J, J. Macklin Abraham Navamani and Siva Shankar Ramasamy, "Enhanced Correlation Mapping Framework Employing Hybrid Evolutionary Strategy for Drug–Disease Association Discovery Across Diverse Biomedical Sources," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 55-70, 2024. https://doi.org/10.XXXX/jcids.2024.004'
       },
       {
         id: 5,
@@ -126,7 +126,7 @@ const PaperDetail = () => {
         pages: '50-63',
         doi: '10.62656/jcids.v1i1.5',
         file: '/2024/5.pdf',
-        citation: 'Nalini M, Vengusamy S. Cognitive resource allocation system with deep learning-based offloading for enhanced mobile computing performance. J Comput Intell Decis Sci. 2024;1(1):5.'
+        citation: 'M. Nalini and Sivakumar Vengusamy, "Cognitive Resource Allocation System with Deep Learning-Based Offloading for Enhanced Mobile Computing Performance," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 71-92, 2024. https://doi.org/10.XXXX/jcids.2024.005'
       },
       {
         id: 6,
@@ -143,7 +143,7 @@ const PaperDetail = () => {
         pages: '64-72',
         doi: '10.62656/jcids.v1i1.6',
         file: '/2024/6.pdf',
-        citation: 'Padmavathi K, Riskhan B. Optimized sequence recognition framework for memory-assisted threat mitigation in wireless intrusion environments. J Comput Intell Decis Sci. 2024;1(1):6.'
+        citation: 'K. Padmavathi and Basheer Riskhan, "Optimized Sequence Recognition Framework for Memory-Assisted Threat Mitigation in Wireless Intrusion Environments," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 93-108, 2024. https://doi.org/10.XXXX/jcids.2024.006'
       },
       {
         id: 7,
@@ -160,7 +160,7 @@ const PaperDetail = () => {
         pages: '73-85',
         doi: '10.62656/jcids.v1i1.7',
         file: '/2024/7.pdf',
-        citation: 'Jayasheelan P, Ramakrishnan S. Reliability-driven cloudlet allocation framework leveraging chaotic evolutionary techniques for mobile cloud environments. J Comput Intell Decis Sci. 2024;1(1):7.'
+        citation: 'P. Jayasheelan and Swamynathan Ramakrishnan, "Reliability-Driven Cloudlet Allocation Framework Leveraging Chaotic Evolutionary Techniques for Mobile Cloud Environments," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 109-125, 2024. https://doi.org/10.XXXX/jcids.2024.007'
       },
       {
         id: 8,
@@ -177,7 +177,7 @@ const PaperDetail = () => {
         pages: '86-96',
         doi: '10.62656/jcids.v1i1.8',
         file: '/2024/8.pdf',
-        citation: 'Hemalatha S, Selvaraj A. Nature-inspired feature engineering and cancer detection framework leveraging ensemble convolutional neural architectures. J Comput Intell Decis Sci. 2024;1(1):8.'
+        citation: 'S. Hemalatha and Arokiaraj Selvaraj, "Nature-Inspired Feature Engineering and Cancer Detection Framework Leveraging Ensemble Convolutional Neural Architectures," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 126-143, 2024. https://doi.org/10.XXXX/jcids.2024.008'
       },
       {
         id: 9,
@@ -194,7 +194,7 @@ const PaperDetail = () => {
         pages: '97-104',
         doi: '10.62656/jcids.v1i1.9',
         file: '/2024/9.pdf',
-        citation: 'Dhiyaneshwaran K, Joghee S. Automated MRI-based brain lesion delineation using deep convolutional neural models. J Comput Intell Decis Sci. 2024;1(1):9.'
+        citation: 'K. Dhiyaneshwaran and Shanmugan Joghee, "Automated MRI-Based Brain Lesion Delineation Using Deep Convolutional Neural Models," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 144-159, 2024. https://doi.org/10.XXXX/jcids.2024.009'
       },
       {
         id: 10,
@@ -211,7 +211,7 @@ const PaperDetail = () => {
         pages: '105-117',
         doi: '10.62656/jcids.v1i1.10',
         file: '/2024/10.pdf',
-        citation: 'Khuman YLK, Moorthi I. Optimized term importance framework for automated feature derivation in complex and high-dimensional big data. J Comput Intell Decis Sci. 2024;1(1):10.'
+        citation: 'Yanglem Loijing Khomba Khuman and Iyyappan Moorthi, "Optimized Term Importance Framework for Automated Feature Derivation in Complex and High-Dimensional Big Data," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 01, Issue 1, pp. 160-175, 2024. https://doi.org/10.XXXX/jcids.2024.010'
       }
     ];
 
@@ -231,7 +231,7 @@ const PaperDetail = () => {
         pages: '118-132',
         doi: '10.62656/jcids.v1i2.11',
         file: '/2025/11.pdf',
-        citation: 'Dinesh Kumar S, Prabakaran TN. Dynamic multi-level heuristic framework for predicting lung cancer from CT scan data. J Comput Intell Decis Sci. 2025;1(2):11.'
+        citation: 'Nongmaithem Ajith Singh and Rajkumar Palaniappan, "Dynamic Multi-Level Heuristic Framework for Predicting Lung Cancer from CT Scan Data," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 1-20, 2025. https://doi.org/10.XXXX/jcids.2025.011'
       },
       {
         id: 12,
@@ -248,7 +248,7 @@ const PaperDetail = () => {
         pages: '133-150',
         doi: '10.62656/jcids.v1i2.12',
         file: '/2025/12.pdf',
-        citation: 'Pandiyavathi T, Selvakumar K. Enhanced user authorization framework in cloud environments using weighted proximity-based trust evaluation. J Comput Intell Decis Sci. 2025;1(2):12.'
+        citation: 'D. Nethra Pingala Suthishni, K. Prabavathy and Balusamy Nachiappan, "Enhanced User Authorization Framework in Cloud Environments Using Weighted Proximity-Based Trust Evaluation," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 21-37, 2025. https://doi.org/10.XXXX/jcids.2025.012'
       },
       {
         id: 13,
@@ -265,7 +265,7 @@ const PaperDetail = () => {
         pages: '151-157',
         doi: '10.62656/jcids.v1i2.13',
         file: '/2025/13.pdf',
-        citation: 'Amutha B, Ponmalar S. Advanced sequence modeling framework for analyzing learner feedback in educational systems. J Comput Intell Decis Sci. 2025;1(2):13.'
+        citation: 'K. Nirmala Devi, Radhika K and Chandrasekaran Neelakandan, "Advanced Sequence Modeling Framework for Analyzing Learner Feedback in Educational Systems," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 38-50, 2025. https://doi.org/10.XXXX/jcids.2025.013'
       },
       {
         id: 14,
@@ -282,7 +282,7 @@ const PaperDetail = () => {
         pages: '158-167',
         doi: '10.62656/jcids.v1i2.14',
         file: '/2025/14.pdf',
-        citation: 'Sheshasaayee A, Vijayan P. Two-dimensional signal decomposition for feature reduction and deep learning-based object detection. J Comput Intell Decis Sci. 2025;1(2):14.'
+        citation: 'K. Reena, A. Kalaivani and T. Karthikeyan, "Two-Dimensional Signal Decomposition for Feature Reduction and Deep Learning-Based Object Detection," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 51-72, 2025. https://doi.org/10.XXXX/jcids.2025.014'
       },
       {
         id: 15,
@@ -299,7 +299,7 @@ const PaperDetail = () => {
         pages: '168-176',
         doi: '10.62656/jcids.v1i2.15',
         file: '/2025/15.pdf',
-        citation: 'Vijipriya S, Rajamani SA. Microarray-based cancer classification via optimized gene selection using evolutionary population strategies. J Comput Intell Decis Sci. 2025;1(2):15.'
+        citation: 'T. Saravanan, Krishnaveni Sakkarapani and Siva Shankar Ramasamy, "Microarray-Based Cancer Classification via Optimized Gene Selection Using Evolutionary Population Strategies," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 73-89, 2025. https://doi.org/10.XXXX/jcids.2025.015'
       },
       {
         id: 16,
@@ -316,7 +316,7 @@ const PaperDetail = () => {
         pages: '177-184',
         doi: '10.62656/jcids.v1i2.16',
         file: '/2025/16.pdf',
-        citation: 'Karthikeyan S, Geetha P. Hybrid recommendation framework combining enhanced density-based clustering and transductive support vector learning. J Comput Intell Decis Sci. 2025;1(2):16.'
+        citation: 'V. Vasanthi, M. Karthi and Sivakumar Vengusamy, "Hybrid Recommendation Framework Combining Enhanced Density-Based Clustering and Transductive Support Vector Learning," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 90-107, 2025. https://doi.org/10.XXXX/jcids.2025.016'
       },
       {
         id: 17,
@@ -333,7 +333,7 @@ const PaperDetail = () => {
         pages: '185-197',
         doi: '10.62656/jcids.v1i2.17',
         file: '/2025/17.pdf',
-        citation: 'Nayyar A, Zakir SK, Singh S. Exploratory study of artificial intelligence techniques for detecting milk adulteration in food safety. J Comput Intell Decis Sci. 2025;1(2):17.'
+        citation: 'Sulochana V, S. Prabhu and Basheer Riskhan, "Exploratory Study of Artificial Intelligence Techniques for Detecting Milk Adulteration in Food Safety," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 108-120, 2025. https://doi.org/10.XXXX/jcids.2025.017'
       },
       {
         id: 18,
@@ -350,7 +350,7 @@ const PaperDetail = () => {
         pages: '198-208',
         doi: '10.62656/jcids.v1i2.18',
         file: '/2025/18.pdf',
-        citation: 'Subramanian V, Mohan R. Collaborative mobility-aware resource allocation framework using evolutionary lion optimization for next-generation mobile networks. J Comput Intell Decis Sci. 2025;1(2):18.'
+        citation: 'V. Bakyalakshmi, K. Brindha and Swamynathan Ramakrishnan, "Collaborative Mobility-Aware Resource Allocation Framework Using Evolutionary Lion Optimization for Next-Generation Mobile Networks," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 121-144, 2025. https://doi.org/10.XXXX/jcids.2025.018'
       },
       {
         id: 19,
@@ -367,7 +367,7 @@ const PaperDetail = () => {
         pages: '209-220',
         doi: '10.62656/jcids.v1i2.19',
         file: '/2025/19.pdf',
-        citation: 'Saranya K, Saravanan R. Optimized feature weighting framework for multi-document summarization using binary swarm intelligence techniques. J Comput Intell Decis Sci. 2025;1(2):19.'
+        citation: 'Vijayalakshmi P. S, P. Ananthi and Arokiaraj Selvaraj, "Optimized Feature Weighting Framework for Multi-Document Summarization Using Binary Swarm Intelligence Techniques," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 145-158, 2025. https://doi.org/10.XXXX/jcids.2025.019'
       },
       {
         id: 20,
@@ -384,7 +384,7 @@ const PaperDetail = () => {
         pages: '221-231',
         doi: '10.62656/jcids.v1i2.20',
         file: '/2025/20.pdf',
-        citation: 'Parvathi R, Janet J. Refined Gabor feature extraction combined with optimized Bayesian classification for facial expression analysis. J Comput Intell Decis Sci. 2025;1(2):20.'
+        citation: 'K. Nirmala Devi, S. Thanga Prasath and Shanmugan Joghee, "Refined Gabor Feature Extraction Combined with Optimized Bayesian Classification for Facial Expression Analysis," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 02, Issue 2, pp. 159-175, 2025. https://doi.org/10.XXXX/jcids.2025.020'
       }
     ];
 
@@ -473,7 +473,7 @@ const PaperDetail = () => {
             {/* Small Download Icon */}
             <a
               href={paper.file}
-              download
+              download={`${paper.articleId}.pdf`}
               style={{
                 background: 'rgba(255,255,255,0.2)',
                 border: 'none',
@@ -622,41 +622,68 @@ const PaperDetail = () => {
               fontSize: '0.95rem',
               lineHeight: '1.9',
               color: '#475569',
-              textAlign: 'justify',
-              textJustify: 'inter-word',
               background: '#f8fafc',
               padding: '25px',
               borderRadius: '10px',
               border: '1px solid #e2e8f0'
             }}>
-              {paper.references}
+              <ol style={{
+                margin: 0,
+                paddingLeft: '25px',
+                listStyleType: 'decimal'
+              }}>
+                {(() => {
+                  // Split references by looking for patterns like "1. ", "2. ", etc. at the start of lines
+                  const refText = paper.references;
+                  // Split on number followed by period and space (e.g., "1. ", "2. ")
+                  const refs = refText.split(/\n(?=\d+\.\s)/);
+                  
+                  return refs
+                    .map(ref => {
+                      // Remove the numbering and clean up whitespace
+                      return ref
+                        .replace(/^\d+\.\s*/, '')  // Remove leading number
+                        .replace(/\s+/g, ' ')       // Replace multiple spaces/newlines with single space
+                        .trim();
+                    })
+                    .filter(ref => ref.length > 0)  // Remove empty entries
+                    .map((reference, index) => (
+                      <li key={index} style={{
+                        marginBottom: '15px',
+                        textAlign: 'justify',
+                        textJustify: 'inter-word',
+                        paddingLeft: '10px'
+                      }}>
+                        {reference}
+                      </li>
+                    ));
+                })()}
+              </ol>
             </div>
           </section>
 
           {/* Citation */}
           <section style={{ marginBottom: '45px' }}>
-            <h2 style={{
-              fontSize: '1.8rem',
-              color: '#1e293b',
-              marginBottom: '20px',
-              borderBottom: '4px solid #3b82f6',
-              paddingBottom: '12px',
-              fontWeight: '700'
+            <div style={{ 
+              color: '#374151', 
+              fontSize: '0.9rem', 
+              fontWeight: '700',
+              marginBottom: '10px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px'
             }}>
-              Cite This Article
-            </h2>
-            <div style={{
-              padding: '25px',
-              background: 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)',
-              borderLeft: '5px solid #3b82f6',
-              borderRadius: '10px',
-              fontSize: '1rem',
-              color: '#475569',
-              lineHeight: '1.8',
+              Cite This Article:
+            </div>
+            <div style={{ 
+              padding: '15px',
+              background: '#f3f4f6',
+              borderLeft: '4px solid #2c4a80',
+              borderRadius: '4px',
+              fontSize: '0.9rem',
+              color: '#374151',
+              lineHeight: '1.7',
               fontStyle: 'italic',
-              textAlign: 'justify',
-              textJustify: 'inter-word',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)'
+              textAlign: 'justify'
             }}>
               {paper.citation}
             </div>
@@ -671,7 +698,7 @@ const PaperDetail = () => {
           }}>
             <a
               href={paper.file}
-              download
+              download={`${paper.articleId}.pdf`}
               style={{
                 padding: '18px 56px',
                 background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',
