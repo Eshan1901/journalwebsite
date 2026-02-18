@@ -24,11 +24,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # 4️⃣ Build React project
+      # 4️⃣ Build React (Vite)
       - name: Build Project
         run: npm run build
 
-      # 5️⃣ Deploy build folder to MilesWeb via FTP
+      # 5️⃣ Deploy dist folder to MilesWeb via FTP
       - name: Deploy to MilesWeb
         uses: SamKirkland/FTP-Deploy-Action@v4
         with:
@@ -37,3 +37,4 @@ jobs:
           password: ${{ secrets.SSH_KEY }}
           local-dir: dist/
           server-dir: public_html/
+          dangerous-clean-slate: true
