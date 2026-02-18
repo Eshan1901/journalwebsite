@@ -1,11 +1,39 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const Layout = ({ children }) => {
   const [journalDropdownOpen, setJournalDropdownOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [visitorCount, setVisitorCount] = useState(300000)
   const location = useLocation()
+
+  useEffect(() => {
+    // Get the current date as a string
+    const today = new Date().toDateString();
+    
+    // Get stored data from localStorage
+    const storedData = JSON.parse(localStorage.getItem('visitorData') || '{}');
+    const storedDate = storedData.date;
+    const storedCount = storedData.count || 300000;
+
+    if (storedDate === today) {
+      // Same day, use stored count
+      setVisitorCount(storedCount);
+    } else {
+      // New day, increment with random amount (50-200 visitors)
+      const randomIncrement = Math.floor(Math.random() * 151) + 50;
+      const newCount = storedCount + randomIncrement;
+      
+      // Save to localStorage
+      localStorage.setItem('visitorData', JSON.stringify({
+        date: today,
+        count: newCount
+      }));
+      
+      setVisitorCount(newCount);
+    }
+  }, []);
 
   const isActive = (path) => {
     return location.pathname === path
@@ -50,6 +78,18 @@ const Layout = ({ children }) => {
               <i className="fas fa-paper-plane"></i>
               Submit Research
             </Link>
+            <div style={{ 
+              fontSize: '0.85rem', 
+              color: '#cbd5e1',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+              marginTop: '8px',
+              justifyContent: 'flex-end'
+            }}>
+              <span>👥</span>
+              <span>Total Visitors: <span style={{ fontFamily: 'monospace', fontWeight: '600' }}>{visitorCount.toLocaleString()}</span></span>
+            </div>
           </div>
         </div>
       </header>
