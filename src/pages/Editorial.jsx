@@ -166,7 +166,7 @@ const Editorial = () => {
               }}>
                 <i className="fas fa-graduation-cap" style={{ color: '#2c4a80', fontSize: '1.2rem', marginRight: '12px' }}></i>
                 <div style={{ fontSize: '0.95rem' }}>
-                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57197774378" target="_blank" rel="noopener noreferrer" style={{ 
+                  <a href="https://www.scopus.com/authid/detail.uri?authorId=57205391713" target="_blank" rel="noopener noreferrer" style={{ 
                     color: '#2c4a80', 
                     textDecoration: 'none',
                     fontWeight: '500'
