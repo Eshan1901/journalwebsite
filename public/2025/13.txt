@@ -26,7 +26,6 @@ Keywords: Learner Feedback, Educational System, Sentiment Analysis, Deep Learnin
 
 1 Introduction 
 Students' feedback can highlight the different issues of the students about the lectures. They 
-
 express their feelings or emotions about the lectures in the feedback. Students' feedback is the 
 teaching-learning process, equipping both the teachers as well as the students. Using students' 
 feedback lecturer changes the way of teaching [1]. Students' feedback mostly contains the emotions 
@@ -43,20 +42,6 @@ perception of the students in a clear manner. Our model contains three parts: i)
 Find the polarity of the students from students’ feedback using a multi-embedding and multi-head 
 attention fusion model. ii)Target extraction: Find the targets from the given sentence using the Bi-
 Integrated CRF model. iii) Target-based sentiment analysis: Merging the sentiment model + target 
-
- 
-Copyright © 2026 The Author(s). Published by Gnosis Press. This work is licensed under a Creative Commons 
-Attribution 4.0 International License, which permits unrestricted use, distribution, and reproduction in any 
-medium, provided the original work is properly cited. 
-
- 
- 
-
-
-
-26 J Comput Intell Decis Sci. 2025;2(2):3 
- 
-
 model to find the target and sentiments towards those targets. In this study, we focus only on the 
 target extraction using the Bi-Integrated CRF model. Given a sentence as input, it identifies the target 
 and returns a list containing all target terms. For example: I liked the staff, Mr. Joe, but not the subject 

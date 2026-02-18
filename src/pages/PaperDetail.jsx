@@ -16,7 +16,7 @@ const PaperDetail = () => {
         const text = await response.text();
         
         // Parse the text to extract abstract and references
-        const abstractMatch = text.match(/ABSTRACT:(.*?)(?=KEYWORDS:|References|$)/s);
+        const abstractMatch = text.match(/ABSTRACT:(.*?)(?=KEYWORDS:|Keywords:|References|$)/si);
         const abstract = abstractMatch ? abstractMatch[1].trim() : 'Abstract not available.';
         
         const referencesMatch = text.match(/References\s+(.*)/s);
