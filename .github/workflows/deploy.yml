@@ -36,5 +36,5 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_KEY }}
           local-dir: dist/
-          server-dir: public_html/
+          server-dir: ./
           dangerous-clean-slate: true
