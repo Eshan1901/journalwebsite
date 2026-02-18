@@ -147,6 +147,23 @@ const Layout = ({ children }) => {
         {children}
       </main>
 
+      {/* Indexing Marquee */}
+      <div style={{ 
+        background: 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)',
+        padding: '12px 0',
+        borderTop: '2px solid #f59e0b',
+        borderBottom: '2px solid #f59e0b',
+        overflow: 'hidden'
+      }}>
+        <marquee behavior="scroll" direction="left" scrollamount="5" style={{ 
+          fontSize: '1rem', 
+          fontWeight: '600',
+          color: '#92400e'
+        }}>
+          INDEXING: YET TO BE UPDATED | Stay tuned for upcoming indexing information
+        </marquee>
+      </div>
+
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
