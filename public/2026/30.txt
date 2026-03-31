@@ -226,15 +226,15 @@ Author Contributions:  The authors confirm contribution to the paper as follows:
 Conflicts of Interest:  The authors declare no conflicts of interest to report regarding the present study.	
 	
 References	
-Sharath N, Rananavare L.B. Security in wireless sensor network using stationary access nodes. Int J Comput Sci Inf Technol Res. 2014;2:354–364.	
-Malik MY. An outline of security in wireless sensor networks: Threats, countermeasures and implementations. In Wireless Sensor Networks and Energy Efficiency: Protocols, Routing and Management. 2012;507-527.	
-Di Pietro R, Oligeri G, Soriente C, Tsudik G. United we stand: Intrusion resilience in mobile unattended WSNs. IEEE Trans Mob Comput. 2012;12(7):1456-68.	
-Li L, Abd El-Latif AA, Niu X. Elliptic curve ElGamal based homomorphic image encryption scheme for sharing secret images. Signal Process. 2012;92(4):1069-78.	
-Ansari MH, Vakili VT. Detection of clone node attack in mobile wireless sensor network with optimised cost function. Int J Sens Netw. 2017;24(3):149-59.	
-Rasheed A, Mahapatra RN. The three-tier security scheme in wireless sensor networks with mobile sinks. IEEE Trans Parallel Distrib Syst. 2012;23(5):958–965.	
-Agrawal CG, Kulkarni JB. Enhancing the security in WSN using three tier security architecture. Int J Innov Res Inf Secur. 2014;1(2):40-7.	
-Prema S, Nagaraj S. An Efficient Group Key Distribution Security Scheme in Wireless Sensor Networks. Int J Sci Res Pub. 2013;689.	
-Thangam R, Kumar SM. Authentication provision for WSN based on multi-level security. Int J Manag IT Eng. 2013;3(4):231-46.	
-Jayachitra D, Nithya N. Wireless sensor networks in three-tier security scheme using Multinomial bool-based algorithms. Int J Sci Res. 2018;6(10):548–551.	
-Parno B, Perrig A, Gligor V. Distributed detection of node replication attacks in sensor networks. IEEE Symposium on Security and Privacy; 2005, California, USA. 2005;49-63.	
-Ishmanov F, Kim SW, Nam SY. A secure trust establishment scheme for wireless sensor networks. Sensors. 2014 Jan 22;14(1):1877-97.	
+1. Sharath N, Rananavare L.B. Security in wireless sensor network using stationary access nodes. Int J Comput Sci Inf Technol Res. 2014;2:354-364.	
+2. Malik MY. An outline of security in wireless sensor networks: Threats, countermeasures and implementations. In Wireless Sensor Networks and Energy Efficiency: Protocols, Routing and Management. 2012;507-527.	
+3. Di Pietro R, Oligeri G, Soriente C, Tsudik G. United we stand: Intrusion resilience in mobile unattended WSNs. IEEE Trans Mob Comput. 2012;12(7):1456-68.	
+4. Li L, Abd El-Latif AA, Niu X. Elliptic curve ElGamal based homomorphic image encryption scheme for sharing secret images. Signal Process. 2012;92(4):1069-78.	
+5. Ansari MH, Vakili VT. Detection of clone node attack in mobile wireless sensor network with optimised cost function. Int J Sens Netw. 2017;24(3):149-59.	
+6. Rasheed A, Mahapatra RN. The three-tier security scheme in wireless sensor networks with mobile sinks. IEEE Trans Parallel Distrib Syst. 2012;23(5):958-965.	
+7. Agrawal CG, Kulkarni JB. Enhancing the security in WSN using three tier security architecture. Int J Innov Res Inf Secur. 2014;1(2):40-7.	
+8. Prema S, Nagaraj S. An Efficient Group Key Distribution Security Scheme in Wireless Sensor Networks. Int J Sci Res Pub. 2013;689.	
+9. Thangam R, Kumar SM. Authentication provision for WSN based on multi-level security. Int J Manag IT Eng. 2013;3(4):231-46.	
+10. Jayachitra D, Nithya N. Wireless sensor networks in three-tier security scheme using Multinomial bool-based algorithms. Int J Sci Res. 2018;6(10):548-551.	
+11. Parno B, Perrig A, Gligor V. Distributed detection of node replication attacks in sensor networks. IEEE Symposium on Security and Privacy; 2005, California, USA. 2005;49-63.	
+12. Ishmanov F, Kim SW, Nam SY. A secure trust establishment scheme for wireless sensor networks. Sensors. 2014 Jan 22;14(1):1877-97.	

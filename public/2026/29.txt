@@ -128,18 +128,18 @@ Author Contributions:  The authors confirm contribution to the paper as follows:
 Conflicts of Interest:  The authors declare no conflicts of interest to report regarding the present study.				
 				
 References				
-Bhattacharjee AK, Chaudhuri SB, Poddar DR, Chowdhury SK. Equivalence of impedance and radiation properties of square and circular microstrip patch antennas. In IEE Proceedings H-Microwaves, Antennas and Propagation; 1989 Aug, 1989. Vol. 136, No. 4, pp. 338-342.				
-Carver K, Mink J. Microstrip antenna technology. IEEE Trans Antennas Propag. 1981;29(1):2-4.				
-Al-Sajee AA, Hamad KA. Improving bandwidth rectangular patch antenna using different thickness of dielectric substrate. ARPN J Eng Appl Sci. 2011;6(4):16-21.				
-Kumar PP, Pattnaik SS, Devi S, Vidyasagar C, Sastry GV, Bakward KM. New bandwidth enhancement and multiresonance technique for microstrip patch antenna. Microw Opt Technol Lett. 2008;50(5):1162-5.				
-Wi SH, Lee YS, Yook JG. Wideband microstrip patch antenna with U-shaped parasitic elements. IEEE Trans Antennas Propag. 2007;55(4):1196-9.				
-Yang F, Rahmat-Samii Y. Microstrip antennas integrated with electromagnetic band-gap (EBG) structures: A low mutual coupling design for array applications. IEEE Trans Antennas Propag. 2003;51(10):2936-46.				
-Park JS, Kim JH, Lee JH, Kim SH, Myung SH. A novel equivalent circuit and modeling method for defected ground structure and its application to optimization of a DGS lowpass filter. In 2002 IEEE MTT-S International Microwave Symposium Digest. 2002 Jun 2, Seattle, WA, USA; 2002. Vol. 1, pp. 417-420.				
-Arya AK, Kartikeyan MV, Patnaik A. Efficiency enhancement of microstrip patch antenna with defected ground structure. In 2008 International Conference on Recent Advances in Microwave Theory and Applications; 2008 Nov 21, Jaipur, India; 2008. p. 729-731.				
-Nashaat D, Elsadek HA, Abdallah E, Elhenawy H, Iskander MF. Multiband and miniaturized inset feed microstrip patch antenna using multiple spiral-shaped defect ground structure (DGS). In 2009 IEEE Antennas and Propagation Society International Symposium; 2009 Jun 1, North Charleston, SC, USA; 2009. p. 1-4.				
-Elsheakh DM, Elsadek HA, Abdallah EA, Elhenawy HM, Iskander MF. Miniaturized and multiband operations of inset feed microstrip patch antenna by using novel shape of defected ground structure (DGS) in wireless applications. PIERS Proceeding. 2009;1082(1086):18-21.				
-Liu J, Yin WY, He S. A new defected ground structure and its application for miniaturized switchable antenna. Prog Electromagn Res. 2010;107:115-28.				
-Zulkifli FY, Rahardjo ET, Hartanto D. Mutual coupling reduction using dumbbell defected ground structure for multiband microstrip antenna array. Prog Electromagn Res Lett. 2010;13:29-40.				
-Arya AK, Patnaik A, Kartikeyan M. Microstrip patch antenna with skew-F shaped DGS for dual band operation. Prog Electromagn Res M. 2011;19:147-60.				
-Kapoor S, Parkash D. Miniaturized triple band microstrip patch antenna with defected ground structure for wireless communication applications. Int J Comput App. 2012;57(7).				
-Chakraborty M, Rana B, Sarkar PP, Das A. Size reduction of a rectangular microstrip patch antenna with slots and defected ground structure. Int J Electron Eng. 2012;4(1):61-4.				
+1. Bhattacharjee AK, Chaudhuri SB, Poddar DR, Chowdhury SK. Equivalence of impedance and radiation properties of square and circular microstrip patch antennas. In IEE Proceedings H-Microwaves, Antennas and Propagation; 1989 Aug, 1989. Vol. 136, No. 4, pp. 338-342.				
+2. Carver K, Mink J. Microstrip antenna technology. IEEE Trans Antennas Propag. 1981;29(1):2-4.				
+3. Al-Sajee AA, Hamad KA. Improving bandwidth rectangular patch antenna using different thickness of dielectric substrate. ARPN J Eng Appl Sci. 2011;6(4):16-21.				
+4. Kumar PP, Pattnaik SS, Devi S, Vidyasagar C, Sastry GV, Bakward KM. New bandwidth enhancement and multiresonance technique for microstrip patch antenna. Microw Opt Technol Lett. 2008;50(5):1162-5.				
+5. Wi SH, Lee YS, Yook JG. Wideband microstrip patch antenna with U-shaped parasitic elements. IEEE Trans Antennas Propag. 2007;55(4):1196-9.				
+6. Yang F, Rahmat-Samii Y. Microstrip antennas integrated with electromagnetic band-gap (EBG) structures: A low mutual coupling design for array applications. IEEE Trans Antennas Propag. 2003;51(10):2936-46.				
+7. Park JS, Kim JH, Lee JH, Kim SH, Myung SH. A novel equivalent circuit and modeling method for defected ground structure and its application to optimization of a DGS lowpass filter. In 2002 IEEE MTT-S International Microwave Symposium Digest. 2002 Jun 2, Seattle, WA, USA; 2002. Vol. 1, pp. 417-420.				
+8. Arya AK, Kartikeyan MV, Patnaik A. Efficiency enhancement of microstrip patch antenna with defected ground structure. In 2008 International Conference on Recent Advances in Microwave Theory and Applications; 2008 Nov 21, Jaipur, India; 2008. p. 729-731.				
+9. Nashaat D, Elsadek HA, Abdallah E, Elhenawy H, Iskander MF. Multiband and miniaturized inset feed microstrip patch antenna using multiple spiral-shaped defect ground structure (DGS). In 2009 IEEE Antennas and Propagation Society International Symposium; 2009 Jun 1, North Charleston, SC, USA; 2009. p. 1-4.				
+10. Elsheakh DM, Elsadek HA, Abdallah EA, Elhenawy HM, Iskander MF. Miniaturized and multiband operations of inset feed microstrip patch antenna by using novel shape of defected ground structure (DGS) in wireless applications. PIERS Proceeding. 2009;1082(1086):18-21.				
+11. Liu J, Yin WY, He S. A new defected ground structure and its application for miniaturized switchable antenna. Prog Electromagn Res. 2010;107:115-28.				
+12. Zulkifli FY, Rahardjo ET, Hartanto D. Mutual coupling reduction using dumbbell defected ground structure for multiband microstrip antenna array. Prog Electromagn Res Lett. 2010;13:29-40.				
+13. Arya AK, Patnaik A, Kartikeyan M. Microstrip patch antenna with skew-F shaped DGS for dual band operation. Prog Electromagn Res M. 2011;19:147-60.				
+14. Kapoor S, Parkash D. Miniaturized triple band microstrip patch antenna with defected ground structure for wireless communication applications. Int J Comput App. 2012;57(7).				
+15. Chakraborty M, Rana B, Sarkar PP, Das A. Size reduction of a rectangular microstrip patch antenna with slots and defected ground structure. Int J Electron Eng. 2012;4(1):61-4.				
