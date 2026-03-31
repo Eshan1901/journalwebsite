@@ -1,0 +1,240 @@
+ARTICLE	
+A Secure Trust-Based Node Filtering and ANFIS-Driven Attack Detection Framework for Mobile Wireless Sensor Networks	
+M. S. Safna Asiq1,*, P. S. Sumathi2, C. K. Balaji3, Z. Ramya Sushil4, A. Mansurali5, and Rajkumar Palaniappan6	
+1Assistant Professor, Department of Computer Science, Nadar Mahajana Sangam S. Vellaichamy Nadar College, Nagamalai, Madurai, Tamilnadu, India.	
+2Guest Lecturer, Government Arts and science College, R. K. Nagar, Chennai, Tamilnadu, India.	
+3Head and Assistant Professor, Department of Computer Science, Government Arts and Science College, Sivakasi, Affiliated to Madurai Kamaraj University, Madurai, Tamil Nadu, India.	
+4Associate Professor and Head, Department of Information Technology, Virudhunagar Hindu Nadar’s Senthikumara Nadar College, Virudhunagar, Tamil Nadu, India.	
+5Assistant Professor, Department of Management, Central University of Tamil Nadu, Thiruvarur, Tamilnadu, India.	
+6Associate Professor, Department of Mechatronics Engineering, University of technology Bahrain, Bahrain.	
+*Corresponding Author: K. Vetrivel. Email:  vetriaurcc@gmail.com  	
+	
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025	
+ABSTRACT:  With respect to non-real-time applications, the surveillance area’s size mandates Mobile Sinks MS to collate data intermittently. These networks are more likely to be vulnerable to MS or Mobile Sinks attacks that are replicated. To resolve the issues about problem (M, m), an authentication scheme has been suggested as a countermeasure for the replicated attack. The research work that has been done to date has overtly failed at identifying the presence of the attacker node, and this resulted in inhibiting the attacker node right at the onset of the iteration and thus making it an extremely tough task to accomplish. Also, the establishment of the M neighbour node is done on the basis of the information acquired from the neighbour node, and that, by itself, alleviates the chances of an intrusion executed by the attacker node. Hence, if the attacker node is detected initially, that alone lessens the information loss and thus alleviates authentication. Resolving issues about these mandates the introduction of the TNF or Trust-based Node Filtering. This allocates trust values for every respective node and, in this process, thus negates the less trusted neighbour nodes that cannot be deployed to facilitate the authentication process, hence secured data transmission, and it is possible is almost guaranteed. Simultaneously, detection of nodes and understanding whether it is the attacker or a normal node, execution of the attack detection is then done on the ANFIS or Adaptive Neuro Fuzzy Inference System. The key generation that has been secured here has been executed by the introduction of the Hybrid RSA and Elgamal algorithm. The introduction of the honey pot server facilitates controlling the task of authentication, where presented research work has been carried out by deployment of a single node alone corresponding to every neighbor node, respectively. Inferences and results drawn from the analysis, as well as simulation, demonstrate the scheme’s ability to improvise resilience of the networks, specifically in the case of MS replicated attack in comparison with other schemes that are already in existence.	
+	
+KEYWORDS:  Mobile sinks, replicated attack, (M, m) authentication scheme, trust-based node filtering, node selection, RSA, Elgamal algorithm.	
+	
+1 Introduction	
+Mobile WSN or wireless sensor network comprises autonomous devices whose distribution is special that deploy sensors to facilitate environmental conditions as well as for monitoring. Deployment and features that offer ease of installation allow wireless sensor networks usage and applicability in several applications, which include military sensing and tracking, devices used for monitoring health, monitoring of habitats, as well as data acquisition in precarious environments [1].	
+Sensors such as these can interact and communicate among themselves or, at times, directly with BS or an external base station. Though when sensing field distance from the respective base station is at a considerable distance, data transmission over long distances while deploying multi hop is likely to lower the security strength or weaken it, hence mobile sinks (MSs) become vital segments as part of several sensor network applications and their operative procedures. Vulnerability of MS to a replication attack is relatively high [2].	
+In order to resolve issues (M, m), an authentication scheme has been suggested in the work presented here. Data collection is possible for the (M, m) model MS data from a certain sensor only when the specific shared key in the company of the sensor can cross the authentication process of a minimum of  m  neighbors selected from the sensor’s M neighbors. However, in the (M, m) model, there has been an immense downfall to ensure the presence of the attacker node, which can be tough to execute. The selection of the M neighbour node is carried out on the basis of data and relevant information derived, as it increases the possible intrusion of an attacker node [3]. 	
+	
+Research work suggested here deploys the TNF or the trust-based node filtering algorithm to resolve certain issues. Introduction of TNF has the responsibility of assigning trust values for respective nodes that result in avoiding less trusted neighbour nodes that are not possible to deploy in order to facilitate authentication. Here solution for delivering trust is acquired by giving equivalent access control based on the sensor nodes' quality as well as services. 	
+The Adaptive Neuro Fuzzy Inference System, or ANFIS, is deployed here to facilitate attacker node detection. The research conducted ensures acquisition of the key generation through introduction of Hybrid RSA and Elgamal algorithm. Here, the honey pot server controls the task of authentication, and this is facilitated using single node for each neighbor nodes [4].	
+2 Literature Review	
+Ansari and Tabataba Vakily (2017) in their study have showcased a novel trust estimation technique which is robust and specifically helps in the case of on-off attacks, as well as constant attacks posed by malicious behaviour. Additionally, for secure aggregation of recommendations, an altered one-step M-estimator scheme. The scheme suggested here is innovative and stems from fusing past misbehavior as well as status comprehensively. This introduction of an important component, like aggregated misbehavior, like trust estimation, helps facilitate the detection of on-off attacks and constant malicious behaviour. Determination of the node’s present status, previous trust values, and present measured misbehavior components has been included and deployed. All the components are fused together to secure a robust trust value. The analysis of applicable theories, as well as the evaluation, clearly indicates that the scheme's performance in comparison to other trust schemes with respect to on-off attack detection and constant misbehavior is productive [5].	
+In their study, Rasheed and Mahapatra (2012) have given a detailed three-tier general framework that facilitates the usage of the main constituent as the pairwise key pre-distribution scheme. Two distinct key pools are necessitated meant for the new framework, one specifically to permit the mobile sink to gain admittance to the network and the other to establish a pairwise key among sensors. Lowering or eliminating the damages that are on account of stationary access node replication attacks resulted in strengthening the method used to facilitate authentication among sensor and stationary access nodes that have been suggested in the presented framework. Analysis conducted in detail clearly shows that the resilience of the security framework with respect to the mobile sink replication attack in comparison fares better than the polynomial pool-based scheme [6].	
+Agrawal CG and Kulkarni JB (2014) in their study have engendered two polynomial key pools mainly the static polynomial and the mobile polynomial. The static polynomial key pool role and responsibility are limited to the supply of keys to the sensor nodes as well as the access points. Keys to the access points and mobile sinks are provided by the mobile polynomial pool [7]. Deployment of two distinct polynomial key pools, as well as the few sensor nodes inherent that act as carrier keys from the mobile key pool do not make the process productive on the whole, and hence Prema and Nagaraj (2013) proposed a new scheme for key management for the purpose of securing the UWSNs. The Blundo symmetric polynomial mechanism is employed in order to protect them from the newly replicated nodes in a period while using the interrupted key updating depending on the reverse hash chain for the purpose of blocking the replicated nodes, as well as rescinding the Replicated MSs when the authentication fails. Demonstrate that this particular scheme is considered to be strong against attacks that are node Replicated as well as on the intrusion-tolerance ratio, execute comparison analysis, communication, and computing overhead [8].	
+Thangam and Kumar (2013) explained a three-tier general framework that allows a provision for a platform for a variety of applications, which can enhance safety as well as proficient group communication. One of the applications is multicasting networks. In the presented system, an Asynchronous authentication scheme by means of shared key management is used for the purpose of resolving the most contradictory security necessities, like group authentication, along with conditional privacy [9]. Jayachitra and Nithya (2018) recommended a common framework, which is a three-tier security type, for authentication as well as the establishment of a pairwise key among mobile sinks and sensor nodes. This algorithm, the scheme of polynomial pool-based key pre-distribution, significantly enhances the resilience of the network to mobile sink replication attack contrasts to the approach of key redistributions, which are based on a single polynomial pool [10]. Parno et al (2005) suggested two new algorithms on the basis of emergent properties, which are properties that come up only by means of the multiple nodes’ joint action. Randomized multicast dispenses information concerning node location to witnesses, which are selected arbitrarily utilizing the birthday paradox, for the purpose of detecting nodes that are replicated, whereas line-selected multicast employs network topology for spotting replication. The two algorithms offer internationally-aware, distributed node-replica detection, and line-selected multicast demonstrates mostly tough performance factors. Here, displayed that emergent algorithms correspond to a potential technique that is novel in order to sensor network security; furthermore, the results obviously expand to other network classes wherein nodes can be captured, imitated, and re-inserted using an adversary [11].	
+3 Proposed Methodology	
+This segment explains the complete process of the technique proposed based on the detection of attacks of ANFIS, as well as node filtering that is based on trust-based node filtering algorithm, along with key generation employing RSA and Elgamal algorithms, as well as authentication control of the honey pot server methodology for an effective authentication scheme in a wireless sensor network.	
+3.1 Trust-Based Node Filtering (TNF)	
+In the initial phase presuming that nodes can supervise the activities of other nodes that are present in their communication range. A node can overhear its neighbour’s transmissions, and by this method, it will be able to identify if the packets are forwarded by the node or dropped. Furthermore, estimation of the trust value is done concerning every particular time interval by every node, depending on the monitoring results contained in the trust estimation time interval. A node which is malicious operates cleverly, i.e., the node attempts at keeping within the trusted zone its trust value at the same time as attacking the network. So here trust value is assigned based on observation.	
+3.2 Observation-Based Trust Calculation	
+Trust estimation is done depending on past interactions or recommendations. A method of trust estimation that is past interaction–based takes into consideration three factors for the purpose of estimating the present trust value: present calculated misbehavior, aggregated misbehavior, and preceding trust value. Present measured misbehavior displays behaviour of a node through the current time, while aggregated misbehavior, as well as preceding trust value, shows the extent to which, in the earlier period, a node has misbehaved. Current misbehavior concerning node x at time t by a node y is calculated as mentioned below:	
+=                                                   	 (1)
+	
+Where bxy and cxy denote the number of instances of bad behaviour in addition to the number of instances of good behaviour concerning node y with node x in the Δ time interval. 	
+Aggregated misbehavior aggregates measured misbehavior over a period by employing the recommended method. It displays persistence. Hence, with respect to the suggested method, if the measured misbehavior is found to be constant, that is, it is always greater than the predefined threshold, then every time the aggregated misbehavior will be augmented till it attains a maximum value (which is one). Aggregated misbehavior concerning node x is calculated at time t by node y as stated below:	
+	 (2)
+	
+Where S represents the forgetting factor concerning the aggregated misbehavior that ranges from [0.5, 1], 0.5 ≤ S≤ 1. The goal of classifying the forgetting factor by this method is to offer adaptability as well as enhance the detection of attacks. In a case where a network designer desires to allot the same value for the forgetting factor despite the trust value, then the designer shall assign 0.5. Alternatively, if he desires to assign diverse values on the basis of trust value, then the equation permits him to utilize this way, too. Therefore, it offers a room for adaptability as per the designer’s preference. Based on Equation (7), once the trust value of the node is below the trust threshold, the aging factors concerning the preceding aggregated misbehavior shall be different. 	It denotes that the malicious node or the on-off attack node necessitates a longer time for recovering its trust value as soon as it has been stated to be a malicious node. To estimate the trust value, utilize aggregated misbehavior, previous trust value, as well as the current measured misbehavior. Whilst aggregated misbehavior emphasizes the node’s past misbehavior, previous trust value, as well as current measured misbehavior, lay emphasis on the node’s status. Then, node y approximates the node’s trust value x at a time t as stated:
+	 (3)
+	
+Where Txy(t-Δ) denotes the node x trust value by node y at a time t-Δ. In case the current measured misbehavior is considered to be zero by node y on node x (that is, if there exists no misbehavior at present by node x), in that case, its formerly aggregated misbehavior is employed for estimating its current trust value. This is for the purpose of securing the trust method from an on-off attack, as well as attacks like an on-off attack. Furthermore, unlike traditional trust estimation mechanisms, the trust mechanism preserves previous trust values in order to estimate the current trust value that assists in tracking a node’s behaviour more precisely. Upon computing the trust value, node y establishes node’s x status depending on its trust value as mentioned below:	
+ 	 (4)
+	
+Where f < g < h <1 and f, g, h could be tuned depending on the system as well as security requirements for determining the node’s state. Since these values depend on the network as well as security conditions, they will be accordingly set. Based on these assigned trust value lowest trust valued node will be avoided for packet transmission. And other nodes will take part in the packet transmission. Also, during the packet transmission, the attacker node will be detected using the ANFIS algorithm. And this authentication held in the second server honeypot instead of the original server [12].	
+3.3 Honeypot Server	
+ Honeypot is only a phony server that gives imitated administrations like the genuine administrations running on the real server. So, at whatever point an aggressor attempts to assault a genuine server, the aggressor is diverted towards the phony server that is a honeypot and in the long run gets caught in the honeypot. Honeypot at that point gives the significant data with respect to the gatecrashers. This data can be utilized to obstruct the aggressor, and it very well may be utilized to take legal action against them. At that point, the confirmation step will be finished utilizing the ANFIS calculation. In this research, the nectar pot server is acquainted with controlling the general verification assignment. At that point, after the validation, the ordinary hubs will be utilized for bundle transmission, producing a key utilizing RSA and Elgamal calculation to make anchored parcel transmission.	
+3.4 Adaptive Neuro-Fuzzy Inference Systems	
+3.4.1 Adaptive Network	
+In this research, Versatile neuro-fluffy induction systems (ANFIS) are utilized for assault discovery. A versatile system is a case of a feed forward neural system that has numerous layers (as in Fig. 1). 	
+	
+Figure 1:  Adaptive Network	
+	
+Considering the learning procedure, the systems frequently utilize directed learning calculation. Moreover, a versatile system has the engineering attributes that comprise various versatile hubs interconnected specifically with no weight or incentive between them. Every hub in this system has distinctive capacities and assignments, and the yield relies upon the approaching signs and factors that are accessible inside the hub. Learning decides which was utilized has the ability to influence the hub’s parameters, and it will be able to decrease the event of mistakes in the versatile system’s output. ANFIS gives a strategy to the fuzzy displaying methodology to learn data about a dataset, so as to figure out the MF parameters that best enable the related fluffy surmising framework to follow the given information/yield information. This learning strategy works correspondingly to that of neural systems.	
+3.4.2 ANFIS Architecture	
+ANFIS design is a versatile system that utilizes managed learning for learning calculation that possesses the capacity like the Takagi– Sugeno fluffy deduction framework model. Figure 2 denotes the plan-fluffy thinking system for the Takagi–Sugeno model and ANFIS design. For effortlessness, expect that there exist two sources of info, x as well as y, and a single yield f. Two rules were employed in the technique of “If-Then” for the Takagi–Sugeno model, as mentioned:	
+Rule 1 ¼ If x is A1 and y is B1Then f1 ¼ p1x þ q1x +r1  	 (5)
+Rule 2 ¼ If x is A2 and y is B2Then f2 ¼ p2y þ q2y + r2           	 (6)
+	
+where A1, A2, and B1, B2 denote the membership functions of every input x and y (a part of the premises), whereas p1, q1, r1, and p2, q2, r2 represent linear parameters in the part-Then (consequent part) of the Takagi–Sugeno fuzzy inference model. With reference to Figure 2, the ANFIS engineered structure that possesses five layers. The first as well as the fourth layers consist of a versatile hub, whereas the alternate layers hold a settled hub. A concise depiction of every layer is stated as follows:	Layer 1: Each hub in this layer has an adjusted capacity factor. The yield of every hub is considered as a level of participation esteem, which is stated by the enrolment capacities’ contribution.
+	
+Figure 2:  ANFIS architecture	
+	
+For instance, the participation capacity shall be a Gaussian membership function (Eq. 7), a summed-up chime membership function (Eq. 2.3), or a different kind of membership function.	
+  	 (7)
+  	 (8)
+  	 (9)
+i=3,4                               	 (10)
+	
+where Ai and Bi2 denote the degree of membership functions concerning the fuzzy sets Ai as well as Bi, correspondingly, and {ai, bi, ci} are basic parameters of the membership which has the ability to alter the participation work state. This layer’s parameters are commonly alluded to like the preface parameters.	Layer 2: In this layer, every node is settled or non-adaptive; the circle node is named as P. The yield node is considered the consequence of increasing the flag entering the hub and conveyed towards the following hub. Every hub in this layer speaks to the terminating quality for every standard. The T-standard administrator, along with general execution, for example, the AND, is connected to acquire the yield in the second layer.
+*  	 (11)
+	
+where wi denotes the output that symbolizes every rule’s firing strength.	
+Layer 3: Each node present in this particular layer is settled or non-adaptive, and the circle hub is marked as N. Every hub is considered as an estimation of the proportion among the I-th rules terminating quality as well as the total of all tenets' terminating qualities. This outcome is referred to as the standardized terminating quality.	
+*  	 (12)
+	
+Layer 4: Each node belonging to this layer is considered a versatile hub to yield, with a hub work characterized as where,	
+*  	 (13)
+	
+wi is the standardized terminating quality as of the past layer (that is, the third layer), and is a parameter in the hub. This layer’s parameters are alluded to as resulting parameters.	Layer 5: This layer’s single node is considered a settled or non-adaptive node, which processes the general yield as the summation of every single approaching sign from the past hub. In this layer ∑
+*  	 (14)
+	
+3.5 Generation using RSA And Elgamal Algorithm	
+3.5.1 RSA Algorithm	
+RSA is considered a well-known calculation algorithm with respect to public key cryptography. Three scientists from MIT (Massachusetts Institute of Technology) devised this calculation. Its security is primarily concerned with considering vast numbers as prime factors. 	
+The features and properties deployed in the RSA Algorithm:	
+p and q, prime number (private)	
+r = p. q (public)	
+(private)	
+PK (encryption key) (public)	
+SK (decryption key) (private)	
+X (plaintext) (private)	
+Y (ciphertext) (public)	
+3.5.2 Key pair Generation	
+The steps stated below denote the methods for the generation of a pair of keys for encryption:	
+1. Select two random prime number, P as well as Q.	
+2. Estimate r=p.q. It ought to be p, since if p =q, in that case r= p 2  , and p can 	
+be acquired from the squareroot of r.	
+3. Compute 	
+4. Opt public key, PK that is relatively prime with.	
+5. Produce private key using this particular equation SK.PK = 1  Make a note that this specific equation is equivalent with SK.PK = 1 + , so SK can be acquired with:	
+*	 (15)
+	
+There shall be an integer m, so an integer SK can be obtained. Note that SK and PK generation order are interchangeable.	
+3.5.3 Encryption	
+The subsequent steps refer to the encryption measures:	
+1. Plaintext has been ordered into block X1, X2 such that each block signifies a value ranging from 0 to r -1.	
+2. Every block xi is encrypted for the purpose of blocking yi with this equation:	
+  mod r*  	 (16)
+	
+3.5.4 Decryption	
+The following are the procedures for decryption:	
+1. Every ciphertext block yi is decrypted into a block xi	
+using the subsequent equation:	
+  mod r	 (17)
+	
+3.6 Elgamal Algorithm	
+Similar to an RSA Algorithm, Elgamal is likewise an open key cryptography algorithm. The calculation was initially utilized used for computerized signature, yet was changed later on so that it likewise shall also be used for encryption as well as unscrambling. The quality of this specific calculation lies in the trouble of ascertaining the discrete logarithm. In order to scramble as well as unscramble a message, a discrete power is implemented. This task is considered productive to process. An aggressor who tries to unscramble a blocked message might attempt to recoup the private key. At this particular end, a logarithm should be figured. A genuine technique is not present for this. As per such conditions, the encryption is considered to be safe. Today, Elgamal calculation is utilized for numerous cryptographic applications. The open-source programming GnuPG utilizes Elgamal as a standard for keys. For the benefit of this product and its issues with Elgamal found late. Coming up next are characteristics utilized in the Elgamal Algorithm:	
+1.prime number ,p                    (public)	
+2.Randomnumber,g,(g<p)              (public)	
+3.Randomnumber,x,(x<p)              (private)	
+4.plaintext,M                        (private)	
+5.ciphertex, a and b                   (public)	
+3.6.1 Key pair Generation	
+The steps are methods for the generation of a pair of keys for encryption:	
+1. Select a random prime number, p	
+2. Opt two random numbers, g as well as x, wherein (g<p)and (x<p)	
+3. Estimate y= gxmod p	
+4. y is considered to be the public key while x denotes the private key. The value of g and p is public.	
+3.6.2 Encryption	
+The encryption procedures are the following:	
+Plaintext is prearranged into block m1, m2, ……so that every block symbolizes a value ranging from 0 to p-1	
+Select a random number, k, in which 0 so that k is considered to be relatively prime with p-1	
+Every block of plaintext m is encrypted by using the following equation:	
+a=gk mod p                                    	 (18)
+b= yk m mod p	 (19)
+	
+Pair of a and b is the cipher text for message block m, such that the cipher text’s size is twice the size of its plaintext.	
+3.6.3 Decryption	
+Decryption of a and b is performed by employing the secret key, x, while the plaintext m is recovered using this equation:	
+m= b/ax m   mod p	 (20)
+	
+Note that	
+ax(mod p)	 (21)
+	
+Then	
+*  	 (22)
+	
+Such that, recovery of plaintext can be done from a pair of ciphertexts, a as well as b.	
+3.6.4 Key Generation Algorithm Design	
+In view of the examination which has been executed, the creator makes a little decision about the two calculations, RSA and Elgamal, as it pursues:	
+1. RSA Algorithm security is present in the main issue about factoring non-prime numbers into its prime factors that in this case:r= p x q.	
+2. Once r successfully factored into p and q, thencan be estimated. Moreover, since the encryption key, PK , is published (not secret), in that case the decryption key, SK, could be estimated from this equationPK.SK)	
+3. The RSA Algorithm’s inventors recommends the value of  p as well as q are considered to be longer than100 digits. Hence the result of r = p x q will be greater than 200 digits. With respect to Rivest and friends, the efforts to seek the prime factor of a 200-digit number require a computing time of a billion years (presuming that the factoring algorithm employed is presently the fastest algorithm and by employing a computer which possesses a speed of about 1 millisecond).	
+4. Luckily, the most proficient algorithm for the purpose of factoring large numbers has not been obtained. This is the reason for which RSA Algorithm is still used even today. While the efficient algorithm for the purpose of factoring integers into prime factors has not yet been found, the RSA Algorithm is still recommended for encrypting messages.	
+5. The security of the ElGamal Algorithm exists in the complexity of estimating the discrete logarithm.	
+6. The discrete logarithm present in question is, in case if p is found to be a prime number, while g and y are random integers, then find x so that: gx.	Depending on the above conclusion, in this particular section, the author presents an algorithm design intended for RSA key generation by employing a combination of the RSA and the ElGamal key generation algorithm. 
+	
+The following are the properties employed in the original RSA Algorithm design:	
+1. p and q, prime number                      (private)	
+2. r = p . q                                  (public)	
+3. (private)	
+4. PK (encryption key)                        (public)	
+5. SK (decryption key)                        (private)	
+6. X (plaintext)                              (private)	
+7. y (ciphertext)                              (public)	
+The proposed algorithm design employs additional properties acquired from the ElGamal Algorithm that is as follows:	
+1. Prime number, pEl (public)	
+2. Random number,  g, (public)	
+3. Random number, x,(x,<pEl)                  (private)	
+4. y= g x mod pEl(public)	
+	
+The prime number, pEl, is arbitrarily produced larger than a random number g and x. Random number g that is not a secret is considered the encryption key, PK, acquired from the key generation for the RSA Algorithm. While the random number, x, that is secret, is considered the decryption key, SK, received from the key generation for the RSA Algorithm. To perform key generation, the following are the steps,	
+	
+Figure 3:  Key Generation Steps for Proposed Algorithm	
+	
+Procedures that were performed in the early advances are considered equivalent to the key age procedure by utilizing the RSA Algorithm. In the first place, create prime numbers P and q. From then onward, compute r= p.q. At that point, figure ∅(r)=(p-1)(q-1) Once the age is completed, it creates an irregular number, PK, the encryption key, wherein the Greatest Common Divisor, GCD (PK,∅(r))= 1. Upon acquiring the encryption key, at that point, shall process the unscrambling key using:	
+SK = PK-1 mod9(r))	 (23)
+	
+Subsequent to the phase of key generation utilizing the RSA Algorithm, the process is pursued by key agreement utilizing the Elgamal Algorithm. To start with, the open key, PK, shall be an irregular number, g, intended for the Elgamal Algorithm that is not mystery. At that point, the private key, SK, shall be an irregular number, x, for the Elgamal Algorithm that is a mystery. From that point forward, a prime number, pEl, is created, which is more prominent than SK and PK. From that point forward, one can compute the Elgamal open key calculation utilizing the following:	
+*  	 (24)
+	
+The public key, y, which had been acquired, is employed for recalculating the private key intended for the RSA Algorithm using this formula:	
+*  	 (25)
+	
+Though estimation of this private key, the public key, y, should be based on the prerequisite to possess GCD (y,θ(r))=1. Hence, if the public key, y, is not qualified, then the prime number, pEl, is regenerated and the public key is recalculated. Post the execution of the packet transmission leads to the destination, i.e., from the source node having a key value over the network.	
+4 Results and Discussion	
+In this section, the performance and security of our scheme are analyzed, including local connectivity, MS replicated attack, and DoS attack. In the process of analysis as well as simulations, utilize the subsequent setups: 	
+1. Take into consideration an SN set up over fields of 1000m by 1000m. The number of a node’s neighbors is found to be 40. 	
+2. The range for wireless communication for a node is 40m. 	
+3. The number of binary t-degree polynomials is found to be 100, where t is 100.	
+Replication attack detection rate defined by equation (1),	
+4.1 Detection Rate (DR)	
+Detection rate (DR) is defined as the number of true positives relative to the sum of the true positives and the false negatives. It is considered a measure of the percentage of true targets that are identified.	
+DR = TP/(TP+ FN)	 (26)
+	
+4.2 Accuracy	
+Accuracy is considered one metric for the purpose of evaluating classification models. Informally, accuracy is considered the fraction of predictions our model got correct. Officially, accuracy has the subsequent definition:	
+                                	 (27)
+	
+where TP = True Positives, TN = True Negatives, FP = False Positives, and FN = False Negatives.	
+4.3 Packet Delivery Ratio (PDR)	
+This network performance metric is defined as the ratio between the number of data packets delivered successfully to the destination and the number of packets that have been transmitted through the source.	
+                                      	 (28)
+	
+where,denotes the total number of packets acquired by the sink node, refers to the total number of packets produced by the source nodes, and n denotes the number of sensor nodes.	
+Figure 4 denotes the performance comparison outcomes of the attack detection rate with respect to four different schemes, such as LPKM, LEAP, (M,m) [17,18,19], and ANFIS. As of the results, it concludes that the recommended ANFIS scheme produces superior detection rate results of 90 %, whereas existing methods such as LPKM, LEAP AND (M,m) produce only 81%, 83%, and 84 % values, respectively.	
+Figure 5 shows the performance comparison results of the attack detection accuracy with respect to four different schemes, such as LPKM, LEAP, (M,m), and ANFIS. As of the results, it concludes that the presented ANFIS scheme produces higher accuracy results of 91%, whereas existing methods such as LPKM, LEAP AND (M,m) produce only 79 %, 80%, and 84 % values, respectively.	
+Figure 4:  Attack detection rate results of different methods	
+	
+Figure 5:  Accuracy results of different methods	
+	
+Figure 6:  Packet delivery ratio results of different methods	
+	
+Figure 6 shows the performance comparison results concerning the packet delivery ratio for four different schemes, such as LPKM, LEAP, (M,m), and ANFIS. As of the results, it concludes that the presented ANFIS scheme produces higher packet delivery ratio results of 90%, whereas existing methods such as LPKM, LEAP AND (M,m) produce only 81%, 84%, and 86 % values respectively.	
+5 Conclusion	
+A mobile wireless sensor network, or WSN, is considered to be a wireless network. Mobile sinks or MSs are vital components for the operation of numerous sensor network applications. These MS are vulnerable to a replication attack. In this proposed work, Trust based Node Filtering (TNF) algorithm is used for low trusted node. Adaptive Neuro Fuzzy Inference System (ANFIS employed for attack detection. In this work secured key generation is performed by introducing the Hybrid RSA and Elgamal algorithm. And, a honeypot server is introduced to control the authentication task. Performance comparison shows that the proposed ANFIS scheme produces higher accuracy.	
+Acknowledgement:   Not applicable.	
+	
+Funding Statement:  Not applicable.	
+	
+Author Contributions:  The authors confirm contribution to the paper as follows: Conceptualization, methodology and writing—original draft preparation: Niranchana Radhakrishnan; supervision and writing: C. Viji; review and editing: Balusamy Nachiappan. All authors reviewed the results and approved the final version of the manuscript.	
+	
+Conflicts of Interest:  The authors declare no conflicts of interest to report regarding the present study.	
+	
+References	
+Sharath N, Rananavare L.B. Security in wireless sensor network using stationary access nodes. Int J Comput Sci Inf Technol Res. 2014;2:354–364.	
+Malik MY. An outline of security in wireless sensor networks: Threats, countermeasures and implementations. In Wireless Sensor Networks and Energy Efficiency: Protocols, Routing and Management. 2012;507-527.	
+Di Pietro R, Oligeri G, Soriente C, Tsudik G. United we stand: Intrusion resilience in mobile unattended WSNs. IEEE Trans Mob Comput. 2012;12(7):1456-68.	
+Li L, Abd El-Latif AA, Niu X. Elliptic curve ElGamal based homomorphic image encryption scheme for sharing secret images. Signal Process. 2012;92(4):1069-78.	
+Ansari MH, Vakili VT. Detection of clone node attack in mobile wireless sensor network with optimised cost function. Int J Sens Netw. 2017;24(3):149-59.	
+Rasheed A, Mahapatra RN. The three-tier security scheme in wireless sensor networks with mobile sinks. IEEE Trans Parallel Distrib Syst. 2012;23(5):958–965.	
+Agrawal CG, Kulkarni JB. Enhancing the security in WSN using three tier security architecture. Int J Innov Res Inf Secur. 2014;1(2):40-7.	
+Prema S, Nagaraj S. An Efficient Group Key Distribution Security Scheme in Wireless Sensor Networks. Int J Sci Res Pub. 2013;689.	
+Thangam R, Kumar SM. Authentication provision for WSN based on multi-level security. Int J Manag IT Eng. 2013;3(4):231-46.	
+Jayachitra D, Nithya N. Wireless sensor networks in three-tier security scheme using Multinomial bool-based algorithms. Int J Sci Res. 2018;6(10):548–551.	
+Parno B, Perrig A, Gligor V. Distributed detection of node replication attacks in sensor networks. IEEE Symposium on Security and Privacy; 2005, California, USA. 2005;49-63.	
+Ishmanov F, Kim SW, Nam SY. A secure trust establishment scheme for wireless sensor networks. Sensors. 2014 Jan 22;14(1):1877-97.	

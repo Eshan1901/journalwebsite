@@ -1,0 +1,228 @@
+﻿
+ARTICLE
+Optimized Kernel Fuzzy Clustering for Breast Lesion Segmentation in Mammograms
+R. Manimegalai1,*, S. Devipriya2, A. S. Arunachalam3, and Sivakumar Vengusamy4
+1Assistant Professor, Department of Computer Science, Rathinam College of Arts and Science, Coimbatore, India.
+2Assistant Professor, Department of Information Technology, PSGR Krishnammal College for Women, Coimbatore, India.
+3Professor, Department of Computer Science and Information Technology, Vels Institute of Science Technology and Advanced Studies (VISTAS), Chennai, India.
+4Associate Professor, School of Computing, Asia Pacific University of Technology and Innovation (APU), Malaysia.
+*Corresponding Author: R. Manimegalai. Email: mmegalai217@gmail.com 
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025
+ABSTRACT: Breast Cancer is one of the fatal diseases that is caused by the unnatural development of the tissues in the breasts, which are abnormal. The level of sarcoma or the stage of the cancer is mostly determined by the doctor’s analysis. In order to provide a technical contribution that supports the doctor in making a decision, this paper is intended to develop a framework that can help in determining the stage of the cancer at present. The major issues in the prediction of breast cancer through mammograms are the diverged artifacts, similar breast tissues, and lower contrast on the boundary between skin and air. To overcome these issues, the Optimized Kernel Fuzzy Clustering Algorithm (OKFCA) is used to determine the cancer portions in mammogram images. The OKFCA algorithm has been described to identify the segmented regions in the Mammogram Image Analysis Society (MIAS) database. The proposed segmentation algorithm is carried out with pre-processed mammogram images, a noise-free image that was obtained by using the Hybrid Denoising Filter (HDF) algorithm, and the proposed OKFCA is a significant approach to finding the cancer segment of the mammogram image. Data clustering facilitates placing data of similar types in one group and of dissimilar types in a different group. The results from the experiments, which were carried out on the MIAS data, confirm the efficiency of the proposed system in terms of accuracy when compared to that of the famous K-Means, OKFCA, and Otsu methods.
+KEYWORDS: Breast Cancer, HDF, K-means Clustering, MIAS, OKFCA, Otsu Segmentation.
+
+1 Introduction
+The process of image segmentation deals with splitting up images into various regions that have similar pixels in each region with the same kind of attributes. The segmentation relies on its consistency, and more often, accurate segmentation is a key issue to be addressed. Segmentation deals with changing how an image can be represented so that it becomes easy to analyze and to find objects and various boundaries of the image. In this process, the mammogram images are segmented to bring in an easy way of analysis and to identify objects as well as boundaries in an image. Breast cancer is more common in women, and it accounts for a major portion of all other types of cancer [1]. Early detection of the same has been possible with the morbidity and mortality of the cancer [2]. Hospitals and clinics use many image-based techniques, such as CT scan [3], Ultrasound Scan [4], Mammography [5], and MRI scans [6] for imaging the breasts through which high-resolution images are obtained, which are used for the detection of abnormal tissue growth along the breasts [7-8]. The tissues of the blood are normally identified as a group of pixels or as a cluster of intensities in a mammogram image, which obviously includes fatty and dense glandular tissue. The abnormal growth of tissues with uncertain masses or tissues classified as abnormal growth are the best indicators of the presence of the disease and are seen through mammography. The precision of a mammogram is about 85-90% for the detection of breast cancer [9]. Owing to the high precision of the mammograms, these are used mainly for the detection of breast cancer [10]. 
+	There is a high awareness in the modern ages in the country, and there are numerous images available captured through the mammogram. There is a significant deficiency in the quality screening of these mammograms, which created a demand for a computer-aided mechanism for the detection of breast cancers. This manuscript aims to address the frequent detection of anomalies in a mammogram called the mass. A mass can be defined as the space which is occupied by a lesion that is seen as a single blend projection that is projected to change in terms of color and texture [11]. Multi-Level Oblique (MLO) is a kind of mammogram that is captured from the texture of the tissue in a given position of a breast. The term detection is defined as the identification of all possible areas of mass. The pre-processing of these mammograms is discussed extensively by Dr. D. Devakumari and V. Punithavathi, 2019, [21] for the noise removal from mammograms using Hybrid De-Noising (HDF) for the whole of the images. The procedure for Pre-processing is also intended for enhancing the overall contrast in an image. The process of segmentation is done after the initial pre-processing, that is, about the extraction of many non-overlapping ROI where the tissue of mass is expected from the tissue in the background [12]. The recognition methods occupy the segmentation of the area under suspicion to recognize the mass by extracting the attributes and classifications. 
+The segmentation of the cancer tissues is possible by using standard techniques such as Local Thresholding, Otsu, Segmentation, Edge classification, and clustering [8]. Thresholding is a process of transforming a particular image, which has a gray scale or an RGB in an image with fewer colors, and in the proposed method, bi-level color is used. This Bi-Level image has 0(black) and 1(white) portion. Otsu’s clustering is based on the thresholding image or the reduction of a gray level to a binary image [9]. The image, which needs to be thresholded, has a couple of groups of pixels or a bi-modal distribution, and then tries to calculate the optimal threshold that separates both classes, which are taken in the algorithm. The extended version of the multi-level thresholds is the Multi Otsu Method. Edge detection in a mammogram is an important step for acceptance. Since the edges frequently occur at the boundaries of dissimilar objects, the same can be used exclusively for the enhancement of the tumor region in a mammographic image. Several techniques are also obtainable for the detection of edges, like Roberts, Sobel, and Laplacian edge operators [10]. In the case of the Graphcut technique, the categorization of the given portion and sub-portion of pixels in a better area is based on a predefined condition. This approach basically begins from a starting point as a group, and thereafter, the region can be enlarged through the calculation of the nearest pixel that has assets that are parallel to the points. Clustering is a mechanism that is simple yet mostly used for computer-aided detection of diseases. K-Means is a widely used technique for developing a k-prototype or center of a group or average of n-dimensional data. This method has a constraint of assigning the value of k every time. 
+According to these existing breast cancer segmentation techniques, in this study, the proposed Optimized Kernel Fuzzy Clustering Algorithm is applied to the MIAS database [17] system. The proposed method has three essential characteristics:
+•	Clustering: This process is to establish the initial binary clustering to generate cluster partitions that agree with the mask image. 
+•	Fuzzy-based parameter selection: This is to create initial segmentation parameters to build affected portion segmentations for a group of parameter choices.
+•	Image Correlations: The ability to concatenate clustering to create segmentations of consistent segment portions (selection) on special MIAS database images.
+In the proposed methodology, a novel Optimized Kernel Fuzzy Clustering is presented. The efficiency of the proposed method is then proved by comparing the experimental results with other methods, such as Thresholding, Otsu’s, and K-Means clustering. The objective of the proposed method is to develop an efficient method for predicting the cancer portions. The segmentation process of mammogram images is presented using Kernel Fuzzy Clustering Segmentation, which gives a good segmentation result with a high prediction accuracy ratio. The manuscript is presented in the following flow: a detailed Literature Review is presented in Section. 2. In Section 3, the Research methodologies for mammogram images using the image segmentation process and conclusion are in Section 4.
+2 Literature Review
+Vibha Bafna Bora A. G. Kothari A. G. Keskar (2012), presented the rough K-Means method for the segmentation of tumor tissues from breast parenchyma. In this method, the approximation of the pixel objects that belong to a lesion layer is performed, whereas the objects that possibly belong to the same layer are then categorized using the upper approximation [13]. The rough boundaries are determined by the difference between the upper and lower approximations. The experiments were conducted on the mammogram images from the MIAS data and from the CECRI data. Deepa S and Subbiah Bharathi V (2013) proposed an efficient Otsu’s N thresholding method for segmenting Region of Interest (ROI) from the mammogram images in the MIAS database [14]. Region of Interest is the region that covers the area of abnormalities seen in the mammograms. Segmenting the ROI from digital mammogram images for further processing is the first step in the process of classifying the images as normal, benign, or malignant. 
+Karmilasari et al (2014) proposed that the detection of breast cancer can be done based on the size of the infected tissue [20]. The authors have presented a region growth method for the segmentation of measuring the area where cancer is suspected, and to determine the stages in the classification of the mammogram image using simple K-means. Anuj Kumar Singh and Bhupendra Gupta (2015) discussed “Mammography is a well-known method used for the detection of breast cancer. The detection phase is carried out by segmentation of the lesion part in a mammogram image [15]. A lot of researchers worked in the area of breast cancer detection and projected segmentation methods. But, no solution known by researchers is the most promising and has limits, and it is still a difficult problem to solve. They introduced a simple approach for the detection of cancerous tissues in mammograms. The detection stage is pursued by segmentation of the tumor region in a mammogram image. Their approach uses easy image processing techniques such as averaging and thresholding. Meanwhile, they introduced a Max-Mean and Least-Variance technique for tumor detection.
+Sheng-Chih Yang (2016) discussed medical image segmentation techniques used to segment subjects in medical images in order to offer physicians precise information about dimension, position, or outline characteristics, and therefore are a significant technology for scientific diagnosis [16]. But previous segmentation techniques suffer from low accuracy, high complication, low robustness, and require versatility. The authors presented a novel, robust medical image segmentation method that not only addresses these limitations but also conserves the advantages of previous techniques, attaining elevated image segmentation accuracy. The outstanding results are carried by the proposed Progressive Support-Pixel Correlation Statistical Method (PSCSM) for real medical images; experimental data are classified as computer-simulated images, real single-spectral mammograms, and multi-spectral breast Magnetic Resonance Images (MRI).
+Muhammad Talha et al (2016) presented “Preprocessing digital breast mammograms using adaptive weighted Frost filter” [19]. In this proposed work, he developed an Adaptive Weighted Frost filter for removing noise from mammogram images, and his proposed method gives better results, which helps for feature extraction. Andrik Rampuna et al (2017) introduced a novel method for detecting breast cancer using Computer Aided Diagnosis (CAD) frameworks [17]. The bosom and pectoral limits assessment is a compound errand predominantly in mammograms because of items, homogeneity among the pectoral and bosom locales, and less difference in the skin-air limit. The creators examined a bosom limit and pectoral muscle division procedure in mammograms. For bosom limit assessment, to decide the essential bosom limit through thresholding and use Active Contour Models without edges to investigate the real limit. A post-handling technique is proposed to correct the overestimated limit brought about by objects. The pectoral muscle limit is unsurprising; utilizing shrewd edge discovery and a pre-preparing technique is proposed to dispose of loud edges. Therefore, they distinguished five edges to find the edge that has the most noteworthy probability of being the essential pectoral form and searched for the valid limit through image segmentation. Peng Shi, Jing Zhong, Andrik Rampun, and Hui Wang (2018) present a “Full automated pipeline” for the processing of mammogram images that addresses the issue of the skin-air boundary. The authors have used a gradient-weighted map for the detection of the pectoral-breast boundary through unsupervised labelling that has no pre-label regions [18]. The proposed method achieved an accuracy level of 97.08% and a precision of 96.15% on the MIAS data. The computation of Jaccard and Dice indexes between the spitted and regions in the breast and the ground values are also incorporated as an extensive similarity method that could provide a valuable support for the mammogram analysis at a clinical level.
+3 Proposed Methodology
+In the proposed methodology, all the experiments were conducted using the Mammographic Image Analysis Society (MIAS) - a benchmarked dataset [17]. In this proposed method, a pre-processed image is taken from our previous study, which is obtained after the removal of noise from a mammographic image using the Hybrid De-noising Filter (HDF). The preprocessed image is taken for optimizing the objective function, memberships, and weights. The proposed OKFC Algorithm facilitates segmenting the affected tissue portion by detecting the edge variation and an appropriate region with tissue contour extraction. The Optimized Kernel Fuzzy Clustering Algorithm successfully segments the portions that are cancer-affected in a given mammogram. The result image is then segmented, and a part of the detected image that can be used for further processing. The proposed method is depicted in Figure 1.
+
+Figure 1: Proposed Flow Diagram
+3.1 Image Preprocessing
+It is a technique that is used for the transformation of a raw image into a format that can be understood in real-time. In this phase, the original mammogram image is first converted into a predefined 256*256-pixel size, which is exclusive of pixel data, using a “Bi-Cubic” method of interpolation. Once this is done, the MIAS database images will be brought to the same dimension and are believed to be connected with the indexed images on a given common gray colored map.
+3.2 Hybrid De-noising Filter (HDF)
+The proposed HDF method removes the noise from the mammogram. The resultant image is then enhanced using the noise-free images obtained through the method in the previous work [21]. The algorithm then compares the different images and the de-noising filters by integrating the Median and the median filters, which are applied to the proposed Hybrid De-Noising filter and are represented in Figure 2. (a) and (b).
+
+Figure 2 (a): Comparison of Various Image De-noising Filters
+
+Figure 2 (b): Integration of Median, Applied, and Proposed Hybrid De-noising Filter
+3.3 Optimized Kernel Fuzzy Clustering Algorithm (OKFCA)
+The Optimized Kernel Fuzzy Clustering algorithm is an extension of fuzzy and region growing techniques. The kernel-based fuzzy clustering relaxes the condition of the membership function and the objective function of the Fuzzy Clustering Method, which is given by,
+  
+ (1)
+Where U represents the objective function, V represents the cluster center, c represents the number of clusters, n represents the image dimension, and m is called the weighting parameter, which controls the fuzziness of memberships in the resulting segmentation.
+The OKFC algorithm is intended to analyze the optimized objective functions using the distance between the kernels, the optimal weight component, and the typicality involved (τ). The trick associations among the kernel present between the linearity and the non-linearity, which can be expressed in terms of product space. This kernel can then be represented as a function that corresponds to the inner product in a given space. The kernel is represented in the following format.
+C(x, y) = 〈ϕ(xk), ϕ(xj)〉 + 〈ϕ(vj), ϕ(vj)〉 − 2〈ϕ(xk), ϕ(vj)〉   
+ (2)
+The fuzzy kernel function is expressed as,
+
+ (3)
+The optimizing objective function of Kernel Fuzzy Clustering Segmentation is as follows:
+
+ (4)
+To calculate the optimized membership is as follows,
+
+ (5)
+The objective function is minimized subject to the constraint of typicality jk. In this equation, m represents the degree of fuzziness, and c is the number of clusters. The Kernel Fuzzy Clustering result is expressed in Fig. 3.
+
+Figure 3: Kernel Fuzzy Clustering Image Indexing Result
+The kernel fuzzy clustering result is processed with a segmentation algorithm to obtain the final segmented result. An OKFCA algorithm is an extension of the Graphcut-based region-growing morphological algorithm, which usually proceeds as follows:
+•	 The kernel fuzzy cluster image is partitioned into several image bins (holes) to get small areas in the mask shown in Fig.4.
+•	 The regions of small portions are connected into region growing properties with the optimal feature of ‘Area’, ‘Eccentricity’, and ‘Euler Number’ to predict the segmented area. 
+•	 The OKFCA includes the attributes of mean, variance, sharpness, skewness, and formation edge boundaries over a clustered image.
+
+
+Figure 4: Fuzzy segment of small regions mask result
+The OKFC Algorithm is one of the well-organized breast cancer segmentation methods. It performs a process of a mammographic image with observed region pixels without the pointing fixation of foreground and background portions. The OKFCA procedure is described below:
+Algorithm 1: Optimized Kernel Fuzzy Clustering Algorithm (OKFCA) 
+Step 1: Initialize Hybrid De-noise Filter Image HD and kernel fuzzy cluster size c =4, Feature Segment Fs
+Step 2: Calculate the Fuzzy kernel function using,
+
+Step 3: Choose membership ujk
+
+Step 4: Update Cluster membership ujk.
+Step 5: Calculate region connected component feature membership Cluster C. 
+Step 6: Calculate connected component feature boundary using region properties
+Step 7: Calculate Nucleus feature an object, movement, or group, forming the basis for its activity and growth.
+Step 8: Finally, Cancer segmented image is obtained.
+The final OKFCA segmented result is shown in the Figures. 5 and 6.
+
+Figure 5: Final Whole Kernel Fuzzy clustering portions Segmentation Result
+
+Figure 6: Optimized Kernel Fuzzy Clustering Algorithm (OKFCA)
+4 Experimental Results
+The experiments were performed, and the results were evaluated for the performance of OKFCA segmentation. The experimental environment included Intel I5-6500 series and a 3.2 GHz processor with 8 GB memory and was run in a Windows platform using MATLAB. The performance of the proposed OKFCA is then compared with the state-of-the-art methods, such as Ostu’s segmentation and K-Means method [18]. In this experiment, the MIAS imaging method could then be applied to the proposed OKFCA, which can be flexibly configured for predicting the accuracy of a database to meet the needs of other requirements. The evaluation measures included are Precision and Recall obtained through the True/False positives and negatives. Precision is calculated as the rate of TPs among the detections, and recall is the total percentage of ground truth detections. They are defined as,
+ 
+ (6)
+ 
+ (7)
+ 
+ (8)
+
+Table 1 shows the evaluation of the MIAS database of sample seventeen images of accuracy values for various existing segmentation techniques.
+Table 1: Comparison of Segmentation Accuracy Measures for Seventeen MIAS Sample Images
+Images
+K-means
+Otsu
+Proposed OKFCA
+mdb001.png
+82.7438
+87.3383
+92.5629
+mdb002.png
+79.4006
+85.1501
+88.1287
+mdb003.png
+81.3721
+82.9926
+92.7231
+mdb004.png
+67.0013
+80.0964
+92.0929
+mdb005.png
+60.8002
+72.9279
+83.429
+mdb013.png
+80.8548
+86.6821
+90.286
+mdb018.png
+81.254
+93.1091
+83.293
+mdb031.png
+80.2963
+87.9318
+95.7382
+mdb033.png
+90.2206
+93.5364
+98.951
+mdb035.png
+88.4247
+91.362
+91.8762
+mdb037.png
+85.2538
+86.9691
+88.098
+mdb044.png
+86.3678
+88.4308
+88.4552
+mdb050.png
+73.851
+80.1514
+88.130
+mdb052.png
+82.4081
+91.2247
+93.878
+mdb059.png
+78.5477
+86.7844
+90.988
+mdb065.png
+89.8148
+96.6415
+98.075
+mdb066.png
+88.2294
+88.4552
+94.880
+
+Otsu and K-means methods are the existing segmentation techniques, and the performance of accuracy with the Proposed OKFCA algorithm is shown in Fig.7.
+
+
+Figure 7: Performance of Segmentation Accuracy
+Table 2 shows the average Segmentation Accuracy for seventeen mammogram images from the MIAS database, which are randomly taken and are applied with existing K-means and Otsu segmentation algorithms with the proposed OKFCSA algorithm.
+Table 2: Average Segmentation Accuracy for Seventeen MIAS sample Images
+Measure
+K-means
+OTSU
+Proposed OKFCA
+ACCURACY
+80.9906
+87.046
+91.267
+
+Table 3 shows the evaluation of Mammogram image segmentation measures of Accuracy on the MIAS image database.
+This study is carried out for 322 images, which are available in the MIAS database, and the overall accuracy for all 322 images is calculated. The average Segmentation accuracy of 322 images and the ratio is defined by:
+
+ (9)
+Table 3: Overall Segmentation Accuracy measure of 322 MIAS Images
+Measure
+K-means
+OTSU
+Proposed OKFCSA
+ACCURACY
+75.431
+74.317
+80.42
+
+The overall segmentation accuracy chart for 322 MIAS mammogram images is developed and depicted in Fig. 9. The overall accuracy chart gives a vivid picture that the Proposed MFKFCS produces the highest (80.42%) percentage when compared with existing segmentation techniques.
+
+
+Figure 8: Overall Segmentation Accuracy chart
+5 Conclusion
+The proposed OKFCA method is done by taking the pre-processed mammographic images, which have been obtained with the help of the Hybrid De-noising Filter (HDF). The proposed Optimized Kernel Fuzzy Clustering Algorithm (OKFCA) helps to segment the affected tissue part in mammographic images. In this method, preprocessed MIAS database images are separated into kernel fuzzy clusters, and the affected portions are predicted using the OKFCA segmentation algorithm. The proposed OKFCA is the best segmentation method for predicting cancer portions in mammogram images among the K-means and Otsu segmentation approaches. In this research, overall segmentation accuracy for 322 mammogram images from the MIAS database is determined, and the experimental results also prove that the segmentation accuracy is high for the proposed OKFCA.
+Acknowledgement: Not applicable.
+Funding Statement: Not applicable.
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, methodology and writing—original draft preparation: Niranchana Radhakrishnan; supervision and writing: C. Viji; review and editing: Balusamy Nachiappan. All authors reviewed the results and approved the final version of the manuscript.
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present study.
+References
+    1. DeSantis C, Ma J, Bryan L, Jemal A. Breast cancer statistics, 2013. CA Cancer J Clin. 2014;64(1):52-62.
+    2. Oeffinger KC, Fontham ET, Etzioni R, Herzig A, Michaelson JS, Shih YC, Walter LC, Church TR, Flowers CR, LaMonte SJ, Wolf AM. Breast cancer screening for women at average risk: 2015 guideline update from the American Cancer Society. J Am Med Assoc. 2015;314(15):1599-614.
+    3. Jalalian A, Mashohor SB, Mahmud HR, Saripan MI, Ramli AR, Karasfi B. Computer-aided detection/diagnosis of breast cancer in mammography and ultrasound: a review. Clin Imaging. 2013;37(3):420-6.
+    4. Chen B, Ning R. Cone‐beam volume CT breast imaging: Feasibility study. Med phys. 2002;29(5):755-70.
+    5. Mann RM, Kuhl CK, Kinkel K, Boetes C. Breast MRI: guidelines from the European society of breast imaging. Eur radiol. 2008;18(7):1307-18.
+    6. Olsen O, Gøtzsche PC. Cochrane review on screening for breast cancer with mammography. Lancet. 2001;358(9290):1340-2.
+    7. Johns PC, Yaffe MJ. X-ray characterisation of normal and neoplastic breast tissues. Phys Med Biol. 1987;32(6):675.
+    8. Mustra M, Grgic M, Rangayyan RM. Review of recent advances in segmentation of the breast boundary and the pectoral muscle in mammograms. Med Biol Eng Comput. 2016;54(7):1003-24.
+    9. Dromain C, Boyer B, Ferre R, Canale S, Delaloge S, Balleyguier C. Computed-aided diagnosis (CAD) in the detection of breast cancer. Eur J Radiol. 2013;82(3):417-23.
+    10. Oliver A, Freixenet J, Marti J, Perez E, Pont J, Denton ER, Zwiggelaar R. A review of automatic mass detection and segmentation in mammographic images. Med Image Anal. 2010;14(2):87-110.
+    11. Tang J, Rangayyan RM, Xu J, El Naqa I, Yang Y. Computer-aided detection and diagnosis of breast cancer with mammography: recent advances. IEEE Trans Inf Technol Biomed. 2009;13(2):236-51.
+    12. Harel J, Koch C, Perona P. Graph-based visual saliency. Adv Neural Inf Process Syst. 2006;19.
+    13. Bora VB, Kothari AG, Keskar AG. Mammogram Segmentation Using Rough k-Means and Mass Lesion Classification with Artificial Neural Network. In International Conference on Advanced Machine Learning Technologies and Applications; 2012 Dec 8, Berlin; 2012. p. 60-69.
+    14. Deepa S, Bharathi VS. Efficient ROI segmentation of digital mammogram images using Otsu’s N thresholding method. Int J Eng Res Technol. 2013;2(1):1-6.
+    15. Singh AK, Gupta B. A novel approach for breast cancer detection and segmentation in a mammogram. Procedia Comput Sci. 2015;54:676-82.
+    16. Yang SC. A robust approach for subject segmentation of medical Images: Illustration with mammograms and breast magnetic resonance images. Comput Electr Eng. 2017;62:151-65.
+    17. Rampun A, Morrow PJ, Scotney BW, Winder J. Fully automated breast boundary and pectoral muscle segmentation in mammograms. Artif Intell Med. 2017;79:28-41.
+    18. Shi P, Zhong J, Rampun A, Wang H. A hierarchical pipeline for breast boundary segmentation and calcification detection in mammograms. Comput Biol Med. 2018;96:178-88.
+    19. Talha M, Sulong GB, Jaffar A. Preprocessing digital breast mammograms using adaptive weighted frost filter. Biomed Res. 2016;27(4):1407-12.
+    20. Karmilasari, Widodo S, Hermita M, Agustiyani NP, Hanum Y, ETP L. Sample K-means clustering method for determining the stage of breast cancer malignancy based on cancer size on mammogram image basis. Int J Adv Comput Sci Appl. 2014;5(3).
+    21. Devakumari D, Punithavathi V. Noise removal in breast cancer using hybrid de-noising filter for mammogram images. In International Conference on Computational Vision and Bio Inspired Computing; 2019 Sep 25, 2019. p. 109-119.

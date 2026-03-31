@@ -1,0 +1,145 @@
+ARTICLE				
+Mutual Coupling Reduction and Miniaturization of a Dual-Element Microstrip Antenna Array Using Dumbbell-Shaped DGS				
+K. Vetrivel1,*, D. Sridhar2, R. S. Padma Priya3, K. B. Manikandan4, B. Vasumathi5, A. Bharathi Lakshmi6, and Shanmugam Joghee7				
+1Assistant Professor, Department of Information Technology, NMSSVN College, Madurai, Tamilnadu, India.				
+2Associate Professor, Alliance School of Advanced Computing, Alliance University, Bengaluru, Karnataka, India.				
+3Assistant Professor, Department of Computer Applications, Vignan's Foundation for Science Technology and Research (Deemed to be University), Hyderabad, India.				
+4Assistant Professor, Department of CSE, Vignan's Foundation for Science, Technology and Research, Hyderabad, India.				
+5Associate Professor, School of Computer Science and Applications, S-Vyasa Deemed to be University, Bangalore, India.				
+6Head and Assistant Professor, Department of Information Technology, V. V. Vanniaperumal College for Women, Virudhunagar, Tamilnadu, India.				
+7Professor & Discipline leader - Marketing, School of Business, Horizon University College, Al Jurf, Ajman, United Arab Emirates.				
+*Corresponding Author: K. Vetrivel. Email:  vetriaurcc@gmail.com  				
+				
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025				
+ABSTRACT:  The research has been presented here features the reduction of mutual coupling and has the dual element microstrip antenna array that is characterized by its DGS also known as the dumbbell-shaped defected ground structure. Simulation for the suggested DGS antenna has been done by deploying the special features of the Ansoft HFSS simulation software. Through the deployment of the DGS for S Band at 2.2GHz a miniaturized microstrip patch antenna array has thus been engendered. At first, the design of the patch antenna array is done at the C band, and it resonates at 5.2 GHz. Suggested DGS is then integrated as part of the ground plane of the patch antenna to reduce size, for the reduction of size, and this smallness is at a cost of antenna, moreover, to enhance the miniaturized radiator’s gain. The patch radiator is additionally altered to radiation characteristics, hence the initial microstrip antenna array’s resonance frequency shifts to 3.75 GHz to 7.15 GHz with a gain of 5.37dB, along with a miniaturization performance up to 63% as well as its conventional microstrip is attained successfully. The FR-4 substrate is used for fabricating the prototype antenna; furthermore, this method is experimentally validated, in addition to measured results, which have good agreement with the stimulated results.				
+				
+KEYWORDS:  Microstrip patch antenna array, DGS (Defected Ground Structure), Miniaturization.    				
+				
+ 				
+1 Introduction				
+In a few applications, the single-element array antenna is incapable of meeting the given requirements’ radiation pattern or gain, and joining numerous single antenna elements in an array can provide a probable solution. The patch is considered to be normally wider when compared to the strip of its shape as well as antenna dimensions, owing to the simplicity and the printed circuit technology’s compatibility. It is a wide range of microwave applications in satellite and mobile communication. The basic antenna suffers from a number of serious drawbacks, and it has included very slender bandwidth, low gain, in addition to the surface waves’ excitation [1]. 				
+A lot of research has been conducted in order to conquer the disadvantages linked to the antennas in recent years. The presented antenna contains research methodologies that are popular among researchers to improve the antenna bandwidth to augment the substrate thickness by employing low dielectric material. By altering and incorporating a variety of impedances, the matching as well as feeding elements possesses multi resonators, multi-slot hole coupling utilizing planar parasitic elements, etc [2]. The alternate factor, which is an important factor, and its disadvantage is the performance gain of the antenna, which shows the directional property of the antenna. Enlarging the single element of the antenna leads to a more directive array antenna. Its many applications show the design of an antenna with directive gain to meet the condition of long-distance communication. The alternative source of the single element it enlarges the length of the antenna without necessarily increasing its size concerning the individual element. It is considered to be in the form of an assembly comprising radiating elements [3]. 				
+In the electrical as well as geometrical configurations, this antenna has been created in a different form by multiple elements along with their referred array by a communication system through the process of improving antenna performance, such as gain, antenna system’s directivity scanning of the beam, in addition to a few other operations. Few are considered to be difficult at single antenna in a manner that the performance of such antenna tends to go down because of the strong mutual interaction that exists amid the antenna elements and hence the microstrip antenna design consists of mutual coupling between radiating elements and is considered as an important factor for the miniaturization of antenna and this has turned out to be more and more vital because of the rising demand for small antenna owing to the rapid development occurring in wireless communication [4]. Numerous efforts have been made to achieve the size of reduction, such as employing a Planar Inverted F Antenna structure or PIFA, or that is utilizing a dielectric substrate with high permittivity, DMS, or Defected Microstrip Structure, as well as DGS, which is a combination of them. For various applications concerning microstrip, a patch antenna is used along with DGS, which possesses instance, cross polarization, mutual coupling reduction in antenna arrays, as well as harmonic suppression over the DGS, which is extensively employed in the miniaturized antennas [5].				
+Antenna array radiation pattern and array factor. The antenna elements can be set in antenna arrays that are either one or two-dimensional. The one-dimensional antenna array can be very simplicity they exhibit a particular radiation pattern that is modified according to various antenna elements that are merged in the array, and it is known as the array factor. Through this array factor, the pattern of radiation is determined as an array factor in the antenna element, and overall results concerning the radiation pattern are considered to be in directivity, as well as the gain is connected through efficiency, along with directivity and gain are of equal efficiency, which is 100% [6].				
+2 Design of two element DGS Array Antenna				
+The structure of a two-element array is shown in the figure. The elements are made up of a patch, a ground plane, a substrate, as well as the feeding line, while the array patch antenna’s performance depends on frequency, radiation efficiency, directivity, gain, return loss, and some other parameters. The designed microstrip patch antenna’s width and length, as well as their mathematical expressions [7].				
+Where c= 3*108, εr=4.4, fo=3.75GHz Width of the patch is given by				
+ 	 (1)			
+				
+Length of the patch is given by				
+ 	 (2)			
+				
+Effective Dielectric Constant (εr) is :				
+ 	 (3)			
+				
+and Δl can be given as				
+ 	 (4)			
+				
+The microstrip patch length can be calculated.				
+ 	 (5)			
+				
+The Ground Plane width can be calculated.				
+ 	 (6)			
+				
+The Ground Plane Length can be calculated.				
+ 	 (7)			
+				
+Resonant frequency is				
+ 	 (8)			
+				
+3 Simulation of two element DGS array antenna				
+3.1 Antenna simulation using HFSS				
+The microstrip patch antenna was devised by employing an HFSS simulator, and the antenna’s performance was studied as well as observed by making a comparison with the return loss, VSWR, and gain [8]. The two-element array is simulated by HFSS, and the design of the corresponding figures 1 & 2, as shown below, as per the observed return loss, VSWR, in addition to the gain results at 3.75GHz.				
+Figure 1:  Front view structure concerning a simulated two-element antenna array				
+				
+Figure 2:  Simulated two-element antenna array’s back view structure				
+				
+4 Results and Discussion				
+4.1 Simulation Results				
+4.1.1 Return loss				
+The Return Loss of the microstrip patch antenna of two element antenna array is shown in Figure 3, and from this figure, it is observed that the return loss is -22.74dB at 3.75GHz and -10.19dB at 7.15GHz.				
+Figure 3:  Return Loss for a microstrip patch two-element antenna array				
+				
+4.1.2 VSWR				
+The impedance of the VSWR is employed for measuring the distance between the transmitters of the antenna. The results concerning the simulations of the microstrip patch antenna that has an -E-shape DGS as depicted in fig 4. By practical VSWR [9], the values observed at 3.75 GHz are found to be 1.15, at 7.15 GHz, 1.89, as well as at a range below -10dB, while the return loss is also found to be below VSWR=2.				
+Figure 4:  VSWR for a microstrip patch two-element antenna array				
+				
+4.1.3 3-D Gain				
+The two-element antenna array was designed by HFSS [10], and the gain is not anything but the power that has been transmitted per unit solid angle. As denoted in fig.5, in 5.37dB, the gain is observed. For many applications, the antenna gain should be higher than 3dB.				
+Figure 5:  3-D Gain for two elements antenna array				
+				
+4.1.4 Radiation pattern				
+Radiation pattern defines the power variations radiated by the antenna in the operation of a direction away from the antenna [11]. A far-field antenna can be observed in the function of poor variation in arrival angle. The radiation pattern of two element array can be observed in the fig. 6.				
+Figure 6:  The radiation pattern of two elements antenna array				
+				
+4.1.5 Smith Chart				
+The Smith chart is considered a tool that stands for resolving line issues concerning radio frequency transmission [12]. The reflection coefficient value is 0, along with VSWR as 1 in the unmatched impedance conditions; hence, all the transmission lines issues are to be matched with the total load’s impedance line. The polar plot concerning the reflection coefficient K can be stated as a type of normalized impedance. The Smith chart intended for two element antenna array is shown in Figure 7.				
+Figure 7:  The Smith chart of two elements antenna array				
+				
+4.1.6 Polarizations				
+Polarization of two element antenna array is observed in Figures 8 and 9.				
+Figure 8:  The polarization front view of two elements antenna array				
+ 				
+				
+Figure 9:  The polarization back view of two elements antenna array				
+				
+4.1.7 Current Distributions				
+Current distribution of the front and back views of two element antenna array is observed in the figure 10 and 11.				
+Figure 10:  The current distribution of the front view of two elements antenna array				
+				
+Figure 11:  The current distribution of the back view of two elements antenna array				
+				
+4.2 Measured Results				
+The 2-element array DGS antenna is met at practical applicable antenna requirements of a fabricated to 4 element array by the DGS antenna [13-15].				
+Two-element DGS array antenna this antenna can be observed and tested in a Vector Network Analyzer (E5071C) as shown in Figure 12.				
+Figure 12:  The experimental setup loss for two element DGS array antenna				
+				
+4.2.1 Return Loss				
+The Return Loss for two element DGS array antenna is observed in the figure 13.				
+Figure 13:  The measured return loss for two element DGS array antenna				
+				
+4.2.2 VSWR				
+  VSWR for the two-element array antenna is shown in Figure 14.				
+Figure 14:  The measured VSWR for two element DGS array antenna				
+				
+4.2.3 Smith Chart				
+The Smith chart for two element DGS array antenna is observed in Figure 15.				
+Figure 15:  The Smith chart for two element DGS array antenna				
+				
+4.2.4 Comparison between Simulation and Measured results 2-element and 4-element DGS Array Antennas				
+Table 1:  Comparison between 2-element and 4-element DGS Array Antennas				
+Parameter	Frequency of operation (GHz)	Return loss(dB)	VSWR	Gain(dB)
+"2-Element
+(Simulation)"	3.75	-22.74	1.15	5.37
+	7.15	-10.19	1.89	
+"2-Element
+(Measured)"	3.70	-30.45	1.07	--
+	7.08	-33.63	1.66	
+				
+5 Conclusion				
+The design of the work carried out in a miniaturized microstrip patch antenna array, in addition to a DGS. The resonance frequency concerning the initial stage antenna is 5.7 GHz, and it is passed and shifted to 3.75GHz and after introducing the DGS. The design of the antenna it reduces to 50% as compared to conventional band uses and perform better under condition of Ku-band and Ka band frequency the initiated miniaturization process was considered as a typical rectangular patch antenna which is shaped with an array antenna through the switch of a DGS and provides a reduction of 79% as well as its resonance frequency initial antenna without DGS has been shifted to 5.2GHz to 4.05GHz resonating at1.32dB. 				
+The miniaturization process commenced with a typical rectangular patch-shaped array antenna that has a DGS, providing a size reduction of up to 79% as the resonance frequency of the initial antenna without DGS has been moved from around 5.2 GHz to 2.4 GHz, that is resonating at -17.86 dB, has a gain of 1.94 dB, along with a 100 MHz bandwidth. To attain antenna without a great deal of degradation of the antenna miniaturization performance without a lot of degradation concerning the antenna performance, additionally the patch radiator is altered by maintaining the antenna’s physical volume unvarying with the same DGS structure to preserve its radiation properties that provides a size reduction of up to 83% since the resonance frequency concerning the initial antenna without the DGS has been moved from 5.2 GHz to 2.2 GHz which is resonating at -32.26 dB that has a measured gain of 4.14 dB as well as a bandwidth of 120 GHz. This way, we could decrease the maximum antenna size by up to 83% in comparison to conventional ones.				
+Acknowledgement:   Not applicable.				
+				
+Funding Statement:  Not applicable.				
+				
+Author Contributions:  The authors confirm contribution to the paper as follows: Conceptualization, methodology and writing—original draft preparation: Niranchana Radhakrishnan; supervision and writing: C. Viji; review and editing: Balusamy Nachiappan. All authors reviewed the results and approved the final version of the manuscript.				
+				
+Conflicts of Interest:  The authors declare no conflicts of interest to report regarding the present study.				
+				
+References				
+Bhattacharjee AK, Chaudhuri SB, Poddar DR, Chowdhury SK. Equivalence of impedance and radiation properties of square and circular microstrip patch antennas. In IEE Proceedings H-Microwaves, Antennas and Propagation; 1989 Aug, 1989. Vol. 136, No. 4, pp. 338-342.				
+Carver K, Mink J. Microstrip antenna technology. IEEE Trans Antennas Propag. 1981;29(1):2-4.				
+Al-Sajee AA, Hamad KA. Improving bandwidth rectangular patch antenna using different thickness of dielectric substrate. ARPN J Eng Appl Sci. 2011;6(4):16-21.				
+Kumar PP, Pattnaik SS, Devi S, Vidyasagar C, Sastry GV, Bakward KM. New bandwidth enhancement and multiresonance technique for microstrip patch antenna. Microw Opt Technol Lett. 2008;50(5):1162-5.				
+Wi SH, Lee YS, Yook JG. Wideband microstrip patch antenna with U-shaped parasitic elements. IEEE Trans Antennas Propag. 2007;55(4):1196-9.				
+Yang F, Rahmat-Samii Y. Microstrip antennas integrated with electromagnetic band-gap (EBG) structures: A low mutual coupling design for array applications. IEEE Trans Antennas Propag. 2003;51(10):2936-46.				
+Park JS, Kim JH, Lee JH, Kim SH, Myung SH. A novel equivalent circuit and modeling method for defected ground structure and its application to optimization of a DGS lowpass filter. In 2002 IEEE MTT-S International Microwave Symposium Digest. 2002 Jun 2, Seattle, WA, USA; 2002. Vol. 1, pp. 417-420.				
+Arya AK, Kartikeyan MV, Patnaik A. Efficiency enhancement of microstrip patch antenna with defected ground structure. In 2008 International Conference on Recent Advances in Microwave Theory and Applications; 2008 Nov 21, Jaipur, India; 2008. p. 729-731.				
+Nashaat D, Elsadek HA, Abdallah E, Elhenawy H, Iskander MF. Multiband and miniaturized inset feed microstrip patch antenna using multiple spiral-shaped defect ground structure (DGS). In 2009 IEEE Antennas and Propagation Society International Symposium; 2009 Jun 1, North Charleston, SC, USA; 2009. p. 1-4.				
+Elsheakh DM, Elsadek HA, Abdallah EA, Elhenawy HM, Iskander MF. Miniaturized and multiband operations of inset feed microstrip patch antenna by using novel shape of defected ground structure (DGS) in wireless applications. PIERS Proceeding. 2009;1082(1086):18-21.				
+Liu J, Yin WY, He S. A new defected ground structure and its application for miniaturized switchable antenna. Prog Electromagn Res. 2010;107:115-28.				
+Zulkifli FY, Rahardjo ET, Hartanto D. Mutual coupling reduction using dumbbell defected ground structure for multiband microstrip antenna array. Prog Electromagn Res Lett. 2010;13:29-40.				
+Arya AK, Patnaik A, Kartikeyan M. Microstrip patch antenna with skew-F shaped DGS for dual band operation. Prog Electromagn Res M. 2011;19:147-60.				
+Kapoor S, Parkash D. Miniaturized triple band microstrip patch antenna with defected ground structure for wireless communication applications. Int J Comput App. 2012;57(7).				
+Chakraborty M, Rana B, Sarkar PP, Das A. Size reduction of a rectangular microstrip patch antenna with slots and defected ground structure. Int J Electron Eng. 2012;4(1):61-4.				

@@ -388,7 +388,180 @@ const PaperDetail = () => {
       }
     ];
 
-    const allPapers = [...papers2024, ...papers2025];
+    const papers2026 = [
+      {
+        id: 21,
+        type: 'Research Article',
+        articleId: 'jcids.2026.021',
+        title: 'Integrated Grey Wolf Optimization and Radial Basis Neural Network Framework for Diagnosing Inter-Turn Insulation Faults in Induction Motors',
+        authors: 'Tawseef Ahmad Mir, Lakshmanan S, A. Nithya and Iyyappan Moorthi',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '1-20',
+        doi: '10.62656/jcids.v3i3.21',
+        file: '/2026/21.pdf',
+        citation: 'Tawseef Ahmad Mir, Lakshmanan S, A. Nithya and Iyyappan Moorthi, "Integrated Grey Wolf Optimization and Radial Basis Neural Network Framework for Diagnosing Inter-Turn Insulation Faults in Induction Motors," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.021'
+      },
+      {
+        id: 22,
+        type: 'Research Article',
+        articleId: 'jcids.2026.022',
+        title: 'Enhanced LSTM-Based Recurrent Framework with Batch Normalization for Noise Reduction in Medical Imaging',
+        authors: 'Kiruthika R, Anitha G, Raju Rajkumar and Rajkumar Palaniappan',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '21-40',
+        doi: '10.62656/jcids.v3i3.22',
+        file: '/2026/22.pdf',
+        citation: 'Kiruthika R, Anitha G, Raju Rajkumar and Rajkumar Palaniappan, "Enhanced LSTM-Based Recurrent Framework with Batch Normalization for Noise Reduction in Medical Imaging," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.022'
+      },
+      {
+        id: 23,
+        type: 'Research Article',
+        articleId: 'jcids.2026.023',
+        title: 'A Hybrid ML-Driven Recommendation System with Enhanced Density-Based Clustering for E-Learning Platforms',
+        authors: 'G. Sangeetha, N. Rajkumar, Kannan Ramasamy and T. Karthikeyan',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '41-60',
+        doi: '10.62656/jcids.v3i3.23',
+        file: '/2026/23.pdf',
+        citation: 'G. Sangeetha, N. Rajkumar, Kannan Ramasamy and T. Karthikeyan, "A Hybrid ML-Driven Recommendation System with Enhanced Density-Based Clustering for E-Learning Platforms," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.023'
+      },
+      {
+        id: 24,
+        type: 'Research Article',
+        articleId: 'jcids.2026.024',
+        title: 'A Contourlet Transform-Based Watermarking Scheme for Medical Images',
+        authors: 'S. Kalaivani, B. Navaneethi, M. Chandrakumar and Siva Shankar Ramasamy',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '61-80',
+        doi: '10.62656/jcids.v3i3.24',
+        file: '/2026/24.pdf',
+        citation: 'S. Kalaivani, B. Navaneethi, M. Chandrakumar and Siva Shankar Ramasamy, "A Contourlet Transform-Based Watermarking Scheme for Medical Images," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.024'
+      },
+      {
+        id: 25,
+        type: 'Research Article',
+        articleId: 'jcids.2026.025',
+        title: 'Optimized Kernel Fuzzy Clustering for Breast Lesion Segmentation in Mammograms',
+        authors: 'R. Manimegalai, S. Devipriya, A. S. Arunachalam and Sivakumar Vengusamy',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '81-100',
+        doi: '10.62656/jcids.v3i3.25',
+        file: '/2026/25.pdf',
+        citation: 'R. Manimegalai, S. Devipriya, A. S. Arunachalam and Sivakumar Vengusamy, "Optimized Kernel Fuzzy Clustering for Breast Lesion Segmentation in Mammograms," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.025'
+      },
+      {
+        id: 26,
+        type: 'Research Article',
+        articleId: 'jcids.2026.026',
+        title: 'Scene Labeling Using H-LSTM with Pixel-Wise Function Prediction',
+        authors: 'S. Perumal, S. Anu, S. Kartheeswaran and Basheer Riskhan',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '101-120',
+        doi: '10.62656/jcids.v3i3.26',
+        file: '/2026/26.pdf',
+        citation: 'S. Perumal, S. Anu, S. Kartheeswaran and Basheer Riskhan, "Scene Labeling Using H-LSTM with Pixel-Wise Function Prediction," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.026'
+      },
+      {
+        id: 27,
+        type: 'Research Article',
+        articleId: 'jcids.2026.027',
+        title: 'Dimensionality Reduction and Bee Colony Based Fuzzy Segmentation for Leaf Images Detection',
+        authors: 'R. Saravana Prabhu, R. Kausalya, P. Vadivelmurugan and Swamynathan Ramakrishnan',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '121-140',
+        doi: '10.62656/jcids.v3i3.27',
+        file: '/2026/27.pdf',
+        citation: 'R. Saravana Prabhu, R. Kausalya, P. Vadivelmurugan and Swamynathan Ramakrishnan, "Dimensionality Reduction and Bee Colony Based Fuzzy Segmentation for Leaf Images Detection," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.027'
+      },
+      {
+        id: 28,
+        type: 'Research Article',
+        articleId: 'jcids.2026.028',
+        title: 'An Optimized Graph-Theoretic Framework for Energy-Aware Virtual Network Mapping in Cloud-Based Medical Imaging Systems',
+        authors: 'A. Sharmista, S. Rajeev Gandhi, R. Ganesh, R. P. Mahesh, P. Gopinath, K. Suganthi and Arokiaraj Selvaraj',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '141-160',
+        doi: '10.62656/jcids.v3i3.28',
+        file: '/2026/28.pdf',
+        citation: 'A. Sharmista, S. Rajeev Gandhi, R. Ganesh, R. P. Mahesh, P. Gopinath, K. Suganthi and Arokiaraj Selvaraj, "An Optimized Graph-Theoretic Framework for Energy-Aware Virtual Network Mapping in Cloud-Based Medical Imaging Systems," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.028'
+      },
+      {
+        id: 29,
+        type: 'Research Article',
+        articleId: 'jcids.2026.029',
+        title: 'Mutual Coupling Reduction and Miniaturization of a Dual-Element Microstrip Antenna Array Using Dumbbell-Shaped DGS',
+        authors: 'K. Vetrivel, D. Sridhar, R. S. Padma Priya, K. B. Manikandan, B. Vasumathi, A. Bharathi Lakshmi and Shanmugam Joghee',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '161-180',
+        doi: '10.62656/jcids.v3i3.29',
+        file: '/2026/29.pdf',
+        citation: 'K. Vetrivel, D. Sridhar, R. S. Padma Priya, K. B. Manikandan, B. Vasumathi, A. Bharathi Lakshmi and Shanmugam Joghee, "Mutual Coupling Reduction and Miniaturization of a Dual-Element Microstrip Antenna Array Using Dumbbell-Shaped DGS," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.029'
+      },
+      {
+        id: 30,
+        type: 'Research Article',
+        articleId: 'jcids.2026.030',
+        title: 'A Secure Trust-Based Node Filtering and ANFIS-Driven Attack Detection Framework for Mobile Wireless Sensor Networks',
+        authors: 'M. S. Safna Asiq, P. S. Sumathi, C. K. Balaji, Z. Ramya Sushil, A. Mansurali and Rajkumar Palaniappan',
+        received: '30 July 2025',
+        accepted: '25 October 2025',
+        published: '22 December 2025',
+        volume: 3,
+        issue: 3,
+        year: 2026,
+        pages: '181-200',
+        doi: '10.62656/jcids.v3i3.30',
+        file: '/2026/30.pdf',
+        citation: 'M. S. Safna Asiq, P. S. Sumathi, C. K. Balaji, Z. Ramya Sushil, A. Mansurali and Rajkumar Palaniappan, "A Secure Trust-Based Node Filtering and ANFIS-Driven Attack Detection Framework for Mobile Wireless Sensor Networks," Journal of Computational Intelligence and Decision Science (JCIDS), Vol. 03, Issue 3, 2026. https://doi.org/10.XXXX/jcids.2026.030'
+      }
+    ];
+
+    const allPapers = [...papers2024, ...papers2025, ...papers2026];
     return allPapers.find(p => p.id === parseInt(id) && p.year === parseInt(year));
   };
 
@@ -633,30 +806,35 @@ const PaperDetail = () => {
                 listStyleType: 'decimal'
               }}>
                 {(() => {
-                  // Split references by looking for patterns like "1. ", "2. ", etc. at the start of lines
-                  const refText = paper.references;
-                  // Split on number followed by period and space (e.g., "1. ", "2. ")
-                  const refs = refText.split(/\n(?=\d+\.\s)/);
-                  
-                  return refs
-                    .map(ref => {
-                      // Remove the numbering and clean up whitespace
-                      return ref
-                        .replace(/^\d+\.\s*/, '')  // Remove leading number
-                        .replace(/\s+/g, ' ')       // Replace multiple spaces/newlines with single space
-                        .trim();
-                    })
-                    .filter(ref => ref.length > 0)  // Remove empty entries
-                    .map((reference, index) => (
-                      <li key={index} style={{
-                        marginBottom: '15px',
-                        textAlign: 'justify',
-                        textJustify: 'inter-word',
-                        paddingLeft: '10px'
-                      }}>
-                        {reference}
-                      </li>
-                    ));
+                  const refText = paper.references || '';
+
+                  // Normalize line breaks and force numbered references onto separate lines.
+                  const normalizedRefs = refText
+                    .replace(/\r\n/g, '\n')
+                    .replace(/\r/g, '\n')
+                    .replace(/\s+(?=\d{1,2}\.\s)/g, '\n')
+                    .trim();
+
+                  const refs = normalizedRefs
+                    .split(/\n(?=\d{1,2}\.\s)/)
+                    .map((ref) =>
+                      ref
+                        .replace(/^\d{1,2}\.\s*/, '')
+                        .replace(/\s+/g, ' ')
+                        .trim()
+                    )
+                    .filter((ref) => ref.length > 0);
+
+                  return refs.map((reference, index) => (
+                    <li key={index} style={{
+                      marginBottom: '15px',
+                      textAlign: 'justify',
+                      textJustify: 'inter-word',
+                      paddingLeft: '10px'
+                    }}>
+                      {reference}
+                    </li>
+                  ));
                 })()}
               </ol>
             </div>

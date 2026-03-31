@@ -1,0 +1,547 @@
+﻿
+ARTICLE
+A Contourlet Transform-Based Watermarking Scheme for Medical Images
+S. Kalaivani1,*, B. Navaneethi2, M. Chandrakumar3, and Siva Shankar Ramasamy4
+1Assistant Professor, Department of Computer Science, Dr. G. R. Damodaran College of Science, Coimbatore, India.
+2Assistant Professor, Department of BCA, Shri Nehru Maha Vidyalaya College of Arts and Science, Coimbatore, India.
+3Assistant HOD, Department of BCA, Shri Nehru Maha Vidyalaya College of Arts and Science, Coimbatore, India.
+4International College of Digital Innovation, Chiang Mai University, Chiang Mai, Thailand, 50200.
+*Corresponding Author: S. Kalaivani. Email: kalaivani.s@grd.edu.in 
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025
+ABSTRACT: The purpose of digital image watermarking is to hide secret information, objects, or logos on some multimedia content to secure the information or to attack. Unauthorized individuals may attempt to access data or images during data transmission for illicit purposes. By establishing a hospital logo or Electronic Health Record (EHR) in source images, medical image watermarking secures the data contained in medical images. In this paper, we present a brand-new watermarking scheme for medical images using contourlet transform. Each sub-band's energy value is calculated, and the middle energy sub-band is taken into account for the embedding process. Four different types of digital image watermarking techniques are used to compare the performance of the proposed watermarking scheme. (I) DWT without Band selection, (II) DWT-SVD, (III) DWT with Band selection, (IV) Curvelet Transform Peak Signal to Noise Ratio (PSNR), a performance metric, shows that the proposed method produces 52.63 per cent of PSNR value for CT images and 53.98 per cent of PSNR value for MRI images. When compared to other watermarking techniques, the contourlet transform provides better results, as evidenced by the Peak Signal to Noise Ratio.
+KEYWORDS: Watermarking, Medical Image, Embedding, Data Hiding, Contourlet Transform.
+
+1 Introduction
+Security is a crucial consideration when digital images are transmitted through a communication channel due to the explosive growth of multimedia content. While transmitting digital images through a communication channel, certain techniques like steganography, watermarking, and cryptography are used for security purposes.
+Securing patient information, such as Electronic Health Records (EHR), is a top priority in the medical industry as well. Most medical images used in hospitals are essentially kept in a database along with the patients' bio-signals and demographic data. Unauthorized tampering, mismatching, and improper handling of data are a few issues with such data that is stored in massive databases. Additionally, effective, and dependable transmission, together with storage techniques, is required for the exchange of bio signals, demographic texts, and medical images between both hospitals. Watermarking is currently a major research topic for improving the security of healthcare data. Digital watermarking is the process of incorporating data for authentication into a multimedia element, such as an image, audio, or video file. Typically, a watermark is embedded to provide information for copyright protection and to demonstrate the veracity of data. Increased image security, confidentiality, and integrity are achieved through the use of digital watermarking.
+Watermarking algorithms concentrate on concealing them in order to protect the medical image. Information is anonymous and invisible thanks to watermarking, which is its main benefit. By obscuring the necessary information in the original image to announce rightful ownership, watermarking provides copyright protection to an image. For security reasons, the embedded data can be later extracted from or found in the multimedia image.
+There are two different transform methods for watermarking. Spatial domain and frequency domain are them. The watermark data is inserted into the spatial domain as part of the spatial domain watermarking scheme. Least Significant Bit Modulation (LSB) is the most common algorithm used in the spatial domain. The original input image is processed using a modified Fourier transform in the Frequency domain watermarking scheme. DCT, DWT, and DFT are a few of the frequency domain watermarking schemes.
+2 Literature Review
+In this section, the existing works for watermarking medical images are examined and presented. Wavelet Packet Transform is used in the embedding process of a watermarking method created by Mothi R et al. [20]. The embedding process is carried out in a specific wavelet sub-band after the original image has been split into several bands using the Wavelet Packet Transform. Sub bands are chosen based on energy levels, and the data is embedded in the original image using the sub band with the lowest energy. The watermark is embedded into the low-frequency sub-band of the A three-level DWT-based image watermarking method was created by Nikita Kashyap et al. [10]. An original image using the Alpha blending technique, and a multilevel watermark bit is used for the embedding process.
+Integer Wavelet Transform (IWT) & Singular Value Decomposition (SVD) were used to implement a watermarking scheme by Nasrin. Metal.[16] wherein the watermark data has been embedded into singular values of 1-level IWT decomposed sub-bands. For use in healthcare applications, Aditi Zeeretal [45] created a multiple watermarking system based on DWT-DCT-SVD. Using an extracted image watermark from a back propagation neural network (BPNN), the algorithm's robustness has been increased. Arnold Transform can be used during the embedding process to increase the security of the watermark as well. A Biorthogonal Wavelet Transform Digital Image Watermarking was suggested by Rajendra Prasad et al. [35]. Biometrics, as well as digital watermarking, is used to protect the copyright of digital images.
+A watermarking technique based on DWT, DCT, and SVD methods was created by Md. Maklachur Rahman et al. [7], where the original image is rearranged using a zigzag sequence and the watermarking process is then applied to the rearranged image. A watermarking procedure based on a combination of DWT, DCT, and SVD methods was implemented by Navas K A et al. [8]. A DWT and DCT correlations contain watermark data that has been embedded using this method. A Particle Swarm Optimizer-based watermarking method was implemented in the DWT and SVD domains by Veysel Aslant et al. [9]. 
+A watermarking system was created in the multiple transform domain by Rajat Sharma et al. The original image is first divided into sub-bands using DWT, and all lower frequency sub-bands then undergo the Contourlet transform. With the contourlet transform, a detail sub-band can be used to embed watermark data, while an approximate sub-band is used to calculate optimized modification parameters. A watermarking model based on its contourlet transform, created by SyC. 
+Nguyen, KhaH., et al. [50], yields a PSNR value of 50. Four transforms were used to develop a watermarking method by Fares Kahlessenane et al. [51]. They are (i) Discrete Wavelet Transform, (ii) Contourlet Transform, (iii) Discrete Shearlet Transform, and (iv) Discrete Cosine Transform. A medical image watermarking scheme developed by Sudeb Das et al. [52] uses a contourlet transform followed by a discrete cosine transform to produce a PSNR value of 41. In a watermarking scheme based on the Discrete Wavelet Transform as well as the Singular Value Decomposition technique, Ali Alzahrani et al. [53] divided a medical image into two regions, the ROI region and the RONI region.
+The RONI region contains embedded watermark data. PSNR value offered by this scheme is 44.0567 dB. A dual adaptive watermarking method using the Contourlet Transform was created for DICOM images by Farhad Rahimi et al. [54]. 
+For use in E-healthcare applications, Puvvadi Aparna et al. [55] created a crypto-watermarking scheme. Three different types of patient data, including medical images, EHR data, and face images, are used for the watermark data in this technique. All data is encrypted and transformed into bit streams. The bit sequences are then incorporated into the cover photo. Brain tumour automatic segmentation was carried out by Jayadevappa, D. et al. [57] using the Chan-Vese active contour model and the Contourlet transform. The Contourlet transform is employed in this work to collect edges and smooth contours in any direction.
+Gunjal et al. [3] address some of the problems and difficulties associated with watermarking algorithms, including such issues as Confidentiality, Reliability, Robustness, Imperceptibility, and Capacity or Payload. The author has identified various watermarking methods to address the problems and demands mentioned above. In each proposed work, a watermarking process is carried out using the frequency domain method. Digital image watermarking schemes typically employ two techniques. They are frequency domain as well as spatial domain watermarking methods. Frequency domain watermarking techniques are much more successful in accomplishing imperceptibility and robustness of the original image than spatial domain watermarking techniques. A proposed method compares the results of a Contourlet Transform watermarking method to the DWT with SVD, DWT without band selection, DWT with band selection, and a Curvelet Transform.
+3 Proposed Methodology
+In this research, we propose a practical watermarking method that makes use of contourlet-transformed synthetic images. In general, the two-phase method is used to watermark medical image files. They are (i) incorporating the patient's electronic health record (EHR) into the medical image. EHR is removed from the watermarking image. (ii) Figures 1(a) and 1(b) show two phases of the proposed watermarking scheme, respectively. The process of the suggested watermarking scheme is described in the section that follows.
+Medical Image Watermarking Process Using Contourlet Transform:
+Embedding Process
+
+Figure 1(a): Embedding Process using Contourlet Transform
+
+Extraction Process
+
+Figure 1(b): Extraction Process using Contourlet Transform
+3.1 Contourlet Transform
+Contourlet Transform, which was found to be the most effective transform for medical image analysis and deals with both smooth and sharp edges of such an image effectively, is being used in the watermarking process. Do and Vetterli created the first iteration of a contourlet transform, a two-dimensional transform technique for image representations, in 2002. A Contourlet Transform has utilized two filter bank structures. Laplacian Pyramid (LP) filter and Directional filter bank are the same (DFB). Point discontinuities are found using a Laplacian filter, but they are joined into linear structures using the Directional Filter Bank.
+	Low frequency components will all leak into directional sub-bands of a directional filter, which is only suitable for high frequency components. This is the rationale behind combining a Directional and a Pyramidal filter. All of the low-frequency sub-bands will be completely eradicated by this multiscale resolution combination. To acquire band-pass signals and to obtain directional information of an image, image signals are permitted to pass through a directional filter as well as the pyramidal filter-sub-bands. The Pyramid Directional Filter Bank (PDFB) structure is another name for this double filter bank agreement. The fact that this contourlet transform clearly reconstructs the original image is a crucial characteristic. Smooth edges of images with various elongated shapes in a variety of directions can be captured by the contourlet transform.
+3.2 Band Selection
+A two-level decomposition process is used to break down a medical image within the proposed contourlet technique-based watermarking scheme. So, when the contourlet transform is used, an image is initially decomposed into 4 sub-bands. The last three sub-bands have been known as directional filters, while the first sub-band is known as the Laplacian Pyramid sub-band. The first sub-band is further divided into four sub-bands at the second level of decomposition. The appropriate band is then chosen to encode the data for the band selection process. The energy value of each sub-band is calculated using Equation (1).
+ 
+ (1)
+Each sub-band's calculated energy values will be listed in ascending order. For the embedding process, the sub-band with the middle energy value will be taken into account. The hospital logo is being used as the reference image in this process, and the electronic health record (EHR) will serve as watermark information. Data like the patient's name, age, sex, blood type, weight, hospital name, doctor name, etc., are all contained in the EHR. Binary 0s and 1s are used to represent this watermark data. If the Watermark bit is set to "0," the middle energy sub-band will be used for the watermarking process (2). If the watermark bit is set to "1," the equation will be used to perform the embedding process (3).
+Embedding Data= +(0.9*Hospitallogo){ifwatermark=0}
+ (2)
+EmbeddingData= -(0.9*Hospitallogo) {ifwatermark=1}
+ (3)
+0.9 is the embedding factor, which provides better results for embedding data compared to other values such as 0.2, 0.3, 0.4, etc.
+
+Figure 2: Band Selection in Contourlet Transform
+3.3 Embedding Process using Contourlet Transform
+    • The original image is transformed using the Contourlet algorithm. It offers 4 sub-bands, including DF (Directional Filter) sub-bands and LP (Laplacian Pyramidal) sub-bands. Four sub-bands are once more applied to the LP sub-band.
+    • Watermark data (EHR) is converted into binary values of ‘0’s and ‘1’s. Embedding factor (α) is taken as 0.9.
+    • Calculate each sub-band's energy value. Energy values should be sorted in ascending order. In comparison to Lower and Higher energy values, the Middle energy value yields better embedding results. To consider the middle energy value among the sorted energy values.
+In the selected middle energy sub-band, the watermark data (EHR) is embedded. The inverse Contourlet Transform is applied to obtain the watermarked image.
+3.4 Extraction Process 
+    • In this extraction process, the watermark image is subjected to a Contourlet Transform. The middle energy value of each sub-band is calculated.
+    • The correlation coefficient is calculated between the middle energy sub-band value and the hospital logo (reference image), as shown in Eqn (4). If this value is greater than ‘0’, then the extracted watermark bit will be ‘0’ otherwise it will be ‘1’.
+𝐶𝑜𝑟𝑟𝑒𝑙𝑎𝑡𝑖𝑜𝑛𝐶𝑜𝑒𝑓𝑓𝑖𝑐𝑖𝑒𝑛𝑡=∑𝑖=𝑚,𝑗=𝑛 i=0,=0 (𝑆𝑢𝑏𝑏𝑎𝑛𝑑∗𝑅𝑒𝑓𝑒𝑟𝑒𝑛𝑐𝑒𝐼𝑚𝑎𝑔𝑒)
+ (4)
+Peak Signal to Noise Ratio (PSNR) is calculated by considering the original image and the embedded image to evaluate the performance of the proposed scheme. Then the embedded image can be transmitted through the Internet in Hospital Management applications to secure the patient data.
+4 Experimental Results
+4.1 Dataset
+Medical professionals use medical imaging, also known as radiology, to take pictures of different body parts to diagnose or treat patients. Medical images are used to examine the patient's body parts and tissues to diagnose any diseases that may be present. A strong magnetic field and radio waves are used in magnetic resonance imaging (MRI) to create incredibly clear images of the body's organs and internal structures. Cross-sectional images are produced by computed tomography (CT), which combines X-ray images taken from various angles.
+In this research, we used a few databases of free MRI and CT image collections for experimental purposes. The list of databases used in this work is listed in Table 1.
+Table 1: Data sets of MRI and CT Medical Images
+SL.NO
+DATABASES
+WEBSITES
+1
+MRI Images: Brain MRI, Knee MRI,
+Fetal MRI.
+https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection
+https://stanfordmlgroup.github.io/competitions/mrnet/
+https://f1000research.com/articles/6-93
+2
+CT Images: Lung CT, Brain CT.
+https://wiki.cancerimagingarchive.net/display/Public/4D-Lung
+https://wiki.cancerimagingarchive.net/display/Public/Brain-Tumor-Progression
+
+4.2 Electronic Health Record(EHR)
+The patient's name, age, date of birth, weight, and height are all included in the electronic health record (EHR), including the hospital name as well as the doctor's name. This EHR is incorporated into the original image during the embedding process, and this EHR data is extracted from the embedded image during the extraction phase.
+4.3 Performance Metric
+In order to evaluate the effectiveness of any algorithm in medical image processing, performance analysis is important and quantitative metrics are used. The metric employed in this work to evaluate the effectiveness of the suggested technique is PSNR.
+4.3.1 Peak Signal to Noise Ratio (PSNR)
+Peak signal-to-noise ratio is used to find the difference between the original image and the processed image. The ratio between the maximum possible power of an image and the power of corrupting noise that affects the quality of an image is calculated. It is necessary to compare the ideal clean image with the watermarked image using the PSNR value.
+
+ (5)
+MSE = sum (sum(Original Image*Watermarked Image)) / (rows * columns)  
+ (6)
+4.3.2 Experimental Analysis
+Some of the sample MRI and CT images, which are used for experimental purposes, are shown in Fig. 3. (a), (b) and (c). Fig. 4. (a), (b) and (c) shows the original medical image, Hospital Logo (Reference Image) and embedded image.
+
+Figure 3 (a, b, and c): Experimental Results of the Watermarking process for MRI Medical Images
+ 
+Figure 4 (a, b, and c): Experimental Results of the Watermarking process for CT Medical Images
+In order to calculate the performance of the proposed technique, the experimental results are compared with other transform techniques such as DWT with SVD, DWT without Band Selection, DWT with Band Selection and Curvelet Transform. Table 2 and Table 3 shows the PSNR values of MRI and CT Medical images for DWT with SVD, DWT without Band Selection, DWT with Band Selection, Curvelet Transform and Contourlet Transform.
+Table 2: Performance of Proposed Watermarking Scheme with Other Techniques for MRI Medical Images
+SL.NO
+MRI Image
+DWT –SVD [18]
+DWT Without BS [21]
+DWT with BS [56]
+CurveletTransform [38]
+ContourletTransform
+1
+MRI1
+30.5204
+28.6863
+46.8023
+36.1747
+47.5753
+2
+MRI2
+26.9814
+21.5816
+39.9389
+33.5429
+48.2219
+3
+MRI3
+25.3076
+23.4773
+46.4842
+58.8873
+58.6240
+4
+MRI4
+33.1564
+26.6190
+53.2025
+40.6005
+58.9197
+5
+MRI5
+26.9814
+21.5816
+39.9389
+33.5429
+48.2219
+6
+MRI6
+25.3076
+23.5190
+46.4842
+12.8829
+58.6240
+7
+MRI7
+26.4482
+23.3899
+45.8987
+11.9059
+48.9343
+8
+MRI8
+23.9684
+20.0711
+36.1992
+30.2506
+36.4160
+9
+MRI9
+30.2125
+24.8971
+59.6454
+31.4744
+57.9273
+10
+MRI10
+37.4595
+28.5200
+52.7468
+55.5613
+48.5827
+11
+MRI11
+30.5204
+28.6863
+46.8023
+36.1747
+47.5753
+12
+MRI12
+29.7687
+23.7056
+64.7392
+41.0355
+65.1729
+13
+MRI13
+26.2207
+22.5421
+56.5042
+36.8442
+70.8302
+14
+MRI14
+27.0308
+22.2262
+33.7922
+12.7879
+34.2033
+15
+MRI15
+25.0729
+23.1073
+35.6197
+29.8844
+39.8504
+16
+MRI16
+27.0608
+22.7685
+84.2544
+28.6254
+87.2647
+17
+MRI17
+29.7687
+23.7056
+64.7392
+19.1463
+65.1729
+18
+MRI18
+29.5281
+24.8598
+42.5919
+58.8873
+57.0694
+19
+MRI19
+26.2207
+22.5421
+56.5042
+31.4744
+70.8302
+20
+MRI20
+24.0603
+25.2023
+33.3953
+28.0425
+42.7599
+21
+MRI21
+29.4154
+20.8900
+33.5964
+21.8899
+34.6167
+22
+MRI22
+32.0387
+26.3602
+67.8199
+58.8873
+72.4935
+23
+MRI23
+29.7407
+24.7049
+38.1515
+41.0355
+42.7504
+24
+MRI24
+26.7608
+24.1364
+42.9904
+44.0242
+42.4608
+25
+MRI25
+33.0954
+24.5426
+60.2946
+31.4744
+64.2816
+Average PSNR
+28.5058
+24.0929
+49.1654
+34.6014
+53.9752
+Table 3: Performance of the Proposed Watermarking Scheme with Other Techniques for CT Medical Images
+SL.NO
+CT
+Image
+DWT –SVD [18]
+DWT
+Without BS [21]
+DWT with BS [56]
+Curvelet Transform [38]
+ContourletTransform
+1
+CT 1
+28.2467
+36.0264
+48.5744
+58.8873
+55.0068
+2
+CT 2
+32.0024
+36.7000
+48.1977
+43.6013
+54.1066
+3
+CT 3
+29.9881
+36.6811
+49.1723
+31.3316
+51.9458
+4
+CT 4
+29.2848
+36.3885
+48.3188
+33.9525
+44.4492
+5
+CT 5
+31.1688
+36.7405
+48.3446
+31.3806
+45.8700
+6
+CT 6
+31.2648
+25.4606
+44.4457
+34.5353
+43.7577
+7
+CT 7
+29.0949
+38.6950
+50.1597
+58.8873
+54.7568
+8
+CT 8
+28.0152
+40.3631
+54.7041
+58.8873
+55.6894
+9
+CT 9
+27.4001
+43.2260
+51.4583
+58.8873
+54.0281
+10
+CT 10
+28.1460
+37.6626
+49.4382
+58.8873
+54.3696
+11
+CT 11
+26.8706
+13.9458
+51.7638
+43.5598
+57.2761
+12
+CT 12
+28.6999
+13.8674
+51.7289
+35.8670
+52.6495
+13
+CT 13
+29.2593
+13.9183
+45.3981
+24.2991
+50.8024
+14
+CT 14
+30.3116
+13.6591
+52.0871
+36.8989
+53.2580
+15
+CT 15
+28.9247
+13.6798
+52.3940
+42.5735
+52.5509
+16
+CT 16
+29.4401
+13.6587
+51.7062
+40.2265
+52.5931
+17
+CT 17
+29.6801
+13.6837
+51.7533
+42.4481
+52.2835
+18
+CT 18
+30.3568
+13.7639
+51.7601
+36.7635
+51.6161
+19
+CT 19
+30.8719
+13.7687
+50.9575
+39.9279
+52.7482
+20
+CT 20
+30.6864
+13.7696
+52.3446
+35.3989
+52.8874
+21
+CT 21
+30.6252
+13.8006
+52.3008
+34.9519
+52.9053
+22
+CT 22
+30.0827
+13.8727
+52.5643
+38.2248
+53.5549
+23
+CT 23
+30.0978
+13.8095
+53.6844
+44.5848
+54.1461
+24
+CT 24
+27.7387
+14.3780
+42.7870
+16.0730
+48.2988
+25
+CT 25
+29.4396
+13.6498
+52.0143
+43.9138
+53.2626
+Average PSNR
+29.5534
+23.5935
+50.5743
+41.9720
+52.6396
+
+4.4 Discussion
+The performance of the proposed watermarking scheme is compared with a few watermarking techniques, namely DWT with SVD, DWT without Band Selection and DWT with Band Selection and Curvelet Transform. The experiment was performed on both CT and MRI images. Contourlet Transform-based watermarking scheme for medical image is tested and presented in Table 2, and Table 3. From the above table, PSNR calculation for various medical images was experimented with and noted. From the dataset, a total of 25 samples of both CT and MRI images are taken for the experiment. For MRI medical images, DWT with SVD gives a PSNR value of 28.5058, DWT without Band Selection gives a PSNR value of 24.0929, and DWT with Band Selection gives a PSNR value of 49.1654. Curvelet Transform gives a PSNR value of 34.6014, and Contourlet Transform provides a PSNR value of 53.9752. For CT medical images, DWT with SVD gives a PSNR value of 29.5534, DWT without Band Selection gives a PSNR value of 23.5935, and DWT with Band Selection gives a PSNR value of 50.5743. Curvelet Transform gives a PSNR value of 41.9720, and Contourlet Transform gives a PSNR value of 52.6396. The values of DWT with SVD, DWT without Band Selection, DWT with Band Selection, and Contourlet Transform of every sample of CT and MRI images are noted, and the average is calculated. From the above-average PSNR calculations of MRI and CT images, Contourlet Transform provides a better PSNR value compared with other Watermarking Techniques. Since medical images have curve-shaped components, the Contourlet Transform preserves them. Because of this, it is found that the performance of the proposed scheme works better. The selection of a middle energy value also helps to improve the performance of the proposed scheme.
+5 Conclusion
+This study suggests a watermarking method for medical images using the contourlet transform and a middle energy band selection. Additionally, this work assesses the effectiveness of the proposed scheme with a few already-in-use watermarking techniques using Discrete Wavelet Transform (DWT) with band selection, DWT without band selection, and DWT with Singular Value Decomposition (SVD). Different medical images, including MRI and CT images, are taken into account for the experiment. Peak Signal to Noise Ratio (PSNR), which is used as a performance measure for contrast. The proposed scheme generates PSNR values of 52.63 percent and 53.98 percent for CT and MRI images, respectively. An experimental finding showed that the Contourlet Transform outperforms other content protection techniques.
+Acknowledgement: Not applicable.
+Funding Statement: Not applicable.
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, methodology and writing—original draft preparation: Niranchana Radhakrishnan; supervision and writing: C. Viji; review and editing: Balusamy Nachiappan. All authors reviewed the results and approved the final version of the manuscript.
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present study.
+References
+    1. Bhatnagar G, Raman B. A new robust reference watermarking scheme based on DWT-SVD. Comput Stand Interfaces. 2009;31(5):1002-13.
+    2. Serra-Ruiz J, Megias D. A novel semi-fragile forensic watermarking scheme for remote sensing images. Int J Remote Sens. 2011;32(19):5583-606.
+    3. Gunjal BL, Manthalkar RR. An overview of transform domain robust digital image watermarking algorithms. J Emerg Trends Comput Inf Sci. 2010;2(1).
+    4. Nambakhsh MS, Ahmadian A, Zaidi H. A contextual based double watermarking of PET images by patient ID and ECG signal. Comput Methods Programs Biomed. 2011;104(3):418-25.
+    5. Xu J, Pang H, Zhao J. Digital image watermarking algorithm based on fast curvelet transform. J Softw Eng Appl. 2010;3(10):939-43.
+    6. Hien TD, Miyara K, Kei I, Ali FF, Chen YW, Nakao Z. Digital watermarking based on curvelet transform. In 2007 9th International Symposium on Signal Processing and Its Applications; 2007 Feb 12, Sharjah; 2007. p. 1-4.
+    7. Rahman MM. A DWT, DCT and SVD based watermarking technique to protect the image piracy. arXiv preprint arXiv:1307.3294. 2013 Jul 11.
+    8. Navas KA, Ajay MC, Lekshmi M, Archana TS, Sasikumar M. Dwt-dct-svd based watermarking. In 2008 3rd international conference on communication systems software and middleware and workshops (COMSWARE'08); 2008 Jan 6, Bangalore, India; 2008. p. 271-274.
+    9. Aslantas V, Dogan AL, Ozturk S. DWT-SVD based image watermarking using particle swarm optimizer. In 2008 IEEE international conference on multimedia and expo; 2008 Jun 23, 2008. p. 241-244.
+    10. Kashyap N, Sinha GR. Image watermarking using 3-level discrete wavelet transform (DWT). Int J Mod Educ Comput Sci. 2012;4(3):50.
+    11. Shekhawat S, Yadav S. Nonblind DWT based multiplicative SVD watermarking algorithm. Int J Emerging Technol Adv Eng. 2014;4(1):289-93.
+    12. Tao P, Dexter S, Eskicioglu AM. Robust digital image watermarking in curvelet domain. In Security, forensics, steganography, and watermarking of multimedia contents X; 2008 Mar 18, California, United States; 2008. Vol. 6819, p. 500-511.
+    13. Hien TD, Kei I, Harak H, Chen YW, Nagata Y, Nakao Z. Curvelet-domain image watermarking based on edge-embedding. In International conference on knowledge-based and intelligent information and engineering systems; 2007 Sep 12, Berlin; 2007. p. 311-317.
+    14. Guo JM, Prasetyo H, Farfoura ME, Lee H. Vehicle verification using features from curvelet transform and generalized Gaussian distribution modeling. IEEE Trans Intel Transp Syst. 2015;16(4):1989-98.
+    15. Emir G, Ahmet ME. Robust Embedding of Visual watermarks Using DWT-SVD. Department of Computer and Information Science CUNY Brooklyn College. 2005.
+    16. Makbol NM, Khoo BE. A new robust and secure digital image watermarking scheme based on the integer wavelet transform and singular value decomposition. Digit Signal Process. 2014;33:134-47.
+    17. Ganic E, Eskicioglu AM. Robust DWT-SVD domain image watermarking: embedding data in all frequencies. In Proceedings of the 2004 Workshop on Multimedia and Security; 2004 Sep 20, 2004. p. 166-174.
+    18. Chang CC, Tsai P, Lin CC. SVD-based digital image watermarking scheme. Pattern Recognit Lett. 2005;26(10):1577-86.
+    19. Chandra DS. Digital image watermarking using singular value decomposition. In The 2002 45th Midwest Symposium on Circuits and Systems, 2002. MWSCAS-2002; 2002 Aug 4, Tulsa, OK, USA; 2002. Vol. 3, p. III-III.
+    20. Mothi R, Karthikeyan M. A wavelet packet and fuzzy based digital image watermarking. In 2013 IEEE International Conference on Computational Intelligence and Computing Research; 2013 Dec 26, Enathi, India; 2013. p. 1-5.
+    21. Woo CS, Du J, Pham B. Performance Factors Analysis of Wavelet-Based Watermarking Method. ACSW Frontiers 2005. 2005:89-98.
+    22. Jain P, Ghanekar U. Robust watermarking using DWT and weighted SVD. In 2018 Second International Conference on Electronics, Communication and Aerospace Technology (ICECA); 2018 Mar 29, Coimbatore, India; 2018. p. 302-307.
+    23. Giakoumaki A, Pavlopoulos S, Koutsouris D. Secure and efficient health data management through multiple watermarking on medical images. Med Biol Eng Comput. 2006;44(8):619-31.
+    24. Singh AK, Kumar B, Dave M, Mohan A. Multiple watermarking on medical images using selective discrete wavelet transform coefficients. J Med Imaging Health Informatics. 2015;5(3):607-14.
+    25. Al-Haj A. Combined DWT-DCT digital image watermarking. J Comput Sci. 2007;3(9):740-6.
+    26. Bao P, Ma X. Image adaptive watermarking using wavelet domain singular value decomposition. IEEE Trans Circuits Syst Video Technol. 2005;15(1):96-102.
+    27. Kannammal A, Pavithra K, SubhaRani S. Double watermarking of DICOM medical images using wavelet decomposition technique. Eur J Sci Res. 2012;70(1):46-55.
+    28. Yusof Y, Khalifa OO. Digital watermarking for digital images using wavelet transform. In 2007 IEEE International Conference on Telecommunications and Malaysia International Conference on Communications; 2007 May 14, Penang, Malaysia; 2007. p. 665-669.
+    29. Abdallah EE, Ben Hamza A, Bhattacharya P. Improved image watermarking scheme using fast Hadamard and discrete wavelet transforms. J Electron Imaging. 2007;16(3):033020-.
+    30. Mohan BC, Srinivaskumar S, Chatterji BN. A robust digital image watermarking scheme using singular value decomposition (SVD), dither quantization and edge detection. J ICGST-GVIP. 2008;8:17-23.
+    31. Nagpal S, Bhushan S, Mahajan M. An enhanced digital image watermarking scheme for medical images using neural network, DWT and RSA. Int J Mod Educ Comput Sci. 2016;8(4):46.
+    32. Mohananthini N, Yamuna G. A study of DWT-SVD based multiple watermarking scheme for medical images. Int J Netw Secur. 2015;17(5):558-68.
+    33. Ling HC, Phan RC, Heng SH. On the security of ownership watermarking of digital images based on singular value decomposition. J Electron Imaging. 2011;20(1):010501-.
+    34. Ahmad A, Sinha GR, Kashyap N. 3-level DWT Image watermarking against frequency and geometrical attacks. Int J Comput Netw Inf Secur. 2014;6(12):58.
+    35. Prasad BR, Kota KV, Reddy BM. Biorthogonal wavelet transform digital image watermarking. Int J Adv Comput Res. 2012;2(3):84.
+    36. Khan MI, Rahman MM, Sarker MI. Digital watermarking for image authentication based on combined dct, dwt and svd transformation. arXiv preprint arXiv:1307.6328. 2013 Jul 24.
+    37. Kang XB, Zhao F, Lin GF, Chen YJ. A novel hybrid of DCT and SVD in DWT domain for robust and invisible blind image watermarking with optimal embedding strength. Multimed Tools Appl. 2018;77(11):13197-224.
+    38. Zhang C, Cheng LL, Qiu Z, Cheng LM. Multipurpose watermarking based on multiscale curvelet transform. IEEE Trans Inf Forensics Secur. 2008;3(4):611-9.
+    39. Zhang ZY, Huang W, Zhang JL, Yu HY, Lu YJ. Digital image watermark algorithm in the curvelet domain. In 2006 International Conference on Intelligent Information Hiding and Multimedia; 2006 Dec 18, Pasadena, CA, USA; 2006. p. 105-108.
+    40. Zhang C, Hu M. Curvelet image watermarking using genetic algorithms. In 2008 Congress on Image and Signal Processing; 2008 May 27, Sanya, China; 2008. Vol. 1, p. 486-490.
+    41. Gunjal BL, Manthalkar RR. Discrete wavelet transform based strongly robust watermarking scheme for information hiding in digital images. In 2010 3rd International Conference on Emerging Trends in Engineering and Technology; 2010 Nov 19, Goa, India; 2010. p. 124-129.
+    42. Hong I, Kim I, Han SS. A blind watermarking technique using wavelet transform. In ISIE 2001. 2001 IEEE International Symposium on Industrial Electronics Proceedings (Cat. No. 01TH8570); 2001 Jun 12, Pusan, Korea (South); 2001. Vol. 3, p. 1946-1950.
+    43. Thanki R, Borisagar K. Biometric watermarking technique based on CS theory and fast discrete curvelet transform for face and fingerprint protection. In Advances in Signal Processing and Intelligent Recognition Systems: Proceedings of Second International Symposium on Signal Processing and Intelligent Recognition Systems (SIRS-2015); 2015 December 16-19, Trivandrum, India; 2015. p. 133-144.
+    44. Chetan KR, Nirmala S. An intelligent blind semi-fragile watermarking scheme for effective authentication and tamper detection of digital images using curvelet transforms. In Advances in Signal Processing and Intelligent Recognition Systems: Proceedings of Second International Symposium on Signal Processing and Intelligent Recognition Systems (SIRS-2015); 2015 December 16-19, Trivandrum, India; 2015. p. 199-213.
+    45. Zear A, Singh AK, Kumar P. A proposed secure multiple watermarking technique based on DWT, DCT and SVD for application in medicine. Multimed Tools Appl. 2018;77(4):4863-82.
+    46. Pure AA, Gupta N, Shrivastava M. Wavelet and fast discrete curvelet transform for medical application. In 2013 Fourth International Conference on Computing, Communications and Networking Technologies (ICCCNT); 2013 Jul 4, Tiruchengode, India; 2013. p. 1-5.
+    47. Candes E, Demanet L, Donoho D, Ying L. Fast discrete curvelet transforms. Multiscale Model Simul. 2006;5(3):861-99.
+    48. Sharma R, Agarwal N, Khanwalkar K, Singh M, Kumar D. Robust image watermarking technique using contourlet transform and optimized edge detection algorithm. In 2018 5th International Conference on Signal Processing and Integrated Networks (SPIN); 2018 Feb 22, Noida, India; 2018. p. 513-517.
+    49. Amiri A, Mirzakuchaki S. A digital watermarking method based on NSCT transform and hybrid evolutionary algorithms with neural networks. SN Appl Sci. 2020;2(10):1669.
+    50. Nguyen SC, Ha KH, Nguyen HM. A new image watermarking scheme using contourlet transforms. In 2016 3rd International Conference on Information Technology, Computer, and Electrical Engineering (ICITACEE); 2016 Oct 19, Semarang, Indonesia; 2016. p. 1-6.
+    51. Kahlessenane F, Khaldi A, Kafi R, Euschi S. A robust blind medical image watermarking approach for telemedicine applications. Clust Comput. 2021;24(3):2069-82.
+    52. Das S, Kundu MK. Hybrid contourlet-DCT based robust image watermarking technique applied to medical data management. In International conference on pattern recognition and machine intelligence; 2011 Jun 27, Berlin; 2011. p. 286-292.
+    53. Alzahrani A, Memon NA. Blind and robust watermarking scheme in hybrid domain for copyright protection of medical images. IEEE Access. 2021;9:113714-34.
+    54. Rahimi F, Rabbani H. A dual adaptive watermarking scheme in contourlet domain for DICOM images. Biomed Eng Online. 2011;10(1):53.
+    55. Aparna P, Kishore PV. A blind medical image watermarking for secure e-healthcare application using crypto-watermarking system. J Intell Syst. 2019;29(1):1558-75.
+    56. Anusudha K, Venkateswaran N, Valarmathi J. Secured medical image watermarking with DNA codec. Multimed Tools Appl. 2017;76(2):2911-32.
+    57. Jayadevappa D. Segmentation of Brain Tumor using Contourlet Transform and Chan-Vese Active Contour Model Approach. Eur J Mol Clin Med. 2021;8(2):2381-90.
+    58. Sadreazami H, Amini M. A robust image watermarking scheme using local statistical distribution in the contourlet domain. IEEE Trans Circuits Syst II Express Br. 2018;66(1):151-5.

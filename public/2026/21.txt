@@ -1,0 +1,378 @@
+﻿
+ARTICLE
+Integrated Grey Wolf Optimization and Radial Basis Neural Network Framework for Diagnosing Inter-Turn Insulation Faults in Induction Motors
+Tawseef Ahmad Mir1,*, Lakshmanan S2, A. Nithya3, and Iyyappan Moorthi4
+1Assistant Professor, Department of Computer Science, GITAM (Deemed to be University), Rudraram, Patancheru mandal, Hyderabad, India.
+2Assistant Professor, Department of Computer Applications, Hindustan Institute of Technology and Science, Chennai, India.
+3Guest Faculty, Department of Computer Science, Government Arts and Science College, Vedasandur, Dindigul, Tamil Nadu, India.
+4Assistant Professor, College of Information Technology, Ahlia University, Bahrain.
+*Corresponding Author: Tawseef Ahmad Mir. Email: tawseefmir1191@gmail.com 
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025
+ABSTRACT: This study proposes an optimal detection and classification of inter-turn insulation faults in the induction motor (IM) using a hybrid optimization technique. The proposed hybrid optimization technique is the joint execution of both the Grey Wolf Optimization Algorithm (GWOA) and Radial Basis Function Neural Network (RBFNN), and in this way, it is named as GWO-RBFNN technique. The required fault training dataset is gathered through the client characterized framework shown through the proposed GWO algorithm. In the proposed approach, RBFNN is utilized in two phases with the end objective of detecting the inter-turn insulation faults. The ordinary RBFNN first phase is utilized to recognize the motor's healthy or unhealthy condition under various situations. The second phase of the RBFNN is playing out the classification of the unhealthy condition of motors to distinguish the correct inter-turn faults for protection. Here, the second phase RBFNN learning procedure is enhanced by using the GWOA in perspective of the minimum error objective function. The proposed GWO-RBFNN method plays an evaluation process to protect the induction machine and detect the fault in the IM at the inception stage. The proposed GWO-RBFNN technique guarantees the system with less complexity for the detection and classification of the inter-turn insulation fault, and hence the accuracy of the system is raised. The proposed model is executed in MATLAB/Simulink working stage, and the execution is assessed with the current procedures.
+KEYWORDS: Induction Motor, Inter-Turn Insulation Faults, Grey Wolf Optimization Algorithm, Radial Basis Function Neural Network, Motor's Healthy or Unhealthy Condition.     
+
+1 Introduction
+These days, for the protected and proficient running of mechanical plants and procedures, the electric motors assume a significant role [1]. The costly failures in the motors are kept away from by the early discovery of variations from the norm [2]. The greater parts of the studies are utilized to find the failure in squirrel-cage motors, bearing-and stator-winding-related inadequacies. Additionally, it shows that most of the stator winding failures of the motor result from turn-to-turn insulation breakdown [3]. Although, to show the time delay between inter-turn and ground wall insulation failures there is no exploratory information is utilized, it is plausible that the progress between the two states is not immediate. To detect the coils and the stator core, decreasing fix cost and motor blackout time, early identification of inter-turn shorts amid motor activity would prevent ensuing harm [4]. The nearness of a shorted turn is shown by the presently existing instrumentation, yet only with the motor removed from the administration. In the event that these faults are left undetected, they will inevitably deteriorate into a machine failure [5]. At the point when the failure of the machine happens, it might be harmed by close personnel. Additionally, there is a generous cost related to vacation and machine repair. As such, at the beginning stage, it is always appealing to blame recognition. To distinguish the bearing, stator, and eccentricity-related deficiencies, an explicit mathematical model is used by the model-based fault detection and diagnosis strategies. The vast majority of the examination broke down the different FAULT location techniques, for example, Motor Current Signature Analysis (MCSA), Axial Flux-Based Methods, Vibration Analysis, and so on [6]. 
+In the IM, asymmetry in the machine impedance occurs in both Modeling and Experimentation, that the winding insulation faults to draw unbalanced phase currents. Because of this unbalance, the negative sequence currents stream in the line. Be that as it may, voltage unbalance, machine saturation, and so on is cause the negative sequence currents. Several time-frequency domain systems have been proposed, including Short-Time Fourier Transform (STFT), Wigner Ville Distribution (WVD), and Wavelet Transform (WT) in the ongoing writing. To identify bearing deformities, the greater part of scientists used the stator current by means of wavelet packet decomposition [7]. The recently referenced frequency-domain approaches require the bearing defect frequencies to be known or pre-assessed. The other insufficiency is the extended inconvenience in researching the vibration spectrum when the signal-to-noise ratio is low. If the vibration spectrum has an expansive number of frequency segments, it results in the multifaceted nature of the system [8]. Using a reasonable, solid, and non-obtrusive system, Artificial Neural Network (ANN) has the limit of grasping the motor checking and fault identification issue. In any case, the fault discovery process does not give heuristic thinking. On the other hand, fuzzy logic can give heuristic thinking, yet difficult to give precise solutions [9].
+In the study, a combined strategy of GWO-RBFNN for the detection and classification of inter-turn insulation fault in IM is proposed. The motivation behind the proposed technique is to detect and classify the inter-turn insulation fault exhibited in the IM under healthy and unhealthy conditions. The remaining section of the study is organized as follows. Section 2 delineates the recent research works on the inter-turn faults in the IM. Section 3 includes the analytic modeling of an induction motor under stator inter-turn fault; Section 4 delineates the proposed inter-turn insulation faults diagnosis method in an induction motor; Sections 5 and 6 include the simulation analysis and conclusions.  
+2 Literature Review 
+Numerous research works have previously existed in the literature, which were based on the detection of inter-turn faults in the IM using various techniques and various aspects. Some of the works are reviewed here. For the fault diagnosis in the IM, a practical machine learning based fault diagnosis strategy was proposed by M. Ali et al. [10]. For feature extraction, the authors have utilized two signal processing techniques, such as matching pursuit (MP) and discrete wavelet transform (DWT). For IM's fault diagnosis, three classification algorithms, support vector machine (SVM), K-nearest neighbors (KNN), and an ensemble, with 17 different classifiers, are utilized. 
+To compute features for a specific fault, a novel curve-fitting procedure was created. For incipient fault diagnosis of the synchronous generator, a consolidated system of the Moth–Flame Optimization (MFO) algorithm and Fuzzy Logic Controller (FLC) was displayed by V. Boorgula et al. [11]. The inspiration for their work was different fault locations under healthy and unhealthy conditions. In their methodology, the MFO was utilized to gather the dataset from the input current signal. The FLC was utilized to diagnose the faults subject to the dataset. So as to assess the adequacy of the proposed technique, the incipient faults are dissected.
+For inverter-fed IM stator faults location under closed-loop control, an efficient methodology was proposed by E. Elbouchikhi et al. [12]. The symmetrical components (SCS) of the stator currents were utilized in the proposed conclusion approach. The maximum likelihood estimator (MLE) was utilized to assess the supply fundamental frequency and the three-phase phasors. For unbalanced fault detection, authors have utilized the Generalized Likelihood Ratio Test (GLRT) strategy. In three-phase IMs, the level of stator winding shorted turns was identified by neural networks as a productive diagnostic tool, which was exhibited by L. Maraaba et al. [13]. For the plan and training of the neural network, the mean, variance, max, min, and F120 time dependent on factual and frequency-related highlights were observed to be exceptionally particular for connecting the caught electromechanical torque with its corresponding level of shortened turns. To distinguish incipient stator winding inter-turn short-circuits in IM, P. Rebouças Filho et al. [14] have contributed a solid methodology. Various sorts of short-circuits in the generator were distinguished using a wind turbine test bench. To fabricate a fault database, the electrical current was measured. Here, the utilization of four feature extraction systems with three classifiers was utilized. For IM fault recognition, a novel radial flux sensing technique was shown by G. Surya et al. [15]. Serious research endeavors in the past have been centered around the flux signature analysis, as they have been increasingly proficient compared with classical motor current signature analysis (MCSA).
+2.1 Motivation for the Research Work
+The review of the ongoing research work shows that the detection of inter-turn insulation failure in the IM is a basic contributing part. In a mechanical plant, large amounts of electrical drives are present. Along these lines, in such an establishment, the strength of individual motor detection is huge. Diagnostics of faults is basic for keeping up a key separation from the cataclysmic impacts, for instance, unexpected failure of electric drive systems. Thusly, in the recognition of variations from the norm in motor, a precise demonstration of motor is the underlying advance. Considering the composition, distinctive fault identification procedures, for instance, neural networks (NNS), Generalized Likelihood Ratio Test (GLRT), Fast Fourier Transform (FFT), ETC. ANN has the limit of disentangling the observing and fault recognition issue of the motor any case, in the fault identification process, it does not provide a heuristic method. Regardless, in practical applications, the genuine weaknesses of artificial intelligence (AI) procedures are a black-box data processing structure and high computational cost. Furthermore, for different state conditions, the underlying training stage is an issue since it requires an extensive arrangement of stator current databases. For optimal operation, this stage is essential and may be conveyed limited game plan of systems. Nevertheless, one of the issues with FFT analysis and other frequency-domain approaches requires the frequencies of bearing deformity to be known or pre-evaluated. The other deficiency when the signal-to-noise ratio is low, there is an extended inconvenience in separating the vibration spectrum, and when the signal-to-noise ratio is high, then the vibration spectrum has innumerable parts. Regardless of the way that the above techniques are used for foreseeing the inter-turn faults, the algorithm unpredictability is high, a direct result of the extended number of tests required. To vanquish these troubles, an optimal detection and classification of faults using trend-setting innovation is required. In related works, few control methods are shown to identify and classify the inter-turn faults; the recently referenced confinements have led to this examination work.
+3 Proposed Methodology
+3.1 Operating Principles of Induction Motor
+The IMs involve the most significant spot in the protected and effective running of industrial plants and processes. In this motor, a rotating magnetic field is rendered by a three-phase power supply. The magnetic field offered in the IM is generated by the AC power provided to the stator of the motor that rotates in time with the AC oscillations. A rotor of the IM pivots at a slower speed than the stator field, while the synchronous rotor of the motor turns at a similar rate as the stator field. Hence, the magnetic field of the stator in the IM is changing or rotating with respect to the rotor. This invigorates the inverse current in the rotor of the IM; accordingly, the secondary winding of the motor is short-circuited or shut through outside impedance. The currents in the windings of the rotor, actuated by the rotating magnetic flux and the currents induced in secondary windings of the transformer both are comparable. In the rotor, the magnetic fields are made by the currents in the rotor windings, which respond to the stator field. The rotating stator magnetic field because of the reason for induced current in the rotor windings inverse the change in currents of the rotor-windings; the rotor will begin to rotate toward the rotating stator magnetic field. The rotor will accelerate until the connected load is adjusted by the magnitude of the induced rotor current and torque. The operation of the IM is slower than synchronous speed because of the nonappearance of induced rotor current since the rotation at synchronous speed. Subsequently, the mathematical formulation of the IM is depicted in the accompanying section.
+
+Figure 1: Operating Principles of Induction Motor
+3.1.1 Mathematical Modeling of Induction Motor
+The mathematical model of the IM is formulated through the equivalent circuit development of the IM. The equivalent circuit is modeled subject to the integrated structure of the stator and rotor circuit model. The stator circuit model is illustrated in Figure 2(a), a flux ∅𝑚 is stepped up when a voltage 𝑉1 is applied to the stator terminals. Along these lines, the electromagnetic flux (e.m.f) in the stator winding is induced by this flux. In the stator winding, the voltage drops 𝐼1𝑟1 and 𝐼1𝑥1 caused by the flow of current 𝐼1. The motor equation is estimated subject to the 𝐸1, 𝑉1, 𝐼1𝑟1 and 𝐼1𝑥1. The rotor circuit models are illustrated in Figure 2 (b and c). In this rotor circuit, an e.m.f 𝐸2 and flow of current 𝐼2 are both actuated by the mutual flux ∅𝑚. The rotor resistance and leakage reactance are both represented as 𝑟2 and 𝑥2 at stand still (i.e. s =1). The leakage inductance 𝑠𝑥2 is generated when the motor is operating at slips, which is shown in Figure 2(b). Though the elective rotor circuit model with mechanical load is illustrated in Figure 2(c), and the line frequency current in this model is represented as 𝐼2. 
+
+Figure 2: Development of equivalent circuit of 3-phase IM (a) stator circuit model, (b) and (c) rotor models 
+(d) complete equivalent circuit model
+The input 3-phase power supplied to an IM is estimated as follows, 
+  
+ (1)
+Where the per-phase value of the stator voltage is denoted as 𝑉1, as well as per-phase values of the current and stator power are represented as I1 and cos respectively. A portion of this power is involved in stator core losses and stator copper losses.      
+Stator copper losses are given by                     
+	 
+ (2)
+	
+ (3)
+Where the power transferred across the air gap to the rotor is represented as 𝑃𝑔. And, the mechanical power is developed, and 𝑃𝑚 is obtained after rotor copper losses are subtracted from 𝑃𝑔. Apart from 𝑃𝑚 of power output, 𝑃𝑜 is consumed as friction and windage and stray losses, and the remainder is the power output 𝑃𝑜.
+	
+ (4)
+Also,
+	
+(5)
+The rotor copper-loss is estimated as follows,
+	
+(6)
+The Rotor Copper-loss = s𝑃𝑔 is estimated from equations (4) and (6),
+	
+(7)
+ 
+(8)
+The frequency of the rotor current is low. In this manner, power loss is very small and thus negligible. In the motor, the electromechanical power conversion process develops the mechanical power, which is used to generate the torque T.  
+Thus, 
+      Or        
+(9)
+In the above equation, n = ns (1-s). The torque developed is proportional to the air gap power 𝑃𝑔. The torque estimated in synchronous watts is known as the air gap power 𝑃𝑔. The torque developed is acquired from this, if this power is partitioned by synchronous angular velocity 2𝜋𝑛𝑠. It very well may be determined from the following equation, 
+ 
+(10)
+Substitute equation (10) in equation (11),
+	
+(11)
+3.2 Formulation of Induction Motor with Stator Inter-Turn Insulation Faults
+In the IM, the stator inter-turn insulation fault is considered one of the possible frequent occurrences among the types of faults in the stator. This type of stator defect is caused during the gathering of stator coils in the assembling process, which causes low-quality material or errors. Due to these errors, the faults occur in the inter-turn insulation. Besides, when the motor is inactive or maintenance is available, there might be a defect in inter-turn insulation. The inter-turn insulation faults can begin imperceptible, nonetheless, during the motor's life expectancy; this can build up a short among a few turns of a similar phase or even extraordinary phases. The decision might probably not going to be conceivable, for example lack of phase, a short circuit between phases, short circuit involving earth. In this section, the mathematical model used for simulating IMs under stator inter-turn insulation faults is presented. The fault occurred in phase, as illustrated in Figure 3 is considered to derive the model.   
+
+Figure 3: Induction Motor with Inter-Turns Circuit Diagram
+	 
+  (12)
+In the above equation, the number of turns per phase of the stator and rotor is represented as  and . The number of shorted and unshorted turns is represented as  and . And, the coil’s resistance is directly proportional to the number of turns in the coil. The resistance of the shorted and unshorted parts of the phases in the stator is estimated using the following equation,
+ 	
+(13)
+	
+(14)
+Where the percentage of shorted turns is represented as , the stator resistance per phase is denoted as . Besides, since the relation between the inductance and the number of turns is squared, the motor inductance needs to be modified. The mathematical equations for the inductance motor under stator inter-turn insulation fault are given in the following section.
+	
+(15)
+ 
+(16)
+ 
+(17)
+	
+(18)
+	
+(19)
+ 
+(20)
+Where the stator qd0 voltages are denoted as ,  and respectively; the shorted winding voltage is represented as ; the stator qd0 currents are denoted as ,  and respectively; ,  and  are stator qd0 current referring to the stator side, respectively; the equivalent rotor resistance per phase is denoted as ; the stator qd linkage fluxes are expressed as  and  respectively;  and   and  are rotor qd linkage fluxes; the linkage flux for the shorted turns is denoted as ; ωr is the rotor speed; and rsqd0 is the stator resistance matrix in the qd0 frame. In the qd0 frame, the flux current is formulated using the following equation,
+ 
+(21)
+Where,
+ 
+(22)
+
+ 
+(23)
+
+	   
+(24)
+
+ 
+(25)
+
+ 
+(26)
+Where Lm is the mutual inductance; Lσs is the stator leakage inductance per phase; Lσr is the rotor leakage inductance per phase; Lrd is the rotor d-axis inductance, and Lrq is the rotor q-axis inductance. The mechanical speed and electromagnetic torque are expressed in Equation (27):
+ 
+(27)
+
+ 
+(28)
+Where Tem is the electromagnetic torque; Tmech is the load torque; Tdamp is the damping torque; J is the motor inertia; and ωr(t) is the rotor speed.
+3.3 Proposed Inter-Turn Insulation Faults Diagnosis Method in Induction Motor
+The proposed method for the detection and diagnosis of inter-turn insulation fault in the IM is illustrated in Figure 1. The main goal of the proposed approach is to detect and diagnose the inter-turn insulation fault in the IM while considering a variety of electrical characteristics, for example, voltage, current, torque, and speed. In this study, the proposed approach is the combined execution of both the GWO and RBFNN; due to this combination, the proposed approach is called a GWO-RBFNN technique. Here, the proposed method has two stages for detecting and diagnosing inter-turn insulation faults in the IM. In the initial stage, the required fault training dataset gathered by the GWO algorithm, as well as the first phase of the RBFNN, is used to detect and recognize the healthy and unhealthy motors under various conditions, whereas the second phase of the RBFNN is used to detect the correct inter-turn faults for protection. The proposed GWO-RBFNN method plays an evaluation process to protect the IM and detect the fault in the IM at the inception stage. The proposed GWO-RBFNN technique guarantees the system with less complexity for the detection and classification of the inter-turn insulation fault, and hence the accuracy of the system is raised. The detailed description of the proposed GWO-RBFNN approach is delineated in the following section.
+3.4 GWO Algorithm for Fault Dataset Generation
+The GWO algorithm is one of the latest bio-inspired algorithms that mimics the leadership hierarchy and hunting mechanism of grey wolves in nature. The grey wolf's behavior is stimulated to live in a pack, which is the main concept of this algorithm. They have a serious social dominant hierarchy. The leadership hierarchy is stimulated by the four types of grey wolves’ alpha (α), beta (β), delta (δ), and omega (ω). The fittest solution of α is used to design the mathematical formulation of the social hierarchy of wolves while designing GWO. Consequently, the β and δ are considered to determine the second and third best solutions, respectively. The rest of the candidate solutions are assumed to be omega (ω). Figure 5 shows the hunting behavior of the grey GWO algorithm. In the proposed approach, the GWO algorithm is used to generate the datasets of fault signals to identify healthy and unhealthy motors. The step-by-step process of the GWO algorithm is delineated in the following section.  
+Step-by-step process of GWO 
+Step 1: Initialization and Random generation (Encircling prey)
+In the initialization process, the grey wolves encircle the prey during the hunting process. In the proposed approach, the power values and the system constraints, such as voltage, speed, and torque, are initialized. The following equations are formulated to randomly generate the initialized parameters (encircling behavior).
+ 
+(29)
+ 
+(30)
+Where t is the iteration number,  is the random generation of power with respect to time during the occurrence of the fault. The vectors  and  are computed by the following equation,
+ 
+(31)
+ 
+(32)
+Where the randomly generated vectors  and  are generated between the range of [0, 1] and in the overall iterations, the value is decreased from 2 to 0. The vector  is generated between the ranges of [0, 2]. These ranges are used to compute the fitness solution. 
+Step 2: Fitness function Evaluation (Hunting)
+The possible fitness solutions (possible location of prey) are mathematically obtained by the alpha (α), beta (β), and delta (δ).
+According to the best solution, the initial three solutions are obtained so far and force the other search agents to update the best solution. The objective function of the proposed approach is given as follows,
+ 
+(33)
+ 
+(34)
+ 
+(35)
+Where,  and are the target and the actual power signal of IM,  is the voltage at a three-phase fault at the time ,  denotes the speed of the IM at time , and the torque produced at a time  is represented as .
+Figure 4: Proposed method for inter-turn faults diagnosis in an induction motor
+
+Figure 5: Hunting behaviour of grey wolves
+Step 3: Updating
+The final best solutionis updated in this step. The tradeoff between exploration and exploitation is controlled by the parameter, which is linearly updated to range from 2 to 0 in each iteration, which is estimated using the following equation,
+ 
+(36)
+Where t is the iteration number and Max iter is the total number of iterations. 
+Step 4: Termination
+After completing the process of the GWO technique, the dataset is determined. Once the process is completed, the healthy and unhealthy motors are identified subject to these datasets using the RBFNN technique. The detailed description of the RBFNN is delineated in the following section.
+3.5 Detection of the healthy and unhealthy motor using RBFNN
+The RBFNN is an artificial neural network that uses radial basis functions as activation functions. The RBFNN basically has three layers such as an input layer, a hidden layer with a radial basis function (RBF) activation function, and an output layer. A vector of real numbers is considered the input of the RBFNN. The inputs of RBF and neuron parameters are linearly combined to form the output of the network. RBFNNs have many uses, including function approximation, time series prediction, classification, and system control. In the proposed approach, the RBFNN is used to generate the diagnosis of the performance of the IM. Figure 6 shows the structure of the RBFNN. The step-by-step process of the RBFNN is delineated in the following section.
+
+Figure 6: Structure of RBFNN
+
+Step-by-step process of RBFNN
+Step 1: In this step, the weights of all the neurons are initialized; (i.e) squared error (SE), and the deviation of error DSE(t). 
+Step 2: The accompanying formulation is used to determine the backpropagation error (BPR) of the target.
+ 
+(37)
+Where  is the network target of the k-th node, and  is the current output of the k-th node
+Step 3: The current output of the network is computed in this step using the following equation,  
+ 
+(38)
+ 
+(39)
+The bias function of the radial bias function is computed as follows,
+ 
+(40)
+The k-th neuron of the hidden layer is computed as follows,
+ 
+(41)
+Where,  is the bias function of the node k,  is the weight of the k-th neuron,  is the response of the k-th neuron of the hidden layer,  is the center value of the p-th neuron,  and is the scalar factor.
+Step 4: This step computes the new best solution for all the neurons, which is given as follows,
+ 
+(42)
+
+Figure 7: Flowchart of the proposed GWO-RBFNN approach
+
+In the above equation ,  is the earlier weight,  is the difference in weight,  and is the Learning rate.
+Step 5: This step is used to minimize the BPR by reiterating the process from Step 2 until the smallest error value is reached.
+ 
+(43)
+Once the above-formulated steps are completed, the RBFNN is ready to diagnose the healthy and unhealthy signals of the motor based on the error value. Finally, by utilizing the proposed optimization strategy, it can provide the optimal control of IM.
+4 Simulation Results and Discussions
+In this section, the effectiveness and performance of the proposed method are described subject to the inter-turn insulation fault detection and diagnosis using the GWO-RBFNN technique. In this study, the generation of fault datasets and the diagnosis of inter-turn insulation faults are done by the proposed GWO and the RBFNN technique. The developed model of the IM is simulated under the healthy and unhealthy (inter-turn insulation fault) conditions (10% shorted turns) with a balanced three-phase power supply. The simulation results obtained from the proposed approach are compared with the existing techniques, such as the combined strategy of salp swarm optimization and recurrent neural network (CSSRN), Adaptive Neuro-Fuzzy Interference System (ANFIS), Recurrent Neural Network (RNN), and Salp Swarm Algorithm with Artificial Neural Network (SSAANN) strategies. The proposed GWO-RBFNN technique is executed in the MATLAB/Simulink working platform. The proposed work is carried out on an Intel Core2 Quad CPU Q6600 at a 2.40 GHz computer with 2 GB of random-access memory. The test experiments are analyzed by using MATLAB R2013a (8.1.0.604) 32-bit and Version 3.7.2.
+4.1 Simulation results for a healthy motor
+This section describes the simulation results of the IM with no inter-turn insulation fault (unshorted turns), which is illustrated in Figure 8, and this figure consolidates the pu developed stator current, stator voltages, and torque. The subplot 8(a) illustrates the pu current of the stator, which generates a maximum of 1 A current between the time intervals 0-0.02 sec. After that, the generated current is balanced till the end of the operation. The pu voltages of the stator in d-axis and q-axis are shown in subplot 8(b-c), and the maximum generated stator voltages are greater than 0.05 Vin on both axes. The subplot 8(d) illustrates the pu developed torque, which generates a maximum of 0.005 Te. All the above-mentioned current, voltages, and the torque of the stator winding in IM are generated between the time intervals of 0-0.2 sec. In this normal condition, all the current, voltages, and torque are balanced and in unity.
+
+Figure 8: Simulation results of the IM with unshorted turns (a) Stator current (b) Stator voltage Vd (c) Stator voltage Vq (d) Torque
+4.2 Simulation results for an unhealthy motor
+This section describes the simulation results of the IM with an inter-turn insulation fault (shorted turn) of phase ‘A’, phase ‘B’, phase ‘C’, phase ‘AB’, phase ‘BC’, and phase ‘ABC’ of the stator winding. In the shorted turn faulty condition, the winding function of the injured phase is changed when an inter-turn short circuit arises. During the occurrence of an inter-turn insulation fault, the winding function of the injured phase ‘A’ is illustrated in Figure 9, and this figure consolidates the pu developed stator current, stator voltages, and torque of phase ‘A’ stator winding of IM. Subplot 9(a) illustrates the three-phase stator current under an inter-turn insulation fault. The same figure shows that the inter-turn fault is generated between the time intervals of 0.09-0.12 sec, after that, it remains balanced. In this plot, the maximum generated current is 0.5 A. The subplot 9(b-c) illustrates the stator voltage in the d-axis and q-axis under an inter-turn insulation fault. As seen from this plot, the voltage signals are disturbed between the time intervals of 0.09-0.11 sec; after that, they remain balanced. The maximum voltages generated in the d and q axes are greater than 0.05 V. The pu developed torque of the stator winding under faulty conditions is shown in subplot 9(d). 
+
+Figure 9: Simulation results of the IM with inter-turn insulation fault in phase ‘A’ (a) Stator current (b) Stator voltage Vd (c) Stator voltage Vq (d) Torque
+The winding function of the injured phase ‘B’ is illustrated in Figure 10, and this figure consolidates the pu developed stator current, stator voltages, and torque of phase ‘B’ of the stator winding in IM. Subplot 10(a) illustrates the three-phase stator current under an inter-turn insulation fault. The same figure shows that the inter-turn fault is generated between the time intervals of 0.09-0.12 sec, after that, it remains balanced. In this plot, the maximum generated current is 1 A. The subplot 10(b-c) illustrates the stator voltage in the d-axis and q-axis under an inter-turn insulation fault. As seen from this plot, the voltage signals are disturbed between the time intervals of 0.09-0.11 sec, after that they remain balanced. The maximum voltages in the d and q-axis are greater than 0.05 V; both the voltage signals are balanced and unity after a particular time period. The pu developed torque of the stator winding under faulty conditions is shown in subplot 10(d). Initially, the peak level of the torque is less than 0.01 Te; after that, it is reduced.
+
+
+Figure 10: Simulation results of the IM with inter-turn insulation fault in phase ‘B’ (a) Stator current (b) Stator voltage Vd (c) Stator voltage Vq (d) Torque
+The winding function of the injured phase ‘C’ during the inter-turn insulation fault is illustrated in Figure 11, which includes the pu developed stator current, stator voltages, and torque of phase ‘C’ in the stator winding of IM. The subplot 11(a) illustrates the three-phase stator current phase ‘C’. Initially, the fault is generated between the time intervals of 0-0.03 sec, after that, it is balanced till 0.08 sec. Again, the inter-turn fault is generated between the time intervals of 0.08-0.13 sec, after that, it remains balanced. In this plot, the maximum generated current is 1 A. The subplot 11(b-c) illustrates the stator voltage in the d-axis and q-axis under an inter-turn insulation fault. As seen from this plot, from the time period of 0-0.09 sec, the signal is balanced and unity after that, the voltage signals are disturbed between the time intervals of 0.09-0.12 sec, then it remains balanced till the end of the operation. The maximum voltages generated in the d and q axes are greater than 0.05 V. The pu developed torque of the stator winding under faulty conditions is shown in subplot 11(d). The winding function of the injured phase ‘AB’ is illustrated in Figure 12, and this figure consolidates the pu developed stator current, stator voltages, and torque of phase ‘AB’ in the stator winding of IM. Subplot 12(a) illustrates the three-phase stator current under a shorted turn fault. This figure shows that the inter-turn fault is generated between the time intervals of 0.09-0.13 sec, after that, it remains balanced. In this plot, the maximum generated current is 1 A. The subplot 12(b-c) illustrates the stator voltage in the d-axis and q-axis under an inter-turn insulation fault. Initially, the voltage is balanced and unity till 0.09 sec, after that it is disturbed up to 0.12 sec, then the signal remains balanced and unity till the end of the operation. The pu developed torque of the stator winding in phase ‘AB’ is shown in subplot 12(d). Initially, the peak level of the torque is 0.005 Te; after that, it is reduced and remains constant till the end of the operation.
+
+Figure 11: Simulation results of the IM with inter-turn insulation fault in phase ‘C’ (a) Stator current (b) Stator voltage Vd (c) Stator voltage Vq (d) Torque
+The winding function of the injured phase ‘BC’ during the inter-turn insulation fault is illustrated in Figure 13, which includes the pu developed stator current, stator voltages, and torque of phase ‘C’ in the stator winding of IM. The subplot 13(a) illustrates the three-phase stator current phase ‘BC’. Initially, the ‘BC’ phase fault is generated between the time intervals of 0-0.01 sec; after that, it is balanced till 0.08 sec. Again, the fault is generated from 0.08-0.13 sec, after that, it remains balanced. In this plot, the maximum generated current is greater than 1 A. The subplot 13(b-c) illustrates the stator voltage in the d-axis and q-axis under an inter-turn insulation fault. In this plot, the signal is balanced and unity between the time periods of 0-0.09 sec, after that, the voltage signals are disturbed till 0.12 sec, then it remains balanced till the end of the operation. The maximum voltages generated in the d and q axes are greater than 0.05 V. The pu developed torque of the stator winding under the faulty condition in phase ‘BC’ is shown in subplot 13(d), and the maximum level of the torque is 0.005 Te.
+
+Figure 12: Simulation results of the IM with inter-turn insulation fault in phase ‘AB’ (a) Stator current (b) Stator voltage Vd (c) Stator voltage Vq (d) Torque
+
+Figure 13: Simulation results of the IM with inter-turn insulation fault in phase ‘BC’ (a) Stator current (b) Stator voltage Vd (c) Stator voltage Vq (d) Torque
+The winding function of the injured phase ‘ABC’ is illustrated in Figure 14, and this figure consolidates the pu developed stator current, stator voltages, and torque of phase ‘ABC’ in the stator winding of IM. In subplot 14(a), the stator fault is generated between the time intervals of 0.08-0.13 sec. In subplots 14(b) and 14(c), the fault is generated between the time intervals of 0.08-0.12 sec. The pu developed torque of the stator winding in phase ‘ABC’ is shown in subplot 14(d). The maximum torque level is 0.005 Te; after that, it is reduced and remains constant till the end of the operation.
+
+Figure 14: Simulation results of the IM with inter-turn insulation fault in phase ‘ABC’ (a) Stator current (b) Stator voltage Vd (c) Stator voltage Vq (d) Torque
+4.3 Performance Analysis
+This section analyzes the performance of the proposed GWO-RBFNN approach, which is compared with the existing techniques such as CSSRN, ANFIS, RNN, and SSAANN approaches to analyze the effective approach. To analyze the performance, the classification process is done subject to the true positive (TP), true negative (TN), false positive (FP), and false negative (FN) classes. The correctly labeled positive signals are known as TP. The correctly labeled negative signals are known as TN. The incorrectly labeled negative signals are known as FP. The incorrectly labeled positive signals are known as FN. The performance measures are utilized to evaluate the diagnosis results, and they are computed as follows,
+ 
+(44)
+ 
+(45)
+ 
+(46)
+ 
+(47)
+
+The performance comparison of the proposed method with the existing method during inter-turn insulation fault for 50 and 100 number of trials are delineated in Table 1, which includes the accuracy, specificity, recall, and precision. In 50 trials, the proposed method has an accuracy is 0.98, specificity is 0.94, recall is 1.53, and the precision is 0.9. In the above-mentioned existing method, the accuracy, specificity, recall, and precision ranges in ANFIS are 0.55, 0.5, 0.6, and 0.52, respectively. In RNN, the ranges are 0.75, 0.7, 0.8, and 0.82, respectively. In SSAANN, the ranges in accuracy, specificity, recall, and precision are 0.85, 0.8, 0.9, and 0.82, respectively. In CSSRN, the ranges in accuracy, specificity, recall, and precision are 0.95, 0.9, 0.1, and 0.9, respectively. In 100 trials, the proposed method has an accuracy is 0.93, specificity is 0.9, recall is 1.85, and precision is 0.98. In the above-mentioned existing method, the accuracy, specificity, recall, and precision ranges in ANFIS are 0.6, 0.53, 0.57, and 0.55, respectively. In RNN, the ranges are 0.7, 0.63, 0.6, and 0.65, respectively. In SSAANN, the ranges in accuracy, specificity, recall, and precision are 0.8, 0.75, 0.85, and 0.72, respectively. In CSSRN, the ranges in accuracy, specificity, recall, and precision are 0.9, 0.85, 0.8, and 0.95, respectively. Compared with the mentioned existing method, the proposed method performs very precisely and accurately.
+Table 1: Performance comparison of the proposed method with the existing method during inter-turn insulation fault for 50 and 100 trials.
+Performance Measures
+50 trials
+
+ANFIS
+RNN
+SSAANN
+CSSRN
+Proposed
+Accuracy
+0.55
+0.75
+0.85
+0.95
+0.98
+Specificity
+0.5
+0.7
+0.8
+0.9
+0.94
+Recall
+0.6
+0.8
+0.9
+1
+1.53
+Precision
+0.52
+0.72
+0.82
+0.9
+0.96
+
+100 trials
+Accuracy
+0.6
+0.7
+0.8
+0.9
+0.93
+Specificity
+0.53
+0.63
+0.75
+0.85
+0.9
+Recall
+0.57
+0.6
+0.85
+0.8
+0.85
+Precision
+0.55
+0.65
+0.72
+0.95
+0.98
+
+4.4 Statistical Evaluation
+To evaluate the overall system performance, the statistical measures such as (1) Root Mean Square Error (RMSE), Mean Absolute Percentage Error (MAPE), and Mean Bias Error (MBE) are computed. The overall classification efficiency of the proposed method is estimated subject to the error metric RMSE. A large deviation occurs in the diagnosis from the target value when the RMSE value is large. Likewise, the MBE error computation is used to estimate the average deviation of the system. The diagnosis is underforecasted when the value of the MBE is negative. As well as the accuracy of the overall system is computed, subject to the MAPE value. These error metrics are computed as follows,      
+ 
+(48)
+ 
+(49)
+ 
+(50)
+Where represents the target value, represents the detected value,  represents many samples per leaf, and is the total number of samples.
+Table 2: Statistical comparison of the proposed method with the existing method during turn insulation fault for 50 and 100 trials
+Metrics
+50 trials
+
+ANFIS
+RNN
+SSAANN
+CSSRN
+Proposed
+RMSE
+26.4
+18.9
+23.5
+10.3
+8.25
+MAPE
+17.2
+6.4
+13.0
+1
+0.97
+MBE
+7.1
+2.9
+5.1
+2.7
+1.37
+Consumption time (s)
+7.8
+6.5
+8.0
+5.2
+2.96
+
+100 trials
+RMSE
+29.4
+21.9
+26.5
+13.5
+9.38
+MAPE
+18.2
+7.4
+14.0
+2
+1.91
+MBE
+10.1
+5.9
+8.1
+5.7
+3.87
+Consumption time (s)
+8
+7
+8.3
+6
+2.98
+
+Table 2 shows the statistical analysis of the proposed method. Here, to evaluate the overall performance of the proposed method, the proposed GWO-RBFNN fault diagnosis approach is compared with the existing well-known classification approaches, such as ANFIS, RNN, SSAANN, and CSSRN. In 50 trials, the RMSE, MAPE, and the MBE range of the proposed method are 8.25 %, 0.97 %, and 1.37 % and the time consumption of the proposed method is 2.96 (s). In 100 trials, the RMSE, MAPE, and the MBE range of the proposed method are 9.38 %, 1.91 %, and 3.87 % and the time consumption of the proposed method is 2.98 (s). Compared with the existing approaches, the proposed method has fewer errors and a very small amount of consumption time.
+
+Figure 15: Fitness comparison of the proposed and the existing approaches
+Figure 15 shows the fitness of the proposed GWO-RBFNN method, which is compared with the existing technologies such as CSSRNN, SSAANN, RNN, and ANFIS. The fitness is executed subject to the equation (34). Here, which technique has the minimum fitness is considered the best technique. As per this, the proposed method has the minimum fitness (1.8) when compared with the other techniques. As seen from this, the proposed method performs very well to detect and classify the stator inter-turn insulation fault in the IM.
+5 Conclusion
+This study presents a hybridized GWO-RBFNN-based detection and diagnosis method for inter-turn insulation fault detection in the three-phase IM. In the proposed approach, the detection and classification of stator inter-turn insulation faults are the two main stages. The optimal dataset is generated by the GWO approach, as well as the shortened and the unshortened turns are classified by the RBFNN technique. The simulation analysis of the proposed method is tested under the healthy and unhealthy conditions of the motor. Utilizing performance measures such as accuracy, precision, recall, specificity, and the statistical measures such as RMSE, MAPE, MBE, and consumption time, the execution of the proposed technique is authenticated, and in addition, the proposed technique is compared with existing technologies such as ANFIS, RNN, CSSRN, and SSAANN techniques. The result obtained from the simulation analysis shows that the extreme occurrence of an inter-turn fault in the distribution system is detected accurately with the new optimal technique by utilizing the proposed methodology. Also, the proposed technique is effective in classifying the inter-turn fault with less computation and reduces the complexity of the algorithm.  
+Acknowledgement: Not applicable.
+Funding Statement: Not applicable.
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, methodology and writing—original draft preparation: Niranchana Radhakrishnan; supervision and writing: C. Viji; review and editing: Balusamy Nachiappan. All authors reviewed the results and approved the final version of the manuscript.
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present study.
+References
+    1. Nandi S, Toliyat HA, Li X. Condition monitoring and fault diagnosis of electrical motors—A review. IEEE Trans Energy Convers. 2005;20(4):719-29. 
+    2. Haji M, Toliyat HA. Pattern recognition-a technique for induction machines rotor broken bar detection. IEEE Trans Energy Convers. 2002;16(4):312-7.
+    3. Seera M, Lim CP, Ishak D, Singh H. Fault detection and diagnosis of induction motors using motor current signature analysis and a hybrid FMM–CART model. IEEE Trans Neural Netw Learn Syst. 2011;23(1):97-108.
+    4. Eren L, Devaney MJ. Bearing damage detection via wavelet packet decomposition of the stator current. IEEE Trans Instrum Meas. 2004;53(2):431-6.
+    5. Mirafzal B, Demerdash NA. On innovative methods of induction motor inter-turn and broken-bar fault diagnostics. In IEEE International Conference on Electric Machines and Drives, 2005; 2005 May 15, San Antonio, TX, USA; 2005. p. 762-769.
+    6. Karaboga D, Kaya E. Adaptive network based fuzzy inference system (ANFIS) training approaches: a comprehensive survey. Artif Intell Rev. 2019;52(4):2263-93.
+    7. Ballal MS, Khan ZJ, Suryawanshi HM, Sonolikar RL. Adaptive neural fuzzy inference system for the detection of inter-turn insulation and bearing wear faults in induction motor. IEEE Trans Ind Electron. 2007;54(1):250-8.
+    8. Zidani F, Diallo D, Benbouzid ME, Naït-Saïd R. A fuzzy-based approach for the diagnosis of fault modes in a voltage-fed PWM inverter induction motor drive. IEEE Trans Ind Electron. 2008;55(2):586-93.
+    9. Joksimovic GM, Penman J. The detection of inter-turn short circuits in the stator windings of operating motors. IEEE Trans Ind Electron. 2000;47(5):1078-84.
+    10. Ali MZ, Shabbir MN, Liang X, Zhang Y, Hu T. Machine learning-based fault diagnosis for single-and multi-faults in induction motors using measured stator currents and vibration signals. IEEE Trans Ind Appl. 2019;55(3):2378-91.
+    11. Boorgula V, Tulasi Ram SS. Incipient Fault Diagnosis in Stator Winding of Synchronous Generator: A CMFFLC Technique. IETE J Res. 2019;65(5):667-78.
+    12. Elbouchikhi E, Amirat Y, Feld G, Benbouzid M. Generalized likelihood ratio test-based approach for stator-fault detection in a PWM inverter-fed induction motor drive. IEEE Trans Ind Electron. 2018;66(8):6343-53.
+    13. Maraaba L, Al-Hamouz Z, Abido M. An efficient stator inter-turn fault diagnosis tool for induction motors. Energies. 2018;11(3):653.
+    14. Rebouças Filho PP, Nascimento NM, Sousa IR, Medeiros CM, De Albuquerque VH. A reliable approach for detection of incipient faults of short-circuits in induction generators using machine learning. Comput Electr Eng. 2018;71:440-51.
+    15. Surya GN, Khan ZJ, Ballal MS, Suryawanshi HM. A simplified frequency-domain detection of stator turn fault in squirrel-cage induction motors using an observer coil technique. IEEE Trans Ind Electron. 2016;64(2):1495-506.

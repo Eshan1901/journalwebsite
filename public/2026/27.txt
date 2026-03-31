@@ -1,0 +1,265 @@
+﻿
+ARTICLE
+Dimensionality Reduction and Bee Colony Based Fuzzy Segmentation for Leaf Images Detection
+R. Saravana Prabhu1,*, R. Kausalya2, P. Vadivelmurugan3, and Swamynathan Ramakrishnan4
+1Assistant Professor, Department of Computer Science, NMS S. Vellaichamy Nadar College, Nagamalai, Madurai, Tamilnadu, India.
+2Assistant Professor, Department of Mathematics, NMS S. Vellaichamy Nadar College, Nagamalai, Madurai, Tamilnadu, India.
+3Assistant Professor, Department of Computer Science, MKU Day College, Alagar Kovil Road, Madurai, Tamilnadu, India.
+4Amity Business School, Amity University, Dubai.
+*Corresponding Author: R. Saravana Prabhu. Email: r.saravanaprabu@gmail.com 
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025
+ABSTRACT: Detection of diseases from plant leaves is an emerging field in India. It is important in the agriculture sector in the economy and in social life. So, the reliable detection and identification of plant disease and plant stress are current challenges in agriculture. This work introduces a dimensionality reduction and classification method for leaf images. Improved Singular Value Decomposition (ISVD) is proposed for dimensionality reduction of the features from leaf images. The proposed ISVD algorithm aims to find the reduced matrix by pulling the data points in the same class as close as possible, while pushing the data points in different classes as far as possible. The approach will first preprocess the leaves' images of plants; then Gaussian Mixture Model (GMM) is proposed for background subtraction. The disease parts are segmented using optimization-based fuzzy segmentation methods. After the segmentation of the disease parts, vein features, shape features, edge features, and Haar-like-based texture features are extracted from the segmented images. Finally, it will detect the leaf diseases of plants using a Multiple Kernel with Parallel Deep Learning (MK-PDL) classifier.
+KEYWORDS: Leaf disease, optimization-based fuzzy segmentation, Gaussian Mixture Model, Improved Singular Value Decomposition, Texture characteristics, Haar-like features, Multiple Kernel with Parallel Deep Learning classifier.
+
+1 Introduction
+Plants are the key factor for the survival of life on Earth. Plants play an important role; without plants, there would be the existence of the ecology on Earth. As plants are essential for natural security, it is more vital to distinguish and characterize them precisely [1]. Categorization of plants has a wide usage forthcoming in horticulture and medicine, and is particularly critical to the science of various qualities. The world bears thousands of plant species, many of which have medicinal values; others are close to extinction, and still others are harmful to man. Not only are plants an essential resource for human beings, but they form the base of all food chains. Herbal medicines are gaining popularity worldwide as they are safe for human health and affordable. The World Health Organization (WHO) estimates that 80% of people in Asia and Africa rely on herbal medicines for some aspects of their primary health care. There are diverse medicinal plant varieties in the lush forests of Southern India, which are used as medicines for a number of sicknesses like common cold, allergies, etc. [2]. 
+Many plants are rich in medicinal values and contain active ingredients for medicinal use. Because of factors such as global warming, increasing population, professional secrecy, lack of Government support for research activities, and lack of awareness about plants, many useful plant species are now becoming extinct and are being destroyed. According to the World Health Organization (WHO), 65% to 80% of the world population currently uses plants as remedies for various diseases. Diseases in plants cause major production and economic losses in the agricultural industry worldwide. In India, 70% of the population depends on agriculture. Farmers have a wide range of diversity to select suitable Fruit and Vegetable crops. However, the cultivation of these crops for optimum yield and quality produce is highly technical. It can be improved with the aid of technological support. The management of perennial fruit crops requires close monitoring, especially for the management of diseases that can affect production significantly and subsequently the postharvest life. Monitoring of health and detection of diseases in plants and trees is critical for sustainable agriculture [3].
+Disease is caused by a pathogen, which is any agent causing disease. In most of the cases, pests or diseases are seen on the leaves or stems of the plant. Therefore, identification of plants, leaves, stems, and finding out the pest or diseases, percentage of the pest or disease incidence, and symptoms of the pest or disease attack, plays a key role in the successful cultivation of crops. It is found that diseases cause heavy crop losses amounting to several billion dollars annually. Most diseases are seen on the leaves or stems of the plant. Precise quantification of these visually observed diseases, pests, and traits. The large number of leaf types now makes the human being face some problems in the specification of the use of plants. The first step to know the use of a plant is the identification of the plant leaf [6]. The proper identification of plant species has major benefits for a wide range of stakeholders, ranging from forestry services, botanists, taxonomists, physicians, pharmaceutical laboratories, organizations fighting for endangered species, the government, and the public at large [4].
+Disease management is a challenging task. Plant diseases have turned into a dilemma as they can cause a significant reduction in both the quality and quantity of agricultural products. Hence, there has been an increasing demand for more specific and sophisticated image pattern understanding. In biological science, sometimes thousands of images are generated in a single experiment. These images can be required for further studies, such as classifying lesions, scoring quantitative traits, calculating the area eaten by insects, etc. Almost all of these tasks are processed manually or with distinct software packages. It is not only a tremendous amount of work but also suffers from two major issues: excessive processing time and subjectiveness rising from different individuals. Hence, to conduct high-throughput experiments, plant biologists need efficient computer software to automatically extract and analyze significant content. In leaves recognition research, a lot has been done about general features extraction or recognition between different classes of objects. In the case of specific domain recognition, taking into account the unique characteristics that belong to this category improves the performance of the system. Despite the high technical aspect of this project, dealing with leaves gives a biological connotation. A very basic knowledge of leaves has to be learned, and knowing the perspective of how biologists themselves recognize a leaf is and add on. Biologists also emphasize the importance of leaves; indeed, their size, their shape, and their disposition can vary greatly and be a good means for differentiating similar blooms. The disposition of the leaves on the stem can be alternate, opposed, or whorled as illustrated. The venations of the leaf can be of different types; there are leaves with dichotomous, parallel, palmate, and pinnate nerves [5].
+The naked eye observation of experts is the main approach adopted in practice for the detection and identification of plant diseases. Therefore, plant identification is a very important and challenging task. With the rapid progress of information technologies, many works have been dedicated to applying the technologies of pattern recognition and image processing to plant identification. To use and protect plant species, it is crucial to study and classify plants correctly. Identifying unknown plants relies heavily on the inherent knowledge of an expert botanist. But this requires continuous monitoring of experts, which might be prohibitively expensive in large farms. Further, in some developing countries, farmers may have to go long distances to contact experts, which makes consulting experts too expensive and time-consuming, and moreover, farmers are unaware of non-native diseases. 
+Automatic detection of plant diseases is an important research topic as it may prove beneficial in monitoring large fields of crops, and thus automatically detect the diseases from the symptoms that appear on the plant leaves. This enables machine vision that provides image-based automatic inspection, process control, and robot guidance. Comparatively, visual identification is labor-intensive, less accurate, and can be done only in small areas. This is a lengthy process and consumes more time to identify plant species because one plant may have similar kinds of morphological features to another plant. Incorrect identification will create a bad impression about Ayurvedic medicines and produce unexpected side effects in human beings. It is difficult for a person to remember the names of every medicinal plant; hence, it is essential to build an automatic identification and classification system for greater benefit. Precise identification of the respective plant leaf is vital in treating the patients. Thus, the work explores the use of texture features to identify the appropriate medicinal leaves automatically [6].
+To recognize and classify unhealthy regions of plant leaves, an automated system has been implemented. Systems developed so far use a varying number of steps to automate the process of automatic classification, though the processes are quite similar. Essentially, these steps involve preparing the leaves collected, undertaking some pre-processing to identify their specific attributes, classification of the leaves, populating the database, training for recognition, and finally evaluating the results. Although leaves are most commonly used for plant identification, the stem, flowers, petals, seeds, and even the whole plant can be used in an automated process. An automated plant identification system can be used by non-botanical experts to quickly identify plant species quite effortlessly.
+In today’s era, the automatic identification and classification of plant diseases is an active research area in the field of image processing. Feature extraction and classification are the main steps in the identification of plant diseases and the classification process, which affect the overall accuracy of the classification system [7]. This work presents a novel method for image processing techniques used in the identification and classification of diseases in leaf and protects plant species effectively.
+2 Related Works
+Gao et al [8] proposed a relatively accurate method of segmenting the leaf images of medicinal plants with complex backgrounds. By combining the foreground and background markers, adopt the marker-based watershed segmentation method to obtain the correct segmentation result. As shown, the method leads to a better result in five indexes, like Precision and Recall, and is one of the reported methods. Dey et al [9] implemented an Otsu thresholding-based image processing algorithm for the segmentation of leaf rot diseases in betel vine leaves. The proposed method was successfully applied to twelve leaf images with very high precision. The proposed scheme will be helpful in the diagnosis of leaf disease. The methodology uses a blend of machine vision and machine intelligence for precision agriculture. Towards agriculture and growing this medicinally valued precious plant species, to boost the national economy as well as the national employment generation through proper exploitation of the betel vine crop. 
+Landge et al [10] proposed and experimentally evaluated a software solution for automatic detection and classification of plant diseases through Image Processing. The proposed Algorithm was tested on various diseases which influence on the plants; they are Stem borer, Brown stripe downy mildew, etc. The experimental results show that this algorithm will work. An extension of this work will focus on developing algorithms such as genetic algorithms and NNs to increase the recognition rate and severity of the detected disease. Athanikar et al [11] described Neural Network (NN) based detection and classification of Potato leaf samples using Segmentation of K-Means Clustering. The texture features are extracted from the Gray Level Co-Occurrence Matrix (GLCM). A back-propagation neural network (BPNN)-based classifier is used to identify and classify the unknown leaf, whether it is healthy or diseased. If the leaf is diseased, then classify the disease by giving a description (name, cause, pesticides). Classification accuracies of over 92% are obtained for all the leaf samples (healthy and diseased) using all three feature sets. 
+Anami et al [12] described a proposed multilayered back propagation neural network (BPNN) is adopted which uses the combination of color and texture features to recognize and classify different agricultural/horticultural produce. The proposed approach can significantly support in recognizing normal and affected produce. The number of neurons in the input layer corresponds to the number of input features, and the number of neurons in the output layer corresponds to the number of classes. The classifier is trained, validated, and tested using images of different agricultural/horticultural produce.
+Wang et al [13] proposed a deep learning approach to automatically discover the discriminative features for fine-grained classification, which enables the end-to-end pipeline for diagnosing plant disease severity. The fine-tuned model performs best, achieving an accuracy of 90.4% on the test set, demonstrating that deep learning is a new, promising technology for fully automatic plant disease severity classification. Qin et al [14] explained a lesion image segmentation using the methods integrating with clustering algorithms and supervised classification algorithms, feature extraction of lesion images, feature normalization, and feature selection were conducted. In addition, after the 45 features used for building the model were transformed using PCA, the disease recognition semi-supervised models were constructed using a self-training algorithm based on Naive Bayes classifiers.
+Fine-tuning has not shown significant changes in the overall accuracy, but the augmentation process had a greater influence on achieving respectable results. Mohanty et al [15] examined a deep convolutional neural network architecture, trained a model on images of plant leaves to classify both crop species and the presence and identity of disease on images that the model had not seen before. This presents a clear path toward Smartphone-assisted crop disease diagnosis on a massive global scale. 
+3 Proposed Methodology
+In this section, the overall process of the proposed MK-PDL classifier-based plant leaf classification has been discussed. The overall process of the proposed MK-PDL is illustrated in Figure 1. 
+
+Figure 1: Overall process of the proposed MK-PDL-based plant leaf image classification
+In this process, first, the plant leaf image is considered as an input. Then, the background subtraction is applied for these input images by using GMM to improve the segmentation accuracy. Furthermore, the disease-based leaf part is segmented by using a bee colony-based fuzzy clustering scheme. Then, the multiple features like vein features, shape features, edge-based feature, Haar-like features, and Texture characteristics (TF) of leaf images of the plants are to be extracted effectively. After that, the Improved Singular Value Decomposition (ISVD) is proposed for dimensionality reduction of the features. Finally, MK-PDL classifier is proposed to realize the detection of a disease leaf effectively.
+3.1 Background Subtraction using GMM
+The difference and change in the environment make the task of background (BG) subtraction a challenging problem. Some problems in the background subtraction task are the change of illumination of the environment, rippling water, and waving trees. In the waving trees, for example, it is hard to determine whether a falling leaf can be categorized as a foreground (FG) or background. In the Gaussian Mixture Model (GMM), every pixel in a frame is modelled as a Gaussian distribution.
+3.2 Segmentation using bee colony-based fuzzy clustering
+In this study, the Bee Colony (BC) is a novel optimization algorithm with fuzzy clustering. In this manner, the clustering algorithm can have strong global searching ability. The bee colony optimization is inspired by the natural behavior of honey bees in their search process for the best food sources. In groups of insects that live in colonies like the ants and bees, an individual can do simple tasks on its own, while the cooperative work of the colony is the main reason determining their intelligent behavior. A colony of artificial bees in the BC algorithm contains three groups of bees: employed, onlooker, and scout bees. Employed bees carry with them information about their food sources, their distance and direction from the nest, and the nectar amount of the source; scout bees are searching the environment surrounding the nest for finding new food sources; and onlooker bees wait in the hive and find a food source through the information shared by employed bees. In BC, two key behaviors are defined: recruitment to a nectar source and abandonment of a source. The search process to discover the best solutions by the artificial bees can be summarized as follows:
+1. Initialize the bee colony , where n denotes the population size, xi is then it bee. 
+2. According to the fitness function, calculate the fitness few of each employed bee xi, and record the maximum nectar amount as well as the corresponding food source.
+3. Each employed bee produces a new solution view in the neighborhood of the solution in its memory by
+,
+where k is an integer near to me, k , and is a random real number in [−1, 1]. 
+4. Use the greedy criterion to update . Compute the fitness of. If  is superior to,  is replaced with;  otherwise  remained. 
+5. According to the fitness I of , get the probability value Pi via formulas (1) and (2). 
+  
+ (1)
+  
+ (2)
+6. Depending on the probability Pi, onlookers choose food sources, search the neighborhood to generate candidate solutions, and calculate their fitness. 
+7. Use the greedy criteria to update the food sources. 
+8. Memorize the best food source and nectar amount achieved. 
+9. Check whether there are some abandoned solutions or not. If true, replace them with some new randomly generated solutions by 
+xi = min + (max−min) × rand()
+where rand is a random real number in [0, 1], min and max stand for lower and upper bounds of possible solutions respectively. 
+10. Repeat steps (3) –(9), until the maximum number of iterations (Kmax) is reached or stop conditions are satisfied.
+3.3 Fuzzy Clustering Algorithm
+The FCM algorithm is an improvement of earlier clustering methods. The objective function of the FCM algorithm is defined as the sum of distances between the patterns and the cluster centers:
+  
+ (3)
+where C is the number of clusters, which in this problem is equal to the number of needed segmentation regions. The Vj represents the center of cluster j; M is the number of leaf image pixels; the parameter q is larger than 1, and adjusts the fuzzifier intensity; Uij is the membership function of attribute xi to cluster j, which should satisfy these conditions:
+  
+ (4)
+In Eq. 4, the d (xi, vj) measure of dissimilarity between xi and vj. The popular selection d (xi, vj) is:
+  
+ (5)
+Here Wf is a positive symmetric definite matrix. In order to optimize Eq. 5, the gradient descent can be used.
+  
+ (6)
+And, the cluster center Vj is defined as:
+  
+ (7)
+Note that leaf images are gray-scale images, so the dimension of feature vectors is equal to one. The FCM algorithm can optimize the objective function J interactively using Eq. 6 and 7. To terminate this process, an ending criterion  can be used.
+3.4 Bee colony based Fuzzy clustering algorithm
+In clustering problems, often the number of clusters is pre-known information. In disease leaf images, typically clusters are four clusters: background, GM, WM, and CSF. However, since the intensity values of background and CSF are nearly the same, they are usually considered a region; so the number of clusters is reduced to three. A noise probability is introduced for each pixel within the image; the pixels are classified according to their noise probability by using a simple noise threshold into two groups: Normal and Noisy. The noise probability of study pixel g is defined as:
+  
+ (8)
+Where Ig is the intensity of study pixel g, M(In1) is the mean of the intensities of the pixels that are in the first level of neighborhood of study pixel; M(In2) and M(In3) are mean of the intensities of the second and third level, respectively (Fig. 1).
+  
+ (9)
+Note that () and () respectively represent the coordinates of the study pixel and the neighbor pixel k. Note that for first-level pixels, Neighborgk=1, for second-level Neighborgk=2, and for third-level Neighborgk=4. The neighbors of the study pixel with coordinate (i,j) are shown in Fig. 2.
+
+Figure 2: The neighborhood structure of the study pixel within (i,j)
+Next, introduce also a noise threshold (called λ) valued between 0~1. All pixels are compared with this threshold; if  it means that the study pixel g is a noisy pixel, then pixel g is a normal pixel. The optimal value for λ is calculated by bees. Finally, introduce a modified intensity (ModiI) matrix for the image, which is used for clustering.
+  
+ (10)
+  
+ (11)
+As noted above, the interval change of the λ is between 0~1; the obtained accuracy of the algorithm is based on the number of decimal digits of this parameter. In each iteration, two intervals are defined as a neighborhood for the employed bees to increase the search accuracy. In this manner, the neighborhood area for the λ for each bee is in the far vicinity up to two decimal places and for the close vicinity up to four decimal places. So the output response accuracy is controllable based on the number of decimal digits or by modifying the neighborhood area for the employed bees. In fact, with the development of the neighborhood area, we tried to achieve higher accuracy and a higher response rate. 
+The basic process begins with generating several k artificial employed bees, which are then searching randomly in the search space; these bees perform many iterations. During every iteration t, each bee selects the λ according to its nectar amount. The nectar amount of a food source corresponds to the quality of the solution represented by that source searched by the bee. At first, the early population of bees that consists of employed bees will constitute. The initial population searches randomly in the search space. In the beginning total search space has the same value for all bees, and recruitment operations would not be made in this stage. After finishing the initial search, the information obtained from the search space is considered as a food source, and the operation of sharing information begins in the hive space. The chance for selecting a bee as a scout bee by onlookers is computed by:
+  
+ (12)
+Where is the nectar amount within the food source k, and is the total amount of nectar available around the hive. In addition to the points mentioned in the Bee colony algorithm, another parameter is used to avoid being trapped in a local minima area, which increases the speed of this algorithm. Regarding this parameter, the growth rate of a food source is surveyed. This growth rate reviews the changes; if the current changes with respect to previous changes are in the lack of any positive changes in several iterations, it reduces the number of recruitments to search for this specific food source and avoid to search ineffective in a local minima point. The way that is used in our algorithm for recruitment is such that selecting the number of soldiers is based on the optimization of the solutions in each iteration. For the solution that has a better cost, fewer soldiers are used. The number of soldiers for each scout bee is determined as:
+  
+ (13)
+Where is the percentage of soldiers that are selected for the i-th scout bee,  is the preference of the i-th scout bee, and H is the number of all scout bees. The μ is a parameter that has a constant value or changes iteratively; this approach leads to avoiding being trapped in local minima. 
+
+Figure 3: The overall flow chart for the proposed BC-based clustering algorithm
+The overall search process to discover the best value for λ and achieve efficient disease leaf image segmentation can be seen in the flow chart of Fig. 3.
+3.5 Feature extraction
+Leaf feature extraction is not only the foundation of the medicinal plants classification but also the key component of the experiment. Also, extract the vein features, shape features, edge-based feature and texture features of the leaf image based on their difference among various medicinal plants and discuss the detailed extraction method.
+3.6 Vein feature
+Vein features can be extracted by using morphological opening. 
+3.7 Shape features
+Two kinds of shape features used in the identification system are geometric features and Fourier descriptors of Polar Fourier Transform (PFT). 
+3.8 Edge-based feature 
+To extract the edge features from the leaf, first extract the edges from the leaf image and then extract the three kinds of features from the image. In the present approach, it is used for extracting the edges from the image. 
+3.9 Canny Edge Detection
+A significant local change or discontinuity in the image intensity is called an edge. Discontinuities in the image intensity can be either step discontinuities or line discontinuities. Smooth and thin edges are extracted by using canny edge detector. In canny, edges are detected using double thresholding and smoothed by a Gaussian by computing the gradient magnitude using approximations of partial derivatives. The thin edges are extracted by applying non-maxima suppression to the gradient magnitude. 
+3.10 Texture feature
+The different Texture features, namely, Grey-level co-occurrence matrix features, are briefly presented in this section. Geometric features that are commonly used in leaf recognition are slimness and roundness. 
+3.11 Grey Textures 
+One of the simplest texture descriptors is the first-order statistical central moments, which are also referred to as gray-level features. They include mean, variance, skewness, and standard deviation. First-order features do not take the relative layout between gray values into account. 
+3.12 Haar-like feature
+Haar-like features or rectangular filter Haar provide information about the distribution of the gray levels of two adjacent regions in an image, fig.4.
+
+Figure 4: Integral image of the Haar-like features
+The first step in calculating Haar features is the use of the concept of the integral image, Eq. 1, which gives a representation of an input image and reduces the computation time of these features. The speed of the integral image in the calculation shows a rectangular sum using only four references, then the difference between two adjacent rectangles can be calculated with only six references, and eight for three rectangles.
+  
+ (14)
+ With  is the integral image,  is the original image. Then the use of the two equations allows calculation of Haar windows at various scales in an image:
+  
+ (15)
+  
+ (16)
+With denotes the cumulative sum of the line and . The regions within these rectangular features have the same size, shape, and are horizontally or vertically adjacent. The value of a two-rectangle feature (Feature 1 and Feature 2) is the difference between the sum of variance values within two rectangular regions. A three-rectangle feature (Feature 3) computes the sum of variance values within two outside rectangles, subtracted from the sum of variance values in a center rectangle. And a four-rectangle feature (Feature 4) computes the difference of the sum of variance values between diagonal pairs of rectangles. The processing time of feature calculation is very important for real-time face detection. The next section will describe a fast method for feature calculation using the integral and squared integral image. We can obtain the values of Variance based Haar-Like feature at any position in an image.
+3.13 Dimensionality Reduction by Singular Value Decomposition (ISVD)
+Improved Singular Value Decomposition (ISVD) is an important linear algebra tool, which is often used in image compression, digital watermark and other signal processing fields. A digital image can be composed of many matrices of non-negative scalars from the aspect of linear algebra. Suppose A∈ RM ×N stands for an image matrix, and each matrix A∈ RM ×N can be decomposed as the product A= U Σ VT of three matrixes, where U, V is an orthogonal matrix, UTU = I, VTV= I, is called as the singular value of A; the column of U is referred to as left singular vector of A; the column of V is referred to as right singular vector of A; the decomposition process is called singular value decomposition, which can be expressed as the following:
+  
+ (17)
+Where r is the rank of A. 
+The singular value decomposition of digital images has the following features from the aspect of linear algebra: 
+(1) The singular value of images is stable. The singular value changes little when a small disturbance is applied. 
+(2) The singular value corresponds to the brightness feature of images, while the singular vector pair represents the geometrical feature of images. What the singular value represents is the connotation feature of images, but not the visual features. It shows the relationship between image and matrix elements.
+ (3) The first singular value of the decomposed singular value sequence is much greater than the values of the others. The quality of images reconstructed by taking out those elements with small singular values does not degenerate.
+3.14 Classification using Multi Kernel with Parallel Deep Learning (MK-PDL)
+First, perform feature extraction and then feed the results thereof into a trainable MK-PDL classifier. For the resulting feature extractor, prove a translation invariance result of vertical nature in the sense of the features becoming progressively more translation-invariant with increasing network depth, and establish deformation sensitivity bounds. Most of the current deep learning architectures consist of learning layers of RBMs or Auto-Encoders, both of which are 2 layer neural networks that learn to model their inputs. RBM models their inputs as a probability distribution, whereas Auto-Encoders learn to reproduce inputs as their outputs. RBM is a two-layer undirected neural network consisting of a visible layer and a hidden layer. There are no connections within each layer, but connections run from visible to hidden. It is trained to maximize the expected log probability of the data. The inputs are binary vectors, as it learns Bernoulli distributions over each input. The activation function is computed the same way as in a regular neural network, and the logistic function is usually used, which is between 0 and 1. The output is treated as a probability, and each neuron is activated if activation is greater than a random variable. The hidden layer neurons take visible units as inputs. Visible neurons take binary input vectors as initial input and then hidden layer probabilities.
+A neural network consisting of multiple layers of sparse autoencoders is mainly used as an unsupervised feature extraction method that automatically learns from unlabelled data. The output of each layer is wired to the inputs of the succeeding layer. Having a trained autoencoder essentially refers to estimating optimal parameters by reducing the divergence between input and output. An example autoencoder is illustrated in Figure 5. The mapping between input and output is given following equations:
+  
+ (18)
+  
+ (19)
+  
+ (20)
+where M is an activation using the sigmoid logistic function.
+The final expression can be shown as follows:
+  
+ (21)
+
+Figure 5: Visible and hidden layers in an RBM
+The discrepancy between the input and output is defined by using a cost function. This functions’ first term refers to the MSE, whereas the second one is the regularization term. Different algorithms are preferred to solve the optimal parameters of the network. In the training phase, the hidden layer probabilities h are computed from inputs v. Those values are passed down to the visible layer, and back up to the hidden layer to get v’ and h’. The weights are updated using the differences in the outer products of the hidden and visible activations between the first and second passes. To approach the optimal model, a vast number of passes are needed, so this approach provides proximate inference, but it works well in practice. After training, the hidden layer activations of an RBM can be used as learned features.
+3.15 Parallel Training
+When it is not possible to store the whole data set or a model on a single machine, it becomes necessary to store the data or model across multiple machines.
+ Data parallelism: Data is distributed across multiple machines. This can be used in case the data is too large to be stored on a single machine or to achieve faster training. 
+ Model parallelism: If the model is too big to fit into a single machine, it can be split across multiple machines. For example, a single layer can be fit into the memory of a single machine, and forward and backward propagation involve communication of output from one machine to another serially. We resort to model parallelism only if the model cannot be fit into a single machine, and not so much to speed up the training process.
+
+3.16 Multi Kernel (MK) function
+The choice of kernel function is the core problem of PDL theory; so far, there is no perfect theory to construct the most suitable kernel function. However, the selection of the kernel function directly determines the structure of the feature space. When establishing the model, the RBF (i.e., Radial Basis Function) kernel is often used because the RBF kernel is a nonlinear kernel, which can deal with nonlinearities. RBF kernel has only one parameter, when  lead to over learning. When  it cannot learn from the data set. So the learning ability of the RBF core decreases with the increase of s. Any continuous function can be approximated by a polynomial; any continuous, differentiable, periodic function can also be expressed by the expansion of the Fourier series. The generalization ability of the polynomial kernel function is stronger, and the generalization ability is enhanced with the decrease of the order number. 
+In MK function, the Gaussian, RBF, polynomial, and mixed kernels are used for PDL evaluations.
+Gaussian kernel:        
+ (22)
+RBF kernel:     
+ (23)
+Polynomial kernel:    
+ (24)
+In summary, the RBF kernel and polynomial kernel have their own characteristics. Two angles of learning ability and generalization ability to build a new mixed kernel function established by using the convex combination of RBF kernel and polynomial kernel based on the principle of kernel function construction. The new mixed kernel function is as follows:
+
+ (25)
+This new kernel function has four parameters to consider: d of the Polynomial kernel function, s of the RBF kernel function, weight coefficient m, and Penalty Coefficient C.
+4 Results and Discussion
+In this section, the proposed MK-PDL-based leaf image classification performance has been evaluated, and the performance results are compared with existing SVM, Probabilistic Neural Network classifier (PNN), and MK-PSVM. The simulation results are evaluated by using MATLAB. The performance is measured in terms of accuracy, specificity, sensitivity, precision, recall, and f-measure.
+4.1 Dataset description
+Also analyze 54,306 images of plant leaves, which have a spread of 38 class labels assigned to them. Each class label is a crop-disease pair, and we make an attempt to predict the crop-disease pair given just the image of the plant leaf. As previously mentioned, this work aims to detect and identify if the apple leaf input image is healthy or infected. In this article, firstly, 350 tomato leaves (250 healthy and 100 infected by the disease Cedar_apple_rust). 
+
+
+
+
+
+
+
+
+Figure 6: Example of leaf images from the Plant Village dataset, representing every crop-disease pair
+Figure 6 shows one example each from every crop-disease pair from the Plant Village dataset. In all the approaches described in this work, resize the images to 256 × 256 pixels, and perform both the model optimization and predictions on these downscaled images.
+4.2 Measuring classification
+In this study, some appropriate measures are used to estimate the performance of the MK-PDL-based leaf classification method. The measures like Sensitivity, Specificity, Accuracy, Precision, Recall, and F-measure are used. In the whole image, let TP indicates the value of the true positive rate of images, FP mentions the value of the false positive rate of images, TN indicates the value of the true negative rate of images, and FN mentions the value of the false negative rate of images. These measures are computed individually for every image and on average for all test images.
+
+ (26)
+ 
+ (27)
+
+ (28)
+
+ (29)
+
+ (30)
+F-measure =
+ (31)
+The proposed MK- PDL scheme six volume metric results are evaluated for plant leaf image classification. It shows that the proposed MK-PDL results are higher compared to the existing PNN, SVM, and MK-PSVM. When the number of images increases, the numerical evaluation results of the proposed MK- PDL also increase. Because the MK- PDL has less processing time and efficient feature extraction. In addition, perform comparison experiments using Support Vector Machine (SVM), probabilistic neural network classifier (PNN), and Multiple Kernel with Parallel Support Vector Machine (MK-PSVM).
+Table 1: Numerical evaluation among all plant leaf classification schemes
+Performance measures
+MK-PDL
+MK-PSVM
+PNN
+SVM
+Accuracy (%)
+86.57
+85.5
+80.00
+77.14
+Sensitivity (%)
+83.6
+75.8
+75.59
+73.33
+Specificity (%)
+94
+94
+91.67
+87.37
+Precision (%)
+97.21
+97.2
+96.00
+93.97
+F-measure (%)
+89.89
+85.2
+84.58
+82.38
+
+
+Figure 7(a): Accuracy performance prediction for all classification schemes
+
+Figure 7(b): Sensitivity performance prediction for all classification schemes
+The proposed MK-PDL-based leaf classification has high accuracy due to the efficient optimization and effective feature extraction process. Figures 7, 8, and 9 show the overall performance of the proposed MK- PDL and existing PNN, SVM, and MK-PSVM classification schemes for the plant leaf database. The Figures demonstrate that the performance of the accuracy value is high in the proposed MK- PDL owing to the optimal segmentation and efficient feature extraction, and it reduced the processing time and improved the quality of the image. For the above reasons, the results of the MK-PDL scheme are increased.
+Figure 7(a,b) shows the accuracy and sensitivity results of five different classifiers. From Figure 7(a) proposed MK-PDL classifier provides the accuracy results of 86.57%, whereas other classification methods, such as SVM, PNN, and MK-PSVM provides accuracy results of 77.14%, 80%, and 85.5% methods, respectively. Due to the effective background subtraction and optimal segmentation techniques, the MK-PDL attained better results. From Figure 7(b) proposed MK-PDL classifier provides the highest sensitivity results of 83.6%, whereas other classification methods, such as SVM, PNN, and MK-PSVM, provide sensitivity results of 73.33%, 75.59%, and 75.8% methods, respectively.
+
+Figure 8(a): Specificity performance prediction for all classification schemes
+Figure 8(a,b) shows the specificity and precision results of five different classifiers. From Figure 8(a) proposed MK-PDL classifier provides the highest specificity results of 94%, whereas other classification methods, such as SVM, PNN, and MK-PSVM provides specificity results of 87.37%, 91.67%, and 94% methods, respectively. From Figure 8(b) proposed MK-PDL classifier provides the highest precision results of 97.21%, whereas other classification methods, such as SVM, PNN, and MK-PSVM provides precision results of 93.97%, 96%, and 97.2% methods, respectively.
+
+Figure 8(b): Precision performance prediction for all classification schemes
+
+Figure 9: F-measure performance prediction for all classification schemes
+Figure 9 shows the f-measure results of five different classifiers. From the figure 8 proposed MK-PDL classifier provides the highest f-measure results of 89.89%, whereas other classification methods, such as SVM, PNN, and MK-PSVM provides f-measure results of 82.38%, 84.58% and 85.2% methods, respectively.
+5 Conclusion and Future Work
+In this study, a Multiple Kernel with Parallel Deep Learning (MK-PDL) classifier is proposed for disease leaf identification. In this process, first, the plant leaf image is considered as an input. Then, the background subtraction is applied for these input images by using GMM to improve the segmentation accuracy. Furthermore, the disease-based leaf part is segmented by using a bee colony-based fuzzy scheme. After that, the multiple features like vein features, shape features, edge-based features, Harr-like feature, and Texture characteristics (TF) will be evaluated for the extraction of leaf images. Then, the Improved Singular Value Decomposition (ISVD) is proposed, which is used for dimensionality reduction of the features of the disease leaf identification, and proposes a MK- PDL classifier to realize classification. The performance results show that the proposed MK- PDL attained high results compared to SVM, PNN, and MK-PSVM in terms of a high accuracy rate of 86.57% sensitivity rate of 83.6%, a specificity rate of 94%, an F-measure rate of 89.89%, a precision rate of 97.21%, and a recall rate of 83.6%. In the future, will improve the classification accuracy using some other machine learning classification algorithms. 
+Acknowledgement: Not applicable.
+Funding Statement: Not applicable.
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, methodology and writing—original draft preparation: Niranchana Radhakrishnan; supervision and writing: C. Viji; review and editing: Balusamy Nachiappan. All authors reviewed the results and approved the final version of the manuscript.
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present study.
+References
+    1. Song YM, Noh S, Yu J, Park CW, Lee BG. Background subtraction based on Gaussian mixture models using color and depth information. In The 2014 international conference on control, automation, and information sciences (ICCAIS 2014); 2014 Dec 2, Gwangju, Korea (South); 2014. p. 132-135.
+    2. Jiang M, Luo YP, Yang SY. Stochastic convergence analysis and parameter selection of the standard particle swarm optimization algorithm. Inf process lett. 2007;102(1):8-16.
+    3. Vijayalakshmi S, Murugan D. comparative analysis on segmentation approaches for plant leaf disease detection. Int J Comput Sci Eng. 2018;6.
+    4. Karaboga D, Akay B. A comparative study of artificial bee colony algorithm. Appl Math Comput. 2009;214(1):108-32.
+    5. Kumar A, Kumar D, Jarial SK. A hybrid clustering method based on improved artificial bee colony and fuzzy C-Means algorithm. Int J Artif Intell. 2017;15(2):40-60.
+    6. Arivazhagan S, Shebiah RN, Ananthi S, Varthini SV. Detection of unhealthy region of plant leaves and classification of plant leaf diseases using texture features. Agric Eng Int: CIGR J. 2013;15(1):211-7.
+    7. Kaur L, Laxmi VJ. Detection of Unhealthy Region of plant leaves using Neural Network. Dis Manag. 2016;1(05):34-42.
+    8. Gao L, Lin X. A method for accurately segmenting images of medicinal plant leaves with complex backgrounds. Comput Electron Agric. 2018;155:426-45.
+    9. Dey AK, Sharma M, Meshram MR. Image processing-based leaf rot disease, detection of betel vine (Piper BetleL.). Procedia Comput Sci. 2016;85:748-54.
+    10. Landge PS, Patil SA, Khot DS, Otari OD, Malavkar UG. Automatic detection and classification of plant disease through image processing. Int J Adv Res Comput Sci and Softw Eng. 2013;3(7):798-801.
+    11. Athanikar G, Badar P. Potato leaf diseases detection and classification system. Int J Comput Sci and Mob Comput. 2016;5(2):76-88.
+    12. Anami BS, Pujari JD, Yakkundimath R. Identification and classification of normal and affected agriculture/horticulture produce based on combined color and texture feature extraction. Int J Comput App Eng Sci. 2011;1(3):356-60.
+    13. Wang G, Sun Y, Wang J. Automatic image‐based plant disease severity estimation using deep learning. Comput Intell Neurosci. 2017;2017(1):2917536.
+    14. Qin F, Liu D, Sun B, Ruan L, Ma Z, Wang H. Identification of alfalfa leaf diseases using image recognition technology. PloS one. 2016;11(12):e0168274.
+    15. Mohanty SP, Hughes DP, Salathé M. Using deep learning for image-based plant disease detection. Front plant sci. 2016;7:1419.

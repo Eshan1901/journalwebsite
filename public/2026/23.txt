@@ -1,0 +1,311 @@
+﻿
+ARTICLE
+A Hybrid ML-Driven Recommendation System with Enhanced Density-Based Clustering for E-Learning Platforms  
+G. Sangeetha1,*, N. Rajkumar2, Kannan Ramasamy3, and T. Karthikeyan4
+1Assistant Professor, Department of B.Sc., IT., PSGR Krishnammal College for Women, Coimbatore, India.
+2Associate Professor, Alliance School of Advanced Computing, Alliance University, Bengaluru, Karnataka, India.
+3CIO, Department of Information Technology, D’Decor Home Fabric Pvt Ltd, Chennai, India.
+4Department of Information Technology, University of Technology and Applied Sciences - Salalah, Thumrait Rd, Thumrayt Street – OM 211, Sultanate of Oman.
+*Corresponding Author: G. Sangeetha. Email: gsangeetha@psgrkcw.ac.in 
+Received: 30 July 2025; Accepted: 25 October 2025; Published: 22 December 2025
+ABSTRACT: A decision-making system is one of the most important tools in data mining. The data mining field has become a forum where it is necessary to utilize users' interactions, decision-making processes, and overall experience. Nowadays, e-learning is indeed a progressive method to provide online education in long-lasting terms, contrasting to the customary head-to-head process of educating with culture. Through e-learning, an ever-increasing number of learners have profited from different programs. Notwithstanding, the highly assorted variety of the students on the internet presents new difficulties to the conservative one-size-fits-all learning systems, in which a solitary arrangement of learning assets is specified to the learners. The problems and limitations in well-known recommender systems include many variations in the expected absolute error, consuming more query processing time, and providing less accuracy in the final recommendation. The main objectives of this research are the design and analysis of a new transductive support vector machine-based hybrid personalized recommender for the machine learning public data sets. The learning experience has been achieved through the habits of the learners. This research designs some of the new strategies that are experimented with to improve the performance of a hybrid recommender. The modified one-source denoising approach is designed to preprocess the learner dataset. The modified anarchic society optimization strategy is designed to improve the performance measurements. The enhanced and generalized sequential pattern strategy is proposed to mine the sequential patterns of learners. The enhanced transductive support vector machine is developed to evaluate the extracted habits and interests. These new strategies analyze the confidential rate of learners and provide the best recommendations to the learners. The proposed generalized model is simulated on public datasets for machine learning, such as movies, music, books, food, merchandise, healthcare, dating, scholarly papers, and open university learning recommendations. The experimental analysis concludes that the enhanced clustering strategy discovers clusters that are based on random size. The proposed recommendation strategies achieve better significant performance over the methods in terms of expected absolute error, accuracy, ranking score, recall, and precision measurements. The accuracy of the proposed datasets lies between 82% and 98%. The MAE metric lies between 5% and 19.2% for the simulated public datasets. The simulation results prove that the proposed generalized recommender has a great strength to improve the quality and performance.
+KEYWORDS: Anarchic society optimization, e-learning, hybrid recommendation, support vector machine, machine learning.    
+ 
+1 Introduction
+Recently, e-learning has been considered one of the progressive methods in online education in the long term, contrasting with the customary head-to-head process of educating with culture. Through e-learning, an ever-increasing number of learners have profited from different programs. Notwithstanding, the highly assorted variety of the students on the internet presents new difficulties to the conservative one-size-fits-all learning systems, in which a solitary set of learning assets is specified for every student. The problems and limitations in the well-known recommenders are many differences in the expected absolute error, consuming more query processing time, and providing less accuracy in the final recommendation.
+Nowadays, e-learning has increased as another option in contrast to traditional learning to accomplish the objectives of learning for everyone. E-learning has various clarities with a few times befuddling understandings [1-4]. E-learning is defined as the utilization of web advancements to provide learning to the students whenever and wherever effectively. Mainly, the e-learning technique is more versatile than conventional learning. Conventional education depends on a ‘one size fits all’ scheme that tends to help just a single instructional form since, generally, in classroom circumstances, an instructor frequently manages several students at the same time. In such a situation, the students are forced to use a uniform course material, foregoing their own needs, attributes, or inclinations. [5]. Once the teacher starts to give detailed, organized guidance to the students, the class profitability expands. Additionally, it is greatly troublesome for an instructor to choose the ideal learning methodology for each student in a class. When the teacher can compute each one of the methodologies, it is significantly harder to apply numerous procedures in a classroom [6-7]. A customized e-learning condition permits to adjustment of the content, automatically or the associating the courseware to meet the students’ requirements. 
+The significant research in e-learning is the design of a better recommender for the learners. To resolve the problems in the existing methods, the proposed hybrid recommendation model has been designed that consists of the following essential functions: domain function, learner function, application function, adaptation function, along session monitor. New strategies are designed and evaluated on the public benchmark datasets. The experimental analysis concludes that the enhanced clustering strategy discovers clusters based on random sizes. The proposed method minimizes the expected absolute error even when the learner size L exceeds 250 while reducing the computational complexity and increasing the accuracy.
+Section 2 explains the literature survey that includes the recent contributions made to recommender systems. The proposed methodology is focused on in Section 3. The simulation of the proposed model and the experimental outcomes are analyzed in Section 4. The final inferences are analyzed in Section 5.
+2 Literature Review
+A few customized e-learning frameworks have been accounted for in the literature utilizing the learner’s qualities like the stage of knowledge, learning methods, learner motivation, and media inclinations. Many authors have long strived to understand the behavior of students in education, along with learning methods. The learning method, as both a learner characteristic and an instructional procedure, is explained in [8]. The learner’s characteristics are markers of how a learner studies, along with what he/she like to study [9-11]. As an instructional procedure, it educates the discernment, setting, the substance of learning. It may likewise be characterized as how an individual gathers, forms, and composes data. This way, the learning method enables the teachers to have a review of the propensities and inclinations of the individual students.
+The recommender framework was designed to consolidate content-based investigation, collaborative filtering, and information mining strategies. It examines students' performance and produces scores to help students in the determination of important exercises [12]. A new structure is developed for customized learning recommender frameworks, given the suggestion method that distinguishes the student's learning necessity and then utilizes matching rules to create proposals of learning materials. The investigation alludes to multi-criteria choice models and fuzzy sets innovation to manage students' preferences and prerequisite examination. Student capacity is a factor that is disregarded while actualizing a personalization scheme that prompts the bewilderment of the student [13]. 
+A framework for customized e-learning is suggested by consolidating the mutual filtering technique by the entry reaction hypothesis. The framework gives a single way to students, and hence ensures successful learning. The technique of framing lessons and materials and determining the capacity of students using the Maximum Likelihood Estimation (MLE) is discussed in [14].
+There is a critical requirement for suggestions in an online gathering because of its wide range of participants. A non-specific personalization system is designed and evaluated according to the Comtella-D conversation debate. The feedback on communications from clients supplies as a personalization administrator to recognize the proper suggestion technique given client input information. Results demonstrate that mutual filtering methods may be utilized effectively on small datasets, similar to a conversation debate [15]. The teaching procedures match with students' personalities by using an indicator. According to the creative methodology, a structure for building a flexible learning administration framework through considering students' preferences has been produced. The student's summary is based on the outcomes acquired through the learners in the list of learning methods poll. Then, interactions are modeled by using the Bayesian model [16]. 
+The practical context-aware suggestions in e-learning frameworks are designed to rely upon domain perspective modeling in numerous situations to make customized proposals for the instructors as well as researchers who would create the learning assets that would be utilized by the learners. The suggestion procedure is categorized into three phases: Initially, making societal context positions of interest as indicated by the client's stage. Secondly, it is required to inspect the current status of the social area and client context. Finally, it is required to examine the attainability of any particular learning objects, which ought to be suggested [17]. 
+An ontology-based approach for semantic content recommendation towards context-aware e-learning is developed to enhance the efficiency and effectiveness of learning [18]. The recommender takes knowledge about the learner (user context), knowledge about the content, and knowledge about the domain being learned into consideration. An effective e-learning recommendation system based on self-organizing maps and association mining is developed in [19]. This research constructs a hybrid system with an Artificial Neural Network (ANN) and Data Mining (DM) techniques to classify the e-Learner groups. 
+A personalized learning full-path recommendation model based on LSTM neural networks is developed in [20]. This model relies on clustering and machine learning techniques. Based on a feature of a similarity metric, the designed system first clusters a collection of learners and trains a Long Short-Term Memory (LSTM) model to predict their learning paths and performance. Personalized learning full paths are then selected from the results of path prediction. Finally, a suitable learning path is explicitly recommended to a test learner. In this study, a series of experiments has been carried out against learning resource datasets. 
+The novel recommender algorithm that recommends personalized learning objects based on student learning styles is developed in [21]. Various similarity metrics are considered in an experimental study to investigate the best similarity metrics to use in a recommender system for learning objects. The approach is based on the Felder and Silverman learning style model, which is used to represent both the student learning styles and the learning object profiles.  
+An approach for building architecture for a recommender system for the e-learning environment, considering learning style and learner's knowledge level, is discussed in [22]. The designed approach is based on four modules. Some of the problems in the present recommenders are: many differences in the expected absolute error and consuming much computational time, which results in less accuracy in their recommendations to the learners [23-29]. Thus, the proposed model develops a new Transductive Support Vector Machine (TSVM) based hybrid and personalized recommendation to the learners in solving real-time applications. 
+The literature survey of recent recommendation systems is analyzed in Table 1 [23-29]. The recent recommendation methods, datasets, advantages, and limitations are analyzed in Table 1.
+Table 1: Literature Survey of Recent Recommendation Systems
+
+3 Proposed Methodology
+This research develops a hybrid recommendation method, which allows learners to use the teaching material organized in any suitable course. The designed system is used for learners who have no programming knowledge. Moreover, it consists of a part of the information for testing the obtained data. Mainly, it targets suggesting functional and motivating materials toward e-learners depending on their diverse conditions, preferences, knowledge, ideas, and other significant attributes. The architectural diagram of the proposed recommender is drawn in Figure 1.
+Some of the new strategies are expected to design and evaluate the standard datasets to improve the performance of a hybrid recommender. This research attempts to design the recommender system with the following new strategies: Modified One Source Denoising (MOSD) approach, which is applied to preprocess the learner dataset; Modified Anarchic Society Optimization (MASO) strategy that is applied to improve the performance measurements; Enhanced Generalized Sequential Pattern (EGSP) strategy that is applied to mine the sequential pattern of learners; that is applied to evaluate the extracted habits and interests. Depending on the different models of learning method with learners’ behaviors, the grouping is carried out via the use of the most widely used enhanced Density-Based Spatial Clustering of Applications with Noise (DBSCAN) clustering algorithm. DBSCAN groups similar learners. It observes learner groups as dense regions of objects in the information space to divide the regions of low-density objects. The enhanced DBSCAN strategy applies the concept of density reachability and density connectivity. SVM is a supervised Machine Learning (ML) model that applies classification methods. TSVM is generally a continuous classifier that regularly finds the best hyperplane in the learner's space with a transductive procedure to include unlabeled samples in the training step. TSVM is also applied in learning strategies. The major issue with this clustering is that it needs to tune its parameters. To solve this issue, these parameters are tuned through the use of an Anarchic Society Optimization (ASO), which is a swarm-intelligence-based new optimization method. A value of the society parts is chosen initially inside the search gap for tuning of two parameters.
+
+Figure 1: Architecture of the New Recommender
+The advantages of the proposed generalized model over some of the existing methods are reducing the computational time with good accuracy in the recommendation. The proposed model also minimizes the expected absolute error even when the learner size L exceeds 250. The purpose of the functions of the new model is shown in Table 2.
+Table 2: Purpose of the functions in the proposed generalized model
+
+The proposed generalized hybrid recommendation model consists of the following important functions: domain function, learner function, application function, adaptation function, along session monitor. The domain function represents the storage of essential learning substances, tutorials, along tests for everyone. The learner frame collects the complete learner's information. This framework makes use of the information to figure out the learner’s conduct and consequently adapts to their needs. The application function carries out the adjustment. The adjustment function tries to shorten the instructional rules through the application function. These two functions are isolated so that including new substance gatherings and various functionalities would be less demanding. Inside the session screen part, the plan progressively re-manufactures the student display through the session, with the motivation behind to keep up a record of the learner's occasions with their improvement, to recognize and identify their mistakes, and presumably forward the conference, therefore. At the last meeting, every student's top pick was traced. If a learner couldn't concur with the framework's suppositions with regard to their inclinations, they can demonstrate and figure out adjustments in it for the time of the learning session. Then, the student model is applied together with the required information that is further used to prepare the subsequent session. The adjustment function gives two personalized normal strides. The structure of the new recommender is shown in Algorithm 1, and its flowchart is depicted in Figure 2.
+Algorithm 1: Proposed Generalized Recommender System
+1: Apply the MOSD Algorithm to preprocess the learner dataset
+2: Apply the modified Enhanced Clustering Algorithm to cluster the group of learners
+3: Find density reachability and density connectivity
+4: Compute distance (a, b)
+5: Create routine constraints
+6: Compute the movement arrangement depends on present positions, positions of another part and earlier positions
+7: Combine the movement arrangements
+8: Apply the MASO strategy to fine-tune the parameters of the Enhanced Clustering to improve the performance measurements
+9: Apply the EGSP strategy to mine the sequential pattern of learner
+10: Candidate creation
+11: Pruning phase & Support counting
+12: Apply hash tree-based search
+13: Evaluation using ETSVM
+14: Define the learning step with parameters
+15: Evaluate Trust-Based Weighted Mean Item
+16: Apply the recommendation process using clicks, selection, and learning
+17: Compute the performance measurements
+18: End
+3.1 MOSD Approach for Data Preprocessing
+The system distinguishes various models of learning methods in addition to the learner's behavior and checks the server blogs of the learners. Typically, the log file might include different unnecessary responses in a minimal period. Unfortunately, these behaviors might happen numerous times in a similar structure. Identifying the noise and the steps to eliminate it are incredibly significant to modify the result of information examination in the prospect. The MOSD is presented in Algorithm 2.
+
+Figure 2: Flowchart of the new recommender
+Algorithm 2: Modified One Source Denoising
+Inputs: User u, content m, trials t
+1: Initialize the non-rated item to 0 
+2: Compute Rut = {
+3: Compute Rut’ = {
+4: For each value of  :
+5: If 0 then:  
+6: =0
+7:  then:
+8: )
+9: Else
+10: 
+11: End
+When implementing the t-source for t re-rates, then it will not be practical to have the things re-rated several times using a similar user. If everyone’s rating differs by more than a specified verge, there is a strong disagreement condition with the score that is aloof from the present dataset. Then, if at least two ratings are different, there is a mild disagreement condition.
+3.2 Enhanced Clustering for the Learners    
+Recommendations should not be completely designed for the entire group of learners since the skills of learners using related learning notices and their talent toward handling a chore can differ appropriately due to variations in their information stage. In this research, the clustering technique is carried out as an initial step towards grouping learners, depending on the learning methods of the customer. These groups are utilized to recognize logical options in prevalent cycles of learning behaviors. 
+Depending on the different models of learning method with learners’ behaviors, the grouping is carried out via the use of the most widely used enhanced DBSCAN clustering algorithm. DBSCAN is a clustering strategy that groups similar learners. It observes learner groups as dense regions of objects in the information space to divide the regions of low-density objects. 
+The enhanced DBSCAN strategy applies the concept of density reachability and density connectivity. {x1, x2, x3... xn} represent the number of learners’ information positions representing the set of data points. This strategy takes two parameters, namely distance ε and minimum-points, i.e., the least number of points needed to construct a cluster. It simply requires finding out every maximum solidity-linked gap to gather the learners in a learning gap. These spaces are known as groups. Every learner's data, which is not contained in any group, is measured as noise and be able to be ignored by the original learners. It makes use of the suggestion of solidities such as reachability and connectivity. The enhanced clustering is shown in Algorithm 3.
+Algorithm 3: Enhanced Clustering Algorithm for Learners
+1: Initialize data positions of learners and start with an arbitrary starting position
+2: Extract the neighborhood region of this leaner’s data positions within the  distance
+3: If there is a related learning method of customer around this learner's data positions, then the clustering progression initiates as well as the learner's data positions are noticeable as stayed
+4: Else, the learner's data positions are labeled as noise
+5: If a learner's data positions are starting to be a cluster element, then there is a repetition in its neighborhood. This is repetitive in anticipation of each learner's data positions (users) in the group are found
+6: A newly visited learner's data positions (user) are recovered as well as routed, leading in the direction of the discovery of an additional cluster
+7: This process continues until each of the learner's data positions are marked as visited
+8: End
+
+3.2.1 Density Reachability
+The learner's data at a position p is said to be solidly available from the learner's data at a position q if position p is in ε distance from the learner's data at a position q, with q having an adequate value of learner’s data at positions in its neighbors who are inside the space ε.  
+3.2.2 Density Connectivity
+A learner’s data at a position p and q are said to be in the direction of its solidity linked if there is a learner’s data at a position r which has an adequate value of learners' data at positions in its neighbors, with both the learner's data at positions p and q are in the ε space. This is sequence progression. Therefore, if q is a neighbor of learners' data at a position r, r is neighbor of learners data at a position s, s is neighbor of learners data at a position t which in spin is neighbor of learners data at a position p implies with the purpose of learners data at a position q is neighbor of learners data at a position p.
+3.2.3 Calculating the Constraints ε as well as the minimum points
+The dynamic steps permit two input learners' data positions; the automatically created parameters differ in the direction of various learners' data positions. The distance between the two learners' data positions is given by distance (a, b) and defined as follows:
+distance (a, b) = q 
+ (1)
+Where a = (xa1, xa2,...,xap) and b = (xb1,xb2,...,xbp) are two p - dimensional learner data positions, and q > 0. 
+3.2.4 Routine Constraints Creation
+The Enhanced Clustering (EC) algorithm discovers groups inside varied solidity, by creating multiple pairs of ε as well as minimum points routinely.   
+The major issue of this clustering is that it needs to tune its two parameters ε and minimum-points.  To solve this issue, these two parameters are tuned through the use of an ASO. In the ASO, a Swarm Intelligence (SI) based new optimization method, the value of society parts is chosen initially inside the search gap for tuning of two parameters, ε and minimum-points. Then, the clustering accuracy of every part is calculated depending on these parameters. Let Xi (k) denote the position of the ith member in the kth iteration. Let X*(k) define the best position experienced by all the members in the kth iteration. The best position visited by the ith member during the first k iterations is Pi (k). The best position visited by all members during the first k iterations is G(k). According to the computed fitness value and comparison with X*(k), Pi (k) and G(k), the movement arrangement, a new value of the part, will be found. After a sufficient number of iterations, at least one of the parts’ determinations reaches the optimal position of the cluster parameters. The elements of the algorithm, according to movement policies, are defined as follows.
+3.2.5 Movement Arrangement depends on the Present Positions  
+The initial movement arrangement for the ith individual from parameters ε and minimum-points in the kth step  (k) is acknowledged relying upon the present area. The Fickleness Index FIi (k) for the ith individual in the kth step is applied in choosing the movement strategy. This measurement evaluates the satisfaction of the present position of the ith part compared to and past individuals' parameters. If the fitness is positive, the Fickleness Index can be defined as follows:   
+  
+ (2)
+ 
+ (3)
+The range of ∝i is 0≤ ∝i ≤ 1. Based on the value of , the ith member can choose its next location. If is lower, then the ith part has the best group parameters among every last one parts. In this manner, it is enhanced to choose the development strategy relying upon X*(k). Otherwise, the ith member is not satisfied with its position. Hence, the development strategy intended for the ith part related to the appraisal of is defined as follows:   
+ 
+ (4)
+3.2.6 Movement Arrangement depends on some other Positions
+The subsequent movement methodology intended for the ith part in the kth cycle is This is executed, relying upon the areas of different individuals. Even though each part should move toward G(k) intelligently, the relationship of the parts is not normally fitting toward the progressive condition. 
+The External Irregularity index, defines the distance of the ith part of the population from G (k). This index helps in determining if the community part is hypothetical in the direction of behaving more reasonably with less expansion. This index is also used to describe the direction of the movement arrangement depending on the area of other parts. Therefore, the for the ith part in the kth iteration is evaluated.
+ 
+ (5)
+ 
+ (6)
+ and  are positive numbers, and D (k) is a suitable coefficient of variation. If the population part is secured in the direction of G (k), then it will contain a further logical action. Otherwise, it shows a revolutionary action depending on anarchy. Consequently, with the concern of a threshold designed for , it is probably in the direction of describing the movement arrangement, depending on the area of other parts that is defined.
+ 
+ (7)
+
+As the threshold congregates to unity, the parts would perform further rationally, and the members would show more routine behaviors.
+3.2.7 Movement Arrangement depends on Past Positions
+The movement arrangement procedure is planned for the ith part in the kth step,   is performed depending upon the before zones of the individual part. This development strategy is applied when the area of the ith part in the kth step is compared with If the area of the ith part is close then the part plays out additionally prudently. Otherwise, the part displays strange activities. To apply the development strategy depending upon earlier territories, the Internal Irregularity index I(k) for the ith part in the kth step is defined.   
+ 
+ (8)
+Similar to the previous arrangement, with chosen of a threshold designed for I(k), the movement arrangement, depending on earlier areas, is defined.  
+ 
+ (9)
+
+3.2.8 Combination of Movement Arrangements  
+Altogether, to pick the last development strategy, the three arrangements are combined. As per the development approaches listed, every part should join these courses of action by a strategy or a technique and move toward another area. One of the simplest requesting courses is to pick the procedure with the most superb answer. The accompanying substitute is toward fusing the development arrangements progressively, which is named the back-to-back mix rule. The hybrid advance can be intended for constant issues coded as chromosomes. The modified ASO algorithm is presented in Algorithm 4, which takes an input of the N parts and produces the outcomes ε and minimum points, which are to be optimized. Let S represents the solution space and the function f: S → R is to be reduced in S. Assume that a society with N members is searching for the best location of living, that is, the global minimum of function f in the S. Initially some of the society members are randomly chosen from S. Then the fitness function, which represents the function to search for the best location of living, is evaluated. Then the fitness function and the comparison with X(k), Pi (k) and G (k) values provide a way to find the selection of the new position of the member. After sufficient iterations, at least one of the members reaches the near optimum.
+Algorithm 4: Modified ASO Algorithm
+Input: N parts 
+Output: Parameters ε and minimum-points   
+1: Initialize the N parts and position of the part
+2: Initialize number of iterations variable i to 0
+3: Initialize M solutions randomly and evaluate its fitness values
+4: While the termination conditions are satisfied:
+5: 	Compute (k),   and     
+6:	For each value of i in (1, M):
+7: 		Evaluate F (k)
+8:		If F (k) < threshold  (k), then  (k) moves towards (k) 
+9:		Else   (k) moves towards a random part 
+10:		End If
+11:	End For
+12: 	For each value of i in (1, M):
+13: 		Evaluate E (k)
+14:		If E (k) < threshold  (k), then  (k) moves towards  
+15: 		Else   (k) moves towards a random part
+16: 		End If
+17:	End For
+18: 	For each value of i in (1, M):
+19:		Evaluate I (k)
+20:		If I (k) < threshold  (k), then  (k) moves towards 
+21:		Else   (k) moves towards a random part
+22:		End If
+23:	End For
+24: 	For each value of i in (1, M):
+25:		Combine the movement arrangement and update the position
+26:		Evaluate the fitness values
+27:	End For
+28: End While
+29: Return the optimal parameters
+30: End
+3.3 EGSP Strategy 
+Learners with different learning methods have various arrangements of rehashed succession. Consequently, students are grouped based upon their practices, and afterward, personal conduct standards are found intended for each student through the utilization of the EGSP. The EGSP is proposed for comprehending continuous example mining issues. One route toward the utilization of the stage-wise model is to initially find all of the current students in a stage-wise method. This primarily reports on the checking of events of every last singleton part in the folder. In this way, non-common points are expelled toward the channel exchanges. At last, every transfer incorporates just the incessant parts initially controlled. This altered database is then given as a contribution toward the EGSP calculation. This progression needs one to disregard the entire database. With various disregards, the database is completed by methods for the EGSP strategy and is explained in the following sections.
+3.3.1 Candidate Creation
+Specified the range of recurrent (i – 1) and their recurrent cycles Fn (i – 1), the applicants used for the subsequent pass are created by combining Fn (i – 1) using itself. As a minimum, a few of whose sub-cycles are not regular are removed in means of the trimming step.
+3.3.2 Pruning phase
+A pruning step removes some cycle as a minimum one whose series is not recurrent.
+3.3.3 Support Counting
+Frequently, a mess tree-based hunt is proposed for capable sustainment. Subsequently, non-maximal repetitive sequences are removed. The hash tree-based search is applied for effective data verification. The database is completed by methods for the EGSP strategy. In the primary exceed, every single one of the particular things (1 sequence) is tallied. Based on the items continuously obtained, the place of candidate 2-sequence is made, and in this manner, their recurrence is perceived. These successive 2-groupings are utilized to make the applicant 3-cycles whose calculation is rehashed, pending the position that no more frequent sequences are found. The calculation incorporates some noteworthy advances. The hash tree-based searching is explained in Algorithm 5.
+Algorithm 5: Hash tree-based searching
+1: Initialize Fn (1) to the set of frequent 1-sequence
+2: Initialize the variable i to 2
+3: Do while Fn (i – 1) is not equal to null:
+4: 	Generate candidates set Cn (i) (set of candidate i sequences)
+5:	For all input sequences Q in the database D:
+6:		Raise count of all in Cn (i) if Q supports an Fn (i)
+7:		Increment i by 1
+8: 		Update the result by finding the union of all Fn (i)
+9:	End For
+10: End Do  
+11: End
+3.4 ETSVM Evaluation  
+TSVM is generally a continuous classifier that regularly finds the best hyperplane in the learner's space with a transductive procedure to include unlabeled samples in the training step. To know the learner's data, the modified TSVM is presented in this section. In the modified TSVM, depending on the percentage ideal answer, the learner's rating can be explained, which is completed in the direction of dividing the clustered users that depend on frequent sequence ratings. The learning step of the ETSVM is designed as an optimization problem and defined as follows:
+ 
+ (10)
+Subject to the constraints:   
+ 
+ (11)
+ 
+ (12)
+The constants C and C* are the user-mentioned penalty values of the training. The transductive samples  and  are random variables, and d denotes the count of transductive samples. Modified TSVM training is related to the direction of handling the issues mentioned above. Finally, the function of the conclusion of the modified TSVM with Lagrange multipliers  and  is defined as follows:
+ 
+ (13)
+3.5 Trust-Based Weighted Mean Item   
+An easy suggestion method stipulates in the direction of calculating how an end-user likes an objective item, i, be able to estimate the standard rating for i, through regarding the rating ru,i from the complete scheme’s customer u who is previously well-known using i, this occurs when a recommender scheme is there that does not include a trusted system. The trust-based weighted mean method is evaluated by calculating the faith rates ta,u that provide the reverse level in the direction for the raters u are faithful. This method allows in the direction of a division between the sources such that additional weight is assigned in the direction of ratings of improved trusted users. Let RT be the set of customers with faith rate ta,u. Then the rank of item i for the customer a is evaluated as follows:
+ 
+ (14)
+3.6 Recommendation Process    
+The learner behavior and preferences are categorized as follows:
+1. Clicks – defines a small listing of substances.
+2. Selection – describes the substance chosen with extra attention toward the haul.
+3. Learning: This step is described as reading the substance. 
+
+All of these steps are utilized in recognizing the learner's comparative preferences LPij used for every substance referred from the corresponding information resources. The rule used to find the LPij is defined as follows:
+ 
+ (15)
+ and  define the references count towards the defined steps performed by learner i in the material j, respectively. define the maximum number of defined steps performed by learner i in material M.  define the minimum number of steps performed by learner i in the material M, respectively.
+4 Experimental Results
+The proposed personalized recommendation system is used for improving students' learning knowledge. The proposed model is simulated for different public datasets – movies, music, books, food, merchandise, healthcare, dating, scholarly papers, and Open University learning recommendations. The proposed model is simulated on an Intel Xeon processor with 256 GB DDR3 in Windows 10 Professional OS under JDK 1.8 environment, and the outcomes are analyzed. The measurements are evaluated using the computational time, Mean Absolute Error (MAE), accuracy, ranking score, recall, and precision. The experimental parameters are defined in Table 3.
+Table 3: Simulation Parameters
+
+
+The datasets are collected from https://gist.github.com/entaroadun/1653794. For example, the book's recommendation dataset provides information as shown in Figures 3, 4, and 5, respectively. BX-Users include the clients. Note that client IDs have been anonymized with a guide to whole numbers. Statistical information is given (`Location`, `Age`) if accessible. Something else, these meadows include NULL-values. BX-Books are distinguished by their separate ISBNs. Illogical ISBNs have just been expelled from the dataset. Besides, a few substance-based data given are taken from Amazon Web Services. BX-Book-Ratings contains the book rating data. Evaluations (`Book-Rating`) are either unequivocal, communicated on a scale from 1-10 (elevated qualities indicating elevated gratefulness), or certain, communicated through 0. The proposed model is analyzed with Collaborative Filtering (CF), Mass Diffusion Heat Spreading (MDHS), User Profile Oriented Diffusion (UPOD), Trust-based Hybrid Recommendation (TBHR), Hybrid Recommendation (HR), Modified Cluster-based Intelligent Collaborative Filtering (MCIF), Specific Features based Personalized Recommender (SPFR), Cluster-based Intelligent Hybrid Recommendation (CIHR), DBSCAN & SVM based Hybrid Recommender (DSHR) [23-32].  
+
+Figure 3: Dataset Model (BX-books)
+
+Figure 4: Dataset Model (BX-Users)
+
+Figure 5: Dataset Model (BX-Book ratings)
+4.1 MAE Analysis  
+The MAE is figured out by adding the total errors of the N, which is proportional to the rating forecast matches with afterward, ascertaining the normal value. The MAE metric for each of the combinations  and  of anticipated appraisals  along with the genuine evaluations  is computed as follows:
+ 
+ (16)
+
+Figure 6: MAE comparison
+
+Figure 7: MAE comparison with other methods
+For minimum MAE, the accuracy will be better. Fig. 6 signifies the evaluation output of the proposed recommender with some of the existing methods. The designed scheme has achieved better output than the existing methods. It has been found that when the number of learners L increases, the mean absolute error decreases. The designed scheme has achieved better output than the existing methods. The MAE metric lies between 5% and 19.2% for the simulated datasets. The comparison of MAE with some of the recent and well-known methods is depicted in Figure 7.
+4.2 Accuracy
+The scheme prefers appropriate appearance techniques. Fig. 8 signifies the accuracy comparison with the existing methods. A learner tally is tallied on the X-axis as well, and query processing time is measured on the Y-axis. The modified TSVM is used to calculate the information of the learners. Depending on the profit of the great response, the mark of the learners may be clarified, which then depends on the recurrent rating cycle; the clustered customers may be separated. The accuracy of the proposed model increases when the number of learners L increases. It has been found that the accuracy of the proposed dataset ranges from 88% to 98% when 50 ≤ L ≤ 250.
+
+Figure 8: Accuracy Analysis
+
+Figure 9: Accuracy comparison with other methods
+The scheme prefers appropriate appearance techniques. The accuracy of the proposed datasets lies between 82% and 98%. Figure 9 shows the significance of the proposed methodology for accuracy over the public data sets.
+4.3 Query Processing Time Analysis  
+The computational time of the proposed model with others is sketched in Figures 10 and 11.
+
+Figure 10: Query Processing Time Analysis
+A learner tally is tallied in the X-axis along with the query processing time, which is measured on the Y-axis. Enhanced clustering is carried out in the proposed method to discover the clusters based on their random sizes and shapes. The proposed strategy achieved significant performance. When L increases, computational time also increases. It has been found that the computational time increases in linear complexity.
+
+Figure 11: Computing time (in seconds) with other methods
+4.4 Ranking Score Analysis  
+The minimum ranking score provides a better recommendation. The comparison of the ranking score metric with others is depicted in Figure 12. The proposed method achieves a significant ranking score compared to the other methods.
+
+Figure 12: Ranking score comparison with other methods
+4.5 Recall Analysis  
+Figure 13 shows the comparison of the Recall metric with other methods, and the higher recall is expected. The proposed method achieves a better recall metric compared to the other methods.
+
+Figure 13: Recall comparison with other methods
+4.6 Precision Analysis  
+Figure 14 shows the comparison of the Precision metric with other methods, and a high metric value is expected.
+
+Figure 14: Precision comparison with other methods
+The average metrics comparison with other techniques for public datasets is sketched in Figure 15. It has been experimentally found that the proposed model behaves significantly well in terms of MAE, accuracy, ranking score, recall, and precision metrics.
+
+Figure 15: Average Metrics comparison with other methods
+
+Figure 16: Average computational time (in seconds) comparison with other methods
+The average computational time of the 16 datasets for the different methods is calculated and compared with the proposed method, and shown in Figure 16. It has been analyzed that this recommender minimizes the average computational time compared to the other methods on average for the 16 different public datasets. The experimental analysis concludes that the EC strategy discovers clusters based on random size and shapes. It has also been analyzed that, depending on the profit of the great response, the mark of the learners may be clarified, which then depends on the recurrent rating cycle; the clustered customers may be separated. The proposed method minimizes the expected absolute error while reducing the query processing times and increasing the accuracy.
+5 Conclusion
+The recommender scheme structure is offered to the modified e-learning, which particularly offers suggestions to assist the learners in recognizing as well as deciding the efficient data. This research is focused on the design, generalized modeling of an enhanced density-based spatial clustering of relevance by noise with a trust-based support vector machine to achieve a hybrid and personalized recommendation for the learners. In this research, the cluster is created effectively through an EC algorithm. Then the modified TSVM algorithm calculates the learner's evaluation based on their habits and their concerns. This new recommender provides better performance than other methods in terms of expected absolute error, accuracy, ranking score, recall, and precision measurements. The accuracy of the proposed datasets lies between 82% and 98%. The MAE metric lies between 5% and 19.2% for the simulated datasets. The experimental analysis concludes that the EC strategy discovers clusters based on random size and shapes. The proposed model works well in terms of all metric evaluations on average for the considered 16 different public datasets for machine learning. It has also been analyzed that, depending on the profit of the great response, the mark of the learners may be clarified, which then depends on the recurrent rating cycle; the clustered customers may be separated. The proposed method minimizes the expected absolute error while reducing the query processing times and increasing the accuracy. The empirical results show that this new recommender is expected to keep the recommendations up-to-date.
+The following are the future suggestions for this research:
+-	The dataset can be initially processed for the learner's requirements using an evolutionary model.
+-	The complexity can further be reduced using soft computing strategies to obtain a better recommendation based on the evaluation of different metrics.
+-	The EGSP strategy can be applied in parallel for different clusters to mine the sequential pattern of learners in parallel, so that query-processing time can be reduced with the design of new evolutionary models [33-34].
+Acknowledgement: Not applicable.
+Funding Statement: Not applicable.
+Author Contributions: The authors confirm contribution to the paper as follows: Conceptualization, methodology and writing—original draft preparation: Niranchana Radhakrishnan; supervision and writing: C. Viji; review and editing: Balusamy Nachiappan. All authors reviewed the results and approved the final version of the manuscript.
+Conflicts of Interest: The authors declare no conflicts of interest to report regarding the present study.
+References
+    1. Masoumi D, Lindström B. Quality in e‐learning: a framework for promoting and assuring quality in virtual institutions. J Comput Assist Learn. 2012;28(1):27-41.
+    2. Ossiannilsson E, Landgren L. Quality in e‐learning–a conceptual framework based on experiences from three international benchmarking projects. J Comput Assist Learn. 2012;28(1):42-51.
+    3. Alptekin SE, Karsak EE. An integrated decision framework for evaluating and selecting e-learning products. Appl Soft Comput. 2011;11(3):2990-8.
+    4. Sudhana KM, Raj VC, Suresh RM. An ontology-based framework for context-aware adaptive e-learning system. In 2013 international Conference on computer communication and informatics; 2013 Jan 4, Coimbatore, India; 2013. p. 1-6.
+    5. Kolekar SV, Sanjeevi SG, Bormane DS. Learning style recognition using artificial neural network for adaptive user interface in e-learning. In 2010 IEEE International conference on computational intelligence and computing research; 2010 Dec 28, Coimbatore, India; 2010. p. 1-5.
+    6. Fernández-Gallego B, Lama M, Vidal JC, Mucientes M. Learning analytics framework for educational virtual worlds. Procedia Comput Sci. 2013;25:443-7.
+    7. Anitha A, Krishnan N. A dynamic web mining framework for E-learning recommendations using rough sets and association rule mining. Int J Comput Appl. 2011;12(11):36-41.
+    8. Keefe, J.W; Learning Method: Theory and Practice. National Association of Secondary School Principals, Reston, VA., 1987.
+    9. Tam V, Lam EY, Fung ST. Toward a complete e-learning system framework for semantic analysis, concept clustering and learning path optimization. In 2012 IEEE 12th international conference on advanced learning technologies; 2012 Jul 4, Rome, Italy; 2012. p. 592-596.
+    10. Ghauth KI, Abdullah NA. Learning materials recommendation using good learners’ ratings and content-based filtering. Educ Technol Res Dev. 2010;58(6):711-27.
+    11. Verbert K, Manouselis N, Ochoa X, Wolpers M, Drachsler H, Bosnic I, Duval E. Context-aware recommender systems for learning: a survey and future challenges. IEEE Trans Learn Technol. 2012;5(4):318-35.
+    12. Hsu MH. A personalized English learning recommender system for ESL students. Expert Syst Appl. 2008;34(1):683-8.
+    13. Lu J. A personalized e-learning material recommender system. In International conference on information technology and applications 2004; Harbin, China; 2004. p. 374-379.
+    14. Chen CM, Lee HM, Chen YH. Personalized e-learning system using item response theory. Comput Educ. 2005;44(3):237-55.
+    15. Abel F, Gao Q, Houben GJ, Tao K. Analyzing user modeling on twitter for personalized news recommendations. In international conference on user modeling, adaptation, and personalization; 2011 Jul 11, Berlin; 2011. p. 1-12.
+    16. El Bachari E, Abelwahed EH, El Adnani M. E-Learning personalization based on Dynamic learners' preference. Int J Inf Technol Comput Sci. 2011;3(3).
+    17. Gallego D, Barra E, Aguirre S, Huecas G. A model for generating proactive context-aware recommendations in e-learning systems. In 2012 Frontiers in Education Conference Proceedings; 2012 Oct 3, Seattle, WA, USA; 2012. p. 1-6.
+    18. Yu Z, Nakamura Y, Jang S, Kajita S, Mase K. Ontology-based semantic recommendation for context-aware e-learning. In International conference on ubiquitous intelligence and computing; 2007 Jul 11, Berlin; 2007. p. 898-907.
+    19. Wen‐Shung Tai D, Wu HJ, Li PH. Effective e‐learning recommendation system based on self‐organizing maps and association mining. Electron Libr. 2008;26(3):329-44.
+    20. Zhou Y, Huang C, Hu Q, Zhu J, Tang Y. Personalized learning full-path recommendation model based on LSTM neural networks. Inf Sci. 2018;444:135-52.
+    21. Nafea SM, Siewe F, He Y. A novel algorithm for course learning object recommendation based on student learning styles. In 2019 International Conference on Innovative Trends in Computer Engineering (ITCE); 2019 Feb 2, Aswan, Egypt; 2019. p. 192-201.
+    22. Sunil, Doja MN. An improved recommender system for e-learning environments to enhance learning capabilities of learners. In Proceedings of ICETIT 2019: Emerging Trends in Information Technology; 2019 Sep 24, 2019. p. 604-612.
+    23. Shu J, Shen X, Liu H, Yi B, Zhang Z. A content-based recommendation algorithm for learning resources. Multimed Syst. 2018;24(2):163-73.
+    24. Fu M, Qu H, Moges D, Lu L. Attention based collaborative filtering. Neurocomputing. 2018;311:88-98.
+    25. Moreno MN, Segrera S, López VF, Muñoz MD, Sánchez ÁL. Web mining based framework for solving usual problems in recommender systems. A case study for movies׳ recommendation. Neurocomputing. 2016;176:72-80.
+    26. Polatidis N, Georgiadis CK. A multi-level collaborative filtering method that improves recommendations. Expert Syst Appl. 2016;48:100-10.
+    27. Monsalve-Pulido J, Aguilar J, Montoya E, Salazar C. Autonomous recommender system architecture for virtual learning environments. Appl Comput Inform. 2024;20(1/2):69-88.
+    28. Tewari AS. Generating items recommendations by fusing content and user-item based collaborative filtering. Procedia Comput Sci. 2020;167:1934-40.
+    29. Roy PK, Chowdhary SS, Bhatia R. A Machine Learning approach for automation of Resume Recommendation system. Procedia Comput Sci. 2020;167:2318-27.
+    30. Bhaskaran S, Santhi B. An efficient personalized trust-based hybrid recommendation (TBHR) strategy for e-learning system in cloud computing. Clust Comput. 2019;22(1):1137-49.
+    31. Bhaskaran S, Marappan R, Santhi B. Design and comparative analysis of new personalized recommender algorithms with specific features for large scale datasets. Mathematics. 2020;8(7):1106.  
+    32. Bhaskaran S, Marappan R, Santhi B. Design and analysis of a cluster-based intelligent hybrid recommendation system for e-learning applications. Mathematics. 2021;9(2):197.
+    33. Marappan R, Sethumadhavan G. Solution to graph coloring using genetic and tabu search procedures. Arab J Sci Eng. 2018;43(2):525-42.
+    34. Marappan R, Sethumadhavan G. Complexity analysis and stochastic convergence of some well-known evolutionary operators for solving graph coloring problem. Mathematics. 2020;8(3):303.
